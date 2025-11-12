@@ -1,19 +1,21 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ pkgs, ... }:
-
-{
-  imports = [ # Include the results of the hardware scan.
+{pkgs, ...}: {
+  imports = [
+    # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelParams = [
+    "threadirqs"
+  ];
 
   networking = {
     hostName = "nixos";
@@ -48,18 +50,32 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    jack.enable = true;
+
+    extraConfig.pipewire = {
+      "10-clock-rate" = {
+        "context.properties" = {
+          "default.clock.rate" = 44100;
+          "default.clock.quantum" = 128;
+          "default.clock.min-quantum" = 64;
+          "default.clock.max-quantum" = 1024;
+        };
+      };
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
+  security.rtkit.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.max = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "audio" "realtime"]; # Enable ‘sudo’ for the user.
   };
-
-  # programs.firefox.enable = true;
 
   programs.hyprland.enable = true;
 
@@ -73,10 +89,7 @@
       "hkgfoiooedgoejojocmhlaklaeopbecg"
       "gebbhagfogifgggkldgodflihgfeippi"
     ];
-    extraOpts = { "WaylandWpColorManagerV1" = false; };
-    # commandLineArgs = [
-    #   "--disable-features=WaylandWpColorManagerV1"
-    # ];
+    extraOpts = {"WaylandWpColorManagerV1" = false;};
   };
 
   programs.nix-ld.enable = true;
@@ -98,6 +111,9 @@
 
     brave
     kitty
+
+    yabridge
+    yabridgectl
 
     pkg-config
     btop
@@ -130,6 +146,20 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+      battery = {
+        governor = "powersave";
+        turbo = "auto";
+      };
+    };
+  };
+
   services.sunshine = {
     enable = true;
     autoStart = true;
@@ -139,16 +169,17 @@
 
   networking.firewall = {
     enable = false;
-    allowedTCPPorts = [ 22 47984 47989 47990 48010 ];
-    allowedUDPPortRanges = [{
-      from = 47998;
-      to = 48000;
-    }
-    # {
-    #   from = 8000;
-    #   to = 8010;
-    # }
-      ];
+    allowedTCPPorts = [22 47984 47989 47990 48010];
+    allowedUDPPortRanges = [
+      {
+        from = 47998;
+        to = 48000;
+      }
+      # {
+      #   from = 8000;
+      #   to = 8010;
+      # }
+    ];
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
@@ -174,6 +205,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
-
