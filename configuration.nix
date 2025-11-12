@@ -70,14 +70,41 @@
 
   # programs.firefox.enable = true;
 
+  programs.hyprland.enable = true;
+
+  programs.niri.enable = true;
+
+  programs.chromium = {
+      enable = true;
+      extensions = [
+        "inomeogfingihgjfjlpeplalcfajhgai"
+      ];
+      extraOpts = {
+        "WaylandWpColorManagerV1" = false;
+      };
+      # commandLineArgs = [
+      #   "--disable-features=WaylandWpColorManagerV1"
+      # ];
+  };
+
+  programs.nix-ld.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    vim
-    kitty
     git
+    vim
+    brave
+    python315
+    rustup
+    pkg-config
     wget
+    gcc
     btop
+    kitty
+    openssl
+    nodejs_24
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
