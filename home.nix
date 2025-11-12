@@ -1,6 +1,6 @@
 { config, pkgs, inputs, lib, ... }:
 
-let syncRepo = import /home/max/.nixos.config/sync-repo.nix { inherit pkgs; };
+let syncRepo = import ./sync-repo.nix { inherit pkgs; };
 in {
   home.username = "max";
   home.homeDirectory = "/home/max";
