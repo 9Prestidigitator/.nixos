@@ -109,20 +109,24 @@
         "type": "github"
       }
     },
-    "nvim-config": {
-      "flake": false,
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1762795985,
-        "narHash": "sha256-NbesEaDoL1fo/QHvrUAF4WK4cDsmSCWdPQYaP6Rm2RY=",
-        "owner": "9Prestidigitator",
-        "repo": "nvim",
-        "rev": "1a65f9040016ad48655d44956416aa42a34698f1",
-        "type": "github"
+        "lastModified": 1761897390,
+        "narHash": "sha256-er4gYrIoThYLjlsOMTysoRfn67d1Gci+ZpqDrtQxrA0=",
+        "ref": "refs/heads/master",
+        "rev": "fc704e6b5d445899a1565955268c91942a4f263f",
+        "revCount": 700,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       },
       "original": {
-        "owner": "9Prestidigitator",
-        "repo": "nvim",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       }
     },
     "root": {
@@ -130,7 +134,7 @@
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",
-        "nvim-config": "nvim-config"
+        "quickshell": "quickshell"
       }
     }
   },

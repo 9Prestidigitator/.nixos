@@ -5,10 +5,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -19,7 +18,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "US/Eastern";
@@ -39,18 +39,13 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -63,9 +58,7 @@
   users.users.max = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
+    packages = with pkgs; [ tree ];
   };
 
   # programs.firefox.enable = true;
@@ -75,16 +68,17 @@
   programs.niri.enable = true;
 
   programs.chromium = {
-      enable = true;
-      extensions = [
-        "inomeogfingihgjfjlpeplalcfajhgai"
-      ];
-      extraOpts = {
-        "WaylandWpColorManagerV1" = false;
-      };
-      # commandLineArgs = [
-      #   "--disable-features=WaylandWpColorManagerV1"
-      # ];
+    enable = true;
+    extensions = [
+      "inomeogfingihgjfjlpeplalcfajhgai"
+      "dbepggeogbaibhgnhhndojpepiihcmeb"
+      "hkgfoiooedgoejojocmhlaklaeopbecg"
+      "gebbhagfogifgggkldgodflihgfeippi"
+    ];
+    extraOpts = { "WaylandWpColorManagerV1" = false; };
+    # commandLineArgs = [
+    #   "--disable-features=WaylandWpColorManagerV1"
+    # ];
   };
 
   programs.nix-ld.enable = true;
@@ -95,6 +89,8 @@
     git
     vim
     brave
+    fastfetch
+    nixd
     python315
     rustup
     pkg-config
@@ -104,7 +100,13 @@
     kitty
     openssl
     nodejs_24
+    lazygit
     unzip
+    ripgrep
+    qjackctl
+    xwayland-satellite
+    xdg-desktop-portal-gnome
+    dotnetCorePackages.sdk_9_0-bin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -118,13 +120,21 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall = {
+    enable = false;
+    allowedTCPPorts = [ 22 47984 47989 47990 48010 ];
+    allowedUDPPortRanges = [{
+      from = 47998;
+      to = 48000;
+    }
+    # {
+    #   from = 8000;
+    #   to = 8010;
+    # }
+      ];
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
