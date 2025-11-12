@@ -89,12 +89,12 @@
     tree
     wget
     starship
-
     fastfetch
-    nixd
-    python315
-    rustup
+
     gcc
+    rustup
+    python315
+    nixd
 
     brave
     kitty
@@ -113,6 +113,8 @@
 
     usbutils
     pciutils
+
+    nerd-fonts.hack
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -127,6 +129,13 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 
   networking.firewall = {
     enable = false;

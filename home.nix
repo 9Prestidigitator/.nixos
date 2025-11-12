@@ -27,6 +27,19 @@ in {
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
+  programs.kitty = {
+    enable = true;
+    font = {
+      name = "Hack Nerd Font";
+      size = 10;
+    };
+    settings = {
+      background_opacity = "1";
+      cursor_shape = "block";
+      hide_window_decorations = "yes";
+    };
+  };
+
   home.activation.syncNvimDotfiles =
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       $DRY_RUN_CMD ${
@@ -37,9 +50,43 @@ in {
       }
     '';
 
-  home.packages = with pkgs; [ 
-      tmux 
+  home.packages = with pkgs; [ tmux ];
 
-  ];
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.adwaita-icon-theme;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+  };
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri =
+        "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+      picture-uri-dark =
+        "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+    };
+  };
+  home.sessionVariables = {
+    GTK_THEME = "Adwaita-dark";
+    QT_STYLE_OVERRIDE = "adwaita-dark";
+  };
+  systemd.user.sessionVariables = config.home.sessionVariables;
 }
 
