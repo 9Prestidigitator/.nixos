@@ -81,7 +81,7 @@
     extraGroups = ["wheel" "audio" "realtime"]; # Enable ‘sudo’ for the user.
   };
 
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 
   programs.niri.enable = true;
 
@@ -123,6 +123,7 @@
     btop
     openssl
     unzip
+    parted
     ripgrep
     lazygit
     qjackctl
