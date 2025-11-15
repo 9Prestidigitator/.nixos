@@ -12,31 +12,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
-    in {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        inherit pkgs;
-        modules = [
-          ./configuration.nix
-          { nixpkgs.overlays = overlays; }
-          {
-            environment.systemPackages =
-              [ inputs.quickshell.packages.x86_64-linux.default ];
-          }
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.max = import ./home.nix;
-          }
-        ];
-      };
+  outputs = {nixpkgs, ...} @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    overlays = [inputs.neovim-nightly-overlay.overlays.default];
+  in {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      inherit pkgs;
+      modules = [
+        ./configuration.nix
+        {nixpkgs.overlays = overlays;}
+        {
+          environment.systemPackages = [
+            inputs.quickshell.packages.x86_64-linux.default
+            pkgs.qt6.qtdeclarative
+          ];
+        }
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager.useUserPackages = true;
+          home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "backup";
+          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.users.max = import ./home.nix;
+        }
+      ];
     };
+  };
 }

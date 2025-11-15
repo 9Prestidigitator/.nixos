@@ -12,7 +12,14 @@
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      grub = {
+          enable = true;
+          device = "nodev";
+          efiSupport = true;
+          canTouchEfiVariables = true;
+          useOSProber = true;
+      };
+      systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_zen;
@@ -101,40 +108,49 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    # CLI
     git
-    vim
     tree
     wget
     starship
     fastfetch
+    ripgrep
+    unzip
+    fd
 
-    gcc
-    rustup
-    python315
-    nixd
+    # TUI
+    vim
+    btop
+    lazygit
 
+    # GUI
     brave
     kitty
+    qjackctl
 
+    # AUDIO
     yabridge
     yabridgectl
 
-    pkg-config
-    btop
-    openssl
-    unzip
-    parted
-    ripgrep
-    lazygit
-    qjackctl
+    # Development
+    gcc
+    rustup
+    python315
     nodejs_24
-    xwayland-satellite
-    xdg-desktop-portal-gnome
     dotnetCorePackages.sdk_9_0-bin
+    nixd
 
+    # Utilities
     usbutils
     pciutils
+    pkg-config
+    brotli
+    openssl
+    parted
+    xdg-desktop-portal-gnome
+    xwayland-satellite
 
+    # Fonts
     nerd-fonts.hack
   ];
 
@@ -147,6 +163,10 @@
   # };
 
   # List services that you want to enable:
+
+  services.displayManager.ly = {
+    enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -180,10 +200,10 @@
         from = 47998;
         to = 48000;
       }
-      # {
-      #   from = 8000;
-      #   to = 8010;
-      # }
+      {
+        from = 8000;
+        to = 8010;
+      }
     ];
   };
 
