@@ -135,6 +135,7 @@
     gcc
     rustup
     python315
+    uv
     nodejs_24
     dotnetCorePackages.sdk_9_0-bin
     nixd
