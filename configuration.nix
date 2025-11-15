@@ -16,7 +16,6 @@
           enable = true;
           device = "nodev";
           efiSupport = true;
-          canTouchEfiVariables = true;
           useOSProber = true;
       };
       systemd-boot.enable = false;
