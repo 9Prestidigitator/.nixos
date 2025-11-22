@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
@@ -13,10 +13,10 @@
   boot = {
     loader = {
       grub = {
-          enable = true;
-          device = "nodev";
-          efiSupport = true;
-          useOSProber = true;
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
       };
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
@@ -104,6 +104,10 @@
 
   programs.nix-ld.enable = true;
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+  ];
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -126,6 +130,8 @@
     brave
     kitty
     qjackctl
+    nautilus
+    discord
 
     # AUDIO
     yabridge
@@ -149,9 +155,8 @@
     parted
     xdg-desktop-portal-gnome
     xwayland-satellite
-
-    # Fonts
-    nerd-fonts.hack
+    libsForQt5.qt5.qtgraphicaleffects
+    libnotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

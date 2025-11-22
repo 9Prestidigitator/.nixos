@@ -16,6 +16,8 @@ in {
     createDirectories = true;
   };
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -71,7 +73,7 @@ in {
       size = 10;
     };
     settings = {
-      background_opacity = "0.5";
+      background_opacity = "0.9";
       dynamic_background_opacity = true;
       cursor_shape = "block";
       hide_window_decorations = "yes";

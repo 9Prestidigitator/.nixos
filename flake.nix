@@ -1,5 +1,6 @@
 {
-  description = "A very basic flake";
+  description = "flake";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -12,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -19,7 +21,10 @@
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-      inherit pkgs;
+      pkgs = import nixpkgs {
+        system = system;
+        config.allowUnfree = true;
+      };
       modules = [
         ./configuration.nix
         {nixpkgs.overlays = overlays;}
