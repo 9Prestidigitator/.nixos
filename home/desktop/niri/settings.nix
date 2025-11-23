@@ -5,7 +5,7 @@
 }: {
   programs.niri.settings = with config.lib.stylix.colors; {
     spawn-at-startup = [
-      {command = ["quickshell"];}
+      {command = ["noctalia-shell"];}
     ];
     input = {
       keyboard = {
