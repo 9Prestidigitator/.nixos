@@ -1,13 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
+    ../../modules
   ];
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use the systemd-boot EFI boot loader.
   boot = {
@@ -39,14 +39,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -54,97 +46,19 @@
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-
-    extraConfig.pipewire = {
-      "10-clock-rate" = {
-        "context.properties" = {
-          "default.clock.rate" = 44100;
-          "default.clock.quantum" = 128;
-          "default.clock.min-quantum" = 64;
-          "default.clock.max-quantum" = 1024;
-        };
-      };
-    };
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
   security.rtkit.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.max = {
-    isNormalUser = true;
-    extraGroups = ["wheel" "audio" "realtime"]; # Enable ‘sudo’ for the user.
-  };
-
-  # programs.hyprland.enable = true;
-
-  programs.niri.enable = true;
-
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "inomeogfingihgjfjlpeplalcfajhgai"
-      "dbepggeogbaibhgnhhndojpepiihcmeb"
-      "hkgfoiooedgoejojocmhlaklaeopbecg"
-      "gebbhagfogifgggkldgodflihgfeippi"
-    ];
-    extraOpts = {"WaylandWpColorManagerV1" = false;};
-  };
-
-  programs.nix-ld.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.hack
-  ];
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    # CLI
-    git
-    tree
-    wget
-    starship
-    fastfetch
-    ripgrep
-    unzip
-    fd
-
-    # TUI
-    vim
-    btop
-    lazygit
-
     # GUI
-    brave
     kitty
     qjackctl
     nautilus
     discord
-
-    # AUDIO
-    yabridge
-    yabridgectl
-
-    # Development
-    gcc
-    rustup
-    python315
-    uv
-    nodejs_24
-    dotnetCorePackages.sdk_9_0-bin
-    nixd
 
     # Utilities
     usbutils
@@ -172,9 +86,6 @@
   services.displayManager.ly = {
     enable = true;
   };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   services.auto-cpufreq = {
     enable = true;
