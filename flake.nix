@@ -31,8 +31,8 @@
           inherit specialArgs;
 
           modules = [
-            /home/max/.nixos/hosts/vm
-            /home/max/.nixos/users/${username}/nixos.nix
+            ./hosts/vm
+            ./users/${username}/nixos.nix
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useUserPackages = true;
@@ -42,7 +42,7 @@
                 inherit inputs;
                 inherit username;
               };
-              home-manager.users.${username} = import /home/max/.nixos/users/${username}/home.nix;
+              home-manager.users.${username} = import ./users/${username}/home.nix;
             }
           ];
         };
