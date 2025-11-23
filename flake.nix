@@ -21,7 +21,10 @@
       nixos = let
         username = "max";
         overlays = [inputs.neovim-nightly-overlay.overlays.default];
-        specialArgs = {inherit username;};
+        specialArgs = {
+          inherit inputs;
+          inherit username;
+        };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
