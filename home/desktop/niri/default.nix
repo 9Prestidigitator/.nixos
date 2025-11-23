@@ -9,6 +9,7 @@
 in {
   home.packages = with pkgs; [
     xwayland-satellite
+    xdg-desktop-portal-gnome
   ];
 
   imports = [

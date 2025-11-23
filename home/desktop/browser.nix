@@ -1,24 +1,13 @@
 {pkgs, ...}: {
   programs.chromium = {
     enable = true;
+    package = pkgs.brave;
     extensions = [
-      {
-        id = "inomeogfingihgjfjlpeplalcfajhgai";
-      }
-      {
-        id = "dbepggeogbaibhgnhhndojpepiihcmeb";
-      }
-      {
-        id = "hkgfoiooedgoejojocmhlaklaeopbecg";
-      }
-      {
-        id = "gebbhagfogifgggkldgodflihgfeippi";
-      }
+      {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # Vimium
+      {id = "hkgfoiooedgoejojocmhlaklaeopbecg";} # Picture in picture
+      {id = "inomeogfingihgjfjlpeplalcfajhgai";} # Chrome Remote Desktop
+      {id = "gebbhagfogifgggkldgodflihgfeippi";} # Youtube Dislike
     ];
-    commandLineArgs = ["WaylandWpColorManagerV1=false"];
+    commandLineArgs = ["--disable-features=WaylandWpColorManagerV1"];
   };
-
-  home.packages = with pkgs; [
-    brave
-  ];
 }

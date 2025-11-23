@@ -16,7 +16,7 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell";
   };
 
-  outputs = {nixpkgs, niri, ...} @ inputs: {
+  outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations = {
       nixos = let
         system = "x86_64-linux";
