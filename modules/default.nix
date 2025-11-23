@@ -3,9 +3,12 @@
   lib,
   config,
   username,
-  overlays,
   ...
 }: {
+  imports = [
+    ./desktop.nix
+  ];
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
@@ -30,8 +33,6 @@
   };
 
   programs.nix-ld.enable = true;
-
-  programs.niri.enable = true;
 
   # Set your time zone.
   time.timeZone = "US/Eastern";

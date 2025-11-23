@@ -41,7 +41,7 @@
               colorizeIcons = false;
               hideUnoccupied = true;
               id = "TaskbarGrouped";
-              labelMode = "index";
+              labelMode = "none";
               showNumbersOnlyWhenOccupied = true;
               showWorkspaceNumbers = false;
             }

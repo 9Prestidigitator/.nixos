@@ -19,7 +19,6 @@
   outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations = {
       nixos = let
-        system = "x86_64-linux";
         username = "max";
         overlays = [inputs.neovim-nightly-overlay.overlays.default];
         specialArgs = {inherit username;};
@@ -34,7 +33,7 @@
             {
               environment.systemPackages = [
                 inputs.quickshell.packages.x86_64-linux.default
-                nixpkgs.legacyPackages.${system}.qt6.qtdeclarative
+                nixpkgs.legacyPackages.x86_64-linux.qt6.qtdeclarative
               ];
             }
             inputs.home-manager.nixosModules.home-manager

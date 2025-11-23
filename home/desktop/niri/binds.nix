@@ -31,22 +31,27 @@
 
     "Mod+Escape" = {
       hotkey-overlay.title = "Lock";
-      action = spawn "quickshell" "ipc" "call" "lockScreen" "lock";
+      action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
     };
 
     "Mod+Shift+I" = {
       hotkey-overlay.title = "Toggle idle inhibitor";
-      action = spawn "quickshell" "ipc" "call" "idleInhibitor" "toggle";
+      action = spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle";
     };
 
     "Mod+Space" = {
       hotkey-overlay.title = "Toggle launcher";
-      action = spawn "quickshell" "ipc" "call" "launcher" "toggle";
+      action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
+    };
+
+    "Mod+N" = {
+      hotkey-overlay.title = "Show notifications";
+      action = spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
     };
 
     "Mod+Shift+B" = {
       hotkey-overlay.title = "Toggle Noctalia bar";
-      action = spawn "quickshell" "ipc" "call" "bar" "toggle";
+      action = spawn "noctalia-shell" "ipc" "call" "bar" "toggle";
     };
 
     "XF86AudioRaiseVolume" = {
@@ -286,21 +291,21 @@
   #
   #     (plain "Mod+Escape" [
   #       # (leaf "hotkey-overlay-title" "Lockscreen")
-  #       (leaf "spawn" ["quickshell" "ipc" "call" "lockScreen" "lock"])
+  #       (leaf "spawn" ["noctalia-shell" "ipc" "call" "lockScreen" "lock"])
   #     ])
   #
   #     (plain "Mod+Shift+I" [
-  #       (leaf "spawn" ["quickshell" "ipc" "call" "idleInhibitor" "toggle"])
+  #       (leaf "spawn" ["noctalia-shell" "ipc" "call" "idleInhibitor" "toggle"])
   #     ])
   #
   #     (plain "Mod+Space" [
   #       # (leaf "hotkey-overlay-title" "Launcher")
-  #       (leaf "spawn" ["quickshell" "ipc" "call" "launcher" "toggle"])
+  #       (leaf "spawn" ["noctalia-shell" "ipc" "call" "launcher" "toggle"])
   #     ])
   #
   #     (plain "Mod+Shift+B" [
   #       # (leaf "hotkey-overlay-title" "Toggle noctalia bar")
-  #       (leaf "spawn" ["quickshell" "ipc" "call" "bar" "toggle"])
+  #       (leaf "spawn" ["noctalia-shell" "ipc" "call" "bar" "toggle"])
   #     ])
   #
   #     # You can also use a shell:
