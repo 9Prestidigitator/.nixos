@@ -1,8 +1,5 @@
-{username, ...}: let
-  username = "max";
-in {
+{username, ...}: {
   home = {
-    inherit username;
     homeDirectory = "/home/${username}";
     stateVersion = "25.05";
   };

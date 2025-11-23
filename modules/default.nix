@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  overlays,
   inputs,
   config,
   username,
@@ -30,7 +31,7 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    # overlays = overlays;
+    overlays = overlays;
   };
 
   programs.nix-ld.enable = true;

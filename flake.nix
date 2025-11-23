@@ -1,5 +1,5 @@
 {
-  description = "flake";
+  description = "Max's nix config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -24,6 +24,7 @@
         specialArgs = {
           inherit inputs;
           inherit username;
+          inherit overlays;
         };
       in
         nixpkgs.lib.nixosSystem {
@@ -32,19 +33,15 @@
           modules = [
             /home/max/.nixos/hosts/vm
             /home/max/.nixos/users/${username}/nixos.nix
-            {nixpkgs.overlays = overlays;}
-            {
-              environment.systemPackages = [
-                inputs.quickshell.packages.x86_64-linux.default
-                nixpkgs.legacyPackages.x86_64-linux.qt6.qtdeclarative
-              ];
-            }
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useUserPackages = true;
               home-manager.useGlobalPkgs = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = {inherit inputs;};
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit username;
+              };
               home-manager.users.${username} = import /home/max/.nixos/users/${username}/home.nix;
             }
           ];
