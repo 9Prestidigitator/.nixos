@@ -65,34 +65,36 @@
 
   services.keyd = {
     enable = true;
-    settings = {
-      ids = [
-        "046d:c069"
-        "*"
-        "-cb10:8256"
-        "-3434:0430"
-      ];
-      main = {
-        mouse2 = "leftmeta";
-        mouse1 = "esc";
-        capslock = "overload(mod5, esc)";
-      };
-      mod5 = {
-        h = "left";
-        j = "down";
-        k = "up";
-        l = "right";
-        u = "pageup";
-        d = "pagedown";
-        backspace = "delete";
-      };
-      extraConfig = ''
-        [shift:S]
-        capslock = capslock
+    default = {
+      settings = {
+        ids = [
+          "046d:c069"
+          "*"
+          "-cb10:8256"
+          "-3434:0430"
+        ];
+        main = {
+          mouse2 = "leftmeta";
+          mouse1 = "esc";
+          capslock = "overload(mod5, esc)";
+        };
+        mod5 = {
+          h = "left";
+          j = "down";
+          k = "up";
+          l = "right";
+          u = "pageup";
+          d = "pagedown";
+          backspace = "delete";
+        };
+        extraConfig = ''
+          [shift:S]
+          capslock = capslock
 
-        [mod5+shift]
-        g = end
-      '';
+          [mod5+shift]
+          g = end
+        '';
+      };
     };
   };
 
