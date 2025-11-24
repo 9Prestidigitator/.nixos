@@ -4,7 +4,6 @@
   overlays,
   inputs,
   config,
-  username,
   ...
 }: {
   imports = [
@@ -65,14 +64,14 @@
 
   services.keyd = {
     enable = true;
-    default = {
+    keyboards.default = {
+      ids = [
+        "046d:c069"
+        "*"
+        "-cb10:8256"
+        "-3434:0430"
+      ];
       settings = {
-        ids = [
-          "046d:c069"
-          "*"
-          "-cb10:8256"
-          "-3434:0430"
-        ];
         main = {
           mouse2 = "leftmeta";
           mouse1 = "esc";
@@ -87,13 +86,12 @@
           d = "pagedown";
           backspace = "delete";
         };
-        extraConfig = ''
-          [shift:S]
-          capslock = capslock
-
-          [mod5+shift]
-          g = end
-        '';
+        "shift:S" = {
+          capslock = "capslock";
+        };
+        "mod5+shift" = {
+          g = "end";
+        };
       };
     };
   };
