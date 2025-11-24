@@ -7,7 +7,6 @@
   imports = [
     ./niri
     ./noctalia.nix
-    # ./browser.nix
     ./darkmode.nix
   ];
 
