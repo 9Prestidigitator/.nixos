@@ -1,14 +1,16 @@
 {
   pkgs,
   lib,
-  overlays,
   inputs,
+  overlays,
   config,
   ...
 }: {
   imports = [
     ./desktop.nix
   ];
+
+  desktop.enable = lib.mkDefault true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -39,7 +41,16 @@
   time.timeZone = "US/Eastern";
 
   fonts.packages = with pkgs; [
+    material-design-icons
+
+    noto-fonts
+    noto-fonts-color-emoji
+
+    nerd-fonts.symbols-only
     nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.iosevka
   ];
 
   # List services that you want to enable:
