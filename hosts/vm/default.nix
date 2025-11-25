@@ -58,9 +58,10 @@
     kitty
     qjackctl
     nautilus
-    discord
+    # discord
 
     # Utilities
+    calc
     usbutils
     pciutils
     pkg-config

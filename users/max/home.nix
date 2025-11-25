@@ -7,7 +7,6 @@
   imports = [
     ../../home/core.nix
     ../../home/development
-    ../../home/music_production
     ../../home/desktop
   ];
 

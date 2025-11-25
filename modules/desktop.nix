@@ -5,11 +5,18 @@
   config,
   ...
 }: {
+  imports = [
+    /home/max/.nixos/modules/music_production.nix
+  ];
+
+
   options = {
     desktop.enable = lib.mkEnableOption "Enables standard desktop configration (niri + noctalia).";
   };
 
   config = lib.mkIf config.desktop.enable {
+    musicprod.enable = lib.mkDefault true;
+
     programs.niri.enable = true;
 
     programs.chromium = {
