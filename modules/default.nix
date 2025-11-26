@@ -22,12 +22,13 @@
     # useXkbConfig = true; # use xkb.options in tty.
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  nix.gc = {
-    automatic = lib.mkDefault true;
-    dates = lib.mkDefault "weekly";
-    options = lib.mkDefault "--delete-older-than 7d";
+  nix = {
+    gc = {
+      automatic = lib.mkDefault true;
+      dates = lib.mkDefault "weekly";
+      options = lib.mkDefault "--delete-older-than 7d";
+    };
+    settings.experimental-features = ["nix-command" "flakes"];
   };
 
   nixpkgs = {
@@ -40,126 +41,108 @@
   # Set your time zone.
   time.timeZone = "US/Eastern";
 
-  fonts.packages = with pkgs; [
-    material-design-icons
-
-    noto-fonts
-    noto-fonts-color-emoji
-
-    nerd-fonts.symbols-only
-    nerd-fonts.hack
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-    nerd-fonts.iosevka
-  ];
-
   # List services that you want to enable:
 
-  services.displayManager.ly = {
-    enable = true;
-  };
-
-  services.auto-cpufreq = {
-    enable = true;
-    settings = {
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
-      battery = {
-        governor = "powersave";
-        turbo = "auto";
-      };
+  services = {
+    displayManager.ly = {
+      enable = true;
     };
-  };
 
-  services.keyd = {
-    enable = true;
-    keyboards.default = {
-      ids = [
-        "046d:c069"
-        "*"
-        "-cb10:8256"
-        "-3434:0430"
-      ];
+    auto-cpufreq = {
+      enable = true;
       settings = {
-        main = {
-          mouse2 = "leftmeta";
-          mouse1 = "esc";
-          capslock = "overload(mod5, esc)";
+        charger = {
+          governor = "performance";
+          turbo = "auto";
         };
-        mod5 = {
-          h = "left";
-          j = "down";
-          k = "up";
-          l = "right";
-          u = "pageup";
-          d = "pagedown";
-          backspace = "delete";
-        };
-        "shift:S" = {
-          capslock = "capslock";
-        };
-        "mod5+shift" = {
-          g = "end";
+        battery = {
+          governor = "powersave";
+          turbo = "auto";
         };
       };
     };
-  };
 
-  # Configure network proxy if necessary
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-
-    extraConfig.pipewire = {
-      "10-clock-rate" = {
-        "context.properties" = {
-          "default.clock.rate" = 44100;
-          "default.clock.quantum" = 128;
-          "default.clock.min-quantum" = 64;
-          "default.clock.max-quantum" = 1024;
+    keyd = {
+      enable = true;
+      keyboards.default = {
+        ids = [
+          "046d:c069"
+          "*"
+          "-cb10:8256"
+          "-3434:0430"
+        ];
+        settings = {
+          main = {
+            mouse2 = "leftmeta";
+            mouse1 = "esc";
+            capslock = "overload(mod5, esc)";
+          };
+          mod5 = {
+            h = "left";
+            j = "down";
+            k = "up";
+            l = "right";
+            u = "pageup";
+            d = "pagedown";
+            backspace = "delete";
+          };
+          "shift:S" = {
+            capslock = "capslock";
+          };
+          "mod5+shift" = {
+            g = "end";
+          };
         };
       };
     };
-  };
 
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      X11Forwarding = true;
-      PermitRootLogin = "no";
-      # PasswordAuthentication = false;
+    # Configure network proxy if necessary
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
+
+      extraConfig.pipewire = {
+        "10-clock-rate" = {
+          "context.properties" = {
+            "default.clock.rate" = 44100;
+            "default.clock.quantum" = 128;
+            "default.clock.min-quantum" = 64;
+            "default.clock.max-quantum" = 1024;
+          };
+        };
+      };
     };
-    openFirewall = true;
-  };
 
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
+    # Enable the OpenSSH daemon.
+    openssh = {
+      enable = true;
+      settings = {
+        X11Forwarding = true;
+        PermitRootLogin = "no";
+        # PasswordAuthentication = false;
+      };
+      openFirewall = true;
+    };
   };
 
   networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [22 47984 47989 47990 48010];
-    allowedUDPPortRanges = [
-      {
-        from = 47998;
-        to = 48000;
-      }
-      {
-        from = 8000;
-        to = 8010;
-      }
-    ];
+    enable = true;
+    # allowedTCPPorts = [22 47984 47989 47990 48010];
+    # allowedUDPPortRanges = [
+    #   {
+    #     from = 47998;
+    #     to = 48000;
+    #   }
+    #   {
+    #     from = 8000;
+    #     to = 8010;
+    #   }
+    # ];
   };
 }

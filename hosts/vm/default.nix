@@ -4,10 +4,13 @@
   ...
 }: {
   imports = [
+    ../../modules
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules
   ];
+
+  gaming.enable = lib.mkForce false;
+  musicprod.enable = lib.mkForce false;
 
   # Use the systemd-boot EFI boot loader.
   boot = {
@@ -54,12 +57,6 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    # GUI
-    kitty
-    qjackctl
-    nautilus
-    # discord
-
     # Utilities
     calc
     usbutils
@@ -68,10 +65,7 @@
     brotli
     openssl
     parted
-    xdg-desktop-portal-gnome
-    xwayland-satellite
     libsForQt5.qt5.qtgraphicaleffects
-    libnotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
