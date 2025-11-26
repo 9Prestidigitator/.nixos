@@ -35,16 +35,6 @@
     networkmanager.enable = true;
   };
 
-  # Set your time zone.
-  time.timeZone = "US/Eastern";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -54,20 +44,6 @@
 
   security.rtkit.enable = true;
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    # Utilities
-    calc
-    usbutils
-    pciutils
-    pkg-config
-    brotli
-    openssl
-    parted
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -75,48 +51,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-
-  services.displayManager.ly = {
-    enable = true;
-  };
-
-  services.auto-cpufreq = {
-    enable = true;
-    settings = {
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
-      battery = {
-        governor = "powersave";
-        turbo = "auto";
-      };
-    };
-  };
-
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
-
-  networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [22 47984 47989 47990 48010];
-    allowedUDPPortRanges = [
-      {
-        from = 47998;
-        to = 48000;
-      }
-      {
-        from = 8000;
-        to = 8010;
-      }
-    ];
-  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

@@ -42,7 +42,6 @@
   time.timeZone = "US/Eastern";
 
   # List services that you want to enable:
-
   services = {
     displayManager.ly = {
       enable = true;
@@ -61,6 +60,9 @@
         };
       };
     };
+
+    # Enable the X11 windowing system.
+    xserver.enable = true;
 
     keyd = {
       enable = true;
@@ -131,6 +133,23 @@
     };
   };
 
+  # List packages installed in system profile.
+  # You can use https://search.nixos.org/ to find more packages (and options).
+  environment.systemPackages = with pkgs; [
+    # Utilities
+    calc
+    usbutils
+    pciutils
+    pkg-config
+    brotli
+    openssl
+    parted
+    libsForQt5.qt5.qtgraphicaleffects
+  ];
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.firewall = {
     enable = true;
     # allowedTCPPorts = [22 47984 47989 47990 48010];
