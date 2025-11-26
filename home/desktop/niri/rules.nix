@@ -4,6 +4,7 @@
   ...
 }: {
   programs.niri.settings = {
+    prefer-no-csd = true;
     window-rules = [
       {
         geometry-corner-radius = let
@@ -36,7 +37,7 @@
         open-floating = true;
       }
       {
-        matches = [{app-id = "^Picture in picture$";}];
+        matches = [{app-id = "Picture in picture";}];
         open-floating = true;
         default-floating-position = {
           x = 32;

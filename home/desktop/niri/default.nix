@@ -7,11 +7,6 @@
 }: let
   niri = inputs.niri;
 in {
-  home.packages = with pkgs; [
-    xwayland-satellite
-    xdg-desktop-portal-gnome
-  ];
-
   imports = [
     niri.homeModules.config
     ./binds.nix

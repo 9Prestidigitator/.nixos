@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    inputs.noctalia.nixosModules.default
     /home/max/.nixos/modules/music_production.nix
     /home/max/.nixos/modules/gaming.nix
   ];
@@ -19,6 +20,8 @@
     gaming.enable = lib.mkDefault true;
 
     programs.niri.enable = true;
+
+    services.noctalia-shell.enable = true;
 
     programs.chromium = {
       enable = true;
@@ -44,16 +47,17 @@
       nerd-fonts.iosevka
     ];
 
+    hardware.uinput.enable = true;
+
     services.sunshine = {
       enable = true;
-      autoStart = true;
+      autoStart = false;
       capSysAdmin = true;
       openFirewall = true;
     };
 
-    # List packages installed in system profile.
-    # You can use https://search.nixos.org/ to find more packages (and options).
     environment.systemPackages = with pkgs; [
+      moonlight-qt
       brave
       kitty
       qjackctl
