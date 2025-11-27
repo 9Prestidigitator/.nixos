@@ -31,7 +31,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "KingSpec";
     networkmanager.enable = true;
   };
 
