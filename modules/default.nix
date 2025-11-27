@@ -152,16 +152,5 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.firewall = {
     enable = true;
-    # allowedTCPPorts = [22 47984 47989 47990 48010];
-    # allowedUDPPortRanges = [
-    #   {
-    #     from = 47998;
-    #     to = 48000;
-    #   }
-    #   {
-    #     from = 8000;
-    #     to = 8010;
-    #   }
-    # ];
   };
 }

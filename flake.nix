@@ -15,10 +15,6 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
-    # wine-tkg-custom = {
-    #   url = "path:/home/max/flakes/wine-tkg-custom";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     flake-utils.url = "github:numtide/flake-utils";
   };
 
