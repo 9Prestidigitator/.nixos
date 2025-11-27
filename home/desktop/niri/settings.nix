@@ -31,10 +31,11 @@
       # Uncomment this to make the mouse warp to the center of newly focused windows.
       warp-mouse-to-focus.enable = true;
     };
-    environment = {
-      QT_QPA_PLATFORM = "wayland";
-      QT_QPA_PLATFORMTHEME = "qt6ct";
-    };
+    # environment = {
+    #   QT_QPA_PLATFORM = "wayland";
+    #   QT_QPA_PLATFORMTHEME = "qt6ct";
+    #   GTK_THEME = "Adwaita-dark";
+    # };
     # You can configure outputs by their name, which you can find
     # by running `niri msg outputs` while inside a niri instance.
     # The built-in laptop monitor is usually called "eDP-1".

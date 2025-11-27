@@ -20,7 +20,7 @@
       nixup = "sudo nixos-rebuild switch --impure --flake .";
     };
     initExtra = ''
-      [ $(tput cols) -ge 93 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 93) / 2))
+      [ $(tput cols) -ge 102 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
       eval "$(starship init bash)"
       export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
     '';
@@ -34,9 +34,10 @@
       };
       display = {
         separator = "";
-        color = "blue";
       };
       modules = [
+        "break"
+        "break"
         {
           type = "custom";
           format = "┌─────────────────────────────────────────────────────┐";
@@ -44,7 +45,7 @@
         }
         {
           type = "title";
-          key = "                        ";
+          key = "                      ";
         }
         "break"
         {

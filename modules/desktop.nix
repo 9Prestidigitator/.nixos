@@ -19,11 +19,6 @@
     musicprod.enable = lib.mkDefault true;
     gaming.enable = lib.mkDefault true;
 
-    environment.variables = {
-      QT_QPA_PLATFORMTHEME = "qt6ct";
-      QT_QPA_PLATFORM = "wayland";
-    };
-
     programs.niri.enable = true;
 
     services.noctalia-shell.enable = true;
@@ -71,6 +66,7 @@
       xdg-desktop-portal-gnome
       libnotify
       cliphist
+      kdePackages.qt6ct
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       wlsunset
       hypridle

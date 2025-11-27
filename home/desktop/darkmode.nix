@@ -20,27 +20,23 @@
         package = pkgs.adwaita-icon-theme;
       };
     };
-    qt = {
-      enable = true;
-      platformTheme.name = "adwaita";
-      style = {
-        name = "adwaita-dark";
-        package = pkgs.adwaita-qt;
-      };
-    };
+    # qt = {
+    #   enable = true;
+    #   style = {
+    #     name = "adwaita-dark";
+    #     package = pkgs.adwaita-qt;
+    #   };
+    # };
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         gtk-theme = "Adwaita-dark";
       };
-      "org/gnome/desktop/background" = {
-        picture-uri = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-        picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-      };
     };
     home.sessionVariables = {
       GTK_THEME = "Adwaita-dark";
-      QT_STYLE_OVERRIDE = "adwaita-dark";
+      QT_QPA_PLATFORM = "wayland";
+      QT_QPA_PLATFORMTHEME = "qt6ct";
     };
     systemd.user.sessionVariables = config.home.sessionVariables;
   };
