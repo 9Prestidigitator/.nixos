@@ -19,6 +19,10 @@
     musicprod.enable = lib.mkDefault true;
     gaming.enable = lib.mkDefault true;
 
+    environment.variables = {
+      QT_QPA_PLATFORMTHEME = "qt6ct";
+    };
+
     programs.niri.enable = true;
 
     services.noctalia-shell.enable = true;
