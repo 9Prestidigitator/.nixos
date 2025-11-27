@@ -83,7 +83,7 @@
     "XF86MonBrightnessDown" = {
       hotkey-overlay.hidden = true;
       allow-when-locked = true;
-      action = spawn "brightnessctl" "--class=backlight" "set" "-5%";
+      action = spawn "brightnessctl" "--class=backlight" "set" "5%-";
     };
 
     "Mod+Left".action = focus-column-left;
