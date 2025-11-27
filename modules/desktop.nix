@@ -66,7 +66,9 @@
       xdg-desktop-portal-gnome
       libnotify
       cliphist
-      kdePackages.qt6ct
+      qt6Packages.qt6ct
+      libsForQt5.qt5ct
+      kora-icon-theme
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       wlsunset
       hypridle
