@@ -30,20 +30,21 @@
     enable = true;
     settings = {
       logo = {
-        source = "nixos_small";
+        source = "nixos";
       };
       display = {
         separator = "";
+        color = "blue";
       };
       modules = [
         {
           type = "custom";
-          format = "\u001b[90m┌─────────────────────────────────────────────────────┐";
+          format = "┌─────────────────────────────────────────────────────┐";
           color = "white";
         }
         {
           type = "title";
-          format = "                        ";
+          key = "                        ";
         }
         "break"
         {
@@ -82,7 +83,7 @@
         }
         {
           type = "custom";
-          format = "\u001b[90m└─────────────────────────────────────────────────────┘";
+          format = "└─────────────────────────────────────────────────────┘";
           color = "white";
         }
       ];
