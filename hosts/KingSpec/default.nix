@@ -6,7 +6,7 @@
   imports = [
     ../../modules
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    /home/max/.nixos/hosts/KingSpec/hardware-configuration.nix
   ];
 
   gaming.enable = lib.mkForce false;
@@ -22,7 +22,7 @@
         useOSProber = true;
       };
       systemd-boot.enable = false;
-      efi.canTouchEfiVariables = false;
+      efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [

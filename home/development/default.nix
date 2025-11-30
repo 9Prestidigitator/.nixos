@@ -104,7 +104,7 @@
     # Development
     gcc
     rustup
-    python315
+    python3
     uv
     nodejs_24
     dotnetCorePackages.sdk_9_0-bin

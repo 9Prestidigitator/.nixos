@@ -2,11 +2,11 @@
   description = "Max's nix config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {
@@ -19,21 +19,39 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
-    nixosConfigurations = {
-      nixos = let
-        username = "max";
-        overlays = [inputs.neovim-nightly-overlay.overlays.default];
-        specialArgs = {
-          inherit inputs;
-          inherit username;
-          inherit overlays;
-        };
-      in
-        nixpkgs.lib.nixosSystem {
+    nixosConfigurations = let
+      username = "max";
+      overlays = [inputs.neovim-nightly-overlay.overlays.default];
+      specialArgs = {
+        inherit inputs;
+        inherit username;
+        inherit overlays;
+      };
+    in {
+      vm = nixpkgs.lib.nixosSystem {
           inherit specialArgs;
 
           modules = [
             ./hosts/vm
+            ./users/${username}/nixos.nix
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useUserPackages = true;
+              home-manager.useGlobalPkgs = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit username;
+              };
+              home-manager.users.${username} = import ./users/${username}/home.nix;
+            }
+          ];
+        };
+       KingSpec = nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+
+          modules = [
+            ./hosts/KingSpec
             ./users/${username}/nixos.nix
             inputs.home-manager.nixosModules.home-manager
             {

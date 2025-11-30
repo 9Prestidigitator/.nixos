@@ -17,10 +17,13 @@
   };
 
   programs.git = {
-    settings.user = {
-      name = "9Prestidigitator";
-      email = "9Prestidigitator@gmail.com";
-    };
+    # settings.user = {
+    #   name = "9Prestidigitator";
+    #   email = "9Prestidigitator@gmail.com";
+    # };
+    enable = true;
+    userName = "9Prestidigitator";
+    userEmail = "9Prestidigitator@gmail.com";
   };
 
   programs.kitty = {
