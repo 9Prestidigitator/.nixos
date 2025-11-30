@@ -30,7 +30,7 @@
   };
   home.sessionVariables = {
     GTK_THEME = "Adwaita-dark";
-    QS_ICON_THEME = "kora";
+    QS_ICON_THEME = "breeze-dark";
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_QPA_PLATFORMTHEME_QT5 = "qt5ct";

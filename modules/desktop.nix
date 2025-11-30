@@ -62,6 +62,7 @@
       kitty
       qjackctl
       kdePackages.dolphin
+      kdePackages.breeze-icons
       xwayland-satellite
       xdg-desktop-portal-gnome
       libnotify
