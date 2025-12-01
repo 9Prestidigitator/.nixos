@@ -102,6 +102,9 @@
     # Enable CUPS to print documents.
     printing.enable = true;
 
+    upower.enable = true;
+    udisks2.enable = true;
+
     pipewire = {
       enable = true;
       pulse.enable = true;
