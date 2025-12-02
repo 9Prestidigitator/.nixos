@@ -66,6 +66,7 @@
       kdePackages.breeze
       xwayland-satellite
       xdg-desktop-portal-gnome
+      xsettingsd
       libnotify
       cliphist
       qt6Packages.qt6ct
