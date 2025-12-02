@@ -185,9 +185,9 @@
         displayMode = "auto_hide";
         enabled = true;
         floatingRatio = 0.58;
-        monitors = ["Dolphin" "kitty"];
+        monitors = [];
         onlySameOutput = true;
-        pinnedApps = [];
+        pinnedApps = ["Dolphin" "kitty"];
         size = 1;
       };
       general = {
