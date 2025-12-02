@@ -70,10 +70,9 @@
       cliphist
       qt6Packages.qt6ct
       libsForQt5.qt5ct
-      kora-icon-theme
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       wlsunset
       hypridle
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.qt6.qtdeclarative
     ];

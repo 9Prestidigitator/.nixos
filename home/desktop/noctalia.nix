@@ -187,7 +187,7 @@
         floatingRatio = 0.58;
         monitors = [];
         onlySameOutput = true;
-        pinnedApps = ["Dolphin" "kitty"];
+        # pinnedApps = [];
         size = 1;
       };
       general = {
