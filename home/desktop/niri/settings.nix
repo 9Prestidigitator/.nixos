@@ -86,8 +86,8 @@
       backdrop-color = "transparent";
     };
     cursor = {
-      size = 16;
-      theme = "breeze";
+      size = 24;
+      theme = "Breeze";
     };
     layout = {
       focus-ring = {
