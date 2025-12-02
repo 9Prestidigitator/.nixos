@@ -6,12 +6,16 @@
 }: {
   gtk = {
     enable = true;
+    colorScheme = "dark";
     theme = {
       name = "Adwaita-dark";
       package = pkgs.adwaita-icon-theme;
     };
     iconTheme = {
       name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+    cursorTheme = {
       package = pkgs.adwaita-icon-theme;
     };
   };
