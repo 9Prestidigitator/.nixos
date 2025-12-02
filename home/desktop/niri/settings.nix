@@ -85,6 +85,9 @@
       workspace-shadow.enable = false;
       backdrop-color = "transparent";
     };
+    cursor = {
+      xcursor-size = 32;
+    };
     layout = {
       focus-ring = {
         enable = false;
