@@ -15,7 +15,7 @@
     settings = {
       bar = {
         backgroundOpacity = 1;
-        density = "default";
+        density = "comfortable";
         floating = true;
         marginHorizontal = 0.35;
         marginVertical = 0.52;
@@ -186,13 +186,13 @@
         enabled = true;
         floatingRatio = 0.58;
         monitors = [];
-        onlySameOutput = true;
+        onlySameOutput = false;
         # pinnedApps = [];
         size = 1;
       };
       general = {
         animationDisabled = false;
-        animationSpeed = 1;
+        animationSpeed = 1.50;
         avatarImage = "/home/max/.face";
         compactLockScreen = false;
         dimmerOpacity = 0.8;
