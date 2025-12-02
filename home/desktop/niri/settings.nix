@@ -87,7 +87,7 @@
     };
     cursor = {
       size = 24;
-      theme = "breeze_hacked";
+      theme = "breeze";
     };
     layout = {
       focus-ring = {
