@@ -9,6 +9,10 @@
     inputs.noctalia.nixosModules.default
     ./music_production.nix
     ./gaming.nix
+    /home/max/.nixos/modules/design.nix
+    /home/max/.nixos/modules/comms.nix
+    /home/max/.nixos/modules/media.nix
+    /home/max/.nixos/modules/vm.nix
   ];
 
   options = {
@@ -18,6 +22,10 @@
   config = lib.mkIf config.desktop.enable {
     musicprod.enable = lib.mkDefault true;
     gaming.enable = lib.mkDefault true;
+    comms.enable = lib.mkDefault true;
+    design.enable = lib.mkDefault true;
+    media.enable = lib.mkDefault true;
+    vm.enable = lib.mkDefault true;
 
     programs.niri.enable = true;
 
