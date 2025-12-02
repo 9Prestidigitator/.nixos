@@ -83,11 +83,11 @@
     };
     overview = {
       workspace-shadow.enable = false;
-      backdrop-color = "transparent";
+      # backdrop-color = "transparent";
     };
     cursor = {
       size = 24;
-      theme = "BreezeX-Hacked";
+      theme = "breeze_cursors";
     };
     layout = {
       focus-ring = {

@@ -16,8 +16,8 @@
       package = pkgs.adwaita-icon-theme;
     };
     cursorTheme = {
-      name = "BreezeX-Hacked";
-      package = pkgs.breeze-hacked-cursor-theme;
+      name = "breeze_cursors";
+      package = pkgs.kdePackages.breeze;
     };
   };
   qt = {
