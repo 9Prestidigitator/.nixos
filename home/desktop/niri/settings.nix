@@ -1,9 +1,12 @@
 {
+  pkgs,
   inputs,
   config,
   ...
 }: {
-  programs.niri.settings = with config.lib.stylix.colors; {
+  programs.niri = { 
+  package = pkgs.niri;
+  settings = with config.lib.stylix.colors; {
     spawn-at-startup = [];
     input = {
       keyboard = {
@@ -82,4 +85,5 @@
     hotkey-overlay.skip-at-startup = false;
     screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
   };
+};
 }

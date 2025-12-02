@@ -7,8 +7,8 @@
 }: {
   imports = [
     inputs.noctalia.nixosModules.default
-    /home/max/.nixos/modules/music_production.nix
-    /home/max/.nixos/modules/gaming.nix
+    ./music_production.nix
+    ./gaming.nix
   ];
 
   options = {
