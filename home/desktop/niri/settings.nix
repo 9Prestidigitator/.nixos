@@ -57,13 +57,13 @@
       "Microstep MSI G27C4 0x30333758" = {
         scale = 1;
         position = {
-          x = 1920;
+          x = 0;
           y = 0;
         };
         mode = {
           width = 1920;
           height = 1080;
-          refresh = 120.00;
+          refresh = 119.982;
         };
       };
     };
@@ -77,7 +77,7 @@
         mode = {
           width = 1920;
           height = 1080;
-          refresh = 60.00;
+          refresh = 60.000;
         };
       };
     };
