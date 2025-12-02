@@ -47,7 +47,7 @@
       enable = true;
       settings = {
         allow_empty_password = false;
-        animation = "doom";
+        animation = "colormix";
         bigclock = "en";
         clock = "%c";
         lang = "en";

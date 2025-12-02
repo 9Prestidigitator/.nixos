@@ -120,7 +120,7 @@
         manualSunrise = "06:30";
         manualSunset = "18:30";
         matugenSchemeType = "scheme-fruit-salad";
-        predefinedScheme = "Nord";
+        predefinedScheme = "Monochrome";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
@@ -230,7 +230,7 @@
       nightLight = {
         autoSchedule = true;
         dayTemp = "6500";
-        enabled = false;
+        enabled = true;
         forced = false;
         manualSunrise = "06:30";
         manualSunset = "18:30";
