@@ -29,43 +29,43 @@
       };
     in {
       vm = nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
+        inherit specialArgs;
 
-          modules = [
-            ./hosts/vm
-            ./users/${username}/nixos.nix
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useUserPackages = true;
-              home-manager.useGlobalPkgs = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit username;
-              };
-              home-manager.users.${username} = import ./users/${username}/home.nix;
-            }
-          ];
-        };
-       KingSpec = nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
+        modules = [
+          ./hosts/vm
+          ./users/${username}/nixos.nix
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              inherit username;
+            };
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+          }
+        ];
+      };
+      KingSpec = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
 
-          modules = [
-            ./hosts/KingSpec
-            ./users/${username}/nixos.nix
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useUserPackages = true;
-              home-manager.useGlobalPkgs = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit username;
-              };
-              home-manager.users.${username} = import ./users/${username}/home.nix;
-            }
-          ];
-        };
+        modules = [
+          ./hosts/KingSpec
+          ./users/${username}/nixos.nix
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              inherit username;
+            };
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+          }
+        ];
+      };
     };
   };
 }

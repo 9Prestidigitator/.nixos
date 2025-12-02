@@ -45,6 +45,16 @@
   services = {
     displayManager.ly = {
       enable = true;
+      settings = {
+        allow_empty_password = false;
+        animation = "doom";
+        bigclock = "en";
+        clock = "%c";
+        lang = "en";
+        numlock = true;
+        vi_default_mode = "insert";
+        vi_mode = true;
+      };
     };
 
     auto-cpufreq = {
