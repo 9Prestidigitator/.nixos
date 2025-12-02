@@ -8,7 +8,7 @@
     enable = true;
     colorScheme = "dark";
     theme = {
-      name = "Adwaita";
+      name = "Adwaita-dark";
       package = pkgs.adwaita-icon-theme;
     };
     iconTheme = {
