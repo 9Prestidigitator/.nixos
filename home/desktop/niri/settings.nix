@@ -63,7 +63,7 @@
         mode = {
           width = 1920;
           height = 1080;
-          refresh = 120;
+          refresh = 120.00;
         };
       };
     };
@@ -77,7 +77,7 @@
         mode = {
           width = 1920;
           height = 1080;
-          refresh = 60;
+          refresh = 60.00;
         };
       };
     };
