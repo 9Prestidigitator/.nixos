@@ -8,10 +8,6 @@
     ./hardware-configuration.nix
   ];
 
-  gaming.enable = lib.mkForce false;
-  musicprod.enable = lib.mkForce false;
-
-  # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
       grub = {
