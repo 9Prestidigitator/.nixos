@@ -86,7 +86,7 @@
       backdrop-color = "transparent";
     };
     cursor = {
-      size = 32;
+      size = 16;
       theme = "breeze";
     };
     layout = {
