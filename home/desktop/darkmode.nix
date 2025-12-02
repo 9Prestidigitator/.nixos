@@ -15,13 +15,13 @@
       package = pkgs.adwaita-icon-theme;
     };
   };
-  # qt = {
-  #   enable = true;
+  qt = {
+     enable = true;
   #   style = {
   #     name = "adwaita-dark";
   #     package = pkgs.adwaita-qt;
   #   };
-  # };
+  };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

@@ -5,7 +5,6 @@
 }: {
   imports = [
     ../../modules
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -42,7 +41,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
   security.rtkit.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

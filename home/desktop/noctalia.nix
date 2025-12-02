@@ -61,6 +61,10 @@
             }
             {
               displayMode = "onhover";
+              id = "Bluetooth";
+            }
+            {
+              displayMode = "onhover";
               id = "Volume";
             }
             {
@@ -90,7 +94,7 @@
         pinnedExecs = [];
         position = "top_center";
         sortByMostUsed = true;
-        terminalCommand = "xterm -e";
+        terminalCommand = "kitty";
         useApp2Unit = false;
       };
       audio = {
@@ -116,7 +120,7 @@
         manualSunrise = "06:30";
         manualSunset = "18:30";
         matugenSchemeType = "scheme-fruit-salad";
-        predefinedScheme = "Monochrome";
+        predefinedScheme = "Nord";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
@@ -181,7 +185,7 @@
         displayMode = "auto_hide";
         enabled = true;
         floatingRatio = 0.58;
-        monitors = [];
+        monitors = ["Dolphin" "kitty"];
         onlySameOutput = true;
         pinnedApps = [];
         size = 1;
@@ -346,20 +350,20 @@
         tooltipsEnabled = true;
       };
       wallpaper = {
-        defaultWallpaper = "/home/max/.config/quickshell/Assets/Wallpaper/noctalia.png";
+        # defaultWallpaper = "/home/max/.config/quickshell/Assets/Wallpaper/noctalia.png";
         directory = "/home/max/Pictures/Wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";
         fillMode = "crop";
         hideWallpaperFilenames = false;
-        monitors = [
-          {
-            directory = "/home/max/Pictures/Wallpapers";
-            name = "Virtual-1";
-            wallpaper = "/home/max/Pictures/Wallpapers/wallhaven_xee7k3.jpg";
-          }
-        ];
+        # monitors = [
+        #   {
+        #     directory = "/home/max/Pictures/Wallpapers";
+        #     name = "Virtual-1";
+        #     wallpaper = "/home/max/Pictures/Wallpapers/wallhaven_xee7k3.jpg";
+        #   }
+        # ];
         overviewEnabled = false;
         panelPosition = "follow_bar";
         randomEnabled = false;
@@ -373,7 +377,7 @@
         wallhavenCategories = "111";
         wallhavenOrder = "desc";
         wallhavenPurity = "100";
-        wallhavenQuery = "portal";
+        # wallhavenQuery = "portal";
         wallhavenResolutionHeight = "";
         wallhavenResolutionMode = "atleast";
         wallhavenResolutionWidth = "";
