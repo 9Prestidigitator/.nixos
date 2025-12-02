@@ -67,6 +67,8 @@
       xwayland-satellite
       xdg-desktop-portal-gnome
       xsettingsd
+      xcursorgen
+      xcursor-themes
       libnotify
       cliphist
       qt6Packages.qt6ct

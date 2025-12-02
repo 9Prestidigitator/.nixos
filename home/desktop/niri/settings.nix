@@ -87,7 +87,7 @@
     };
     cursor = {
       size = 24;
-      theme = "Adwaita";
+      theme = "BreezeX-Hacked";
     };
     layout = {
       focus-ring = {
