@@ -87,7 +87,7 @@
     };
     cursor = {
       size = 24;
-      theme = "Breeze";
+      theme = "Adwaita";
     };
     layout = {
       focus-ring = {

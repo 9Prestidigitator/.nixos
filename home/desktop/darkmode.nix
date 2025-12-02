@@ -8,7 +8,7 @@
     enable = true;
     colorScheme = "dark";
     theme = {
-      name = "Adwaita-dark";
+      name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
     iconTheme = {
@@ -16,6 +16,7 @@
       package = pkgs.adwaita-icon-theme;
     };
     cursorTheme = {
+      name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
   };
