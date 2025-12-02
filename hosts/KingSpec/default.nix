@@ -21,8 +21,6 @@
 	efiInstallAsRemovable = true;
         useOSProber = true;
       };
-      # systemd-boot.enable = false;
-      # efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [

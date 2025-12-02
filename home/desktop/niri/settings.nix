@@ -53,7 +53,7 @@
         };
       };
     };
-    ouputs = {
+    outputs = {
       "Microstep MSI G27C4 0x30333758" = {
         scale = 1;
         position = {
@@ -67,7 +67,7 @@
         };
       };
     };
-    ouputs = {
+    outputs = {
       "Hewlett Packard HP 22cwa 6CM82100S4" = {
         scale = 1.2;
         position = {

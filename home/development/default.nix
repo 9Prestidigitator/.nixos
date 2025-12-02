@@ -18,6 +18,7 @@
       tm = "tmux a || tmux";
       nrs = "sudo nixos-rebuild switch";
       nixup = "sudo nixos-rebuild switch --impure --flake .";
+      nixup-king = "sudo nixos-rebuild switch --impure --flake .#KingSpec";
     };
     initExtra = ''
       [ $(tput cols) -ge 102 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
