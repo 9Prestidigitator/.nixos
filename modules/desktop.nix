@@ -83,8 +83,6 @@
       xcursor-themes
       libnotify
       cliphist
-      qt6Packages.qt6ct
-      libsForQt5.qt5ct
       wlsunset
       hypridle
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default

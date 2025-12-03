@@ -10,6 +10,26 @@
     inputs.noctalia.homeModules.default
   ];
 
+  services.power-profiles-daemon.enable = true;
+  services.gnome.evolution-data-server.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
+  ];
+
+  environment.sessionVariables = {
+    GI_TYPELIB_PATH = lib.makeSearchPath "lib/girepository-1.0" (
+      with pkgs; [
+        evolution-data-server
+        libical
+        glib.out
+        libsoup_3
+        json-glib
+        gobject-introspection
+      ]
+    );
+  };
+
   programs.noctalia-shell = with config.lib.stylix.colors; {
     enable = true;
     colors = {
@@ -131,14 +151,14 @@
         enforceMinimum = true;
       };
       # colorSchemes = {
-        # darkMode = true;
-        # generateTemplatesForPredefined = true;
-        # manualSunrise = "06:30";
-        # manualSunset = "18:30";
-        # matugenSchemeType = "scheme-fruit-salad";
-        # predefinedScheme = "Monochrome";
-        # schedulingMode = "off";
-        # useWallpaperColors = false;
+      # darkMode = true;
+      # generateTemplatesForPredefined = true;
+      # manualSunrise = "06:30";
+      # manualSunset = "18:30";
+      # matugenSchemeType = "scheme-fruit-salad";
+      # predefinedScheme = "Monochrome";
+      # schedulingMode = "off";
+      # useWallpaperColors = false;
       # };
       controlCenter = {
         cards = [
