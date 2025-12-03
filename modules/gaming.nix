@@ -10,10 +10,15 @@
   };
 
   config = lib.mkIf config.gaming.enable {
-    programs.steam.enable = true;
+    programs.steam = {
+      enable = true;
+      protontricks.enable = true;
+    };
 
     environment.systemPackages = with pkgs; [
       prismlauncher
+      bottles
+      heroic
     ];
   };
 }
