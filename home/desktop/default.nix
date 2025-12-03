@@ -34,10 +34,9 @@
     Enabled=false
     First Use=false
   '';
-  xdg.configFile."kdeglobals".text = ''
-    [General]
-    TerminalApplication=kitty
-    widgetStyle=breeze
-    colorScheme=BreezeDark
-  '';
+# xdg.configFile."kdeglobals".text = ''
+#   [General]
+#   Enabled=false
+#   First Use=false
+# '';
 }

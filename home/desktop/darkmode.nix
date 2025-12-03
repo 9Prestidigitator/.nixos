@@ -8,12 +8,12 @@
     enable = true;
     colorScheme = "dark";
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-icon-theme;
+      name = "breeze-dark";
+      package = pkgs.kdePackages.breeze-gtk;
     };
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "breeze-dark";
+      package = pkgs.kdePackages.breeze-gtk;
     };
     cursorTheme = {
       name = "breeze_cursors";
@@ -22,23 +22,30 @@
   };
   qt = {
     enable = true;
+    platformTheme.name = "gtk";
     style = {
       name = "breeze";
       package = pkgs.kdePackages.breeze;
     };
   };
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Adwaita-dark";
-    };
+  home.pointerCursor = {
+    name = "breeze_cursors";
+    package = pkgs.kdePackages.breeze;
+    size = 24;
+    x11.enable = true;
   };
+# dconf.settings = {
+#   "org/gnome/desktop/interface" = {
+#     color-scheme = "prefer-dark";
+#     gtk-theme = "Adwaita-dark";
+#   };
+# };
   home.sessionVariables = {
     GTK_THEME = "Adwaita-dark";
     QS_ICON_THEME = "breeze-dark";
     QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-    QT_QPA_PLATFORMTHEME_QT5 = "qt5ct";
+    # QT_QPA_PLATFORMTHEME = "qt6ct";
+    # QT_QPA_PLATFORMTHEME_QT5 = "qt5ct";
   };
   systemd.user.sessionVariables = config.home.sessionVariables;
 }
