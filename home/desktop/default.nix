@@ -9,10 +9,26 @@
   imports = [
     ./niri
     ./noctalia.nix
-    ./darkmode.nix
-
     inputs.spicetify-nix.homeManagerModules.default
   ];
+
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+    configFile = {
+      "kwalletrc".text = ''
+        [Wallet]
+        Enabled=false
+        First Use=false
+      '';
+      "kdeglobals".text = ''
+        [General]
+        TerminalApplication=kitty
+      '';
+    };
+  };
 
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
@@ -28,14 +44,4 @@
       ncsVisualizer
     ];
   };
-
-  xdg.configFile."kwalletrc".text = ''
-    [Wallet]
-    Enabled=false
-    First Use=false
-  '';
-  xdg.configFile."kdeglobals".text = ''
-    [General]
-    TerminalApplication=kitty
-  '';
 }
