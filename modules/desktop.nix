@@ -7,7 +7,6 @@
 }: {
   imports = [
     inputs.noctalia.nixosModules.default
-    inputs.stylix.nixosModules.stylix
     ./music_production.nix
     ./gaming.nix
     ./design.nix
@@ -31,18 +30,6 @@
     programs.niri.enable = true;
 
     services.noctalia-shell.enable = true;
-
-    stylix = {
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-      # polarity = "dark";
-      # fonts = {
-      #   monospace = {
-      #     package = pkgs.nerd-fonts.hack;
-      #     name = "Hack Nerd Font Mono";
-      #   };
-      # };
-    };
 
     programs.chromium = {
       enable = true;

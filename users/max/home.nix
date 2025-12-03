@@ -12,10 +12,10 @@
   ];
 
   # Add user home directories such as Downloads, Documents, etc.
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-  };
+  # xdg.userDirs = {
+  #   enable = true;
+  #   createDirectories = true;
+  # };
 
   programs.git = {
     settings.user = {

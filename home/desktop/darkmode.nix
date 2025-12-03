@@ -4,30 +4,30 @@
   pkgs,
   ...
 }: {
-  # gtk = {
-  #   enable = true;
-  #   colorScheme = "dark";
-  #   theme = {
-  #     name = "breeze-dark";
-  #     package = pkgs.kdePackages.breeze-gtk;
-  #   };
-  #   iconTheme = {
-  #     name = "breeze-dark";
-  #     package = pkgs.kdePackages.breeze-gtk;
-  #   };
-  #   cursorTheme = {
-  #     name = "breeze_cursors";
-  #     package = pkgs.kdePackages.breeze;
-  #   };
-  # };
-  # qt = {
-  #   enable = true;
-  #   platformTheme.name = "gtk";
-  #   style = {
-  #     name = "breeze";
-  #     package = pkgs.kdePackages.breeze;
-  #   };
-  # };
+  gtk = {
+    enable = true;
+#   colorScheme = "dark";
+#   theme = {
+#     name = "breeze-dark";
+#     package = pkgs.kdePackages.breeze-gtk;
+#   };
+    iconTheme = {
+      name = "breeze-dark";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
+    cursorTheme = {
+      name = "breeze_cursors";
+      package = pkgs.kdePackages.breeze;
+    };
+  };
+# qt = {
+#   enable = true;
+#   platformTheme.name = "gtk";
+#   style = {
+#     name = "breeze";
+#     package = pkgs.kdePackages.breeze;
+#   };
+# };
   home.pointerCursor = {
     name = "breeze_cursors";
     package = pkgs.kdePackages.breeze;
