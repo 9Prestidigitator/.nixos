@@ -12,7 +12,7 @@
   config = lib.mkIf config.musicprod.enable {
     environment.systemPackages = with pkgs; [
       bitwig-studio
-      wineWowPackages.stable
+      wineWowPackages.yabridge
       winePackages.fonts
       winetricks
       wineasio

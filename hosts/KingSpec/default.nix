@@ -25,9 +25,9 @@
   };
 
   fileSystems."/mnt/1tb_hdd" = {
-    device = "7E90B7D790B7945D";
+    device = "/dev/disk/by-uuid/7E90B7D790B7945D";
     fsType = "ntfs-3g";
-    options = ["default" "nofail"];
+    options = ["nofail" "uid=1000" "gid=100" "umask=022"];
   };
 
   networking = {
