@@ -85,6 +85,7 @@
     environment.systemPackages = with pkgs; [
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
       moonlight-qt
+      ntfs3g
       brave
       kitty
       qjackctl

@@ -14,7 +14,7 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
-	efiInstallAsRemovable = true;
+        efiInstallAsRemovable = true;
         useOSProber = true;
       };
     };
@@ -22,6 +22,12 @@
     kernelParams = [
       "threadirqs"
     ];
+  };
+
+  fileSystems."/mnt/1tb_hdd" = {
+    device = "7E90B7D790B7945D";
+    fsType = "ntfs-3g";
+    options = ["default" "nofail"];
   };
 
   networking = {
