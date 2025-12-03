@@ -2,7 +2,6 @@
   pkgs,
   lib,
   inputs,
-  overlays,
   config,
   ...
 }: {
@@ -33,7 +32,7 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = overlays;
+    overlays = [inputs.neovim-nightly-overlay.overlays.default];
   };
 
   programs.nix-ld.enable = true;

@@ -9,10 +9,10 @@
     inputs.noctalia.nixosModules.default
     ./music_production.nix
     ./gaming.nix
-    /home/max/.nixos/modules/design.nix
-    /home/max/.nixos/modules/comms.nix
-    /home/max/.nixos/modules/media.nix
-    /home/max/.nixos/modules/vm.nix
+    ./design.nix
+    ./comms.nix
+    ./media.nix
+    ./vm.nix
   ];
 
   options = {
@@ -62,6 +62,11 @@
       autoStart = false;
       capSysAdmin = true;
       openFirewall = true;
+    };
+
+    inputs.stylix = {
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     };
 
     environment.systemPackages = with pkgs; [

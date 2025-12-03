@@ -17,42 +17,39 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     flake-utils.url = "github:numtide/flake-utils";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    stylix = {
+      url = "github:nix-community/stylix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations = let
       username = "max";
-      overlays = [inputs.neovim-nightly-overlay.overlays.default];
       specialArgs = {
         inherit inputs;
         inherit username;
-        inherit overlays;
       };
     in {
-      vm = nixpkgs.lib.nixosSystem {
+      KingSpec = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
-
         modules = [
-          ./hosts/vm
+          ./hosts/KingSpec
           ./users/${username}/nixos.nix
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
             home-manager.useGlobalPkgs = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-            };
+            home-manager.extraSpecialArgs = {inherit specialArgs;};
             home-manager.users.${username} = import ./users/${username}/home.nix;
           }
         ];
       };
-      KingSpec = nixpkgs.lib.nixosSystem {
+      vm = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
-
         modules = [
-          ./hosts/KingSpec
+          ./hosts/vm
           ./users/${username}/nixos.nix
           inputs.home-manager.nixosModules.home-manager
           {
