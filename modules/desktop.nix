@@ -40,7 +40,10 @@
         "hkgfoiooedgoejojocmhlaklaeopbecg"
         "gebbhagfogifgggkldgodflihgfeippi"
       ];
-      extraOpts = {"WaylandWpColorManagerV1" = false;};
+      extraOpts = {
+        "WaylandWpColorManagerV1" = false;
+        "enable-blink-features" = "MiddleClickAutoscroll";
+      };
     };
 
     fonts.packages = with pkgs; [

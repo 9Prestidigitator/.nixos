@@ -130,16 +130,16 @@
         enableDdcSupport = false;
         enforceMinimum = true;
       };
-      colorSchemes = {
-        darkMode = true;
+      # colorSchemes = {
+        # darkMode = true;
         # generateTemplatesForPredefined = true;
-        manualSunrise = "06:30";
-        manualSunset = "18:30";
+        # manualSunrise = "06:30";
+        # manualSunset = "18:30";
         # matugenSchemeType = "scheme-fruit-salad";
         # predefinedScheme = "Monochrome";
         # schedulingMode = "off";
         # useWallpaperColors = false;
-      };
+      # };
       controlCenter = {
         cards = [
           {

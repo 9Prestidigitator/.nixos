@@ -11,7 +11,8 @@
 
   config = lib.mkIf config.comms.enable {
     environment.systemPackages = with pkgs; [
-      vesktop
+      discord
+      vencord
       signal-desktop
     ];
   };
