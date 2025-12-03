@@ -20,14 +20,14 @@
       package = pkgs.kdePackages.breeze;
     };
   };
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-    style = {
-      name = "breeze";
-      package = pkgs.kdePackages.breeze;
-    };
-  };
+# qt = {
+#   enable = true;
+#   platformTheme.name = "gtk";
+#   style = {
+#     name = "breeze";
+#     package = pkgs.kdePackages.breeze;
+#   };
+# };
   home.pointerCursor = {
     name = "breeze_cursors";
     package = pkgs.kdePackages.breeze;
@@ -41,11 +41,12 @@
 #   };
 # };
   home.sessionVariables = {
-    GTK_THEME = "Adwaita-dark";
+    GTK_THEME = "breeze-dark";
     QS_ICON_THEME = "breeze-dark";
+    QT_STYLE_OVERRIDE = "breeze-dark";
     QT_QPA_PLATFORM = "wayland";
-    # QT_QPA_PLATFORMTHEME = "qt6ct";
-    # QT_QPA_PLATFORMTHEME_QT5 = "qt5ct";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_QPA_PLATFORMTHEME_QT5 = "qt5ct";
   };
   systemd.user.sessionVariables = config.home.sessionVariables;
 }
