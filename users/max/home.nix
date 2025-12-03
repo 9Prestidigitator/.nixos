@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    inputs.stylix.homeModules.stylix
     ../../home/core.nix
     ../../home/development
     ../../home/desktop
@@ -30,19 +29,6 @@
       cursor_shape = "block";
       hide_window_decorations = "yes";
       wayland_enable_ime = "yes";
-    };
-  };
-
-  home.packages = with pkgs; [
-    brave
-  ];
-
-  stylix = {
-    # enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    targets = {
-      kitty.enable = false;
-      spicetify.enable = false;
     };
   };
 }

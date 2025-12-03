@@ -7,13 +7,13 @@
 }: {
   imports = [
     inputs.noctalia.nixosModules.default
-    inputs.stylix.nixosModules.stylix
     ./music_production.nix
     ./gaming.nix
     ./design.nix
     ./comms.nix
     ./media.nix
     ./vm.nix
+    ./theme.nix
   ];
 
   options = {
@@ -31,11 +31,6 @@
     programs.niri.enable = true;
 
     services.noctalia-shell.enable = true;
-
-    # stylix = {
-      # enable = true;
-      # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    # };
 
     programs.chromium = {
       enable = true;
@@ -72,7 +67,7 @@
 
     environment.systemPackages = with pkgs; [
       moonlight-qt
-      # brave
+      brave
       kitty
       qjackctl
       kdePackages.dolphin
