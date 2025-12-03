@@ -39,4 +39,5 @@
     };
   };
   stylix.targets.kitty.enable = false;
+  stylix.targets.spicetify.enable = false;
 }
