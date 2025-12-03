@@ -42,7 +42,6 @@
       #     name = "Hack Nerd Font Mono";
       #   };
       # };
-      targets.kitty.enable = false;
     };
 
     programs.chromium = {
