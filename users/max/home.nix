@@ -33,8 +33,8 @@
     };
   };
 
-  stylix.targets = {
-    kitty.enable = false;
-    spicetify.enable = false;
-  };
+  # stylix.targets = {
+  #   kitty.enable = false;
+  #   spicetify.enable = false;
+  # };
 }
