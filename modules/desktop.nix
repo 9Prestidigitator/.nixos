@@ -104,8 +104,7 @@
       brave
       kitty
       qjackctl
-      # xdg-desktop-portal-gnome
-      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-gnome
       kdePackages.plasma-workspace
       kdePackages.breeze
       kdePackages.breeze-icons
