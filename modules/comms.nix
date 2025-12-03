@@ -11,7 +11,9 @@
 
   config = lib.mkIf config.comms.enable {
     environment.systemPackages = with pkgs; [
-      discord
+      (discord.override {
+        withVencord = true;
+      })
       signal-desktop
     ];
   };
