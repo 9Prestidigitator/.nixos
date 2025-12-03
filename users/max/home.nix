@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    inputs.stylix.homeModules.stylix
     ../../home/core.nix
     ../../home/development
     ../../home/desktop
@@ -37,4 +38,5 @@
       wayland_enable_ime = "yes";
     };
   };
+  stylix.targets.kitty.enable = false;
 }

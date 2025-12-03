@@ -35,6 +35,14 @@
     stylix = {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+      # polarity = "dark";
+      # fonts = {
+      #   monospace = {
+      #     package = pkgs.nerd-fonts.hack;
+      #     name = "Hack Nerd Font Mono";
+      #   };
+      # };
+      targets.kitty.enable = false;
     };
 
     programs.chromium = {

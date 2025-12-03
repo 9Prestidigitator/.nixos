@@ -329,20 +329,20 @@
         foot = false;
         fuzzel = false;
         ghostty = false;
-        gtk = true;
-        kcolorscheme = true;
+        gtk = false;
+        kcolorscheme = false;
         kitty = false;
         pywalfox = false;
-        qt = true;
+        qt = false;
         spicetify = false;
         vicinae = false;
         walker = false;
         wezterm = false;
       };
       ui = {
-        fontDefault = "Sans Serif";
+        # fontDefault = "Sans Serif";
         fontDefaultScale = 1;
-        fontFixed = "Hack Nerd Font Mono";
+        # fontFixed = "Hack Nerd Font Mono";
         fontFixedScale = 1;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
