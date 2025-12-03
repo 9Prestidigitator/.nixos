@@ -133,10 +133,10 @@
     "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
     "Mod+Shift+Ctrl+L".action = move-column-to-monitor-right;
 
-    "Mod+Alt+H".action = move-workspace-to-monitor-left;
-    "Mod+Alt+J".action = move-workspace-to-monitor-down;
-    "Mod+Alt+K".action = move-workspace-to-monitor-up;
-    "Mod+Alt+L".action = move-workspace-to-monitor-right;
+    # "Mod+Alt+H".action = move-workspace-to-monitor-left;
+    # "Mod+Alt+J".action = move-workspace-to-monitor-down;
+    # "Mod+Alt+K".action = move-workspace-to-monitor-up;
+    # "Mod+Alt+L".action = move-workspace-to-monitor-right;
 
     "Mod+Page_Down".action = focus-workspace-down;
     "Mod+Page_Up".action = focus-workspace-up;
@@ -151,6 +151,8 @@
     "Mod+Shift+Page_Up".action = move-workspace-up;
     "Mod+Shift+D".action = move-workspace-down;
     "Mod+Shift+U".action = move-workspace-up;
+    "Mod+Alt+J".action = move-workspace-down;
+    "Mod+Alt+K".action = move-workspace-up;
 
     "Mod+WheelScrollUp" = {
       cooldown-ms = 150;
