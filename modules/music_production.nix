@@ -16,7 +16,6 @@
   config = lib.mkIf config.musicprod.enable {
     musnix = {
       enable = true;
-      # kernel.realtime = true;
     };
     environment.systemPackages = with pkgs; [
       bitwig-studio

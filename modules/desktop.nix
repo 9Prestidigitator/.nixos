@@ -40,7 +40,6 @@
       ];
       extraOpts = {
         "WaylandWpColorManagerV1" = false;
-        "enable-blink-features" = "MiddleClickAutoscroll";
       };
     };
 
@@ -96,6 +95,10 @@
         };
       };
       menus.enable = true;
+      portal.extraPortals = [
+        pkgs.xdg-desktop-portal-gnome
+        pkgs.kdePackages.xdg-desktop-portal-kde
+      ];
     };
 
     environment.systemPackages = with pkgs; [
