@@ -32,10 +32,10 @@
 
     services.noctalia-shell.enable = true;
 
-    stylix = {
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    };
+    # stylix = {
+      # enable = true;
+      # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    # };
 
     programs.chromium = {
       enable = true;
@@ -72,7 +72,7 @@
 
     environment.systemPackages = with pkgs; [
       moonlight-qt
-      brave
+      # brave
       kitty
       qjackctl
       kdePackages.dolphin
