@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.noctalia.nixosModules.default
+    inputs.stylix.nixosModules.stylix
     ./music_production.nix
     ./gaming.nix
     ./design.nix
@@ -30,6 +31,11 @@
     programs.niri.enable = true;
 
     services.noctalia-shell.enable = true;
+
+    stylix = {
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    };
 
     programs.chromium = {
       enable = true;

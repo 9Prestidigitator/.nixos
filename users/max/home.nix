@@ -33,12 +33,8 @@
     };
   };
 
-  stylix = {
-    enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    targets = {
-      kitty.enable = false;
-      spicetify.enable = false;
-    };
+  stylix.targets = {
+    kitty.enable = false;
+    spicetify.enable = false;
   };
 }

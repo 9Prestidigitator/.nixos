@@ -11,14 +11,14 @@
 #     name = "breeze-dark";
 #     package = pkgs.kdePackages.breeze-gtk;
 #   };
-    iconTheme = {
-      name = "breeze-dark";
-      package = pkgs.kdePackages.breeze-gtk;
-    };
-    cursorTheme = {
-      name = "breeze_cursors";
-      package = pkgs.kdePackages.breeze;
-    };
+    # iconTheme = {
+    #   name = "breeze-dark";
+    #   package = pkgs.kdePackages.breeze-gtk;
+    # };
+    # cursorTheme = {
+    #   name = "breeze_cursors";
+    #   package = pkgs.kdePackages.breeze;
+    # };
   };
 # qt = {
 #   enable = true;
