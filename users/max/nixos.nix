@@ -1,6 +1,6 @@
 {
   users.users.max = {
     isNormalUser = true;
-    extraGroups = ["wheel" "audio" "realtime" "uinput" "libvirtd"];
+    extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd"];
   };
 }
