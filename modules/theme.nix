@@ -11,7 +11,7 @@
   ];
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-seaside.yaml";
     polarity = "dark";
     cursor = {
       size = 24;
