@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.noctalia.nixosModules.default
+    inputs.stylix.nixosModules.stylix
     ./music_production.nix
     ./gaming.nix
     ./design.nix
@@ -64,7 +65,7 @@
       openFirewall = true;
     };
 
-    inputs.stylix = {
+    stylix = {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     };
