@@ -14,13 +14,13 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     polarity = "dark";
     cursor = {
-      size = 8;
-      name = "graphite-dark";
-      package = pkgs.graphite-cursors;
+      size = 24;
+      name = "breeze_cursors";
+      package = pkgs.kdePackages.breeze;
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.hard;
+        package = pkgs.nerd-fonts.hack;
         name = "Hack Nerd Font Mono";
       };
     };
@@ -29,9 +29,9 @@
     stylix = {
       iconTheme = {
         enable = true;
-        package = pkgs.numix-icon-theme-circle;
-        dark = "Numix-Circle";
-        light = "Numix-Circle-Light";
+        package = pkgs.kdePackages.breeze;
+        dark = "breeze-dark";
+        light = "breeze";
       };
       targets = {
         kitty.enable = false;
