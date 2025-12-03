@@ -85,10 +85,6 @@
       workspace-shadow.enable = false;
       # backdrop-color = "transparent";
     };
-    cursor = {
-      size = 24;
-      theme = "breeze_cursors";
-    };
     layout = {
       focus-ring = {
         enable = false;
@@ -109,7 +105,7 @@
       gaps = 5;
       center-focused-column = "never";
     };
-    hotkey-overlay.skip-at-startup = false;
+    hotkey-overlay.skip-at-startup = true;
     screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
   };
 };
