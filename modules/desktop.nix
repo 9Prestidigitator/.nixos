@@ -32,6 +32,11 @@
 
     services.noctalia-shell.enable = true;
 
+    stylix = {
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    };
+
     programs.chromium = {
       enable = true;
       extensions = [
@@ -63,11 +68,6 @@
       autoStart = false;
       capSysAdmin = true;
       openFirewall = true;
-    };
-
-    stylix = {
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     };
 
     environment.systemPackages = with pkgs; [
