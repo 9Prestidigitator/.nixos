@@ -96,6 +96,7 @@
     # CLI
     git
     tree
+    fzf
     wget
     starship
     ripgrep

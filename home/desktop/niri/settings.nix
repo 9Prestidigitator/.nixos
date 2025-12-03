@@ -32,7 +32,7 @@
         accel-profile = "flat";
       };
       # Uncomment this to make the mouse warp to the center of newly focused windows.
-      warp-mouse-to-focus.enable = true;
+      warp-mouse-to-focus.enable = false;
     };
     # You can configure outputs by their name, which you can find
     # by running `niri msg outputs` while inside a niri instance.

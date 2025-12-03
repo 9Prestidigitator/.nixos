@@ -18,7 +18,6 @@
       wineasio
       yabridge
       yabridgectl
-      # inputs.wine-tkg-custom.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 }

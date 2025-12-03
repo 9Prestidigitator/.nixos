@@ -69,6 +69,7 @@
     services.noctalia-shell.enable = true;
 
     services.gnome.evolution-data-server.enable = true;
+
     environment.sessionVariables = {
       GI_TYPELIB_PATH = lib.makeSearchPath "lib/girepository-1.0" (
         with pkgs; [
@@ -82,18 +83,31 @@
       );
     };
 
+    xdg = {
+      mime = {
+        enable = true;
+        defaultApplications = {
+          "image/png" = "gimp.desktop";
+        };
+      };
+      menus.enable = true;
+    };
+
+    environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
     environment.systemPackages = with pkgs; [
-      (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
       moonlight-qt
       ntfs3g
       brave
       kitty
       qjackctl
-      kdePackages.dolphin
-      kdePackages.breeze-icons
-      kdePackages.breeze
-      xwayland-satellite
       xdg-desktop-portal-gnome
+      kdePackages.plasma-workspace
+      kdePackages.breeze
+      kdePackages.breeze-icons
+      kdePackages.dolphin
+      kdePackages.kde-cli-tools
+      xwayland-satellite
       xsettingsd
       xcursorgen
       xcursor-themes
@@ -101,6 +115,7 @@
       cliphist
       wlsunset
       hypridle
+      (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.qt6.qtdeclarative
