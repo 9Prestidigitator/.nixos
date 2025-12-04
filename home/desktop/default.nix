@@ -37,10 +37,6 @@ in {
     package = pkgs.swayidle;
     timeouts = [
       {
-        timeout = 10;
-        command = "${pkgs.libnotify}/bin/notify-send '${noctalia-shell}'";
-      }
-      {
         timeout = 180;
         command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds'";
       }
@@ -49,11 +45,11 @@ in {
         command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
-        timeout = 190;
+        timeout = 240;
         command = "${pkgs.niri} msg action power-off-monitors";
       }
       {
-        timeout = 195;
+        timeout = 360;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];
