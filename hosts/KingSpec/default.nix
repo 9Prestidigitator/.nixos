@@ -24,6 +24,18 @@
     ];
   };
 
+  fileSystems."/mnt/win" = {
+    device = "/dev/disk/by-uuid/01DA1996D2DABBB0";
+    fsType = "ntfs-3g";
+    options = ["nofail" "uid=1000" "gid=100" "umask=022"];
+  };
+
+  fileSystems."/mnt/arch" = {
+    device = "/dev/disk/by-uuid/49590ed2-0952-476b-a589-816f9b7e1242";
+    fsType = "ext4";
+    options = ["defaults"];
+  };
+
   fileSystems."/mnt/1tb_hdd" = {
     device = "/dev/disk/by-uuid/7E90B7D790B7945D";
     fsType = "ntfs-3g";

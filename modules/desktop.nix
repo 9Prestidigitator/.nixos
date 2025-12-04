@@ -67,6 +67,35 @@
 
     services.noctalia-shell.enable = true;
 
+    services.swayidle = {
+      enable = true;
+      package = pkgs.swayidle;
+      timeouts = [
+        {
+          timeout = 180;
+          command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds'";
+        }
+        {
+          timeout = 185;
+          command = "noctalia-shell ipc call lockScreen lock";
+        }
+        {
+          timeout = 190;
+          command = "niri msg action power-off-monitors";
+        }
+        {
+          timeout = 195;
+          command = "systemctl suspend";
+        }
+      ];
+      events = [
+        {
+          event = "before-sleep";
+          command = "noctalia-shell ipc call lockScreen lock";
+        }
+      ];
+    };
+
     services.gnome.evolution-data-server.enable = true;
 
     environment.sessionVariables = {
@@ -83,6 +112,7 @@
     };
 
     xdg = {
+      enable = true;
       mime = {
         enable = true;
         defaultApplications = {
@@ -97,6 +127,7 @@
       menus.enable = true;
       portal.extraPortals = [
         pkgs.xdg-desktop-portal-gnome
+        pkgs.xdg-desktop-portal-gtk
         pkgs.kdePackages.xdg-desktop-portal-kde
       ];
     };
@@ -108,6 +139,7 @@
       kitty
       qjackctl
       xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
       kdePackages.plasma-workspace
       kdePackages.breeze
       kdePackages.breeze-icons
