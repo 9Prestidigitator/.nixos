@@ -37,12 +37,16 @@ in {
     package = pkgs.swayidle;
     timeouts = [
       {
-        timeout = 5;
-        command = "${noctalia-shell} ipc call lockScreen lock";
+        timeout = 10;
+        command = "${pkgs.libnotify}/bin/notify-send '${noctalia-shell}'";
       }
       {
         timeout = 180;
         command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds'";
+      }
+      {
+        timeout = 185;
+        command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
         timeout = 190;
@@ -56,7 +60,7 @@ in {
     events = [
       {
         event = "before-sleep";
-        command = "${noctalia-shell} ipc call lockScreen lock";
+        command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
     ];
   };
