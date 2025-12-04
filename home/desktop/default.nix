@@ -5,7 +5,9 @@
   niri,
   inputs,
   ...
-}: {
+}: let
+  noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
+in {
   imports = [
     ./niri
     ./noctalia.nix
@@ -39,8 +41,8 @@
         command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds'";
       }
       {
-        timeout = 5;
-        command = "${pkgs.noctalia-shell} ipc call lockScreen lock";
+        timeout = 185;
+        command = "${noctalia-shell} ipc call lockScreen lock";
       }
       {
         timeout = 190;
@@ -54,7 +56,7 @@
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.noctalia-shell} ipc call lockScreen lock";
+        command = "${noctalia-shell} ipc call lockScreen lock";
       }
     ];
   };
