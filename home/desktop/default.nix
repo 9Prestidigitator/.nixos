@@ -30,6 +30,35 @@
     };
   };
 
+  services.swayidle = {
+    enable = true;
+    package = pkgs.swayidle;
+    timeouts = [
+      {
+        timeout = 180;
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds'";
+      }
+      {
+        timeout = 185;
+        command = "noctalia-shell ipc call lockScreen lock";
+      }
+      {
+        timeout = 190;
+        command = "niri msg action power-off-monitors";
+      }
+      {
+        timeout = 195;
+        command = "systemctl suspend";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+        command = "noctalia-shell ipc call lockScreen lock";
+      }
+    ];
+  };
+
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
