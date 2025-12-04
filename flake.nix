@@ -5,10 +5,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    neovim-config = {
-      url = "github:9Prestidigitator/nvim";
-      flake = false;
-    };
     musnix.url = "github:musnix/musnix";
     niri.url = "github:sodiboo/niri-flake";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
