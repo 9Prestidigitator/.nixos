@@ -8,7 +8,7 @@
     package = pkgs.niri;
     settings = with config.lib.stylix.colors; {
       spawn-at-startup = [
-        {argv = ["swayidle"];}
+        {command = ["swayidle"];}
       ];
       input = {
         keyboard = {
