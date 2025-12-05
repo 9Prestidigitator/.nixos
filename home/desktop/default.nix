@@ -70,12 +70,12 @@ in {
     };
     config = {
       plugins = {
-        AlwaysAnimate.enable = true;
-        BetterFolder.enable = true;
-        BlurNSFW.enable = true;
-        PinDMs.enable = true;
-        VolumnBooster.enable = true;
-        YoutubeAdblock.enable = true;
+        alwaysAnimate.enable = true;
+        betterFolders.enable = true;
+        blurNsfw.enable = true;
+        pinDMs.enable = true;
+        volumeBooster.enable = true;
+        youtubeAdblock.enable = true;
       };
     };
   };
