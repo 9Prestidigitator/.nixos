@@ -90,8 +90,8 @@
           width = 3;
           active.gradient = {
             angle = 135;
-            from = "#${base07}";
-            to = "#${base0F}";
+            from = "#${base0F}";
+            to = "#${base0D}";
           };
           urgent.color = "#${base08}";
           inactive.color = "transparent";
