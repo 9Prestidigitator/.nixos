@@ -89,9 +89,10 @@
           enable = true;
           width = 3;
           active.gradient = {
-            angle = 135;
-            from = "#${base0F}";
+            angle = 45;
+            from = "#${base0B}";
             to = "#${base0D}";
+            relative-to = "workspace-view";
           };
           urgent.color = "#${base08}";
           inactive.color = "transparent";
@@ -104,6 +105,12 @@
           {proportion = 0.5;}
           {proportion = 0.6666;}
         ];
+        struts = {
+          top = 3;
+          bottom = 3;
+          right = 3;
+          left = 3;
+        };
         default-column-width = {proportion = 0.5;};
         gaps = 7;
         center-focused-column = "never";
