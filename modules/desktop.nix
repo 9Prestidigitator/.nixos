@@ -70,6 +70,8 @@
 
     services.noctalia-shell.enable = true;
 
+    services.flatpak.enable = true;
+
     services.gnome.evolution-data-server.enable = true;
 
     environment.sessionVariables = {
@@ -86,18 +88,6 @@
     };
 
     xdg = {
-      mime = {
-        enable = true;
-        defaultApplications = {
-          "image/png" = "gimp.desktop";
-          "application/pdf" = "zathura.desktop";
-          "application/x-msdownload" = "wine.desktop";
-          "application/x-wine-extension" = "wine.desktop";
-          "application/x-msi" = "wine.desktop";
-          "application/x-ms-dos-executable" = "wine.desktop";
-        };
-      };
-      menus.enable = true;
       portal = {
         config = {
           niri = {
@@ -116,6 +106,7 @@
       settings.Login = {
         HandleLidSwitch = "suspend";
         HandleLidSwitchDocked = "ignore";
+        HandlePowerKey = "suspend";
       };
     };
 
@@ -137,6 +128,8 @@
       xcursor-themes
       libnotify
       cliphist
+      gvfs
+      p7zip
       wlsunset
       pavucontrol
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))

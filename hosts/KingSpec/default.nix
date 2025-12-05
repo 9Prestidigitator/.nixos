@@ -16,6 +16,7 @@
         efiSupport = true;
         efiInstallAsRemovable = true;
         useOSProber = true;
+        theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
     kernelPackages = pkgs.linuxPackages_zen;

@@ -62,11 +62,6 @@ in {
     ];
   };
 
-  # services.hypridle = {
-  #   package = pkgs.hypridle;
-  #   systemdTarget = "niri-session.target";
-  # };
-
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
