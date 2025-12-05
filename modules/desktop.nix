@@ -82,6 +82,8 @@
       );
     };
 
+    systemd.user.services.swayidle.path = with pkgs; [niri];
+
     xdg = {
       mime = {
         enable = true;
@@ -95,11 +97,18 @@
         };
       };
       menus.enable = true;
-      portal.extraPortals = [
-        pkgs.xdg-desktop-portal-gnome
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.kdePackages.xdg-desktop-portal-kde
-      ];
+      portal = {
+        config = {
+          niri = {
+            default = "gnome";
+            "org.freedesktop.impl.portal.FileChooser" = "gtk";
+          };
+        };
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal-gtk
+        ];
+      };
     };
 
     environment.systemPackages = with pkgs; [

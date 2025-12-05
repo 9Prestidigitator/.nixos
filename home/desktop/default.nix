@@ -61,10 +61,6 @@ in {
     ];
   };
 
-  systemd.user.services.swayidle = {
-    Environment = ["WAYLAND_DISPLAY=wayland-1"];
-  };
-
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
