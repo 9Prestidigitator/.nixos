@@ -22,6 +22,8 @@
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "threadirqs"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      "nvidia_drm.modeset=1"
     ];
   };
 
@@ -52,7 +54,9 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    open = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+    open = false;
     nvidiaSettings = true;
   };
 
