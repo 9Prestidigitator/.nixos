@@ -23,7 +23,7 @@
       mOnSurface = "#${base04}";
       mOnSurfaceVariant = "#${base04}";
       mOnTertiary = "#${base00}";
-      mOnHover = "#${base00}";
+      mOnHover = "#${base07}";
       mOutline = "#${base02}";
       mPrimary = "#${base0B}";
       mSecondary = "#${base0A}";
