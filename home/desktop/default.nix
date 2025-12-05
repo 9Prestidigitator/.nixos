@@ -12,6 +12,7 @@ in {
     ./niri
     ./noctalia.nix
     inputs.spicetify-nix.homeManagerModules.default
+    inputs.nixcord.homeModules.nixcord
   ];
 
   xdg = {
@@ -60,6 +61,23 @@ in {
         command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
     ];
+  };
+
+  programs.nixcord = {
+    enable = true;
+    discord = {
+      vencord.enable = true;
+    };
+    config = {
+      plugins = {
+        AlwaysAnimate.enable = true;
+        BetterFolder.enable = true;
+        BlurNSFW.enable = true;
+        PinDMs.enable = true;
+        VolumnBooster.enable = true;
+        YoutubeAdblock.enable = true;
+      };
+    };
   };
 
   programs.spicetify = let

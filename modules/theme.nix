@@ -25,6 +25,7 @@
         name = "Hack Nerd Font Mono";
       };
     };
+    targets.grub.enable = false;
   };
   home-manager.users.${username} = {
     stylix = {
@@ -38,7 +39,7 @@
         kitty.enable = false;
         spicetify.enable = false;
         neovim.enable = false;
-        grub.enable = false;
+        # grub.enable = false;
       };
     };
   };
