@@ -28,7 +28,10 @@
     media.enable = lib.mkDefault true;
     vm.enable = lib.mkDefault true;
 
-    programs.niri.enable = true;
+    programs.niri = {
+      enable = true;
+      package = pkgs.niri;
+    };
 
     programs.chromium = {
       enable = true;

@@ -35,7 +35,7 @@ in {
   services.swayidle = {
     enable = true;
     package = pkgs.swayidle;
-    systemdTarget = "niri-session.target";
+    systemdTarget = "niri.service";
     timeouts = [
       {
         timeout = 180;
