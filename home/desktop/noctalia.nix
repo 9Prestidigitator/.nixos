@@ -136,7 +136,8 @@
         # manualSunrise = "06:30";
         # manualSunset = "18:30";
         # matugenSchemeType = "scheme-fruit-salad";
-        predefinedScheme = "Monochrome";
+        # predefinedScheme = "Monochrome";
+        predefinedScheme = "Nord";
         # schedulingMode = "off";
         # useWallpaperColors = false;
       };

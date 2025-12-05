@@ -29,8 +29,8 @@
       action = spawn "brave";
     };
     "Mod+E" = {
-      hotkey-overlay.title = "Launch explorer: dolphin";
-      action = spawn "dolphin";
+      hotkey-overlay.title = "Launch explorer: Nautilus";
+      action = spawn "nautilus" "-w";
     };
 
     # noctalia-shell binds

@@ -17,7 +17,7 @@
   ];
 
   options = {
-    desktop.enable = lib.mkEnableOption "Enables standard desktop configration (niri + noctalia).";
+    desktop.enable = lib.mkEnableOption "Enables standard desktop configuration (niri + noctalia).";
   };
 
   config = lib.mkIf config.desktop.enable {
@@ -113,7 +113,6 @@
       kdePackages.plasma-workspace
       kdePackages.breeze
       kdePackages.breeze-icons
-      kdePackages.dolphin
       kdePackages.kde-cli-tools
       xwayland-satellite
       xsettingsd
@@ -122,7 +121,8 @@
       libnotify
       cliphist
       wlsunset
-      hypridle
+      swayidle
+      pavucontrol
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
