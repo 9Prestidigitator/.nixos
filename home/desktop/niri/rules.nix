@@ -32,6 +32,20 @@
       }
       {
         matches = [
+          {app-id = "com.bitwig.BitwigStudio";}
+        ];
+        open-maximized = true;
+        geometry-corner-radius = let
+          radius = 0.0;
+        in {
+          bottom-left = radius;
+          bottom-right = radius;
+          top-left = radius;
+          top-right = radius;
+        };
+      }
+      {
+        matches = [
           {title = "Confirm";}
           {title = "Authentication Required";}
           {title = "xdg-desktop-portal-gtk";}
