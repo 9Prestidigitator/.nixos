@@ -35,6 +35,7 @@ in {
   services.swayidle = {
     enable = true;
     package = pkgs.swayidle;
+    systemdTarget = "niri-session.target";
     timeouts = [
       {
         timeout = 180;
@@ -60,6 +61,11 @@ in {
       }
     ];
   };
+
+  # services.hypridle = {
+  #   package = pkgs.hypridle;
+  #   systemdTarget = "niri-session.target";
+  # };
 
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};

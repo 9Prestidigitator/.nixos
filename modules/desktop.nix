@@ -82,8 +82,6 @@
       );
     };
 
-    systemd.user.services.swayidle.path = with pkgs; [niri];
-
     xdg = {
       mime = {
         enable = true;
@@ -111,6 +109,13 @@
       };
     };
 
+    services.logind = {
+      settings.Login = {
+        HandleLidSwitch = "suspend";
+        HandleLidSwitchDocked = "ignore";
+      };
+    };
+
     environment.systemPackages = with pkgs; [
       moonlight-qt
       ntfs3g
@@ -130,7 +135,6 @@
       libnotify
       cliphist
       wlsunset
-      swayidle
       pavucontrol
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
