@@ -12,23 +12,26 @@
 
   programs.noctalia-shell = with config.lib.stylix.colors; {
     enable = true;
-    # colors = {
-    #   mError = "#${base08}";
-    #   mOnError = "#${base00}";
-    #   mOnPrimary = "#${base00}";
-    #   mOnSecondary = "#${base00}";
-    #   mOnSurface = "#${base04}";
-    #   mOnSurfaceVariant = "#${base04}";
-    #   mOnTertiary = "#${base00}";
-    #   mOutline = "#${base02}";
-    #   mPrimary = "#${base0B}";
-    #   mSecondary = "#${base0A}";
-    #   mShadow = "#${base00}";
-    #   mSurface = "#${base00}";
-    #   mSurfaceVariant = "#${base01}";
-    #   mTertiary = "#${base0D}";
-    # };
+    colors = {
+      mError = "#${base08}";
+      mOnError = "#${base00}";
+      mOnPrimary = "#${base00}";
+      mOnSecondary = "#${base00}";
+      mOnSurface = "#${base04}";
+      mOnSurfaceVariant = "#${base04}";
+      mOnTertiary = "#${base00}";
+      mOnHover = "#${base00}";
+      mOutline = "#${base02}";
+      mPrimary = "#${base0B}";
+      mSecondary = "#${base0A}";
+      mShadow = "#${base00}";
+      mSurface = "#${base00}";
+      mHover = "#${base00}";
+      mSurfaceVariant = "#${base01}";
+      mTertiary = "#${base0D}";
+    };
     settings = {
+      settingsVersion = 26;
       bar = {
         backgroundOpacity = 1;
         density = "comfortable";
@@ -130,17 +133,17 @@
         enableDdcSupport = false;
         enforceMinimum = true;
       };
-      colorSchemes = {
-        darkMode = true;
-        # generateTemplatesForPredefined = true;
-        # manualSunrise = "06:30";
-        # manualSunset = "18:30";
-        # matugenSchemeType = "scheme-fruit-salad";
-        # predefinedScheme = "Monochrome";
-        predefinedScheme = "Nord";
-        # schedulingMode = "off";
-        # useWallpaperColors = false;
-      };
+      # colorSchemes = {
+      #   darkMode = true;
+      #   generateTemplatesForPredefined = false;
+      # manualSunrise = "06:30";
+      # manualSunset = "18:30";
+      # matugenSchemeType = "scheme-fruit-salad";
+      # predefinedScheme = "Monochrome";
+      # predefinedScheme = "Nord";
+      # schedulingMode = "off";
+      # useWallpaperColors = false;
+      # };
       controlCenter = {
         cards = [
           {
@@ -322,9 +325,6 @@
         ];
         showHeader = true;
       };
-
-      settingsVersion = 23;
-      setupCompleted = true;
       systemMonitor = {
         cpuCriticalThreshold = 90;
         cpuWarningThreshold = 80;
@@ -338,28 +338,8 @@
         useCustomColors = false;
         warningColor = "#8be9fd";
       };
-      templates = {
-        alacritty = false;
-        code = false;
-        discord = false;
-        enableUserTemplates = false;
-        foot = false;
-        fuzzel = false;
-        ghostty = false;
-        gtk = false;
-        kcolorscheme = false;
-        kitty = false;
-        pywalfox = false;
-        qt = false;
-        spicetify = false;
-        vicinae = false;
-        walker = false;
-        wezterm = false;
-      };
       ui = {
-        # fontDefault = "Sans Serif";
         fontDefaultScale = 1;
-        # fontFixed = "Hack Nerd Font Mono";
         fontFixedScale = 1;
         panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
@@ -367,20 +347,12 @@
         tooltipsEnabled = true;
       };
       wallpaper = {
-        # defaultWallpaper = "/home/max/.config/quickshell/Assets/Wallpaper/noctalia.png";
         directory = "/home/max/Pictures/Wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";
         fillMode = "crop";
         hideWallpaperFilenames = false;
-        # monitors = [
-        #   {
-        #     directory = "/home/max/Pictures/Wallpapers";
-        #     name = "Virtual-1";
-        #     wallpaper = "/home/max/Pictures/Wallpapers/wallhaven_xee7k3.jpg";
-        #   }
-        # ];
         overviewEnabled = false;
         panelPosition = "follow_bar";
         randomEnabled = false;
@@ -394,11 +366,6 @@
         wallhavenCategories = "111";
         wallhavenOrder = "desc";
         wallhavenPurity = "100";
-        # wallhavenQuery = "portal";
-        wallhavenResolutionHeight = "";
-        wallhavenResolutionMode = "atleast";
-        wallhavenResolutionWidth = "";
-        wallhavenSorting = "date_added";
       };
     };
   };

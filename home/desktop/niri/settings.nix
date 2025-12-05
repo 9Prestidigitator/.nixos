@@ -105,7 +105,7 @@
           {proportion = 0.6666;}
         ];
         default-column-width = {proportion = 0.5;};
-        gaps = 8;
+        gaps = 7;
         center-focused-column = "never";
       };
       hotkey-overlay.skip-at-startup = true;
