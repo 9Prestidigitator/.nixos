@@ -215,8 +215,8 @@
     "Mod+C".action = center-column;
     "Mod+Shift+C".action = center-visible-columns;
 
-    "Mod+V".action = toggle-window-floating;
-    "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
+    "Mod+Ctrl+Space".action = toggle-window-floating;
+    "Mod+G".action = switch-focus-between-floating-and-tiling;
 
     # Finer width adjustments.
     # This command can also:
