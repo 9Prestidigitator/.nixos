@@ -19,12 +19,12 @@
 
   programs.kitty = {
     enable = true;
-    font = {
-      name = "Hack Nerd Font";
-      size = 10;
-    };
+    # font = {
+    #   name = "Hack Nerd Font";
+    #   size = 10;
+    # };
     settings = {
-      background_opacity = "0.9";
+      # background_opacity = "0.9";
       dynamic_background_opacity = true;
       cursor_shape = "block";
       hide_window_decorations = "yes";

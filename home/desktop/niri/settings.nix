@@ -86,14 +86,18 @@
       };
       layout = {
         focus-ring = {
-          enable = false;
-        };
-        border = {
           enable = true;
           width = 3;
-          active.color = "transparent";
+          active.gradient = {
+            angle = 135;
+            from = "#${base07}";
+            to = "#${base0F}";
+          };
+          urgent.color = "#${base08}";
           inactive.color = "transparent";
-          urgent.color = "#9b0000";
+        };
+        border = {
+          enable = false;
         };
         preset-column-widths = [
           {proportion = 0.3333;}
@@ -101,7 +105,7 @@
           {proportion = 0.6666;}
         ];
         default-column-width = {proportion = 0.5;};
-        gaps = 5;
+        gaps = 10;
         center-focused-column = "never";
       };
       hotkey-overlay.skip-at-startup = true;

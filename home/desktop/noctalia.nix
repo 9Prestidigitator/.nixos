@@ -32,7 +32,7 @@
       bar = {
         backgroundOpacity = 1;
         density = "comfortable";
-        floating = true;
+        floating = false;
         marginHorizontal = 0.35;
         marginVertical = 0.52;
         outerCorners = false;

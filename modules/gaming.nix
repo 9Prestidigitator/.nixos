@@ -17,7 +17,7 @@
 
     environment.systemPackages = with pkgs; [
       prismlauncher
-      bottles
+      (bottles.override {removeWarningPopup = true;})
       heroic
     ];
   };

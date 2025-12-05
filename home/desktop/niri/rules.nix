@@ -22,6 +22,7 @@
         matches = [{is-floating = true;}];
         shadow.enable = true;
         border.enable = false;
+        focus-ring.enable = false;
       }
       {
         matches = [

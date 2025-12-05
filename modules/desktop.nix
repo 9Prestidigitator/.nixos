@@ -68,7 +68,10 @@
       openFirewall = true;
     };
 
-    services.noctalia-shell.enable = true;
+    services.noctalia-shell = {
+      enable = true;
+      target = "niri.service";
+    };
 
     services.flatpak.enable = true;
 
