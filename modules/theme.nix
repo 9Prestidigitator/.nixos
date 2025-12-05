@@ -12,7 +12,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
     polarity = "dark";
     cursor = {
       size = 24;
