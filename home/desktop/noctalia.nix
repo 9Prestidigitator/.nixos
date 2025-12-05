@@ -10,26 +10,29 @@
     inputs.noctalia.homeModules.default
   ];
 
+  wayland.systemd.target = "niri.service";
+
   programs.noctalia-shell = with config.lib.stylix.colors; {
     enable = true;
-    # colors = {
-    #   mError = "#${base08}";
-    #   mOnError = "#${base00}";
-    #   mOnPrimary = "#${base00}";
-    #   mOnSecondary = "#${base00}";
-    #   mOnSurface = "#${base04}";
-    #   mOnSurfaceVariant = "#${base04}";
-    #   mOnTertiary = "#${base00}";
-    #   mOnHover = "#${base00}";
-    #   mOutline = "#${base02}";
-    #   mPrimary = "#${base0B}";
-    #   mSecondary = "#${base0A}";
-    #   mShadow = "#${base00}";
-    #   mSurface = "#${base00}";
-    #   mHover = "#${base00}";
-    #   mSurfaceVariant = "#${base01}";
-    #   mTertiary = "#${base0D}";
-    # };
+    systemd.enable = true;
+    colors = {
+      mError = "#${base08}";
+      mOnError = "#${base00}";
+      mOnPrimary = "#${base00}";
+      mOnSecondary = "#${base00}";
+      mOnSurface = "#${base04}";
+      mOnSurfaceVariant = "#${base04}";
+      mOnTertiary = "#${base00}";
+      mOnHover = "#${base00}";
+      mOutline = "#${base02}";
+      mPrimary = "#${base0B}";
+      mSecondary = "#${base0A}";
+      mShadow = "#${base00}";
+      mSurface = "#${base00}";
+      mHover = "#${base00}";
+      mSurfaceVariant = "#${base01}";
+      mTertiary = "#${base0D}";
+    };
     settings = {
       settingsVersion = 26;
       bar = {

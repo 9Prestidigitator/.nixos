@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    inputs.noctalia.nixosModules.default
+    # inputs.noctalia.nixosModules.default
     ./music_production.nix
     ./gaming.nix
     ./design.nix
@@ -68,10 +68,10 @@
       openFirewall = true;
     };
 
-    services.noctalia-shell = {
-      enable = true;
-      target = "niri.service";
-    };
+    # services.noctalia-shell = {
+    #   enable = true;
+    #   target = "niri.service";
+    # };
 
     services.flatpak.enable = true;
 
@@ -136,7 +136,7 @@
       wlsunset
       pavucontrol
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      # inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.qt6.qtdeclarative
     ];
