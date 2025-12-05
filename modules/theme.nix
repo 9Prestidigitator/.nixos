@@ -38,6 +38,7 @@
         kitty.enable = false;
         spicetify.enable = false;
         neovim.enable = false;
+        grub.enable = false;
       };
     };
   };
