@@ -82,7 +82,7 @@
       };
       overview = {
         workspace-shadow.enable = false;
-        # backdrop-color = "transparent";
+        backdrop-color = "#${base00}";
       };
       layout = {
         focus-ring = {
@@ -105,7 +105,7 @@
           {proportion = 0.6666;}
         ];
         default-column-width = {proportion = 0.5;};
-        gaps = 10;
+        gaps = 8;
         center-focused-column = "never";
       };
       hotkey-overlay.skip-at-startup = true;
