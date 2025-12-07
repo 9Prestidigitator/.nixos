@@ -4,7 +4,13 @@
   inputs,
   config,
   ...
-}: {
+}: let
+  libbluray = pkgs.libbluray.override {
+    withAACS = true;
+    withBDPlus = true;
+  };
+  myVlc = pkgs.vlc.override {inherit libbluray;};
+in {
   options = {
     media.enable = lib.mkEnableOption "Enable extra media packages";
   };
@@ -16,7 +22,7 @@
       qbittorrent
       mpv
       obs-studio
-      vlc
+      myVlc
       libaacs
       libbdplus
       makemkv

@@ -141,7 +141,7 @@
       settings = {
         X11Forwarding = true;
         PermitRootLogin = "no";
-        # PasswordAuthentication = false;
+        PasswordAuthentication = false;
       };
       openFirewall = true;
     };

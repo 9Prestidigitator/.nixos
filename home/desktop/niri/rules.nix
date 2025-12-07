@@ -34,7 +34,7 @@
         matches = [
           {
             app-id = "QjackCtl";
-            title = "(default) Active — QjackCtl";
+            title = "(default).*";
           }
         ];
         default-window-height = {fixed = 100;};
