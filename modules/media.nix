@@ -23,6 +23,7 @@ in {
       mpv
       obs-studio
       myVlc
+      openjdk17
       libaacs
       libbdplus
       makemkv
