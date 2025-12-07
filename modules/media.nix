@@ -15,7 +15,13 @@
     environment.systemPackages = with pkgs; [
       qbittorrent
       mpv
+      obs-studio
       vlc
+      libaacs
+      libbdplus
+      makemkv
+      handbrake
+      ffmpeg
     ];
   };
 }

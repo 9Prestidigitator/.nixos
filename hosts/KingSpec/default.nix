@@ -45,6 +45,11 @@
     options = ["nofail" "uid=1000" "gid=100" "umask=022"];
   };
 
+  services.udev.extraRules = ''
+    KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
+  '';
+
   networking = {
     hostName = "KingSpec";
     networkmanager.enable = true;

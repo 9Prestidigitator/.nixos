@@ -32,6 +32,15 @@
       }
       {
         matches = [
+          {
+            app-id = "QjackCtl";
+            title = "(default) Active — QjackCtl";
+          }
+        ];
+        default-window-height = {fixed = 100;};
+      }
+      {
+        matches = [
           {app-id = "com.bitwig.BitwigStudio";}
         ];
         open-maximized = true;

@@ -15,6 +15,13 @@ in {
     inputs.nixcord.homeModules.nixcord
   ];
 
+  dconf.settings = {
+    "org/gnome/desktop/default-applications/terminal" = {
+      exec = "kitty";
+      exec-arg = "-e";
+    };
+  };
+
   xdg = {
     userDirs = {
       enable = true;
