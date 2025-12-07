@@ -10,6 +10,10 @@
     withBDplus = true;
   };
   myVlc = pkgs.vlc.override {inherit libbluray;};
+  myVlcWithJava = myVlc.overrideAttrs (old: {
+    buildInputs = (old.buildInputs or []) ++ [pkgs.javaPackages.compiler.openjdk17];
+    propagatedBuildInputs = (old.propagatedBuildInputs or []) ++ [pkgs.javaPackages.compiler.openjdk17];
+  });
 in {
   options = {
     media.enable = lib.mkEnableOption "Enable extra media packages";
@@ -22,8 +26,7 @@ in {
       qbittorrent
       mpv
       obs-studio
-      myVlc
-      javaPackages.compiler.openjdk17
+      myVlcWithJava
       libaacs
       libbdplus
       makemkv
