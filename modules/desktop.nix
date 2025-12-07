@@ -112,7 +112,7 @@
       ntfs3g
       brave
       kitty
-      qjackctl
+      nautilus
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
       kdePackages.plasma-workspace
@@ -123,6 +123,7 @@
       xsettingsd
       xcursorgen
       xcursor-themes
+      qjackctl
       libnotify
       cliphist
       gvfs
