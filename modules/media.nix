@@ -7,7 +7,7 @@
 }: let
   libbluray = pkgs.libbluray.override {
     withAACS = true;
-    withBDPlus = true;
+    withBDplus = true;
   };
   myVlc = pkgs.vlc.override {inherit libbluray;};
 in {
