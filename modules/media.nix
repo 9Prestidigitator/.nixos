@@ -17,13 +17,14 @@
         withAACS = true;
         withBDplus = true;
         withJava = true;
+        jdk17 = pkgs.javaPackages.compiler.openjdk17;
       };
       myVlc = pkgs.vlc.override {inherit libbluray;};
     in
       with pkgs; [
         myVlc
         javaPackages.compiler.openjdk17
-        jre
+        jre17_minimal
         qbittorrent
         obs-studio
         zathura
