@@ -25,12 +25,11 @@ in {
       obs-studio
       myVlc
       javaPackages.compiler.openjdk17
-      # libaacs
-      # libbdplus
-      makemkv
       jre
+      makemkv
       handbrake
       ffmpeg
+      zathura
     ];
   };
 }
