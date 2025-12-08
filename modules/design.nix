@@ -14,7 +14,7 @@
       inkscape-with-extensions
       gimp-with-plugins
       blender
-      zathura
+      davinci-resolve
     ];
   };
 }
