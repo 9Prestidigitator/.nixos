@@ -21,13 +21,13 @@
       myVlc = pkgs.vlc.override {inherit libbluray;};
     in
       with pkgs; [
+        myVlc
+        javaPackages.compiler.openjdk17
+        jre
         qbittorrent
         obs-studio
         zathura
         mpv
-        myVlc
-        javaPackages.compiler.openjdk17
-        jre
         makemkv
         handbrake
         ffmpeg
