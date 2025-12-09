@@ -47,19 +47,19 @@ in {
     systemdTarget = "niri.service";
     timeouts = [
       {
-        timeout = 180;
-        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds'";
+        timeout = 1200;
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 10 seconds'";
       }
       {
-        timeout = 185;
+        timeout = 1210;
         command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
       }
       {
-        timeout = 240;
+        timeout = 1500;
         command = "${pkgs.niri} msg action power-off-monitors";
       }
       {
-        timeout = 360;
+        timeout = 2000;
         command = "${pkgs.systemd}/bin/systemctl suspend";
       }
     ];

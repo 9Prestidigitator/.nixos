@@ -25,6 +25,10 @@
         qbittorrent
         obs-studio
         zathura
+        koreader
+        anki
+        obsidian
+        easytag
         mpv
         makemkv
         handbrake

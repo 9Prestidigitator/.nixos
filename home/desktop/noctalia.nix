@@ -116,7 +116,7 @@
         pinnedExecs = [];
         position = "top_center";
         sortByMostUsed = true;
-        terminalCommand = "kitty";
+        terminalCommand = "kitty -e";
         useApp2Unit = false;
       };
       audio = {

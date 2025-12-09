@@ -114,6 +114,7 @@
       brave
       kitty
       nautilus
+      syncthing
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
       kdePackages.plasma-workspace
