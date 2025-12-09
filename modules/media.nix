@@ -25,7 +25,7 @@
         qbittorrent
         obs-studio
         zathura
-        koreader
+        calibre
         anki
         obsidian
         easytag
