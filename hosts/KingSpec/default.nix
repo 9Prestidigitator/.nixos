@@ -66,7 +66,6 @@
   };
 
   hardware.bluetooth.enable = true;
-  hardware.trackpoint.emulateWheel = true;
   services.blueman.enable = true;
 
   # Configure keymap in X11
