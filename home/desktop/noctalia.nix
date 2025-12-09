@@ -218,11 +218,12 @@
         animationSpeed = 1.50;
         avatarImage = "/home/max/.face";
         compactLockScreen = false;
+        lockOnSuspend = true;
+        showSessionButtonsOnLockScreen = false;
         dimmerOpacity = 0.8;
         enableShadows = false;
         forceBlackScreenCorners = false;
         language = "";
-        lockOnSuspend = true;
         radiusRatio = 0.25;
         scaleRatio = 0.9;
         screenRadiusRatio = 1;
@@ -302,11 +303,6 @@
           }
           {
             action = "suspend";
-            countdownEnabled = true;
-            enabled = true;
-          }
-          {
-            action = "hibernate";
             countdownEnabled = true;
             enabled = true;
           }
