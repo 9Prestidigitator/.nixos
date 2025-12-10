@@ -33,6 +33,24 @@
         inherit username;
       };
     in {
+      ink = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          /home/max/.nixos/hosts/ink
+          ./users/${username}/nixos.nix
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              inherit username;
+            };
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+          }
+        ];
+      };
       KingSpec = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
