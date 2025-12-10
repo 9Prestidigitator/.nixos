@@ -46,6 +46,8 @@
     };
 
     fonts.packages = with pkgs; [
+      corefonts
+      vistafonts
       material-design-icons
 
       noto-fonts
