@@ -31,7 +31,7 @@
   home-manager.users.${username} = {
     programs.bash = {
       shellAliases = {
-        nixre = "sudo nixos-rebuild switch --upgrade --impure --flake .#ink";
+        nixre = "sudo nixos-rebuild switch --upgrade --impure --flake /home/${username}/.nixos#ink";
       };
     };
   };
