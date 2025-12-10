@@ -6,7 +6,7 @@
 }: {
   imports = [
     ../../modules
-    /home/max/.nixos/hosts/ink/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   boot = {

@@ -36,7 +36,7 @@
       ink = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
-          /home/max/.nixos/hosts/ink
+          ./hosts/ink
           ./users/${username}/nixos.nix
           inputs.home-manager.nixosModules.home-manager
           {
