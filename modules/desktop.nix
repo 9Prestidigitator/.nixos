@@ -47,7 +47,7 @@
 
     fonts.packages = with pkgs; [
       corefonts
-      vistafonts
+      vista-fonts
       material-design-icons
 
       noto-fonts
