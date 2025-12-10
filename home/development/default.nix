@@ -16,9 +16,8 @@
       ls = "ls -a --color=auto";
       nv = "nvim";
       tm = "tmux a || tmux";
-      nrs = "sudo nixos-rebuild switch";
-      nixup = "sudo nixos-rebuild switch --impure --flake .";
-      nixup-king = "sudo nixos-rebuild switch --impure --flake .#KingSpec";
+      fman = "compgen -c | sort -hr | fzf | xargs man";
+      nixup = "sudo nix flake update";
     };
     initExtra = ''
       [ $(tput cols) -ge 102 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))

@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  username,
   ...
 }: {
   imports = [
@@ -27,17 +28,19 @@
     ];
   };
 
-# fileSystems."/mnt/win" = {
-#   device = "/dev/disk/by-uuid/01DA1996D2DABBB0";
-#   fsType = "ntfs-3g";
-#   options = ["nofail" "uid=1000" "gid=100" "umask=022"];
-# };
+  home-manager.users.${username} = {
+    programs.bash = {
+      shellAliases = {
+        nixre = "sudo nixos-rebuild switch --upgrade --impure --flake .#ink";
+      };
+    };
+  };
 
-# fileSystems."/mnt/arch" = {
-#   device = "/dev/disk/by-uuid/49590ed2-0952-476b-a589-816f9b7e1242";
-#   fsType = "ext4";
-#   options = ["defaults"];
-# };
+  # fileSystems."/mnt/win" = {
+  #   device = "/dev/disk/by-uuid/01DA1996D2DABBB0";
+  #   fsType = "ntfs-3g";
+  #   options = ["nofail" "uid=1000" "gid=100" "umask=022"];
+  # };
 
   fileSystems."/mnt/1tb_hdd" = {
     device = "/dev/disk/by-uuid/7E90B7D790B7945D";
@@ -45,6 +48,11 @@
     options = ["nofail" "uid=1000" "gid=100" "umask=022"];
   };
 
+  fileSystems."/mnt/1tb_ssd" = {
+    device = "/dev/disk/by-uuid/da22c9ae-04ab-4c7f-a248-e90940025e29";
+    fsType = "ext4";
+    options = ["defaults"];
+  };
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
