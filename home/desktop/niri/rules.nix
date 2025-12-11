@@ -55,6 +55,13 @@
       }
       {
         matches = [
+          {app-id = "steam";}
+          {title = "Friends List";}
+        ];
+        default-column-width = {fixed = 187;};
+      }
+      {
+        matches = [
           {title = "Confirm";}
           {title = "Authentication Required";}
           {title = "xdg-desktop-portal-gtk";}

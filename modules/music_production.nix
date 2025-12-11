@@ -20,8 +20,8 @@
     environment.systemPackages = with pkgs; [
       bitwig-studio
       wineWowPackages.yabridge
-      winePackages.fonts
       winetricks
+      winePackages.fonts
       wineasio
       yabridge
       yabridgectl
