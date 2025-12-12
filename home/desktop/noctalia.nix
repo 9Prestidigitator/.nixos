@@ -18,11 +18,11 @@
     settings = {
       settingsVersion = 26;
       bar = {
-        # backgroundOpacity = 1;
+        backgroundOpacity = lib.mkForce 0;
         density = "comfortable";
         floating = false;
-        marginHorizontal = 0.35;
-        marginVertical = 0.52;
+        # marginHorizontal = 0.36;
+        # marginVertical = 0;
         outerCorners = false;
         position = "left";
         showCapsule = false;
@@ -185,34 +185,44 @@
         };
       };
       dock = {
+        enabled = true;
         backgroundOpacity = lib.mkForce 0.78;
         colorizeIcons = false;
         displayMode = "auto_hide";
-        enabled = true;
         floatingRatio = 0.58;
+        inactiveIndicators = true;
+        deadOpacity = 0.6;
         monitors = [];
         onlySameOutput = false;
-        pinnedApps = [];
+        pinnedApps = [
+          "kitty"
+          "brave-browser"
+          "steam"
+          "discord"
+          "com.bitwig.BitwigStudio"
+        ];
+        pinnedStatic = true;
         size = 1;
       };
       general = {
         animationDisabled = false;
         animationSpeed = 1.50;
         avatarImage = "/home/max/.face";
-        compactLockScreen = false;
-        lockOnSuspend = true;
-        showSessionButtonsOnLockScreen = false;
-        dimmerOpacity = 0.8;
+        dimmerOpacity = 0.4;
         enableShadows = false;
         forceBlackScreenCorners = false;
         language = "";
-        radiusRatio = 0.25;
-        scaleRatio = 0.9;
+        iRadiusRatio = 1;
+        radiusRatio = 1;
+        scaleRatio = 1;
         screenRadiusRatio = 1;
         shadowDirection = "bottom_right";
         shadowOffsetX = 2;
         shadowOffsetY = 3;
         showScreenCorners = false;
+        compactLockScreen = false;
+        lockOnSuspend = true;
+        showSessionButtonsOnLockScreen = false;
       };
       hooks = {
         darkModeChange = "";
@@ -243,7 +253,7 @@
         nightTemp = "3000";
       };
       notifications = {
-        # backgroundOpacity = 1;
+        backgroundOpacity = lib.mkForce 1;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
         enabled = true;
@@ -256,7 +266,7 @@
       };
       osd = {
         autoHideMs = 2000;
-        # backgroundOpacity = 1;
+        backgroundOpacity = lib.mkForce 1;
         enabled = true;
         location = "top_right";
         monitors = [];
@@ -322,9 +332,9 @@
       ui = {
         fontDefaultScale = 1;
         fontFixedScale = 1;
-        # panelBackgroundOpacity = 1;
+        panelBackgroundOpacity = lib.mkForce 0;
         panelsAttachedToBar = true;
-        settingsPanelAttachToBar = true;
+        settingsPanelAttachToBar = false;
         tooltipsEnabled = true;
       };
       wallpaper = {
