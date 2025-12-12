@@ -15,28 +15,10 @@
   programs.noctalia-shell = with config.lib.stylix.colors; {
     enable = true;
     systemd.enable = true;
-    colors = {
-      mError = "#${base08}";
-      mOnError = "#${base00}";
-      mOnPrimary = "#${base00}";
-      mOnSecondary = "#${base00}";
-      mOnSurface = "#${base04}";
-      mOnSurfaceVariant = "#${base04}";
-      mOnTertiary = "#${base00}";
-      mOnHover = "#${base07}";
-      mOutline = "#${base02}";
-      mPrimary = "#${base0B}";
-      mSecondary = "#${base0A}";
-      mShadow = "#${base00}";
-      mSurface = "#${base00}";
-      mHover = "#${base00}";
-      mSurfaceVariant = "#${base01}";
-      mTertiary = "#${base0D}";
-    };
     settings = {
       settingsVersion = 26;
       bar = {
-        backgroundOpacity = 1;
+        # backgroundOpacity = 1;
         density = "comfortable";
         floating = false;
         marginHorizontal = 0.35;
@@ -203,14 +185,14 @@
         };
       };
       dock = {
-        backgroundOpacity = 0.78;
+        backgroundOpacity = lib.mkForce 0.78;
         colorizeIcons = false;
         displayMode = "auto_hide";
         enabled = true;
         floatingRatio = 0.58;
         monitors = [];
         onlySameOutput = false;
-        # pinnedApps = [];
+        pinnedApps = ["brave"];
         size = 1;
       };
       general = {
@@ -258,10 +240,10 @@
         forced = false;
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        nightTemp = "4000";
+        nightTemp = "3000";
       };
       notifications = {
-        backgroundOpacity = 1;
+        # backgroundOpacity = 1;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
         enabled = true;
@@ -274,7 +256,7 @@
       };
       osd = {
         autoHideMs = 2000;
-        backgroundOpacity = 1;
+        # backgroundOpacity = 1;
         enabled = true;
         location = "top_right";
         monitors = [];
@@ -340,7 +322,7 @@
       ui = {
         fontDefaultScale = 1;
         fontFixedScale = 1;
-        panelBackgroundOpacity = 1;
+        # panelBackgroundOpacity = 1;
         panelsAttachedToBar = true;
         settingsPanelAttachToBar = true;
         tooltipsEnabled = true;
