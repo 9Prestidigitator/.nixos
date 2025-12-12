@@ -12,7 +12,7 @@
 
   wayland.systemd.target = "niri.service";
 
-  programs.noctalia-shell = with config.lib.stylix.colors; {
+  programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
     settings = {
@@ -192,7 +192,7 @@
         floatingRatio = 0.58;
         monitors = [];
         onlySameOutput = false;
-        pinnedApps = ["brave"];
+        pinnedApps = [];
         size = 1;
       };
       general = {
