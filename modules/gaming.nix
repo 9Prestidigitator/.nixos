@@ -12,7 +12,6 @@
   config = lib.mkIf config.gaming.enable {
     programs.steam = {
       enable = true;
-      protontricks.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
