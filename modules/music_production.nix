@@ -19,7 +19,11 @@
     };
     environment.systemPackages = with pkgs; [
       bitwig-studio
+      reaper
+      reaper-sws-extension
+      reaper-reapack-extension
       wineWowPackages.yabridge
+      wineWowPackages.full
       winetricks
       winePackages.fonts
       wineasio
