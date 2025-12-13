@@ -38,7 +38,7 @@
         programs.spicetify = let
           spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
         in {
-          enable = true;
+          enable = lib.mkDefault true;
           theme = spicePkgs.themes.hazy;
           enabledExtensions = with spicePkgs.extensions; [
             adblock

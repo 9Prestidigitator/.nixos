@@ -55,6 +55,8 @@
       xsettingsd
       xcursorgen
       xcursor-themes
+      brightnessctl
+      wireplumber
       qjackctl
       libnotify
       wlsunset

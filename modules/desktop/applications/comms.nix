@@ -16,7 +16,7 @@
       inputs.nixcord.homeModules.nixcord
       {
         programs.nixcord = {
-          enable = true;
+          enable = lib.mkDefault true;
           discord = {
             vencord.enable = true;
           };
