@@ -11,7 +11,6 @@
     flake-utils.url = "github:numtide/flake-utils";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixcord.url = "github:kaylorben/nixcord";
-    native-access-nix.url = "github:yusefnapora/native-access-nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";

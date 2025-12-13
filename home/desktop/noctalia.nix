@@ -4,6 +4,7 @@
   pkgs,
   inputs,
   lib,
+  osConfig,
   ...
 }: {
   imports = [
@@ -77,7 +78,7 @@
                 id = "WiFi";
               }
             ]
-            ++ lib.optional (config.networking.hostName != "ink") {
+            ++ lib.optional (osConfig.networking.hostName != "ink") {
               displayMode = "onhover";
               id = "Battery";
               warningThreshold = 30;
