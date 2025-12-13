@@ -5,6 +5,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./tui.nix
+  ];
+
   home.packages = with pkgs; [
     # CLI
     git
