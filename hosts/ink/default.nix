@@ -28,7 +28,7 @@
     ];
   };
 
-  home-manager.users.${username} = {
+  home-manager.sharedModules = {
     programs.bash = {
       shellAliases = {
         nixre = "sudo nixos-rebuild switch --upgrade --impure --flake /home/${username}/.nixos#ink";
