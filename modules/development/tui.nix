@@ -13,15 +13,6 @@ in {
     package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
-  home.activation.syncNvimDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    $DRY_RUN_CMD ${
-      syncRepo {
-        url = "https://github.com/9Prestidigitator/nvim.git";
-        destination = "${config.home.homeDirectory}/.config/nvim";
-      }
-    }
-  '';
-
   programs.tmux = {
     enable = true;
     terminal = "tmux-256color";
@@ -48,11 +39,4 @@ in {
       set-option -g status-style bg=default
     '';
   };
-
-  home.packages = with pkgs; [
-    # TUI
-    vim
-    btop
-    lazygit
-  ];
 }

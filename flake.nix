@@ -36,14 +36,14 @@
           inherit specialArgs;
           modules = [
             path
-            ./users/${username}/nixos.nix
+            ./users/${username}
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useUserPackages = true;
               home-manager.useGlobalPkgs = true;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username} = import ./users/${username}/home.nix;
+              # home-manager.users.${username} = import ./users/${username}/home.nix;
             }
           ];
         };

@@ -1,0 +1,121 @@
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    # CLI
+    git
+    tree
+    fzf
+    wget
+    starship
+    ripgrep
+    unzip
+    fd
+
+    # TUI
+    vim
+    btop
+    lazygit
+
+    # Development
+    gcc
+    rustup
+    python3
+    uv
+    nodejs_24
+    dotnetCorePackages.sdk_9_0-bin
+    nixd
+  ];
+
+  home-manager.sharedModules = [
+    ./tui.nix
+
+    {
+      programs.bash = {
+        enable = true;
+        shellAliases = {
+          ls = "ls -a --color=auto";
+          nv = "nvim";
+          tm = "tmux a || tmux";
+          fman = "compgen -c | sort -hr | fzf | xargs man";
+          nixup = "sudo nix flake update";
+        };
+        initExtra = ''
+          clear
+          [ $(tput cols) -ge 102 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
+          eval "$(starship init bash)"
+          export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
+        '';
+      };
+
+      programs.fastfetch = {
+        enable = true;
+        settings = {
+          logo = {
+            source = "nixos";
+          };
+          display = {
+            separator = "";
+          };
+          modules = [
+            "break"
+            "break"
+            {
+              type = "custom";
+              format = "┌─────────────────────────────────────────────────────┐";
+              color = "white";
+            }
+            {
+              type = "title";
+              key = "                      ";
+            }
+            "break"
+            {
+              type = "os";
+              key = "┌󰌽  ";
+            }
+            {
+              type = "kernel";
+              key = "└  ";
+            }
+            "break"
+            {
+              type = "uptime";
+              key = "┌󰥔  ";
+            }
+            {
+              type = "packages";
+              key = "└󰏖  ";
+            }
+            "break"
+            {
+              type = "cpu";
+              key = "┌  ";
+            }
+            {
+              type = "gpu";
+              key = "├󰍛  ";
+            }
+            {
+              type = "memory";
+              key = "├󰍛  ";
+            }
+            {
+              type = "disk";
+              key = "└  ";
+            }
+            {
+              type = "custom";
+              format = "└─────────────────────────────────────────────────────┘";
+              color = "white";
+            }
+          ];
+        };
+      };
+    }
+  ];
+}
