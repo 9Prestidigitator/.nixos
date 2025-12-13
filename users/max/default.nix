@@ -1,8 +1,11 @@
 {
   lib,
+  pkgs,
   config,
   ...
-}: {
+}: let
+  syncRepo = import ./sync-repo.nix {inherit pkgs;};
+in {
   users.users.max = {
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];

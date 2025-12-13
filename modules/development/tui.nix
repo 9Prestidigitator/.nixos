@@ -5,9 +5,7 @@
   inputs,
   lib,
   ...
-}: let
-  syncRepo = import ./sync-repo.nix {inherit pkgs;};
-in {
+}: {
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
