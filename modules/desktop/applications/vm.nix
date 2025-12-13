@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf config.vm.enable {
+  config = lib.mkIf config.desktop.vm.enable {
     virtualisation.libvirtd = {
       enable = true;
       qemu = {

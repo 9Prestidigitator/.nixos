@@ -40,11 +40,10 @@
     };
 
     environment.systemPackages = with pkgs; [
-      moonlight-qt
-      ntfs3g
-      brave
-      kitty
       nautilus
+      kitty
+      brave
+      moonlight-qt
       syncthing
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
@@ -58,14 +57,26 @@
       xcursor-themes
       qjackctl
       libnotify
-      cliphist
-      gvfs
-      p7zip
       wlsunset
       pavucontrol
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
       inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.qt6.qtdeclarative
+    ];
+
+    home-manager.sharedModules = [
+      {
+        programs.kitty = {
+          enable = true;
+          settings = {
+            background_opacity = lib.mkForce "0.85";
+            dynamic_background_opacity = true;
+            cursor_shape = "block";
+            hide_window_decorations = "yes";
+            wayland_enable_ime = "yes";
+          };
+        };
+      }
     ];
   };
 }

@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf config.design.enable {
+  config = lib.mkIf config.desktop.design.enable {
     environment.systemPackages = with pkgs; [
       inkscape-with-extensions
       gimp-with-plugins

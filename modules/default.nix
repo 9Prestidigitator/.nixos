@@ -60,7 +60,7 @@
     power-profiles-daemon.enable = true;
 
     # Enable the X11 windowing system.
-    xserver.enable = true;
+    # xserver.enable = true;
 
     keyd = {
       enable = true;
@@ -145,6 +145,10 @@
     brotli
     openssl
     parted
+    ntfs3g
+    cliphist
+    gvfs
+    p7zip
     libsForQt5.qt5.qtgraphicaleffects
   ];
 

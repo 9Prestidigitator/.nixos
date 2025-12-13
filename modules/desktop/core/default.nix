@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./noctalia.nix
-    # ./niri
+    ./noctalia
+    ./niri
   ];
 }

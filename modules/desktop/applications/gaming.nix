@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf config.gaming.enable {
+  config = lib.mkIf config.desktop.gaming.enable {
     programs.steam = {
       enable = true;
       protontricks.enable = true;

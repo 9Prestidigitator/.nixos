@@ -6,8 +6,8 @@
   ...
 }: {
   imports = [
-    /home/max/.nixos/modules/desktop/core
-    /home/max/.nixos/modules/desktop/applications
+    ./core
+    ./applications
   ];
 
   options.desktop = {
@@ -39,19 +39,12 @@
       };
     };
 
-    xdg = {
-      portal = {
-        config = {
-          niri = {
-            default = "gnome";
-            "org.freedesktop.impl.portal.FileChooser" = "gtk";
-          };
-        };
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
-          pkgs.xdg-desktop-portal-gtk
-        ];
-      };
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gnome
+        pkgs.xdg-desktop-portal-gtk
+      ];
     };
 
     fonts.packages = with pkgs; [
@@ -67,6 +60,21 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
       nerd-fonts.iosevka
+    ];
+
+    home-manager.sharedModules = [
+      {
+        xdg = {
+          userDirs = {
+            enable = true;
+            createDirectories = true;
+          };
+          terminal-exec = {
+            enable = true;
+            settings.default = ["kitty.desktop"];
+          };
+        };
+      }
     ];
   };
 }

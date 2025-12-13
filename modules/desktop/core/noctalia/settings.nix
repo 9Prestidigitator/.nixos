@@ -1,100 +1,16 @@
 {
-  username,
-  config,
-  pkgs,
-  inputs,
   lib,
-  osConfig,
+  config,
+  inputs,
+  pkgs,
   ...
 }: {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
-
   wayland.systemd.target = "niri.service";
-
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
     settings = {
       settingsVersion = 26;
-      bar = {
-        backgroundOpacity = lib.mkForce 0;
-        density = "comfortable";
-        floating = false;
-        # marginHorizontal = 1.36;
-        # marginVertical = 0;
-        outerCorners = false;
-        position = "left";
-        showCapsule = false;
-        widgets = {
-          center = [];
-          left = [
-            {
-              colorizeDistroLogo = false;
-              customIconPath = "";
-              icon = "";
-              id = "ControlCenter";
-              useDistroLogo = true;
-            }
-            {
-              characterCount = 2;
-              colorizeIcons = false;
-              hideUnoccupied = true;
-              id = "TaskbarGrouped";
-              labelMode = "none";
-              showNumbersOnlyWhenOccupied = true;
-              showWorkspaceNumbers = false;
-            }
-          ];
-          right =
-            [
-              {
-                blacklist = [];
-                colorizeIcons = false;
-                drawerEnabled = true;
-                id = "Tray";
-                pinned = [];
-              }
-              {
-                displayMode = "onhover";
-                id = "Brightness";
-              }
-              {
-                hideWhenZero = true;
-                id = "NotificationHistory";
-                showUnreadBadge = true;
-              }
-              {
-                displayMode = "onhover";
-                id = "Bluetooth";
-              }
-              {
-                displayMode = "onhover";
-                id = "Volume";
-              }
-              {
-                displayMode = "onhover";
-                id = "WiFi";
-              }
-            ]
-            ++ lib.optional (osConfig.networking.hostName != "ink") {
-              displayMode = "onhover";
-              id = "Battery";
-              warningThreshold = 30;
-            }
-            ++ [
-              {
-                customFont = "";
-                formatHorizontal = "HH:mm ddd; MMM dd";
-                formatVertical = "HH mm - dd MM";
-                id = "Clock";
-                useCustomFont = false;
-                usePrimaryColor = true;
-              }
-            ];
-        };
-      };
       appLauncher = {
         customLaunchPrefix = "";
         customLaunchPrefixEnabled = false;
@@ -188,31 +104,10 @@
           ];
         };
       };
-      dock = {
-        enabled = true;
-        backgroundOpacity = lib.mkForce 0;
-        colorizeIcons = false;
-        displayMode = "auto_hide";
-        floatingRatio = 0.58;
-        inactiveIndicators = true;
-        deadOpacity = 0.4;
-        monitors = [];
-        onlySameOutput = false;
-        pinnedApps = [
-          "kitty"
-          "org.gnome.Nautilus"
-          "brave-browser"
-          "steam"
-          "discord"
-          "com.bitwig.BitwigStudio"
-        ];
-        pinnedStatic = true;
-        size = 1;
-      };
       general = {
         animationDisabled = false;
         animationSpeed = 1.50;
-        avatarImage = "${config.home.homeDirectory}/.face";
+        avatarImage = "~/.face";
         dimmerOpacity = 0.4;
         enableShadows = false;
         forceBlackScreenCorners = false;
@@ -281,7 +176,7 @@
         audioCodec = "opus";
         audioSource = "default_output";
         colorRange = "limited";
-        directory = "${config.home.homeDirectory}/Videos";
+        directory = "~/Videos";
         frameRate = 60;
         quality = "very_high";
         showCursor = true;
@@ -343,7 +238,7 @@
         tooltipsEnabled = true;
       };
       wallpaper = {
-        directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
+        directory = "~/Pictures/Wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";

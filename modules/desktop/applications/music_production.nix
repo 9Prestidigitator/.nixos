@@ -9,7 +9,7 @@
     inputs.musnix.nixosModules.musnix
   ];
 
-  config = lib.mkIf config.musicprod.enable {
+  config = lib.mkIf config.desktop.musicprod.enable {
     musnix = {
       enable = true;
     };

@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  config = lib.mkIf config.media.enable {
+  config = lib.mkIf config.desktop.media.enable {
     services.printing.drivers = [pkgs.hplipWithPlugin];
 
     environment = let
@@ -31,5 +31,25 @@
         ffmpeg
       ];
     };
+
+    home-manager.sharedModules = [
+      inputs.spicetify-nix.homeManagerModules.default
+      {
+        programs.spicetify = let
+          spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+        in {
+          enable = true;
+          theme = spicePkgs.themes.hazy;
+          enabledExtensions = with spicePkgs.extensions; [
+            adblock
+            hidePodcasts
+          ];
+          enabledCustomApps = with spicePkgs.apps; [
+            newReleases
+            ncsVisualizer
+          ];
+        };
+      }
+    ];
   };
 }
