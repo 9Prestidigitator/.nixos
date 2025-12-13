@@ -8,7 +8,7 @@
     ];
   };
 
-  home-manager.sharedModules = [
+  home-manager.users.max = [
     ./home.nix
   ];
 }

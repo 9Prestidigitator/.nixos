@@ -8,7 +8,6 @@
     musnix.url = "github:musnix/musnix";
     niri.url = "github:sodiboo/niri-flake";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
-    flake-utils.url = "github:numtide/flake-utils";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixcord.url = "github:kaylorben/nixcord";
     home-manager = {
