@@ -5,36 +5,35 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    # CLI
-    git
-    tree
-    fzf
-    wget
-    starship
-    ripgrep
-    unzip
-    fd
-
-    # TUI
-    vim
-    btop
-    lazygit
-
-    # Development
-    gcc
-    rustup
-    python3
-    uv
-    nodejs_24
-    dotnetCorePackages.sdk_9_0-bin
-    nixd
-  ];
-
   home-manager.sharedModules = [
     ./tui.nix
-
     {
+      home.packages = with pkgs; [
+        # CLI
+        git
+        tree
+        fzf
+        wget
+        starship
+        ripgrep
+        unzip
+        fd
+
+        # TUI
+        vim
+        btop
+        lazygit
+
+        # Development
+        gcc
+        rustup
+        python3
+        uv
+        nodejs_24
+        dotnetCorePackages.sdk_9_0-bin
+        nixd
+      ];
+
       programs.bash = {
         enable = true;
         shellAliases = {
