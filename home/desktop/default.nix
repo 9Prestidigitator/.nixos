@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  niri,
   inputs,
   ...
 }: let

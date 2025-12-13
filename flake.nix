@@ -29,64 +29,28 @@
     nixosConfigurations = let
       username = "max";
       specialArgs = {
-        inherit inputs;
-        inherit username;
+        inherit inputs username;
       };
+      mkHost = name: path:
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            path
+            ./users/${username}/nixos.nix
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useUserPackages = true;
+              home-manager.useGlobalPkgs = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.users.${username} = import ./users/${username}/home.nix;
+            }
+          ];
+        };
     in {
-      ink = nixpkgs.lib.nixosSystem {
-        inherit specialArgs;
-        modules = [
-          ./hosts/ink
-          ./users/${username}/nixos.nix
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-            };
-            home-manager.users.${username} = import ./users/${username}/home.nix;
-          }
-        ];
-      };
-      KingSpec = nixpkgs.lib.nixosSystem {
-        inherit specialArgs;
-        modules = [
-          ./hosts/KingSpec
-          ./users/${username}/nixos.nix
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-            };
-            home-manager.users.${username} = import ./users/${username}/home.nix;
-          }
-        ];
-      };
-      vm = nixpkgs.lib.nixosSystem {
-        inherit specialArgs;
-        modules = [
-          ./hosts/vm
-          ./users/${username}/nixos.nix
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useUserPackages = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-            };
-            home-manager.users.${username} = import ./users/${username}/home.nix;
-          }
-        ];
-      };
+      ink = mkHost "ink" ./hosts/ink;
+      papyr = mkHost "papyr" ./hosts/papyr;
+      vm = mkHost "vm" ./hosts/vm;
     };
   };
 }

@@ -212,7 +212,7 @@
       general = {
         animationDisabled = false;
         animationSpeed = 1.50;
-        avatarImage = "/home/max/.face";
+        avatarImage = "${config.home.homeDirectory}/.face";
         dimmerOpacity = 0.4;
         enableShadows = false;
         forceBlackScreenCorners = false;
@@ -281,7 +281,7 @@
         audioCodec = "opus";
         audioSource = "default_output";
         colorRange = "limited";
-        directory = "/home/max/Videos";
+        directory = "${config.home.homeDirectory}/Videos";
         frameRate = 60;
         quality = "very_high";
         showCursor = true;
@@ -343,7 +343,7 @@
         tooltipsEnabled = true;
       };
       wallpaper = {
-        directory = "/home/max/Pictures/Wallpapers";
+        directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";

@@ -39,7 +39,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "vm";
     networkmanager.enable = true;
   };
 
