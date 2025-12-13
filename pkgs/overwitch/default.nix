@@ -12,33 +12,45 @@
     };
 
     nativeBuildInputs = with pkgs; [
-      autoreconfHook
       pkg-config
+      automake
+      autoconf
+      autoreconfHook
+      libtool
       gettext
     ];
 
     buildInputs = with pkgs; [
       libusb1
-      jack2
       libsamplerate
       libsndfile
       json-glib
+      jack2
       gtk4
       systemd
     ];
 
     # Uncomment for CLI-only build (no GTK)
-    # configureFlags = [ "CLI_ONLY=yes" ];
+    configureFlags = ["--with-systemduserconfdir=${placeholder "out"}/lib/systemd/user"];
 
-    postInstall = ''
-      # Install udev rules
-      mkdir -p $out/lib/udev/rules.d
-      cp udev/*.rules $out/lib/udev/rules.d/
-
-      # Install systemd user service
-      mkdir -p $out/lib/systemd/user
-      cp systemd/overwitch.service $out/lib/systemd/user/
+    proConfigure = ''
+      autoreconf --intall
     '';
+
+    installFlags = [
+      "sysconfdir=$(out)/etc"
+      "udevdir=$(out)/lib/udev"
+    ];
+
+    # postInstall = ''
+    #   # Install udev rules
+    #   mkdir -p $out/lib/udev/rules.d
+    #   cp udev/*.rules $out/lib/udev/rules.d/
+    #
+    #   # Install systemd user service
+    #   mkdir -p $out/lib/systemd/user
+    #   cp systemd/overwitch.service $out/lib/systemd/user/
+    # '';
 
     meta = with pkgs.lib; {
       description = "JACK client for Overbridge 2 devices";
