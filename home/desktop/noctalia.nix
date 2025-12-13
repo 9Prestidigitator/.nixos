@@ -21,7 +21,7 @@
         backgroundOpacity = lib.mkForce 0;
         density = "comfortable";
         floating = false;
-        # marginHorizontal = 0.36;
+        # marginHorizontal = 1.36;
         # marginVertical = 0;
         outerCorners = false;
         position = "left";
@@ -46,49 +46,52 @@
               showWorkspaceNumbers = false;
             }
           ];
-          right = [
-            {
-              blacklist = [];
-              colorizeIcons = false;
-              drawerEnabled = true;
-              id = "Tray";
-              pinned = [];
-            }
-            {
-              displayMode = "onhover";
-              id = "Brightness";
-            }
-            {
-              hideWhenZero = true;
-              id = "NotificationHistory";
-              showUnreadBadge = true;
-            }
-            {
-              displayMode = "onhover";
-              id = "Bluetooth";
-            }
-            {
-              displayMode = "onhover";
-              id = "Volume";
-            }
-            {
-              displayMode = "onhover";
-              id = "WiFi";
-            }
-            {
+          right =
+            [
+              {
+                blacklist = [];
+                colorizeIcons = false;
+                drawerEnabled = true;
+                id = "Tray";
+                pinned = [];
+              }
+              {
+                displayMode = "onhover";
+                id = "Brightness";
+              }
+              {
+                hideWhenZero = true;
+                id = "NotificationHistory";
+                showUnreadBadge = true;
+              }
+              {
+                displayMode = "onhover";
+                id = "Bluetooth";
+              }
+              {
+                displayMode = "onhover";
+                id = "Volume";
+              }
+              {
+                displayMode = "onhover";
+                id = "WiFi";
+              }
+            ]
+            ++ lib.optional (config.networking.hostName != "ink") {
               displayMode = "onhover";
               id = "Battery";
               warningThreshold = 30;
             }
-            {
-              customFont = "";
-              formatHorizontal = "HH:mm ddd; MMM dd";
-              formatVertical = "HH mm - dd MM";
-              id = "Clock";
-              useCustomFont = false;
-              usePrimaryColor = true;
-            }
-          ];
+            ++ [
+              {
+                customFont = "";
+                formatHorizontal = "HH:mm ddd; MMM dd";
+                formatVertical = "HH mm - dd MM";
+                id = "Clock";
+                useCustomFont = false;
+                usePrimaryColor = true;
+              }
+            ];
         };
       };
       appLauncher = {
@@ -186,16 +189,17 @@
       };
       dock = {
         enabled = true;
-        backgroundOpacity = lib.mkForce 0.78;
+        backgroundOpacity = lib.mkForce 0;
         colorizeIcons = false;
         displayMode = "auto_hide";
         floatingRatio = 0.58;
         inactiveIndicators = true;
-        deadOpacity = 0.6;
+        deadOpacity = 0.4;
         monitors = [];
         onlySameOutput = false;
         pinnedApps = [
           "kitty"
+          "org.gnome.Nautilus"
           "brave-browser"
           "steam"
           "discord"
