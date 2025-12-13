@@ -8,7 +8,7 @@
 }: {
   imports = [
     ./desktop
-    ./development
+    # ./development
     ./theme.nix
   ];
 

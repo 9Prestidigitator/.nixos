@@ -30,7 +30,7 @@
     ];
   };
 
-  home-manager.sharedModules = {
+  home-manager.users.${username} = {
     programs.bash = {
       shellAliases = {
         nixre = "sudo nixos-rebuild switch --upgrade --impure --flake .#vm";

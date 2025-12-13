@@ -8,7 +8,5 @@
     ];
   };
 
-  home-manager.users.max = [
-    ./home.nix
-  ];
+  home-manager.users."max" = ./home.nix;
 }
