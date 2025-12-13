@@ -2,8 +2,8 @@
   description = "Max's nix config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs_unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     musnix.url = "github:musnix/musnix";
     niri.url = "github:sodiboo/niri-flake";
