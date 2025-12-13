@@ -23,8 +23,6 @@
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "threadirqs"
-      # "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-      # "nvidia_drm.modeset=1"
     ];
   };
 
@@ -41,23 +39,20 @@
     SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
   '';
 
+  powerManagement.cpuFreqGovernor = "powersave";
+  services.thermald.enable = true;
+
   networking = {
     hostName = "papyr";
     networkmanager.enable = true;
   };
 
-  # services.xserver.videoDrivers = ["nvidia"];
-
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   powerManagement.enable = true;
-  #   powerManagement.finegrained = false;
-  #   open = false;
-  #   nvidiaSettings = true;
-  # };
-
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  services.fprintd.enable = true;
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.suo.fprintAuth = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

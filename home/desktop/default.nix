@@ -9,7 +9,7 @@
 in {
   imports = [
     ./niri
-    ./noctalia.nix
+    # ./noctalia.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.nixcord.homeModules.nixcord
   ];

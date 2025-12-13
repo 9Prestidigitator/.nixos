@@ -6,20 +6,11 @@
   ...
 }: {
   imports = [
-    ./desktop.nix
+    ./desktop
+    ./theme.nix
   ];
 
   desktop.enable = lib.mkDefault true;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    earlySetup = true;
-    font = "ter-v16b";
-    packages = with pkgs; [terminus_font];
-    keyMap = "us";
-    # useXkbConfig = true; # use xkb.options in tty.
-  };
 
   nix = {
     gc = {
@@ -39,6 +30,16 @@
 
   # Set your time zone.
   time.timeZone = "US/Eastern";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    earlySetup = true;
+    font = "ter-v16b";
+    packages = with pkgs; [terminus_font];
+    keyMap = "us";
+    # useXkbConfig = true; # use xkb.options in tty.
+  };
 
   # List services that you want to enable:
   services = {

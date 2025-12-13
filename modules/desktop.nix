@@ -12,7 +12,6 @@
     ./comms.nix
     ./media.nix
     ./vm.nix
-    ./theme.nix
   ];
 
   options = {

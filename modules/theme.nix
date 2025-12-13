@@ -27,19 +27,21 @@
     };
     targets.grub.enable = false;
   };
-  home-manager.users.${username} = {
-    stylix = {
-      iconTheme = {
-        enable = true;
-        package = pkgs.kdePackages.breeze;
-        dark = "breeze-dark";
-        light = "breeze";
+  home-manager.sharedModules = [
+    {
+      stylix = {
+        iconTheme = {
+          enable = true;
+          package = pkgs.kdePackages.breeze;
+          dark = "breeze-dark";
+          light = "breeze";
+        };
+        targets = {
+          # kitty.enable = false;
+          spicetify.enable = false;
+          neovim.enable = false;
+        };
       };
-      targets = {
-        # kitty.enable = false;
-        spicetify.enable = false;
-        neovim.enable = false;
-      };
-    };
-  };
+    }
+  ];
 }

@@ -5,10 +5,6 @@
   config,
   ...
 }: {
-  options = {
-    vm.enable = lib.mkEnableOption "Enable Virtual Machine support";
-  };
-
   config = lib.mkIf config.vm.enable {
     virtualisation.libvirtd = {
       enable = true;
