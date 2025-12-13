@@ -107,7 +107,7 @@
       general = {
         animationDisabled = false;
         animationSpeed = 1.50;
-        avatarImage = "${config.xdg.userDirs.Pictures}/.face";
+        avatarImage = "${config.xdg.userDirs.pictures}/.face";
         dimmerOpacity = 0.4;
         enableShadows = false;
         forceBlackScreenCorners = false;
@@ -176,7 +176,7 @@
         audioCodec = "opus";
         audioSource = "default_output";
         colorRange = "limited";
-        directory = "${config.xdg.userDirs.Videos}";
+        directory = "${config.xdg.userDirs.videos}";
         frameRate = 60;
         quality = "very_high";
         showCursor = true;
@@ -238,7 +238,7 @@
         tooltipsEnabled = true;
       };
       wallpaper = {
-        directory = "${config.xdg.userDirs.Pictures}/Wallpapers";
+        directory = "${config.xdg.userDirs.pictures}/Wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";
