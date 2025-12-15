@@ -8,6 +8,19 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "papyr";
+  networking.networkmanager.enable = true;
+
+  desktop = {
+    enable = true;
+    musicprod.enable = true;
+    gaming.enable = false;
+    design.enable = true;
+    comms.enable = true;
+    media.enable = true;
+    vm.enable = false;
+  };
+
   boot = {
     loader = {
       grub = {
@@ -27,16 +40,10 @@
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
   '';
 
   powerManagement.cpuFreqGovernor = "powersave";
   services.thermald.enable = true;
-
-  networking = {
-    hostName = "papyr";
-    networkmanager.enable = true;
-  };
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

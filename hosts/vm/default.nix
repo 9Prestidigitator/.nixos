@@ -8,8 +8,18 @@
     ./hardware-configuration.nix
   ];
 
-  gaming.enable = lib.mkForce false;
-  musicprod.enable = lib.mkForce false;
+  networking.hostName = "vm";
+  networking.networkmanager.enable = true;
+
+  desktop = {
+    enable = true;
+    musicprod.enable = false;
+    gaming.enable = false;
+    design.enable = false;
+    comms.enable = false;
+    media.enable = false;
+    vm.enable = false;
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot = {
@@ -27,11 +37,6 @@
     kernelParams = [
       "threadirqs"
     ];
-  };
-
-  networking = {
-    hostName = "vm";
-    networkmanager.enable = true;
   };
 
   # Configure keymap in X11

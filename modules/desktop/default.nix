@@ -22,15 +22,6 @@
   };
 
   config = lib.mkIf config.desktop.enable {
-    desktop = {
-      musicprod.enable = lib.mkDefault true;
-      gaming.enable = lib.mkDefault true;
-      design.enable = lib.mkDefault true;
-      comms.enable = lib.mkDefault true;
-      media.enable = lib.mkDefault true;
-      vm.enable = lib.mkDefault true;
-    };
-
     services.logind = {
       settings.Login = {
         HandleLidSwitch = "suspend";

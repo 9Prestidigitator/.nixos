@@ -8,6 +8,19 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "ink";
+  networking.networkmanager.enable = true;
+
+  desktop = {
+    enable = true;
+    musicprod.enable = true;
+    gaming.enable = true;
+    design.enable = true;
+    comms.enable = true;
+    media.enable = true;
+    vm.enable = true;
+  };
+
   boot = {
     loader = {
       grub = {
@@ -47,13 +60,9 @@
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
   '';
 
-  networking = {
-    hostName = "ink";
-    networkmanager.enable = true;
-  };
+  powerManagement.cpuFreqGovernor = "performance";
 
   services.xserver.videoDrivers = ["nvidia"];
 

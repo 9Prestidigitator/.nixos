@@ -14,12 +14,6 @@ in {
       default = pkgs.overwitch;
       description = "Overwitch package to use";
     };
-
-    user = lib.mkOption {
-      type = lib.types.str;
-      default = "root";
-      description = "User to run overwitch as";
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -32,13 +26,12 @@ in {
 
     systemd.services.overwitch = {
       description = "Overwitch overbridge Daemon";
-      wantedBy = ["multi-user.target"];
-      after = ["sound.target"];
+      wantedBy = ["default.target"];
+      after = ["pipewire.target"];
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/overwitch";
         Restart = "on-failure";
-        User = cfg.user;
       };
     };
   };
