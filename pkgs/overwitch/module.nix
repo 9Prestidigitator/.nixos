@@ -30,7 +30,7 @@ in {
       after = ["pipewire.target"];
 
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/overwitch";
+        ExecStart = "${cfg.package}/bin/overwitch-service";
         Restart = "on-failure";
       };
     };

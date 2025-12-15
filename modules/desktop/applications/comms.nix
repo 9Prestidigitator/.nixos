@@ -7,9 +7,6 @@
 }: {
   config = lib.mkIf config.desktop.comms.enable {
     environment.systemPackages = with pkgs; [
-      # (discord.override {
-      #   withVencord = true;
-      # })
       signal-desktop
     ];
     home-manager.sharedModules = [
