@@ -15,10 +15,8 @@ let
     mkdir -p "$(dirname "$DEST_DIR")"
 
     if [ -d "$DEST_DIR/.git" ]; then
-        echo "Repository exists at $DEST_DIR, pulling updates..."
         cd "$DEST_DIR"
 
-        # Check for unstaged changes
         if ! ${pkgs.git}/bin/git diff --quiet || ! ${pkgs.git}/bin/git diff --cached --quiet; then
             BACKUP_DIR="$DEST_DIR.backup_$TIMESTAMP"
             echo "Unstaged changes detected! Creating backup at: $BACKUP_DIR"

@@ -3,6 +3,7 @@
   config,
   inputs,
   pkgs,
+  osConfig,
   ...
 }: {
   imports = [
@@ -38,12 +39,12 @@
       tm = "tmux a || tmux";
       fman = "compgen -c | sort -hr | fzf | xargs man";
       nixup = "sudo nix flake update";
+      nixre = "sudo nixos-rebuild switch --upgrade --impure --flake /home/max/.nixos#${osConfig.networking.hostName}";
     };
     initExtra = ''
       clear
       [ $(tput cols) -ge 102 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
       eval "$(starship init bash)"
-      export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
     '';
   };
 

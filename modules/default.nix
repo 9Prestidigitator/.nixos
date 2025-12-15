@@ -3,12 +3,10 @@
   lib,
   inputs,
   config,
-  username,
   ...
 }: {
   imports = [
     ./desktop
-    # ./development
     ./theme.nix
   ];
 
@@ -163,10 +161,6 @@
 
   home-manager.sharedModules = [
     {
-      home = {
-        homeDirectory = "/home/${username}";
-        stateVersion = "25.11";
-      };
       programs.home-manager.enable = true;
     }
   ];

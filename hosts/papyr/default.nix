@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  username,
   ...
 }: {
   imports = [
@@ -24,14 +23,6 @@
     kernelParams = [
       "threadirqs"
     ];
-  };
-
-  home-manager.users.${username} = {
-    programs.bash = {
-      shellAliases = {
-        nixre = "sudo nixos-rebuild switch --upgrade --impure --flake .#papyr";
-      };
-    };
   };
 
   services.udev.extraRules = ''

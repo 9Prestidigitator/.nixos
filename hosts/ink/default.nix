@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  username,
   ...
 }: {
   imports = [
@@ -26,14 +25,6 @@
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "nvidia_drm.modeset=1"
     ];
-  };
-
-  home-manager.users.${username} = {
-    programs.bash = {
-      shellAliases = {
-        nixre = "sudo nixos-rebuild switch --upgrade --impure --flake /home/${username}/.nixos#ink";
-      };
-    };
   };
 
   fileSystems."/mnt/win" = {
