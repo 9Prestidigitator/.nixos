@@ -1,6 +1,3 @@
-{
-  users,
-  ...
-}: {
+{users, ...}: {
   imports = map (u: ./${u}) users;
 }

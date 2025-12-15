@@ -1,17 +1,35 @@
-{pkgs, ...}
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  pkg-config,
+  automake,
+  autoconf,
+  autoreconfHook,
+  libtool,
+  gettext,
+  libusb1,
+  libsamplerate,
+  libsndfile,
+  json-glib,
+  jack2,
+  gtk4,
+  systemd,
+  ...
+}
 : {
-  overwitch = pkgs.stdenv.mkDerivation rec {
+  overwitch = stdenv.mkDerivation rec {
     pname = "overwitch";
     version = "2.1.1";
 
-    src = pkgs.fetchFromGitHub {
+    src = fetchFromGitHub {
       owner = "dagargo";
       repo = "overwitch";
       rev = version;
       sha256 = "sha256-FnVM8QQBoQQxws0bIDoqcq4CGYVBgGEVFiN1QHuip34="; # Update this
     };
 
-    nativeBuildInputs = with pkgs; [
+    nativeBuildInputs = [
       pkg-config
       automake
       autoconf
@@ -20,7 +38,7 @@
       gettext
     ];
 
-    buildInputs = with pkgs; [
+    buildInputs = [
       libusb1
       libsamplerate
       libsndfile
@@ -29,18 +47,6 @@
       gtk4
       systemd
     ];
-
-    # Uncomment for CLI-only build (no GTK)
-    # configureFlags = ["--with-systemduserconfdir=${placeholder "out"}/lib/systemd/user"];
-
-    # proConfigure = ''
-    #   autoreconf --intall
-    # '';
-    #
-    # installFlags = [
-    #   "sysconfdir=$(out)/etc"
-    #   "udevdir=$(out)/lib/udev"
-    # ];
 
     postInstall = ''
       # Install udev rules
@@ -52,7 +58,7 @@
       cp systemd/overwitch.service $out/lib/systemd/user/
     '';
 
-    meta = with pkgs.lib; {
+    meta = with lib; {
       description = "JACK client for Overbridge 2 devices";
       homepage = "https://dagargo.github.io/overwitch/";
       license = licenses.gpl3Only;

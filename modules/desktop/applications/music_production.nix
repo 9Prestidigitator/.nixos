@@ -7,11 +7,14 @@
 }: {
   imports = [
     inputs.musnix.nixosModules.musnix
+    inputs.self.nixosModules.overwitch
   ];
 
   config = lib.mkIf config.desktop.musicprod.enable {
-    musnix = {
+    musnix.enable = true;
+    services.overwitch = {
       enable = true;
+      user = "max";
     };
     environment.systemPackages = with pkgs; [
       bitwig-studio
@@ -25,6 +28,7 @@
       wineasio
       yabridge
       yabridgectl
+      overwitch
     ];
   };
 }

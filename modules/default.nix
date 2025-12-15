@@ -23,7 +23,10 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [inputs.neovim-nightly-overlay.overlays.default];
+    overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
+      inputs.self.overlays.default
+    ];
   };
 
   programs.nix-ld.enable = true;

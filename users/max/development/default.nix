@@ -39,7 +39,7 @@
       tm = "tmux a || tmux";
       fman = "compgen -c | sort -hr | fzf | xargs man";
       nixup = "sudo nix flake update";
-      nixre = "sudo nixos-rebuild switch --upgrade --impure --flake /home/max/.nixos#${osConfig.networking.hostName}";
+      nixre = "sudo nixos-rebuild switch --upgrade --impure --flake /home/${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
     };
     initExtra = ''
       clear

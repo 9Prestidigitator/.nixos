@@ -35,14 +35,12 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
+    overlays.default = import ./pkgs;
+    nixosModules = import ./pkgs/modiles.nix;
     nixosConfigurations = let
-      specialArgs = {
-        inherit inputs;
-      };
       mkHost = hostname: system: users:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = {inherit inputs hostname users;};
           modules = [
             ./hosts/${hostname}
             ./users
@@ -52,7 +50,7 @@
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 backupFileExtension = "backup";
-                extraSpecialArgs = specialArgs;
+                extraSpecialArgs = {inherit inputs hostname users;};
               };
             }
           ];

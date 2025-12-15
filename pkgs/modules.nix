@@ -1,0 +1,3 @@
+{
+  overwitch = ./overwitch/module.nix;
+}
