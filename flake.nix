@@ -36,7 +36,7 @@
 
   outputs = {nixpkgs, ...} @ inputs: {
     overlays.default = import ./pkgs;
-    nixosModules = import ./pkgs/modiles.nix;
+    nixosModules = import ./pkgs/modules.nix;
     nixosConfigurations = let
       mkHost = hostname: system: users:
         nixpkgs.lib.nixosSystem {

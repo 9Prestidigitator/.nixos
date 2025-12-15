@@ -10,8 +10,6 @@
     ./theme.nix
   ];
 
-  desktop.enable = lib.mkDefault true;
-
   nix = {
     gc = {
       automatic = lib.mkDefault true;
