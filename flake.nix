@@ -12,6 +12,8 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    niri-session-manager.url = "github:MTeaHead/niri-session-manager";
+
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

@@ -7,10 +7,19 @@
 }: let
   noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
+  imports = [
+    inputs.niri-session-manager.nixosModules.niri-session-manager
+    # inputs.nirinit.nixosModules.nirinit
+  ];
+
   config = lib.mkIf config.desktop.enable {
     programs.niri = {
       enable = true;
       package = pkgs.niri;
+    };
+
+    services.niri-session-manager = {
+      enable = true;
     };
 
     home-manager.sharedModules = [

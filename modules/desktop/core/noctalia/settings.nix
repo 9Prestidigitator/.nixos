@@ -213,6 +213,11 @@
             countdownEnabled = true;
             enabled = true;
           }
+          {
+            action = "hibernate";
+            countdownEnabled = true;
+            enabled = false;
+          }
         ];
         showHeader = true;
       };
