@@ -27,7 +27,9 @@ in {
     systemd.user.services.overwitch = {
       description = "Overwitch overbridge Daemon";
       wantedBy = ["default.target"];
-      after = ["pipewire.target"];
+      after = [
+        "pipewire.service"
+      ];
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/overwitch-service";
