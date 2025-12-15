@@ -24,7 +24,7 @@ in {
       SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
     '';
 
-    systemd.services.overwitch = {
+    systemd.user.services.overwitch = {
       description = "Overwitch overbridge Daemon";
       wantedBy = ["default.target"];
       after = ["pipewire.target"];
