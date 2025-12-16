@@ -34,7 +34,7 @@
         chargingMode = 0;
       };
       brightness = {
-        brightnessStep = 7;
+        brightnessStep = 5;
         enableDdcSupport = false;
         enforceMinimum = true;
       };
@@ -106,14 +106,14 @@
       };
       general = {
         animationDisabled = false;
-        animationSpeed = 1.50;
+        animationSpeed = 1.75;
         avatarImage = "${config.xdg.userDirs.pictures}/.face";
         dimmerOpacity = 0.4;
-        enableShadows = false;
+        enableShadows = true;
         forceBlackScreenCorners = false;
         language = "";
         iRadiusRatio = 1;
-        radiusRatio = 1;
+        radiusRatio = 1.4;
         scaleRatio = 1;
         screenRadiusRatio = 1;
         shadowDirection = "bottom_right";
@@ -237,7 +237,7 @@
       ui = {
         fontDefaultScale = 1;
         fontFixedScale = 1;
-        panelBackgroundOpacity = lib.mkForce 0;
+        panelBackgroundOpacity = lib.mkForce 0.88;
         panelsAttachedToBar = true;
         settingsPanelAttachToBar = false;
         tooltipsEnabled = true;

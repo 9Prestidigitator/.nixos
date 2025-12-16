@@ -9,8 +9,8 @@
   programs.noctalia-shell = {
     settings = {
       bar = {
-        backgroundOpacity = lib.mkForce 0;
         density = "comfortable";
+        transparent = true;
         floating = false;
         # marginHorizontal = 1.36;
         # marginVertical = 0;
@@ -77,7 +77,7 @@
               {
                 customFont = "";
                 formatHorizontal = "HH:mm ddd; MMM dd";
-                formatVertical = "HH mm - dd MM";
+                formatVertical = "ss mm HH - dd MM yy";
                 id = "Clock";
                 useCustomFont = false;
                 usePrimaryColor = true;
