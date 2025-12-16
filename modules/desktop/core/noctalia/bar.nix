@@ -17,6 +17,7 @@
         outerCorners = false;
         position = "left";
         showCapsule = false;
+        showOutline = false;
         widgets = {
           center = [];
           left = [
