@@ -9,7 +9,6 @@
 in {
   imports = [
     inputs.niri-session-manager.nixosModules.niri-session-manager
-    # inputs.nirinit.nixosModules.nirinit
   ];
 
   config = lib.mkIf config.desktop.enable {

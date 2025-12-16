@@ -10,7 +10,7 @@
     settings = {
       bar = {
         density = "comfortable";
-        transparent = true;
+        transparent = false;
         floating = false;
         # marginHorizontal = 1.36;
         # marginVertical = 0;
