@@ -6,10 +6,6 @@
   osConfig,
   ...
 }: {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
-
   programs.noctalia-shell = {
     settings = {
       dock = {
@@ -19,13 +15,13 @@
             "org.gnome.Nautilus"
             "brave-browser"
           ]
-          ++ lib.optionals config.desktop.gaming.enable [
+          ++ lib.optionals osConfig.desktop.gaming.enable [
             "steam"
           ]
-          ++ lib.optionals config.desktop.comms.enable [
+          ++ lib.optionals osConfig.desktop.comms.enable [
             "discord"
           ]
-          ++ lib.optionals config.desktop.musicprod.enable [
+          ++ lib.optionals osConfig.desktop.musicprod.enable [
             "com.bitwig.BitwigStudio"
           ];
       };
