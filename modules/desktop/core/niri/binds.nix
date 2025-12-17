@@ -282,6 +282,10 @@
       hotkey-overlay.title = "Logout";
       action.quit.skip-confirmation = false;
     };
+    "Mod+Alt+Delete" = {
+      hotkey-overlay.title = "Session Options";
+      action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+    };
 
     "Mod+Shift+P".action = power-off-monitors;
 

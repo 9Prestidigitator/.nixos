@@ -55,15 +55,19 @@
       }
       {
         matches = [
-          {app-id = "kitty";}
-          {title = "tmux";}
+          {
+            app-id = "kitty";
+            title = "tmux";
+          }
         ];
         open-maximized = true;
       }
       {
         matches = [
-          {app-id = "steam";}
-          {title = "Friends List";}
+          {
+            app-id = "steam";
+            title = "Friends List";
+          }
         ];
         default-column-width = {fixed = 187;};
       }

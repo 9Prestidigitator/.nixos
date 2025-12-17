@@ -17,14 +17,6 @@
         deadOpacity = 0.4;
         monitors = [];
         onlySameOutput = false;
-        pinnedApps = [
-          "kitty"
-          "org.gnome.Nautilus"
-          "brave-browser"
-          "steam"
-          "discord"
-          "com.bitwig.BitwigStudio"
-        ];
         pinnedStatic = true;
         size = 1;
       };

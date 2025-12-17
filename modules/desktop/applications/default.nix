@@ -46,12 +46,9 @@
       moonlight-qt
       syncthing
       playerctl
-      xdg-desktop-portal-gnome
-      xdg-desktop-portal-gtk
       kdePackages.plasma-workspace
       kdePackages.breeze
       kdePackages.breeze-icons
-      kdePackages.kde-cli-tools
       xwayland-satellite
       xsettingsd
       xcursorgen

@@ -24,17 +24,17 @@ in {
       SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
     '';
 
-    systemd.user.services.overwitch = {
-      description = "Overwitch overbridge Daemon";
-      wantedBy = ["default.target"];
-      after = [
-        "pipewire.service"
-      ];
-
-      serviceConfig = {
-        ExecStart = "${cfg.package}/bin/overwitch-service";
-        Restart = "on-failure";
-      };
-    };
+    # systemd.user.services.overwitch = {
+    #   description = "Overwitch overbridge Daemon";
+    #   wantedBy = ["default.target"];
+    #   after = [
+    #     "pipewire.service"
+    #   ];
+    #
+    #   serviceConfig = {
+    #     ExecStart = "${cfg.package}/bin/overwitch-service";
+    #     Restart = "on-failure";
+    #   };
+    # };
   };
 }

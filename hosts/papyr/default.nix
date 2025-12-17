@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -50,7 +51,7 @@
 
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
-  security.pam.services.suo.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -59,6 +60,29 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
   security.rtkit.enable = true;
+
+  home-manager.sharedModules = [
+    inputs.niri.homeModules.config
+    {
+      programs.niri.settings = {
+        # niri msg outputs
+        outputs = {
+          "BOE 0x08E1 Unknown" = {
+            scale = 1.5;
+            position = {
+              x = 0;
+              y = 0;
+            };
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = null;
+            };
+          };
+        };
+      };
+    }
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

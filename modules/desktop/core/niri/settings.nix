@@ -36,49 +36,6 @@
         # Uncomment this to make the mouse warp to the center of newly focused windows.
         warp-mouse-to-focus.enable = false;
       };
-      # You can configure outputs by their name, which you can find
-      # by running `niri msg outputs` while inside a niri instance.
-      # The built-in laptop monitor is usually called "eDP-1".
-      # Find more information on the wiki:
-      # https://yalter.github.io/niri/Configuration:-Outputs
-      outputs = {
-        "Red Hat, Inc. QEMU Monitor Unknown" = {
-          scale = 1.5;
-          position = {
-            x = 0;
-            y = 0;
-          };
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = null;
-          };
-        };
-        "Microstep MSI G27C4 0x30333758" = {
-          scale = 1;
-          position = {
-            x = 0;
-            y = 0;
-          };
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 119.982;
-          };
-        };
-        "Hewlett Packard HP 22cwa 6CM82100S4" = {
-          scale = 1.2;
-          position = {
-            x = 0;
-            y = 0;
-          };
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 60.000;
-          };
-        };
-      };
       overview = {
         workspace-shadow.enable = false;
         backdrop-color = "#${base00}";

@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -45,8 +46,30 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
   security.rtkit.enable = true;
+
+  home-manager.sharedModules = [
+    inputs.niri.homeModules.config
+    {
+      programs.niri.settings = {
+        # niri msg outputs
+        outputs = {
+          "Red Hat, Inc. QEMU Monitor Unknown" = {
+            scale = 1.5;
+            position = {
+              x = 0;
+              y = 0;
+            };
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = null;
+            };
+          };
+        };
+      };
+    }
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

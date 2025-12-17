@@ -13,6 +13,8 @@
   config = lib.mkIf config.desktop.musicprod.enable {
     musnix.enable = true;
 
+    services.overwitch.enable = true;
+
     environment.systemPackages = with pkgs; [
       bitwig-studio
       reaper
