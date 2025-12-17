@@ -45,6 +45,7 @@
       brave
       moonlight-qt
       syncthing
+      playerctl
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
       kdePackages.plasma-workspace

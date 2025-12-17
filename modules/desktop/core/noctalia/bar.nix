@@ -47,10 +47,12 @@
                 id = "Tray";
                 pinned = [];
               }
-              {
-                displayMode = "onhover";
-                id = "Brightness";
-              }
+            ]
+            ++ lib.optional (osConfig.networking.hostName != "ink") {
+              displayMode = "onhover";
+              id = "Brightness";
+            }
+            ++ [
               {
                 hideWhenZero = true;
                 id = "NotificationHistory";

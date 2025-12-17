@@ -32,21 +32,37 @@
       hotkey-overlay.title = "Launch explorer: Nautilus";
       action = spawn "nautilus" "-w";
     };
+    "Mod+N" = {
+      hotkey-overlay.title = "Launch text editor: Neovim";
+      action = spawn "kitty" "--title" "Neovim" "-e" "nvim";
+    };
+    "Mod+T" = {
+      hotkey-overlay.title = "Launch tmux";
+      action = spawn "kitty" "--title" "tmux" "bash" "-lc" "tmux a || tmux";
+    };
+    "Ctrl+Shift+Escape" = {
+      hotkey-overlay.title = "btop";
+      action = spawn "kitty" "--title" "'btop'" "-e" "btop";
+    };
 
     # noctalia-shell binds
     "Mod+Escape" = {
       hotkey-overlay.title = "Lock";
       action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
     };
-    "Mod+Shift+I" = {
-      hotkey-overlay.title = "Toggle idle inhibitor";
-      action = spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle";
-    };
     "Mod+Space" = {
       hotkey-overlay.title = "Toggle launcher";
       action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
     };
-    "Mod+N" = {
+    "Mod+Shift+I" = {
+      hotkey-overlay.title = "Toggle idle inhibitor";
+      action = spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle";
+    };
+    "Mod+Shift+D" = {
+      hotkey-overlay.title = "Toggle dashboard";
+      action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
+    };
+    "Mod+Shift+N" = {
       hotkey-overlay.title = "Show notifications";
       action = spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
     };
@@ -56,6 +72,26 @@
     };
 
     # System keys
+    "XF86AudioPlay" = {
+      hotkey-overlay.hidden = true;
+      allow-when-locked = true;
+      action = spawn "playerctl" "play-pause";
+    };
+    "XF86AudioPause" = {
+      hotkey-overlay.hidden = true;
+      allow-when-locked = true;
+      action = spawn "playerctl" "play-pause";
+    };
+    "XF86AudioNext" = {
+      hotkey-overlay.hidden = true;
+      allow-when-locked = true;
+      action = spawn "playerctl" "next";
+    };
+    "XF86AudioPrev" = {
+      hotkey-overlay.hidden = true;
+      allow-when-locked = true;
+      action = spawn "playerctl" "previous";
+    };
     "XF86AudioRaiseVolume" = {
       hotkey-overlay.hidden = true;
       allow-when-locked = true;
@@ -149,8 +185,8 @@
 
     "Mod+Shift+Page_Down".action = move-workspace-down;
     "Mod+Shift+Page_Up".action = move-workspace-up;
-    "Mod+Shift+D".action = move-workspace-down;
-    "Mod+Shift+U".action = move-workspace-up;
+    "Mod+Alt+D".action = move-workspace-down;
+    "Mod+Alt+U".action = move-workspace-up;
     "Mod+Alt+J".action = move-workspace-down;
     "Mod+Alt+K".action = move-workspace-up;
 
