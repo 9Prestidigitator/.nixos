@@ -55,6 +55,13 @@
       }
       {
         matches = [
+          {app-id = "kitty";}
+          {title = "tmux";}
+        ];
+        open-maximized = true;
+      }
+      {
+        matches = [
           {app-id = "steam";}
           {title = "Friends List";}
         ];
