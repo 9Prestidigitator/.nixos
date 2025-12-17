@@ -49,7 +49,6 @@
   security.rtkit.enable = true;
 
   home-manager.sharedModules = [
-    inputs.niri.homeModules.config
     {
       programs.niri.settings = {
         # niri msg outputs

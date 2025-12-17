@@ -87,39 +87,39 @@
   services.libinput.enable = true;
   security.rtkit.enable = true;
 
-    home-manager.sharedModules = [
-      {
-        programs.niri.settings = {
-          # niri msg outputs
-          outputs = {
-            "Microstep MSI G27C4 0x30333758" = {
-              scale = 1;
-              position = {
-                x = 0;
-                y = 0;
-              };
-              mode = {
-                width = 1920;
-                height = 1080;
-                refresh = 165.003;
-              };
+  home-manager.sharedModules = [
+    {
+      programs.niri.settings = {
+        # niri msg outputs
+        outputs = {
+          "Microstep MSI G27C4 0x30333758" = {
+            scale = 1;
+            position = {
+              x = 0;
+              y = 0;
             };
-            "Hewlett Packard HP 22cwa 6CM82100S4" = {
-              scale = 1.2;
-              position = {
-                x = 0;
-                y = 0;
-              };
-              mode = {
-                width = 1920;
-                height = 1080;
-                refresh = 60.000;
-              };
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 165.003;
+            };
+          };
+          "Hewlett Packard HP 22cwa 6CM82100S4" = {
+            scale = 1.2;
+            position = {
+              x = 0;
+              y = 0;
+            };
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.000;
             };
           };
         };
-      }
-    ];
+      };
+    }
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
