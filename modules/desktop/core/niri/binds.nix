@@ -48,6 +48,7 @@
     # noctalia-shell binds
     "Mod+Escape" = {
       hotkey-overlay.title = "Lock";
+      allow-when-locked = true;
       action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
     };
     "Mod+Space" = {
