@@ -116,7 +116,7 @@
         radiusRatio = 1.4;
         scaleRatio = 1;
         screenRadiusRatio = 1;
-        shadowDirection = "overhead";
+        shadowDirection = "center";
         shadowOffsetX = 2;
         shadowOffsetY = 3;
         showScreenCorners = false;
