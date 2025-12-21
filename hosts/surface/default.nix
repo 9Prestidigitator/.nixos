@@ -75,7 +75,7 @@
     }
   ];
 
-  console.font = lib.mkForce "ter-v48b";
+  console.font = lib.mkForce "ter-v32b";
 
   services.minecraft-server = {
     enable = true;
