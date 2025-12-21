@@ -100,7 +100,7 @@
     handlers.powerbutton = {
       event = "button/power.*";
       action = ''
-        ${pkgs.kbd}/bin/setterm --blank force --powerdown 1 < /dev/tty2
+        niri msg action power-off-monitors
       '';
     };
   };
