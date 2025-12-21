@@ -62,6 +62,7 @@
       ink = mkHost "ink" "x86_64-linux" ["max" "guest"];
       papyr = mkHost "papyr" "x86_64-linux" ["max"];
       vm = mkHost "vm" "x86_64-linux" ["max"];
+      surface = mkHost "surface" "x86_64-linux" ["max"];
     };
   };
 }
