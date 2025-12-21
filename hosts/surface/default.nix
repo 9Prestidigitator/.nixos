@@ -104,8 +104,8 @@
     };
   };
 
-  services.logind = {
-    powerKey = lib.mkForce "ignore";
+  services.logind.settings.Login = {
+    HandlePowerKey = lib.mkForce "ignore";
   };
 
   services.openssh.settings.PasswordAuthentication = lib.mkForce true;
