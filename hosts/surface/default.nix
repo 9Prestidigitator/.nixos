@@ -85,6 +85,7 @@
     whitelist = {
       DougTheDingo = "8d404b88-a379-4718-bc66-f81fdbfc4b49";
       Pr3stidigitator = "13ab3cbb-4a5d-467d-b150-a1b189f1c06e";
+      JohnDestiny = "61b30a02-5b12-42e7-b4e2-5576520c413a";
     };
     serverProperties = {
       motd = "NixOS minecraft server";
@@ -108,6 +109,7 @@
     HandlePowerKey = lib.mkForce "ignore";
   };
 
+  # temporary
   services.openssh.settings.PasswordAuthentication = lib.mkForce true;
 
   # Some programs need SUID wrappers, can be configured further or are
