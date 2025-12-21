@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -59,7 +60,7 @@
         # niri msg outputs
         outputs = {
           "eDP-1" = {
-            scale = 2;
+            scale = 2.2;
             position = {
               x = 0;
               y = 0;
@@ -68,6 +69,11 @@
               width = 1920;
               height = 1080;
               refresh = null;
+            };
+          };
+          binds = with config.lib.niri.actions; {
+            "XF86PowerOff" = {
+              action = spawn "niri" "msg" "action" "power-off-monitors";
             };
           };
         };
@@ -92,16 +98,6 @@
       difficulty = 3;
       white-list = true;
       allow-cheats = false;
-    };
-  };
-
-  services.acpid = {
-    enable = true;
-    handlers.powerbutton = {
-      event = "button/power.*";
-      action = ''
-        niri msg action power-off-monitors
-      '';
     };
   };
 
