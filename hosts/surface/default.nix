@@ -111,8 +111,6 @@ in {
     ];
   };
 
-  hotkey-overlay.hidden = true;
-
   powerManagement.cpuFreqGovernor = "performance";
 
   hardware.bluetooth.enable = false;
