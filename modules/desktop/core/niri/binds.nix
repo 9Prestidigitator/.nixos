@@ -302,7 +302,7 @@
       (lib.mkIf (osConfig.networking.hostName == "surface") {
         "XF86PowerOff" = {
           allow-when-locked = true;
-          action = spawn "niri" "msg" "action" "power-off-monitors";
+          action = power-off-monitors;
         };
       })
     ];
