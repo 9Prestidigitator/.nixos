@@ -48,16 +48,17 @@ in {
     };
   };
 
-  systemd.services.iptsd = lib.mkForce {
-    description = "Userspace daemon for Intel Precise Touch & Stylus";
-    wantedBy = ["multi-user.target"];
-    wants = ["dev-ipts-15.device"];
-    after = ["dev-ipts-15.device"];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.iptsd}/bin/iptsd";
-    };
-  };
+  # systemd.services.iptsd = lib.mkForce {
+  #   description = "Userspace daemon for Intel Precise Touch & Stylus";
+  #   wantedBy = ["multi-user.target"];
+  #   wants = ["dev-ipts-15.device"];
+  #   after = ["dev-ipts-15.device"];
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = "${pkgs.iptsd}/bin/iptsd";
+  #   };
+  # };
+
   environment.systemPackages = with pkgs; [iptsd surface-control];
   services = {
     udev.packages = with pkgs; [iptsd surface-control];
