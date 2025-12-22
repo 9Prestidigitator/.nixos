@@ -119,6 +119,7 @@ in {
 
   powerManagement.cpuFreqGovernor = "performance";
 
+  hardware.surface.enable = true;
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 
