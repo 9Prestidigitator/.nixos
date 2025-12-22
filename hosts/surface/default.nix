@@ -46,6 +46,10 @@
     kernelParams = [
       "threadirqs"
     ];
+    kernelModules = [
+      "i2c_hid"
+      "hid_multitouch"
+    ];
   };
 
   powerManagement.cpuFreqGovernor = "performance";
