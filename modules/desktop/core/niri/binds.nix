@@ -302,8 +302,6 @@
 
       (lib.mkIf (osConfig.networking.hostName == "surface") {
         "XF86AudioRaiseVolume" = {
-          hotkey-overlay.hidden = true;
-          allow-when-locked = true;
           action = power-off-monitors;
         };
         # "XF86PowerOff" = {
