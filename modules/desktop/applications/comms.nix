@@ -21,8 +21,8 @@
             plugins = {
               alwaysAnimate.enable = true;
               betterFolders.enable = true;
-              blurNsfw.enable = true;
-              pinDMs.enable = true;
+              # blurNsfw.enable = true;
+              # pinDMs.enable = true;
               volumeBooster.enable = true;
               youtubeAdblock.enable = true;
             };

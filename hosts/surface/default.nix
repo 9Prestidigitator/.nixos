@@ -11,7 +11,15 @@
   ];
 
   networking.hostName = "surface";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = false;
+  };
+
+  boot.extraModprobeConfig = ''
+    options iwlwifi power_save=0
+    options iwlmvm power_schema=1
+  '';
 
   desktop = {
     enable = true;
@@ -25,6 +33,7 @@
 
   boot = {
     loader = {
+      efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
         device = "nodev";
