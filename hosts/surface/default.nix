@@ -107,7 +107,7 @@
   services.acpid = {
     enable = true;
     logEvents = true;
-    handlers.power-button = {
+    handlers.powerEvent = {
       event = "button/power.*";
       action = ''
         if [ -n "$WAYLAND_DISPLAY" ]; then
@@ -123,7 +123,7 @@
 
   services.logind.settings.Login = {
     HandlePowerKey = lib.mkForce "ignore";
-    HandlePowerKeyLongPress = lib.mkForce "ignore";
+    # HandlePowerKeyLongPress = lib.mkForce "ignore";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
