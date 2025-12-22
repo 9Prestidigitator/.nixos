@@ -299,9 +299,9 @@
         # is working.
         # (plain "Mod+Shift+Ctrl+T" [(flag "toggle-debug-tint")])
       }
+
       (lib.mkIf (osConfig.networking.hostName == "surface") {
         "XF86PowerOff" = {
-          allow-when-locked = true;
           action = power-off-monitors;
         };
       })
