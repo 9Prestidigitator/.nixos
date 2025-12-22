@@ -107,15 +107,15 @@
   services.acpid = {
     enable = true;
 
-    handlers.powerEventCommands = {
+    handlers.powerButton = {
       event = "button/power.*";
       action = ''
         if [ -n "$WAYLAND_DISPLAY" ]; then
           # Wayland compositor (niri)
-          ${pkgs.niri}/bin/niri msg action power-off-monitors
+          /run/current-system/sw/bin/niri msg action power-off-monitors
         else
           # Plain TTY
-          ${pkgs.util-linux}/bin/setterm --blank force < /dev/tty2
+          /run/current-system/sw/bin/setterm --blank force < /dev/tty2
         fi
       '';
     };
