@@ -88,7 +88,11 @@ in {
     kernelParams = [
       "threadirqs"
     ];
-    kernelModules = [
+    initrd = {
+      availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
+      kernelModules = ["kvm-intel"];
+    };
+    kernelPatches = [
       {
         name = "surface-config";
         patch = null;
