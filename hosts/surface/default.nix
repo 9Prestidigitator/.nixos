@@ -107,7 +107,7 @@
   services.acpid = {
     enable = true;
 
-    handlers.powerButton = {
+    handlers.ac-power = {
       event = "button/power.*";
       action = ''
         if [ -n "$WAYLAND_DISPLAY" ]; then
