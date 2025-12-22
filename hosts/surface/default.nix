@@ -99,7 +99,7 @@
   services.acpid = {
     enable = true;
 
-    handlers.powerbutton = {
+    handlers.powerEvent = {
       event = "button/power.*";
       action = ''
         if [ -n "$WAYLAND_DISPLAY" ]; then
@@ -107,7 +107,7 @@
           /run/current-system/sw/bin/niri msg power-off-monitors
         else
           # Plain TTY
-          ${pkgs.util-linux}/bin/setterm --blank force < /dev/tty1
+          ${pkgs.util-linux}/bin/setterm --blank force < /dev/tty2
         fi
       '';
     };
