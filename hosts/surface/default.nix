@@ -72,9 +72,9 @@
             };
           };
         };
-        binds = {
+        binds = with config.lib.niri.actions; {
           "XF86PowerOff" = {
-            action = config.lib.niri.actions "niri" "msg" "action" "power-off-monitors";
+            action = spawn "niri" "msg" "action" "power-off-monitors";
           };
         };
       };
