@@ -290,6 +290,9 @@
 
     "Mod+Shift+P".action = power-off-monitors;
 
+    "XF86PowerOff".action = spawn "niri" "msg" "action" "power-off-monitors";
+
+    };
     # This debug bind will tint all surfaces green, unless they are being
     # directly scanned out. It's therefore useful to check if direct scanout
     # is working.

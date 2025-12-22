@@ -55,7 +55,6 @@
   security.rtkit.enable = true;
 
   home-manager.sharedModules = [
-    inputs.niri.homeModules.config
     {
       programs.niri.settings = {
         # niri msg outputs
@@ -71,11 +70,6 @@
               height = 1080;
               refresh = null;
             };
-          };
-        };
-        binds = with config.lib.niri.actions; {
-          "XF86PowerOff" = {
-            action = spawn "niri" "msg" "action" "power-off-monitors";
           };
         };
       };
