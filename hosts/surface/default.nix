@@ -112,7 +112,7 @@
       action = ''
         if [ -n "$WAYLAND_DISPLAY" ]; then
           # Wayland compositor (niri)
-          /run/current-system/sw/bin/niri msg power-off-monitors
+          ${pkgs.niri}/bin/niri msg action power-off-monitors
         else
           # Plain TTY
           ${pkgs.util-linux}/bin/setterm --blank force < /dev/tty2
