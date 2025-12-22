@@ -38,7 +38,6 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
-        efiInstallAsRemovable = true;
         useOSProber = true;
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
