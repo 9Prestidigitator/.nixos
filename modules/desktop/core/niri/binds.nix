@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  osConfig,
   ...
 }: {
   programs.niri.settings.binds = with config.lib.niri.actions;
@@ -298,7 +299,7 @@
         # is working.
         # (plain "Mod+Shift+Ctrl+T" [(flag "toggle-debug-tint")])
       }
-      (lib.mkIf (config.networking.hostName == "surface") {
+      (lib.mkIf (osConfig.networking.hostName == "surface") {
         "XF86PowerOff" = {
           allow-when-locked = true;
           action = spawn "niri" "msg" "action" "power-off-monitors";
