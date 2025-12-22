@@ -22,6 +22,8 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";

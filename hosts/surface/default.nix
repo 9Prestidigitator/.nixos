@@ -11,6 +11,7 @@ in {
   imports = with inputs.nixos-hardware.nixosModules; [
     ../../modules
     ./hardware-configuration.nix
+    inputs.tablet-mode.nixosModule
     common-cpu-intel
     common-pc-ssd #microsoft-surface
   ];
