@@ -22,11 +22,6 @@ in {
     wifi.powersave = false;
   };
 
-  boot.extraModprobeConfig = ''
-    options iwlwifi power_save=0
-    options iwlmvm power_schema=1
-  '';
-
   desktop = {
     enable = true;
     musicprod.enable = false;
@@ -85,10 +80,17 @@ in {
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
-    kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [
-      "threadirqs"
-    ];
+    kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
+    kernelPackages = with pkgs; linuxPackagesFor (inputs.ostylk-home.packages.x86_64-linux.surface-kernel.override {kernel = kernel_5_16;});
+    extraModprobeConfig = ''
+      options i915 enable_fbc=1 enable_rc6=1 modeset=1
+      options snd_hda_intel power_save=1
+      options snd_ac97_codec power_save=1
+      options iwldvm force_cam=N
+      options iwlwifi power_save=N
+      options iwlmvm power_schema=1
+    '';
+    # options iwlwifi power_save=Y
     initrd = {
       availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
       kernelModules = ["kvm-intel"];
@@ -119,7 +121,7 @@ in {
 
   powerManagement.cpuFreqGovernor = "performance";
 
-  hardware.surface.enable = true;
+  # hardware.surface.enable = true;
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 
