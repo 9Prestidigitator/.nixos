@@ -97,11 +97,11 @@
           allow-when-locked = true;
           action = spawn "playerctl" "previous";
         };
-        "XF86AudioRaiseVolume" = {
-          hotkey-overlay.hidden = true;
-          allow-when-locked = true;
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
-        };
+        # "XF86AudioRaiseVolume" = {
+        #   hotkey-overlay.hidden = true;
+        #   allow-when-locked = true;
+        #   action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
+        # };
         "XF86AudioLowerVolume" = {
           hotkey-overlay.hidden = true;
           allow-when-locked = true;
@@ -301,18 +301,17 @@
       }
 
       (lib.mkIf (osConfig.networking.hostName == "surface") {
-        # "XF86AudioRaiseVolume" = {
         # "XF86PowerOff" = {
-        #   action = power-off-monitors;
-        # };
-        # "XF86PowerOff" = {
+        "XF86AudioRaiseVolume" = {
+          action = power-off-monitors;
+        };
       })
-      # (lib.mkIf (osConfig.networking.hostName != "surface") {
-      #   "XF86AudioRaiseVolume" = {
-      #     hotkey-overlay.hidden = true;
-      #     allow-when-locked = true;
-      #     action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
-      #   };
-      # })
+      (lib.mkIf (osConfig.networking.hostName != "surface") {
+        "XF86AudioRaiseVolume" = {
+          hotkey-overlay.hidden = true;
+          allow-when-locked = true;
+          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
+        };
+      })
     ];
 }
