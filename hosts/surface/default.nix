@@ -47,8 +47,8 @@ in {
   services = {
     udev = {
       extraHwdb = ''
-        evdev:input:name:gpio-keys:*
-        KEYBOARD_KEY_74=reserved
+        evdev:input:b0003*
+          KEYBOARD_KEY_74=reserved
       '';
       packages = with pkgs; [iptsd surface-control];
     };
