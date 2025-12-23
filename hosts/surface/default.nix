@@ -54,15 +54,10 @@ in {
   # };
 
   environment.systemPackages = with pkgs; [iptsd surface-control];
+
   services = {
     udev.packages = with pkgs; [iptsd surface-control];
-    thermald = {
-      enable = true;
-      configFile = fetchurl {
-        url = "https://raw.githubusercontent.com/linux-surface/linux-surface/${commit}/contrib/thermald/thermal-conf.xml";
-        sha256 = "1xj70n9agy41906jgm4yjmsx58i7pzsizpvv3rkzq78k95qjfmc9";
-      };
-    };
+    thermald.enable = true;
 
     # from dev.ostylk.de/NixDistro/tablet-mode.git
     tablet-mode.enable = true;
