@@ -83,7 +83,7 @@ in {
     };
     kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
     # kernelPackages = pkgs.linuxPackages_surface;
-    kernelPackages = with pkgs; linuxPackagesFor (inputs.ostylk-home.packages.x86_64-linux.surface-kernel.override { kernel = kernel_5_16; });
+    kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
       options i915 enable_fbc=1 enable_rc6=1 modeset=1
       options snd_hda_intel power_save=1
@@ -92,10 +92,9 @@ in {
       options iwlwifi power_save=N
       options iwlmvm power_schema=1
     '';
-    # options iwlwifi power_save=Y
     initrd = {
       availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
-      kernelModules = ["kvm-intel"];
+      kernelModules = ["surface_aggregator" "surface_aggregator_registry" "surface_aggregator_hub"];
     };
     kernelPatches = [
       {
