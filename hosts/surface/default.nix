@@ -8,11 +8,11 @@
   fetchurl = pkgs.fetchurl;
   commit = "69d1e5826e6380c8ff0cd532e244482097562c3d";
 in {
-  imports = with inputs.nixos-hardware.nixosModules; [
+  imports = [
     ../../modules
     ./hardware-configuration.nix
     inputs.tablet-mode.nixosModule
-    inpurs.nixos-hardware.nixosModules
+    inputs.nixos-hardware.nixosModules
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
   ];
