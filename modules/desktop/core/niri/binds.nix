@@ -97,11 +97,11 @@
           allow-when-locked = true;
           action = spawn "playerctl" "previous";
         };
-        "XF86AudioRaiseVolume" = {
-          hotkey-overlay.hidden = true;
-          allow-when-locked = true;
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
-        };
+        # "XF86AudioRaiseVolume" = {
+        #   hotkey-overlay.hidden = true;
+        #   allow-when-locked = true;
+        #   action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
+        # };
         "XF86AudioLowerVolume" = {
           hotkey-overlay.hidden = true;
           allow-when-locked = true;
