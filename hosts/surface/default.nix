@@ -96,6 +96,7 @@ in {
       availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
       kernelModules = ["kvm-intel"];
     };
+    kernelPackages = pkgs.linuxPackages_surface;
     kernelPatches = [
       {
         name = "surface-config";
