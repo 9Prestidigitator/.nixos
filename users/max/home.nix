@@ -1,10 +1,12 @@
 {
   lib,
   pkgs,
+  inputs,
   config,
   ...
 }: {
   imports = [
+    inputs.noctalia.homeModules.default
     ./development
     ./desktop
   ];
