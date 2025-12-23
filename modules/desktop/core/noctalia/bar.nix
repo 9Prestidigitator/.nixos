@@ -13,7 +13,7 @@ in {
     settings = {
       bar = {
         density = "default";
-        transparent = false;
+        transparent = true;
         floating = false;
         # marginHorizontal = 1.36;
         # marginVertical = 0;
