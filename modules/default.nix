@@ -122,8 +122,7 @@
     };
   };
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
+  # Need to clean this up
   environment.systemPackages = with pkgs; [
     # Utilities
     calc
