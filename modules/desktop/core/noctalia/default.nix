@@ -13,7 +13,7 @@ in {
     inputs.noctalia.nixosModules.default
   ];
 
-  config = lib.mkIf isNiri || isHyprland {
+  config = lib.mkIf (isNiri || isHyprland) {
     services.noctalia-shell.enable = true;
 
     home-manager.sharedModules = [
