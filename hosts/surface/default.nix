@@ -107,11 +107,32 @@ in {
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 
-  # Configure keymap in X11
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
   security.rtkit.enable = true;
+
+  console.font = lib.mkForce "ter-v32b";
+
+  services.acpid = {
+    enable = true;
+    logEvents = true;
+    handlers.powerbutton = {
+      event = "button/power.*";
+      action = ''
+        if [ -n "$WAYLAND_DISPLAY" ]; then
+          # Wayland compositor (niri)
+          /run/current-system/sw/bin/niri msg action power-off-monitors
+        else
+          # Plain TTY
+          /run/current-system/sw/bin/setterm --blank force < /dev/tty2
+        fi
+      '';
+    };
+  };
+
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+  };
 
   home-manager.sharedModules = [
     {
@@ -135,8 +156,6 @@ in {
     }
   ];
 
-  console.font = lib.mkForce "ter-v32b";
-
   services.minecraft-server = {
     enable = true;
     eula = true;
@@ -155,41 +174,6 @@ in {
       allow-cheats = false;
     };
   };
-
-  services.acpid = {
-    enable = true;
-    logEvents = true;
-    handlers.powerbutton = {
-      event = "button/power.*";
-      action = ''
-        if [ -n "$WAYLAND_DISPLAY" ]; then
-          # Wayland compositor (niri)
-          /run/current-system/sw/bin/niri msg action power-off-monitors
-        else
-          # Plain TTY
-          /run/current-system/sw/bin/setterm --blank force < /dev/tty2
-        fi
-      '';
-    };
-  };
-
-  services.logind.settings.Login = {
-    HandlePowerKey = lib.mkForce "ignore";
-    # HandlePowerKeyLongPress = lib.mkForce "ignore";
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

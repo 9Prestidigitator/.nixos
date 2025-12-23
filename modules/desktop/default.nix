@@ -22,14 +22,6 @@
   };
 
   config = lib.mkIf config.desktop.enable {
-    services.logind = {
-      settings.Login = {
-        HandleLidSwitch = "suspend";
-        HandleLidSwitchDocked = "ignore";
-        HandlePowerKey = "suspend";
-      };
-    };
-
     fonts.packages = with pkgs; [
       corefonts
       vista-fonts

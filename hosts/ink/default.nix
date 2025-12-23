@@ -87,6 +87,12 @@
   services.libinput.enable = true;
   security.rtkit.enable = true;
 
+  services.logind = {
+    settings.Login = {
+      HandlePowerKey = "suspend";
+    };
+  };
+
   home-manager.sharedModules = [
     {
       programs.niri.settings = {
