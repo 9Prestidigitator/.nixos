@@ -6,7 +6,7 @@
   osConfig,
   ...
 }: let
-  cfg = osConfig.desktop;
+  cfg = config.desktop;
   isNiri = cfg.enable && cfg.mode == "niri";
   isHyprland = cfg.enable && cfg.mode == "hyprland";
 in {
