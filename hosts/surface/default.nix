@@ -13,8 +13,8 @@ in {
     ./hardware-configuration.nix
     inputs.tablet-mode.nixosModule
     inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
-    # inputs.nixos-hardware.nixosModules.common-cpu-intel
-    # inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
   ];
 
   networking.hostName = "surface";
@@ -84,6 +84,7 @@ in {
     kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
     # kernelPackages = pkgs.linuxPackages_surface;
     # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_12;
     extraModprobeConfig = ''
       options i915 enable_fbc=1 enable_rc6=1 modeset=1
       options snd_hda_intel power_save=1
