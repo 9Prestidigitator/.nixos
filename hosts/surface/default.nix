@@ -81,43 +81,43 @@ in {
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
-    kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
+    # kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
     # kernelPackages = pkgs.linuxPackages_surface;
-    extraModprobeConfig = ''
-      options i915 enable_fbc=1 enable_rc6=1 modeset=1
-      options snd_hda_intel power_save=1
-      options snd_ac97_codec power_save=1
-      options iwldvm force_cam=N
-      options iwlwifi power_save=N
-      options iwlmvm power_schema=1
-    '';
+    # extraModprobeConfig = ''
+    #   options i915 enable_fbc=1 enable_rc6=1 modeset=1
+    #   options snd_hda_intel power_save=1
+    #   options snd_ac97_codec power_save=1
+    #   options iwldvm force_cam=N
+    #   options iwlwifi power_save=N
+    #   options iwlmvm power_schema=1
+    # '';
     # options iwlwifi power_save=Y
-    # initrd = {
-    #   availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
-    #   kernelModules = ["kvm-intel"];
-    # };
-    # kernelPatches = [
-    #   {
-    #     name = "surface-config";
-    #     patch = null;
-    #     # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-5.13.config
-    #     extraConfig = ''
-    #       #
-    #       # Other
-    #       #
-    #       # Prevent a non-fatal "kernel oops" at boot crashing udev
-    #       # (https://github.com/linux-surface/linux-surface/issues/61#issuecomment-579298172)
-    #       PINCTRL_INTEL y
-    #       PINCTRL_SUNRISEPOINT y
-    #       # Required for reading battery data
-    #       # (https://github.com/linux-surface/surface-aggregator-module/wiki/Testing-and-Installing)
-    #       SERIAL_DEV_BUS y
-    #       SERIAL_DEV_CTRL_TTYPORT y
-    #       MFD_INTEL_LPSS_PCI y
-    #       INTEL_IDMA64 y
-    #     '';
-    #   }
-    # ];
+    initrd = {
+      availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
+      kernelModules = ["kvm-intel"];
+    };
+    kernelPatches = [
+      {
+        name = "surface-config";
+        patch = null;
+        # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-5.13.config
+        extraConfig = ''
+          #
+          # Other
+          #
+          # Prevent a non-fatal "kernel oops" at boot crashing udev
+          # (https://github.com/linux-surface/linux-surface/issues/61#issuecomment-579298172)
+          PINCTRL_INTEL y
+          PINCTRL_SUNRISEPOINT y
+          # Required for reading battery data
+          # (https://github.com/linux-surface/surface-aggregator-module/wiki/Testing-and-Installing)
+          SERIAL_DEV_BUS y
+          SERIAL_DEV_CTRL_TTYPORT y
+          MFD_INTEL_LPSS_PCI y
+          INTEL_IDMA64 y
+        '';
+      }
+    ];
   };
 
   powerManagement.cpuFreqGovernor = "performance";
