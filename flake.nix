@@ -21,11 +21,9 @@
     nixcord.url = "github:kaylorben/nixcord";
 
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-rust-target-spec-fix"; # rust patch not in main hardware yet
+    nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-rust-target-spec-fix"; # rust patch not in main hardware branch yet
 
     tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
-
-    ostylk-home.url = "git+https://destiny.ostylk.de/gitea/NixDistro/Home.git";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";

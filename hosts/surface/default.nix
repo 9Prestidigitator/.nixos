@@ -63,6 +63,8 @@ in {
     tablet-mode.enable = true;
   };
 
+  hardware.microsoft-surface.kernelVersion = "longterm";
+
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
@@ -117,7 +119,6 @@ in {
 
   powerManagement.cpuFreqGovernor = "performance";
 
-  hardware.microsoft-surface.kernelVersion = "longterm";
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 

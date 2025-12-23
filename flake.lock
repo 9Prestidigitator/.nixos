@@ -158,6 +158,21 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1644229661,
+        "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -364,6 +379,22 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1765371797,
+        "narHash": "sha256-yaHE0vpK7XN/BR6B8jufAWrp7uYzwkhUbqk8G9EU1ak=",
+        "owner": "8bitbuddhist",
+        "repo": "nixos-hardware",
+        "rev": "4bf4cf11ca79c4169617eabd7d57696fe6d2954c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "8bitbuddhist",
+        "ref": "surface-rust-target-spec-fix",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1764242076,
@@ -407,6 +438,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_10": {
+      "locked": {
+        "lastModified": 1645373091,
+        "narHash": "sha256-eRbiakFKdxtjrqOtErp4BgOJlLN5VEBymldfxy+ZKzI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d0ae0897999e7ba4615e02ca1770df6065099daf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -626,12 +673,14 @@
         "niri": "niri",
         "niri-session-manager": "niri-session-manager",
         "nixcord": "nixcord",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_7",
         "nixpkgs_unstable": "nixpkgs_unstable",
         "noctalia": "noctalia",
         "quickshell": "quickshell",
         "spicetify-nix": "spicetify-nix",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "tablet-mode": "tablet-mode"
       }
     },
     "spicetify-nix": {
@@ -731,6 +780,25 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "tablet-mode": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_10"
+      },
+      "locked": {
+        "lastModified": 1645816436,
+        "narHash": "sha256-lK69qpgDWE92aQgvG502bU+pGMaHI+y7O3A/AgsUfxI=",
+        "ref": "refs/heads/master",
+        "rev": "eeafcf0d0cc3713727697f6a2badc5eea706c81c",
+        "revCount": 19,
+        "type": "git",
+        "url": "https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git"
       }
     },
     "tinted-foot": {
