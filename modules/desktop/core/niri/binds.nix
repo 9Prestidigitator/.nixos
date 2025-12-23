@@ -301,8 +301,8 @@
       }
 
       (lib.mkIf (osConfig.networking.hostName == "surface") {
-        # "XF86AudioRaiseVolume" = {
-        "XF86PowerOff" = {
+        # "XF86PowerOff" = {
+        "XF86AudioRaiseVolume" = {
           action = power-off-monitors;
         };
         # "XF86PowerOff" = {
