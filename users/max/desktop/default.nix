@@ -5,11 +5,7 @@
   pkgs,
   osConfig,
   ...
-}: let
-  cfg = osConfig.desktop;
-  isNiri = cfg.enable && cfg.mode == "niri";
-  isHyprland = cfg.enable && cfg.mode == "hyprland";
-in {
+}: {
   config = lib.mkIf (osConfig.services.noctalia-shell.enable or false) {
     programs.noctalia-shell = {
       settings = {
