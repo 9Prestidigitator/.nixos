@@ -18,17 +18,17 @@ in {
       wayland.enable = true;
     };
 
-    # Touch-friendly settings
-    services.xserver.libinput = {
+    i18n.inputMethod = {
       enable = true;
-      touchpad.naturalScrolling = true;
+      type = "fcitx5";
+      fcitx5.addons = [
+        pkgs.fcitx5-maliit
+      ];
     };
 
     # On-screen keyboard
     environment.systemPackages = with pkgs; [
       maliit-keyboard
-      # or
-      squeekboard
     ];
   };
 }
