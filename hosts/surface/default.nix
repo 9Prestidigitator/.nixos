@@ -13,8 +13,8 @@ in {
     ./hardware-configuration.nix
     inputs.tablet-mode.nixosModule
     inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
-    inputs.nixos-hardware.nixosModules.common-cpu-intel
-    inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
+    # inputs.nixos-hardware.nixosModules.common-cpu-intel
+    # inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
   ];
 
   networking.hostName = "surface";
