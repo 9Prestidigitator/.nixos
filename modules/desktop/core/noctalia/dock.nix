@@ -3,6 +3,7 @@
   config,
   inputs,
   pkgs,
+  osConfig,
   ...
 }: {
   programs.noctalia-shell = {
@@ -19,6 +20,21 @@
         onlySameOutput = false;
         pinnedStatic = true;
         size = 1;
+        pinnedApps =
+          [
+            "kitty"
+            "org.gnome.Nautilus"
+            "brave-browser"
+          ]
+          ++ lib.optionals osConfig.desktop.gaming.enable [
+            "steam"
+          ]
+          ++ lib.optionals osConfig.desktop.comms.enable [
+            "discord"
+          ]
+          ++ lib.optionals osConfig.desktop.musicprod.enable [
+            "com.bitwig.BitwigStudio"
+          ];
       };
     };
   };
