@@ -18,14 +18,10 @@ in {
       wayland.enable = true;
     };
 
-    i18n.inputMethod = {
-      enable = true;
-      type = "fcitx5";
-    };
-
     # On-screen keyboard
     environment.systemPackages = with pkgs; [
       maliit-keyboard
+      maliit-framework
     ];
   };
 }
