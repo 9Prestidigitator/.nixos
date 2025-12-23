@@ -18,7 +18,9 @@
     wget
     starship
     ripgrep
+    zip
     unzip
+    unrar
     fd
 
     # Development

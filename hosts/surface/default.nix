@@ -42,17 +42,6 @@ in {
     };
   };
 
-  # systemd.services.iptsd = lib.mkForce {
-  #   description = "Userspace daemon for Intel Precise Touch & Stylus";
-  #   wantedBy = ["multi-user.target"];
-  #   wants = ["dev-ipts-15.device"];
-  #   after = ["dev-ipts-15.device"];
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     ExecStart = "${pkgs.iptsd}/bin/iptsd";
-  #   };
-  # };
-
   environment.systemPackages = with pkgs; [iptsd surface-control];
 
   services = {
@@ -76,10 +65,6 @@ in {
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
-
-    # # kernelPackages = pkgs.linuxPackages_surface;
-    # # kernelPackages = pkgs.linuxPackages_latest;
-    # # kernelPackages = pkgs.linuxPackages_6_12;
     kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
     extraModprobeConfig = ''
       options i915 enable_fbc=1 enable_rc6=1 modeset=1
@@ -123,8 +108,6 @@ in {
   services.blueman.enable = false;
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -163,6 +146,7 @@ in {
       DougTheDingo = "8d404b88-a379-4718-bc66-f81fdbfc4b49";
       Pr3stidigitator = "13ab3cbb-4a5d-467d-b150-a1b189f1c06e";
       JohnDestiny = "61b30a02-5b12-42e7-b4e2-5576520c413a";
+      angerypossum2 = "eee1a468-48cc-460a-a993-b9604049d3d7";
     };
     serverProperties = {
       motd = "NixOS minecraft server";
@@ -175,7 +159,7 @@ in {
   services.acpid = {
     enable = true;
     logEvents = true;
-    handlers.powerEvent = {
+    handlers.powerbutton = {
       event = "button/power.*";
       action = ''
         if [ -n "$WAYLAND_DISPLAY" ]; then
