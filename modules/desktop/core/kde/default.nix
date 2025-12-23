@@ -11,7 +11,6 @@ in {
   config = lib.mkIf isKde {
     services.desktopManager.plasma6 = {
       enable = true;
-      mobile.enable = true;
     };
 
     services.displayManager.sddm = {
