@@ -18,7 +18,7 @@ in {
       osage = {
         enable = true;
         package = pkgs.paperServers;
-        ops = {
+        operators = {
           Pr3stidigitator = "13ab3cbb-4a5d-467d-b150-a1b189f1c06e";
         };
         whitelist = {
