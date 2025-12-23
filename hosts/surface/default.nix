@@ -12,6 +12,7 @@ in {
     ../../modules
     ./hardware-configuration.nix
     inputs.tablet-mode.nixosModule
+    inpurs.nixos-hardware.nixosModules
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
   ];
