@@ -11,6 +11,7 @@ in {
   imports = [
     ../../modules
     ./hardware-configuration.nix
+    ./minecraft-server.nix
     inputs.tablet-mode.nixosModule
     inputs.nixos-hardware.nixosModules.microsoft-surface-common
   ];
@@ -24,33 +25,12 @@ in {
   desktop = {
     enable = true;
     mode = "kde";
-    musicprod.enable = false;
-    gaming.enable = false;
-    design.enable = false;
-    comms.enable = false;
-    media.enable = false;
-    vm.enable = false;
-  };
-
-  environment.etc = {
-    "ipts.conf".text = ''
-      [Config]
-      BlockOnPalm = true
-    '';
-    "thermald/thermal-cpu-cdev-order.xml".source = fetchurl {
-      url = "https://raw.githubusercontent.com/linux-surface/linux-surface/${commit}/contrib/thermald/surface_pro_5/thermal-conf.xml.auto.mobile";
-      sha256 = "1wsrgad6k4haw4m0jjcjxhmj4742kcb3q8rmfpclbw0czm8384al";
-    };
-  };
-
-  environment.systemPackages = with pkgs; [iptsd surface-control];
-
-  services = {
-    udev.packages = with pkgs; [iptsd surface-control];
-    thermald.enable = true;
-
-    # from dev.ostylk.de/NixDistro/tablet-mode.git
-    tablet-mode.enable = true;
+    # musicprod.enable = false;
+    # gaming.enable = false;
+    # design.enable = false;
+    # comms.enable = false;
+    # media.enable = false;
+    # vm.enable = false;
   };
 
   hardware.microsoft-surface.kernelVersion = "longterm";
@@ -102,6 +82,27 @@ in {
         '';
       }
     ];
+  };
+
+  environment.etc = {
+    "ipts.conf".text = ''
+      [Config]
+      BlockOnPalm = true
+    '';
+    "thermald/thermal-cpu-cdev-order.xml".source = fetchurl {
+      url = "https://raw.githubusercontent.com/linux-surface/linux-surface/${commit}/contrib/thermald/surface_pro_5/thermal-conf.xml.auto.mobile";
+      sha256 = "1wsrgad6k4haw4m0jjcjxhmj4742kcb3q8rmfpclbw0czm8384al";
+    };
+  };
+
+  environment.systemPackages = with pkgs; [iptsd surface-control];
+
+  services = {
+    udev.packages = with pkgs; [iptsd surface-control];
+    thermald.enable = true;
+
+    # from dev.ostylk.de/NixDistro/tablet-mode.git
+    tablet-mode.enable = true;
   };
 
   powerManagement.cpuFreqGovernor = "performance";
@@ -158,25 +159,6 @@ in {
   #     };
   #   }
   # ];
-
-  services.minecraft-server = {
-    enable = true;
-    eula = true;
-    openFirewall = true;
-    declarative = true;
-    whitelist = {
-      DougTheDingo = "8d404b88-a379-4718-bc66-f81fdbfc4b49";
-      Pr3stidigitator = "13ab3cbb-4a5d-467d-b150-a1b189f1c06e";
-      JohnDestiny = "61b30a02-5b12-42e7-b4e2-5576520c413a";
-      angerypossum2 = "eee1a468-48cc-460a-a993-b9604049d3d7";
-    };
-    serverProperties = {
-      motd = "NixOS minecraft server";
-      difficulty = 3;
-      white-list = true;
-      allow-cheats = false;
-    };
-  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

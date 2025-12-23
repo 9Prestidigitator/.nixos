@@ -25,6 +25,8 @@
 
     tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
 
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
