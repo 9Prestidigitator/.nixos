@@ -6,7 +6,7 @@
   osConfig,
   ...
 }: {
-  config = lib.mkIf (osConfig.services.noctalia-shell.enable or false) {
+  config = lib.mkIf (osConfig.services.noctalia-shell.enable) {
     programs.noctalia-shell = {
       settings = {
         dock = {
