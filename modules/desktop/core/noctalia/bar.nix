@@ -12,7 +12,7 @@ in {
   programs.noctalia-shell = {
     settings = {
       bar = {
-        density = "comfortable";
+        density = "default";
         transparent = false;
         floating = false;
         # marginHorizontal = 1.36;
