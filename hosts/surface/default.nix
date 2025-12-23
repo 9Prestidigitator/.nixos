@@ -45,7 +45,13 @@ in {
   environment.systemPackages = with pkgs; [iptsd surface-control];
 
   services = {
-    udev.packages = with pkgs; [iptsd surface-control];
+    udev = {
+      extraHwdb = ''
+        evdev:input:name:gpio-keys:*
+        KEYBOARD_KEY_74=reserved
+      '';
+      packages = with pkgs; [iptsd surface-control];
+    };
     thermald.enable = true;
 
     # from dev.ostylk.de/NixDistro/tablet-mode.git
