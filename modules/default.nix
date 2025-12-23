@@ -50,6 +50,43 @@
 
   # List services that you want to enable:
   services = {
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
+
+      extraConfig.pipewire = {
+        "10-clock-rate" = {
+          "context.properties" = {
+            "default.clock.rate" = 44100;
+            "default.clock.quantum" = 128;
+            "default.clock.min-quantum" = 64;
+            "default.clock.max-quantum" = 1024;
+          };
+        };
+      };
+    };
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
+    udisks2.enable = true;
+
+    # Enable the OpenSSH daemon.
+    openssh = {
+      enable = true;
+      settings = {
+        X11Forwarding = true;
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+      };
+      openFirewall = true;
+    };
+
     keyd = {
       enable = true;
       keyboards.default = {
@@ -82,44 +119,6 @@
           };
         };
       };
-    };
-
-    # Configure network proxy if necessary
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
-    power-profiles-daemon.enable = true;
-    upower.enable = true;
-    udisks2.enable = true;
-
-    pipewire = {
-      enable = true;
-      pulse.enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      jack.enable = true;
-
-      extraConfig.pipewire = {
-        "10-clock-rate" = {
-          "context.properties" = {
-            "default.clock.rate" = 44100;
-            "default.clock.quantum" = 128;
-            "default.clock.min-quantum" = 64;
-            "default.clock.max-quantum" = 1024;
-          };
-        };
-      };
-    };
-
-    # Enable the OpenSSH daemon.
-    openssh = {
-      enable = true;
-      settings = {
-        X11Forwarding = true;
-        PermitRootLogin = "no";
-        PasswordAuthentication = false;
-      };
-      openFirewall = true;
     };
   };
 
