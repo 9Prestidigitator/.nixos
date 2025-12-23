@@ -31,6 +31,8 @@
     ];
   };
 
+  programs.nh.enable = true;
+
   programs.nix-ld.enable = true;
 
   # Set your time zone.

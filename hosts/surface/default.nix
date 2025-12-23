@@ -12,8 +12,8 @@ in {
     ../../modules
     ./hardware-configuration.nix
     inputs.tablet-mode.nixosModule
-    common-cpu-intel
-    common-pc-ssd #microsoft-surface
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-pc-ssd #microsoft-surface
   ];
 
   networking.hostName = "surface";
@@ -81,7 +81,7 @@ in {
       };
     };
     kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
-    kernelPackages = with pkgs; linuxPackagesFor (inputs.ostylk-home.packages.x86_64-linux.surface-kernel.override {kernel = kernel_5_16;});
+    kernelPackages = pkgs.linuxPackages_surface;
     extraModprobeConfig = ''
       options i915 enable_fbc=1 enable_rc6=1 modeset=1
       options snd_hda_intel power_save=1
@@ -121,7 +121,7 @@ in {
 
   powerManagement.cpuFreqGovernor = "performance";
 
-  # hardware.surface.enable = true;
+  hardware.microsoft-surface.kernelVersion = "stable";
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 
