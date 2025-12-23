@@ -9,6 +9,9 @@
   isNiri = cfg.enable && cfg.mode == "niri";
   isHyprland = cfg.enable && cfg.mode == "hyprland";
 in {
+  imports = [
+    inputs.noctalia.nixosModules.default
+  ];
 
   config = lib.mkIf (isNiri || isHyprland) {
     services.noctalia-shell.enable = true;
