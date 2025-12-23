@@ -84,7 +84,7 @@ in {
     kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
     # kernelPackages = pkgs.linuxPackages_surface;
     # kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_6_12;
+    # kernelPackages = pkgs.linuxPackages_6_12;
     extraModprobeConfig = ''
       options i915 enable_fbc=1 enable_rc6=1 modeset=1
       options snd_hda_intel power_save=1
@@ -123,7 +123,7 @@ in {
 
   powerManagement.cpuFreqGovernor = "performance";
 
-  hardware.microsoft-surface.kernelVersion = "stable";
+  hardware.microsoft-surface.kernelVersion = "longterm";
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 
