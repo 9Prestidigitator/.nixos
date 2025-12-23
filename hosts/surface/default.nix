@@ -113,22 +113,22 @@ in {
 
   console.font = lib.mkForce "ter-v32b";
 
-  services.acpid = {
-    enable = true;
-    logEvents = true;
-    handlers.powerbutton = {
-      event = "button/power.*";
-      action = ''
-        if [ -n "$WAYLAND_DISPLAY" ]; then
-          # Wayland compositor (niri)
-          /run/current-system/sw/bin/niri msg action power-off-monitors
-        else
-          # Plain TTY
-          /run/current-system/sw/bin/setterm --blank force < /dev/tty2
-        fi
-      '';
-    };
-  };
+  # services.acpid = {
+  #   enable = true;
+  #   logEvents = true;
+  #   handlers.powerbutton = {
+  #     event = "button/power.*";
+  #     action = ''
+  #       if [ -n "$WAYLAND_DISPLAY" ]; then
+  #         # Wayland compositor (niri)
+  #         /run/current-system/sw/bin/niri msg action power-off-monitors
+  #       else
+  #         # Plain TTY
+  #         /run/current-system/sw/bin/setterm --blank force < /dev/tty2
+  #       fi
+  #     '';
+  #   };
+  # };
 
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";

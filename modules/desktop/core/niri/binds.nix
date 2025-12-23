@@ -300,12 +300,13 @@
         # (plain "Mod+Shift+Ctrl+T" [(flag "toggle-debug-tint")])
       }
 
-      # (lib.mkIf (osConfig.networking.hostName == "surface") {
-      #   "XF86AudioRaiseVolume" = {
-      #     action = power-off-monitors;
-      #   };
-      #   # "XF86PowerOff" = {
-      # })
+      (lib.mkIf (osConfig.networking.hostName == "surface") {
+        # "XF86AudioRaiseVolume" = {
+        "XF86PowerOff" = {
+          action = power-off-monitors;
+        };
+        # "XF86PowerOff" = {
+      })
       # (lib.mkIf (osConfig.networking.hostName != "surface") {
       #   "XF86AudioRaiseVolume" = {
       #     hotkey-overlay.hidden = true;
