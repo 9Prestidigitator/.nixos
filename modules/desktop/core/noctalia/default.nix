@@ -4,13 +4,16 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  cfg = config.desktop;
+  isNiri = cfg.enable && cfg.mode == "niri";
+  isHyprland = cfg.enable && cfg.mode == "hyprland";
+in {
   imports = [
     inputs.noctalia.nixosModules.default
   ];
 
-  config = lib.mkIf config.desktop.enable {
-
+  config = lib.mkIf isNiri || isHyprland {
     services.noctalia-shell.enable = true;
 
     home-manager.sharedModules = [

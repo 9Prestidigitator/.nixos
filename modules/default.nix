@@ -50,25 +50,6 @@
 
   # List services that you want to enable:
   services = {
-    displayManager.ly = {
-      enable = true;
-      settings = {
-        allow_empty_password = false;
-        animation = "colormix";
-        bigclock = "en";
-        clock = "%c";
-        lang = "en";
-        numlock = true;
-        vi_default_mode = "insert";
-        vi_mode = true;
-      };
-    };
-
-    power-profiles-daemon.enable = true;
-
-    # Enable the X11 windowing system.
-    # xserver.enable = true;
-
     keyd = {
       enable = true;
       keyboards.default = {
@@ -107,6 +88,7 @@
     # Enable CUPS to print documents.
     printing.enable = true;
 
+    power-profiles-daemon.enable = true;
     upower.enable = true;
     udisks2.enable = true;
 

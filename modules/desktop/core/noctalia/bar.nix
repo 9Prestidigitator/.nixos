@@ -5,7 +5,10 @@
   pkgs,
   osConfig,
   ...
-}: {
+}: let
+  cfg = config.desktop;
+  isNiri = cfg.enable && cfg.mode == "niri";
+in {
   programs.noctalia-shell = {
     settings = {
       bar = {
@@ -15,7 +18,10 @@
         # marginHorizontal = 1.36;
         # marginVertical = 0;
         outerCorners = false;
-        position = "left";
+        position =
+          if isNiri
+          then "left"
+          else "top";
         showCapsule = false;
         showOutline = false;
         widgets = {

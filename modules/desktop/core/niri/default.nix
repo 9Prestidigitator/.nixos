@@ -5,16 +5,34 @@
   pkgs,
   ...
 }: let
+  cfg = config.desktop;
+  isNiri = cfg.enable && cfg.mode == "niri";
+
   noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   imports = [
     inputs.niri-session-manager.nixosModules.niri-session-manager
   ];
 
-  config = lib.mkIf config.desktop.enable {
+  config = lib.mkIf isNiri {
     programs.niri = {
       enable = true;
       package = pkgs.niri;
+    };
+
+    # Probably going to change. Doesn't fit noctalia
+    services.displayManager.ly = {
+      enable = true;
+      settings = {
+        allow_empty_password = false;
+        animation = "colormix";
+        bigclock = "en";
+        clock = "%c";
+        lang = "en";
+        numlock = true;
+        vi_default_mode = "insert";
+        vi_mode = true;
+      };
     };
 
     services.niri-session-manager = {

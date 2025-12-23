@@ -23,6 +23,7 @@ in {
 
   desktop = {
     enable = true;
+    mode = "kde";
     musicprod.enable = false;
     gaming.enable = false;
     design.enable = false;
@@ -45,13 +46,7 @@ in {
   environment.systemPackages = with pkgs; [iptsd surface-control];
 
   services = {
-    udev = {
-      extraHwdb = ''
-        evdev:input:b0003*
-          KEYBOARD_KEY_74=reserved
-      '';
-      packages = with pkgs; [iptsd surface-control];
-    };
+    udev.packages = with pkgs; [iptsd surface-control];
     thermald.enable = true;
 
     # from dev.ostylk.de/NixDistro/tablet-mode.git
@@ -71,6 +66,7 @@ in {
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
+
     kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
     extraModprobeConfig = ''
       options i915 enable_fbc=1 enable_rc6=1 modeset=1
@@ -119,49 +115,49 @@ in {
 
   console.font = lib.mkForce "ter-v32b";
 
-  services.acpid = {
-    enable = true;
-    logEvents = true;
-    handlers.powerbutton = {
-      event = "button/power.*";
-      action = ''
-        if [ -n "$WAYLAND_DISPLAY" ]; then
-          # Wayland compositor (niri)
-          /run/current-system/sw/bin/niri msg action power-off-monitors
-        else
-          # Plain TTY
-          /run/current-system/sw/bin/setterm --blank force < /dev/tty2
-        fi
-      '';
-    };
-  };
+  # services.logind.settings.Login = {
+  #   HandlePowerKey = "ignore";
+  #   HandlePowerKeyLongPress = "ignore";
+  # };
 
-  services.logind.settings.Login = {
-    HandlePowerKey = "ignore";
-    HandlePowerKeyLongPress = "ignore";
-  };
+  # services.acpid = {
+  #   enable = true;
+  #   logEvents = true;
+  #   handlers.powerbutton = {
+  #     event = "button/power.*";
+  #     action = ''
+  #       if [ -n "$WAYLAND_DISPLAY" ]; then
+  #         # Wayland compositor (niri)
+  #         /run/current-system/sw/bin/niri msg action power-off-monitors
+  #       else
+  #         # Plain TTY
+  #         /run/current-system/sw/bin/setterm --blank force < /dev/tty2
+  #       fi
+  #     '';
+  #   };
+  # };
 
-  home-manager.sharedModules = [
-    {
-      programs.niri.settings = {
-        # niri msg outputs
-        outputs = {
-          "eDP-1" = {
-            scale = 2.2;
-            position = {
-              x = 0;
-              y = 0;
-            };
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = null;
-            };
-          };
-        };
-      };
-    }
-  ];
+  # home-manager.sharedModules = [
+  #   {
+  #     programs.niri.settings = {
+  #       # niri msg outputs
+  #       outputs = {
+  #         "eDP-1" = {
+  #           scale = 2.2;
+  #           position = {
+  #             x = 0;
+  #             y = 0;
+  #           };
+  #           mode = {
+  #             width = 1920;
+  #             height = 1080;
+  #             refresh = null;
+  #           };
+  #         };
+  #       };
+  #     };
+  #   }
+  # ];
 
   services.minecraft-server = {
     enable = true;
