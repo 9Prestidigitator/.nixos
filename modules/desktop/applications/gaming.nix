@@ -17,7 +17,6 @@
       protontricks
       (bottles.override {removeWarningPopup = true;})
       heroic
-      edenEmu
     ];
   };
 }
