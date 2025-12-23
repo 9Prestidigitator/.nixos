@@ -92,33 +92,32 @@ in {
       options iwlmvm power_schema=1
     '';
     # options iwlwifi power_save=Y
-    initrd = {
-      availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
-      kernelModules = ["kvm-intel"];
-    };
-    kernelPackages = pkgs.linuxPackages_surface;
-    kernelPatches = [
-      {
-        name = "surface-config";
-        patch = null;
-        # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-5.13.config
-        extraConfig = ''
-          #
-          # Other
-          #
-          # Prevent a non-fatal "kernel oops" at boot crashing udev
-          # (https://github.com/linux-surface/linux-surface/issues/61#issuecomment-579298172)
-          PINCTRL_INTEL y
-          PINCTRL_SUNRISEPOINT y
-          # Required for reading battery data
-          # (https://github.com/linux-surface/surface-aggregator-module/wiki/Testing-and-Installing)
-          SERIAL_DEV_BUS y
-          SERIAL_DEV_CTRL_TTYPORT y
-          MFD_INTEL_LPSS_PCI y
-          INTEL_IDMA64 y
-        '';
-      }
-    ];
+    # initrd = {
+    #   availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
+    #   kernelModules = ["kvm-intel"];
+    # };
+    # kernelPatches = [
+    #   {
+    #     name = "surface-config";
+    #     patch = null;
+    #     # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-5.13.config
+    #     extraConfig = ''
+    #       #
+    #       # Other
+    #       #
+    #       # Prevent a non-fatal "kernel oops" at boot crashing udev
+    #       # (https://github.com/linux-surface/linux-surface/issues/61#issuecomment-579298172)
+    #       PINCTRL_INTEL y
+    #       PINCTRL_SUNRISEPOINT y
+    #       # Required for reading battery data
+    #       # (https://github.com/linux-surface/surface-aggregator-module/wiki/Testing-and-Installing)
+    #       SERIAL_DEV_BUS y
+    #       SERIAL_DEV_CTRL_TTYPORT y
+    #       MFD_INTEL_LPSS_PCI y
+    #       INTEL_IDMA64 y
+    #     '';
+    #   }
+    # ];
   };
 
   powerManagement.cpuFreqGovernor = "performance";
