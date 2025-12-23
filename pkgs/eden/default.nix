@@ -5,11 +5,11 @@
 }:
 appimageTools.wrapType2 {
   pname = "eden";
-  version = "unstable"; # Eden doesn't publish fixed versions
+  version = "0.0.4"; # Eden doesn't publish fixed versions
 
   src = fetchurl {
     url = "https://github.com/eden-emulator/Releases/releases/download/v0.0.4/Eden-Linux-v0.0.4-amd64-gcc-standard.AppImage";
-    sha256 = lib.fakeHash;
+    sha256 = "sha256-7ZgPXuhF2MWlj3FDwaP74rfRgfbRI43Hw6qvdrzxMdQ=";
   };
 
   extraInstallCommands = ''
