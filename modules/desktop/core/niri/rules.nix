@@ -73,6 +73,15 @@
       }
       {
         matches = [
+          {
+            app-id = "virt-manager";
+            title = "Virtual Machine Manager";
+          }
+        ];
+        default-column-width = {fixed = 280;};
+      }
+      {
+        matches = [
           {title = "Confirm";}
           {title = "Authentication Required";}
           {title = "xdg-desktop-portal-gtk";}

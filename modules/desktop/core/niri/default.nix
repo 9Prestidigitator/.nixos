@@ -10,10 +10,6 @@
 
   noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
-  imports = [
-    inputs.niri-session-manager.nixosModules.niri-session-manager
-  ];
-
   config = lib.mkIf isNiri {
     programs.niri = {
       enable = true;
@@ -35,8 +31,12 @@ in {
       };
     };
 
-    services.niri-session-manager = {
+    xdg.portal = {
       enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gnome
+        pkgs.xdg-desktop-portal-gtk
+      ];
     };
 
     home-manager.sharedModules = [

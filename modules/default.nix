@@ -125,7 +125,6 @@
   # Need to clean this up
   environment.systemPackages = with pkgs; [
     # Utilities
-    calc
     usbutils
     pciutils
     pkg-config
@@ -133,7 +132,6 @@
     openssl
     parted
     ntfs3g
-    cliphist
     gvfs
     p7zip
     libsForQt5.qt5.qtgraphicaleffects

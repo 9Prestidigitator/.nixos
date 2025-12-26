@@ -12,6 +12,10 @@
       extraCompatPackages = [pkgs.proton-ge-bin];
     };
 
+    services.flatpak.packages = [
+      "org.vinegarhq.Sober" # Roblox
+    ];
+
     environment.systemPackages = with pkgs; [
       prismlauncher
       protontricks

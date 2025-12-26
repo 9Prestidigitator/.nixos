@@ -9,6 +9,7 @@
     ./noctalia
     ./niri
     ./kde
+    ./gnome
   ];
 
   options.desktop.mode = lib.mkOption {

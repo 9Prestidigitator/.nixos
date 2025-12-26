@@ -12,6 +12,8 @@
     ./comms.nix
     ./media.nix
     ./vm.nix
+
+    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   config = lib.mkIf config.desktop.enable {
@@ -43,9 +45,11 @@
       nautilus
       kitty
       brave
+      calc
       moonlight-qt
       syncthing
       playerctl
+      cliphist
       kdePackages.plasma-workspace
       kdePackages.breeze
       kdePackages.breeze-icons

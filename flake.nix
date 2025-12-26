@@ -12,16 +12,17 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    niri-session-manager.url = "github:MTeaHead/niri-session-manager";
-
     noctalia.url = "github:noctalia-dev/noctalia-shell";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nixcord.url = "github:kaylorben/nixcord";
 
+    # rust patch not in main hardware branch yet
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-rust-target-spec-fix"; # rust patch not in main hardware branch yet
+    nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-rust-target-spec-fix";
 
     tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
 
