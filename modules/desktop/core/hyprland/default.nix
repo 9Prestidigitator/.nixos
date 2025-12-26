@@ -69,11 +69,19 @@ in {
       {
         wayland.windowManager.hyprland.settings = {
           "$mainMod" = "SUPER";
+          "$terminal" = "kitty";
+
           bind = [
             "$mainMod, H, movefocus, l"
             "$mainMod, L, movefocus, r"
             "$mainMod, K, movefocus, u"
             "$mainMod, J, movefocus, d"
+
+            "$mainMod, escape, exec, caelestia shell lock lock"
+
+            "$mainMod CONTROL, space, togglefloating"
+
+            "$mainMod, Return, exec, $terminal"
           ];
         };
       }
