@@ -89,7 +89,7 @@ in {
               "$mainMod, Return, exec, $terminal"
 
               "$mainMod, escape, exec, caelestia shell lock lock"
-              "$mainMod, space, exec, caelestia shell picker open"
+              "$mainMod, space, exec, caelestia shell drawers toggle launcher"
 
               "$mainMod, TAB, workspace, previous"
               "$mainMod, D, workspace, +1"
