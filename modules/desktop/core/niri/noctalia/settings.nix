@@ -170,7 +170,7 @@
         enabled = true;
         location = "top_right";
         monitors = [];
-        enableTypes = [
+        enabledTypes = [
           0
           1
           2
