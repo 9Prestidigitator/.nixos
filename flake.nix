@@ -14,6 +14,11 @@
 
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

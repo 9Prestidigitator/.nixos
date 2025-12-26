@@ -14,7 +14,7 @@
 
   desktop = {
     enable = true;
-    mode = "gnome";
+    mode = "hyprland";
   };
 
   # Use the systemd-boot EFI boot loader.
