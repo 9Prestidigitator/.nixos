@@ -26,7 +26,7 @@ in {
           else "top";
         showCapsule = false;
         showOutline = false;
-        transparent = true;
+        transparent = lib.mkForce true;
         widgets = {
           center = [];
           left = [
