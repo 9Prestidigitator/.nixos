@@ -11,7 +11,7 @@ in {
   config = lib.mkIf isHyprland {
     programs.hyprland = {
       enable = true;
-      withUWSM = true;
+      withUWSM = false;
       xwayland.enable = true;
     };
 
@@ -69,7 +69,7 @@ in {
 
       {
         wayland.windowManager.hyprland = {
-          systemd.enable = false;
+          systemd.enable = true;
           settings = {
             "$mainMod" = "SUPER";
             "$terminal" = "kitty";
