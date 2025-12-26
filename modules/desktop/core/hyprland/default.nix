@@ -18,7 +18,7 @@ in {
       enable = true;
       settings = {
         allow_empty_password = false;
-        animation = "cmatrix";
+        animation = "matrix";
         bigclock = "en";
         clock = "%c";
         lang = "en";
