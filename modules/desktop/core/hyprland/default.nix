@@ -11,6 +11,7 @@ in {
   config = lib.mkIf isHyprland {
     programs.hyprland = {
       enable = true;
+      withUWSM = true;
       xwayland.enable = true;
     };
 
@@ -67,22 +68,25 @@ in {
       }
 
       {
-        wayland.windowManager.hyprland.settings = {
-          "$mainMod" = "SUPER";
-          "$terminal" = "kitty";
+        wayland.windowManager.hyprland = {
+          systemd.enable = false;
+          settings = {
+            "$mainMod" = "SUPER";
+            "$terminal" = "kitty";
 
-          bind = [
-            "$mainMod, H, movefocus, l"
-            "$mainMod, L, movefocus, r"
-            "$mainMod, K, movefocus, u"
-            "$mainMod, J, movefocus, d"
+            bind = [
+              "$mainMod, H, movefocus, l"
+              "$mainMod, L, movefocus, r"
+              "$mainMod, K, movefocus, u"
+              "$mainMod, J, movefocus, d"
 
-            "$mainMod, escape, exec, caelestia shell lock lock"
+              "$mainMod, escape, exec, caelestia shell lock lock"
 
-            "$mainMod CONTROL, space, togglefloating"
+              "$mainMod CONTROL, space, togglefloating"
 
-            "$mainMod, Return, exec, $terminal"
-          ];
+              "$mainMod, Return, exec, $terminal"
+            ];
+          };
         };
       }
     ];
