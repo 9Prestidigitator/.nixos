@@ -12,7 +12,7 @@ in {
   programs.noctalia-shell = {
     settings = {
       bar = {
-        capsuleOpacity = 1;
+        capsuleOpacity = lib.mkForce 1;
         density = "default";
         exclusive = true;
         floating = false;
