@@ -9,7 +9,19 @@
   isI3 = cfg.enable && cfg.mode == "i3";
 in {
   config = lib.mkIf isI3 {
-    services.displayManager.defaultSession = "none+i3";
+    services.displayManager.ly = {
+      enable = true;
+      settings = {
+        allow_empty_password = false;
+        animation = "matrix";
+        bigclock = "en";
+        clock = "%c";
+        lang = "en";
+        numlock = true;
+        vi_default_mode = "insert";
+        vi_mode = true;
+      };
+    };
 
     services.xserver = {
       enable = true;

@@ -7,7 +7,6 @@
 }: {
   imports = [
     ./niri
-    ./noctalia
     ./hyprland
     ./kde
     ./gnome

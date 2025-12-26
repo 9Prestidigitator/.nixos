@@ -10,6 +10,10 @@
 
   noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
+  imports = [
+    ./noctalia
+  ];
+
   config = lib.mkIf isNiri {
     programs.niri = {
       enable = true;

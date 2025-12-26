@@ -35,6 +35,9 @@
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
+  };
+
+  boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "threadirqs"
@@ -50,7 +53,7 @@
   };
 
   fileSystems."/mnt/1tb_ssd" = {
-    device = "/dev/disk/by-uuid/da22c9ae-04ab-4c7f-a248-e90940025e29";
+    device = "/dev/disk/by-uuid/78174bbc-f96b-4325-87b2-db3cebdf345c";
     fsType = "ext4";
     options = ["defaults"];
   };
@@ -79,10 +82,6 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -127,19 +126,6 @@
       };
     }
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

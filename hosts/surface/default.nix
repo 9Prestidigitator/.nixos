@@ -24,7 +24,7 @@ in {
 
   desktop = {
     enable = true;
-    mode = "kde";
+    mode = "gnome";
   };
 
   hardware.microsoft-surface.kernelVersion = "longterm";
