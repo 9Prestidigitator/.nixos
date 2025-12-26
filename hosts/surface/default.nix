@@ -25,12 +25,6 @@ in {
   desktop = {
     enable = true;
     mode = "kde";
-    # musicprod.enable = false;
-    # gaming.enable = false;
-    # design.enable = false;
-    # comms.enable = false;
-    # media.enable = false;
-    # vm.enable = false;
   };
 
   hardware.microsoft-surface.kernelVersion = "longterm";

@@ -14,12 +14,7 @@
 
   desktop = {
     enable = true;
-    musicprod.enable = false;
-    gaming.enable = false;
-    design.enable = false;
-    comms.enable = false;
-    media.enable = false;
-    vm.enable = false;
+    mode = "gnome";
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -34,10 +29,6 @@
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [
-      "threadirqs"
-    ];
   };
 
   # Configure keymap in X11
