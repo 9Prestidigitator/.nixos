@@ -15,18 +15,23 @@ in {
       xwayland.enable = true;
     };
 
-    services.displayManager.ly = {
+    # services.displayManager.ly = {
+    #   enable = true;
+    #   settings = {
+    #     allow_empty_password = false;
+    #     animation = "matrix";
+    #     bigclock = "en";
+    #     clock = "%c";
+    #     lang = "en";
+    #     numlock = true;
+    #     vi_default_mode = "insert";
+    #     vi_mode = true;
+    #   };
+    # };
+
+    services.displayManager.sddm = {
       enable = true;
-      settings = {
-        allow_empty_password = false;
-        animation = "matrix";
-        bigclock = "en";
-        clock = "%c";
-        lang = "en";
-        numlock = true;
-        vi_default_mode = "insert";
-        vi_mode = true;
-      };
+      wayland.enable = true;
     };
 
     xdg.portal = {
