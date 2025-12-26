@@ -170,6 +170,13 @@
         enabled = true;
         location = "top_right";
         monitors = [];
+        enableTypes = [
+          0
+          1
+          2
+          3
+          4
+        ];
         overlayLayer = true;
       };
       screenRecorder = {

@@ -12,11 +12,13 @@ in {
   programs.noctalia-shell = {
     settings = {
       bar = {
+        capsuleOpacity = 1;
         density = "default";
-        transparent = true;
+        exclusive = true;
         floating = false;
-        # marginHorizontal = 1.36;
-        # marginVertical = 0;
+        marginHorizontal = 1.36;
+        marginVertical = 0;
+        monitors = [];
         outerCorners = false;
         position =
           if isNiri
@@ -24,6 +26,7 @@ in {
           else "top";
         showCapsule = false;
         showOutline = false;
+        transparent = true;
         widgets = {
           center = [];
           left = [
