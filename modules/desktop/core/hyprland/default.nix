@@ -42,7 +42,6 @@ in {
     ];
 
     home-manager.sharedModules = [
-      inputs.caelestia-shell.homeModules.default
       {
         programs.caelestia = {
           enable = true;
