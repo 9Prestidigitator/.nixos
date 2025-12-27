@@ -41,6 +41,7 @@
       tm = "tmux a || tmux";
       fman = "compgen -c | sort -hr | fzf | xargs man";
       nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
+      gpre = "cd ${config.home.homeDirectory}/.nixos && git pull && nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
       nixup = "sudo nix flake update";
       nixre = "sudo nixos-rebuild switch --upgrade --impure --flake ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
     };
