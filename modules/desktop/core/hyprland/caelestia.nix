@@ -17,7 +17,7 @@ in {
     settings = {
       general = {
         apps = {
-          terminal = ["foot"];
+          terminal = ["kitty"];
           explorer = ["nautilus"];
         };
         idle = {
