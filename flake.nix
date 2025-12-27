@@ -2,7 +2,7 @@
   description = "Max's nix config";
 
   inputs = {
-    nixpkgs_unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 

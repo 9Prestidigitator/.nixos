@@ -152,7 +152,7 @@
             ", S, submap, reset"
             ", D, exec, caelestia shell picker open"
             ", D, submap, reset"
-            ", D, exec, caelestia shell picker openFreeze"
+            ", F, exec, caelestia shell picker openFreeze"
             ", F, submap, reset"
             ", escape, submap, reset"
           ];

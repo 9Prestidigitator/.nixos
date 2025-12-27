@@ -54,6 +54,7 @@ in {
       availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
       kernelModules = ["surface_aggregator" "surface_aggregator_registry" "surface_aggregator_hub"];
     };
+
     kernelPatches = [
       {
         name = "surface-config";
