@@ -34,6 +34,10 @@ in {
       grimblast
       wl-clipboard
       catppuccin-sddm
+      libqalculate
+      app2unit
+      libcava
+      material-symbols
     ];
 
     home-manager.sharedModules = [

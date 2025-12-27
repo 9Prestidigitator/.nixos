@@ -13,9 +13,9 @@
       "$fileManager" = "nautilus";
 
       general = {
-        gaps_in = 2;
-        gaps_out = 4;
-        border_size = 2;
+        gaps_in = 4;
+        gaps_out = 6;
+        border_size = 4;
         "col.inactive_border" = lib.mkForce "rgba(00000000)";
         snap = {
           enabled = true;

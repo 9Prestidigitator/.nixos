@@ -9,8 +9,8 @@
 in {
   wayland.windowManager.hyprland.settings.monitor = lib.mkMerge [
     (lib.mkIf (hostName == "ink") [
-      "desc:Microstep MSI G27C4 0x30333758,       1920x1080@165,  1920x0,   1"
-      "desc:Hewlett Packard HP 22cwa 6CM82100S4,  1920x1080@60,   0x0,      1.2"
+      "desc:Microstep MSI G27C4 0x30333758,       1920x1080@165,  0x0,   1"
+      "desc:Hewlett Packard HP 22cwa 6CM82100S4,  1920x1080@60,   0x0,      1.25"
     ])
 
     (lib.mkIf (hostName == "papyr") [
