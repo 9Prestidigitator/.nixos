@@ -14,10 +14,8 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
-        col = {
-          active_border = "rgba(${base0B}ff) rgba(${base0D}80) 45deg";
-          inactive_border = "rgba(00000000)";
-        };
+        "col.active_border" = "rgba(${base0B}ff) rgba(${base0D}80) 45deg";
+        "col.inactive_border" = "rgba(00000000)";
         snap = {
           enabled = true;
           monitor_gap = 8;
@@ -32,7 +30,7 @@
       };
 
       decoration = {
-        rounding = 18;
+        rounding = 20;
         rounding_power = 2;
 
         # Change transparency of focused and unfocused windows
