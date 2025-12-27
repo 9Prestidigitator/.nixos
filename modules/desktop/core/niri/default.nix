@@ -48,7 +48,7 @@ in {
       ./binds.nix
       ./settings.nix
       ./rules.nix
-      ./outputs
+      ./outputs.nix
       {
         services.swayidle = {
           enable = true;
