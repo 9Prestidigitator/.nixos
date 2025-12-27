@@ -49,6 +49,7 @@ in {
       ./settings.nix
       ./binds.nix
       ./rules.nix
+      ./outputs.nix
     ];
   };
 }

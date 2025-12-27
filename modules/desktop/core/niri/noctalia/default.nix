@@ -7,7 +7,6 @@
 }: let
   cfg = config.desktop;
   isNiri = cfg.enable && cfg.mode == "niri";
-  isHyprland = cfg.enable && cfg.mode == "hyprland";
 in {
   imports = [
     inputs.noctalia.nixosModules.default
