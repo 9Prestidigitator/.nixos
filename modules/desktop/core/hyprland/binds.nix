@@ -192,7 +192,7 @@
       "4, vertical, special, magic_alt"
     ];
 
-    inputs = {
+    input = {
       kb_layout = "us";
 
       numlock_by_default = true;
