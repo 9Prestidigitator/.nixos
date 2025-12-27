@@ -33,10 +33,7 @@ in {
       grim
       grimblast
       wl-clipboard
-      (pkgs.catppuccin-sddm {
-        flavor = "mocha";
-        accent = "mauve";
-      })
+      catppuccin-sddm
     ];
 
     home-manager.sharedModules = [
