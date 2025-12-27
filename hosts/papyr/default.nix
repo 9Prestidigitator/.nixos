@@ -14,6 +14,7 @@
 
   desktop = {
     enable = true;
+    mode = "kde";
     musicprod.enable = true;
     gaming.enable = true;
     design.enable = true;
