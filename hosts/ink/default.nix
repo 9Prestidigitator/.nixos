@@ -55,7 +55,7 @@
   fileSystems."/mnt/1tb_ssd" = {
     device = "/dev/disk/by-uuid/78174bbc-f96b-4325-87b2-db3cebdf345c";
     fsType = "ext4";
-    options = ["defaults"];
+    options = ["nofail" "defaults"];
   };
 
   fileSystems."/mnt/1tb_hdd" = {
