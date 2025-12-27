@@ -25,6 +25,7 @@
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
+        theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
