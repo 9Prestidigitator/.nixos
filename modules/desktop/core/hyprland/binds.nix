@@ -23,6 +23,7 @@
 
       "$mainMod CONTROL, space, togglefloating"
       "$mainMod, F, fullscreen"
+      "$mainMod, P, pin"
       "$mainMod, Q, killactive"
 
       "$mainMod, 1, workspace, 1"
