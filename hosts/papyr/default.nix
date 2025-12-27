@@ -64,7 +64,7 @@
     };
   };
 
-  networking.wireguard.interfaces.wg0 = {
+  networking.wg-quick.interfaces.wg0 = {
     configFile = "/secret/wg0.conf";
   };
 
