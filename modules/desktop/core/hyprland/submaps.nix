@@ -144,6 +144,20 @@
           ];
         };
       };
+
+      "screenshot" = {
+        settings = {
+          bind = [
+            ", S, exec, caelestia shell picker openClip"
+            ", S, submap, reset"
+            ", D, exec, caelestia shell picker open"
+            ", D, submap, reset"
+            ", D, exec, caelestia shell picker openFreeze"
+            ", F, submap, reset"
+            ", escape, submap, reset"
+          ];
+        };
+      };
     };
   };
 }

@@ -19,6 +19,7 @@
       "$mainMod, Return, exec, $terminal"
       "$mainMod, G, submap, launch"
       "$mainMod, M, submap, move"
+      "$mainMod, S, submap, screenshot"
 
       "$mainMod, TAB, workspace, previous"
       "$mainMod, D, workspace, +1"
