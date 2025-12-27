@@ -14,7 +14,7 @@
 
   desktop = {
     enable = true;
-    mode = "hyprland";
+    mode = "i3";
   };
 
   # Use the systemd-boot EFI boot loader.
