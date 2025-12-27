@@ -19,8 +19,8 @@
     gaming.enable = true;
     design.enable = true;
     comms.enable = true;
-    media.enable = false;
-    vm.enable = false;
+    media.enable = true;
+    vm.enable = true;
   };
 
   boot = {
