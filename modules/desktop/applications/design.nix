@@ -11,6 +11,8 @@
       gimp-with-plugins
       blender
       davinci-resolve
+      libreoffice-qt
+      hunspell
     ];
   };
 }
