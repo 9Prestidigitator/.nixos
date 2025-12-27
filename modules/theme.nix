@@ -11,7 +11,13 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
+    base16Scheme =
+      if config.networking.hostName == "ink"
+      then "${pkgs.base16-schemes}/share/themes/da-one-black.yaml"
+      else if config.networking.hostName == "papyr"
+      then "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml"
+      else "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+
     polarity = "dark";
     cursor = {
       size = 24;
