@@ -110,28 +110,6 @@ in {
 
   console.font = lib.mkForce "ter-v32b";
 
-  # services.logind.settings.Login = {
-  #   HandlePowerKey = "ignore";
-  #   HandlePowerKeyLongPress = "ignore";
-  # };
-
-  # services.acpid = {
-  #   enable = true;
-  #   logEvents = true;
-  #   handlers.powerbutton = {
-  #     event = "button/power.*";
-  #     action = ''
-  #       if [ -n "$WAYLAND_DISPLAY" ]; then
-  #         # Wayland compositor (niri)
-  #         /run/current-system/sw/bin/niri msg action power-off-monitors
-  #       else
-  #         # Plain TTY
-  #         /run/current-system/sw/bin/setterm --blank force < /dev/tty2
-  #       fi
-  #     '';
-  #   };
-  # };
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
