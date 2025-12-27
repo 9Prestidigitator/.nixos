@@ -93,40 +93,6 @@
     };
   };
 
-  home-manager.sharedModules = [
-    {
-      programs.niri.settings = {
-        # niri msg outputs
-        outputs = {
-          "Microstep MSI G27C4 0x30333758" = {
-            scale = 1;
-            position = {
-              x = 0;
-              y = 0;
-            };
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = 165.003;
-            };
-          };
-          "Hewlett Packard HP 22cwa 6CM82100S4" = {
-            scale = 1.2;
-            position = {
-              x = 0;
-              y = 0;
-            };
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = 60.000;
-            };
-          };
-        };
-      };
-    }
-  ];
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #

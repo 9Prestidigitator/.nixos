@@ -69,28 +69,6 @@
     };
   };
 
-  home-manager.sharedModules = [
-    {
-      programs.niri.settings = {
-        # niri msg outputs
-        outputs = {
-          "BOE 0x08E1 Unknown" = {
-            scale = 1.5;
-            position = {
-              x = 0;
-              y = 0;
-            };
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = null;
-            };
-          };
-        };
-      };
-    }
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

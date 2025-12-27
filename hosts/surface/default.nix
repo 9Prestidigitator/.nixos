@@ -132,28 +132,6 @@ in {
   #   };
   # };
 
-  # home-manager.sharedModules = [
-  #   {
-  #     programs.niri.settings = {
-  #       # niri msg outputs
-  #       outputs = {
-  #         "eDP-1" = {
-  #           scale = 2.2;
-  #           position = {
-  #             x = 0;
-  #             y = 0;
-  #           };
-  #           mode = {
-  #             width = 1920;
-  #             height = 1080;
-  #             refresh = null;
-  #           };
-  #         };
-  #       };
-  #     };
-  #   }
-  # ];
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #

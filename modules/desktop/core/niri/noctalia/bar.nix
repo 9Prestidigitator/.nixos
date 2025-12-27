@@ -8,6 +8,7 @@
 }: let
   cfg = osConfig.desktop;
   isNiri = cfg.enable && cfg.mode == "niri";
+  isLaptop = osConfig.networking.hostName != "ink";
 in {
   programs.noctalia-shell = {
     settings = {
@@ -57,7 +58,7 @@ in {
                 pinned = [];
               }
             ]
-            ++ lib.optional (osConfig.networking.hostName != "ink") {
+            ++ lib.optional isLaptop {
               displayMode = "onhover";
               id = "Brightness";
             }
@@ -80,7 +81,7 @@ in {
                 id = "WiFi";
               }
             ]
-            ++ lib.optional (osConfig.networking.hostName != "ink") {
+            ++ lib.optional isLaptop {
               displayMode = "onhover";
               id = "Battery";
               warningThreshold = 30;

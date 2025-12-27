@@ -34,28 +34,6 @@
   services.libinput.enable = true;
   security.rtkit.enable = true;
 
-  # home-manager.sharedModules = [
-  #   {
-  #     programs.niri.settings = {
-  #       # niri msg outputs
-  #       outputs = {
-  #         "Red Hat, Inc. QEMU Monitor Unknown" = {
-  #           scale = 1.5;
-  #           position = {
-  #             x = 0;
-  #             y = 0;
-  #           };
-  #           mode = {
-  #             width = 1920;
-  #             height = 1080;
-  #             refresh = null;
-  #           };
-  #         };
-  #       };
-  #     };
-  #   }
-  # ];
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
