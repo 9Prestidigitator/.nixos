@@ -50,6 +50,7 @@ in {
       ./binds.nix
       ./rules.nix
       ./outputs.nix
+      ./submaps.nix
     ];
   };
 }
