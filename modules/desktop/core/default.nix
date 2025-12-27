@@ -14,7 +14,7 @@
   ];
 
   options.desktop.mode = lib.mkOption {
-    type = lib.types.enum ["niri" "kde" "hyprland" "gnome" "i3"];
+    type = lib.types.enum ["niri" "hyprland" "i3" "kde" "gnome"];
     default = "niri";
     description = "Choose your desktop experience";
   };

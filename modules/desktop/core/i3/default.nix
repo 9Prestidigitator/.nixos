@@ -36,6 +36,13 @@ in {
       };
     };
 
+    xdg.portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+
     home-manager.sharedModules = [
       {
         xsession.windowManager.i3 = {
