@@ -15,10 +15,10 @@
   desktop = {
     enable = true;
     musicprod.enable = true;
-    gaming.enable = false;
+    gaming.enable = true;
     design.enable = true;
     comms.enable = true;
-    media.enable = true;
+    media.enable = false;
     vm.enable = false;
   };
 
@@ -52,14 +52,9 @@
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
   security.pam.services.sudo.fprintAuth = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
+  security.rtkit.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-  security.rtkit.enable = true;
 
   services.logind = {
     settings.Login = {
@@ -69,18 +64,9 @@
     };
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  networking.wireguard.interfaces.wg0 = {
+    configFile = "/secret/wg0.conf";
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
