@@ -15,11 +15,6 @@ in {
       xwayland.enable = true;
     };
 
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
@@ -27,11 +22,21 @@ in {
       ];
     };
 
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      theme = "catppuccin-mocha-mauve";
+    };
+
     environment.systemPackages = with pkgs; [
       slurp
       grim
       grimblast
       wl-clipboard
+      (pkgs.catppuccin-sddm {
+        flavor = "mocha";
+        accent = "mauve";
+      })
     ];
 
     home-manager.sharedModules = [
