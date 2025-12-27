@@ -9,11 +9,14 @@
     settings = {
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
+      "$browser" = "brave";
+      "$fileManager" = "nautilus";
 
       general = {
         gaps_in = 2;
         gaps_out = 4;
         border_size = 2;
+        "col.inactive_border" = lib.mkForce "rgba(00000000)";
         snap = {
           enabled = true;
           monitor_gap = 8;
