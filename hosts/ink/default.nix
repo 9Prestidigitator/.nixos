@@ -15,7 +15,7 @@
 
   desktop = {
     enable = true;
-    mode = "hyprland";
+    mode = "gnome";
     musicprod.enable = true;
     gaming.enable = true;
     design.enable = true;
