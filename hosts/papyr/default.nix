@@ -44,7 +44,6 @@
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
   '';
 
-  powerManagement.cpuFreqGovernor = "powersave";
   services.thermald.enable = true;
 
   hardware.bluetooth.enable = true;
