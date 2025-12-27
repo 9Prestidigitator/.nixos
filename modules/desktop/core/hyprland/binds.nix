@@ -35,10 +35,17 @@
       "$mainMod, 8, workspace, 8"
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
+
+      ", XF86AudioNext, exec, playerctl next"
+      ", XF86AudioPause, exec, playerctl play-pause"
+      ", XF86AudioPlay, exec, playerctl play-pause"
+      ", XF86AudioPrev, exec, playerctl previous"
     ];
 
-    gestures = {
-      workspace_swipe = true;
-    };
+    gesture = [
+      "3, horizontal, workspace"
+      "3, vertical, special, magic"
+      "4, vertical, special, magic_alt"
+    ];
   };
 }
