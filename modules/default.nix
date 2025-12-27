@@ -77,7 +77,6 @@
     udisks2.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
-    polkit.enable = true;
 
     # Enable the OpenSSH daemon.
     openssh = {
