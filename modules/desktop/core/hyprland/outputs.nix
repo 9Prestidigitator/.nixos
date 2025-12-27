@@ -23,7 +23,7 @@ in {
     ])
 
     (lib.mkIf (hostName == "vm") [
-      "desc:Red Hat Inc. QEMU Monitor,   1920x1080,      0x0,      1.25"
+      "desc:Red Hat Inc. QEMU Monitor,            1920x1080,      0x0,      1.25"
     ])
   ];
 }

@@ -4,7 +4,9 @@
   lib,
   osConfig,
   ...
-}: {
+}: let
+  isLaptop = osConfig.networking.hostName != "ink";
+in {
   programs.caelestia = {
     enable = true;
     systemd = {
@@ -13,8 +15,36 @@
       environment = [];
     };
     settings = {
+      general = {
+        apps = {
+          terminal = ["foot"];
+          explorer = ["nautilus"];
+        };
+        idle = {
+          lockBeforeSleep = true;
+          inhibitWhenAudio = true;
+          timeouts = [
+            {
+              timeout = 1200;
+              idleAction = "lock";
+            }
+            {
+              timeout = 1500;
+              idleAction = "dpms off";
+              returnAction = "dpms on";
+            }
+            {
+              timeout = 2000;
+              idleAction = ["systemctl" "suspend-then-hibernate"];
+            }
+          ];
+        };
+      };
       bar.status = {
-        showBattery = false;
+        showBattery =
+          if isLaptop
+          then true
+          else false;
       };
       paths.wallpaperDir = "~/Pictures/Wallpapers";
     };

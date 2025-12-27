@@ -5,10 +5,29 @@
   osConfig,
   ...
 }: {
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = with config.lib.stylix.colors; {
     settings = {
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
+
+      general = {
+        gaps_in = 2;
+        gaps_out = 4;
+        border_size = 2;
+        col.active_border = "rgba(${base0B}ff) rgba(${base0D}80) 45deg";
+        col.inactive_border = "rgba(00000000)";
+        snap = {
+          enabled = true;
+          monitor_gap = 8;
+          border_overlap = false;
+        };
+        # Set to true enable resizing windows by clicking and dragging on borders and gaps
+        resize_on_border = false;
+
+        # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        allow_tearing = false;
+        layout = "dwindle";
+      };
 
       decoration = {
         rounding = 12;
