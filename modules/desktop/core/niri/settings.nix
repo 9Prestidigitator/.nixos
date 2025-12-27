@@ -43,7 +43,7 @@
       layout = {
         focus-ring = {
           enable = true;
-          width = 3;
+          width = 2;
           active.gradient = {
             angle = 45;
             from = "#${base0B}";

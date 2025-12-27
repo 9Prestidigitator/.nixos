@@ -16,6 +16,7 @@
 
       "$mainMod, escape, exec, caelestia shell lock lock"
       "$mainMod, space, exec, caelestia shell drawers toggle launcher"
+      "$mainMod, n, exec, caelestia shell drawers toggle sidebar"
 
       "$mainMod, TAB, workspace, previous"
       "$mainMod, D, workspace, +1"
