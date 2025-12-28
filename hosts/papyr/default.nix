@@ -73,6 +73,7 @@
 
   networking.wg-quick.interfaces.wg0 = {
     configFile = "/secret/wg0.conf";
+    autostart = false;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
