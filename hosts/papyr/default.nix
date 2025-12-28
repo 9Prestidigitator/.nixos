@@ -14,7 +14,7 @@
 
   desktop = {
     enable = true;
-    mode = "kde";
+    mode = "hyprland";
     musicprod.enable = true;
     gaming.enable = true;
     design.enable = true;
@@ -56,12 +56,19 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  services.acpid.enable = true;
+
   services.logind = {
     settings.Login = {
       HandleLidSwitch = "suspend";
       HandleLidSwitchDocked = "ignore";
       HandlePowerKey = "suspend";
     };
+  };
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
   };
 
   networking.wg-quick.interfaces.wg0 = {

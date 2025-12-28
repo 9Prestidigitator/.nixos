@@ -7,6 +7,7 @@
 }: let
   cfg = config.desktop;
   isNiri = cfg.enable && cfg.mode == "niri";
+  isLaptop = config.networking.hostName != "ink";
 
   noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
@@ -54,23 +55,19 @@ in {
           enable = true;
           package = pkgs.swayidle;
           systemdTarget = "niri.service";
-          timeouts = [
+          timeouts = lib.mkMerge [
             {
               timeout = 1200;
-              command = "${pkgs.libnotify}/bin/notify-send 'Locking in 10 seconds'";
-            }
-            {
-              timeout = 1210;
               command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
             }
             {
               timeout = 1500;
               command = "${pkgs.niri} msg action power-off-monitors";
             }
-            {
+            (lib.mkIf isLaptop {
               timeout = 2000;
               command = "${pkgs.systemd}/bin/systemctl suspend";
-            }
+            })
           ];
           events = [
             {
