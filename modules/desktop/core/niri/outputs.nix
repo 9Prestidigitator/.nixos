@@ -37,7 +37,7 @@ in {
 
     (lib.mkIf (hostName == "papyr") {
       "eDP-1" = {
-        scale = 1.5;
+        scale = 1.25;
         position = {
           x = 0;
           y = 0;

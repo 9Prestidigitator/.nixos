@@ -14,7 +14,7 @@
 
   desktop = {
     enable = true;
-    mode = "hyprland";
+    mode = "niri";
     musicprod.enable = true;
     gaming.enable = true;
     design.enable = true;

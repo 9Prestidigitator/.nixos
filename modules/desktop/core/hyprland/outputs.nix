@@ -14,7 +14,7 @@ in {
     ])
 
     (lib.mkIf (hostName == "papyr") [
-      "eDP-1,                                     1920x1080,      0x0,      1.5"
+      "eDP-1,                                     1920x1080,      0x0,      1.25"
       "HDMI-A-1,                                  preferred,      auto,     1,    mirror,   eDP-1"
     ])
 
