@@ -52,6 +52,7 @@
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
   security.pam.services.sudo.fprintAuth = true;
+  security.polkit.enable = true;
   security.rtkit.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;

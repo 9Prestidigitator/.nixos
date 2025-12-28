@@ -299,5 +299,10 @@
         # is working.
         # (plain "Mod+Shift+Ctrl+T" [(flag "toggle-debug-tint")])
       }
+      (lib.mkIf (osConfig.networking.hostName == "papyr") {
+        "Mod+Ctrl+Shift+W" = {
+          action = spawn "pkexec" "systemctl" "start" "wg-quick-wg0";
+        };
+      })
     ];
 }
