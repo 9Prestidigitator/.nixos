@@ -23,6 +23,7 @@ in {
     environment.systemPackages = with pkgs; [
       maliit-keyboard
       maliit-framework
+      inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
     ];
   };
 }
