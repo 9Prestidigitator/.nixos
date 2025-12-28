@@ -72,17 +72,17 @@ in {
           timeouts =
             [
               {
-                timeout = 1200;
+                timeout = 1000;
                 command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
               }
               {
-                timeout = 1500;
+                timeout = 1200;
                 command = "${pkgs.niri} msg action power-off-monitors";
               }
             ]
             ++ lib.optionals isLaptop [
               {
-                timeout = 2000;
+                timeout = 1400;
                 command = "${pkgs.systemd}/bin/systemctl suspend";
               }
             ];
