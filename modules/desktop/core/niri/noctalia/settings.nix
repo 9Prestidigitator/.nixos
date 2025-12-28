@@ -168,7 +168,7 @@
         autoHideMs = 2000;
         backgroundOpacity = lib.mkForce 1;
         enabled = true;
-        location = "top_right";
+        location = "bottom";
         monitors = [];
         enabledTypes = [
           0

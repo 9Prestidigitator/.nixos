@@ -27,7 +27,7 @@ in {
           else "top";
         showCapsule = false;
         showOutline = false;
-        transparent = lib.mkForce true;
+        transparent = true;
         widgets = {
           center = [];
           left = [
@@ -58,6 +58,10 @@ in {
                 pinned = [];
               }
             ]
+            ++ lib.optional isLaptop {
+              displayMode = "onhover";
+              id = "VPN";
+            }
             ++ lib.optional isLaptop {
               displayMode = "onhover";
               id = "Brightness";
