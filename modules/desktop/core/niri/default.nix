@@ -55,20 +55,25 @@ in {
           enable = true;
           package = pkgs.swayidle;
           systemdTarget = "niri.service";
-          timeouts = lib.mkMerge [
-            {
-              timeout = 1200;
-              command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
-            }
-            {
-              timeout = 1500;
-              command = "${pkgs.niri} msg action power-off-monitors";
-            }
-            (lib.mkIf isLaptop {
-              timeout = 2000;
-              command = "${pkgs.systemd}/bin/systemctl suspend";
-            })
-          ];
+          timeouts =
+            [
+              {
+                timeout = 1200;
+                command = "${noctalia-shell}/bin/noctalia-shell ipc call lockScreen lock";
+              }
+              {
+                timeout = 1500;
+                command = "${pkgs.niri} msg action power-off-monitors";
+              }
+            ]
+            ++ [
+              lib.mkIf
+              isLaptop
+              {
+                timeout = 2000;
+                command = "${pkgs.systemd}/bin/systemctl suspend";
+              }
+            ];
           events = [
             {
               event = "before-sleep";
