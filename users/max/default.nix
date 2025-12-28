@@ -8,5 +8,11 @@
     ];
   };
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    user = "max";
+  };
+
   home-manager.users."max" = ./home.nix;
 }

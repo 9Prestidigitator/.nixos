@@ -67,11 +67,6 @@
     };
   };
 
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-  };
-
   networking.wg-quick.interfaces.wg0 = {
     configFile = "/secret/wg0.conf";
     autostart = false;
