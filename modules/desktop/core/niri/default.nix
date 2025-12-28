@@ -66,9 +66,7 @@ in {
                 command = "${pkgs.niri} msg action power-off-monitors";
               }
             ]
-            ++ [
-              lib.mkIf
-              isLaptop
+            ++ lib.optionals isLaptop [
               {
                 timeout = 2000;
                 command = "${pkgs.systemd}/bin/systemctl suspend";
