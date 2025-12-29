@@ -18,7 +18,6 @@
 
     environment.systemPackages = with pkgs; [
       prismlauncher
-      # protontricks
       (bottles.override {removeWarningPopup = true;})
       heroic
     ];
