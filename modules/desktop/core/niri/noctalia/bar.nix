@@ -27,7 +27,7 @@ in {
           else "top";
         showCapsule = false;
         showOutline = false;
-        transparent = true;
+        transparent = false;
         widgets = {
           center = [];
           left = [
