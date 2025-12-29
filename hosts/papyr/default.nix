@@ -32,8 +32,8 @@
         useOSProber = true;
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
   };
 
   boot = {
