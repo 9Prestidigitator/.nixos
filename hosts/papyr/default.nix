@@ -29,11 +29,14 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
-        efiInstallAsRemovable = true;
         useOSProber = true;
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
     };
+    efi.canTouchEfiVariables = true;
+  };
+
+  boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "threadirqs"
@@ -45,19 +48,17 @@
   '';
 
   services.thermald.enable = true;
-
-  hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  services.libinput.enable = true;
+  services.acpid.enable = true;
 
   services.fprintd.enable = true;
   security.pam.services.login.fprintAuth = true;
   security.pam.services.sudo.fprintAuth = true;
+
   security.polkit.enable = true;
   security.rtkit.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  services.acpid.enable = true;
 
   services.logind = {
     settings.Login = {

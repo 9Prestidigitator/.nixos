@@ -2,7 +2,6 @@
   pkgs,
   lib,
   inputs,
-  config,
   ...
 }: {
   imports = [
@@ -30,10 +29,10 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
-        efiInstallAsRemovable = true;
         useOSProber = true;
         theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       };
+      efi.canTouchEfiVariables = true;
     };
   };
 
@@ -68,8 +67,6 @@
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
   '';
 
-  powerManagement.cpuFreqGovernor = "performance";
-
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
@@ -80,11 +77,12 @@
     nvidiaSettings = true;
   };
 
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+  powerManagement.cpuFreqGovernor = "performance";
 
-  # Enable touchpad support (enabled default in most desktopManager).
+  services.blueman.enable = true;
   services.libinput.enable = true;
+  services.acpid.enable = true;
+  security.polkit.enable = true;
   security.rtkit.enable = true;
 
   services.logind = {
