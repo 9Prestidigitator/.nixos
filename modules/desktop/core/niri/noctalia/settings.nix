@@ -244,7 +244,7 @@
       ui = {
         fontDefaultScale = 1;
         fontFixedScale = 1;
-        panelBackgroundOpacity = lib.mkForce 0.8;
+        panelBackgroundOpacity = lib.mkForce 1;
         panelsAttachedToBar = true;
         settingsPanelAttachToBar = false;
         tooltipsEnabled = true;

@@ -21,7 +21,7 @@ in {
         }
         {
           timeout = 1200;
-          command = "${pkgs.niri} msg action power-off-monitors";
+          command = "${pkgs.niri}/bin/niri msg action power-off-monitors";
         }
       ]
       ++ lib.optionals isLaptop [
