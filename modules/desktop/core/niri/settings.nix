@@ -7,9 +7,6 @@
   programs.niri = {
     package = pkgs.niri;
     settings = with config.lib.stylix.colors; {
-      spawn-at-startup = [
-        {argv = ["sunshine"];}
-      ];
       input = {
         keyboard = {
           xkb = {

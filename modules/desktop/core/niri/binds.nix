@@ -100,12 +100,12 @@
         "XF86AudioRaiseVolume" = {
           hotkey-overlay.hidden = true;
           allow-when-locked = true;
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
+          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+";
         };
         "XF86AudioLowerVolume" = {
           hotkey-overlay.hidden = true;
           allow-when-locked = true;
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
+          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-";
         };
         "XF86AudioMute" = {
           hotkey-overlay.hidden = true;
@@ -174,10 +174,10 @@
         "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
         "Mod+Shift+Ctrl+L".action = move-column-to-monitor-right;
 
-        # "Mod+Alt+H".action = move-workspace-to-monitor-left;
-        # "Mod+Alt+J".action = move-workspace-to-monitor-down;
+        "Mod+Alt+H".action = move-workspace-to-monitor-left;
+        "Mod+Alt+L".action = move-workspace-to-monitor-right;
         # "Mod+Alt+K".action = move-workspace-to-monitor-up;
-        # "Mod+Alt+L".action = move-workspace-to-monitor-right;
+        # "Mod+Alt+J".action = move-workspace-to-monitor-down;
 
         "Mod+Page_Down".action = focus-workspace-down;
         "Mod+Page_Up".action = focus-workspace-up;
@@ -299,6 +299,7 @@
         # is working.
         # (plain "Mod+Shift+Ctrl+T" [(flag "toggle-debug-tint")])
       }
+
       (lib.mkIf (osConfig.networking.hostName == "papyr") {
         "Mod+Alt+W".action.spawn = ["pkexec" "systemctl" "start" "wg-quick-wg0"];
       })

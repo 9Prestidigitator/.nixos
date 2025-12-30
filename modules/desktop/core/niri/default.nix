@@ -70,6 +70,7 @@ in {
       ./rules.nix
       ./outputs.nix
       ./swayidle.nix
+      ./autostart.nix
     ];
   };
 }

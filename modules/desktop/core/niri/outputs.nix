@@ -10,6 +10,7 @@ in {
   programs.niri.settings.outputs = lib.mkMerge [
     (lib.mkIf (hostName == "ink") {
       "Microstep MSI G27C4 0x30333758" = {
+        focus-at-startup = true;
         scale = 1;
         position = {
           x = 0;
