@@ -25,7 +25,7 @@ in {
     services.displayManager.ly = {
       enable = true;
       settings = {
-        allow_empty_password = false;
+        allow_empty_password = true;
         animation = "colormix";
         bigclock = "en";
         clock = "%c";
@@ -57,6 +57,11 @@ in {
         TimeoutStopSec = 10;
       };
     };
+
+    environment.systemPackages = with pkgs; [
+      seahorse
+      polkit_gnome
+    ];
 
     home-manager.sharedModules = [
       inputs.niri.homeModules.config
