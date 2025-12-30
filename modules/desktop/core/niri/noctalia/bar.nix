@@ -46,6 +46,8 @@ in {
               labelMode = "none";
               showNumbersOnlyWhenOccupied = true;
               showWorkspaceNumbers = false;
+              groupedBorderOpacity = 0.5;
+              unfocusedIconsOpacity = 0.9;
             }
           ];
           right =
