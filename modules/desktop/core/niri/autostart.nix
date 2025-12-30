@@ -25,7 +25,7 @@ in {
           matches = [
             {
               app-id = "brave-browser";
-              at_startup = true;
+              at-startup = true;
             }
           ];
           open-on-workspace = "browse";
