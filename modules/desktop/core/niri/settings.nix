@@ -35,9 +35,10 @@
       };
       overview = {
         workspace-shadow.enable = false;
-        backdrop-color = "#${base00}";
+        backdrop-color = null;
       };
       layout = {
+        background-color = "transparent";
         focus-ring = {
           enable = true;
           width = 2.5;
