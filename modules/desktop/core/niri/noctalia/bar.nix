@@ -28,7 +28,7 @@ in {
         showCapsule = false;
         showOutline = false;
         useSeparateOpacity = true;
-        backgroundOpacity = 0;
+        backgroundOpacity = lib.mkForce 0;
         widgets = {
           center = [];
           left = [
