@@ -102,7 +102,7 @@
     ];
     layer-rules = [
       {
-        matches = [{namespace = "noctalia-background*";}];
+        matches = [{namespace = "noctalia-wallpaper*";}];
         place-within-backdrop = true;
       }
       {
@@ -112,7 +112,7 @@
         };
       }
       {
-        matches = [{namespace = "noctalia-dock-peek*";}];
+        matches = [{namespace = "noctalia-dock*";}];
         shadow = {
           enable = true;
         };
