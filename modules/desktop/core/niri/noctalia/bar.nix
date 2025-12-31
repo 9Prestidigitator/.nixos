@@ -27,7 +27,8 @@ in {
           else "top";
         showCapsule = false;
         showOutline = false;
-        transparent = false;
+        useSeparateOpacity = true;
+        backgroundOpacity = 0;
         widgets = {
           center = [];
           left = [
@@ -43,9 +44,10 @@ in {
               colorizeIcons = false;
               hideUnoccupied = true;
               id = "TaskbarGrouped";
-              labelMode = "none";
+              labelMode = "index";
               showNumbersOnlyWhenOccupied = true;
               showWorkspaceNumbers = false;
+              iconScale = 0.85;
               groupedBorderOpacity = 0.5;
               unfocusedIconsOpacity = 0.9;
             }

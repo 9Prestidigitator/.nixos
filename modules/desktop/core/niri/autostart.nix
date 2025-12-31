@@ -30,6 +30,7 @@ in {
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
+        {argv = ["kitty" "--title" "Notes" "Neovim" "-e" "nvim" "~/notes"];}
         {argv = ["discord"];}
         {argv = ["signal-desktop"];}
       ];
@@ -37,7 +38,6 @@ in {
         "browse".open-on-output = "eDP-1";
         "notes".open-on-output = "eDP-1";
         "comms".open-on-output = "eDP-1";
-        "gaming".open-on-output = "eDP-1";
       };
     })
 
@@ -68,6 +68,16 @@ in {
         {
           matches = [
             {
+              title = "notes";
+              app-id = "kitty";
+              at-startup = true;
+            }
+          ];
+          open-on-workspace = "notes";
+        }
+        {
+          matches = [
+            {
               app-id = "discord";
               at-startup = true;
             }
@@ -77,6 +87,7 @@ in {
             }
           ];
           open-on-workspace = "comms";
+          default-column-width.proportion = 0.6666;
         }
         {
           matches = [

@@ -100,5 +100,23 @@
         default-window-height = {fixed = 270;};
       }
     ];
+    layer-rules = [
+      {
+        matches = [{namespace = "noctalia-background*";}];
+        place-within-backdrop = true;
+      }
+      {
+        matches = [{namespace = "noctalia-bar-content*";}];
+        shadow = {
+          enable = true;
+        };
+      }
+      {
+        matches = [{namespace = "noctalia-dock-peek*";}];
+        shadow = {
+          enable = true;
+        };
+      }
+    ];
   };
 }
