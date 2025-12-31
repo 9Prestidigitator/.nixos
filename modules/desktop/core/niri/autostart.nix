@@ -13,6 +13,9 @@ in {
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
+        {argv = ["steam"];}
+        {argv = ["discord"];}
+        {argv = ["signal-desktop"];}
       ];
       workspaces = {
         "browse".open-on-output = "HDMI-A-1";
@@ -20,17 +23,6 @@ in {
         "comms".open-on-output = "HDMI-A-1";
         "gaming".open-on-output = "HDMI-A-1";
       };
-      window-rules = [
-        {
-          matches = [
-            {
-              app-id = "brave-browser";
-              at-startup = true;
-            }
-          ];
-          open-on-workspace = "browse";
-        }
-      ];
     })
 
     (lib.mkIf (hostName == "papyr") {
@@ -38,12 +30,64 @@ in {
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
+        {argv = ["discord"];}
+        {argv = ["signal-desktop"];}
       ];
       workspaces = {
         "browse".open-on-output = "eDP-1";
         "notes".open-on-output = "eDP-1";
         "comms".open-on-output = "eDP-1";
+        "gaming".open-on-output = "eDP-1";
       };
     })
+
+    {
+      window-rules = [
+        {
+          matches = [
+            {
+              app-id = "brave-browser";
+              at-startup = true;
+            }
+            {
+              app-id = "Spotify";
+              at-startup = true;
+            }
+          ];
+          open-on-workspace = "browse";
+        }
+        {
+          matches = [
+            {
+              app-id = "obsidian";
+              at-startup = true;
+            }
+          ];
+          open-on-workspace = "notes";
+        }
+        {
+          matches = [
+            {
+              app-id = "discord";
+              at-startup = true;
+            }
+            {
+              app-id = "signal";
+              at-startup = true;
+            }
+          ];
+          open-on-workspace = "comms";
+        }
+        {
+          matches = [
+            {
+              app-id = "steam";
+              at-startup = true;
+            }
+          ];
+          open-on-workspace = "gaming";
+        }
+      ];
+    }
   ];
 }
