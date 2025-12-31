@@ -245,7 +245,7 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         panelBackgroundOpacity = lib.mkForce 1;
-        panelsAttachedToBar = false;
+        panelsAttachedToBar = true;
         settingsPanelAttachToBar = false;
         tooltipsEnabled = true;
       };

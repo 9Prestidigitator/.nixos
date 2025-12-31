@@ -105,18 +105,12 @@
         matches = [{namespace = "noctalia-wallpaper*";}];
         place-within-backdrop = true;
       }
-      {
-        matches = [{namespace = "noctalia-bar-content*";}];
-        shadow = {
-          enable = true;
-        };
-      }
-      {
-        matches = [{namespace = "noctalia-dock*";}];
-        shadow = {
-          enable = true;
-        };
-      }
+      # {
+      #   matches = [{namespace = "noctalia-bar-content*";}];
+      #   shadow = {
+      #     enable = true;
+      #   };
+      # }
     ];
   };
 }
