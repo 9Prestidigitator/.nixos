@@ -30,7 +30,7 @@ in {
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
-        {argv = ["kitty" "--title" "Notes" "Neovim" "-e" "nvim" "~/notes"];}
+        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes"];}
         {argv = ["discord"];}
         {argv = ["signal-desktop"];}
       ];
@@ -68,7 +68,7 @@ in {
         {
           matches = [
             {
-              title = "notes";
+              title = "Notes";
               app-id = "kitty";
               at-startup = true;
             }
