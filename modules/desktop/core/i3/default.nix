@@ -19,6 +19,7 @@ in {
           i3lock
           picom
           xrandr
+          feh
         ];
       };
     };
