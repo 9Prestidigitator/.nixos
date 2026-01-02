@@ -15,6 +15,7 @@
   desktop = {
     enable = true;
     wayCompositor = "niri";
+    x11WM = "i3";
     musicprod.enable = true;
     gaming.enable = true;
     design.enable = true;
