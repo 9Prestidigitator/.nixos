@@ -56,6 +56,16 @@ in {
 
               "Mod4+u" = "workspace prev";
               "Mod4+d" = "workspace next";
+              "Mod4+Tab" = "workspace back_and_forth";
+              "Mod4+1" = "workspace 1";
+              "Mod4+2" = "workspace 2";
+              "Mod4+3" = "workspace 3";
+              "Mod4+4" = "workspace 4";
+              "Mod4+5" = "workspace 5";
+              "Mod4+6" = "workspace 6";
+              "Mod4+7" = "workspace 7";
+              "Mod4+8" = "workspace 8";
+              "Mod4+9" = "workspace 9";
 
               "Mod4+Shift+h" = "focus output left";
               "Mod4+Shift+l" = "focus output right";
