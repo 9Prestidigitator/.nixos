@@ -35,6 +35,18 @@ in {
         xsession.windowManager.i3 = {
           enable = true;
           config = {
+            startup = [
+              {
+                command = "picom";
+                always = true;
+              }
+              {
+                command = "feh --randomize --bg-fill ~/Pictures/Wallpapers";
+                always = true;
+                notification = false;
+              }
+              {command = "nm-applet";}
+            ];
             modifier = "Mod4";
             terminal = "kitty";
 
@@ -96,14 +108,6 @@ in {
                 "Return" = "mode default";
               };
             };
-
-            startup = [
-              {
-                command = "picom";
-                always = true;
-              }
-              {command = "nm-applet";}
-            ];
           };
         };
       }
