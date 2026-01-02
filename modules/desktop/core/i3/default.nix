@@ -81,6 +81,8 @@ in {
 
               "Mod4+Shift+h" = "focus output left";
               "Mod4+Shift+l" = "focus output right";
+              "Mod4+Alt+h" = "move workspace to output left";
+              "Mod4+Alt+l" = "move workspace to output right";
               "Mod4+Control+Shift+l" = "move container to workspace next_on_output";
               "Mod4+Control+Shift+h" = "move container to workspace prev_on_output";
 
@@ -93,8 +95,7 @@ in {
               "Mod4+Control+k" = "move up";
               "Mod4+Control+l" = "move right";
 
-              "Mod4+Alt+h" = "move workspace to output left";
-              "Mod4+Alt+l" = "move workspace to output right";
+              "Ctrl+Alt+Delete" = "exit";
             };
 
             modes = {
