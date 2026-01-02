@@ -96,7 +96,7 @@ in {
               "Mod4+Control+k" = "move up";
               "Mod4+Control+l" = "move right";
 
-              "Ctrl+Alt+Delete" = "exec i3-msg exit";
+              "Control+Alt+Delete" = "exit";
             };
 
             modes = {
