@@ -6,10 +6,7 @@
   ...
 }: let
   cfg = config.desktop;
-  isNiri = cfg.enable && cfg.mode == "niri";
-  isLaptop = config.networking.hostName != "ink";
-
-  noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  isNiri = cfg.enable && cfg.wayCompositor == "niri";
 in {
   imports = [
     ./noctalia

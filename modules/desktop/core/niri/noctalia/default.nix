@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.desktop;
-  isNiri = cfg.enable && cfg.mode == "niri";
+  isNiri = cfg.enable && cfg.wayCompositor == "niri";
 in {
   imports = [
     inputs.noctalia.nixosModules.default

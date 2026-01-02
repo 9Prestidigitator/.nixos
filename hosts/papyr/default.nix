@@ -14,7 +14,7 @@
 
   desktop = {
     enable = true;
-    mode = "niri";
+    wayCompositor = "niri";
     musicprod.enable = true;
     gaming.enable = true;
     design.enable = true;

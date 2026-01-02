@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.desktop;
-  isHyprland = cfg.enable && cfg.mode == "hyprland";
+  isHyprland = cfg.enable && cfg.wayCompositor == "hyprland";
 in {
   config = lib.mkIf isHyprland {
     programs.hyprland = {

@@ -14,7 +14,7 @@
 
   desktop = {
     enable = true;
-    mode = "i3";
+    x11WM = "i3";
   };
 
   # Use the systemd-boot EFI boot loader.

@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.desktop;
-  isKde = cfg.enable && cfg.mode == "kde";
+  isKde = cfg.enable && cfg.wayCompositor == "kde";
 in {
   config = lib.mkIf isKde {
     services.desktopManager.plasma6 = {

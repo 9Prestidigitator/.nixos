@@ -24,7 +24,7 @@ in {
 
   desktop = {
     enable = true;
-    mode = "gnome";
+    wayCompositor = "gnome";
   };
 
   hardware.microsoft-surface.kernelVersion = "longterm";

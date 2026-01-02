@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.desktop;
-  isGnome = cfg.enable && cfg.mode == "gnome";
+  isGnome = cfg.enable && cfg.wayCompositor == "gnome";
 in {
   config = lib.mkIf isGnome {
     services.displayManager.gdm.enable = true;
