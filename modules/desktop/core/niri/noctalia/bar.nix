@@ -7,7 +7,7 @@
   ...
 }: let
   cfg = osConfig.desktop;
-  isNiri = cfg.enable && cfg.mode == "niri";
+  isNiri = cfg.enable && cfg.wayCompositor == "niri";
   isLaptop = osConfig.networking.hostName != "ink";
 in {
   programs.noctalia-shell = {
