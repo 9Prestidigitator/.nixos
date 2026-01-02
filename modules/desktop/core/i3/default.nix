@@ -45,7 +45,7 @@ in {
 
             keybindings = {
               "Mod4+Return" = "exec kitty";
-              "Mod4+Space" = "exec dmenu_run";
+              "Mod4+space" = "exec dmenu_run";
               "Mod4+q" = "kill";
               "Mod4+Shift+r" = "restart";
 
@@ -54,14 +54,25 @@ in {
 
               "Mod4+r" = "mode resize";
 
+              "Mod4+u" = "workspace prev";
+              "Mod4+d" = "workspace next";
+
+              "Mod4+Shift+h" = "focus output left";
+              "Mod4+Shift+l" = "focus output right";
+              "Mod4+Control+Shift+l" = "move container to workspace next_on_output";
+              "Mod4+Control+Shift+h" = "move container to workspace prev_on_output";
+
               "Mod4+h" = "focus left";
               "Mod4+j" = "focus down";
               "Mod4+k" = "focus up";
               "Mod4+l" = "focus right";
-              "Mod4+Shift+h" = "move left";
-              "Mod4+Shift+j" = "move down";
-              "Mod4+Shift+k" = "move up";
-              "Mod4+Shift+l" = "move right";
+              "Mod4+Control+h" = "move left";
+              "Mod4+Control+j" = "move down";
+              "Mod4+Control+k" = "move up";
+              "Mod4+Control+l" = "move right";
+
+              "Mod4+Alt+h" = "move workspace to output left";
+              "Mod4+Alt+l" = "move workspace to output right";
             };
 
             modes = {
