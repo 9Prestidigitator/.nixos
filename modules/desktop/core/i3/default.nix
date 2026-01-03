@@ -65,6 +65,7 @@ in {
               "Mod4+Control+space" = "floating toggle";
               "Mod4+f" = "fullscreen toggle";
 
+              "Mod4+m" = "mode move";
               "Mod4+r" = "mode resize";
 
               "Mod4+u" = "workspace prev";
@@ -91,20 +92,35 @@ in {
               "Mod4+j" = "focus down";
               "Mod4+k" = "focus up";
               "Mod4+l" = "focus right";
-              "Mod4+Control+h" = "move left";
-              "Mod4+Control+j" = "move down";
-              "Mod4+Control+k" = "move up";
-              "Mod4+Control+l" = "move right";
 
               "Control+Alt+Delete" = "exec i3-msg exit";
             };
 
             modes = {
               resize = {
+                "Mod4+h" = "focus left";
+                "Mod4+j" = "focus down";
+                "Mod4+k" = "focus up";
+                "Mod4+l" = "focus right";
+
                 "h" = "resize shrink width 10 px or 10 ppt";
                 "j" = "resize grow height 10 px or 10 ppt";
                 "k" = "resize shrink height 10 px or 10 ppt";
                 "l" = "resize grow width 10 px or 10 ppt";
+
+                "Escape" = "mode default";
+                "Return" = "mode default";
+              };
+              move = {
+                "Mod4+h" = "focus left";
+                "Mod4+j" = "focus down";
+                "Mod4+k" = "focus up";
+                "Mod4+l" = "focus right";
+
+                "h" = "move left";
+                "j" = "move down";
+                "k" = "move up";
+                "l" = "move right";
 
                 "Escape" = "mode default";
                 "Return" = "mode default";
