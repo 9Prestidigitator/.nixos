@@ -43,6 +43,7 @@
       "threadirqs"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "nvidia_drm.modeset=1"
+      "acpi_enforce_resources=lax"
     ];
   };
 
@@ -69,6 +70,13 @@
   '';
 
   services.xserver.videoDrivers = ["nvidia"];
+
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+    motherboard = "amd";
+  };
+  environment.systemPackages = [pkgs.openrgb-with-all-plugins];
 
   hardware.nvidia = {
     modesetting.enable = true;
