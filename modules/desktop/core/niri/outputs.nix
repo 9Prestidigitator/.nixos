@@ -25,7 +25,7 @@ in {
       "Hewlett Packard HP 22cwa 6CM82100S4" = {
         scale = 1.2;
         position = {
-          x = -1920;
+          x = -1600;
           y = 0;
         };
         mode = {
