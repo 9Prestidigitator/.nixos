@@ -76,7 +76,6 @@
     package = pkgs.openrgb-with-all-plugins;
     motherboard = "amd";
   };
-  environment.systemPackages = [pkgs.openrgb-with-all-plugins];
 
   hardware.nvidia = {
     modesetting.enable = true;
