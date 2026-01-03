@@ -13,7 +13,7 @@ in {
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
-        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes"];}
+        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes/"];}
         {argv = ["steam"];}
         {argv = ["discord"];}
         {argv = ["signal-desktop"];}
@@ -31,7 +31,7 @@ in {
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
-        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes"];}
+        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes/"];}
         {argv = ["discord"];}
         {argv = ["signal-desktop"];}
       ];
