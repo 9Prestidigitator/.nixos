@@ -35,6 +35,7 @@
         "dbepggeogbaibhgnhhndojpepiihcmeb"
         "hkgfoiooedgoejojocmhlaklaeopbecg"
         "gebbhagfogifgggkldgodflihgfeippi"
+        "ioimlbgefgadofblnajllknopjboejda"
       ];
       extraOpts = {
         "WaylandWpColorManagerV1" = false;

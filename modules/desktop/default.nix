@@ -26,6 +26,9 @@
       corefonts
       vista-fonts
       material-design-icons
+      fira
+      fira-sans
+      roboto
 
       noto-fonts
       noto-fonts-color-emoji
