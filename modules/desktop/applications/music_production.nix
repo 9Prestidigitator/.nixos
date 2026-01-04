@@ -25,6 +25,10 @@ in {
     environment.systemPackages = with pkgs; [
       pkgsUnstable.bitwig-studio
       # bitwig-studio-latest
+      paulxstretch
+      # neuralnote
+      # amplocker
+      # papu
       reaper
       reaper-sws-extension
       reaper-reapack-extension
