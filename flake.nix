@@ -2,41 +2,13 @@
   description = "Max's nix config";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
-    musnix.url = "github:musnix/musnix";
-
-    niri.url = "github:sodiboo/niri-flake";
-
-    noctalia.url = "github:noctalia-dev/noctalia-shell";
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-    kwin-effects-forceblur = {
-      url = "github:taj-ny/kwin-effects-forceblur";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
-    nixcord.url = "github:kaylorben/nixcord";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # rust patch not in main hardware branch yet
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-rust-target-spec-fix";
-
-    tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
-
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -47,6 +19,43 @@
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    musnix.url = "github:musnix/musnix";
+
+    audio-nix = {
+      url = "github:polygon/audio.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri.url = "github:sodiboo/niri-flake";
+
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
+
+    # yabridge menu patch not in main xwayland-satellite yet
+    # xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+    xwayland-satellite.url = "github:GoranKovac/xwayland-satellite?ref=wmhints-popup-detection-yabridge";
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    kwin-effects-forceblur = {
+      url = "github:taj-ny/kwin-effects-forceblur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    nixcord.url = "github:kaylorben/nixcord";
+
+    tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";

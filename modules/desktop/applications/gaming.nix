@@ -20,6 +20,9 @@
       prismlauncher
       (bottles.override {removeWarningPopup = true;})
       heroic
+      dolphin-emu
+      melonDS
+      azahar
     ];
   };
 }

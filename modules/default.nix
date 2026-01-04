@@ -27,6 +27,7 @@
     config.allowUnfree = true;
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
+      inputs.audio-nix.overlays.default
       inputs.self.overlays.default
     ];
   };

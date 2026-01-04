@@ -4,7 +4,14 @@
   inputs,
   config,
   ...
-}: {
+}: let
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
+in {
   imports = [
     inputs.musnix.nixosModules.musnix
     inputs.self.nixosModules.overwitch
@@ -16,7 +23,8 @@
     services.overwitch.enable = true;
 
     environment.systemPackages = with pkgs; [
-      bitwig-studio
+      pkgsUnstable.bitwig-studio
+      # bitwig-studio-latest
       reaper
       reaper-sws-extension
       reaper-reapack-extension

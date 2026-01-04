@@ -53,7 +53,7 @@
       kdePackages.plasma-workspace
       kdePackages.breeze
       kdePackages.breeze-icons
-      xwayland-satellite
+      inputs.xwayland-satellite.packages.${pkgs.system}.default
       xsettingsd
       xcursorgen
       xcursor-themes
