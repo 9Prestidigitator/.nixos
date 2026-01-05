@@ -9,6 +9,9 @@
     programs.steam = {
       enable = true;
       protontricks.enable = false; # BROKEN
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
     };
 
     services.flatpak.packages = [
