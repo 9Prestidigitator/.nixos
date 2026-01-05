@@ -51,6 +51,9 @@ in {
               groupedBorderOpacity = 0.5;
               unfocusedIconsOpacity = 0.9;
             }
+            {
+              id = "plugins:catwalk";
+            }
           ];
           right =
             [
