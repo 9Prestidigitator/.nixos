@@ -34,7 +34,7 @@
         warp-mouse-to-focus.enable = false;
       };
       overview = {
-        workspace-shadow.enable = false;
+        workspace-shadow.enable = true;
         backdrop-color = null;
       };
       layout = {
