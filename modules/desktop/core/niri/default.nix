@@ -33,6 +33,8 @@ in {
       };
     };
 
+    services.gnome.evolution-data-server.enable = true;
+    
     xdg.portal = {
       enable = true;
       extraPortals = [
