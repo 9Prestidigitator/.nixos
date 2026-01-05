@@ -28,7 +28,7 @@ in {
       paulxstretch
       # neuralnote
       # amplocker
-      # papu
+      papu
       reaper
       reaper-sws-extension
       reaper-reapack-extension
