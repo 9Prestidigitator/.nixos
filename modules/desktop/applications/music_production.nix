@@ -23,8 +23,8 @@ in {
     services.overwitch.enable = true;
 
     environment.systemPackages = with pkgs; [
-      pkgsUnstable.bitwig-studio
-      # bitwig-studio-latest
+      # pkgsUnstable.bitwig-studio
+      bitwig-studio-latest
       paulxstretch
       # neuralnote
       # amplocker
