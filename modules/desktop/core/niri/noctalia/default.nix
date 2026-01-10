@@ -25,7 +25,7 @@ in {
       ./settings.nix
       ./bar.nix
       ./dock.nix
-      ./plugins.nix
+      # ./plugins.nix
     ];
   };
 }
