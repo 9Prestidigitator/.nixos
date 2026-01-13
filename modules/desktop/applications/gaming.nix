@@ -21,7 +21,6 @@
 
     environment.systemPackages = with pkgs; [
       prismlauncher
-      (bottles.override {removeWarningPopup = true;})
       heroic
       dolphin-emu
       melonDS
