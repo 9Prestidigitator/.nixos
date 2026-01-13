@@ -9,18 +9,37 @@
   isI3 = cfg.enable && cfg.x11WM == "i3";
 in {
   config = lib.mkIf isI3 {
-    services.xserver = {
-      enable = true;
-      windowManager.i3 = {
+    services = {
+      xserver = {
         enable = true;
-        extraPackages = with pkgs; [
-          dmenu
-          i3status
-          i3lock
-          picom
-          xrandr
-          feh
+        windowManager.i3 = {
+          enable = true;
+          extraPackages = with pkgs; [
+            dmenu
+            i3status
+            i3lock
+            picom
+            xrandr
+            scrot
+            xclip
+            feh
+          ];
+        };
+        xrandrHeads = [
+          {
+            output = "eDP-1";
+            primary = true;
+          }
         ];
+      };
+      picom = {
+        enable = true;
+        backend = "egl";
+        vSync = true;
+        settings = {
+          unredir-if-possible = false;
+          use-damage = false;
+        };
       };
     };
 
@@ -61,6 +80,9 @@ in {
               "Mod4+space" = "exec dmenu_run";
               "Mod4+q" = "kill";
               "Mod4+Shift+r" = "restart";
+              "Print" = "exec --no-startup-id scrot -z - | xclip -selection clipboard -t image/png";
+              "Mod4+button1" = "move";
+              "Mod4+button3" = "resize";
 
               "Mod4+Control+space" = "floating toggle";
               "Mod4+f" = "fullscreen toggle";
