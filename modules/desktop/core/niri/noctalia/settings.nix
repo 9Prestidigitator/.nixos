@@ -246,7 +246,7 @@
         fontFixedScale = 1;
         panelBackgroundOpacity = lib.mkForce 1;
         panelsAttachedToBar = true;
-        settingsPanelAttachToBar = false;
+        settingsPanelMode = "attached";
         tooltipsEnabled = true;
       };
       wallpaper = {

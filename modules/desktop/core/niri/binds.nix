@@ -59,17 +59,25 @@
           hotkey-overlay.title = "Toggle launcher";
           action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
         };
-        "Mod+Shift+I" = {
-          hotkey-overlay.title = "Toggle idle inhibitor";
-          action = spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle";
-        };
         "Mod+Shift+D" = {
           hotkey-overlay.title = "Toggle dashboard";
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
         };
+        "Mod+Shift+I" = {
+          hotkey-overlay.title = "Toggle idle inhibitor";
+          action = spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle";
+        };
         "Mod+Shift+N" = {
           hotkey-overlay.title = "Show notifications";
           action = spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
+        };
+        "Mod+Shift+Comma" = {
+          hotkey-overlay.title = "Show settings";
+          action = spawn "noctalia-shell" "ipc" "call" "settings" "toggle";
+        };
+        "Mod+Shift+V" = {
+          hotkey-overlay.title = "Show clipboard history";
+          action = spawn "noctalia-shell" "ipc" "call" "laucher" "clipboard";
         };
         "Mod+Shift+B" = {
           hotkey-overlay.title = "Toggle Noctalia bar";
