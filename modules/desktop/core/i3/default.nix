@@ -65,6 +65,10 @@ in {
                 always = true;
                 notification = false;
               }
+              {
+                command = "sunshine";
+                always = true;
+              }
               {command = "nm-applet";}
             ];
             modifier = "Mod4";
