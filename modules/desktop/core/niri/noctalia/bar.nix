@@ -66,10 +66,6 @@ in {
               displayMode = "onhover";
               id = "VPN";
             }
-            ++ lib.optional isLaptop {
-              displayMode = "onhover";
-              id = "Brightness";
-            }
             ++ [
               {
                 hideWhenZero = true;

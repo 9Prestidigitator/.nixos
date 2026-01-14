@@ -3,8 +3,13 @@
   config,
   inputs,
   pkgs,
+  osConfig,
   ...
-}: {
+}: let
+  cfg = osConfig.desktop;
+  isNiri = cfg.enable && cfg.wayCompositor == "niri";
+  isLaptop = osConfig.networking.hostName != "ink";
+in {
   wayland.systemd.target = "niri.service";
   programs.noctalia-shell = {
     enable = true;
@@ -71,6 +76,13 @@
             enabled = true;
             id = "media-sysmon-card";
           }
+          {
+            enabled =
+              if isLaptop
+              then true
+              else false;
+            id = "brightness-card";
+          }
         ];
         position = "close_to_bar_button";
         shortcuts = {
@@ -80,9 +92,6 @@
             }
             {
               id = "Bluetooth";
-            }
-            {
-              id = "ScreenRecorder";
             }
             {
               id = "WallpaperSelector";
@@ -193,7 +202,7 @@
       sessionMenu = {
         countdownDuration = 10000;
         enableCountdown = true;
-        position = "center";
+        position = "top_center";
         powerOptions = [
           {
             action = "lock";
@@ -226,7 +235,7 @@
             enabled = false;
           }
         ];
-        showHeader = true;
+        showHeader = false;
       };
       systemMonitor = {
         cpuCriticalThreshold = 90;
