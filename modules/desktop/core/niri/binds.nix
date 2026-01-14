@@ -77,7 +77,7 @@
         };
         "Mod+Shift+V" = {
           hotkey-overlay.title = "Show clipboard history";
-          action = spawn "noctalia-shell" "ipc" "call" "laucher" "clipboard";
+          action = spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard";
         };
         "Mod+Shift+B" = {
           hotkey-overlay.title = "Toggle Noctalia bar";
