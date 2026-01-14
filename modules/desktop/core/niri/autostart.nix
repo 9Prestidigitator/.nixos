@@ -10,6 +10,7 @@ in {
   programs.niri.settings = lib.mkMerge [
     (lib.mkIf (hostName == "ink") {
       spawn-at-startup = [
+        {argv = ["sunshine"];}
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
@@ -28,6 +29,7 @@ in {
 
     (lib.mkIf (hostName == "papyr") {
       spawn-at-startup = [
+        {argv = ["sunshine"];}
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["obsidian"];}
