@@ -13,9 +13,9 @@
   networking.networkmanager.enable = true;
 
   desktop = {
-    enable = true;
-    wayCompositor = "niri";
-    x11WM = "none";
+    enable = false;
+    wayCompositor = "none";
+    x11WM = "i3";
     # comms.enable = true;
     # media.enable = true;
   };
