@@ -15,7 +15,7 @@
   desktop = {
     enable = true;
     wayCompositor = "niri";
-    # x11WM = "i3";
+    x11WM = "none";
     # comms.enable = true;
     # media.enable = true;
   };
