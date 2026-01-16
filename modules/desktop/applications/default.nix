@@ -65,8 +65,6 @@
       wlsunset
       pavucontrol
       (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
-      inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
-      inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.qt6.qtdeclarative
     ];
 
     home-manager.sharedModules = [
