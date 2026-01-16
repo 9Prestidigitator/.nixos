@@ -13,7 +13,7 @@
   networking.networkmanager.enable = true;
 
   desktop = {
-    enable = false;
+    enable = true;
     wayCompositor = "none";
     x11WM = "i3";
     # comms.enable = true;
