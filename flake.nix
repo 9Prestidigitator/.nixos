@@ -35,9 +35,9 @@
 
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
+    xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     # yabridge menu patch not in main xwayland-satellite yet
-    # xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
-    xwayland-satellite.url = "github:GoranKovac/xwayland-satellite?ref=wmhints-popup-detection-yabridge";
+    # xwayland-satellite.url = "github:GoranKovac/xwayland-satellite?ref=wmhints-popup-detection-yabridge";
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
