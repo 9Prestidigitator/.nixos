@@ -35,14 +35,21 @@
       };
       efi.canTouchEfiVariables = true;
     };
-  };
-
-  boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "threadirqs"
     ];
   };
+
+  nix.distributedBuilds = true;
+  nix.buildMachines = [
+    {
+      hostName = "10.123.78.170";
+      sshUser = "max";
+      sshKey = "/home/max/.ssh/id_ed25519";
+      system = pkgs.stdenv.hostPlatform.system;
+    }
+  ];
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
