@@ -11,6 +11,7 @@
       gimp-with-plugins
       blender
       davinci-resolve
+      kdePackages.kdenlive
       libreoffice-qt
       hunspell
     ];
