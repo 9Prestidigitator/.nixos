@@ -41,15 +41,18 @@
     ];
   };
 
-  nix.distributedBuilds = true;
-  nix.buildMachines = [
-    {
-      hostName = "10.123.78.170";
-      sshUser = "max";
-      sshKey = "/home/max/.ssh/id_ed25519";
-      system = pkgs.stdenv.hostPlatform.system;
-    }
-  ];
+  nix = {
+    distributedBuilds = true;
+    buildMachines = [
+      {
+        hostName = "10.123.78.170";
+        sshUser = "max";
+        sshKey = "/home/max/.ssh/id_ed25519";
+        system = "x86_64-linux";
+        supportedFeatures = ["nixos-test" "benchmark" "big-parallel"];
+      }
+    ];
+  };
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
