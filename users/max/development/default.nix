@@ -47,7 +47,11 @@
     };
     initExtra = ''
       clear
-      [ $(tput cols) -ge 102 ] && [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
+      if [[ $(tput cols) -ge 102 ]]; then
+        [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
+      else
+        [ $(tput lines) -ge 30 ] && fastfetch
+      fi
       eval "$(starship init bash)"
     '';
   };
