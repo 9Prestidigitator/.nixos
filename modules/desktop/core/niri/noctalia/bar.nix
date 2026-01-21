@@ -14,7 +14,7 @@ in {
     settings = {
       bar = {
         capsuleOpacity = lib.mkForce 1;
-        density = "default";
+        density = "comfortable";
         exclusive = true;
         floating = false;
         marginHorizontal = 1.36;
