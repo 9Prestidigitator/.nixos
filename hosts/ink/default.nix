@@ -99,9 +99,9 @@
     };
   };
 
-  nix.settings.trusted-public-keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvu92jVCd5MoCslOCu3IoVtSxdKXvVhBuhcbIoZ6mW3"
-  ];
+  # nix.settings.trusted-public-keys = [
+  #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvu92jVCd5MoCslOCu3IoVtSxdKXvVhBuhcbIoZ6mW3"
+  # ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
