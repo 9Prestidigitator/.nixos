@@ -11,6 +11,8 @@
   ];
 
   home.packages = with pkgs; [
+    emacs
+
     # CLI
     git
     tree
@@ -25,7 +27,8 @@
 
     # Development
     gcc
-    rustup
+    rustc
+    cargo
     python3
     uv
     nodejs_24
