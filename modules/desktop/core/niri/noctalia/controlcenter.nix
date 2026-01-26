@@ -13,6 +13,7 @@ in {
   programs.noctalia-shell = {
     settings = {
       controlCenter = {
+        position = "close_to_bar_button";
         cards = [
           {
             enabled = true;
@@ -42,7 +43,6 @@ in {
             id = "brightness-card";
           }
         ];
-        position = "close_to_bar_button";
         shortcuts = {
           left = [
             {
