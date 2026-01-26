@@ -60,6 +60,7 @@ in {
     environment.systemPackages = with pkgs; [
       seahorse
       polkit_gnome
+      gpu-screen-recorder
     ];
 
     home-manager.sharedModules = [

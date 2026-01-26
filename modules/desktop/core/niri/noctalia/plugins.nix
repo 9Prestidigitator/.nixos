@@ -5,28 +5,8 @@
   pkgs,
   ...
 }: {
-  home.file.".config/noctalia/plugins" = {
-    recursive = true;
-    source = pkgs.fetchFromGitHub {
-      owner = "noctalia-dev";
-      repo = "noctalia-plugins";
-      rev = "e41dffb965ccb3c2b1e3a69a5bf153c99525e26a";
-      hash = "sha256-4GhsY5Uz0kAaZJpqIoBRoRrnVW2T2tk0xGgwP6Tpvbs=";
-      sparseCheckout = [
-        "privacy-indicator"
-        "catwalk"
-      ];
-    };
-  };
-  home.file.".config/noctalia/plugins/privacy-indicator/settings.json" = {
-    text = builtins.toJSON {
-      hideInactive = true;
-      iconSpacing = 4;
-      removeMargins = false;
-    };
-  };
-  home.file.".config/noctalia/plugins.json" = {
-    text = builtins.toJSON {
+  programs.noctalia-shell = {
+    plugins = {
       sources = [
         {
           enabled = true;
@@ -39,10 +19,34 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
-        privacy-indicator = {
+        screen-recorder = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        timer = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        currency-exchange = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        keybind-cheatsheet = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+      };
+      version = 1;
+    };
+
+    pluginSettings = {
+      catwalk = {
+        minimumThreshold = 10;
+        hideBackground = true;
+      };
+      timer = {
+        compactMode = false;
+        defaultDuration = 0;
       };
     };
   };

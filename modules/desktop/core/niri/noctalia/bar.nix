@@ -33,23 +33,26 @@ in {
           center = [];
           left = [
             {
+              id = "ControlCenter";
               colorizeDistroLogo = false;
               customIconPath = "";
               icon = "";
-              id = "ControlCenter";
               useDistroLogo = true;
             }
             {
+              id = "TaskbarGrouped";
               characterCount = 2;
               colorizeIcons = false;
               hideUnoccupied = true;
-              id = "TaskbarGrouped";
               labelMode = "index";
               showNumbersOnlyWhenOccupied = true;
               showWorkspaceNumbers = false;
               iconScale = 0.85;
               groupedBorderOpacity = 0.5;
               unfocusedIconsOpacity = 0.9;
+            }
+            {
+              id = "plugin:catwalk";
             }
           ];
           right =
