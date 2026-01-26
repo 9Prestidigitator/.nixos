@@ -36,7 +36,9 @@
 
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
-    xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+    # xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+    # Tying to particular commit I like bc latest is unstable
+    xwayland-satellite.url = "github:Supreeeme/xwayland-satellite/ed1cef792b4def3321ff9ab5479df09609f17a69";
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
