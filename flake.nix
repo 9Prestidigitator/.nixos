@@ -63,28 +63,11 @@
     overlays.default = import ./pkgs;
     nixosModules = import ./pkgs/modules.nix;
     nixosConfigurations = let
-      mkHost = hostname: system: users:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {inherit inputs hostname users;};
-          modules = [
-            ./hosts/${hostname}
-            ./users
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useUserPackages = true;
-                useGlobalPkgs = true;
-                backupFileExtension = "backup";
-                extraSpecialArgs = {inherit inputs hostname users;};
-              };
-            }
-          ];
-        };
+      mkHost = import ./lib/mkHost.nix {inherit nixpkgs inputs;};
     in {
       ink = mkHost "ink" "x86_64-linux" ["max" "guest"];
       papyr = mkHost "papyr" "x86_64-linux" ["max"];
-      surface = mkHost "surface" "x86_64-linux" ["max"];
+      surface = mkHost "surface" "x86_64-linux" true ["max"];
       book = mkHost "book" "x86_64-linux" ["max" "guest"];
       vm = mkHost "vm" "x86_64-linux" ["max"];
     };
