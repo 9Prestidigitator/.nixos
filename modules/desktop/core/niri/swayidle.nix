@@ -4,9 +4,9 @@
   lib,
   pkgs,
   osConfig,
+  isLaptop,
   ...
 }: let
-  isLaptop = osConfig.networking.hostName != "ink";
   noctalia-shell = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   services.swayidle = {

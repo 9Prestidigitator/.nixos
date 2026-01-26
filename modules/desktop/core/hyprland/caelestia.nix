@@ -3,10 +3,9 @@
   inputs,
   lib,
   osConfig,
+  isLaptop,
   ...
-}: let
-  isLaptop = osConfig.networking.hostName != "ink";
-in {
+}: {
   programs.caelestia = {
     enable = true;
     systemd = {

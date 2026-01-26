@@ -4,11 +4,11 @@
   inputs,
   pkgs,
   osConfig,
+  isLaptop,
   ...
 }: let
   cfg = osConfig.desktop;
   isNiri = cfg.enable && cfg.wayCompositor == "niri";
-  isLaptop = osConfig.networking.hostName != "ink";
 in {
   programs.noctalia-shell = {
     settings = {

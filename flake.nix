@@ -59,17 +59,35 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: {
+  outputs = {nixpkgs, ...} @ inputs: let
+    mkHost = import ./lib/mkHost.nix {inherit nixpkgs inputs;};
+  in {
     overlays.default = import ./pkgs;
     nixosModules = import ./pkgs/modules.nix;
-    nixosConfigurations = let
-      mkHost = import ./lib/mkHost.nix {inherit nixpkgs inputs;};
-    in {
-      ink = mkHost "ink" "x86_64-linux" ["max" "guest"];
-      papyr = mkHost "papyr" "x86_64-linux" ["max"];
-      surface = mkHost "surface" "x86_64-linux" true ["max"];
-      book = mkHost "book" "x86_64-linux" ["max" "guest"];
-      vm = mkHost "vm" "x86_64-linux" ["max"];
+    nixosConfigurations = {
+      ink = mkHost {
+        hostname = "ink";
+        users = ["max" "guest"];
+      };
+      papyr = mkHost {
+        hostname = "papyr";
+        users = ["max"];
+        isLaptop = true;
+      };
+      surface = mkHost {
+        hostname = "surface";
+        users = ["max"];
+        isLaptop = true;
+      };
+      book = mkHost {
+        hostname = "book";
+        users = ["max" "guest"];
+        isLaptop = true;
+      };
+      vm = mkHost {
+        hostname = "vm";
+        users = ["max"];
+      };
     };
   };
 }

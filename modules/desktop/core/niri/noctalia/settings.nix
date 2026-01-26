@@ -8,7 +8,6 @@
 }: let
   cfg = osConfig.desktop;
   isNiri = cfg.enable && cfg.wayCompositor == "niri";
-  isLaptop = osConfig.networking.hostName != "ink";
 in {
   wayland.systemd.target = "niri.service";
   programs.noctalia-shell = {

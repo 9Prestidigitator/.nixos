@@ -2,10 +2,15 @@
   nixpkgs,
   inputs,
   ...
-}: hostname: system: users:
+}: {
+  hostname,
+  system ? "x86_64-linux",
+  users,
+  isLaptop ? false,
+}:
 nixpkgs.lib.nixosSystem {
   inherit system;
-  specialArgs = {inherit inputs hostname users;};
+  specialArgs = {inherit inputs hostname users isLaptop;};
   modules = [
     ../hosts/${hostname}
     ../users
@@ -15,7 +20,7 @@ nixpkgs.lib.nixosSystem {
         useUserPackages = true;
         useGlobalPkgs = true;
         backupFileExtension = "backup";
-        extraSpecialArgs = {inherit inputs hostname users;};
+        extraSpecialArgs = {inherit inputs hostname users isLaptop;};
       };
     }
   ];
