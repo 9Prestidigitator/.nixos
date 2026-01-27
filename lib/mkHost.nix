@@ -5,7 +5,7 @@
 }: {
   hostname,
   system ? "x86_64-linux",
-  users,
+  users ? ["max"],
   isLaptop ? false,
 }:
 nixpkgs.lib.nixosSystem {
