@@ -6,10 +6,7 @@
   osConfig,
   isLaptop,
   ...
-}: let
-  cfg = osConfig.desktop;
-  isNiri = cfg.enable && cfg.wayCompositor == "niri";
-in {
+}: {
   programs.noctalia-shell = {
     settings = {
       controlCenter = {
@@ -46,10 +43,15 @@ in {
         shortcuts = {
           left = [
             {
-              id = "plugin:timer";
+              id = "CustomButton";
+              enableOnStateLogic = false;
+              generalTooltipText = "Niri Launcher/Keybinds";
+              icon = "niri";
+              onClicked = "noctalia-shell ipc call launcher toggle";
+              onRightClicked = "noctalia-shell ipc call plugin:keybind-cheatsheet toggle";
             }
             {
-              id = "plugin:screen-recorder";
+              id = "plugin:timer";
             }
             {
               id = "WallpaperSelector";
@@ -57,14 +59,10 @@ in {
           ];
           right = [
             {
-              id = "CustomButton";
-              enableOnStateLogic = false;
-              generalTooltipText = "keybinds";
-              icon = "keyboard";
-              onClicked = "noctalia-shell ipc call plugin:keybind-beta toggle";
+              id = "NightLight";
             }
             {
-              id = "NightLight";
+              id = "plugin:screen-recorder";
             }
             {
               id = "KeepAwake";

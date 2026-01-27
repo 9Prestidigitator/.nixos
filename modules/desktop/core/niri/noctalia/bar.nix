@@ -6,10 +6,7 @@
   osConfig,
   isLaptop,
   ...
-}: let
-  cfg = osConfig.desktop;
-  isNiri = cfg.enable && cfg.wayCompositor == "niri";
-in {
+}: {
   programs.noctalia-shell = {
     settings = {
       bar = {
@@ -22,23 +19,15 @@ in {
         monitors = [];
         outerCorners = false;
         position =
-          if isNiri
+          if isLaptop
           then "left"
-          else "top";
+          else "bottom";
         showCapsule = false;
         showOutline = false;
         useSeparateOpacity = false;
         backgroundOpacity = lib.mkForce 0;
         widgets = {
-          center = [];
           left = [
-            {
-              id = "ControlCenter";
-              colorizeDistroLogo = false;
-              customIconPath = "";
-              icon = "";
-              useDistroLogo = true;
-            }
             {
               id = "TaskbarGrouped";
               characterCount = 2;
@@ -53,6 +42,15 @@ in {
             }
             {
               id = "plugin:catwalk";
+            }
+          ];
+          center = [
+            {
+              id = "ControlCenter";
+              colorizeDistroLogo = false;
+              customIconPath = "";
+              icon = "";
+              useDistroLogo = true;
             }
           ];
           right =
