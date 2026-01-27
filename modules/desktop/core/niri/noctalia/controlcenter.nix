@@ -52,6 +52,11 @@ in {
               id = "plugin:screen-recorder";
             }
             {
+              id = "WallpaperSelector";
+            }
+          ];
+          right = [
+            {
               id = "CustomButton";
               enableOnStateLogic = false;
               generalTooltipText = "keybinds";
@@ -59,21 +64,10 @@ in {
               onClicked = "noctalia-shell ipc call plugin:keybind-beta toggle";
             }
             {
-              id = "WallpaperSelector";
-            }
-          ];
-          right = [
-            {
-              id = "KeepAwake";
-            }
-            {
-              id = "PowerProfile";
-            }
-            {
               id = "NightLight";
             }
             {
-              id = "NoctaliaPerformance";
+              id = "KeepAwake";
             }
           ];
         };

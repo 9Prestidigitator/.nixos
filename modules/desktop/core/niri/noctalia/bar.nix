@@ -71,29 +71,31 @@ in {
             }
             ++ [
               {
-                hideWhenZero = true;
                 id = "NotificationHistory";
+                hideWhenZero = true;
                 showUnreadBadge = true;
               }
               {
-                displayMode = "onhover";
                 id = "Bluetooth";
+                displayMode = "onhover";
               }
               {
-                displayMode = "onhover";
                 id = "Volume";
+                displayMode = "onhover";
               }
               {
-                displayMode = "onhover";
                 id = "Network";
+                displayMode = "onhover";
               }
-            ]
-            ++ lib.optional isLaptop {
-              displayMode = "onhover";
-              id = "Battery";
-              warningThreshold = 30;
-            }
-            ++ [
+              {
+                id = "Battery";
+                hideIfNotDetected = true;
+                deviceNativePath = "BAT0";
+                showNoctaliaPerformance = true;
+                showPowerProfiles = true;
+                warningThreshold = 25;
+                displayMode = "onhover";
+              }
               {
                 customFont = "";
                 formatHorizontal = "HH:mm ddd; MMM dd";
