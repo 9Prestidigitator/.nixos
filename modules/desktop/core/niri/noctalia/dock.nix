@@ -4,12 +4,16 @@
   inputs,
   pkgs,
   osConfig,
+  isLaptop,
   ...
 }: {
   programs.noctalia-shell = {
     settings = {
       dock = {
-        enabled = true;
+        enabled =
+          if isLaptop
+          then true
+          else false;
         backgroundOpacity = lib.mkForce 0;
         colorizeIcons = false;
         displayMode = "auto_hide";
