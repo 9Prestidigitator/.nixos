@@ -4,11 +4,9 @@
   inputs,
   pkgs,
   osConfig,
+  isLaptop,
   ...
-}: let
-  cfg = osConfig.desktop;
-  isNiri = cfg.enable && cfg.wayCompositor == "niri";
-in {
+}: {
   wayland.systemd.target = "niri.service";
   programs.noctalia-shell = {
     enable = true;
@@ -20,7 +18,10 @@ in {
         customLaunchPrefixEnabled = false;
         enableClipboardHistory = true;
         pinnedExecs = [];
-        position = "top_center";
+        position =
+          if isLaptop
+          then "top_center"
+          else "bottom_left";
         sortByMostUsed = true;
         terminalCommand = "kitty -e";
         useApp2Unit = false;
