@@ -10,20 +10,20 @@
   programs.noctalia-shell = {
     settings = {
       dock = {
-        enabled =
-          if isLaptop
-          then true
-          else false;
-        backgroundOpacity = lib.mkForce 0;
+        enabled = true;
+        # if isLaptop
+        # then true
+        # else false;
+        backgroundOpacity = lib.mkForce 0.15;
+        floatingRatio = 0.4;
+        size = 0.9;
         colorizeIcons = false;
         displayMode = "auto_hide";
-        floatingRatio = 0.58;
         inactiveIndicators = true;
         deadOpacity = 0.4;
         monitors = [];
         onlySameOutput = false;
         pinnedStatic = true;
-        size = 1;
         pinnedApps =
           [
             "kitty"
