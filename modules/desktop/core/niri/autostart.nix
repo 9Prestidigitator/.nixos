@@ -16,7 +16,7 @@ in {
         {argv = ["obsidian"];}
         {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes/"];}
         {argv = ["steam"];}
-        {argv = ["discord"];}
+        # {argv = ["discord"];}
         {argv = ["signal-desktop"];}
       ];
       workspaces = {
@@ -31,10 +31,10 @@ in {
       spawn-at-startup = [
         {argv = ["sunshine"];}
         {argv = ["brave"];}
-        {argv = ["spotify"];}
+        # {argv = ["spotify"];}
         {argv = ["obsidian"];}
         {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes/"];}
-        {argv = ["discord"];}
+        # {argv = ["discord"];}
         {argv = ["signal-desktop"];}
       ];
       workspaces = {

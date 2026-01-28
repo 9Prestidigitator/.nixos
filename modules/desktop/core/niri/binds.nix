@@ -59,7 +59,7 @@
           hotkey-overlay.title = "Toggle launcher";
           action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
         };
-        "Mod+Shift+D" = {
+        "Mod+Z" = {
           hotkey-overlay.title = "Toggle dashboard";
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
         };
