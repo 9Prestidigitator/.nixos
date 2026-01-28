@@ -57,17 +57,28 @@
               id = "WallpaperSelector";
             }
           ];
-          right = [
-            {
-              id = "NightLight";
+          right =
+            [
+              {
+                id = "NightLight";
+              }
+            ]
+            ++ lib.optional isLaptop {
+              id = "CustomButton";
+              enableOnStateLogic = false;
+              generalTooltipText = "Wireguard VPN";
+              icon = "shield";
+              onClicked = "pkexec systemctl start wg-quick-wg0.service";
+              onRightClicked = "pkexec systemctl stop wg-quick-wg0.service";
             }
-            {
-              id = "plugin:screen-recorder";
-            }
-            {
-              id = "KeepAwake";
-            }
-          ];
+            ++ [
+              {
+                id = "plugin:screen-recorder";
+              }
+              {
+                id = "KeepAwake";
+              }
+            ];
         };
       };
     };
