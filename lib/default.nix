@@ -1,10 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: let
+{inputs, ...}: let
   hosts = import ./hosts.nix {
-    self = self;
     inputs = inputs;
   };
 in {
