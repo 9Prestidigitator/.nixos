@@ -12,7 +12,6 @@ in {
     ../../modules
     ./hardware-configuration.nix
     ./minecraft-server.nix
-    inputs.tablet-mode.nixosModule
     inputs.nixos-hardware.nixosModules.microsoft-surface-common
   ];
 
@@ -95,9 +94,6 @@ in {
   services = {
     udev.packages = with pkgs; [iptsd surface-control];
     thermald.enable = true;
-
-    # from dev.ostylk.de/NixDistro/tablet-mode.git
-    tablet-mode.enable = true;
   };
 
   powerManagement.cpuFreqGovernor = "performance";

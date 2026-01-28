@@ -23,17 +23,14 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     musnix.url = "github:musnix/musnix";
-
     audio-nix = {
       url = "github:polygon/audio.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri.url = "github:sodiboo/niri-flake";
-
-    noctalia.url = "github:noctalia-dev/noctalia-shell";
-
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
@@ -45,11 +42,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
     nixcord.url = "github:kaylorben/nixcord";
-
-    tablet-mode.url = "git+https://destiny.ostylk.de/gitea/NixDistro/tablet-mode.git";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
