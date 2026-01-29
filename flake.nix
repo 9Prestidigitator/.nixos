@@ -58,6 +58,7 @@
       papyr = {isLaptop = true;};
       surface = {isLaptop = true;};
       book = {isLaptop = true;};
+      cardboard = {users = ["max" "guest"];};
       vm = {};
     };
   };
