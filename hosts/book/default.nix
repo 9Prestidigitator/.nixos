@@ -14,8 +14,8 @@
 
   desktop = {
     enable = true;
-    wayCompositor = "none";
-    x11WM = "i3";
+    wayCompositor = "niri";
+    x11WM = "none";
     # comms.enable = true;
     # media.enable = true;
   };
@@ -32,6 +32,13 @@
       efi.canTouchEfiVariables = true;
     };
   };
+
+  boot.kernelPatches = [
+    {
+      name = "chrultrabook-stoney-audio";
+      patch = ./audio.patch;
+    }
+  ];
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
