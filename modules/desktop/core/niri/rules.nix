@@ -102,15 +102,12 @@
     ];
     layer-rules = [
       {
-        matches = [{namespace = "noctalia-wallpaper*";}];
+        matches = [
+          {namespace = "noctalia-wallpaper*";}
+          {namespace = "linux-wallpaperengine";}
+        ];
         place-within-backdrop = true;
       }
-      # {
-      #   matches = [{namespace = "noctalia-bar-content*";}];
-      #   shadow = {
-      #     enable = true;
-      #   };
-      # }
     ];
   };
 }
