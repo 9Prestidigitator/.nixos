@@ -10,13 +10,15 @@ in {
   home.packages = with pkgs; [
     # TUI
     vim
-    btop
+    emacs
     lazygit
+    btop
   ];
 
   programs.neovim = {
     enable = true;
-    package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    # overlay
+    package = pkgs.neovim;
   };
 
   home.activation.syncNvimDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
