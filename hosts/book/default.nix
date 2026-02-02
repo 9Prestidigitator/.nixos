@@ -61,6 +61,18 @@
     };
   };
 
+  fileSystems."/mnt/SD" = {
+    device = "/dev/disk/by-label/SD";
+    fsType = "exfat";
+    options = [
+      "nofail"
+      "x-systemd.automount"
+      "uid=1000"
+      "gid=100"
+      "umask=0022"
+    ];
+  };
+
   # networking.wg-quick.interfaces.wg0 = {
   #   configFile = "/secret/wg0.conf";
   #   autostart = false;
