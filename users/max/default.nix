@@ -1,8 +1,4 @@
 {
-  imports = [
-    ./devshells.nix
-  ];
-
   users.users.max = {
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
