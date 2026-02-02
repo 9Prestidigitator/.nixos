@@ -19,7 +19,7 @@
         position =
           if isLaptop
           then "left"
-          else "bottom";
+          else "top";
         displayMode = "auto_hide";
         autoHideDelay = 500;
         autoShowDelay = 150;

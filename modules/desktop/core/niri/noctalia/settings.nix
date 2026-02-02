@@ -21,7 +21,7 @@
         position =
           if isLaptop
           then "top_center"
-          else "bottom_left";
+          else "follow_bar";
         sortByMostUsed = true;
         terminalCommand = "kitty -e";
         useApp2Unit = false;
