@@ -14,7 +14,7 @@
         # if isLaptop
         # then true
         # else false;
-        position = "top";
+        position = "bottom";
         # if isLaptop
         # then "bottom"
         # else "left";
