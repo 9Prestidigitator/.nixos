@@ -43,6 +43,7 @@
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "nvidia_drm.modeset=1"
       "acpi_enforce_resources=lax"
+      "video=DP-8:1920x1080@60D"
     ];
   };
 

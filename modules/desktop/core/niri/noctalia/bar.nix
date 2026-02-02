@@ -14,8 +14,8 @@
         density = "comfortable";
         barType = "floating";
         floating = true;
-        marginVertical = 8;
-        marginHorizontal = 8;
+        marginVertical = 9;
+        marginHorizontal = 9;
         position =
           if isLaptop
           then "left"
