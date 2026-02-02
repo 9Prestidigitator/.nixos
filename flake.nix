@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-utils.url = "github:numtide/flake-utils";
 
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
@@ -62,8 +63,8 @@
       vm = {};
     };
 
-    devShells = {
-      default = import ./shells/default.nix {inherit nixpkgs;};
-    };
+    devShells = lib.eachSystem (system: 
+    let pkgs = lib.pkgsFor.${system};
+    in import ./shells {inherit pkgs;});
   };
 }

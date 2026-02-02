@@ -53,7 +53,7 @@
       if [[ $(tput cols) -ge 102 ]]; then
         [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
       else
-        [ $(tput lines) -ge 30 ] && fastfetch
+        [ $(tput lines) -ge 30 ] && fastfetch --logo none
       fi
       eval "$(starship init bash)"
     '';
@@ -78,7 +78,7 @@
         }
         {
           type = "title";
-          key = "                      ";
+          key = "                       ";
         }
         "break"
         {
