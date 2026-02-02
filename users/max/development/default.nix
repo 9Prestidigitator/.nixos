@@ -11,29 +11,28 @@
   ];
 
   home.packages = with pkgs; [
-    emacs
-
     # CLI
     git
     tree
-    fzf
-    wget
-    starship
     ripgrep
+    fd
+    starship
+    fzf
+    just
+    wget
     zip
     unzip
     unrar
-    fd
 
     # Development
-    gcc
-    rustc
-    cargo
-    python3
-    uv
-    nodejs_24
-    dotnetCorePackages.sdk_9_0-bin
-    nixd
+    # gcc
+    # rustc
+    # cargo
+    # python3
+    # uv
+    # nodejs_24
+    # dotnetCorePackages.sdk_9_0-bin
+    # nixd
   ];
 
   programs.bash = {
@@ -47,6 +46,7 @@
       gpre = "cd ${config.home.homeDirectory}/.nixos && git pull && nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
       nixup = "sudo nix flake update";
       nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
+      ds = "nix develop ${config.home.homeDirectory}/.nixos";
     };
     initExtra = ''
       clear

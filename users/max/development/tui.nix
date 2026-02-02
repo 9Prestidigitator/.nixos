@@ -10,6 +10,7 @@ in {
   home.packages = with pkgs; [
     # TUI
     vim
+    emacs
     btop
     lazygit
   ];

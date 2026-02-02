@@ -48,7 +48,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = {...} @ inputs: let
+  outputs = {nixpkgs, ...} @ inputs: let
     lib = import ./lib {inherit inputs;};
   in {
     overlays.default = import ./pkgs;
@@ -60,6 +60,10 @@
       book = {isLaptop = true;};
       cardboard = {users = ["max" "guest"];};
       vm = {};
+    };
+
+    devShells = {
+      default = import ./shells/default.nix {inherit nixpkgs;};
     };
   };
 }
