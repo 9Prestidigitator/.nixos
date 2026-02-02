@@ -6,7 +6,9 @@ pkgs.mkShell {
   '';
   packages = with pkgs; [
     # C/C++
+    cmake
     gcc
+    clang-tools
 
     # Rust
     rustc
@@ -22,13 +24,17 @@ pkgs.mkShell {
     uv
     basedpyright
     ruff
+    black
 
     # C#
     dotnetCorePackages.sdk_9_0-bin
+    omnisharp-roslyn
     csharpier
 
     # etc
-    nodejs_24
+    prettier
+    prettierd
+    typescript-language-server
     matlab-language-server
     bash-language-server
     texlab
