@@ -23,16 +23,6 @@
     zip
     unzip
     unrar
-
-    # Development
-    # gcc
-    # rustc
-    # cargo
-    # python3
-    # uv
-    # nodejs_24
-    # dotnetCorePackages.sdk_9_0-bin
-    # nixd
   ];
 
   programs.bash = {

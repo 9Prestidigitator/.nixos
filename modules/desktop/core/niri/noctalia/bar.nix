@@ -12,18 +12,20 @@
       bar = {
         capsuleOpacity = lib.mkForce 1;
         density = "comfortable";
-        exclusive = true;
-        floating = false;
-        marginHorizontal = 1.36;
-        marginVertical = 0;
-        monitors = [];
-        outerCorners = false;
+        barType = "floating";
+        floating = true;
+        marginVertical = 8;
+        marginHorizontal = 8;
         position =
           if isLaptop
           then "left"
           else "bottom";
+        displayMode = "auto_hide";
+        autoHideDelay = 500;
+        autoShowDelay = 150;
         showCapsule = false;
         showOutline = false;
+        outerCorners = false;
         useSeparateOpacity = false;
         backgroundOpacity = lib.mkForce 0;
         widgets = {
