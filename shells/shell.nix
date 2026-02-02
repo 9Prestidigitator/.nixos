@@ -1,6 +1,9 @@
 {pkgs}:
 pkgs.mkShell {
   name = "base";
+  shellHook = ''
+    export SHELL="/run/current-system/sw/bin/bash"
+  '';
   packages = with pkgs; [
     # C/C++
     gcc
@@ -30,4 +33,4 @@ pkgs.mkShell {
     bash-language-server
     texlab
   ];
-};
+}

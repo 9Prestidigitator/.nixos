@@ -49,7 +49,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = {...} @ inputs: let
     lib = import ./lib {inherit inputs;};
   in {
     overlays.default = import ./pkgs;
@@ -63,8 +63,9 @@
       vm = {};
     };
 
-    devShells = lib.eachSystem (system: 
-    let pkgs = lib.pkgsFor.${system};
-    in import ./shells {inherit pkgs;});
+    devShells = lib.eachSystem (system: let
+      pkgs = lib.pkgsFor.${system};
+    in
+      import ./shells {inherit pkgs;});
   };
 }

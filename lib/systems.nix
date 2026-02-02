@@ -1,13 +1,11 @@
-{ nixpkgs }:
-let
+{nixpkgs}: let
   eachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
-in
-{
+in {
   eachSystem = eachSystem;
   pkgsFor = eachSystem (
     system:
-    import nixpkgs {
-      inherit system;
-    }
+      import nixpkgs {
+        inherit system;
+      }
   );
 }

@@ -46,7 +46,7 @@
       gpre = "cd ${config.home.homeDirectory}/.nixos && git pull && nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
       nixup = "sudo nix flake update";
       nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
-      ds = "nix develop ${config.home.homeDirectory}/.nixos";
+      ds = "nix develop ${config.home.homeDirectory}/.nixos#default";
     };
     initExtra = ''
       clear
