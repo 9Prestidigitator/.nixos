@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   osConfig,
   ...
@@ -13,11 +12,23 @@ in {
         {argv = ["sunshine"];}
         {argv = ["brave"];}
         {argv = ["spotify"];}
-        {argv = ["obsidian"];}
-        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes/"];}
         {argv = ["steam"];}
         # {argv = ["discord"];}
         {argv = ["signal-desktop"];}
+        {argv = ["obsidian"];}
+        {
+          argv = [
+            "kitty"
+            "--title"
+            "Notes"
+            "-e"
+            "sh"
+            "-c"
+            ''
+              cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md --command sh -c nvim
+            ''
+          ];
+        }
       ];
       workspaces = {
         "browse".open-on-output = "HDMI-A-1";
@@ -32,10 +43,22 @@ in {
         {argv = ["sunshine"];}
         {argv = ["brave"];}
         # {argv = ["spotify"];}
-        {argv = ["obsidian"];}
-        {argv = ["kitty" "--title" "Notes" "-e" "nvim" "~/notes/"];}
         # {argv = ["discord"];}
         {argv = ["signal-desktop"];}
+        {argv = ["obsidian"];}
+        {
+          argv = [
+            "kitty"
+            "--title"
+            "Notes"
+            "-e"
+            "sh"
+            "-c"
+            ''
+              cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md --command sh -c nvim
+            ''
+          ];
+        }
       ];
       workspaces = {
         "browse".open-on-output = "eDP-1";
