@@ -137,7 +137,6 @@
     ntfs3g
     gvfs
     p7zip
-    libsForQt5.qt5.qtgraphicaleffects
     freetype
     zenity
     fontconfig
