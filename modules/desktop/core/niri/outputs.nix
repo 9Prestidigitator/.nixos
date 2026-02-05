@@ -51,6 +51,21 @@ in {
       };
     })
 
+    (lib.mkIf (hostName == "book") {
+      "eDP-1" = {
+        scale = 1.1;
+        position = {
+          x = 0;
+          y = 0;
+        };
+        mode = {
+          width = 1366;
+          height = 768;
+          refresh = null;
+        };
+      };
+    })
+
     (lib.mkIf (hostName == "surface") {
       "eDP-1" = {
         scale = 2.2;
