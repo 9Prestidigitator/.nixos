@@ -19,7 +19,7 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       allowed-users = ["@wheel"];
-      trusted-users = ["@wheel"];
+      trusted-users = ["@wheel" "nixremote"];
     };
   };
 
