@@ -33,12 +33,26 @@
     };
   };
 
-  boot.kernelPatches = [
-    {
-      name = "chrultrabook-stoney-audio";
-      patch = ./audio.patch;
-    }
-  ];
+  # boot.kernelPatches = [
+  #   {
+  #     name = "chrultrabook-stoney-audio";
+  #     patch = ./audio.patch;
+  #   }
+  # ];
+
+  nix = {
+    buildMachines = [
+      {
+        hostName = "builder";
+        system = "x86_64-linux";
+        protocol = "ssh-ng";
+        maxJobs = 4;
+        speedFactor = 2;
+        supportedFeatures = ["nixos-test" "benchmark" "big-parallel"];
+      }
+    ];
+    distributedBuilds = true;
+  };
 
   services.udev.extraRules = ''
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
