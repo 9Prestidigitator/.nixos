@@ -33,12 +33,12 @@
     };
   };
 
-  # boot.kernelPatches = [
-  #   {
-  #     name = "chrultrabook-stoney-audio";
-  #     patch = ./audio.patch;
-  #   }
-  # ];
+  boot.kernelPatches = [
+    {
+      name = "chrultrabook-stoney-audio";
+      patch = ./audio.patch;
+    }
+  ];
 
   nix = {
     buildMachines = [
