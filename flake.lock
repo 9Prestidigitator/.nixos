@@ -451,11 +451,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1770455835,
-        "narHash": "sha256-qsp0ZoRMReSpUWZgB0l4YQVxcy3q/vDyqr0qQJICr3g=",
+        "lastModified": 1770456147,
+        "narHash": "sha256-Q04MSiNaww0b8n9hDGrcBWFSu7AL457eJeMRMzMtZsI=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "82e72f14d5c9696b0e256c5f9922fa6399b91046",
+        "rev": "e87f144b5e7d000f4fa4ea4853ebcd0ef62f7793",
         "type": "github"
       },
       "original": {
@@ -862,11 +862,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1770432265,
-        "narHash": "sha256-Xmapwanh7MxUYY072ZXa6qBkprxIKylt4skv+VfycMw=",
+        "lastModified": 1770436113,
+        "narHash": "sha256-Ekc6E1uo7OBMROUUZ3pBiTwha7KlHcsNf6jy1g1hCco=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "1067575848a12b4aa78b898397b505e6ca38be5e",
+        "rev": "93838353573233b5584b106eb897a37f8a4e63ac",
         "type": "github"
       },
       "original": {
