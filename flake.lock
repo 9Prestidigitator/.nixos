@@ -451,11 +451,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1770457312,
-        "narHash": "sha256-hQlc/+5BopCBeqkUarb0zsqhPEfQsIY+K+WQ3m9w75o=",
+        "lastModified": 1770457597,
+        "narHash": "sha256-d+jVYWYvykhFqUen1J9OaPkhNK0mqvATwornhReByX0=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "eb81d32227fe4214dc17b89982867d858e593ff7",
+        "rev": "7feb66680a0a4599c3b71867f430c79e1c48184c",
         "type": "github"
       },
       "original": {
