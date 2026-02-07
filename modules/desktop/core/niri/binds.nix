@@ -135,6 +135,16 @@
           allow-when-locked = true;
           action = spawn "brightnessctl" "--class=backlight" "set" "5%-";
         };
+        "XF86Tools" = {
+          hotkey-overlay.title = "Lock";
+          allow-when-locked = true;
+          action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+        };
+        "Mod+XF86Tools" = {
+          hotkey-overlay.title = "Session Actions";
+          allow-when-locked = false;
+          action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+        };
 
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-down;
