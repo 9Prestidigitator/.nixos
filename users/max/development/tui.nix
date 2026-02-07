@@ -7,6 +7,9 @@
 }: let
   syncRepo = import ./sync-repo.nix {inherit pkgs;};
 in {
+  imports = [
+    inputs.neovim.homeManagerModules.default
+  ];
   home.packages = with pkgs; [
     # TUI
     vim
@@ -15,11 +18,7 @@ in {
     btop
   ];
 
-  programs.neovim = {
-    enable = true;
-    # overlay
-    package = pkgs.neovim;
-  };
+  programs.Neovim.enable = true;
 
   home.activation.syncNvimDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
     $DRY_RUN_CMD ${
