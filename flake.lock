@@ -884,6 +884,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "noctalia": "noctalia",
         "spicetify-nix": "spicetify-nix",
+        "stoney-kernel": "stoney-kernel",
         "stylix": "stylix",
         "xwayland-satellite": "xwayland-satellite"
       }
@@ -964,6 +965,22 @@
       "original": {
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "stoney-kernel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746883630,
+        "narHash": "sha256-nriH8knZ77yKrLsMcWU/7p48HpCLr+MnQlNR+s+n1ww=",
+        "owner": "chrultrabook",
+        "repo": "stoney-kernel",
+        "rev": "98da9030b9be791846d1847a7df149ef30f478f0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chrultrabook",
+        "repo": "stoney-kernel",
         "type": "github"
       }
     },

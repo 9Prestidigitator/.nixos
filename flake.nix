@@ -46,6 +46,11 @@
     nixcord.url = "github:kaylorben/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+    stoney-kernel = {
+      url = "github:chrultrabook/stoney-kernel";
+      flake = false;
+    };
+
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 

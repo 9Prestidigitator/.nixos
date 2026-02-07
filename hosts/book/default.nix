@@ -36,7 +36,7 @@
   boot.kernelPatches = [
     {
       name = "chrultrabook-stoney-audio";
-      patch = ./audio.patch;
+      patch = inputs.stoney-kernel + "/patches/audio.patch";
     }
   ];
 
@@ -48,7 +48,7 @@
         protocol = "ssh-ng";
         maxJobs = 4;
         speedFactor = 2;
-        supportedFeatures = ["nixos-test" "benchmark" "big-parallel"];
+        supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
       }
     ];
     distributedBuilds = true;
