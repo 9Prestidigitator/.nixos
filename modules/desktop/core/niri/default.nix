@@ -58,9 +58,11 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
+      inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
       seahorse
       polkit_gnome
       gpu-screen-recorder
+      wl-clipboard
     ];
 
     home-manager.sharedModules = [

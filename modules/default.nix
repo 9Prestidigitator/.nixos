@@ -124,24 +124,6 @@
     };
   };
 
-  # Need to clean this up
-  environment.systemPackages = with pkgs; [
-    # Utilities
-    # usbutils
-    # pciutils
-    # pkg-config
-    # brotli
-    # openssl
-    # parted
-    # ntfs3g
-    # gvfs
-    # p7zip
-    # libsForQt5.qt5.qtgraphicaleffects
-    # freetype
-    # zenity
-    # fontconfig
-  ];
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";

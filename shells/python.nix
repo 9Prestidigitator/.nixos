@@ -11,5 +11,6 @@ pkgs.mkShell {
     basedpyright
     ruff
     black
+    (python3.withPackages (ps: [ps.debugpy]))
   ];
 }
