@@ -18,7 +18,7 @@ in {
     btop
   ];
 
-  programs.neovim.enable = true;
+  programs.Neovim.enable = true;
 
   programs.tmux = {
     enable = true;

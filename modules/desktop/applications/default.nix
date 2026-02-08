@@ -42,29 +42,43 @@
       };
     };
 
+    # Really need to clean these up
     environment.systemPackages = with pkgs; [
+      # Essentials
       nautilus
       kitty
       brave
       calc
       moonlight-qt
       syncthing
-      playerctl
+
       cliphist
-      kdePackages.plasma-workspace
-      kdePackages.breeze
-      kdePackages.breeze-icons
-      inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
+      playerctl
+      brightnessctl
+      qjackctl
+      pavucontrol
+      wireplumber
+
+      wlsunset
+      libnotify
       xsettingsd
       xcursorgen
       xcursor-themes
-      brightnessctl
-      wireplumber
-      qjackctl
-      libnotify
-      wlsunset
-      pavucontrol
-      (python3.withPackages (pyPkgs: with pyPkgs; [pygobject3]))
+
+      usbutils
+      pciutils
+      pkg-config
+      openssl
+      zenity
+
+      brotli
+      parted
+      ntfs3g
+      gvfs
+      p7zip
+
+      freetype
+      fontconfig
     ];
 
     home-manager.sharedModules = [
