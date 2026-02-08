@@ -19,16 +19,15 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       allowed-users = ["@wheel"];
-      trusted-users = ["@wheel"];
+      trusted-users = ["@wheel" "nixremote"];
     };
   };
 
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
-      inputs.neovim-nightly-overlay.overlays.default
-      inputs.audio-nix.overlays.default
       inputs.self.overlays.default
+      inputs.audio-nix.overlays.default
     ];
   };
 

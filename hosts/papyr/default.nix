@@ -42,16 +42,17 @@
   };
 
   nix = {
-    distributedBuilds = true;
     buildMachines = [
       {
-        hostName = "10.123.78.170";
-        sshUser = "max";
-        sshKey = "/home/max/.ssh/id_ed25519";
+        hostName = "builder";
         system = "x86_64-linux";
-        supportedFeatures = ["nixos-test" "benchmark" "big-parallel"];
+        protocol = "ssh-ng";
+        maxJobs = 4;
+        speedFactor = 2;
+        supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
       }
     ];
+    distributedBuilds = true;
   };
 
   services.udev.extraRules = ''

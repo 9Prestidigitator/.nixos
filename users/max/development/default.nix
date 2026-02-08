@@ -18,11 +18,11 @@
     fd
     starship
     fzf
-    # just
-    # wget
-    # zip
-    # unzip
-    # unrar
+    just
+    wget
+    zip
+    unzip
+    unrar
   ];
 
   programs.bash = {

@@ -7,6 +7,9 @@
 }: let
   syncRepo = import ./sync-repo.nix {inherit pkgs;};
 in {
+  imports = [
+    inputs.neovim.homeManagerModules.default
+  ];
   home.packages = with pkgs; [
     # TUI
     vim
@@ -15,20 +18,7 @@ in {
     btop
   ];
 
-  programs.neovim = {
-    enable = true;
-    # overlay
-    package = pkgs.neovim;
-  };
-
-  home.activation.syncNvimDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    $DRY_RUN_CMD ${
-      syncRepo {
-        url = "https://github.com/9Prestidigitator/nvim.git";
-        destination = "${config.home.homeDirectory}/.config/nvim";
-      }
-    }
-  '';
+  programs.Neovim.enable = true;
 
   programs.tmux = {
     enable = true;

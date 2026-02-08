@@ -19,7 +19,7 @@
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-kernel-6.18";
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim.url = "github:9prestidigitator/nvim";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
@@ -45,6 +45,11 @@
 
     nixcord.url = "github:kaylorben/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    stoney-kernel = {
+      url = "github:chrultrabook/stoney-kernel";
+      flake = false;
+    };
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
