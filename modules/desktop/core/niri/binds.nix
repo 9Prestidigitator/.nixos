@@ -203,9 +203,9 @@ in {
         "Mod+Up".action = focus-window-up;
         "Mod+Right".action = focus-column-right;
         "Mod+H".action = focus-column-left;
+        "Mod+L".action = focus-column-right;
         # "Mod+J".action = focus-window-down;
         # "Mod+K".action = focus-window-up;
-        "Mod+L".action = focus-column-right;
 
         "Mod+Ctrl+Left".action = move-column-left;
         "Mod+Ctrl+Down".action = move-window-down;
@@ -266,19 +266,19 @@ in {
         "Mod+Alt+K".action = move-workspace-up;
 
         "Mod+WheelScrollUp" = {
-          cooldown-ms = 150;
+          cooldown-ms = 100;
           action = focus-workspace-up;
         };
         "Mod+WheelScrollDown" = {
-          cooldown-ms = 150;
+          cooldown-ms = 100;
           action = focus-workspace-down;
         };
         "Mod+Ctrl+WheelScrollUp" = {
-          cooldown-ms = 150;
+          cooldown-ms = 100;
           action = move-column-to-workspace-up;
         };
         "Mod+Ctrl+WheelScrollDown" = {
-          cooldown-ms = 150;
+          cooldown-ms = 100;
           action = move-column-to-workspace-down;
         };
 
@@ -311,6 +311,7 @@ in {
         # "Mod+BracketRight".action = consume-or-expel-window-right;
 
         # "Mod+W".action = toggle-column-tabbed-display;
+
         "Mod+W".action.spawn = lib.getExe (mkMenu [
           {
             key = "w";
