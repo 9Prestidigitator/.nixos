@@ -31,12 +31,28 @@ pkgs.mkShell {
     omnisharp-roslyn
     csharpier
 
+    # Latex
+    texliveSmall
+    texlab
+    tex-fmt
+    zathuraPkgs.zathura_pdf_poppler
+
+    # Bash
+    bash-language-server
+    shmft
+
+    # Debuggers
+    vscode-extensions.vadimcn.vscode-lldb
+    netcoredbg
+    (python3.withPackages (ps: [ps.debugpy]))
+
     # etc
     prettier
     prettierd
+    taplo
+    jq
     typescript-language-server
     matlab-language-server
-    bash-language-server
-    texlab
+    qt6.qtdeclarative
   ];
 }
