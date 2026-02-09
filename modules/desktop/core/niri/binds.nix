@@ -4,7 +4,9 @@
   lib,
   osConfig,
   ...
-}: {
+}: let
+  mkMenu = ./wlr-which-key.nix;
+in {
   programs.niri.settings.binds = with config.lib.niri.actions;
     lib.mkMerge [
       {
@@ -48,6 +50,19 @@
           hotkey-overlay.title = "btop";
           action = spawn "kitty" "--title" "'btop'" "-e" "btop";
         };
+
+        "Mod+G".spawn-sh = lib.getExe (mkMenu [
+          {
+            key = "b";
+            desc = "Launch Brave Browser.";
+            cmd = "brave";
+          }
+          {
+            key = "e";
+            desc = "Launch File Explorer.";
+            cmd = "nautilus -w";
+          }
+        ]);
 
         # noctalia-shell binds
         "Mod+Escape" = {
@@ -275,7 +290,7 @@
         "Mod+Shift+C".action = center-visible-columns;
 
         "Mod+Ctrl+Space".action = toggle-window-floating;
-        "Mod+G".action = switch-focus-between-floating-and-tiling;
+        "Mod+X".action = switch-focus-between-floating-and-tiling;
 
         # Finer width adjustments.
         # This command can also:
