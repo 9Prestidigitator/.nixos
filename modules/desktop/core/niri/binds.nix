@@ -13,6 +13,7 @@
         font = "JetBrainsMono Nerd Font 12";
         anchor = "bottom-right";
         background = "#282828d0";
+        corner_r = 5;
         border_width = 0;
         margin_right = 6;
         margin_bottom = 10;
