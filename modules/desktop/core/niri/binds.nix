@@ -97,6 +97,21 @@ in {
             cmd = "noctalia-shell ipc call notifications toggleHistory";
           }
           {
+            key = "t";
+            desc = "Show Calendar";
+            cmd = "noctalia-shell ipc call calendar toggle";
+          }
+          {
+            key = "w";
+            desc = "Show Wifi Panel";
+            cmd = "noctalia-shell ipc call network togglePanel";
+          }
+          {
+            key = "m";
+            desc = "Show System Monitor";
+            cmd = "noctalia-shell ipc call systemMonitor toggle";
+          }
+          {
             key = "s";
             desc = "Noctalia Settings";
             cmd = "noctalia-shell ipc call settings toggle";

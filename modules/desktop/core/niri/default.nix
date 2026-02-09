@@ -63,6 +63,7 @@ in {
       polkit_gnome
       gpu-screen-recorder
       wl-clipboard
+      kdePackages.breeze-icons
     ];
 
     home-manager.sharedModules = [
