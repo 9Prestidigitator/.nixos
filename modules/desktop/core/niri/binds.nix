@@ -11,11 +11,13 @@
       pkgs.writeText "config.yaml"
       (lib.generators.toYAML {} {
         anchor = "bottom-right";
+        background = "#282828d0";
         # padding = 2;
-        margin_right = 2;
-        margin_bottom = 2;
-        margin_left = 2;
-        margin_top = 2;
+        margin_right = 8;
+        margin_bottom = 8;
+        margin_left = 8;
+        margin_top = 8;
+        inhibit_compositor_keyboard_shortcuts = true;
         # ...
         inherit menu;
       });
@@ -42,26 +44,10 @@ in {
           action = toggle-overview;
         };
 
-        # Quick launch applications
+        # Launch applications
         "Mod+Return" = {
           hotkey-overlay.title = "Launch terminal: Kitty";
           action = spawn "kitty";
-        };
-        "Mod+B" = {
-          hotkey-overlay.title = "Launch browser: Browser";
-          action = spawn "brave";
-        };
-        "Mod+E" = {
-          hotkey-overlay.title = "Launch explorer: Nautilus";
-          action = spawn "nautilus" "-w";
-        };
-        "Mod+N" = {
-          hotkey-overlay.title = "Launch text editor: Neovim";
-          action = spawn "kitty" "--title" "Neovim" "-e" "nvim";
-        };
-        "Mod+T" = {
-          hotkey-overlay.title = "Launch tmux";
-          action = spawn "kitty" "--title" "tmux" "bash" "-lc" "tmux a || tmux";
         };
         "Ctrl+Shift+Escape" = {
           hotkey-overlay.title = "btop";
@@ -71,13 +57,23 @@ in {
         "Mod+G".action.spawn = lib.getExe (mkMenu [
           {
             key = "b";
-            desc = "Launch Brave Browser.";
+            desc = "Launch browser: Browser";
             cmd = "brave";
           }
           {
             key = "e";
-            desc = "Launch File Explorer.";
+            desc = "Launch explorer: Nautilus";
             cmd = "nautilus -w";
+          }
+          {
+            key = "n";
+            desc = "Launch text editor: Neovim";
+            cmd = "kitty --title Neovim -e nvim";
+          }
+          {
+            key = "t";
+            desc = "Launch tmux";
+            cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
           }
         ]);
 
