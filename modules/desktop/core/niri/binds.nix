@@ -10,13 +10,14 @@
     configFile =
       pkgs.writeText "config.yaml"
       (lib.generators.toYAML {} {
+        font = "JetBrainsMono Nerd Font 12";
         anchor = "bottom-right";
         background = "#282828d0";
-        # padding = 2;
-        margin_right = 8;
-        margin_bottom = 8;
-        margin_left = 8;
-        margin_top = 8;
+        border_width = 0;
+        margin_right = 6;
+        margin_bottom = 10;
+        margin_left = 6;
+        margin_top = 10;
         inhibit_compositor_keyboard_shortcuts = true;
         # ...
         inherit menu;
