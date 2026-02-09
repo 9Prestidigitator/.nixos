@@ -8,7 +8,5 @@ pkgs.mkShell {
     # etc
     prettier
     prettierd
-    typescript-language-server
-    texlab
   ];
 }

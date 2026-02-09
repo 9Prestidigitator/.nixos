@@ -30,8 +30,12 @@ Nix flake configuration for five x86-64 NixOS systems with five desktop configur
 
 # Dev shells
 
-- Base universal devshell with all packages that [Neovim](https://github.com/9Prestidigitator/nvim) relies on. 
+- Base universal devshell with all packages that [Neovim](https://github.com/9Prestidigitator/nvim) relies on.
+- Nix devshell for editing Nix
+- Python devshell with basic features
+- Minimal Markdown devshell
 
+Other development tools for a specific project should be managed by that projects flake.
 
 You can run a dev via `nix develop` or the builtin aliases.
 
