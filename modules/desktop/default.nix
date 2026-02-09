@@ -40,8 +40,6 @@
       nerd-fonts.iosevka
     ];
 
-    services.opentabletdriver.enable = true;
-
     home-manager.sharedModules = [
       {
         xdg = {

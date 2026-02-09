@@ -38,6 +38,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
+    kernelModules = ["uinput"]; # required by opentabletdriver
     kernelParams = [
       "threadirqs"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
@@ -69,6 +70,9 @@
   '';
 
   services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.opentabletdriver.enable = true;
+  hardware.uinput.enable = true;
 
   services.hardware.openrgb = {
     enable = true;
