@@ -298,6 +298,11 @@ in {
         # "Mod+W".action = toggle-column-tabbed-display;
         "Mod+W".action.spawn = lib.getExe (mkMenu [
           {
+            key = "w";
+            desc = "Switch focus between floating and tiling";
+            cmd = "niri msg action switch-focus-between-floating-and-tiling";
+          }
+          {
             key = "t";
             desc = "Toggle Column Tabbed Display";
             cmd = "niri msg action toggle-column-tabbed-display";

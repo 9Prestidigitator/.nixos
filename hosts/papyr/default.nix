@@ -35,11 +35,18 @@
       };
       efi.canTouchEfiVariables = true;
     };
+  };
+
+  boot = {
     kernelPackages = pkgs.linuxPackages_zen;
+    kernelModules = ["uinput"]; # required by opentabletdriver
     kernelParams = [
       "threadirqs"
     ];
   };
+
+  hardware.opentabletdriver.enable = true;
+  hardware.uinput.enable = true;
 
   nix = {
     buildMachines = [
