@@ -11,6 +11,11 @@
       pkgs.writeText "config.yaml"
       (lib.generators.toYAML {} {
         anchor = "bottom-right";
+        # padding = 2;
+        margin_right = 2;
+        margin_bottom = 2;
+        margin_left = 2;
+        margin_top = 2;
         # ...
         inherit menu;
       });
