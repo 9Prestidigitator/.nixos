@@ -63,7 +63,7 @@ in {
           action = spawn "kitty" "--title" "'btop'" "-e" "btop";
         };
 
-        "Mod+G".spawn-sh = lib.getExe (mkMenu [
+        "Mod+G".action.spawn = lib.getExe (mkMenu [
           {
             key = "b";
             desc = "Launch Brave Browser.";
