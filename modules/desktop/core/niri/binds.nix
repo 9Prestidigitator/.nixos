@@ -15,10 +15,10 @@
         background = "#282828d0";
         corner_r = 8;
         border_width = 0;
-        margin_right = 6;
-        margin_bottom = 10;
-        margin_left = 6;
-        margin_top = 10;
+        margin_right = 11;
+        margin_bottom = 11;
+        margin_left = 11;
+        margin_top = 11;
         inhibit_compositor_keyboard_shortcuts = true;
         # ...
         inherit menu;
@@ -80,6 +80,33 @@ in {
         ]);
 
         # noctalia-shell binds
+        "Mod+N".action.spawn = lib.getExe (mkMenu [
+          {
+            key = "i";
+            desc = "Toggle idle inhibition";
+            cmd = "noctalia-shell ipc call idleInhibitor toggle";
+          }
+          {
+            key = "b";
+            desc = "Toggle Noctalia bar";
+            cmd = "noctalia-shell ipc call bar toggle";
+          }
+          {
+            key = "n";
+            desc = "Show Notifications";
+            cmd = "noctalia-shell ipc call notifications toggleHistory";
+          }
+          {
+            key = "s";
+            desc = "Noctalia Settings";
+            cmd = "noctalia-shell ipc call settings toggle";
+          }
+          {
+            key = "c";
+            desc = "Clipboard history";
+            cmd = "noctalia-shell ipc call launcher clipboard";
+          }
+        ]);
         "Mod+Escape" = {
           hotkey-overlay.title = "Lock";
           allow-when-locked = true;
@@ -92,26 +119,6 @@ in {
         "Mod+Z" = {
           hotkey-overlay.title = "Toggle dashboard";
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
-        };
-        "Mod+Shift+I" = {
-          hotkey-overlay.title = "Toggle idle inhibitor";
-          action = spawn "noctalia-shell" "ipc" "call" "idleInhibitor" "toggle";
-        };
-        "Mod+Shift+N" = {
-          hotkey-overlay.title = "Show notifications";
-          action = spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
-        };
-        "Mod+Shift+Comma" = {
-          hotkey-overlay.title = "Show settings";
-          action = spawn "noctalia-shell" "ipc" "call" "settings" "toggle";
-        };
-        "Mod+Shift+V" = {
-          hotkey-overlay.title = "Show clipboard history";
-          action = spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard";
-        };
-        "Mod+Shift+B" = {
-          hotkey-overlay.title = "Toggle Noctalia bar";
-          action = spawn "noctalia-shell" "ipc" "call" "bar" "toggle";
         };
 
         # System keys
@@ -201,8 +208,8 @@ in {
 
         "Mod+Home".action = focus-column-first;
         "Mod+End".action = focus-column-last;
-        "Mod+Ctrl+Home".action = move-column-to-first;
-        "Mod+Ctrl+End".action = move-column-to-last;
+        # "Mod+Ctrl+Home".action = move-column-to-first;
+        # "Mod+Ctrl+End".action = move-column-to-last;
 
         "Mod+Shift+Left".action = focus-monitor-left;
         "Mod+Shift+Down".action = focus-monitor-down;
@@ -285,8 +292,8 @@ in {
         "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
         "Mod+Tab".action = focus-workspace-previous;
-        "Mod+BracketLeft".action = consume-or-expel-window-left;
-        "Mod+BracketRight".action = consume-or-expel-window-right;
+        # "Mod+BracketLeft".action = consume-or-expel-window-left;
+        # "Mod+BracketRight".action = consume-or-expel-window-right;
 
         # "Mod+W".action = toggle-column-tabbed-display;
         "Mod+W".action.spawn = lib.getExe (mkMenu [
@@ -301,9 +308,29 @@ in {
             cmd = "niri msg action center-column";
           }
           {
+            key = "Z";
+            desc = "Center visible columns";
+            cmd = "niri msg action center-visible-columns";
+          }
+          {
             key = "f";
             desc = "Stretch window to all corners";
             cmd = "niri msg action maximize-window-to-edges";
+          }
+          {
+            key = "F";
+            desc = "Fullscreen window";
+            cmd = "niri msg action fullscreen-window";
+          }
+          {
+            key = "r";
+            desc = "Reset current window height";
+            cmd = "niri msg action reset-window-height";
+          }
+          {
+            key = "m";
+            desc = "Toggle maximize current window";
+            cmd = "niri msg action maximize-column";
           }
           {
             key = "g";
@@ -315,26 +342,46 @@ in {
             desc = "Move window furthest right position";
             cmd = "niri msg action move-column-to-last";
           }
+          {
+            key = "j";
+            desc = "Consume window into column";
+            cmd = "niri msg action consume-window-into-column";
+          }
+          {
+            key = "k";
+            desc = "Expel window from column";
+            cmd = "niri msg action expel-window-from-column";
+          }
+          {
+            key = "h";
+            desc = "Consume or Expel window left";
+            cmd = "niri msg action consume-or-expel-window-left";
+          }
+          {
+            key = "l";
+            desc = "Consume or Expel window right";
+            cmd = "niri msg action consume-or-expel-window-right";
+          }
         ]);
 
-        "Mod+Comma".action = consume-window-into-column;
-        "Mod+Period".action = expel-window-from-column;
+        # "Mod+Comma".action = consume-window-into-column;
+        # "Mod+Period".action = expel-window-from-column;
 
         "Mod+R".action = switch-preset-column-width-back;
         "Mod+Shift+R".action = switch-preset-window-height;
+        # "Mod+Ctrl+R".action = reset-window-height;
 
-        "Mod+Ctrl+R".action = reset-window-height;
-        "Mod+M".action = maximize-column;
+        # "Mod+M".action = maximize-column;
 
-        "Mod+F".action = fullscreen-window;
-        "Mod+Ctrl+F".action = maximize-window-to-edges;
+        # "Mod+F".action = fullscreen-window;
+        # "Mod+Ctrl+F".action = maximize-window-to-edges;
         "Mod+Shift+F".action = expand-column-to-available-width;
 
-        "Mod+C".action = center-column;
-        "Mod+Shift+C".action = center-visible-columns;
+        # "Mod+C".action = center-column;
+        # "Mod+Shift+C".action = center-visible-columns;
 
         "Mod+Ctrl+Space".action = toggle-window-floating;
-        "Mod+X".action = switch-focus-between-floating-and-tiling;
+        # "Mod+X".action = switch-focus-between-floating-and-tiling;
 
         # Finer width adjustments.
         # This command can also:
