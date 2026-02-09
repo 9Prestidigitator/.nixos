@@ -3,9 +3,21 @@
   inputs,
   lib,
   osConfig,
+  pkgs,
   ...
 }: let
-  mkMenu = ./wlr-which-key.nix;
+  mkMenu = menu: let
+    configFile =
+      pkgs.writeText "config.yaml"
+      (lib.generators.toYAML {} {
+        anchor = "bottom-right";
+        # ...
+        inherit menu;
+      });
+  in
+    pkgs.writeShellScriptBin "my-menu" ''
+      exec ${lib.getExe pkgs.wlr-which-key} ${configFile}
+    '';
 in {
   programs.niri.settings.binds = with config.lib.niri.actions;
     lib.mkMerge [
