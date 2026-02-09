@@ -9,5 +9,6 @@ pkgs.mkShell {
     nixd
     alejandra
     bash-language-server
+    prettierd
   ];
 }
