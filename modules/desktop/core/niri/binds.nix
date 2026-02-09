@@ -13,7 +13,7 @@
         font = "JetBrainsMono Nerd Font 12";
         anchor = "bottom-right";
         background = "#282828d0";
-        corner_r = 5;
+        corner_r = 8;
         border_width = 0;
         margin_right = 6;
         margin_bottom = 10;
@@ -288,6 +288,35 @@ in {
         "Mod+BracketLeft".action = consume-or-expel-window-left;
         "Mod+BracketRight".action = consume-or-expel-window-right;
 
+        # "Mod+W".action = toggle-column-tabbed-display;
+        "Mod+W".action.spawn = lib.getExe (mkMenu [
+          {
+            key = "t";
+            desc = "Toggle Column Tabbed Display";
+            cmd = "niri msg action toggle-column-tabbed-display";
+          }
+          {
+            key = "z";
+            desc = "Center current window";
+            cmd = "niri msg action center-column";
+          }
+          {
+            key = "f";
+            desc = "Stretch window to all corners";
+            cmd = "niri msg action maximize-window-to-edges";
+          }
+          {
+            key = "g";
+            desc = "Move window furthest left position";
+            cmd = "niri msg action move-column-to-first";
+          }
+          {
+            key = "G";
+            desc = "Move window furthest right position";
+            cmd = "niri msg action move-column-to-last";
+          }
+        ]);
+
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
 
@@ -321,8 +350,6 @@ in {
         # Finer height adjustments when in column with other windows.
         "Mod+Shift+Minus".action.set-window-height = "-10%";
         "Mod+Shift+Equal".action.set-window-height = "+10%";
-
-        "Mod+W".action = toggle-column-tabbed-display;
 
         # Take an area screenshot. Select the area to screenshot with mouse
         "Print".action.screenshot = {show-pointer = false;};
