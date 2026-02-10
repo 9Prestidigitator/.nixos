@@ -173,6 +173,16 @@ in {
             cmd = "pactl set-default-sink bluez_output.44_A7_F4_02_10_09.1";
           }
           {
+            key = "S";
+            desc = "Connect Sony XM5";
+            cmd = "bluetoothctl connect AC:80:0A:43:53:C5";
+          }
+          {
+            key = "p";
+            desc = "Set Sony XM5";
+            cmd = "pactl set-default-sink bluez_output.AC_80_0A_43_53_C5.1";
+          }
+          {
             key = "b";
             desc = "Set Behringer Interface";
             cmd = "pactl set-default-sink alsa_output.usb-BEHRINGER_UMC1820_244D6CC5-00.multichannel-output";

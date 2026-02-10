@@ -13,7 +13,7 @@ in {
         focus-at-startup = true;
         scale = 1;
         position = {
-          x = 0;
+          x = 1600;
           y = 0;
         };
         mode = {
@@ -25,7 +25,7 @@ in {
       "Hewlett Packard HP 22cwa 6CM82100S4" = {
         scale = 1.2;
         position = {
-          x = -1600;
+          x = 0;
           y = 0;
         };
         mode = {
