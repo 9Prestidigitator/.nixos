@@ -20,7 +20,6 @@
         margin_left = 11;
         margin_top = 11;
         inhibit_compositor_keyboard_shortcuts = true;
-        # ...
         inherit menu;
       });
   in
@@ -98,6 +97,11 @@ in {
           }
           {
             key = "t";
+            desc = "Show Timer";
+            cmd = "noctalia-shell ipc call plugin:timer toggle";
+          }
+          {
+            key = "d";
             desc = "Show Calendar";
             cmd = "noctalia-shell ipc call calendar toggle";
           }
