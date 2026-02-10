@@ -58,27 +58,42 @@ in {
         "Mod+G".action.spawn = lib.getExe (mkMenu [
           {
             key = "b";
-            desc = "Launch browser: Browser";
+            desc = "Browser: Browser";
             cmd = "brave";
           }
           {
             key = "e";
-            desc = "Launch explorer: Nautilus";
+            desc = "Explorer: Nautilus";
             cmd = "nautilus -w";
           }
           {
             key = "n";
-            desc = "Launch text editor: Neovim";
+            desc = "Text Editor: Neovim";
             cmd = "kitty --title Neovim -e nvim";
           }
           {
             key = "t";
-            desc = "Launch tmux";
+            desc = "tmux";
             cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
           }
           {
+            key = "d";
+            desc = "Discord";
+            cmd = "discord";
+          }
+          {
+            key = "s";
+            desc = "Spotify";
+            cmd = "spotify";
+          }
+          {
+            key = "m";
+            desc = "Bitwig";
+            cmd = "bitwig-studio";
+          }
+          {
             key = "j";
-            desc = "Launch QJackCtl";
+            desc = "QJackCtl";
             cmd = "qjackctl";
           }
         ]);
