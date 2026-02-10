@@ -76,6 +76,11 @@ in {
             desc = "Launch tmux";
             cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
           }
+          {
+            key = "j";
+            desc = "Launch QJackCtl";
+            cmd = "qjackctl";
+          }
         ]);
 
         # noctalia-shell binds
@@ -89,6 +94,11 @@ in {
             key = "b";
             desc = "Toggle Noctalia bar";
             cmd = "noctalia-shell ipc call bar toggle";
+          }
+          {
+            key = "B";
+            desc = "Toggle Noctalia dock";
+            cmd = "noctalia-shell ipc call dock toggle";
           }
           {
             key = "n";
@@ -106,9 +116,19 @@ in {
             cmd = "noctalia-shell ipc call calendar toggle";
           }
           {
-            key = "w";
+            key = "i";
             desc = "Show Wifi Panel";
             cmd = "noctalia-shell ipc call network togglePanel";
+          }
+          {
+            key = "w";
+            desc = "Choose Wallpaper";
+            cmd = "noctalia-shell ipc call wallpaper toggle";
+          }
+          {
+            key = "W";
+            desc = "Random Wallpaper";
+            cmd = "noctalia-shell ipc call wallpaper random";
           }
           {
             key = "m";
