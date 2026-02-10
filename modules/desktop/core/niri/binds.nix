@@ -358,11 +358,6 @@ in {
             cmd = "niri msg action maximize-window-to-edges";
           }
           {
-            key = "F";
-            desc = "Fullscreen window";
-            cmd = "niri msg action fullscreen-window";
-          }
-          {
             key = "r";
             desc = "Reset current window height";
             cmd = "niri msg action reset-window-height";
@@ -413,7 +408,7 @@ in {
 
         # "Mod+M".action = maximize-column;
 
-        # "Mod+F".action = fullscreen-window;
+        "Mod+F".action = fullscreen-window;
         # "Mod+Ctrl+F".action = maximize-window-to-edges;
         "Mod+Shift+F".action = expand-column-to-available-width;
 
