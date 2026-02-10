@@ -64,6 +64,9 @@ in {
       gpu-screen-recorder
       wl-clipboard
       kdePackages.breeze-icons
+      cliphist
+      wlsunset
+      pulseaudio
     ];
 
     home-manager.sharedModules = [

@@ -52,18 +52,15 @@
       moonlight-qt
       syncthing
 
-      cliphist
       playerctl
       brightnessctl
       qjackctl
       pavucontrol
       wireplumber
 
-      wlsunset
       libnotify
       xsettingsd
       xcursorgen
-      xcursor-themes
 
       usbutils
       pciutils

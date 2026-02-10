@@ -136,6 +136,25 @@ in {
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
         };
 
+        # Audio binds
+        "Mod+A".action.spawn = lib.getExe (mkMenu [
+          {
+            key = "P";
+            desc = "Connect Airpods";
+            cmd = "bluetoothctl connect 44:A7:F4:02:10:09";
+          }
+          {
+            key = "p";
+            desc = "Set Airpods";
+            cmd = "pactl set-default-sink bluez_output.44_A7_F4_02_10_09.1";
+          }
+          {
+            key = "b";
+            desc = "Set Behringer Interface";
+            cmd = "pactl set-default-sink alsa_output.usb-BEHRINGER_UMC1820_244D6CC5-00.multichannel-output";
+          }
+        ]);
+
         # System keys
         "XF86AudioPlay" = {
           hotkey-overlay.hidden = true;
