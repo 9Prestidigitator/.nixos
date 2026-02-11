@@ -4,9 +4,7 @@
   inputs,
   lib,
   ...
-}: let
-  syncRepo = import ./sync-repo.nix {inherit pkgs;};
-in {
+}: {
   imports = [
     inputs.neovim.homeManagerModules.default
   ];

@@ -74,12 +74,14 @@ in {
     services.keyd = {
       keyboards.modTap = {
         ids = ["*"];
-        settings = {
-          main = {
-            leftmeta = "overload(meta, macro(M-z))";
-            rightmeta = "overload(meta, macro(M-z))";
-          };
+        settings.main = {
+          leftmeta = "overload(meta, macro(M-z))";
+          rightmeta = "overload(meta, macro(M-z))";
         };
+      };
+      keyboards.default.settings.main = {
+        leftmeta = "overload(meta, macro(M-z))";
+        rightmeta = "overload(meta, macro(M-z))";
       };
     };
 
