@@ -73,7 +73,10 @@ in {
     # exclusively chords
     services.keyd = {
       keyboards.modTap = {
-        ids = ["*"];
+        ids = [
+          "cb10:8256"
+          "3434:0430"
+        ];
         settings.main = {
           leftmeta = "overload(meta, macro(M-z))";
           rightmeta = "overload(meta, macro(M-z))";
