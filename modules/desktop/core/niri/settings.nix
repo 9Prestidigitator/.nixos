@@ -26,6 +26,7 @@
           tap = true;
           dwt = true;
           natural-scroll = true;
+          scroll-button-lock = true;
         };
         mouse = {
           accel-profile = "flat";
@@ -70,6 +71,7 @@
         center-focused-column = "never";
       };
       hotkey-overlay.skip-at-startup = true;
+      clipboard.disable-primary = true;
       screenshot-path = "${config.xdg.userDirs.pictures}/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
     };
   };
