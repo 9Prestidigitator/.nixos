@@ -97,11 +97,6 @@ in {
             desc = "QJackCtl";
             cmd = "qjackctl";
           }
-          {
-            key = "h";
-            desc = "btop";
-            cmd = "kitty --title 'btop' -e btop";
-          }
         ]);
 
         # noctalia-shell binds
@@ -191,14 +186,14 @@ in {
           hotkey-overlay.title = "Toggle launcher";
           action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
         };
-        "Ctrl+Shift+Escape" = {
+        "Mod+z" = {
           hotkey-overlay.title = "Dashboard";
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
         };
-        # "Ctrl+Shift+Escape" = {
-        #   hotkey-overlay.title = "btop";
-        #   action = spawn "kitty" "--title" "'btop'" "-e" "btop";
-        # };
+        "Ctrl+Shift+Escape" = {
+          hotkey-overlay.title = "btop";
+          action = spawn "kitty" "--title" "'btop'" "-e" "btop";
+        };
 
         # Audio binds
         "Mod+A".action.spawn = lib.getExe (mkMenu [

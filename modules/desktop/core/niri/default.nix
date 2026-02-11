@@ -69,32 +69,6 @@ in {
       pulseaudio
     ];
 
-    # This will allow for keybinds for just tapping the super key instead of
-    # exclusively chords. Doing it this weird way because I don't know how to
-    # apply a setting to all keyboard configs.
-    services.keyd = {
-      keyboards.modTap = {
-        ids = [
-          "cb10:8256"
-          "3434:0430"
-        ];
-        settings = {
-          global.overload_tap_timeout = 120;
-          main = {
-            leftmeta = "overload(meta, macro(C-S-esc))";
-          };
-        };
-      };
-      keyboards.default = {
-        settings = {
-          global.overload_tap_timeout = 120;
-          main = {
-            leftmeta = "overload(meta, macro(C-S-esc))";
-          };
-        };
-      };
-    };
-
     home-manager.sharedModules = [
       inputs.niri.homeModules.config
       ./binds.nix
