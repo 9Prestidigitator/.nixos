@@ -26,7 +26,6 @@
           tap = true;
           dwt = true;
           natural-scroll = true;
-          scroll-button-lock = true;
         };
         mouse = {
           accel-profile = "flat";
