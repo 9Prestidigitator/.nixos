@@ -82,7 +82,6 @@ in {
           global.overload_tap_timeout = 120;
           main = {
             leftmeta = "overload(meta, macro(C-S-esc))";
-            rightmeta = "overload(meta, macro(C-S-esc))";
           };
         };
       };
@@ -91,7 +90,6 @@ in {
           global.overload_tap_timeout = 120;
           main = {
             leftmeta = "overload(meta, macro(C-S-esc))";
-            rightmeta = "overload(meta, macro(C-S-esc))";
           };
         };
       };
