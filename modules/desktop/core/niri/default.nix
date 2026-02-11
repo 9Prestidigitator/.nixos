@@ -78,13 +78,13 @@ in {
           "3434:0430"
         ];
         settings.main = {
-          leftmeta = "overload(meta, macro(M-z))";
-          rightmeta = "overload(meta, macro(M-z))";
+          leftmeta = "overload(meta, macro(M-S-d))";
+          rightmeta = "overload(meta, macro(M-S-d))";
         };
       };
       keyboards.default.settings.main = {
-        leftmeta = "overload(meta, macro(M-z))";
-        rightmeta = "overload(meta, macro(M-z))";
+        leftmeta = "overload(meta, macro(M-S-d))";
+        rightmeta = "overload(meta, macro(M-S-d))";
       };
     };
 
