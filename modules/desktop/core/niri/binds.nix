@@ -78,6 +78,11 @@ in {
             cmd = "discord";
           }
           {
+            key = "y";
+            desc = "Steam";
+            cmd = "steam";
+          }
+          {
             key = "s";
             desc = "Spotify";
             cmd = "spotify";
@@ -93,7 +98,7 @@ in {
             cmd = "qjackctl";
           }
           {
-            key = "o";
+            key = "h";
             desc = "btop";
             cmd = "kitty --title 'btop' -e btop";
           }
@@ -354,19 +359,19 @@ in {
         "Mod+Alt+K".action = move-workspace-up;
 
         "Mod+WheelScrollUp" = {
-          cooldown-ms = 100;
+          cooldown-ms = 120;
           action = focus-workspace-up;
         };
         "Mod+WheelScrollDown" = {
-          cooldown-ms = 100;
+          cooldown-ms = 120;
           action = focus-workspace-down;
         };
         "Mod+Ctrl+WheelScrollUp" = {
-          cooldown-ms = 100;
+          cooldown-ms = 120;
           action = move-column-to-workspace-up;
         };
         "Mod+Ctrl+WheelScrollDown" = {
-          cooldown-ms = 100;
+          cooldown-ms = 120;
           action = move-column-to-workspace-down;
         };
 

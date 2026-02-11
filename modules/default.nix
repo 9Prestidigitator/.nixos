@@ -93,7 +93,6 @@
       enable = true;
       keyboards.default = {
         ids = [
-          "046d:c069"
           "*"
           "-cb10:8256"
           "-3434:0430"
