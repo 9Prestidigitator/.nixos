@@ -70,7 +70,8 @@ in {
     ];
 
     # This will allow for keybinds for just tapping the super key instead of
-    # exclusively chords
+    # exclusively chords. Doing it this weird way because I don't know how to
+    # apply a setting to all keyboard configs.
     services.keyd = {
       keyboards.modTap = {
         ids = [
