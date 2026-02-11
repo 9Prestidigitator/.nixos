@@ -78,14 +78,22 @@ in {
           "cb10:8256"
           "3434:0430"
         ];
-        settings.main = {
-          leftmeta = "overload(meta, macro(C-S-esc))";
-          rightmeta = "overload(meta, macro(C-S-esc))";
+        settings = {
+          global.overload_tap_timeout = 120;
+          main = {
+            leftmeta = "overload(meta, macro(C-S-esc))";
+            rightmeta = "overload(meta, macro(C-S-esc))";
+          };
         };
       };
-      keyboards.default.settings.main = {
-        leftmeta = "overload(meta, macro(C-S-esc))";
-        rightmeta = "overload(meta, macro(C-S-esc))";
+      keyboards.default = {
+        settings = {
+          global.overload_tap_timeout = 120;
+          main = {
+            leftmeta = "overload(meta, macro(C-S-esc))";
+            rightmeta = "overload(meta, macro(C-S-esc))";
+          };
+        };
       };
     };
 
