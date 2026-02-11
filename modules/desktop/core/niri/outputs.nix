@@ -12,6 +12,8 @@ in {
       "Microstep MSI G27C4 0x30333758" = {
         focus-at-startup = true;
         scale = 1;
+        # Apparently using negative coordinates for wayland monitor 
+        # configuration is a very bad idea
         position = {
           x = 1600;
           y = 0;

@@ -34,7 +34,7 @@ in {
     };
 
     services.gnome.evolution-data-server.enable = true;
-    
+
     xdg.portal = {
       enable = true;
       extraPortals = [
@@ -68,6 +68,20 @@ in {
       wlsunset
       pulseaudio
     ];
+
+    # This will allow for keybinds for just tapping the super key instead of
+    # exclusively chords
+    services.keyd = {
+      keyboards.modTap = {
+        ids = ["*"];
+        settings = {
+          main = {
+            leftmeta = "overload(meta, macro(M-z))";
+            rightmeta = "overload(meta, macro(M-z))";
+          };
+        };
+      };
+    };
 
     home-manager.sharedModules = [
       inputs.niri.homeModules.config
