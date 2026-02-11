@@ -50,10 +50,6 @@ in {
           hotkey-overlay.title = "Launch terminal: Kitty";
           action = spawn "kitty";
         };
-        "Ctrl+Shift+Escape" = {
-          hotkey-overlay.title = "btop";
-          action = spawn "kitty" "--title" "'btop'" "-e" "btop";
-        };
 
         "Mod+G".action.spawn = lib.getExe (mkMenu [
           {
@@ -96,6 +92,11 @@ in {
             desc = "QJackCtl";
             cmd = "qjackctl";
           }
+          {
+            key = "o";
+            desc = "btop";
+            cmd = "kitty --title 'btop' -e btop";
+          }
         ]);
 
         # noctalia-shell binds
@@ -136,6 +137,16 @@ in {
             cmd = "noctalia-shell ipc call network togglePanel";
           }
           {
+            key = "l";
+            desc = "Toggle Nightlight";
+            cmd = "noctalia-shell ipc call nightLight toggle";
+          }
+          {
+            key = "p";
+            desc = "Power panel";
+            cmd = "noctalia-shell ipc call battery togglePanel";
+          }
+          {
             key = "w";
             desc = "Choose Wallpaper";
             cmd = "noctalia-shell ipc call wallpaper toggle";
@@ -149,6 +160,11 @@ in {
             key = "m";
             desc = "Show System Monitor";
             cmd = "noctalia-shell ipc call systemMonitor toggle";
+          }
+          {
+            key = "v";
+            desc = "Audio Panel";
+            cmd = "noctalia-shell ipc call volumn togglePanel";
           }
           {
             key = "s";
@@ -170,10 +186,14 @@ in {
           hotkey-overlay.title = "Toggle launcher";
           action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
         };
-        "Mod+Shift+D" = {
-          hotkey-overlay.title = "Toggle dashboard";
+        "Ctrl+Shift+Escape" = {
+          hotkey-overlay.title = "Dashboard";
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
         };
+        # "Ctrl+Shift+Escape" = {
+        #   hotkey-overlay.title = "btop";
+        #   action = spawn "kitty" "--title" "'btop'" "-e" "btop";
+        # };
 
         # Audio binds
         "Mod+A".action.spawn = lib.getExe (mkMenu [
@@ -193,7 +213,7 @@ in {
             cmd = "bluetoothctl connect AC:80:0A:43:53:C5";
           }
           {
-            key = "p";
+            key = "s";
             desc = "Set Sony XM5";
             cmd = "pactl set-default-sink bluez_output.AC_80_0A_43_53_C5.1";
           }
