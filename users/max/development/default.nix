@@ -28,16 +28,21 @@
   programs.bash = {
     enable = true;
     shellAliases = {
+      # Standard stuff
       ls = "ls -a --color=auto";
       nv = "nvim";
       tm = "tmux a || tmux";
       fman = "compgen -c | sort -hr | fzf | xargs man";
+
+      # Nix config stuff
       nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
       gpre = "cd ${config.home.homeDirectory}/.nixos && git pull && nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
       nixup = "sudo nix flake update";
       nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
-      ndev = "nix develop";
-      ds = "nix develop ${config.home.homeDirectory}/.nixos#default";
+
+      # Development Shell commands
+      ds = "nix develop";
+      ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
       ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
       ds-md = "nix develop ${config.home.homeDirectory}/.nixos#md";
     };
