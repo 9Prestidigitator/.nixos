@@ -132,7 +132,7 @@ in {
             cmd = "noctalia-shell ipc call calendar toggle";
           }
           {
-            key = "i";
+            key = "e";
             desc = "Show Wifi Panel";
             cmd = "noctalia-shell ipc call network togglePanel";
           }
@@ -284,6 +284,21 @@ in {
           hotkey-overlay.title = "Session Actions";
           allow-when-locked = false;
           action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+        };
+        "XF86Favorites" = {
+          hotkey-overlay.title = "Dashboard";
+          allow-when-locked = false;
+          action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
+        };
+        "XF86WLAN" = {
+          hotkey-overlay.title = "Show Wifi Panel";
+          allow-when-locked = false;
+          action = spawn "noctalia-shell" "ipc" "call" "network" "togglePanel";
+        };
+        "XF86Display" = {
+          hotkey-overlay.title = "Power off monitors";
+          allow-when-locked = true;
+          action = power-off-monitors;
         };
 
         "Mod+Left".action = focus-column-left;

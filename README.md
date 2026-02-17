@@ -48,3 +48,7 @@ alias ds-nix='nix develop ~/.nixos#nix'
 # Plans
 
 Will expand to ARM and darwin systems once I get my hands on one of those systems.
+
+# Credits
+
+Thank you to [Vimjoyer](https://www.youtube.com/@vimjoyer) and [tony](https://www.youtube.com/@tony-btw) for high quality tutorials.
