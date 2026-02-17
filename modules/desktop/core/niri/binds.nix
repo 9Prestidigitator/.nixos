@@ -290,11 +290,6 @@ in {
           allow-when-locked = false;
           action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
         };
-        "XF86WLAN" = {
-          hotkey-overlay.title = "Show Wifi Panel";
-          allow-when-locked = false;
-          action = spawn "noctalia-shell" "ipc" "call" "network" "togglePanel";
-        };
         "XF86Display" = {
           hotkey-overlay.title = "Power off monitors";
           allow-when-locked = true;
