@@ -57,6 +57,8 @@ in {
       };
     };
 
+    programs.kdeconnect.enable = true;
+
     environment.systemPackages = with pkgs; [
       inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
       seahorse

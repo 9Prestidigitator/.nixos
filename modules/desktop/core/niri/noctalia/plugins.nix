@@ -48,7 +48,7 @@
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         kde-connect = {
-          enabled = false;
+          enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
       };
