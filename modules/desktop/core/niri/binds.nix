@@ -176,6 +176,11 @@ in {
             desc = "Clipboard history";
             cmd = "noctalia-shell ipc call launcher clipboard";
           }
+          {
+            key = "k";
+            desc = "KDEConnect";
+            cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
+          }
         ]);
         "Mod+Escape" = {
           hotkey-overlay.title = "Lock";
@@ -292,7 +297,6 @@ in {
         };
         "XF86Display" = {
           hotkey-overlay.title = "Power off monitors";
-          allow-when-locked = true;
           action = power-off-monitors;
         };
 

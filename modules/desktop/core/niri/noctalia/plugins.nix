@@ -19,6 +19,10 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        privacy-indicator = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
         screen-recorder = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
@@ -32,6 +36,18 @@
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         keybind-cheatsheet = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        unicode-picker = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        niri-overview-launcher = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        kde-connect = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
