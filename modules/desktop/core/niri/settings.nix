@@ -37,6 +37,7 @@
         workspace-shadow.enable = true;
         backdrop-color = null;
       };
+      cursor.hide-when-typing = true;
       layout = {
         background-color = "transparent";
         focus-ring = {
