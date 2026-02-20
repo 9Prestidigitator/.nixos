@@ -300,6 +300,25 @@ in {
           action = power-off-monitors;
         };
 
+        # Debugging keys
+        "Mod+P".action.spawn = lib.getExe (mkMenu [
+          {
+            key = "P";
+            desc = "Restart pipewire";
+            cmd = "systemctl --user restart pipewire";
+          }
+          {
+            key = "N";
+            desc = "Restart Noctalia Shell";
+            cmd = "systemctl --user restart noctalia-shell.service";
+          }
+          {
+            key = "X";
+            desc = "Restart Xwayland Satellite";
+            cmd = "systemctl --user restart xwayland-satellite";
+          }
+        ]);
+
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-down;
         "Mod+Up".action = focus-window-up;
