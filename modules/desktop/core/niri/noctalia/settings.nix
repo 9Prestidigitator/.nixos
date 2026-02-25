@@ -150,7 +150,7 @@
         enableCountdown = true;
         countdownDuration = 10000;
         position = "top_center";
-        largeButtonsLayout = "grid";
+        largeButtonsLayout = "single-row";
         powerOptions = [
           {
             action = "lock";
