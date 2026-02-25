@@ -147,39 +147,46 @@
         videoSource = "portal";
       };
       sessionMenu = {
-        countdownDuration = 10000;
         enableCountdown = true;
+        countdownDuration = 10000;
         position = "top_center";
+        largeButtonsLayout = "grid";
         powerOptions = [
           {
             action = "lock";
             countdownEnabled = true;
             enabled = true;
+            keybind = 1;
           }
           {
             action = "suspend";
             countdownEnabled = true;
             enabled = true;
+            keybind = 2;
           }
           {
             action = "reboot";
             countdownEnabled = true;
             enabled = true;
+            keybind = 3;
           }
           {
             action = "logout";
             countdownEnabled = true;
             enabled = true;
+            keybind = 4;
           }
           {
             action = "shutdown";
             countdownEnabled = true;
             enabled = true;
+            keybind = 5;
           }
           {
             action = "hibernate";
             countdownEnabled = true;
             enabled = false;
+            keybind = 6;
           }
         ];
         showHeader = false;
