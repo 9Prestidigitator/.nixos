@@ -68,19 +68,14 @@ in {
             cmd = "kitty --title Neovim -e nvim";
           }
           {
+            key = "N";
+            desc = "Open Notes";
+            cmd = "kitty --title Notes -e sh --command cd ~/notes && nix develop -c sh -c nvim";
+          }
+          {
             key = "t";
             desc = "tmux";
             cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
-          }
-          {
-            key = "d";
-            desc = "Discord";
-            cmd = "discord";
-          }
-          {
-            key = "y";
-            desc = "Steam";
-            cmd = "steam";
           }
           {
             key = "s";
@@ -96,6 +91,16 @@ in {
             key = "j";
             desc = "QJackCtl";
             cmd = "qjackctl";
+          }
+          {
+            key = "y";
+            desc = "Steam";
+            cmd = "steam";
+          }
+          {
+            key = "d";
+            desc = "Discord";
+            cmd = "discord";
           }
         ]);
 
