@@ -1,16 +1,23 @@
 {pkgs}:
 pkgs.mkShell {
-  name = "python";
+  name = "Run a python script";
   shellHook = ''
     export SHELL="/run/current-system/sw/bin/bash"
   '';
   packages = with pkgs; [
-    # Python
-    python3
-    uv
+    python3.withPackages
+    (ps:
+      with ps; [
+        numpy
+        pandas
+        matplotlib
+        scikit-learn
+        # tools
+        black
+        debugpy
+      ])
+
     basedpyright
     ruff
-    black
-    (python3.withPackages (ps: [ps.debugpy]))
   ];
 }

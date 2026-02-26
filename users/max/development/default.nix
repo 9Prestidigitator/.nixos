@@ -45,6 +45,7 @@
       ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
       ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
       ds-md = "nix develop ${config.home.homeDirectory}/.nixos#md";
+      ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
     };
     initExtra = ''
       clear

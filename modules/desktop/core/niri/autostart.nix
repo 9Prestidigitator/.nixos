@@ -25,7 +25,7 @@ in {
             "sh"
             "-c"
             ''
-              cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md --command sh -c nvim
+              cd ~/notes && nix develop -c sh -c nvim
             ''
           ];
         }
@@ -55,7 +55,7 @@ in {
             "sh"
             "-c"
             ''
-              cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md --command sh -c nvim
+              cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md -c sh -c nvim
             ''
           ];
         }
@@ -91,6 +91,7 @@ in {
             }
           ];
           open-on-workspace = "notes";
+          default-column-width.proportion = 0.6666;
         }
         {
           matches = [
