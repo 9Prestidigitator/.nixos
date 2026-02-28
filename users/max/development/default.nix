@@ -36,17 +36,18 @@
 
       # Nix config stuff
       nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
-      gpre = "cd ${config.home.homeDirectory}/.nixos && git pull && nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
       nixup = "sudo nix flake update";
       nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
 
       # Development Shell commands
       ds = "nix develop";
+      dsv = "nix develop -c nvim";
       ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
       ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
       ds-md = "nix develop ${config.home.homeDirectory}/.nixos#md";
       ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
     };
+    # fastfetch
     initExtra = ''
       clear
       if [[ $(tput cols) -ge 102 ]]; then

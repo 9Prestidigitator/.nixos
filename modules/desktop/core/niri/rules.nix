@@ -8,7 +8,7 @@
     window-rules = [
       {
         geometry-corner-radius = let
-          radius = 5.5;
+          radius = 5.4;
         in {
           bottom-left = radius;
           bottom-right = radius;

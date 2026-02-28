@@ -28,6 +28,7 @@
         outerCorners = false;
         useSeparateOpacity = false;
         backgroundOpacity = lib.mkForce 0;
+        showOnWorkspaceSwitch = true;
         widgets = {
           left =
             []

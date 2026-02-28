@@ -16,7 +16,6 @@
 
   programs.noctalia-shell = {
     enable = true;
-    systemd.enable = true;
     settings = {
       settingsVersion = 26;
       appLauncher = {
@@ -33,13 +32,13 @@
         useApp2Unit = false;
       };
       audio = {
+        volumeStep = 5;
         cavaFrameRate = 30;
         mprisBlacklist = [];
         preferredPlayer = "";
         visualizerQuality = "high";
         visualizerType = "linear";
         volumeOverdrive = false;
-        volumeStep = 5;
       };
       battery = {
         chargingMode = 0;
@@ -54,11 +53,8 @@
         generateTemplatesForPredefined = false;
         # manualSunrise = "06:30";
         # manualSunset = "18:30";
-        # matugenSchemeType = "scheme-fruit-salad";
-        # predefinedScheme = "Monochrome";
         predefinedScheme = "Nord";
         # schedulingMode = "off";
-        # useWallpaperColors = false;
       };
       general = {
         animationDisabled = false;
@@ -73,8 +69,6 @@
         scaleRatio = 1;
         screenRadiusRatio = 1;
         shadowDirection = "center";
-        shadowOffsetX = 2;
-        shadowOffsetY = 3;
         showScreenCorners = false;
         compactLockScreen = false;
         lockOnSuspend = true;
@@ -121,11 +115,10 @@
         respectExpireTimeout = false;
       };
       osd = {
+        enabled = true;
         autoHideMs = 2000;
         backgroundOpacity = lib.mkForce 1;
-        enabled = true;
         location = "bottom";
-        monitors = [];
         enabledTypes = [
           0
           1

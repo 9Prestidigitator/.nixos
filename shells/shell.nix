@@ -39,7 +39,7 @@ pkgs.mkShell {
 
     # Bash
     bash-language-server
-    shmft
+    shfmt
 
     # Debuggers
     vscode-extensions.vadimcn.vscode-lldb

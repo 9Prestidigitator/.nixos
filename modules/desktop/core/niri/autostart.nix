@@ -7,13 +7,17 @@
   hostName = osConfig.networking.hostName;
 in {
   programs.niri.settings = lib.mkMerge [
+    {
+      spawn-at-startup = [
+        {argv = ["noctalia-shell"];}
+      ];
+    }
     (lib.mkIf (hostName == "ink") {
       spawn-at-startup = [
         {argv = ["sunshine"];}
         {argv = ["brave"];}
         {argv = ["spotify"];}
         {argv = ["steam"];}
-        # {argv = ["discord"];}
         {argv = ["signal-desktop"];}
         {argv = ["obsidian"];}
         {
@@ -42,8 +46,6 @@ in {
       spawn-at-startup = [
         {argv = ["sunshine"];}
         {argv = ["brave"];}
-        # {argv = ["spotify"];}
-        # {argv = ["discord"];}
         {argv = ["signal-desktop"];}
         {argv = ["obsidian"];}
         {

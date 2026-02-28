@@ -70,7 +70,7 @@ in {
           {
             key = "N";
             desc = "Open Notes";
-            cmd = "kitty --title Notes -e sh --command cd ~/notes && nix develop -c sh -c nvim";
+            cmd = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
           }
           {
             key = "t";
@@ -306,16 +306,16 @@ in {
         };
 
         # Debugging keys
-        "Mod+P".action.spawn = lib.getExe (mkMenu [
+        "Mod+Shift+D".action.spawn = lib.getExe (mkMenu [
           {
-            key = "P";
+            key = "p";
             desc = "Restart pipewire";
             cmd = "systemctl --user restart pipewire";
           }
           {
-            key = "N";
+            key = "n";
             desc = "Restart Noctalia Shell";
-            cmd = "systemctl --user restart noctalia-shell.service";
+            cmd = "noctalia-shell";
           }
           {
             key = "X";
