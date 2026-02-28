@@ -8,16 +8,13 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-utils.url = "github:numtide/flake-utils";
 
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # rust patch not in main hardware branch yet
-    # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?ref=surface-kernel-6.18";
 
     neovim.url = "github:9prestidigitator/nvim";
 
