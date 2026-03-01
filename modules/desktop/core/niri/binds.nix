@@ -107,6 +107,57 @@ in {
         # noctalia-shell binds
         "Mod+N".action.spawn = lib.getExe (mkMenu [
           {
+            key = "p";
+            desc = "Panels";
+            submenu = [
+              {
+                key = "w";
+                desc = "Show Wifi Panel";
+                cmd = "noctalia-shell ipc call network togglePanel";
+              }
+              {
+                key = "c";
+                desc = "Show Calendar";
+                cmd = "noctalia-shell ipc call calendar toggle";
+              }
+              {
+                key = "p";
+                desc = "Power panel";
+                cmd = "noctalia-shell ipc call battery togglePanel";
+              }
+              {
+                key = "w";
+                desc = "Choose Wallpaper";
+                cmd = "noctalia-shell ipc call wallpaper toggle";
+              }
+              {
+                key = "m";
+                desc = "Show System Monitor";
+                cmd = "noctalia-shell ipc call systemMonitor toggle";
+              }
+              {
+                key = "a";
+                desc = "Audio Panel";
+                cmd = "noctalia-shell ipc call volumn togglePanel";
+              }
+              {
+                key = "t";
+                desc = "Show Timer";
+                cmd = "noctalia-shell ipc call plugin:timer toggle";
+              }
+              {
+                key = "k";
+                desc = "KDEConnect";
+                cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
+              }
+            ];
+          }
+          {
+            key = "n";
+            desc = "Show Notifications";
+            cmd = "noctalia-shell ipc call notifications toggleHistory";
+          }
+          {
             key = "i";
             desc = "Toggle idle inhibition";
             cmd = "noctalia-shell ipc call idleInhibitor toggle";
@@ -122,39 +173,9 @@ in {
             cmd = "noctalia-shell ipc call dock toggle";
           }
           {
-            key = "n";
-            desc = "Show Notifications";
-            cmd = "noctalia-shell ipc call notifications toggleHistory";
-          }
-          {
-            key = "t";
-            desc = "Show Timer";
-            cmd = "noctalia-shell ipc call plugin:timer toggle";
-          }
-          {
-            key = "d";
-            desc = "Show Calendar";
-            cmd = "noctalia-shell ipc call calendar toggle";
-          }
-          {
-            key = "e";
-            desc = "Show Wifi Panel";
-            cmd = "noctalia-shell ipc call network togglePanel";
-          }
-          {
             key = "l";
             desc = "Toggle Nightlight";
             cmd = "noctalia-shell ipc call nightLight toggle";
-          }
-          {
-            key = "p";
-            desc = "Power panel";
-            cmd = "noctalia-shell ipc call battery togglePanel";
-          }
-          {
-            key = "w";
-            desc = "Choose Wallpaper";
-            cmd = "noctalia-shell ipc call wallpaper toggle";
           }
           {
             key = "W";
@@ -162,29 +183,14 @@ in {
             cmd = "noctalia-shell ipc call wallpaper random";
           }
           {
-            key = "m";
-            desc = "Show System Monitor";
-            cmd = "noctalia-shell ipc call systemMonitor toggle";
-          }
-          {
-            key = "v";
-            desc = "Audio Panel";
-            cmd = "noctalia-shell ipc call volumn togglePanel";
-          }
-          {
-            key = "s";
-            desc = "Noctalia Settings";
-            cmd = "noctalia-shell ipc call settings toggle";
-          }
-          {
             key = "c";
             desc = "Clipboard history";
             cmd = "noctalia-shell ipc call launcher clipboard";
           }
           {
-            key = "k";
-            desc = "KDEConnect";
-            cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
+            key = "s";
+            desc = "Noctalia Settings";
+            cmd = "noctalia-shell ipc call settings toggle";
           }
         ]);
         "Mod+Escape" = {
@@ -314,8 +320,8 @@ in {
           }
           {
             key = "n";
-            desc = "Restart Noctalia Shell";
-            cmd = "noctalia-shell";
+            desc = "Kill or Start Noctalia Shell";
+            cmd = "pkill .quickshell-wra* || noctalia-shell";
           }
           {
             key = "X";
@@ -438,6 +444,125 @@ in {
 
         # "Mod+W".action = toggle-column-tabbed-display;
 
+        "Mod+M".action.spawn = lib.getExe (mkMenu [
+          {
+            key = "w";
+            desc = "Move Workspace";
+            submenu = [
+              {
+                key = "j";
+                desc = "Move workspace down";
+                cmd = "niri msg action move-workspace-down";
+              }
+              {
+                key = "k";
+                desc = "Move workspace up";
+                cmd = "niri msg action move-workspace-up";
+              }
+              {
+                key = "h";
+                desc = "Move workspace to monitor on left";
+                cmd = "niri msg action move-workspace-to-monitor-left";
+              }
+              {
+                key = "l";
+                desc = "Move workspace to monitor on right";
+                cmd = "niri msg action move-workspace-to-monitor-right";
+              }
+            ];
+          }
+          {
+            key = "g";
+            desc = "Move window furthest left position";
+            cmd = "niri msg action move-column-to-first";
+          }
+          {
+            key = "G";
+            desc = "Move window furthest right position";
+            cmd = "niri msg action move-column-to-last";
+          }
+          {
+            key = "h";
+            desc = "Consume or Expel window left";
+            cmd = "niri msg action consume-or-expel-window-left";
+          }
+          {
+            key = "H";
+            desc = "Move column left";
+            cmd = "niri msg action move-column-left";
+          }
+          {
+            key = "j";
+            desc = "Consume window into column";
+            cmd = "niri msg action consume-window-into-column";
+          }
+          {
+            key = "k";
+            desc = "Expel window from column";
+            cmd = "niri msg action expel-window-from-column";
+          }
+          {
+            key = "l";
+            desc = "Consume or Expel window right";
+            cmd = "niri msg action consume-or-expel-window-right";
+          }
+          {
+            key = "L";
+            desc = "Move column right";
+            cmd = "niri msg action move-column-right";
+          }
+          {
+            key = "1";
+            desc = "Move column to workspace 1";
+            cmd = "niri msg action move-column-to-workspace 1";
+          }
+          {
+            key = "2";
+            desc = "Move column to workspace 2";
+            cmd = "niri msg action move-column-to-workspace 2";
+          }
+          {
+            key = "3";
+            desc = "Move column to workspace 3";
+            cmd = "niri msg action move-column-to-workspace 3";
+          }
+          {
+            key = "4";
+            desc = "Move column to workspace 4";
+            cmd = "niri msg action move-column-to-workspace 4";
+          }
+          {
+            key = "5";
+            desc = "Move column to workspace 5";
+            cmd = "niri msg action move-column-to-workspace 5";
+          }
+          {
+            key = "6";
+            desc = "Move column to workspace 6";
+            cmd = "niri msg action move-column-to-workspace 6";
+          }
+          {
+            key = "7";
+            desc = "Move column to workspace 7";
+            cmd = "niri msg action move-column-to-workspace 7";
+          }
+          {
+            key = "8";
+            desc = "Move column to workspace 8";
+            cmd = "niri msg action move-column-to-workspace 8";
+          }
+          {
+            key = "9";
+            desc = "Move column to workspace 9";
+            cmd = "niri msg action move-column-to-workspace 9";
+          }
+          {
+            key = "0";
+            desc = "Move column to workspace 10";
+            cmd = "niri msg action move-column-to-workspace 10";
+          }
+        ]);
+
         "Mod+W".action.spawn = lib.getExe (mkMenu [
           {
             key = "w";
@@ -473,36 +598,6 @@ in {
             key = "m";
             desc = "Toggle maximize current window";
             cmd = "niri msg action maximize-column";
-          }
-          {
-            key = "g";
-            desc = "Move window furthest left position";
-            cmd = "niri msg action move-column-to-first";
-          }
-          {
-            key = "G";
-            desc = "Move window furthest right position";
-            cmd = "niri msg action move-column-to-last";
-          }
-          {
-            key = "j";
-            desc = "Consume window into column";
-            cmd = "niri msg action consume-window-into-column";
-          }
-          {
-            key = "k";
-            desc = "Expel window from column";
-            cmd = "niri msg action expel-window-from-column";
-          }
-          {
-            key = "h";
-            desc = "Consume or Expel window left";
-            cmd = "niri msg action consume-or-expel-window-left";
-          }
-          {
-            key = "l";
-            desc = "Consume or Expel window right";
-            cmd = "niri msg action consume-or-expel-window-right";
           }
         ]);
 

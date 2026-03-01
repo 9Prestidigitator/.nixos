@@ -9,7 +9,7 @@ in {
   programs.niri.settings = lib.mkMerge [
     {
       spawn-at-startup = [
-        {argv = ["noctalia-shell"];}
+        {command = ["noctalia-shell"];}
       ];
     }
     (lib.mkIf (hostName == "ink") {

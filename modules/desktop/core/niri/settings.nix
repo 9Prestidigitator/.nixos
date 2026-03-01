@@ -10,19 +10,9 @@
     settings = with config.lib.stylix.colors; {
       input = {
         keyboard = {
-          xkb = {
-            # You can set rules, model, layout, variant and options.
-            # For more information, see xkeyboard-config(7).
-
-            # For example:
-            # layout = "us,ru";
-            # options = "grp:win_space_toggle,compose:ralt,ctrl:nocaps";
-          };
+          xkb = {};
           numlock = true;
         };
-        # Next sections include libinput settings.
-        # Omitting settings disables them, or leaves them at their default values.
-        # All commented-out settings here are examples, not defaults.
         touchpad = {
           tap = true;
           dwt = true;

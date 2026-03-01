@@ -11,9 +11,6 @@
     settings = {
       dock = {
         enabled = true;
-        # if isLaptop
-        # then true
-        # else false;
         position = "bottom";
         # if isLaptop
         # then "bottom"
@@ -28,6 +25,13 @@
         monitors = [];
         onlySameOutput = false;
         pinnedStatic = true;
+        groupApps = true;
+        groupContextMenuMode = "extended";
+        groupClickAction = "cycle";
+        groupIndicatorStyle = "dots";
+        showLauncherIcon = true;
+        launcherPosition = "start";
+        launcherIconColor = "tertiary";
         pinnedApps =
           [
             "kitty"

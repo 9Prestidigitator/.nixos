@@ -33,33 +33,41 @@ in {
       };
     };
 
+    programs.evolution.enable = true;
+    programs.dconf.enable = true;
+    services.accounts-daemon.enable = true;
+    services.gnome.gnome-online-accounts.enable = true;
     services.gnome.evolution-data-server.enable = true;
 
-    xdg.portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gnome
-        pkgs.xdg-desktop-portal-gtk
-      ];
-    };
-
-    systemd.user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
+    xdg = {
+      portal = {
+        enable = true;
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal-gtk
+        ];
+        config.common = {
+          default = ["gtk"];
+        };
+      };
+      mime = {
+        defaultApplications = {
+          "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
+          "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
+          "application/pdf" = [
+            "org.pwmt.zathura.desktop"
+            "com.brave.Browser.desktop"
+          ];
+          "inode/directory" = ["org.gnome.Nautilus.desktop"];
+          "image/png" = ["imv.desktop"];
+        };
       };
     };
 
     programs.kdeconnect.enable = true;
 
     environment.systemPackages = with pkgs; [
+      (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {calendarSupport = true;})
       inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
       seahorse
       polkit_gnome
@@ -69,6 +77,7 @@ in {
       cliphist
       wlsunset
       pulseaudio
+      imv
     ];
 
     home-manager.sharedModules = [
@@ -77,7 +86,6 @@ in {
       ./settings.nix
       ./rules.nix
       ./outputs.nix
-      ./swayidle.nix
       ./autostart.nix
     ];
   };

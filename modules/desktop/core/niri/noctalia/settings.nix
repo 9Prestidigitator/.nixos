@@ -18,44 +18,6 @@
     enable = true;
     settings = {
       settingsVersion = 26;
-      appLauncher = {
-        customLaunchPrefix = "";
-        customLaunchPrefixEnabled = false;
-        enableClipboardHistory = true;
-        pinnedExecs = [];
-        position =
-          if isLaptop
-          then "top_center"
-          else "follow_bar";
-        sortByMostUsed = true;
-        terminalCommand = "kitty -e";
-        useApp2Unit = false;
-      };
-      audio = {
-        volumeStep = 5;
-        cavaFrameRate = 30;
-        mprisBlacklist = [];
-        preferredPlayer = "";
-        visualizerQuality = "high";
-        visualizerType = "linear";
-        volumeOverdrive = false;
-      };
-      battery = {
-        chargingMode = 0;
-      };
-      brightness = {
-        brightnessStep = 5;
-        enableDdcSupport = false;
-        enforceMinimum = true;
-      };
-      colorSchemes = {
-        darkMode = true;
-        generateTemplatesForPredefined = false;
-        # manualSunrise = "06:30";
-        # manualSunset = "18:30";
-        predefinedScheme = "Nord";
-        # schedulingMode = "off";
-      };
       general = {
         animationDisabled = false;
         animationSpeed = 1.75;
@@ -70,9 +32,56 @@
         screenRadiusRatio = 1;
         shadowDirection = "center";
         showScreenCorners = false;
+        # Lock screen
         compactLockScreen = false;
+        lockScreenAnimations = true;
         lockOnSuspend = true;
+        clockStyle = "digital";
+        passwordChars = true;
         showSessionButtonsOnLockScreen = false;
+        lockScreenBlur = 0.5;
+      };
+      appLauncher = {
+        customLaunchPrefix = "";
+        customLaunchPrefixEnabled = false;
+        enableClipboardHistory = true;
+        pinnedExecs = [];
+        position =
+          if isLaptop
+          then "top_center"
+          else "follow_bar";
+        sortByMostUsed = true;
+        terminalCommand = "kitty -e";
+        useApp2Unit = false;
+      };
+      plugins = {
+        autoUpdate = false;
+      };
+      audio = {
+        volumeStep = 5;
+        cavaFrameRate = 30;
+        mprisBlacklist = [];
+        preferredPlayer = "";
+        visualizerQuality = "high";
+        visualizerType = "linear";
+        volumeOverdrive = false;
+      };
+      idle = {
+        enabled = true;
+        screenOffTimeout = 600;
+        lockTimeout = 660;
+        suspendTimeout =
+          if isLaptop
+          then 1800
+          else 0;
+      };
+      battery = {
+        chargingMode = 0;
+      };
+      brightness = {
+        brightnessStep = 5;
+        enableDdcSupport = false;
+        enforceMinimum = false;
       };
       hooks = {
         darkModeChange = "";
@@ -94,13 +103,13 @@
         wifiEnabled = true;
       };
       nightLight = {
+        enabled = true;
         autoSchedule = true;
         dayTemp = "6500";
-        enabled = true;
         forced = false;
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        nightTemp = "3000";
+        nightTemp = "3800";
       };
       notifications = {
         backgroundOpacity = lib.mkForce 1;
@@ -183,19 +192,6 @@
           }
         ];
         showHeader = false;
-      };
-      systemMonitor = {
-        cpuCriticalThreshold = 90;
-        cpuWarningThreshold = 80;
-        criticalColor = "#ff5555";
-        diskCriticalThreshold = 90;
-        diskWarningThreshold = 80;
-        memCriticalThreshold = 90;
-        memWarningThreshold = 80;
-        tempCriticalThreshold = 90;
-        tempWarningThreshold = 80;
-        useCustomColors = false;
-        warningColor = "#8be9fd";
       };
       ui = {
         fontDefaultScale = 1;

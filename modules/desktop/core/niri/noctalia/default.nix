@@ -13,13 +13,6 @@ in {
   ];
 
   config = lib.mkIf isNiri {
-    services.noctalia-shell = {
-      enable = true;
-      package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-        calendarSupport = true;
-      };
-    };
-
     home-manager.sharedModules = [
       inputs.noctalia.homeModules.default
       ./settings.nix
