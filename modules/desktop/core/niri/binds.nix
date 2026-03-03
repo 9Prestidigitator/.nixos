@@ -138,7 +138,7 @@ in {
               {
                 key = "a";
                 desc = "Audio Panel";
-                cmd = "noctalia-shell ipc call volumn togglePanel";
+                cmd = "noctalia-shell ipc call volume togglePanel";
               }
               {
                 key = "t";
@@ -190,7 +190,7 @@ in {
           {
             key = "s";
             desc = "Noctalia Settings";
-            cmd = "noctalia-shell ipc call settings toggle";
+            cmd = "noctalia-shell ipc call settings openTab about";
           }
         ]);
         "Mod+Escape" = {

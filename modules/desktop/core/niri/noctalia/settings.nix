@@ -1,9 +1,6 @@
 {
   lib,
   config,
-  inputs,
-  pkgs,
-  osConfig,
   isLaptop,
   ...
 }: {
@@ -158,37 +155,37 @@
             action = "lock";
             countdownEnabled = true;
             enabled = true;
-            keybind = 1;
+            keybind = "1";
           }
           {
             action = "suspend";
             countdownEnabled = true;
             enabled = true;
-            keybind = 2;
+            keybind = "2";
           }
           {
             action = "reboot";
             countdownEnabled = true;
             enabled = true;
-            keybind = 3;
+            keybind = "3";
           }
           {
             action = "logout";
             countdownEnabled = true;
             enabled = true;
-            keybind = 4;
+            keybind = "4";
           }
           {
             action = "shutdown";
             countdownEnabled = true;
             enabled = true;
-            keybind = 5;
+            keybind = "5";
           }
           {
             action = "hibernate";
             countdownEnabled = true;
             enabled = false;
-            keybind = 6;
+            keybind = "6";
           }
         ];
         showHeader = false;
