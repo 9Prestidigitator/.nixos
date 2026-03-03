@@ -42,10 +42,15 @@ in {
     xdg = {
       portal = {
         enable = true;
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
-          pkgs.xdg-desktop-portal-gtk
+        configPackages = [
+          pkgs.niri
         ];
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-gnome
+        ];
+        config.common.default = ["gtk" "gnome"];
+        xdgOpenUsePortal = true;
       };
       mime = {
         defaultApplications = {
@@ -59,6 +64,11 @@ in {
           "image/png" = ["imv.desktop"];
         };
       };
+    };
+
+    environment.sessionVariables = {
+      XDG_CURRENT_DESKTOP = "niri";
+      XDG_SESSION_DESKTOP = "niri";
     };
 
     programs.kdeconnect.enable = true;

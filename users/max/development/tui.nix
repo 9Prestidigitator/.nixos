@@ -28,6 +28,7 @@
       tmuxPlugins.resurrect
       tmuxPlugins.nord
     ];
+    escapeTime = 0;
     extraConfig = ''
       bind-key h select-pane -L
       bind-key l select-pane -R
