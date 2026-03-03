@@ -9,6 +9,7 @@ pkgs.mkShell {
     cmake
     gcc
     clang-tools
+    vscode-extensions.vadimcn.vscode-lldb
 
     # Rust
     rustc
@@ -20,7 +21,7 @@ pkgs.mkShell {
     alejandra
 
     # Python
-    python3
+    (python3.withPackages (ps: with ps; [numpy debugpy]))
     uv
     basedpyright
     ruff
@@ -30,6 +31,7 @@ pkgs.mkShell {
     dotnetCorePackages.sdk_9_0-bin
     omnisharp-roslyn
     csharpier
+    netcoredbg
 
     # Latex
     texliveSmall
@@ -41,11 +43,6 @@ pkgs.mkShell {
     bash-language-server
     shfmt
 
-    # Debuggers
-    vscode-extensions.vadimcn.vscode-lldb
-    netcoredbg
-    (python3.withPackages (ps: [ps.debugpy]))
-
     # etc
     prettier
     prettierd
@@ -55,4 +52,7 @@ pkgs.mkShell {
     matlab-language-server
     qt6.qtdeclarative
   ];
+  env = {
+    CODELLDB_PATH = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+  };
 }
