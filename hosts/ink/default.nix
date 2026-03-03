@@ -37,7 +37,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages-rt_latest;
     kernelModules = ["uinput"]; # required by opentabletdriver
     kernelParams = [
       "threadirqs"
