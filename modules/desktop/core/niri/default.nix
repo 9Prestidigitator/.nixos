@@ -46,9 +46,6 @@ in {
           pkgs.xdg-desktop-portal-gnome
           pkgs.xdg-desktop-portal-gtk
         ];
-        config.common = {
-          default = ["gtk"];
-        };
       };
       mime = {
         defaultApplications = {
