@@ -35,6 +35,7 @@
         lockOnSuspend = true;
         clockStyle = "digital";
         passwordChars = true;
+        enableLockScreenMediaControls = true;
         showSessionButtonsOnLockScreen = false;
         lockScreenBlur = 0.5;
       };
