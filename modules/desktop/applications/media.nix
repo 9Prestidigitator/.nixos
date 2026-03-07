@@ -7,17 +7,6 @@
 }: {
   config = lib.mkIf config.desktop.media.enable {
     services.printing.drivers = [pkgs.hplipWithPlugin];
-    services.mpd = {
-      enable = true;
-      musicDirectory = "${config.home.homeDirectory}/Music";
-      network.listenAddress = "any";
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "PipeWire"
-        }
-      '';
-    };
 
     environment = let
       libbluray = pkgs.libbluray.override {
@@ -61,6 +50,17 @@
             newReleases
             ncsVisualizer
           ];
+        };
+        services.mpd = {
+          enable = true;
+          musicDirectory = "${config.home.homeDirectory}/Music";
+          network.listenAddress = "any";
+          extraConfig = ''
+            audio_output {
+              type "pipewire"
+              name "PipeWire"
+            }
+          '';
         };
       }
     ];
