@@ -23,15 +23,7 @@ in {
     services.overwitch.enable = true;
 
     environment.systemPackages = with pkgs; [
-      pkgsUnstable.bitwig-studio
-      # bitwig-studio-latest
-      paulxstretch
-      # neuralnote
-      # amplocker
-      papu
-      reaper
-      reaper-sws-extension
-      reaper-reapack-extension
+      # Compatibility
       wineWowPackages.yabridge
       wineWowPackages.full
       winetricks
@@ -40,6 +32,28 @@ in {
       yabridge
       yabridgectl
       overwitch
+      # DAWs
+      pkgsUnstable.bitwig-studio
+      # bitwig-studio-latest
+      reaper
+      reaper-sws-extension
+      reaper-reapack-extension
+      # plugins
+      lsp-plugins
+      x42-avldrums
+      x42-plugins
+      guitarix
+      gxplugins-lv2
+      dragonfly-reverb
+      surge
+      # Utilities
+      musescore
+      paulxstretch
+      papu
+      easyeffects
+      carla
+      # neuralnote
+      # amplocker
     ];
   };
 }

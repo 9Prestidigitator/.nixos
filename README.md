@@ -41,8 +41,9 @@ You can run a dev via `nix develop` or the builtin aliases.
 
 ```bash
 alias ds='nix develop ~/.nixos#default'
-alias ds-md='nix develop ~/.nixos#md'
 alias ds-nix='nix develop ~/.nixos#nix'
+alias ds-md='nix develop ~/.nixos#md'
+alias ds-py='nix develop ~/.nixos#python'
 ```
 
 # Plans

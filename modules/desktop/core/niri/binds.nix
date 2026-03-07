@@ -108,6 +108,27 @@ in {
         "Mod+N".action.spawn = lib.getExe (mkMenu [
           {
             key = "p";
+            desc = "Plugin panels";
+            submenu = [
+              {
+                key = "m";
+                desc = "MPD";
+                cmd = "noctalia-shell ipc call plugin togglePanel mpd";
+              }
+              {
+                key = "n";
+                desc = "Notepad";
+                cmd = "noctalia-shell ipc call plugin togglePanel notes-scratchpad";
+              }
+              {
+                key = "t";
+                desc = "To-do list";
+                cmd = "noctalia-shell ipc call plugin togglePanel todo";
+              }
+            ];
+          }
+          {
+            key = "w";
             desc = "Panels";
             submenu = [
               {

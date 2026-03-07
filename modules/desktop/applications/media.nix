@@ -7,6 +7,17 @@
 }: {
   config = lib.mkIf config.desktop.media.enable {
     services.printing.drivers = [pkgs.hplipWithPlugin];
+    services.mpd = {
+      enable = true;
+      musicDirectory = "${config.home.homeDirectory}/Music";
+      services.mpd.network.listenAddress = "any";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "PipeWire"
+        }
+      '';
+    };
 
     environment = let
       libbluray = pkgs.libbluray.override {
@@ -29,6 +40,8 @@
         makemkv
         handbrake
         ffmpeg
+        rmpc
+        cava
       ];
     };
 
