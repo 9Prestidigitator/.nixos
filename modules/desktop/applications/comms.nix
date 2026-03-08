@@ -8,6 +8,7 @@
   config = lib.mkIf config.desktop.comms.enable {
     environment.systemPackages = with pkgs; [
       signal-desktop
+      element-desktop
     ];
     home-manager.sharedModules = [
       inputs.nixcord.homeModules.nixcord
