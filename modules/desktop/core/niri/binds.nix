@@ -125,6 +125,11 @@ in {
                 desc = "To-do list";
                 cmd = "noctalia-shell ipc call plugin togglePanel todo";
               }
+              {
+                key = "k";
+                desc = "KDEConnect";
+                cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
+              }
             ];
           }
           {
@@ -132,8 +137,8 @@ in {
             desc = "Panels";
             submenu = [
               {
-                key = "w";
-                desc = "Show Wifi Panel";
+                key = "n";
+                desc = "Show Network Panel";
                 cmd = "noctalia-shell ipc call network togglePanel";
               }
               {
@@ -165,11 +170,6 @@ in {
                 key = "t";
                 desc = "Show Timer";
                 cmd = "noctalia-shell ipc call plugin:timer toggle";
-              }
-              {
-                key = "k";
-                desc = "KDEConnect";
-                cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
               }
             ];
           }
@@ -212,6 +212,11 @@ in {
             key = "s";
             desc = "Noctalia Settings";
             cmd = "noctalia-shell ipc call settings openTab about";
+          }
+          {
+            key = "S";
+            desc = "Plugin Settings";
+            cmd = "noctalia-shell ipc call settings toggleTab plugins";
           }
         ]);
         "Mod+Escape" = {

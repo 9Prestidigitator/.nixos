@@ -21,11 +21,18 @@
           config = {
             plugins = {
               alwaysAnimate.enable = true;
-              betterFolders.enable = true;
-              # blurNsfw.enable = true;
-              # pinDMs.enable = true;
+              betterFolders.enable = false; # not working
+              BlurNSFW.enable = true;
+              PinDMs.enable = true;
               volumeBooster.enable = true;
               youtubeAdblock.enable = true;
+              fakeNitro = {
+                enable = true;
+                enableEmojiBypass = true;
+                enableStickerBypass = true;
+              };
+              fixYoutubeEmbeds.enable = true;
+              gifPaste.enable = true;
             };
           };
         };
