@@ -4,14 +4,7 @@
   inputs,
   config,
   ...
-}: let
-  pkgsUnstable = import inputs.nixpkgs-unstable {
-    system = pkgs.stdenv.hostPlatform.system;
-    config = {
-      allowUnfree = true;
-    };
-  };
-in {
+}: {
   imports = [
     inputs.musnix.nixosModules.musnix
     inputs.self.nixosModules.overwitch
@@ -19,8 +12,6 @@ in {
 
   config = lib.mkIf config.desktop.musicprod.enable {
     musnix.enable = true;
-
-    services.overwitch.enable = true;
 
     environment.systemPackages = with pkgs; [
       # Compatibility
@@ -33,8 +24,7 @@ in {
       yabridgectl
       overwitch
       # DAWs
-      pkgsUnstable.bitwig-studio
-      # bitwig-studio-latest
+      bitwig-studio-latest
       reaper
       reaper-sws-extension
       reaper-reapack-extension
@@ -52,8 +42,7 @@ in {
       papu
       easyeffects
       carla
-      # neuralnote
-      # amplocker
+      qpwgraph
     ];
   };
 }
