@@ -4,7 +4,14 @@
   inputs,
   config,
   ...
-}: {
+}: let
+  pkgsUnstable = import inputs.nixpkgs-unstable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
+in {
   config = lib.mkIf config.desktop.gaming.enable {
     programs.steam = {
       enable = true;
@@ -20,6 +27,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
+      pkgsUnstable.eden
       prismlauncher
       heroic
       dolphin-emu
