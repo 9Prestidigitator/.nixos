@@ -89,8 +89,18 @@ in {
           }
           {
             key = "j";
+            desc = "qpwgraph";
+            cmd = "qpwgraph";
+          }
+          {
+            key = "J";
             desc = "QJackCtl";
             cmd = "qjackctl";
+          }
+          {
+            key = "i";
+            desc = "Moonlight";
+            cmd = "moonlight";
           }
           {
             key = "y";
