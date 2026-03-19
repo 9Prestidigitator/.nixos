@@ -32,6 +32,7 @@
         rmpc
         cava
         cantata
+        yt-dlp
       ];
     };
 
