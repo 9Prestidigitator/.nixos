@@ -75,6 +75,10 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        clipper = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
         kde-connect = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
