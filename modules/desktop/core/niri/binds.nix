@@ -140,6 +140,16 @@ in {
                 desc = "KDEConnect";
                 cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
               }
+              {
+                key = "p";
+                desc = "Privacy";
+                cmd = "noctalia-shell ipc call plugin openPanel privacy-indicator";
+              }
+              {
+                key = "c";
+                desc = "Clipper";
+                cmd = "noctalia-shell ipc call plugin openPanel clipper";
+              }
             ];
           }
           {

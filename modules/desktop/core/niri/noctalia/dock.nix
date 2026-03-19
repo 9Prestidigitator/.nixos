@@ -41,9 +41,6 @@
           ++ lib.optionals osConfig.desktop.gaming.enable [
             "steam"
           ]
-          ++ lib.optionals osConfig.desktop.comms.enable [
-            "discord"
-          ]
           ++ lib.optionals osConfig.desktop.musicprod.enable [
             "com.bitwig.BitwigStudio"
           ];

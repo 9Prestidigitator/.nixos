@@ -43,12 +43,20 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        custom-commands = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        web-search = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
         kaomoji-provider = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         niri-overview-launcher = {
-          enabled = true;
+          enabled = false;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         mpd = {
@@ -60,6 +68,10 @@
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         todo = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        custom-sticker = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
@@ -79,6 +91,25 @@
       timer = {
         compactMode = false;
         defaultDuration = 0;
+      };
+      web-search = {
+        search_engine = "Brave";
+        show_suggestions = true;
+        max_results = 5;
+      };
+      custom-commands = {
+        commands = [
+          {
+            name = "notes";
+            command = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
+            icon = "notes";
+          }
+          {
+            name = "tmux";
+            command = "kitty --title tmux bash -lc 'tmux a || tmux'";
+            icon = "terminal-2";
+          }
+        ];
       };
     };
   };
