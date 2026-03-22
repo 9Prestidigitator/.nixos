@@ -81,13 +81,16 @@ in {
       polkit_gnome
       gpu-screen-recorder
       wl-clipboard
+      wl-mirror
+      wlsunset
       kdePackages.breeze-icons
       linux-wallpaperengine
       cliphist
-      wlsunset
       pulseaudio
       imv
       kdePackages.qttools
+      grim
+      slurp
       tesseract
       imagemagick
       zbar
