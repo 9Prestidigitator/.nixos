@@ -110,13 +110,13 @@
         nightTemp = "3800";
       };
       notifications = {
+        enabled = true;
         backgroundOpacity = lib.mkForce 1;
+        enableMarkdown = true;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
-        enabled = true;
         location = "top_right";
         lowUrgencyDuration = 3;
-        monitors = [];
         normalUrgencyDuration = 8;
         overlayLayer = true;
         respectExpireTimeout = false;
