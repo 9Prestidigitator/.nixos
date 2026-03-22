@@ -25,6 +25,11 @@
     unrar
   ];
 
+  home.sessionVariables = {
+    VISUAL = "nvim";
+    EDITOR = "nvim";
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
