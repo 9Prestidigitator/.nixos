@@ -11,6 +11,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-utils.url = "github:numtide/flake-utils";
+    import-tree.url = "github:vic/import-tree";
 
     stylix = {
       url = "github:nix-community/stylix/release-25.11";

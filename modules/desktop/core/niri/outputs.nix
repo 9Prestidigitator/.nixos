@@ -51,6 +51,9 @@ in {
           refresh = null;
         };
       };
+      "HDMI-A-1" = {
+        scale = 2;
+      };
     })
 
     (lib.mkIf (hostName == "book") {
