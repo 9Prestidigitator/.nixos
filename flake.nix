@@ -40,6 +40,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    steam-config-nix.url = "github:different-name/steam-config-nix";
     nixcord.url = "github:kaylorben/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 

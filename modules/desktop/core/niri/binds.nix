@@ -121,9 +121,14 @@ in {
             desc = "Plugin panels";
             submenu = [
               {
-                key = "m";
-                desc = "MPD";
-                cmd = "noctalia-shell ipc call plugin togglePanel mpd";
+                key = "a";
+                desc = "Assistant Panel";
+                cmd = "noctalia-shell ipc call plugin openPanel assistant-panel";
+              }
+              {
+                key = "p";
+                desc = "Privacy";
+                cmd = "noctalia-shell ipc call plugin openPanel privacy-indicator";
               }
               {
                 key = "n";
@@ -136,19 +141,24 @@ in {
                 cmd = "noctalia-shell ipc call plugin togglePanel todo";
               }
               {
-                key = "k";
-                desc = "KDEConnect";
-                cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
-              }
-              {
-                key = "p";
-                desc = "Privacy";
-                cmd = "noctalia-shell ipc call plugin openPanel privacy-indicator";
+                key = "s";
+                desc = "Screen Toolkit";
+                cmd = "noctalia-shell ipc call plugin openPanel screen-toolkit";
               }
               {
                 key = "c";
                 desc = "Clipper";
                 cmd = "noctalia-shell ipc call plugin openPanel clipper";
+              }
+              {
+                key = "k";
+                desc = "KDEConnect";
+                cmd = "noctalia-shell ipc call plugin:kde-connect toggle";
+              }
+              {
+                key = "m";
+                desc = "MPD";
+                cmd = "noctalia-shell ipc call plugin togglePanel mpd";
               }
             ];
           }
@@ -221,7 +231,7 @@ in {
           {
             key = "W";
             desc = "Random Wallpaper";
-            cmd = "noctalia-shell ipc call wallpaper random";
+            cmd = "noctalia-shell ipc call wallpaper random all";
           }
           {
             key = "c";

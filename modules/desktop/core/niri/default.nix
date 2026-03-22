@@ -75,17 +75,26 @@ in {
     programs.kdeconnect.enable = true;
 
     environment.systemPackages = with pkgs; [
-      (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {calendarSupport = true;})
       inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
+      (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {calendarSupport = true;})
       seahorse
       polkit_gnome
       gpu-screen-recorder
       wl-clipboard
       kdePackages.breeze-icons
+      linux-wallpaperengine
       cliphist
       wlsunset
       pulseaudio
       imv
+      kdePackages.qttools
+      tesseract
+      imagemagick
+      zbar
+      curl
+      translate-shell
+      wf-recorder
+      gifski
     ];
 
     home-manager.sharedModules = [

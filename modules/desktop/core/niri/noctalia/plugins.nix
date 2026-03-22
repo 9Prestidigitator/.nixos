@@ -71,6 +71,14 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        screen-toolkit = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        assistant-panel = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
         custom-sticker = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
@@ -114,6 +122,31 @@
             icon = "terminal-2";
           }
         ];
+      };
+      assistant-panel = {
+        ai = {
+          provider = "openai_compatible";
+          models = {
+            openai_compatible = "gpt-5.4-mini";
+          };
+          temperature = 0.5;
+          systemPrompt = "You are a helpful assistant integrated into a NixOS desktop shell. Be concise and helpful.";
+          openaiLocal = false;
+          openaiBaseUrl = "https://api.openai.com/v1";
+          model = "gpt-5.4-mini";
+        };
+        translator = {
+          backend = "google";
+          deeplApiKey = "";
+          realTimeTranslation = true;
+        };
+        maxHistoryLength = 100;
+        panelDetached = false;
+        panelPosition = "right";
+        panelHeightRatio = 0.85;
+        panelWidth = 601;
+        attachmentStyle = "connected";
+        scale = 1;
       };
     };
   };
