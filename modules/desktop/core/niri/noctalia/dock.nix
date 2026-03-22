@@ -30,8 +30,9 @@
         groupClickAction = "cycle";
         groupIndicatorStyle = "dots";
         showLauncherIcon = true;
+        launcherUseDistroLogo = true;
         launcherPosition = "start";
-        launcherIconColor = "tertiary";
+        launcherIconColor = "none";
         pinnedApps =
           [
             "kitty"

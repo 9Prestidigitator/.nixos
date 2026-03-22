@@ -18,11 +18,16 @@
 
   config = lib.mkIf config.desktop.enable {
     hardware.uinput.enable = true;
-    services.sunshine = {
-      enable = true;
-      autoStart = false;
-      capSysAdmin = true;
-      openFirewall = true;
+    services = {
+      mullvad-vpn = {
+        enable = true;
+      };
+      sunshine = {
+        enable = true;
+        autoStart = false;
+        capSysAdmin = true;
+        openFirewall = true;
+      };
     };
 
     programs.java.enable = true;
@@ -76,6 +81,9 @@
 
       freetype
       fontconfig
+
+      mullvad
+      mullvad-vpn
     ];
 
     home-manager.sharedModules = [

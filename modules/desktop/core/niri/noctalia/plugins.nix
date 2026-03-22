@@ -144,7 +144,7 @@
         panelDetached = false;
         panelPosition = "right";
         panelHeightRatio = 0.85;
-        panelWidth = 601;
+        panelWidth = 600;
         attachmentStyle = "connected";
         scale = 1;
       };
