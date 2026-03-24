@@ -48,6 +48,18 @@
   hardware.opentabletdriver.enable = true;
   hardware.uinput.enable = true;
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # modern Intel, iHD
+      intel-vaapi-driver # older Intel, i965
+    ];
+  };
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
+
   nix = {
     buildMachines = [
       {
