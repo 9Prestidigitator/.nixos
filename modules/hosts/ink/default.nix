@@ -66,16 +66,6 @@
           package = pkgs.openrgb-with-all-plugins;
           motherboard = "amd";
         };
-        logind = {
-          settings.Login = {
-            HandlePowerKey = "suspend";
-          };
-        };
-      };
-
-      security = {
-        polkit.enable = true;
-        rtkit.enable = true;
       };
 
       powerManagement.cpuFreqGovernor = "performance";

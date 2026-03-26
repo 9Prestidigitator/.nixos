@@ -18,6 +18,11 @@
 
     networking.firewall.enable = true;
 
+    security = {
+      polkit.enable = true;
+      rtkit.enable = true;
+    };
+
     environment.systemPackages = with pkgs; [dbus];
     services = {
       pipewire = {
@@ -26,7 +31,6 @@
         pulse.enable = true;
         alsa.enable = true;
         alsa.support32Bit = true;
-
         extraConfig.pipewire."10-clock-rate"."context.properties" = {
           "default.clock.rate" = 48000;
           "default.clock.quantum" = lib.mkDefaut 128;
@@ -47,6 +51,13 @@
           PasswordAuthentication = false;
         };
         openFirewall = true;
+      };
+      logind = {
+        settings.Login = {
+          HandleLidSwitch = lib.mkDefault "suspend";
+          HandleLidSwitchDocked = lib.mkDefault "ignore";
+          HandlePowerKey = lib.mkDefault "suspend";
+        };
       };
       udev.extraRules = ''KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"'';
       printing.enable = true;

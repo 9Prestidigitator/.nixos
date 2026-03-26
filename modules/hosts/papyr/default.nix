@@ -1,5 +1,4 @@
 {inputs, self, ...}: {
-  imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -69,20 +68,11 @@
         thermald.enable = true;
         blueman.enable = true;
         fprintd.enable = true;
-        logind = {
-          settings.Login = {
-            HandleLidSwitch = "suspend";
-            HandleLidSwitchDocked = "ignore";
-            HandlePowerKey = "suspend";
-          };
-        };
       };
 
       security = {
         pam.services.login.fprintAuth = true;
         pam.services.sudo.fprintAuth = true;
-        polkit.enable = true;
-        rtkit.enable = true;
       };
 
       networking.wg-quick.interfaces.wg0 = {
