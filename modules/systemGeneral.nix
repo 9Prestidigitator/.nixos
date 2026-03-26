@@ -48,10 +48,10 @@
         openFirewall = true;
       };
       udev.extraRules = ''KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"'';
+      printing.enable = true;
     };
 
     networking.firewall.enable = true;
-    printing.enable = true;
 
     nixpkgs = {
       config.allowUnfree = true;
