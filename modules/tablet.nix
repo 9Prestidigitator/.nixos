@@ -1,6 +1,6 @@
 {
   flake.nixosModules.tablet = {
-    services.hardware = {
+    hardware = {
       opentabletdriver.enable = true;
       uinput.enable = true;
     };
