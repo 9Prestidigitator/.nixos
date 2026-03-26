@@ -24,7 +24,7 @@
     owner = "dagargo";
     repo = "overwitch";
     rev = version;
-    sha256 = "sha256-EYT5m4N9kzeYaOcm1furGGxw1k+Bw+m+FvONVZN9ohk="; # Update this
+    sha256 = "sha256-EYT5m4N9kzeYaOcm1furGGxw1k+Bw+m+FvONVZN9ohk=";
   };
 
   nativeBuildInputs = [
