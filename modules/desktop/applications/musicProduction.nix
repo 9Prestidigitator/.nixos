@@ -14,7 +14,7 @@
       wineasio
       yabridge
       yabridgectl
-      overwitch
+      # overwitch
       # DAWs
       bitwig-studio-latest
       reaper

@@ -1,7 +1,6 @@
 {inputs, ...}: {
   flake.nixosModules.essentials = {pkgs, ...}: {
     imports = [inputs.nix-flatpak.nixosModules.nix-flatpak];
-
     hardware.uinput.enable = true;
     programs.java.enable = true;
     services = {
@@ -46,5 +45,18 @@
       steam-run
       appimage-run
     ];
+  };
+
+  flake.homeModules.general = {
+    xdg = {
+      userDirs = {
+        enable = true;
+        createDirectories = true;
+      };
+      terminal-exec = {
+        enable = true;
+        settings.default = ["kitty.desktop"];
+      };
+    };
   };
 }

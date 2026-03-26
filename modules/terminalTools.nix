@@ -43,6 +43,11 @@
       };
     };
 
+    home.sessionVariables = {
+      VISUAL = "nvim";
+      EDITOR = "nvim";
+    };
+
     programs.bash = {
       enable = true;
       shellAliases = {
@@ -51,12 +56,10 @@
         nv = "nvim";
         tm = "tmux a || tmux";
         fman = "compgen -c | sort -hr | fzf | xargs man";
-
         # Nix config stuff
         nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
         nixup = "nix flake update";
         nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
-
         # Development Shell commands
         ds = "nix develop";
         dsv = "nix develop -c nvim";

@@ -12,17 +12,29 @@
     nixosConfigurations.ink = lib.nixosSystem {
       system = "x86_64-linux";
       modules = with self.nixosModules; [
+        essentials
         braveBrowser
-        mullvad
+        musicProduction
+        design
+        gaming
+        media
+        comms
+        vm
 
         neovim
         terminalTools
+        mullvad
+
+        max
+        guest
 
         grub
-        tablet
         keyd
+        tablet
         nvidia
         systemGeneral
+
+        ink
       ];
     };
 
