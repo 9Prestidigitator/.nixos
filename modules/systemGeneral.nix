@@ -1,21 +1,22 @@
 {inputs, ...}: {
-  flake.nixosModules.systemGeneral = { pkgs, lib, ... }: {
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+  flake.nixosModules.systemGeneral = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+
     time.timeZone = "US/Eastern";
 
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
       earlySetup = true;
-      font = "ter-v16b";
+      font = lib.mkDefault "ter-v16b";
       packages = with pkgs; [terminus_font];
       keyMap = "us";
-      # useXkbConfig = true; # use xkb.options in tty.
     };
 
-    programs = {
-      nh.enable = true;
-      nix-ld.enable = true;
-    };
+    networking.firewall.enable = true;
 
     environment.systemPackages = with pkgs; [dbus];
     services = {
@@ -27,9 +28,9 @@
         alsa.support32Bit = true;
 
         extraConfig.pipewire."10-clock-rate"."context.properties" = {
-          "default.clock.rate" = 44100;
-          "default.clock.quantum" = 128;
-          "default.clock.min-quantum" = 64;
+          "default.clock.rate" = 48000;
+          "default.clock.quantum" = lib.mkDefaut 128;
+          "default.clock.min-quantum" = 32;
           "default.clock.max-quantum" = 1024;
         };
       };
@@ -51,7 +52,10 @@
       printing.enable = true;
     };
 
-    networking.firewall.enable = true;
+    programs = {
+      nh.enable = true;
+      nix-ld.enable = true;
+    };
 
     nixpkgs = {
       config.allowUnfree = true;

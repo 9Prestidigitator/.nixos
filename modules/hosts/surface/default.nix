@@ -38,14 +38,7 @@
       ];
     };
 
-    nixosModules.surface = {
-      pkgs,
-      lib,
-      ...
-    }: let
-      fetchurl = pkgs.fetchurl;
-      commit = "69d1e5826e6380c8ff0cd532e244482097562c3d";
-    in {
+    nixosModules.surface = {pkgs, lib, ...}: {
       networking = {
         hostName = "surface";
         networkmanager.enable = true;
@@ -88,17 +81,6 @@
             '';
           }
         ];
-      };
-
-      environment.etc = {
-        "ipts.conf".text = ''
-          [Config]
-          BlockOnPalm = true
-        '';
-        "thermald/thermal-cpu-cdev-order.xml".source = fetchurl {
-          url = "https://raw.githubusercontent.com/linux-surface/linux-surface/${commit}/contrib/thermald/surface_pro_5/thermal-conf.xml.auto.mobile";
-          sha256 = "1wsrgad6k4haw4m0jjcjxhmj4742kcb3q8rmfpclbw0czm8384al";
-        };
       };
 
       environment.systemPackages = with pkgs; [iptsd surface-control];
