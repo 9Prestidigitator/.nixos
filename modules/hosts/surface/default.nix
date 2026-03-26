@@ -27,7 +27,7 @@
       ];
     };
 
-    nixosModules.surface = {pkgs, lib, ...}: {
+    nixosModules.surface = {pkgs, lib, isLaptop, ...}: {
       networking = {
         hostName = "surface";
         networkmanager.enable = true;
@@ -36,6 +36,9 @@
       imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common inputs.home-manager.nixosModules.default];
       home-manager = {
         useGlobalPkgs = true;
+        useUserPackages = true;
+        backupFileExtension = "backup";
+        extraSpecialArgs = {inherit inputs isLaptop;};
         users.max = {
           imports = with self.homeModules; [
             max

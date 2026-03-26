@@ -66,8 +66,8 @@
     programs.kdeconnect.enable = true;
 
     environment.systemPackages = with pkgs; [
-      inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
       (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {calendarSupport = true;})
+      inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
       seahorse
       polkit_gnome
       gpu-screen-recorder
@@ -95,7 +95,7 @@
   flake.homeModules.desktop = {
     imports = [
       inputs.niri.homeModules.config
-      inputs.noctalia
+      inputs.noctalia.homeModules.default
       (inputs.import-tree ./_niri)
     ];
   };
