@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.ink = {pkgs, ...}: {
+  flake.nixosModules.surface = {pkgs, ...}: {
     imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
     nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 

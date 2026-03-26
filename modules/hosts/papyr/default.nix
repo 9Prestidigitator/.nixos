@@ -27,7 +27,6 @@
         tablet
         keyd
         grub
-        nvidia
         systemGeneral
 
         papyr
@@ -65,8 +64,6 @@
           };
         };
       };
-
-      boot.kernelParams = ["threadirqs"];
 
       services = {
         thermald.enable = true;

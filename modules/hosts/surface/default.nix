@@ -3,7 +3,6 @@
   self,
   ...
 }: {
-  imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common];
   flake = {
     nixosConfiguration.surface = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -11,16 +10,10 @@
       modules = with self.nixosModules; [
         max
 
-        niri
+        gnome
 
         essentials
         braveBrowser
-        musicProduction
-        design
-        gaming
-        media
-        comms
-        vm
 
         terminalTools
         mullvad
@@ -28,23 +21,54 @@
         buildMachines
         stylix
 
-        tablet
         keyd
         grub
-        nvidia
         systemGeneral
 
         surface
       ];
     };
 
-    nixosModules.surface = {pkgs, lib, ...}: {
+    nixosModules.surface = {
+      pkgs,
+      lib,
+      ...
+    }: {
       networking = {
         hostName = "surface";
         networkmanager.enable = true;
       };
 
-      hardware.microsoft-surface.kernelVersion = "longterm";
+      imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common inputs.home-manager.nixosModules.default];
+      hardware = {
+        microsoft-surface.kernelVersion = "longterm";
+        graphics = {
+          enable = true;
+          extraPackages = with pkgs; [
+            intel-media-driver
+            intel-vaapi-driver
+          ];
+        };
+        environment.sessionVariables = {
+          LIBVA_DRIVER_NAME = "iHD";
+        };
+      };
+
+      home-manager = {
+        useGlobalPkgs = true;
+        users.max = {
+          imports = with self.homeModules; [
+            general
+            neovim
+            terminalTools
+          ];
+          home = {
+            username = "max";
+            homeDirectory = "/home/max";
+            stateVersion = "26.05";
+          };
+        };
+      };
 
       boot = {
         kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
@@ -88,29 +112,11 @@
       services = {
         udev.packages = with pkgs; [iptsd surface-control];
         thermald.enable = true;
-      };
-
-      nix = {
-        buildMachines = [
-          {
-            hostName = "builder";
-            system = "x86_64-linux";
-            protocol = "ssh-ng";
-            maxJobs = 4;
-            speedFactor = 2;
-            supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
-          }
-        ];
-        distributedBuilds = true;
+        blueman.enable = false;
+        libinput.enable = true;
       };
 
       powerManagement.cpuFreqGovernor = "performance";
-
-      hardware.bluetooth.enable = false;
-      services.blueman.enable = false;
-
-      # Enable touchpad support (enabled default in most desktopManager).
-      services.libinput.enable = true;
       security.rtkit.enable = true;
 
       console.font = lib.mkForce "ter-v32b";
