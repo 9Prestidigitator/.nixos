@@ -1,8 +1,8 @@
 {inputs, ...}: {
-  flake.nixosModules.musidProduction = {pkgs, ...}: {
+  flake.nixosModules.musicProduction = {pkgs, ...}: {
     imports = [
       inputs.musnix.nixosModules.musnix
-      inputs.self.nixosModules.overwitch
+      # inputs.self.nixosModules.overwitch
     ];
     musnix.enable = true;
     environment.systemPackages = with pkgs; [

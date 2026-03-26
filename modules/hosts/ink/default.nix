@@ -1,15 +1,10 @@
-{
-  inputs,
-  self,
-  lib,
-  ...
-}: {
+{inputs, self, ...}: {
   imports = [
     ./hardware.nix
     inputs.home-manager.flakeModules.home-manager
   ];
   flake = {
-    nixosConfigurations.ink = lib.nixosSystem {
+    nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         isLaptop = false;
@@ -26,7 +21,6 @@
         comms
         vm
 
-        neovim
         terminalTools
         mullvad
 
@@ -56,6 +50,8 @@
         users.max = {
           import = with self.homeModules; [
             general
+            neovim
+            terminalTools
           ];
           home = {
             username = "max";
