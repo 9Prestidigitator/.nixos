@@ -27,7 +27,7 @@
       guitarix
       gxplugins-lv2
       dragonfly-reverb
-      surge
+      # surge
       # Utilities
       musescore
       paulxstretch
