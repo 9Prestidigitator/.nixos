@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.max = {pkgs, ...}: {
+  flake.nixosModules.max = {
     users.users.max = {
       isNormalUser = true;
       extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
@@ -12,7 +12,6 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJFXCQZRFwEBmqn/bxt2gqvGB6QFkrHX08w6hp7QW+7u"
       ];
     };
-
     services.syncthing = {
       user = "max";
       dataDir = "/home/max";
@@ -20,17 +19,15 @@
   };
 
   flake.homeModules.default = {lib, config, ...}: {
-    home.activation.ensureNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      mkdir -p "$HOME/notes"
-    '';
-
     programs.git = {
       settings.user = {
         name = "9Prestidigitator";
         email = "9Prestidigitator@gmail.com";
       };
     };
-
+    home.activation.ensureNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      mkdir -p "$HOME/notes"
+    '';
     services.mpd = {
       enable = true;
       musicDirectory = "${config.home.homeDirectory}/Music";

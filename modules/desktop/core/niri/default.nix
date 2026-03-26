@@ -1,43 +1,39 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
-  cfg = config.desktop;
-  isNiri = cfg.enable && cfg.wayCompositor == "niri";
-in {
-  imports = [
-    ./noctalia
-  ];
+{inputs, ...}: {
+  flake-file.inputs.xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+  flake-file.inputs.noctalia.url = "github:noctalia-dev/noctalia-shell";
 
-  config = lib.mkIf isNiri {
+  flake.nixosModules.niri = {pkgs, ...}: {
+    imports = [./noctalia];
+
     programs.niri = {
       enable = true;
       package = pkgs.niri;
     };
 
     # Probably going to change. Doesn't fit noctalia
-    services.displayManager.ly = {
-      enable = true;
-      settings = {
-        allow_empty_password = true;
-        animation = "colormix";
-        bigclock = "en";
-        clock = "%c";
-        lang = "en";
-        numlock = true;
-        vi_default_mode = "insert";
-        vi_mode = true;
+    services = {
+      displayManager.ly = {
+        enable = true;
+        settings = {
+          allow_empty_password = true;
+          animation = "colormix";
+          bigclock = "en";
+          clock = "%c";
+          lang = "en";
+          numlock = true;
+          vi_default_mode = "insert";
+          vi_mode = true;
+        };
       };
+      accounts-daemon.enable = true;
+      gnome.gnome-online-accounts.enable = true;
+      gnome.evolution-data-server.enable = true;
     };
 
-    programs.evolution.enable = true;
-    programs.dconf.enable = true;
-    services.accounts-daemon.enable = true;
-    services.gnome.gnome-online-accounts.enable = true;
-    services.gnome.evolution-data-server.enable = true;
+    programs = {
+      evolution.enable = true;
+      dconf.enable = true;
+    };
 
     xdg = {
       portal = {
@@ -99,8 +95,10 @@ in {
       wf-recorder
       gifski
     ];
+  };
 
-    home-manager.sharedModules = [
+  flake.homeModules.niri = {
+    imports = [
       inputs.niri.homeModules.config
       ./binds.nix
       ./settings.nix
