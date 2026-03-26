@@ -5,22 +5,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./core
-    ./applications
-  ];
-
-  options.desktop = {
-    enable = lib.mkEnableOption "Enable desktop environment";
-
-    musicprod.enable = lib.mkEnableOption "Enable music production support";
-    gaming.enable = lib.mkEnableOption "Enable gaming support";
-    design.enable = lib.mkEnableOption "Enable design applications";
-    comms.enable = lib.mkEnableOption "Enable communications applications";
-    media.enable = lib.mkEnableOption "Enable media applications";
-    vm.enable = lib.mkEnableOption "Enable virtual machine support";
-  };
-
   config = lib.mkIf config.desktop.enable {
     fonts.packages = with pkgs; [
       corefonts

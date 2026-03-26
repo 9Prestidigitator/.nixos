@@ -1,11 +1,5 @@
 {
-  pkgs,
-  lib,
-  inputs,
-  config,
-  ...
-}: {
-  config = lib.mkIf config.desktop.vm.enable {
+  flake.nixosModules.vm = {pkgs, ...}: {
     virtualisation.libvirtd = {
       enable = true;
       qemu = {

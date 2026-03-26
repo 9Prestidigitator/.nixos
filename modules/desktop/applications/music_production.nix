@@ -1,18 +1,10 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  config,
-  ...
-}: {
-  imports = [
-    inputs.musnix.nixosModules.musnix
-    inputs.self.nixosModules.overwitch
-  ];
-
-  config = lib.mkIf config.desktop.musicprod.enable {
+{inputs, ...}: {
+  flake.nixosModules.musidProduction = {pkgs, ...}: {
+    imports = [
+      inputs.musnix.nixosModules.musnix
+      inputs.self.nixosModules.overwitch
+    ];
     musnix.enable = true;
-
     environment.systemPackages = with pkgs; [
       # Compatibility
       wineWowPackages.yabridge

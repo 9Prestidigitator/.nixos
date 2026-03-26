@@ -1,5 +1,6 @@
 {
   description = "NixOS configuration for home systems.";
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
@@ -52,25 +53,5 @@
     };
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-  };
-
-  outputs = {...} @ inputs: let
-    lib = import ./lib {inherit inputs;};
-  in {
-    overlays.default = import ./pkgs;
-    nixosModules = import ./pkgs/modules.nix;
-    nixosConfigurations = lib.genHosts {
-      ink = {users = ["max" "guest"];};
-      papyr = {isLaptop = true;};
-      surface = {isLaptop = true;};
-      book = {isLaptop = true;};
-      cardboard = {users = ["max" "guest"];};
-      vm = {};
-    };
-
-    devShells = lib.eachSystem (system: let
-      pkgs = lib.pkgsFor.${system};
-    in
-      import ./shells {inherit pkgs;});
   };
 }

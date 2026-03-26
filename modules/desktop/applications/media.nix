@@ -1,13 +1,8 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  config,
-  ...
-}: {
-  config = lib.mkIf config.desktop.media.enable {
-    services.printing.drivers = [pkgs.hplipWithPlugin];
+{inputs, ...}: {
+  flake-file.inputs.spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+  flake.nixosModules.media = {pkgs, ...}: {
+    services.printing.drivers = [pkgs.hplipWithPlugin];
     environment = let
       libbluray = pkgs.libbluray.override {
         withAACS = true;
@@ -36,24 +31,22 @@
       ];
     };
 
-    home-manager.sharedModules = [
-      inputs.spicetify-nix.homeManagerModules.default
-      {
-        programs.spicetify = let
-          spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-        in {
-          enable = lib.mkDefault true;
-          theme = spicePkgs.themes.hazy;
-          enabledExtensions = with spicePkgs.extensions; [
-            adblock
-            hidePodcasts
-          ];
-          enabledCustomApps = with spicePkgs.apps; [
-            newReleases
-            ncsVisualizer
-          ];
-        };
-      }
-    ];
+    flake.homeModules.general = {pkgs, lib, ...}: {
+      imports = [inputs.spicetify-nix.homeManagerModules.default];
+      programs.spicetify = let
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+      in {
+        enable = lib.mkDefault true;
+        theme = spicePkgs.themes.hazy;
+        enabledExtensions = with spicePkgs.extensions; [
+          adblock
+          hidePodcasts
+        ];
+        enabledCustomApps = with spicePkgs.apps; [
+          newReleases
+          ncsVisualizer
+        ];
+      };
+    };
   };
 }

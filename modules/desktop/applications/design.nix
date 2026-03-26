@@ -1,11 +1,5 @@
 {
-  pkgs,
-  lib,
-  inputs,
-  config,
-  ...
-}: {
-  config = lib.mkIf config.desktop.design.enable {
+  flake.nixosModules.design = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       inkscape-with-extensions
       gimp-with-plugins
