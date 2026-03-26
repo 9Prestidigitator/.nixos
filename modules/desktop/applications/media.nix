@@ -1,33 +1,25 @@
 {inputs, ...}: {
   flake.nixosModules.media = {pkgs, ...}: {
     services.printing.drivers = [pkgs.hplipWithPlugin];
-    environment = let
-      libbluray = pkgs.libbluray.override {
-        withAACS = true;
-        withBDplus = true;
-        withJava = true;
-      };
-      myVlc = pkgs.vlc.override {inherit libbluray;};
-    in {
-      systemPackages = with pkgs; [
-        myVlc
-        qbittorrent
-        obs-studio
-        zathura
-        calibre
-        anki
-        obsidian
-        easytag
-        mpv
-        makemkv
-        handbrake
-        ffmpeg
-        rmpc
-        cava
-        cantata
-        yt-dlp
-      ];
-    };
+    environment.systemPackages = with pkgs; [
+      libbluray-full
+      vlc
+      qbittorrent
+      obs-studio
+      zathura
+      calibre
+      anki
+      obsidian
+      easytag
+      mpv
+      makemkv
+      handbrake
+      ffmpeg
+      rmpc
+      cava
+      cantata
+      yt-dlp
+    ];
   };
 
   flake.homeModules.general = {

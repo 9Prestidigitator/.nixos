@@ -7,8 +7,8 @@
     musnix.enable = true;
     environment.systemPackages = with pkgs; [
       # Compatibility
-      wineWowPackages.yabridge
-      wineWowPackages.full
+      wineWow64Packages.yabridge
+      wineWow64Packages.full
       winetricks
       winePackages.fonts
       wineasio

@@ -33,7 +33,7 @@
         alsa.support32Bit = true;
         extraConfig.pipewire."10-clock-rate"."context.properties" = {
           "default.clock.rate" = 48000;
-          "default.clock.quantum" = lib.mkDefaut 128;
+          "default.clock.quantum" = lib.mkDefault 128;
           "default.clock.min-quantum" = 32;
           "default.clock.max-quantum" = 1024;
         };
