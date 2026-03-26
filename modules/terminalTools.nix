@@ -88,7 +88,7 @@
       mouse = true;
       plugins = with pkgs; [
         tmuxPlugins.resurrect
-        tmuxPlugins.catppuccin
+        tmuxPlugins.onedark-theme
       ];
       escapeTime = 0;
       extraConfig = ''

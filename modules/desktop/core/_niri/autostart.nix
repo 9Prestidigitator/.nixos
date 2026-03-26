@@ -83,7 +83,7 @@ in {
             }
           ];
           open-on-workspace = "browse";
-          default-column-width.proportion = 0.6666;
+          default-column-width.proportion = 0.8;
         }
         {
           matches = [
@@ -127,7 +127,7 @@ in {
             }
           ];
           open-on-workspace = "gaming";
-          default-column-width.proportion = 0.86;
+          default-column-width.proportion = 0.88;
         }
       ];
     }

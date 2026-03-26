@@ -19,7 +19,7 @@
       pkgsStable.obsidian
       easytag
       mpv
-      # makemkv # derivation is broken
+      pkgsStable.makemkv
       handbrake
       ffmpeg
       rmpc
