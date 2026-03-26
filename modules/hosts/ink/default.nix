@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   imports = [
     ./hardware.nix
     inputs.home-manager.flakeModules.home-manager
@@ -46,18 +50,16 @@
       };
 
       imports = [inputs.home-manager.nixosModules.default];
-      home-manager = {
-        users.max = {
-          import = with self.homeModules; [
-            general
-            neovim
-            terminalTools
-          ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "25.11";
-          };
+      home-manager.users.max = {
+        imports = with self.homeModules; [
+          general
+          neovim
+          terminalTools
+        ];
+        home = {
+          username = "max";
+          homeDirectory = "/home/max";
+          stateVersion = "25.11";
         };
       };
 

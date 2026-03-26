@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.braveBrowser = { pkgs, config, ... }: {
+  flake.nixosModules.braveBrowser = { pkgs, ... }: {
     programs.chromium = {
       enable = true;
       extensions = [
