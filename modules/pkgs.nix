@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   perSystem = {pkgs, ...}: {
     packages.overwitch = pkgs.callPackage ../packages/overwitch.nix {};
   };
