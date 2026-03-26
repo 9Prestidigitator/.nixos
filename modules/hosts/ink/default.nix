@@ -3,7 +3,6 @@
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {isLaptop = false;};
       modules = with self.nixosModules; [
         max
         guest
@@ -34,7 +33,7 @@
       ];
     };
 
-    nixosModules.ink = {pkgs, isLaptop, ...}: {
+    nixosModules.ink = {pkgs, ...}: {
       networking = {
         hostName = "ink";
         networkmanager.enable = true;
@@ -45,7 +44,7 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "backup";
-        extraSpecialArgs = {inherit inputs isLaptop;};
+        extraSpecialArgs = {inherit inputs; isLaptop = false;};
         users.max = {
           imports = with self.homeModules; [
             max

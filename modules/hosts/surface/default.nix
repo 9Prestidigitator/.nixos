@@ -3,7 +3,6 @@
   flake = {
     nixosConfiguration.surface = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {isLaptop = true;};
       modules = with self.nixosModules; [
         max
 
@@ -27,7 +26,7 @@
       ];
     };
 
-    nixosModules.surface = {pkgs, lib, isLaptop, ...}: {
+    nixosModules.surface = {pkgs, lib, ...}: {
       networking = {
         hostName = "surface";
         networkmanager.enable = true;
@@ -38,7 +37,7 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "backup";
-        extraSpecialArgs = {inherit inputs isLaptop;};
+        extraSpecialArgs = {inherit inputs; isLaptop = true;};
         users.max = {
           imports = with self.homeModules; [
             max
