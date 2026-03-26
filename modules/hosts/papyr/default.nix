@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -26,25 +30,17 @@
         tablet
         keyd
         grub
+        intel
         systemGeneral
 
         papyr
       ];
     };
 
-    nixosModules.papyr = {pkgs, ...}: {
-      networking.hostName = "papyr";
-      networking.networkmanager.enable = true;
-
-      hardware.graphics = {
-        enable = true;
-        extraPackages = with pkgs; [
-          intel-media-driver
-          intel-vaapi-driver
-        ];
-      };
-      environment.sessionVariables = {
-        LIBVA_DRIVER_NAME = "iHD";
+    nixosModules.papyr = {
+      networking = {
+        hostName = "papyr";
+        networkmanager.enable = true;
       };
 
       imports = [inputs.home-manager.nixosModules.default];
@@ -52,9 +48,11 @@
         useGlobalPkgs = true;
         users.max = {
           imports = with self.homeModules; [
+            max
             general
             neovim
             terminalTools
+            desktop
           ];
           home = {
             username = "max";
@@ -65,7 +63,6 @@
       };
 
       services = {
-        thermald.enable = true;
         blueman.enable = true;
         fprintd.enable = true;
       };

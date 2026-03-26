@@ -42,7 +42,7 @@
     };
   };
 
-  flake.homeModules.default = {
+  flake.homeModules.desktop = {
     imports = [
       {
         xsession.windowManager.i3 = {

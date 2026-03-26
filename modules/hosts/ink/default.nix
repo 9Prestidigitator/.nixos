@@ -1,5 +1,4 @@
 {inputs, self, ...}: {
-  imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -45,9 +44,11 @@
         useGlobalPkgs = true;
         users.max = {
           imports = with self.homeModules; [
+            max
             general
             neovim
             terminalTools
+            desktop
           ];
           home = {
             username = "max";

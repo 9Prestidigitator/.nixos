@@ -92,7 +92,7 @@
     ];
   };
 
-  flake.homeModules.default = {
+  flake.homeModules.desktop = {
     imports = [
       inputs.niri.homeModules.config
       (inputs.import-tree ./_niri)

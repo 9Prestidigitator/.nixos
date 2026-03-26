@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   flake = {
     nixosConfiguration.surface = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -23,44 +19,29 @@
 
         keyd
         grub
+        intel
         systemGeneral
 
         surface
       ];
     };
 
-    nixosModules.surface = {
-      pkgs,
-      lib,
-      ...
-    }: {
+    nixosModules.surface = {pkgs, lib, ...}: {
       networking = {
         hostName = "surface";
         networkmanager.enable = true;
       };
 
       imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common inputs.home-manager.nixosModules.default];
-      hardware = {
-        microsoft-surface.kernelVersion = "longterm";
-        graphics = {
-          enable = true;
-          extraPackages = with pkgs; [
-            intel-media-driver
-            intel-vaapi-driver
-          ];
-        };
-        environment.sessionVariables = {
-          LIBVA_DRIVER_NAME = "iHD";
-        };
-      };
-
       home-manager = {
         useGlobalPkgs = true;
         users.max = {
           imports = with self.homeModules; [
+            max
             general
             neovim
             terminalTools
+            desktop
           ];
           home = {
             username = "max";
@@ -69,6 +50,7 @@
           };
         };
       };
+      hardware.microsoft-surface.kernelVersion = "longterm";
 
       boot = {
         kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
@@ -111,13 +93,10 @@
 
       services = {
         udev.packages = with pkgs; [iptsd surface-control];
-        thermald.enable = true;
         blueman.enable = false;
-        libinput.enable = true;
       };
 
       powerManagement.cpuFreqGovernor = "performance";
-      security.rtkit.enable = true;
 
       console.font = lib.mkForce "ter-v32b";
     };

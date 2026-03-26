@@ -18,7 +18,7 @@
     };
   };
 
-  flake.homeModules.default = {lib, config, ...}: {
+  flake.homeModules.max = {lib, ...}: {
     programs.git = {
       settings.user = {
         name = "9Prestidigitator";
@@ -30,7 +30,7 @@
     '';
     services.mpd = {
       enable = true;
-      musicDirectory = "${config.home.homeDirectory}/Music";
+      musicDirectory = "/home/max/Music";
       network.listenAddress = "any";
       extraConfig = ''
         audio_output {

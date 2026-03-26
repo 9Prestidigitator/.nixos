@@ -58,7 +58,6 @@
     KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"
   '';
 
-  services.thermald.enable = true;
   services.blueman.enable = true;
   services.libinput.enable = true;
   services.acpid.enable = true;

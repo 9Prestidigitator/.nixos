@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   flake = {
     nixosConfigurations.cardboard = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -10,6 +6,8 @@
       modules = with self.nixosModules; [
         max
         guest
+
+        plasma
 
         essentials
         braveBrowser
@@ -26,11 +24,13 @@
         stylix
 
         grub
+        intel
         systemGeneral
 
         cardboard
       ];
     };
+
     nixosModules.cardboard = {
       networking = {
         hostName = "cardboard";
@@ -42,9 +42,11 @@
         useGlobalPkgs = true;
         users.max = {
           imports = with self.homeModules; [
+            max
             general
             neovim
             terminalTools
+            desktop
           ];
           home = {
             username = "max";
@@ -55,7 +57,6 @@
       };
 
       powerManagement.cpuFreqGovernor = "performance";
-
       services.blueman.enable = true;
     };
   };

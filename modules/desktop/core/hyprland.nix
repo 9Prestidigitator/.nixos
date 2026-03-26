@@ -32,7 +32,7 @@
     ];
   };
 
-  flake.homeModules.default = {
+  flake.homeModules.desktop = {
     imports = [
       inputs.caelestia-shell.homeManagerModules.default
       {
