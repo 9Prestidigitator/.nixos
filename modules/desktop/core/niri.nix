@@ -76,6 +76,7 @@
       wlsunset
       kdePackages.breeze-icons
       linux-wallpaperengine
+      xdg-desktop-portal-gnome
       cliphist
       pulseaudio
       imv
