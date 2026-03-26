@@ -29,7 +29,7 @@
     ];
   };
 
-  flake.homeModules.general = {
+  flake.homeModules.media = {
     pkgs,
     lib,
     ...

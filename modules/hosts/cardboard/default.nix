@@ -14,7 +14,7 @@
         design
         gaming
         media
-        comms
+        communications
         virtualisation
 
         terminalTools

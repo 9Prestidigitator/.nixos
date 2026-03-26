@@ -47,7 +47,7 @@
     ];
   };
 
-  flake.homeModules.general = {
+  flake.homeModules.essentials = {
     xdg = {
       userDirs = {
         enable = true;

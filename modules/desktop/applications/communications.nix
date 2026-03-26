@@ -1,12 +1,12 @@
 {inputs, ...}: {
-  flake.nixosModules.comms = {pkgs, ...}: {
+  flake.nixosModules.communications = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       signal-desktop
       element-desktop
     ];
   };
 
-  flake.homeModules.comms = {
+  flake.homeModules.communications = {
     imports = [inputs.nixcord.homeModules.nixcord];
     programs.nixcord = {
       enable = true;

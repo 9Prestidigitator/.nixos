@@ -14,7 +14,7 @@
         design
         gaming
         media
-        comms
+        communications
         virtualisation
 
         terminalTools
@@ -49,10 +49,17 @@
         users.max = {
           imports = with self.homeModules; [
             max
-            general
+
             neovim
             terminalTools
+
+            general
             desktop
+
+            essentials
+            gaming
+            media
+            communications
           ];
           home = {
             username = "max";
