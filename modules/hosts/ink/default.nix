@@ -33,9 +33,9 @@
 
         stylix
 
-        grub
-        keyd
         tablet
+        keyd
+        grub
         nvidia
         systemGeneral
 

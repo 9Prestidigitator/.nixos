@@ -32,9 +32,9 @@
   };
 
   flake.homeModules.general = {pkgs, ...}: {
+    gtk.enable = true;
+    qt.enable = true;
     stylix = {
-      gtk.enable = true;
-      qt.enable = true;
       iconTheme = {
         enable = true;
         package = pkgs.kdePackages.breeze;
