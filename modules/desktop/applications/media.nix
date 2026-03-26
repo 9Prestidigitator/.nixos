@@ -12,7 +12,7 @@
       obsidian
       easytag
       mpv
-      makemkv
+      # makemkv # derivation is broken
       handbrake
       ffmpeg
       rmpc
