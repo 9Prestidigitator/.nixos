@@ -1,4 +1,3 @@
-{inputs, ...}:
 {
   perSystem = {pkgs, ...}: {
     devShells.markdown = pkgs.mkShell {

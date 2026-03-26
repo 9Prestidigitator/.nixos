@@ -14,6 +14,7 @@
 
         stylix
 
+        grub
         systemGeneral
 
         vm
