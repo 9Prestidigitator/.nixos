@@ -19,7 +19,7 @@
       prismlauncher
       heroic
       dolphin-emu
-      melonDS
+      melonds
       azahar
     ];
   };
