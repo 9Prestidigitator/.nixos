@@ -33,7 +33,7 @@
         background-color = "transparent";
         focus-ring = {
           enable = true;
-          width = 2.5;
+          width = 2.6;
           active.gradient = {
             angle = 45;
             from = "#${base0B}";

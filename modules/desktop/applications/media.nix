@@ -1,5 +1,12 @@
 {inputs, ...}: {
-  flake.nixosModules.media = {pkgs, ...}: {
+  flake.nixosModules.media = {pkgs, ...}: let
+    pkgsStable = import inputs.nixpkgs-stable {
+      system = pkgs.stdenv.hostPlatform.system;
+      config = {
+        allowUnfree = true;
+      };
+    };
+  in {
     services.printing.drivers = [pkgs.hplipWithPlugin];
     environment.systemPackages = with pkgs; [
       libbluray-full
@@ -9,7 +16,7 @@
       zathura
       calibre
       anki
-      obsidian
+      pkgsStable.obsidian
       easytag
       mpv
       # makemkv # derivation is broken

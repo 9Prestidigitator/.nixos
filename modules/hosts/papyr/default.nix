@@ -22,6 +22,7 @@
 
         buildMachines
         stylix
+        fonts
 
         tablet
         keyd

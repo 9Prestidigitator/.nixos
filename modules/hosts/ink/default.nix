@@ -22,6 +22,7 @@
         mullvad
 
         stylix
+        fonts
 
         tablet
         keyd

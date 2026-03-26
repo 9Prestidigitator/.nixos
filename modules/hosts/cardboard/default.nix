@@ -22,6 +22,7 @@
 
         buildMachines
         stylix
+        fonts
 
         grub
         intel

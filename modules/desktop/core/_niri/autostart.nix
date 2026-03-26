@@ -127,7 +127,7 @@ in {
             }
           ];
           open-on-workspace = "gaming";
-          default-column-width.fixed = 1666;
+          default-column-width.proportion = 0.86;
         }
       ];
     }

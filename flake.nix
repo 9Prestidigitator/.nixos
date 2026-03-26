@@ -31,7 +31,7 @@
 
     niri.url = "github:sodiboo/niri-flake";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
-    noctalia.url = "github:noctalia-dev/noctalia-shell";
+    noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.1";
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";

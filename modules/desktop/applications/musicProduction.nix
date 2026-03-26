@@ -1,5 +1,12 @@
 {inputs, ...}: {
-  flake.nixosModules.musicProduction = {pkgs, ...}: {
+  flake.nixosModules.musicProduction = {pkgs, ...}: let
+    pkgsStable = import inputs.nixpkgs-stable {
+      system = pkgs.stdenv.hostPlatform.system;
+      config = {
+        allowUnfree = true;
+      };
+    };
+  in {
     imports = [
       inputs.musnix.nixosModules.musnix
       inputs.self.nixosModules.overwitch
@@ -27,7 +34,7 @@
       guitarix
       gxplugins-lv2
       dragonfly-reverb
-      # surge
+      pkgsStable.surge
       # Utilities
       musescore
       paulxstretch
