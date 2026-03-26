@@ -1,10 +1,10 @@
 {
   perSystem = {pkgs, ...}: {
-    packages.overwitch = pkgs.callPackage ../packages/overwitch.nix {};
+    packages.overwitch = pkgs.callPackage ../pkgs/overwitch.nix {};
   };
 
   flake.overlays.default = final: prev: {
-    overwitch = final.callPackage ../packages/overwitch.nix {};
+    overwitch = final.callPackage ../pkgs/overwitch.nix {};
   };
 
   flake.nixosModules.overwitch = {
