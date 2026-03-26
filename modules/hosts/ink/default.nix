@@ -50,16 +50,19 @@
       };
 
       imports = [inputs.home-manager.nixosModules.default];
-      home-manager.users.max = {
-        imports = with self.homeModules; [
-          general
-          neovim
-          terminalTools
-        ];
-        home = {
-          username = "max";
-          homeDirectory = "/home/max";
-          stateVersion = "25.11";
+      home-manager = {
+        useGlobalPkgs = true;
+        users.max = {
+          imports = with self.homeModules; [
+            general
+            neovim
+            terminalTools
+          ];
+          home = {
+            username = "max";
+            homeDirectory = "/home/max";
+            stateVersion = "25.11";
+          };
         };
       };
 
