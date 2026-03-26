@@ -38,7 +38,11 @@
       ];
     };
 
-    nixosModules.surface = {pkgs, lib, ...}: let
+    nixosModules.surface = {
+      pkgs,
+      lib,
+      ...
+    }: let
       fetchurl = pkgs.fetchurl;
       commit = "69d1e5826e6380c8ff0cd532e244482097562c3d";
     in {
