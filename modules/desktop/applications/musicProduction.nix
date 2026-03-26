@@ -2,7 +2,7 @@
   flake.nixosModules.musicProduction = {pkgs, ...}: {
     imports = [
       inputs.musnix.nixosModules.musnix
-      # inputs.self.nixosModules.overwitch
+      inputs.self.nixosModules.overwitch
     ];
     musnix.enable = true;
     environment.systemPackages = with pkgs; [
@@ -14,7 +14,7 @@
       wineasio
       yabridge
       yabridgectl
-      # overwitch
+      overwitch
       # DAWs
       bitwig-studio-latest
       reaper
