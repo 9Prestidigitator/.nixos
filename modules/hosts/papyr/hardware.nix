@@ -2,12 +2,7 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  flake.nixosModules.papyr = {
-    config,
-    lib,
-    modulesPath,
-    ...
-  }: {
+  flake.nixosModules.papyr = {config, lib, modulesPath, ...}: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
     ];

@@ -1,7 +1,7 @@
 {inputs, self, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
-    nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = with self.nixosModules; [
         max
@@ -9,33 +9,19 @@
         niri
 
         essentials
-        braveBrowser
-        musicProduction
-        design
-        gaming
-        media
-        comms
-        virtualisation
 
         terminalTools
-        mullvad
 
-        buildMachines
         stylix
 
-        tablet
-        keyd
-        grub
-        intel
         systemGeneral
 
-        papyr
+        vm
       ];
     };
-
-    nixosModules.papyr = {
+    nixosModules.vm = {
       networking = {
-        hostName = "papyr";
+        hostName = "vm";
         networkmanager.enable = true;
       };
 
@@ -59,21 +45,6 @@
             stateVersion = "26.05";
           };
         };
-      };
-
-      services = {
-        blueman.enable = true;
-        fprintd.enable = true;
-      };
-
-      security = {
-        pam.services.login.fprintAuth = true;
-        pam.services.sudo.fprintAuth = true;
-      };
-
-      networking.wg-quick.interfaces.wg0 = {
-        configFile = "/secret/wg0.conf";
-        autostart = false;
       };
     };
   };

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.vm = {pkgs, ...}: {
+  flake.nixosModules.virtualisation = {pkgs, ...}: {
     virtualisation.libvirtd = {
       enable = true;
       qemu = {

@@ -15,7 +15,7 @@
         gaming
         media
         comms
-        vm
+        virtualisation
 
         terminalTools
         mullvad
