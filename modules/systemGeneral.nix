@@ -56,7 +56,7 @@
     nixpkgs = {
       config.allowUnfree = true;
       overlays = [
-        # inputs.self.overlays.default
+        inputs.self.overlays.default
         inputs.audio-nix.overlays.default
         inputs.niri.overlays.niri
       ];

@@ -10,9 +10,7 @@
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {
-        isLaptop = false;
-      };
+      specialArgs = {isLaptop = false;};
       modules = with self.nixosModules; [
         niri
 
