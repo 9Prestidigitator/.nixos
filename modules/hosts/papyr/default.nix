@@ -5,12 +5,11 @@
 }: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
-    nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {isLaptop = false;};
+      specialArgs = {isLaptop = true;};
       modules = with self.nixosModules; [
         max
-        guest
 
         niri
 
@@ -26,6 +25,7 @@
         terminalTools
         mullvad
 
+        buildMachines
         stylix
 
         tablet
@@ -34,14 +34,23 @@
         nvidia
         systemGeneral
 
-        ink
+        papyr
       ];
     };
 
     nixosModules.ink = {pkgs, ...}: {
-      networking = {
-        hostName = "ink";
-        networkmanager.enable = true;
+      networking.hostName = "papyr";
+      networking.networkmanager.enable = true;
+
+      hardware.graphics = {
+        enable = true;
+        extraPackages = with pkgs; [
+          intel-media-driver
+          intel-vaapi-driver
+        ];
+      };
+      environment.sessionVariables = {
+        LIBVA_DRIVER_NAME = "iHD";
       };
 
       imports = [inputs.home-manager.nixosModules.default];
@@ -64,42 +73,28 @@
       boot.kernelParams = ["threadirqs"];
 
       services = {
+        thermald.enable = true;
         blueman.enable = true;
-        hardware.openrgb = {
-          enable = true;
-          package = pkgs.openrgb-with-all-plugins;
-          motherboard = "amd";
-        };
+        fprintd.enable = true;
         logind = {
           settings.Login = {
+            HandleLidSwitch = "suspend";
+            HandleLidSwitchDocked = "ignore";
             HandlePowerKey = "suspend";
           };
         };
       };
 
       security = {
+        pam.services.login.fprintAuth = true;
+        pam.services.sudo.fprintAuth = true;
         polkit.enable = true;
         rtkit.enable = true;
       };
 
-      powerManagement.cpuFreqGovernor = "performance";
-
-      fileSystems = {
-        "/mnt/win" = {
-          device = "/dev/disk/by-uuid/01DC699B1D247C50";
-          fsType = "ntfs-3g";
-          options = ["nofail" "uid=1000" "gid=100" "umask=022"];
-        };
-        "/mnt/1tb_ssd" = {
-          device = "/dev/disk/by-uuid/78174bbc-f96b-4325-87b2-db3cebdf345c";
-          fsType = "ext4";
-          options = ["nofail" "defaults"];
-        };
-        "/mnt/1tb_hdd" = {
-          device = "/dev/disk/by-uuid/7E90B7D790B7945D";
-          fsType = "ntfs-3g";
-          options = ["nofail" "uid=1000" "gid=100" "umask=022"];
-        };
+      networking.wg-quick.interfaces.wg0 = {
+        configFile = "/secret/wg0.conf";
+        autostart = false;
       };
     };
   };
