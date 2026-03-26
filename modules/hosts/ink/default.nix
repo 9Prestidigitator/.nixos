@@ -1,4 +1,5 @@
 {inputs, self, ...}: {
+  imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -42,6 +43,7 @@
       imports = [inputs.home-manager.nixosModules.default];
       home-manager = {
         useGlobalPkgs = true;
+        # extraSpecialArgs = {inherit;};
         users.max = {
           imports = with self.homeModules; [
             max

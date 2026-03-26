@@ -1,4 +1,5 @@
 {inputs, self, ...}: {
+  imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfiguration.surface = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";

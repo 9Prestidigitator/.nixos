@@ -1,8 +1,5 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
+  imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
