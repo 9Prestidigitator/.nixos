@@ -1,6 +1,4 @@
 {inputs, ...}: {
-  flake-file.inputs.steam-config-nix.url = "github:different-name/steam-config-nix";
-
   flake.nixosModules.gaming = {pkgs, ...}: let
     pkgsUnstable = import inputs.nixpkgs-unstable {
       system = pkgs.stdenv.hostPlatform.system;

@@ -38,13 +38,15 @@
             "kitty"
             "org.gnome.Nautilus"
             "brave-browser"
-          ]
-          ++ lib.optionals osConfig.desktop.gaming.enable [
             "steam"
-          ]
-          ++ lib.optionals osConfig.desktop.musicprod.enable [
             "com.bitwig.BitwigStudio"
           ];
+          # ++ lib.optionals osConfig.desktop.gaming.enable [
+          #   "steam"
+          # ]
+          # ++ lib.optionals osConfig.desktop.musicprod.enable [
+          #   "com.bitwig.BitwigStudio"
+          # ];
       };
     };
   };

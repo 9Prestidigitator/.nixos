@@ -1,6 +1,4 @@
 {inputs, ...}: {
-  flake-file.inputs.spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
   flake.nixosModules.media = {pkgs, ...}: {
     services.printing.drivers = [pkgs.hplipWithPlugin];
     environment = let

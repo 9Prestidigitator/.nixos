@@ -1,6 +1,4 @@
 {inputs, ...}: {
-  flake-file.inputs.nixcord.url = "github:kaylorben/nixcord";
-
   flake.nixosModules.comms = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       signal-desktop
