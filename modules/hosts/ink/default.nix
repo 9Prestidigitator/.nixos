@@ -34,7 +34,7 @@
       ];
     };
 
-    nixosModules.ink = {pkgs, ...}: {
+    nixosModules.ink = {pkgs, isLaptop, ...}: {
       networking = {
         hostName = "ink";
         networkmanager.enable = true;
@@ -43,7 +43,9 @@
       imports = [inputs.home-manager.nixosModules.default];
       home-manager = {
         useGlobalPkgs = true;
-        # extraSpecialArgs = {inherit;};
+        useUserPackages = true;
+        backupFileExtension = "backup";
+        extraSpecialArgs = {inherit inputs isLaptop;};
         users.max = {
           imports = with self.homeModules; [
             max

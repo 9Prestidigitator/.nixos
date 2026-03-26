@@ -95,6 +95,7 @@
   flake.homeModules.desktop = {
     imports = [
       inputs.niri.homeModules.config
+      inputs.noctalia
       (inputs.import-tree ./_niri)
     ];
   };
