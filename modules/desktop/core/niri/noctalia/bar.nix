@@ -1,12 +1,4 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  osConfig,
-  isLaptop,
-  ...
-}: {
+{lib, isLaptop, ...}: {
   programs.noctalia-shell = {
     settings = {
       bar = {

@@ -1,10 +1,9 @@
 {inputs, ...}: {
   flake-file.inputs.xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
   flake-file.inputs.noctalia.url = "github:noctalia-dev/noctalia-shell";
+  flake-file.inputs.import-tree.url = "github:vic/import-tree";
 
   flake.nixosModules.niri = {pkgs, ...}: {
-    imports = [./noctalia];
-
     programs.niri = {
       enable = true;
       package = pkgs.niri;
@@ -105,6 +104,7 @@
       ./rules.nix
       ./outputs.nix
       ./autostart.nix
+      (inputs.import-tree ./noctalia)
     ];
   };
 }
