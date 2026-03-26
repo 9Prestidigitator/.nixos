@@ -1,14 +1,5 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
-  cfg = config.desktop;
-  isHyprland = cfg.enable && cfg.wayCompositor == "hyprland";
-in {
-  config = lib.mkIf isHyprland {
+{inputs, ...}: {
+  flake.nixosModules.hyprland = {pkgs, ...}: {
     programs.hyprland = {
       enable = true;
       withUWSM = true;
@@ -39,22 +30,18 @@ in {
       libcava
       material-symbols
     ];
+  };
 
-    home-manager.sharedModules = [
+  flake.homeModules.default = {
+    imports = [
       inputs.caelestia-shell.homeManagerModules.default
-      ./caelestia.nix
-
       {
         wayland.windowManager.hyprland = {
           enable = true;
           systemd.enable = false;
         };
       }
-      ./settings.nix
-      ./binds.nix
-      ./rules.nix
-      ./outputs.nix
-      ./submaps.nix
+      (inputs.import-tree ./_niri)
     ];
   };
 }

@@ -35,7 +35,7 @@
     gtk.enable = true;
     qt.enable = true;
     stylix = {
-      iconTheme = {
+      icons = {
         enable = true;
         package = pkgs.kdePackages.breeze;
         dark = "breeze-dark";

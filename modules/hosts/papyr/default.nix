@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
@@ -38,7 +34,7 @@
       ];
     };
 
-    nixosModules.ink = {pkgs, ...}: {
+    nixosModules.papyr = {pkgs, ...}: {
       networking.hostName = "papyr";
       networking.networkmanager.enable = true;
 
@@ -65,7 +61,7 @@
           home = {
             username = "max";
             homeDirectory = "/home/max";
-            stateVersion = "25.11";
+            stateVersion = "26.05";
           };
         };
       };

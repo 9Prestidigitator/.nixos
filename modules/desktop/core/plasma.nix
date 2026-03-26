@@ -1,14 +1,5 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
-  cfg = config.desktop;
-  isKde = cfg.enable && cfg.wayCompositor == "kde";
-in {
-  config = lib.mkIf isKde {
+{inputs, ...}: {
+  flake.nixosModules.plasma = {pkgs, ...}: {
     services.desktopManager.plasma6 = {
       enable = true;
     };

@@ -1,14 +1,5 @@
 {
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
-  cfg = config.desktop;
-  isI3 = cfg.enable && cfg.x11WM == "i3";
-in {
-  config = lib.mkIf isI3 {
+  flake.nixosModules.i3 = {pkgs, ...}: {
     services = {
       xserver = {
         enable = true;
@@ -49,8 +40,10 @@ in {
         pkgs.xdg-desktop-portal-gtk
       ];
     };
+  };
 
-    home-manager.sharedModules = [
+  flake.homeModules.default = {
+    imports = [
       {
         xsession.windowManager.i3 = {
           enable = true;
