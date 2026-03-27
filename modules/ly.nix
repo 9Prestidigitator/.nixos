@@ -1,6 +1,6 @@
-{inputs, ...}: {
-  flake.nixosModules.ly = {pkgs, ...}: {
-    displayManager.ly = {
+{
+  flake.nixosModules.ly = {
+    services.displayManager.ly = {
       enable = true;
       settings = {
         allow_empty_password = true;
