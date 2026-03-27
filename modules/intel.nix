@@ -6,8 +6,8 @@
         intel-media-driver
         intel-vaapi-driver
       ];
+      cpu.intel.updateMicrocode = true;
     };
-    cpu.intel.updateMicrocode = true;
     environment.sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";
     };
