@@ -6,6 +6,7 @@
       modules = with self.nixosModules; [
         max
 
+        gdm
         gnome
 
         essentials
