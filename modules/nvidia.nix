@@ -18,6 +18,9 @@
         "nvidia_drm.modeset=1"
         "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       ];
+      kernelModules = [
+        "nvidia_uvm"
+      ];
     };
 
     services.xserver = {
