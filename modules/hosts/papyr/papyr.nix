@@ -1,9 +1,9 @@
-{inputs, self, ...}: {
+{inputs, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = with self.nixosModules; [
+      modules = with inputs.self.nixosModules; [
         max
 
         ly
@@ -52,7 +52,7 @@
           isLaptop = true;
         };
         users.max = {
-          imports = with self.homeModules; [
+          imports = with inputs.self.homeModules; [
             max
 
             niri
