@@ -1,11 +1,4 @@
-{
-  config,
-  inputs,
-  lib,
-  osConfig,
-  pkgs,
-  ...
-}: let
+{config, lib, osConfig, pkgs, ...}: let
   mkMenu = menu: let
     configFile =
       pkgs.writeText "config.yaml"
