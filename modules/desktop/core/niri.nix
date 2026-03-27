@@ -37,38 +37,6 @@
       dconf.enable = true;
     };
 
-    xdg = {
-      portal = {
-        enable = true;
-        xdgOpenUsePortal = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gnome
-          xdg-desktop-portal-gtk
-        ];
-        configPackages = [pkgs.niri];
-        config = {
-          common = {
-            default = [
-              "gtk"
-              "gnome"
-            ];
-          };
-        };
-      };
-      mime = {
-        defaultApplications = {
-          "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
-          "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
-          "application/pdf" = [
-            "org.pwmt.zathura.desktop"
-            "com.brave.Browser.desktop"
-          ];
-          "inode/directory" = ["org.gnome.Nautilus.desktop"];
-          "image/png" = ["imv.desktop"];
-        };
-      };
-    };
-
     environment.sessionVariables = {
       XDG_CURRENT_DESKTOP = "niri";
       XDG_SESSION_DESKTOP = "niri";
@@ -105,11 +73,44 @@
     ];
   };
 
-  flake.homeModules.desktop = {
+  flake.homeModules.desktop = {pkgs, ...}: {
     imports = [
       inputs.niri.homeModules.config
       inputs.noctalia.homeModules.default
       (inputs.import-tree ./_niri)
     ];
+
+    xdg = {
+      portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gnome
+          xdg-desktop-portal-gtk
+        ];
+        configPackages = [pkgs.niri];
+        config = {
+          common = {
+            default = [
+              "gtk"
+              "gnome"
+            ];
+          };
+        };
+      };
+      mimeApps = {
+        defaultApplications = {
+          "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
+          "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
+          "application/pdf" = [
+            "org.pwmt.zathura.desktop"
+            "com.brave.Browser.desktop"
+          ];
+          "inode/directory" = ["org.gnome.Nautilus.desktop"];
+          "image/png" = ["imv.desktop"];
+        };
+      };
+    };
+
   };
 }
