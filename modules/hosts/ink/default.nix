@@ -7,6 +7,7 @@
         max
         guest
 
+        ly
         niri
 
         essentials

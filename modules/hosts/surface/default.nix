@@ -13,6 +13,7 @@
 
         terminalTools
         mullvad
+        minecraftServer       
 
         buildMachines
         stylix
@@ -41,10 +42,11 @@
         users.max = {
           imports = with self.homeModules; [
             max
-            general
+
             neovim
             terminalTools
-            desktop
+
+            stylix
           ];
           home = {
             username = "max";

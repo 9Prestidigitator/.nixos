@@ -10,25 +10,14 @@
       accounts-daemon.enable = true;
       gnome.gnome-online-accounts.enable = true;
       gnome.evolution-data-server.enable = true;
-      displayManager.ly = {
-        enable = true;
-        settings = {
-          allow_empty_password = true;
-          animation = "colormix";
-          bigclock = "en";
-          clock = "%c";
-          lang = "en";
-          numlock = true;
-          vi_default_mode = "insert";
-          vi_mode = true;
-        };
-      };
     };
 
     programs = {
       evolution.enable = true;
       dconf.enable = true;
     };
+
+    programs.kdeconnect.enable = true;
 
     xdg = {
       portal = {
@@ -67,8 +56,6 @@
       NIXOS_OZONE_WL = "1";
     };
 
-    programs.kdeconnect.enable = true;
-
     environment.systemPackages = with pkgs; [
       (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {calendarSupport = true;})
       inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -101,7 +88,7 @@
     imports = [
       inputs.niri.homeModules.config
       inputs.noctalia.homeModules.default
-      (inputs.import-tree ./_niri)
+      (inputs.import-tree ./_config)
     ];
   };
 }

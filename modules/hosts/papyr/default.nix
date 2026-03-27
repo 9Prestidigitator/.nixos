@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
@@ -10,6 +6,7 @@
       modules = with self.nixosModules; [
         max
 
+        ly
         niri
 
         essentials
