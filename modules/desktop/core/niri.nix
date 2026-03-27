@@ -1,5 +1,12 @@
 {inputs, ...}: {
-  flake.nixosModules.niri = {pkgs, ...}: {
+  flake.nixosModules.niri = {pkgs, ...}: let
+    pkgsStable = import inputs.nixpkgs-stable {
+      system = pkgs.stdenv.hostPlatform.system;
+      config = {
+        allowUnfree = true;
+      };
+    };
+  in {
     programs.niri = {
       enable = true;
       package = pkgs.niri;
@@ -34,7 +41,7 @@
       portal = {
         enable = true;
         xdgOpenUsePortal = true;
-        extraPortals = with pkgs; [
+        extraPortals = with pkgsStable; [
           xdg-desktop-portal-gnome
           xdg-desktop-portal-gtk
         ];
