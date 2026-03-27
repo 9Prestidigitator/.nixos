@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
