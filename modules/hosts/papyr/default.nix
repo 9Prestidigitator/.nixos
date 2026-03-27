@@ -23,6 +23,7 @@
 
         terminalTools
         mullvad
+        syncthing
 
         buildMachines
         stylix

@@ -24,6 +24,7 @@
 
         terminalTools
         mullvad
+        syncthing
 
         stylix
         fonts
