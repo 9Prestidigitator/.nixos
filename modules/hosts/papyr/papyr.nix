@@ -6,7 +6,7 @@
       modules = with inputs.self.nixosModules; [
         max
 
-        gdm
+        ly
         niri
 
         essentials
