@@ -5,8 +5,11 @@
       keyboards.default = {
         ids = [
           "*"
+          # qmk boards
           "-cb10:8256"
           "-3434:0430"
+          # mouse
+          "-1038:1836"
         ];
         settings = {
           main = {
@@ -33,6 +36,7 @@
         };
       };
 
+      # Adding for QMK boards
       keyboards.qmk = {
         ids = [
           "cb10:8256"
