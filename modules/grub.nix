@@ -11,6 +11,7 @@
           theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
         };
       };
+      plymouth.enable = true;
     };
   };
 }

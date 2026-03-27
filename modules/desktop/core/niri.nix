@@ -7,6 +7,9 @@
 
     # Probably going to change. Doesn't fit noctalia
     services = {
+      accounts-daemon.enable = true;
+      gnome.gnome-online-accounts.enable = true;
+      gnome.evolution-data-server.enable = true;
       displayManager.ly = {
         enable = true;
         settings = {
@@ -20,9 +23,6 @@
           vi_mode = true;
         };
       };
-      accounts-daemon.enable = true;
-      gnome.gnome-online-accounts.enable = true;
-      gnome.evolution-data-server.enable = true;
     };
 
     programs = {
@@ -33,15 +33,19 @@
     xdg = {
       portal = {
         enable = true;
-        configPackages = [
-          pkgs.niri
-        ];
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
-          pkgs.xdg-desktop-portal-gtk
-        ];
-        config.common.default = ["gnome" "gtk"];
         xdgOpenUsePortal = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gnome
+          xdg-desktop-portal-gtk
+        ];
+        config = {
+          common = {
+            default = [
+              "gtk"
+              "gnome"
+            ];
+          };
+        };
       };
       mime = {
         defaultApplications = {

@@ -88,7 +88,7 @@
       mouse = true;
       plugins = with pkgs; [
         tmuxPlugins.resurrect
-        tmuxPlugins.tmux-nova
+        tmuxPlugins.nord
       ];
       escapeTime = 0;
       extraConfig = ''
@@ -105,6 +105,8 @@
         set-option -g focus-events on
         set-option -g status-position top
         set-option -g status-style bg=default
+
+
       '';
     };
 

@@ -47,7 +47,7 @@
     ];
   };
 
-  flake.homeModules.essentials = {
+  flake.homeModules.essentials = {pkgs, ...}: {
     xdg = {
       userDirs = {
         enable = true;
@@ -55,6 +55,7 @@
       };
       terminal-exec = {
         enable = true;
+        package = pkgs.xdg-terminal-exec;
         settings.default = ["kitty.desktop"];
       };
     };

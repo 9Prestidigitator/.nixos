@@ -28,9 +28,7 @@ in {
             "-e"
             "sh"
             "-c"
-            ''
-              cd ~/notes && nix develop -c sh -c nvim
-            ''
+            ''cd ~/notes && nix develop -c sh -c nvim''
           ];
         }
       ];
@@ -56,9 +54,7 @@ in {
             "-e"
             "sh"
             "-c"
-            ''
-              cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md -c sh -c nvim
-            ''
+            ''cd ~/notes && nix develop ${config.home.homeDirectory}/.nixos#md -c sh -c nvim''
           ];
         }
       ];
