@@ -31,7 +31,7 @@
     };
   };
 
-  flake.homeModules.general = {pkgs, ...}: {
+  flake.homeModules.stylix = {pkgs, ...}: {
     gtk.enable = true;
     qt.enable = true;
     stylix = {

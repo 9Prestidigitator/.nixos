@@ -32,16 +32,15 @@
     ];
   };
 
-  flake.homeModules.desktop = {
+  flake.homeModules.hyprland = {
     imports = [
       inputs.caelestia-shell.homeManagerModules.default
-      {
-        wayland.windowManager.hyprland = {
-          enable = true;
-          systemd.enable = false;
-        };
-      }
       (inputs.import-tree ./_niri)
     ];
+
+    wayland.windowManager.hyprland = {
+      enable = true;
+      systemd.enable = false;
+    };
   };
 }

@@ -57,11 +57,12 @@
           imports = with self.homeModules; [
             max
 
+            niri
+
             neovim
             terminalTools
 
-            general
-            desktop
+            stylix
 
             essentials
             gaming

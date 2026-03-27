@@ -384,6 +384,11 @@ in {
             desc = "Restart Xwayland Satellite";
             cmd = "systemctl --user restart xwayland-satellite";
           }
+          {
+            key = "G";
+            desc = "Restart xdg-desktop-portal-gnome";
+            cmd = "systemctl --user restart xdg-desktop-portal-gnome.service";
+          }
         ]);
 
         "Mod+Left".action = focus-column-left;

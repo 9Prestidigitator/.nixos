@@ -1,12 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.niri = {pkgs, ...}: let
-    pkgsStable = import inputs.nixpkgs-stable {
-      system = pkgs.stdenv.hostPlatform.system;
-      config = {
-        allowUnfree = true;
-      };
-    };
-  in {
+  flake.nixosModules.niri = {pkgs, ...}: {
     programs.niri = {
       enable = true;
       package = pkgs.niri;
@@ -35,6 +28,37 @@
     programs = {
       evolution.enable = true;
       dconf.enable = true;
+    };
+
+    xdg = {
+      portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gnome
+          xdg-desktop-portal-gtk
+        ];
+        config = {
+          common = {
+            default = [
+              "gtk"
+              "gnome"
+            ];
+          };
+        };
+      };
+      mime = {
+        defaultApplications = {
+          "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
+          "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
+          "application/pdf" = [
+            "org.pwmt.zathura.desktop"
+            "com.brave.Browser.desktop"
+          ];
+          "inode/directory" = ["org.gnome.Nautilus.desktop"];
+          "image/png" = ["imv.desktop"];
+        };
+      };
     };
 
     environment.sessionVariables = {
@@ -73,44 +97,11 @@
     ];
   };
 
-  flake.homeModules.desktop = {pkgs, ...}: {
+  flake.homeModules.niri = {pkgs, ...}: {
     imports = [
       inputs.niri.homeModules.config
       inputs.noctalia.homeModules.default
       (inputs.import-tree ./_niri)
     ];
-
-    xdg = {
-      portal = {
-        enable = true;
-        xdgOpenUsePortal = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gnome
-          xdg-desktop-portal-gtk
-        ];
-        configPackages = [pkgs.niri];
-        config = {
-          common = {
-            default = [
-              "gtk"
-              "gnome"
-            ];
-          };
-        };
-      };
-      mimeApps = {
-        defaultApplications = {
-          "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
-          "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
-          "application/pdf" = [
-            "org.pwmt.zathura.desktop"
-            "com.brave.Browser.desktop"
-          ];
-          "inode/directory" = ["org.gnome.Nautilus.desktop"];
-          "image/png" = ["imv.desktop"];
-        };
-      };
-    };
-
   };
 }

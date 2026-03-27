@@ -39,10 +39,13 @@
         users.max = {
           imports = with self.homeModules; [
             max
-            general
+
+            niri
+
             neovim
             terminalTools
-            desktop
+
+            stylix
           ];
           home = {
             username = "max";
