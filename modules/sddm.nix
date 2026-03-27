@@ -1,10 +1,21 @@
 {
-  flake.nixosModules.sddm = {pkgs, ...}: {
+  flake.nixosModules.sddm = {pkgs, ...}: let
+    custom = pkgs.sddm-astronaut.override {
+      embeddedTheme = "black_hole";
+    };
+  in {
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      settings.General.DisplayServer = "wayland";
+      settings = {
+        General.DisplayServer = "wayland";
+        Theme = {
+          Current = "sddm-astronaut-theme";
+          CursorTheme = "breeze_cursors";
+        };
+      };
       theme = "sddm-astronaut-theme";
+      extraPackages = [custom];
     };
 
     environment.systemPackages = with pkgs; [
@@ -14,21 +25,5 @@
     fonts.packages = with pkgs; [
       inter
     ];
-
-    environment.etc."sddm.conf.d/10-theme.conf".text = ''
-      [Theme]
-      Current=sddm-astronaut-theme
-
-      [General]
-      InputMethod=
-
-      [Users]
-      RememberLastUser=true
-      RememberLastSession=true
-    '';
-    #[Wayland]
-    #SessionDir=/run/current-system/sw/share/wayland-sessions
-    #[X11]
-    #SessionDir=/run/current-system/sw/share/xsessions
   };
 }
