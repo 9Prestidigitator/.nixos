@@ -40,19 +40,19 @@
     xdg = {
       portal = {
         enable = true;
-        xdgOpenUsePortal = true;
-        extraPortals = with pkgsStable; [
+        # xdgOpenUsePortal = true;
+        extraPortals = with pkgs; [
           xdg-desktop-portal-gnome
           xdg-desktop-portal-gtk
         ];
-        config = {
-          common = {
-            default = [
-              "gtk"
-              "gnome"
-            ];
-          };
-        };
+        # config = {
+        #   common = {
+        #     default = [
+        #       "gtk"
+        #       "gnome"
+        #     ];
+        #   };
+        # };
       };
       mime = {
         defaultApplications = {
