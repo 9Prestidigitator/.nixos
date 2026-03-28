@@ -16,7 +16,6 @@
             mouse2 = "leftmeta";
             mouse1 = "esc";
             capslock = "overload(mod5, esc)";
-            leftmeta = "overload(meta, favorites)";
           };
           mod5 = {
             h = "left";
@@ -32,19 +31,6 @@
           };
           "mod5+shift" = {
             g = "end";
-          };
-        };
-      };
-
-      # Adding for QMK boards
-      keyboards.qmk = {
-        ids = [
-          "cb10:8256"
-          "3434:0430"
-        ];
-        settings = {
-          main = {
-            leftmeta = "overload(meta, favorites)";
           };
         };
       };
