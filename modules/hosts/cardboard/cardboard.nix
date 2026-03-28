@@ -52,6 +52,10 @@
             terminalTools
 
             stylix
+
+            essentials
+            media
+            communications
           ];
           home = {
             username = "max";
