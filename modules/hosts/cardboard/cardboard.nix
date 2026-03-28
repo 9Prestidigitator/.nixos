@@ -47,8 +47,6 @@
         users.max = {
           imports = with self.homeModules; [
             max
-            
-            niri
 
             neovim
             terminalTools
