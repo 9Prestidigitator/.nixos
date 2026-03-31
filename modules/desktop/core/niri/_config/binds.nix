@@ -6,7 +6,6 @@
   ...
 }: let
   noctalia = cmd: "noctalia-shell ipc call ${cmd}";
-  noctaliaArgs = args: ["noctalia-shell" "ipc" "call"] ++ args;
 in {
   imports = [inputs.self.homeModules.wlr-which-key];
   programs.niri.settings.binds = with config.lib.niri.actions; {
@@ -231,15 +230,15 @@ in {
     "Mod+Escape" = {
       hotkey-overlay.title = "Lock";
       allow-when-locked = true;
-      action.spawn = noctaliaArgs ["lockScreen" "lock"];
+      action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
     };
     "Mod+Space" = {
       hotkey-overlay.title = "Toggle launcher";
-      action.spawn = noctaliaArgs ["launcher" "toggle"];
+      action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
     };
     "Mod+z" = {
       hotkey-overlay.title = "Dashboard";
-      action.spawn = noctaliaArgs ["controlCenter" "toggle"];
+      action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
     };
     "Ctrl+Shift+Escape" = {
       hotkey-overlay.title = "btop";
@@ -327,17 +326,17 @@ in {
     "XF86Tools" = {
       hotkey-overlay.title = "Lock";
       allow-when-locked = true;
-      action = spawn noctaliaArgs ["lockScreen" "lock"];
+      action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
     };
     "Mod+XF86Tools" = {
       hotkey-overlay.title = "Session Actions";
       allow-when-locked = false;
-      action = spawn noctaliaArgs ["sessionMenu" "toggle"];
+      action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
     };
     "XF86Favorites" = {
       hotkey-overlay.title = "Dashboard";
       allow-when-locked = false;
-      action = spawn noctaliaArgs ["controlCenter" "toggle"];
+      action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
     };
     "XF86Display" = {
       hotkey-overlay.title = "Power off monitors";
@@ -676,7 +675,7 @@ in {
     };
     "Mod+Alt+Delete" = {
       hotkey-overlay.title = "Session Options";
-      action = spawn noctaliaArgs ["sessionMenu" "toggle"];
+      action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
     };
 
     "Mod+Shift+P".action = power-off-monitors;
