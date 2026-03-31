@@ -1,12 +1,4 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  osConfig,
-  isLaptop,
-  ...
-}: {
+{lib, ...}: {
   programs.noctalia-shell = {
     settings = {
       dock = {
@@ -33,20 +25,19 @@
         launcherUseDistroLogo = true;
         launcherPosition = "start";
         launcherIconColor = "none";
-        pinnedApps =
-          [
-            "kitty"
-            "org.gnome.Nautilus"
-            "brave-browser"
-            "steam"
-            "com.bitwig.BitwigStudio"
-          ];
-          # ++ lib.optionals osConfig.desktop.gaming.enable [
-          #   "steam"
-          # ]
-          # ++ lib.optionals osConfig.desktop.musicprod.enable [
-          #   "com.bitwig.BitwigStudio"
-          # ];
+        pinnedApps = [
+          "kitty"
+          "org.gnome.Nautilus"
+          "brave-browser"
+          "steam"
+          "com.bitwig.BitwigStudio"
+        ];
+        # ++ lib.optionals osConfig.desktop.gaming.enable [
+        #   "steam"
+        # ]
+        # ++ lib.optionals osConfig.desktop.musicprod.enable [
+        #   "com.bitwig.BitwigStudio"
+        # ];
       };
     };
   };

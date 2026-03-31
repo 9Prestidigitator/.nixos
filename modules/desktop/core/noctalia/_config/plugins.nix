@@ -1,10 +1,4 @@
 {
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
-}: {
   programs.noctalia-shell = {
     plugins = {
       sources = [

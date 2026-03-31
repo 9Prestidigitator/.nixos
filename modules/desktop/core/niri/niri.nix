@@ -1,15 +1,15 @@
 {inputs, ...}: {
   flake.nixosModules.niri = {pkgs, ...}: {
+    imports = [inputs.self.nixosModules.noctalia];
     programs.niri = {
       enable = true;
       package = pkgs.niri;
     };
 
-    # Probably going to change. Doesn't fit noctalia
     services = {
       accounts-daemon.enable = true;
       gnome.gnome-online-accounts.enable = true;
-      gnome.evolution-data-server.enable = true;
+
       # Making super key tap-able
       keyd = {
         keyboards.default.settings.main.leftmeta = "overload(meta, favorites)";
@@ -66,37 +66,20 @@
     };
 
     environment.systemPackages = with pkgs; [
-      (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {calendarSupport = true;})
       inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
       seahorse
       polkit_gnome
-      gpu-screen-recorder
       wl-clipboard
-      wl-mirror
-      wlsunset
-      kdePackages.breeze-icons
       linux-wallpaperengine
-      xdg-desktop-portal-gnome
-      cliphist
       pulseaudio
       imv
-      kdePackages.qttools
-      grim
-      slurp
-      tesseract
-      imagemagick
-      zbar
-      curl
-      translate-shell
-      wf-recorder
-      gifski
     ];
   };
 
-  flake.homeModules.niri = {pkgs, ...}: {
+  flake.homeModules.niri = {
     imports = [
+      inputs.self.homeModules.noctalia
       inputs.niri.homeModules.config
-      inputs.noctalia.homeModules.default
       (inputs.import-tree ./_config)
     ];
   };

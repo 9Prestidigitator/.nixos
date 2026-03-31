@@ -4,13 +4,6 @@
   isLaptop,
   ...
 }: {
-  wayland.systemd.target = "niri.service";
-
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
-  };
-
   programs.noctalia-shell = {
     enable = true;
     settings = {
