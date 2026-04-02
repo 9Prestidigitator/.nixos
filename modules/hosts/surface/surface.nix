@@ -13,7 +13,6 @@
         braveBrowser
 
         terminalTools
-        mullvad
         minecraftServer       
 
         buildMachines

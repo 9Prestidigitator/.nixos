@@ -100,7 +100,7 @@
         bind-key J swap-window -t -1 -d
         bind-key K swap-window -t +1 -d
         bind-key Tab switch-client -l
-        bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -selection clipboard"
+        bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
         set-option -g set-clipboard on
         set-option -g focus-events on
         set-option -g status-position top
