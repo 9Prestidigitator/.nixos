@@ -12,6 +12,35 @@
         openFirewall = true;
       };
     };
+
+    xdg.mime.defaultApplications = {
+      "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
+      "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
+      "application/pdf" = ["org.pwmt.zathura.desktop"];
+      "inode/directory" = ["org.gnome.Nautilus.desktop"];
+      "image/png" = ["imv.desktop"];
+      "image/jpg" = ["imv.desktop"];
+      "image/jpeg" = ["imv.desktop"];
+      "application/zip" = ["org.gnome.FileRoller.desktop"];
+      "application/vnd.rar" = ["org.gnome.FileRoller.desktop"];
+      "application/x-7z-compressed" = ["org.gnome.FileRoller.desktop"];
+      "application/x-tar" = ["org.gnome.FileRoller.desktop"];
+      "application/x-xz" = ["org.gnome.FileRoller.desktop"];
+      "application/gzip" = ["org.gnome.FileRoller.desktop"];
+      "application/x-bzip2" = ["org.gnome.FileRoller.desktop"];
+      "audio/mpeg" = ["dog.unix.cantata.Cantata.desktop"];
+      "audio/flac" = ["dog.unix.cantata.Cantata.desktop"];
+      "audio/ogg" = ["dog.unix.cantata.Cantata.desktop"];
+      "audio/wav" = ["dog.unix.cantata.Cantata.desktop"];
+      "audio/x-wav" = ["dog.unix.cantata.Cantata.desktop"];
+      "audio/mp3" = ["dog.unix.cantata.Cantata.desktop"];
+      "audio/x-mp3" = ["dog.unix.cantata.Cantata.desktop"];
+      "video/mp4" = ["mpv.desktop"];
+      "video/webm" = ["mpv.desktop"];
+      "video/x-matroska" = ["mpv.desktop"];
+      "video/x-msvideo" = ["mpv.desktop"];
+    };
+
     environment.systemPackages = with pkgs; [
       kitty
       nautilus

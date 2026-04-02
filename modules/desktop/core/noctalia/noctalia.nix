@@ -17,6 +17,7 @@
       imagemagick
       zbar
       curl
+      jq
       translate-shell
       wf-recorder
       gifski

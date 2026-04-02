@@ -1,7 +1,7 @@
 {inputs, self, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
-    nixosConfiguration.surface = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.surface = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = with self.nixosModules; [
         max

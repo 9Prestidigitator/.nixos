@@ -9,7 +9,6 @@
     services = {
       accounts-daemon.enable = true;
       gnome.gnome-online-accounts.enable = true;
-
       # Making super key tap-able
       keyd = {
         keyboards.default.settings.main.leftmeta = "overload(meta, favorites)";
@@ -28,35 +27,17 @@
       dconf.enable = true;
     };
 
-    xdg = {
-      portal = {
-        enable = true;
-        xdgOpenUsePortal = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gnome
-          xdg-desktop-portal-gtk
-        ];
-        config = {
-          common = {
-            default = [
-              "gtk"
-              "gnome"
-            ];
-          };
-        };
-      };
-      mime = {
-        defaultApplications = {
-          "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
-          "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
-          "application/pdf" = [
-            "org.pwmt.zathura.desktop"
-            "com.brave.Browser.desktop"
-          ];
-          "inode/directory" = ["org.gnome.Nautilus.desktop"];
-          "image/png" = ["imv.desktop"];
-        };
-      };
+    xdg.portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+      ];
+      config.common.default = [
+        "gtk"
+        "gnome"
+      ];
     };
 
     environment.sessionVariables = {
@@ -73,6 +54,7 @@
       linux-wallpaperengine
       pulseaudio
       imv
+      file-roller
     ];
   };
 
