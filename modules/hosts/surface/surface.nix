@@ -98,8 +98,10 @@
 
       services = {
         udev.packages = with pkgs; [iptsd surface-control];
-        blueman.enable = false;
+        blueman.enable = true;
       };
+
+      hardware.sensor.iio.enable = true;
 
       powerManagement.cpuFreqGovernor = "performance";
 
