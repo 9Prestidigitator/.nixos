@@ -37,13 +37,12 @@
         customLaunchPrefixEnabled = false;
         enableClipboardHistory = true;
         pinnedExecs = [];
-        position =
-          if isLaptop
-          then "top_center"
-          else "follow_bar";
+        position = "bottom_center";
         sortByMostUsed = true;
         terminalCommand = "kitty -e";
         useApp2Unit = false;
+        density = "compact";
+        overviewLayer = true;
       };
       plugins = {
         autoUpdate = false;
