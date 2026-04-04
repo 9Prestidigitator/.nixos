@@ -43,6 +43,8 @@
           imports = with self.homeModules; [
             max
 
+            gnome
+
             neovim
             terminalTools
 
