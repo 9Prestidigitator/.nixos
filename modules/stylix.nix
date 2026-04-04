@@ -24,6 +24,12 @@
           name = "Hack Nerd Font Mono";
         };
       };
+      icons = {
+        enable = true;
+        package = pkgs.kdePackages.breeze;
+        dark = "breeze-dark";
+        light = "breeze";
+      };
       opacity = {
         desktop = 0.85;
         terminal = 0.85;
@@ -31,16 +37,8 @@
     };
   };
 
-  flake.homeModules.stylix = {pkgs, ...}: {
-    gtk.enable = true;
-    qt.enable = true;
+  flake.homeModules.stylix = {
     stylix = {
-      icons = {
-        enable = true;
-        package = pkgs.kdePackages.breeze;
-        dark = "breeze-dark";
-        light = "breeze";
-      };
       targets = {
         spicetify.enable = false;
         neovim.enable = false;
