@@ -90,6 +90,10 @@
         "_" = "multiply pitch 0.94387431268";
 
         "\\" = "set pitch 1.0";
+
+        "Alt+3" = "set pitch 0.9818181818; show-text \"A=432\"";
+        "Alt+4" = "set pitch 1.0; show-text \"pitch reset\"";
+        "Alt+5" = "set pitch 1.0185185185; show-text \"A=440\"";
       };
     };
   };
