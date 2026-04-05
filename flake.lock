@@ -484,11 +484,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1775409748,
-        "narHash": "sha256-ZaHi5nV9IokZRFTr7V241pBhxmiIFN8xnB1ByDwKOOY=",
+        "lastModified": 1775413012,
+        "narHash": "sha256-PQeeD7rjEsuMKw6pqlX557extGtn3yeCb77bgtlXcs8=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "beaf4eb7420f08a7eb9bf85ea83c2a67e99bc632",
+        "rev": "1bb0496a7954f717468532bfc99188bbeb050963",
         "type": "github"
       },
       "original": {
