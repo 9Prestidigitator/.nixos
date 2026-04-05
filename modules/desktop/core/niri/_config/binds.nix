@@ -138,6 +138,21 @@ in {
             desc = "MPD";
             cmd = noctalia "plugin togglePanel mpd";
           }
+          {
+            key = "d";
+            desc = "Mirror";
+            cmd = noctalia "plugin togglePanel mirror-mirror";
+          }
+          {
+            key = "y";
+            desc = "Music Search";
+            cmd = noctalia "plugin togglePanel music-search";
+          }
+          {
+            ken = "t";
+            desc = "Syncthing";
+            cmd = noctalia "plugin togglePanel syncthing-status";
+          }
         ];
       }
       {
@@ -227,6 +242,7 @@ in {
         cmd = noctalia "settings toggleTab plugins";
       }
     ];
+
     "Mod+Escape" = {
       hotkey-overlay.title = "Lock";
       allow-when-locked = true;

@@ -85,6 +85,18 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        music-search = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        mirror-mirror = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        syncthing-status = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
       };
       version = 1;
     };
@@ -103,6 +115,7 @@
         show_suggestions = true;
         max_results = 5;
       };
+      syncthing-status.configPath = "~/.config/syncthing/config.xml";
       custom-commands = {
         commands = [
           {
