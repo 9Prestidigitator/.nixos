@@ -149,7 +149,7 @@ in {
             cmd = noctalia "plugin togglePanel music-search";
           }
           {
-            ken = "t";
+            key = "t";
             desc = "Syncthing";
             cmd = noctalia "plugin togglePanel syncthing-status";
           }
