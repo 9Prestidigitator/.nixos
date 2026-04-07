@@ -97,6 +97,10 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        linux-wallpaperengine-controller = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
       };
       version = 1;
     };
@@ -116,6 +120,10 @@
         max_results = 5;
       };
       syncthing-status.configPath = "~/.config/syncthing/config.xml";
+      linux-wallpaperengine-controller = {
+        wallpapersFolder = "~/.steam/steam/steamapps/workshop/content/431960/";
+        defaultFullscreenPauseOnlyActive = true;
+      };
       custom-commands = {
         commands = [
           {
