@@ -1,11 +1,4 @@
 {
-  config,
-  inputs,
-  lib,
-  osConfig,
-  isLaptop,
-  ...
-}: {
   programs.caelestia = {
     enable = true;
     systemd = {
@@ -40,10 +33,7 @@
         };
       };
       bar.status = {
-        showBattery =
-          if isLaptop
-          then true
-          else false;
+        showBattery = true;
       };
       paths.wallpaperDir = "~/Pictures/Wallpapers";
     };

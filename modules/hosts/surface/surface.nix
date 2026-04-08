@@ -22,6 +22,7 @@
         grub
         intel
         systemGeneral
+        nix
 
         surface
       ];

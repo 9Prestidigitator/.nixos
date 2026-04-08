@@ -1,9 +1,5 @@
-{inputs, ...}: {
-  flake.nixosModules.systemGeneral = {
-    pkgs,
-    lib,
-    ...
-  }: {
+{
+  flake.nixosModules.systemGeneral = {pkgs, lib, ...}: {
     boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
 
     time.timeZone = "US/Eastern";
@@ -61,32 +57,6 @@
       };
       udev.extraRules = ''KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"'';
       printing.enable = true;
-    };
-
-    programs = {
-      nh.enable = true;
-      nix-ld.enable = true;
-    };
-
-    nixpkgs = {
-      config.allowUnfree = true;
-      overlays = [
-        inputs.self.overlays.default
-        inputs.audio-nix.overlays.default
-        inputs.niri.overlays.niri
-      ];
-    };
-    nix = {
-      gc = {
-        automatic = lib.mkDefault true;
-        dates = lib.mkDefault "weekly";
-        options = lib.mkDefault "--delete-older-than 7d";
-      };
-      settings = {
-        experimental-features = ["nix-command" "flakes"];
-        allowed-users = ["@wheel"];
-        trusted-users = ["@wheel" "nixremote"];
-      };
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,

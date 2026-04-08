@@ -4,9 +4,6 @@
       dock = {
         enabled = true;
         position = "bottom";
-        # if isLaptop
-        # then "bottom"
-        # else "left";
         backgroundOpacity = lib.mkForce 0.15;
         floatingRatio = 0.4;
         size = 0.9;

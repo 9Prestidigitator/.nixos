@@ -31,6 +31,7 @@
         grub
         intel
         systemGeneral
+        nix
 
         papyr
       ];

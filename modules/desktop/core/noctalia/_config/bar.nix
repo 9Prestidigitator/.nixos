@@ -1,4 +1,4 @@
-{lib, isLaptop, ...}: {
+{lib, ...}: {
   programs.noctalia-shell = {
     settings = {
       bar = {
@@ -8,10 +8,7 @@
         floating = true;
         marginVertical = 9;
         marginHorizontal = 9;
-        position =
-          if isLaptop
-          then "left"
-          else "top";
+        position = "top";
         displayMode = "auto_hide";
         autoHideDelay = 500;
         autoShowDelay = 150;
@@ -22,41 +19,32 @@
         backgroundOpacity = lib.mkForce 0;
         showOnWorkspaceSwitch = true;
         widgets = {
-          left =
-            []
-            ++ lib.optional isLaptop {
+          left = [
+            {
+              id = "TaskbarGrouped";
+              characterCount = 2;
+              colorizeIcons = false;
+              hideUnoccupied = true;
+              labelMode = "index";
+              showNumbersOnlyWhenOccupied = true;
+              showWorkspaceNumbers = false;
+              iconScale = 0.85;
+              groupedBorderOpacity = 0.5;
+              unfocusedIconsOpacity = 0.9;
+            }
+            {
+              id = "plugin:catwalk";
+            }
+          ];
+          center = [
+            {
               id = "ControlCenter";
               colorizeDistroLogo = false;
               customIconPath = "";
               icon = "";
               useDistroLogo = true;
             }
-            ++ [
-              {
-                id = "TaskbarGrouped";
-                characterCount = 2;
-                colorizeIcons = false;
-                hideUnoccupied = true;
-                labelMode = "index";
-                showNumbersOnlyWhenOccupied = true;
-                showWorkspaceNumbers = false;
-                iconScale = 0.85;
-                groupedBorderOpacity = 0.5;
-                unfocusedIconsOpacity = 0.9;
-              }
-              {
-                id = "plugin:catwalk";
-              }
-            ];
-          center =
-            []
-            ++ lib.optional (!isLaptop) {
-              id = "ControlCenter";
-              colorizeDistroLogo = false;
-              customIconPath = "";
-              icon = "";
-              useDistroLogo = true;
-            };
+          ];
           right = [
             {
               blacklist = [];

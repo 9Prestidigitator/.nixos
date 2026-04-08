@@ -27,6 +27,7 @@
         grub
         intel
         systemGeneral
+        nix
 
         cardboard
       ];

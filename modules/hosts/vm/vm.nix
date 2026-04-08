@@ -20,6 +20,7 @@
 
         grub
         systemGeneral
+        nix
 
         vm
       ];

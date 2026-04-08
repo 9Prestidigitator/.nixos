@@ -153,6 +153,11 @@ in {
             desc = "Syncthing";
             cmd = noctalia "plugin togglePanel syncthing-status";
           }
+          {
+            key = "w";
+            desc = "Wallpaper Engine";
+            cmd = noctalia "plugin togglePanel linux-wallpaperengine-controller";
+          }
         ];
       }
       {

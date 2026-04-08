@@ -31,6 +31,7 @@
         grub
         nvidia
         systemGeneral
+        nix
 
         ink
       ];
