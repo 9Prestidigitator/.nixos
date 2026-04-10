@@ -109,6 +109,11 @@ in {
             cmd = noctalia "plugin openPanel privacy-indicator";
           }
           {
+            key = "P";
+            desc = "Port Monitor";
+            cmd = noctalia "plugin togglePanel port-monitor";
+          }
+          {
             key = "n";
             desc = "Notepad";
             cmd = noctalia "plugin togglePanel notes-scratchpad";

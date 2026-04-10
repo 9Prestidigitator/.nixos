@@ -32,7 +32,16 @@
     config,
     osConfig,
     ...
-  }: {
+  }: let
+    logoLarge = pkgs.fetchurl {
+      url = "https://gitlab.com/ntgn/ascii-art/-/raw/main/src/nixos_wrath.txt";
+      hash = "sha256-dsZU4FzxdsJWRnNmCiruojZQAL01jFOQsj13hoSNvTY=";
+    };
+    logoSmall = pkgs.fetchurl {
+      url = "https://gitlab.com/ntgn/ascii-art/-/raw/main/src/nixos_logo.txt";
+      hash = "sha256-kr3HHVkuBxHoXakIgcotcr0/NtLUAQWutu+gxhZ4s1g=";
+    };
+  in {
     programs.kitty = {
       enable = true;
       settings = {
@@ -71,11 +80,9 @@
       # fastfetch
       initExtra = ''
         clear
-        if [[ $(tput cols) -ge 102 ]]; then
-          [ $(tput lines) -ge 30 ] && fastfetch --logo-padding-left $((($(tput cols) - 102) / 2))
-        else
-          [ $(tput lines) -ge 30 ] && fastfetch --logo none
-        fi
+        [ $(tput lines) -ge 110 ] && fastfetch --logo-padding-left $((($(tput cols) - 110) / 2))
+        [ $(tput lines) -ge 55 ] && [ $(tput lines) -lt 110 ] && ${logoSmall} | fastfetch --file-raw - --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 82) / 2)) --logo-padding-right 2
+        [ $(tput lines) -lt 55 ] && fastfetch --logo none
         eval "$(starship init bash)"
       '';
     };
@@ -105,17 +112,13 @@
         set-option -g focus-events on
         set-option -g status-position top
         set-option -g status-style bg=default
-
-
       '';
     };
 
     programs.fastfetch = {
       enable = true;
       settings = {
-        logo = {
-          source = "nixos";
-        };
+        logo.source = logoLarge;
         display = {
           separator = "";
         };
