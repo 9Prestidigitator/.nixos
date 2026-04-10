@@ -80,9 +80,9 @@
       # fastfetch
       initExtra = ''
         clear
-        [ $(tput lines) -ge 110 ] && fastfetch --logo-padding-left $((($(tput cols) - 110) / 2))
-        [ $(tput lines) -ge 55 ] && [ $(tput lines) -lt 110 ] && ${logoSmall} | fastfetch --file-raw - --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 82) / 2)) --logo-padding-right 2
-        [ $(tput lines) -lt 55 ] && fastfetch --logo none
+        [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
+        [ $(tput cols) -ge 55 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 82) / 2)) --logo-padding-right 2
+        [ $(tput cols) -lt 55 ] && fastfetch --logo none
         eval "$(starship init bash)"
       '';
     };
@@ -118,7 +118,6 @@
     programs.fastfetch = {
       enable = true;
       settings = {
-        logo.source = logoLarge;
         display = {
           separator = "";
         };

@@ -3,7 +3,7 @@
     imports = [inputs.self.nixosModules.noctalia];
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable;
+      package = pkgs.niri;
     };
 
     services = {

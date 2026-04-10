@@ -16,7 +16,7 @@
       config = {
         plugins = {
           alwaysAnimate.enable = true;
-          betterFolders.enable = false; # not working
+          betterFolders.enable = true;
           BlurNSFW.enable = true;
           fakeNitro = {
             enable = true;
