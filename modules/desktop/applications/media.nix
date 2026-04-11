@@ -16,7 +16,7 @@
       zathura
       calibre
       anki
-      pkgsStable.obsidian
+      obsidian
       easytag
       mpv
       pkgsStable.makemkv
