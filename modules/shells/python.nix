@@ -1,10 +1,7 @@
 {
   perSystem = {pkgs, ...}: {
     devShells.python = pkgs.mkShell {
-      name = "Run a python script";
-      shellHook = ''
-        export SHELL="/run/current-system/sw/bin/bash"
-      '';
+      name = "python";
       packages = with pkgs; [
         (python3.withPackages
           (ps:

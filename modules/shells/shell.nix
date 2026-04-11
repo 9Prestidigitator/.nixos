@@ -2,9 +2,6 @@
   perSystem = {pkgs, ...}: {
     devShells.default = pkgs.mkShell {
       name = "base";
-      shellHook = ''
-        export SHELL="/run/current-system/sw/bin/bash"
-      '';
       packages = with pkgs; [
         # C/C++
         cmake

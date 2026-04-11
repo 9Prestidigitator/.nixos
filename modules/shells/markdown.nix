@@ -2,9 +2,6 @@
   perSystem = {pkgs, ...}: {
     devShells.markdown = pkgs.mkShell {
       name = "markdown";
-      shellHook = ''
-        export SHELL="/run/current-system/sw/bin/bash"
-      '';
       packages = with pkgs; [
         # etc
         prettier
