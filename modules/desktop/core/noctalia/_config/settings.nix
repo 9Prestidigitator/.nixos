@@ -30,7 +30,9 @@
         passwordChars = true;
         enableLockScreenMediaControls = true;
         showSessionButtonsOnLockScreen = false;
-        lockScreenBlur = 0.5;
+        lockScreenBlur = 0;
+        enableBlurBehind = true;
+        allowPasswordWithFprintd = true;
       };
       appLauncher = {
         customLaunchPrefix = "";
@@ -186,31 +188,18 @@
       ui = {
         fontDefaultScale = 1;
         fontFixedScale = 1;
-        panelBackgroundOpacity = lib.mkForce 1;
+        panelBackgroundOpacity = lib.mkForce 0;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;
       };
       wallpaper = {
-        directory = "${config.xdg.userDirs.pictures}/Wallpapers";
-        enableMultiMonitorDirectories = false;
         enabled = true;
-        fillColor = "#000000";
-        fillMode = "crop";
+        directory = "${config.xdg.userDirs.pictures}/Wallpapers";
         hideWallpaperFilenames = false;
-        overviewEnabled = false;
         panelPosition = "follow_bar";
-        randomEnabled = false;
-        randomIntervalSec = 300;
-        recursiveSearch = false;
-        setWallpaperOnAllMonitors = true;
-        transitionDuration = 1500;
-        transitionEdgeSmoothness = 0.05;
         transitionType = "random";
         useWallhaven = true;
-        wallhavenCategories = "111";
-        wallhavenOrder = "desc";
-        wallhavenPurity = "100";
       };
     };
   };

@@ -10,7 +10,6 @@
       fd
       fzf
       tree
-      starship
       zoxide
       f3d
       yazi
@@ -42,113 +41,129 @@
       hash = "sha256-kr3HHVkuBxHoXakIgcotcr0/NtLUAQWutu+gxhZ4s1g=";
     };
   in {
-    programs.kitty = {
-      enable = true;
-      settings = {
-        dynamic_background_opacity = true;
-        cursor_shape = "block";
-        hide_window_decorations = "yes";
-        wayland_enable_ime = "yes";
-      };
-    };
-
-    programs.tmux = {
-      enable = true;
-      terminal = "tmux-256color";
-      prefix = "C-b";
-      keyMode = "vi";
-      mouse = true;
-      plugins = with pkgs; [
-        tmuxPlugins.resurrect
-        tmuxPlugins.nord
-      ];
-      escapeTime = 0;
-      extraConfig = ''
-        bind-key h select-pane -L
-        bind-key l select-pane -R
-        bind-key j select-pane -D
-        bind-key k select-pane -U
-        bind-key a last-window
-        bind-key J swap-window -t -1 -d
-        bind-key K swap-window -t +1 -d
-        bind-key Tab switch-client -l
-        bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
-        set-option -g set-clipboard on
-        set-option -g focus-events on
-        set-option -g status-position top
-        set-option -g status-style bg=default
-      '';
-    };
-
-    home.sessionVariables = {
-      VISUAL = "nvim";
-      EDITOR = "nvim";
-    };
-
-    programs.fastfetch = {
-      enable = true;
-      settings = {
-        display = {
-          separator = "";
+    programs = {
+      kitty = {
+        enable = true;
+        settings = {
+          dynamic_background_opacity = true;
+          cursor_shape = "block";
+          hide_window_decorations = "yes";
+          wayland_enable_ime = "yes";
         };
-        modules = [
-          "break"
-          "break"
-          {
-            type = "custom";
-            format = "┌─────────────────────────────────────────────────────┐";
-            color = "white";
-          }
-          {
-            type = "title";
-            key = "                       ";
-          }
-          "break"
-          {
-            type = "os";
-            key = "┌󰌽  ";
-          }
-          {
-            type = "kernel";
-            key = "└  ";
-          }
-          "break"
-          {
-            type = "uptime";
-            key = "┌󰥔  ";
-          }
-          {
-            type = "packages";
-            key = "└󰏖  ";
-          }
-          "break"
-          {
-            type = "cpu";
-            key = "┌  ";
-          }
-          {
-            type = "gpu";
-            key = "├󰍛  ";
-          }
-          {
-            type = "memory";
-            key = "├󰍛  ";
-          }
-          {
-            type = "disk";
-            key = "└  ";
-          }
-          {
-            type = "custom";
-            format = "└─────────────────────────────────────────────────────┘";
-            color = "white";
-          }
+      };
+
+      tmux = {
+        enable = true;
+        terminal = "tmux-256color";
+        prefix = "C-b";
+        keyMode = "vi";
+        mouse = true;
+        plugins = with pkgs; [
+          tmuxPlugins.resurrect
+          tmuxPlugins.nord
         ];
+        escapeTime = 0;
+        extraConfig = ''
+          bind-key h select-pane -L
+          bind-key l select-pane -R
+          bind-key j select-pane -D
+          bind-key k select-pane -U
+          bind-key a last-window
+          bind-key J swap-window -t -1 -d
+          bind-key K swap-window -t +1 -d
+          bind-key Tab switch-client -l
+          bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
+          set-option -g set-clipboard on
+          set-option -g focus-events on
+          set-option -g status-position top
+          set-option -g status-style bg=default
+        '';
+      };
+
+      starship = {
+        enable = true;
+        presets = ["nerd-font-symbols"];
+      };
+
+      fastfetch = {
+        enable = true;
+        settings = {
+          display = {
+            separator = "";
+          };
+          modules = [
+            "break"
+            "break"
+            {
+              type = "custom";
+              format = "┌─────────────────────────────────────────────────────┐";
+              color = "white";
+            }
+            {
+              type = "title";
+              key = "                       ";
+            }
+            "break"
+            {
+              type = "os";
+              key = "┌󰌽  ";
+            }
+            {
+              type = "kernel";
+              key = "└  ";
+            }
+            "break"
+            {
+              type = "uptime";
+              key = "┌󰥔  ";
+            }
+            {
+              type = "packages";
+              key = "└󰏖  ";
+            }
+            "break"
+            {
+              type = "cpu";
+              key = "┌  ";
+            }
+            {
+              type = "gpu";
+              key = "├󰍛  ";
+            }
+            {
+              type = "memory";
+              key = "├󰍛  ";
+            }
+            {
+              type = "disk";
+              key = "└  ";
+            }
+            {
+              type = "custom";
+              format = "└─────────────────────────────────────────────────────┘";
+              color = "white";
+            }
+          ];
+        };
+      };
+
+      bash = {
+        enable = true;
+        # fastfetch
+        initExtra = ''
+          clear
+          [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
+          [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
+          [ $(tput cols) -lt 78 ] && fastfetch --logo none
+        '';
       };
     };
 
-    programs.bash = {
-      enable = true;
+    home = {
+      sessionVariables = {
+        VISUAL = "nvim";
+        EDITOR = "nvim";
+      };
       shellAliases = {
         # Standard stuff
         ls = "ls -a --color=auto";
@@ -173,14 +188,6 @@
         dsv-py = "nix develop ${config.home.homeDirectory}/.nixos#python -c nvim";
         dsv-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp -c nvim";
       };
-      # fastfetch
-      initExtra = ''
-        clear
-        [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
-        [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
-        [ $(tput cols) -lt 78 ] && fastfetch --logo none
-        eval "$(starship init bash)"
-      '';
     };
   };
 }
