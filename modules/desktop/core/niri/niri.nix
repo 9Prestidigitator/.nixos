@@ -1,5 +1,7 @@
 {inputs, ...}: {
   flake.nixosModules.niri = {pkgs, ...}: {
+    # noctalia as a dependency
+    imports = [inputs.self.nixosModules.noctalia];
     programs.niri = {
       enable = true;
       package = pkgs.niri-unstable.overrideAttrs (old: rec {
@@ -65,9 +67,10 @@
 
   flake.homeModules.niri = {
     imports = [
-      inputs.self.homeModules.noctalia
       inputs.niri.homeModules.config
       (inputs.import-tree ./_config)
+      # noctalia as a dependency
+      inputs.self.homeModules.noctalia
     ];
   };
 }

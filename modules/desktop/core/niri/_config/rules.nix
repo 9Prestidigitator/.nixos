@@ -1,8 +1,4 @@
 {
-  config,
-  inputs,
-  ...
-}: {
   programs.niri.settings = {
     prefer-no-csd = true;
     window-rules = [
