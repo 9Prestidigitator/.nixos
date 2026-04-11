@@ -1,7 +1,6 @@
 {
   flake.nixosModules.terminalTools = {pkgs, ...}: {
     programs.git.enable = true;
-    programs.direnv.enable = true;
     environment.systemPackages = with pkgs; [
       btop
       vim
@@ -53,47 +52,6 @@
       };
     };
 
-    home.sessionVariables = {
-      VISUAL = "nvim";
-      EDITOR = "nvim";
-    };
-
-    programs.bash = {
-      enable = true;
-      shellAliases = {
-        # Standard stuff
-        ls = "ls -a --color=auto";
-        nv = "nvim";
-        tm = "tmux a || tmux";
-        fman = "compgen -c | sort -hr | fzf | xargs man";
-        # Nix config stuff
-        nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
-        nixup = "nix flake update";
-        nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
-        # Development Shell commands
-        ds = "nix develop";
-        dsv = "nix develop -c nvim";
-        ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
-        ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
-        ds-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown";
-        ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
-        ds-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp";
-        dsv-full = "nix develop ${config.home.homeDirectory}/.nixos#default -c nvim";
-        dsv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";
-        dsv-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown -c nvim";
-        dsv-py = "nix develop ${config.home.homeDirectory}/.nixos#python -c nvim";
-        dsv-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp -c nvim";
-      };
-      # fastfetch
-      initExtra = ''
-        clear
-        [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
-        [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
-        [ $(tput cols) -lt 78 ] && fastfetch --logo none
-        eval "$(starship init bash)"
-      '';
-    };
-
     programs.tmux = {
       enable = true;
       terminal = "tmux-256color";
@@ -120,6 +78,11 @@
         set-option -g status-position top
         set-option -g status-style bg=default
       '';
+    };
+
+    home.sessionVariables = {
+      VISUAL = "nvim";
+      EDITOR = "nvim";
     };
 
     programs.fastfetch = {
@@ -182,6 +145,42 @@
           }
         ];
       };
+    };
+
+    programs.bash = {
+      enable = true;
+      shellAliases = {
+        # Standard stuff
+        ls = "ls -a --color=auto";
+        nv = "nvim";
+        tm = "tmux a || tmux";
+        fman = "compgen -c | sort -hr | fzf | xargs man";
+        # Nix config stuff
+        nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
+        nixup = "nix flake update";
+        nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
+        # Development Shell commands
+        ds = "nix develop";
+        dsv = "nix develop -c nvim";
+        ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
+        ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
+        ds-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown";
+        ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
+        ds-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp";
+        dsv-full = "nix develop ${config.home.homeDirectory}/.nixos#default -c nvim";
+        dsv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";
+        dsv-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown -c nvim";
+        dsv-py = "nix develop ${config.home.homeDirectory}/.nixos#python -c nvim";
+        dsv-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp -c nvim";
+      };
+      # fastfetch
+      initExtra = ''
+        clear
+        [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
+        [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
+        [ $(tput cols) -lt 78 ] && fastfetch --logo none
+        eval "$(starship init bash)"
+      '';
     };
   };
 }
