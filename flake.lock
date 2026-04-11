@@ -484,11 +484,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1775936446,
-        "narHash": "sha256-cZJr7Yf1z5NKeR0BtF486S9UOB84TxF21mACi5O7dLc=",
+        "lastModified": 1775937772,
+        "narHash": "sha256-m5oCfTeuQ+Q5MLqXsdRjBLe+nJ4nzcWy3QehN4/m+YQ=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "189e2298ccb75e68f5467221fc54cba7c3ff1811",
+        "rev": "e09a945bc18658db0c7ca8f5ed457d078bce73a6",
         "type": "github"
       },
       "original": {
@@ -1217,11 +1217,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1775935056,
-        "narHash": "sha256-JOeHskGKwIzNsliNAqEBS/VzVsMR7TQaw8uhPPRlWz4=",
+        "lastModified": 1775936757,
+        "narHash": "sha256-KJO/7qoxJ+hlsb3WlFSl6IGrExBIf1GvKdrhOlnGdKY=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "c064a9c54ad0ba33fd5c5db5f129ba0443ad5e52",
+        "rev": "d3e447786b74d62c75f665e17cb3e681c66e90c7",
         "type": "github"
       },
       "original": {
