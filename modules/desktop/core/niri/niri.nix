@@ -1,9 +1,14 @@
 {inputs, ...}: {
   flake.nixosModules.niri = {pkgs, ...}: {
-    imports = [inputs.self.nixosModules.noctalia];
     programs.niri = {
       enable = true;
-      package = pkgs.niri;
+      package = pkgs.niri-unstable.overrideAttrs (old: rec {
+        src = inputs.niri-pr;
+        cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+          inherit src;
+          hash = "sha256-soJYT6TavlyqtVqMD70QYDZ+8swn6TVXsFHadJxaxWo=";
+        };
+      });
     };
 
     services = {

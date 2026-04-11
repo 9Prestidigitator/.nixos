@@ -5,7 +5,13 @@
   ...
 }: {
   programs.niri = {
-    package = pkgs.niri;
+    package = pkgs.niri-unstable.overrideAttrs (old: rec {
+      src = inputs.niri-pr;
+      cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+        inherit src;
+        hash = "sha256-soJYT6TavlyqtVqMD70QYDZ+8swn6TVXsFHadJxaxWo=";
+      };
+    });
     settings = with config.lib.stylix.colors; {
       input = {
         keyboard = {

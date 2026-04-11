@@ -556,6 +556,23 @@
         "type": "github"
       }
     },
+    "niri-pr": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775905466,
+        "narHash": "sha256-R3GQb8mJWZCMv2x3LKExgpjM7Kilu8dBxuUGJJjHNEM=",
+        "owner": "niri-wm",
+        "repo": "niri",
+        "rev": "0ca60209c54997624f1e1249f78e0437d8da1969",
+        "type": "github"
+      },
+      "original": {
+        "owner": "niri-wm",
+        "ref": "pull/3483/head",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "niri-stable": {
       "flake": false,
       "locked": {
@@ -1050,6 +1067,7 @@
         "musnix": "musnix",
         "neovim": "neovim",
         "niri": "niri",
+        "niri-pr": "niri-pr",
         "nix-flatpak": "nix-flatpak",
         "nix-minecraft": "nix-minecraft",
         "nixcord": "nixcord",
