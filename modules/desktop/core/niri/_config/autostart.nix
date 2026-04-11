@@ -84,7 +84,8 @@ in {
         {
           matches = [
             {
-              app-id = "obsidian";
+              title = ".*Obsidian.*";
+              app-id = "electron";
               at-startup = true;
             }
           ];

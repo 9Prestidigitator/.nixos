@@ -44,7 +44,7 @@ alias ds='nix develop ~/.nixos#default'
 alias ds-nix='nix develop ~/.nixos#nix'
 alias ds-md='nix develop ~/.nixos#markdown'
 alias ds-py='nix develop ~/.nixos#python'
-alias ds-cs='nix develop ~/.nixos#cshapr'
+alias ds-cs='nix develop ~/.nixos#csharp'
 ```
 
 There are alternative dsv commands for each to launch neovim upon entering the environment.

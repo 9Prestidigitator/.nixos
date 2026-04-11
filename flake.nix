@@ -29,7 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri-pr = {
+    niri-blur-pr = {
       url = "github:niri-wm/niri?ref=pull/3483/head";
       flake = false;
     };

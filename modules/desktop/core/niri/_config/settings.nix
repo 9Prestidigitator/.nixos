@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  config,
-  ...
-}: {
+{config, ...}: {
   programs.niri = {
     settings = with config.lib.stylix.colors; {
       input = {
