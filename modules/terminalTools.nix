@@ -81,8 +81,8 @@
       initExtra = ''
         clear
         [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
-        [ $(tput cols) -ge 55 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 82) / 2)) --logo-padding-right 2
-        [ $(tput cols) -lt 55 ] && fastfetch --logo none
+        [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
+        [ $(tput cols) -lt 78 ] && fastfetch --logo none
         eval "$(starship init bash)"
       '';
     };
