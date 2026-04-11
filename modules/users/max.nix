@@ -8,7 +8,8 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE+gNhwiI6VWUfLepEQJgtob1G3IiJNckD5R5HkRfhE2"
         # FONE->ink
         "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIE7a6cld/4ZWzzQT70YA/DWgt7lVf9NcWTqOdDi58onE8qrwjoH7PkmY8Ygd5HJQT0/a2jXPhnq7cCEHFtPCPk="
-        ""
+        # ->surface
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOEdcyw2s0bBSSS7JjqH50scD2DfR3+D/XhpTzQafKOM max@ink"
       ];
     };
     services.syncthing = {
