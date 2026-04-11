@@ -2,7 +2,7 @@
   <img src="https://brand.nixos.org/logos/nixos-logo-default-gradient-white-regular-horizontal-minimal.svg" alt="NixOS">
 </h1>
 
-Nix flake configuration for five x86-64 NixOS systems with five desktop configurations.
+Dendritic Nix flake configuration for five x86-64 NixOS systems with five desktop configurations.
 
 # Systems
 

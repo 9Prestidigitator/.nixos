@@ -1,6 +1,7 @@
 {
   flake.nixosModules.terminalTools = {pkgs, ...}: {
     programs.git.enable = true;
+    programs.direnv.enable = true;
     environment.systemPackages = with pkgs; [
       btop
       vim
@@ -76,6 +77,12 @@
         ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
         ds-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown";
         ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
+        ds-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp";
+        dsv-full = "nix develop ${config.home.homeDirectory}/.nixos#default -c nvim";
+        dsv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";
+        dsv-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown -c nvim";
+        dsv-py = "nix develop ${config.home.homeDirectory}/.nixos#python -c nvim";
+        dsv-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp -c nvim";
       };
       # fastfetch
       initExtra = ''
