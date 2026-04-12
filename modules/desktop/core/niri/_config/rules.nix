@@ -1,119 +1,111 @@
 {
-  programs.niri.settings = {
-    prefer-no-csd = true;
-    window-rules = [
-      {
-        geometry-corner-radius = let
-          radius = 5.4;
-        in {
-          bottom-left = radius;
-          bottom-right = radius;
-          top-left = radius;
-          top-right = radius;
-        };
-        draw-border-with-background = false;
-        clip-to-geometry = true;
-      }
-      {
-        matches = [{is-floating = true;}];
-        shadow.enable = true;
-        border.enable = false;
-        focus-ring.enable = false;
-      }
-      {
-        matches = [
-          {app-id = "brave-browser";}
-        ];
-        open-maximized = true;
-      }
-      {
-        matches = [
-          {
-            app-id = "QjackCtl";
-            title = "(default).*";
-          }
-        ];
-        default-window-height = {fixed = 100;};
-      }
-      {
-        matches = [
-          {app-id = "com.bitwig.BitwigStudio";}
-        ];
-        open-maximized = true;
-        geometry-corner-radius = let
-          radius = 0.0;
-        in {
-          bottom-left = radius;
-          bottom-right = radius;
-          top-left = radius;
-          top-right = radius;
-        };
-      }
-      {
-        matches = [
-          {
-            app-id = "kitty";
-            title = "tmux";
-          }
-        ];
-        open-maximized = true;
-      }
-      {
-        matches = [
-          {
-            app-id = "steam";
-            title = "Friends List";
-          }
-        ];
-        default-column-width = {fixed = 187;};
-      }
-      {
-        matches = [
-          {
-            app-id = "virt-manager";
-            title = "Virtual Machine Manager";
-          }
-        ];
-        default-column-width = {fixed = 280;};
-      }
-      {
-        matches = [
-          {title = "Confirm";}
-          {title = "Authentication Required";}
-          {title = "xdg-desktop-portal-gtk";}
-        ];
-        open-floating = true;
-      }
-      {
-        matches = [{title = "Picture in picture";}];
-        open-floating = true;
-        default-floating-position = {
-          x = 32;
-          y = 32;
-          relative-to = "bottom-right";
-        };
-        default-column-width = {fixed = 480;};
-        default-window-height = {fixed = 270;};
-      }
-      # {
-      #   background-effect = {
-      #     matches = [{app-id = "kitty";}];
-      #     blur = true;
-      #     xray = false;
-      #   };
-      # }
-    ];
-    layer-rules = [
-      {
-        matches = [
-          {namespace = "noctalia-wallpaper*";}
-          {namespace = "linux-wallpaperengine";}
-        ];
-        place-within-backdrop = true;
-      }
-      # {
-      #   background-effect.xray = false;
-      # }
-    ];
+  programs.niri = {
+    settings = {
+      prefer-no-csd = true;
+      window-rules = [
+        {
+          geometry-corner-radius = let
+            radius = 5.4;
+          in {
+            bottom-left = radius;
+            bottom-right = radius;
+            top-left = radius;
+            top-right = radius;
+          };
+          draw-border-with-background = false;
+          clip-to-geometry = true;
+        }
+        {
+          matches = [{is-floating = true;}];
+          shadow.enable = true;
+          border.enable = false;
+          focus-ring.enable = false;
+        }
+        {
+          matches = [
+            {app-id = "brave-browser";}
+          ];
+          open-maximized = true;
+        }
+        {
+          matches = [
+            {
+              app-id = "QjackCtl";
+              title = "(default).*";
+            }
+          ];
+          default-window-height = {fixed = 100;};
+        }
+        {
+          matches = [
+            {app-id = "com.bitwig.BitwigStudio";}
+          ];
+          open-maximized = true;
+          geometry-corner-radius = let
+            radius = 0.0;
+          in {
+            bottom-left = radius;
+            bottom-right = radius;
+            top-left = radius;
+            top-right = radius;
+          };
+        }
+        {
+          matches = [
+            {
+              app-id = "kitty";
+              title = "tmux";
+            }
+          ];
+          open-maximized = true;
+        }
+        {
+          matches = [
+            {
+              app-id = "steam";
+              title = "Friends List";
+            }
+          ];
+          default-column-width = {fixed = 187;};
+        }
+        {
+          matches = [
+            {
+              app-id = "virt-manager";
+              title = "Virtual Machine Manager";
+            }
+          ];
+          default-column-width = {fixed = 280;};
+        }
+        {
+          matches = [
+            {title = "Confirm";}
+            {title = "Authentication Required";}
+            {title = "xdg-desktop-portal-gtk";}
+          ];
+          open-floating = true;
+        }
+        {
+          matches = [{title = "Picture in picture";}];
+          open-floating = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-right";
+          };
+          default-column-width = {fixed = 480;};
+          default-window-height = {fixed = 270;};
+        }
+      ];
+      layer-rules = [
+        {
+          matches = [
+            {namespace = "noctalia-wallpaper*";}
+            {namespace = "linux-wallpaperengine";}
+          ];
+          place-within-backdrop = true;
+        }
+      ];
+    };
   };
 }

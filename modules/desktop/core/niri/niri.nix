@@ -67,7 +67,7 @@
 
   flake.homeModules.niri = {
     imports = [
-      inputs.niri.homeModules.config
+      inputs.niri-flake.homeModules.config
       (inputs.import-tree ./_config)
       # noctalia as a dependency
       inputs.self.homeModules.noctalia

@@ -33,7 +33,7 @@
       url = "github:niri-wm/niri?ref=pull/3483/head";
       flake = false;
     };
-    niri.url = "github:sodiboo/niri-flake";
+    niri-flake.url = "github:9prestidigitator/niri-flake";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.5";
 

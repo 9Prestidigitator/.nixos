@@ -533,29 +533,6 @@
         "type": "github"
       }
     },
-    "niri": {
-      "inputs": {
-        "niri-stable": "niri-stable",
-        "niri-unstable": "niri-unstable",
-        "nixpkgs": "nixpkgs_4",
-        "nixpkgs-stable": "nixpkgs-stable",
-        "xwayland-satellite-stable": "xwayland-satellite-stable",
-        "xwayland-satellite-unstable": "xwayland-satellite-unstable"
-      },
-      "locked": {
-        "lastModified": 1775877135,
-        "narHash": "sha256-nAqtUMy22olwyiOJB0CASVrbu5XB5+43GjlbIJ1KuvQ=",
-        "owner": "sodiboo",
-        "repo": "niri-flake",
-        "rev": "f943da038fd668d435c2d17916577f295faa8839",
-        "type": "github"
-      },
-      "original": {
-        "owner": "sodiboo",
-        "repo": "niri-flake",
-        "type": "github"
-      }
-    },
     "niri-blur-pr": {
       "flake": false,
       "locked": {
@@ -570,6 +547,29 @@
         "owner": "niri-wm",
         "ref": "pull/3483/head",
         "repo": "niri",
+        "type": "github"
+      }
+    },
+    "niri-flake": {
+      "inputs": {
+        "niri-stable": "niri-stable",
+        "niri-unstable": "niri-unstable",
+        "nixpkgs": "nixpkgs_4",
+        "nixpkgs-stable": "nixpkgs-stable",
+        "xwayland-satellite-stable": "xwayland-satellite-stable",
+        "xwayland-satellite-unstable": "xwayland-satellite-unstable"
+      },
+      "locked": {
+        "lastModified": 1775964957,
+        "narHash": "sha256-9X8M2dQKi2EH8WjzZFdGx3At1BASMr7ci88Ko8HsDMY=",
+        "owner": "9prestidigitator",
+        "repo": "niri-flake",
+        "rev": "d7ca402390fabbcaceff2d9b8a631dd5b0a8acd9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "9prestidigitator",
+        "repo": "niri-flake",
         "type": "github"
       }
     },
@@ -1066,8 +1066,8 @@
         "kwin-effects-forceblur": "kwin-effects-forceblur",
         "musnix": "musnix",
         "neovim": "neovim",
-        "niri": "niri",
         "niri-blur-pr": "niri-blur-pr",
+        "niri-flake": "niri-flake",
         "nix-flatpak": "nix-flatpak",
         "nix-minecraft": "nix-minecraft",
         "nixcord": "nixcord",

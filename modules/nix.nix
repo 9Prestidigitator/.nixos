@@ -10,7 +10,7 @@
       overlays = [
         inputs.self.overlays.default
         inputs.audio-nix.overlays.default
-        inputs.niri.overlays.niri
+        inputs.niri-flake.overlays.niri
       ];
     };
     nix = {
