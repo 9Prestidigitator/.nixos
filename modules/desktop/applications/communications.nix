@@ -29,6 +29,7 @@
           PinDMs.enable = true;
           volumeBooster.enable = true;
           youtubeAdblock.enable = true;
+          spotifyCrack.enable = true;
         };
       };
     };
