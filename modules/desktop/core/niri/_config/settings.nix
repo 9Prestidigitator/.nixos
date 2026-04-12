@@ -1,22 +1,6 @@
 {config, ...}: {
   programs.niri = {
     settings = with config.lib.stylix.colors; {
-      # TODO(max): Experimental options. Will need to revise this on next version of niri/niri-flake
-      extraConfig = ''
-        window-rule {
-            match app-id="kitty"
-            background-effect {
-                blur true
-                xray true
-            }
-        }
-        layer-rule {
-            background-effect {
-                xray false
-            }
-        }
-      '';
-
       input = {
         keyboard = {
           xkb = {};

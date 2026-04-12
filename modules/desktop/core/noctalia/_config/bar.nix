@@ -4,7 +4,7 @@
       bar = {
         capsuleOpacity = lib.mkForce 1;
         density = "comfortable";
-        barType = "floating";
+        barType = "simple";
         floating = true;
         marginVertical = 9;
         marginHorizontal = 9;

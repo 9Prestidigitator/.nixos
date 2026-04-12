@@ -14,6 +14,7 @@
         vencord.enable = true;
       };
       config = {
+        transparent = true;
         plugins = {
           alwaysAnimate.enable = true;
           betterFolders.enable = true;

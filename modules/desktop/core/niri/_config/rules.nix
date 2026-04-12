@@ -106,6 +106,37 @@
           place-within-backdrop = true;
         }
       ];
+      # TODO(max): Experimental options. Will need to revise this on next
+      # version of niri/niri-flake
+      extraConfig = ''
+        window-rule {
+            match app-id="kitty"
+            background-effect {
+                blur true
+                xray true
+            }
+        }
+        window-rule {
+            match app-id="Nautilus"
+            background-effect {
+                blur true
+                xray true
+            }
+            popups {
+                geometry-corner-radius 15
+                opacity 0.5
+                background-effect {
+                    blur true
+                    xray true
+                }
+            }
+        }
+        layer-rule {
+            background-effect {
+                xray false
+            }
+        }
+      '';
     };
   };
 }
