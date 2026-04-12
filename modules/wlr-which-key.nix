@@ -1,4 +1,4 @@
-{...}: {
+{
   flake.homeModules.wlr-which-key = {
     pkgs,
     lib,

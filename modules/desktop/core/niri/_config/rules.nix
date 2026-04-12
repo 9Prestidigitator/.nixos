@@ -95,6 +95,13 @@
         default-column-width = {fixed = 480;};
         default-window-height = {fixed = 270;};
       }
+      # {
+      #   background-effect = {
+      #     matches = [{app-id = "kitty";}];
+      #     blur = true;
+      #     xray = false;
+      #   };
+      # }
     ];
     layer-rules = [
       {
@@ -104,6 +111,9 @@
         ];
         place-within-backdrop = true;
       }
+      # {
+      #   background-effect.xray = false;
+      # }
     ];
   };
 }
