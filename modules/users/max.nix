@@ -23,16 +23,13 @@
     sops = {
       age.keyFile = "/home/max/.config/sops/age/keys.txt";
       secrets = {
-        ssh_ink_to_papyr = {
+        ssh-ink-to-papyr = {
           owner = config.users.users.max.name;
           group = config.users.users.max.group;
           mode = "0600";
         };
-        ssh_ink_to_papyr_pub = {
-          owner = config.users.users.max.name;
-          group = config.users.users.max.group;
-          mode = "0600";
-        };
+        "wg0/interface-key" = { };
+        "wg0/peer-key" = { };
       };
     };
   };

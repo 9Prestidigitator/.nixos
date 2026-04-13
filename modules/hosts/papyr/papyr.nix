@@ -92,8 +92,18 @@
       users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKWcs2PiK8MvDfOEadtln1NnnP3TYtdZUiY3Z8uov7u max@ink"];
 
       networking.wg-quick.interfaces.wg0 = {
-        configFile = "/secret/wg0.conf";
         autostart = false;
+        address = ["10.177.136.3/24"];
+        DNS = ["1.1.1.1" "1.0.0.1"];
+        privateKeyFile = "${config.sops.secrets."wg0/interface-key".path}";
+        peers = [
+          {
+            publicKey = "v0fbXMD0qSknF/lxTGf0iY0xs1ffm1Fm6igknJQKi10=";
+            presharedKeyFile = "${config.sops.secrets."wg0/peer-key".path}";
+            endpoint = "108.18.94.91:51820";
+            allowedIPs = ["0.0.0.0/0"];
+          }
+        ];
       };
     };
   };

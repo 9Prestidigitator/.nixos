@@ -101,7 +101,7 @@
         HostName papyr
           HostName 10.123.78.161
           User max
-          IdentityFile ${config.sops.secrets.ssh_ink_to_papyr.path}
+          IdentityFile ${config.sops.secrets.ssh-ink-to-papyr.path}
           IdentitiesOnly yes
       '';
 
