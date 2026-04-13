@@ -10,8 +10,8 @@
     services.syncthing = {
       user = "max";
       dataDir = "/home/max";
-      key = "${config}";
-      cert = "${config}";
+      # key = "${config}";
+      # cert = "${config}";
     };
 
     programs.ssh.extraConfig = ''
