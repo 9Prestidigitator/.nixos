@@ -10,8 +10,8 @@
     services.syncthing = {
       user = "max";
       dataDir = "/home/max";
-      # key = "${config}";
-      # cert = "${config}";
+      # key = "${config.sops.secrets."syncthing/key".path}";
+      # cert = "${config.sops.secrets."syncthing/cert".path}";
     };
 
     programs.ssh.extraConfig = ''
@@ -53,7 +53,7 @@
           group = config.users.users.max.group;
           mode = "0600";
         };
-        "syncthing/cert" = {
+        "syncthing/key" = {
           owner = config.users.users.max.name;
           group = config.users.users.max.group;
           mode = "0600";
