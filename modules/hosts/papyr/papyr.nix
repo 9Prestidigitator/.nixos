@@ -96,6 +96,11 @@
           User max
           IdentityFile ${config.sops.secrets."ssh/ink".path}
           IdentitiesOnly yes
+        Host surface
+          HostName 10.123.78.31
+          User max
+          IdentityFile ${config.sops.secrets."ssh/surface".path}
+          IdentitiesOnly yes
       '';
 
       networking.wg-quick.interfaces.wg0 = {

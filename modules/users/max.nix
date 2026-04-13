@@ -5,14 +5,6 @@
     users.users.max = {
       isNormalUser = true;
       extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
-      openssh.authorizedKeys.keys = [
-        # papyr->ink
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE+gNhwiI6VWUfLepEQJgtob1G3IiJNckD5R5HkRfhE2"
-        # FONE->ink
-        "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIE7a6cld/4ZWzzQT70YA/DWgt7lVf9NcWTqOdDi58onE8qrwjoH7PkmY8Ygd5HJQT0/a2jXPhnq7cCEHFtPCPk="
-        # ->surface
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOEdcyw2s0bBSSS7JjqH50scD2DfR3+D/XhpTzQafKOM max@ink"
-      ];
     };
 
     services.syncthing = {
@@ -46,9 +38,19 @@
           group = config.users.users.max.group;
           mode = "0600";
         };
+        "ssh/surface" = {
+          owner = config.users.users.max.name;
+          group = config.users.users.max.group;
+          mode = "0600";
+        };
         "ssh/builders/ink" = {};
         "wg0/interface-key" = {};
         "wg0/peer-key" = {};
+        "mullvad" = {
+          owner = config.users.users.max.name;
+          group = config.users.users.max.group;
+          mode = "0600";
+        };
       };
     };
   };

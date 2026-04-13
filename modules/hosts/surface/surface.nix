@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.surface = inputs.nixpkgs.lib.nixosSystem {
@@ -13,12 +17,13 @@
         braveBrowser
 
         terminalTools
-        minecraftServer       
+        minecraftServer
 
         buildMachines
         stylix
 
         keyd
+        sops
         grub
         intel
         systemGeneral
@@ -28,7 +33,12 @@
       ];
     };
 
-    nixosModules.surface = {pkgs, lib, ...}: {
+    nixosModules.surface = {
+      pkgs,
+      lib,
+      config,
+      ...
+    }: {
       networking = {
         hostName = "surface";
         networkmanager.enable = true;
@@ -39,7 +49,10 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "backup";
-        extraSpecialArgs = {inherit inputs; isLaptop = true;};
+        extraSpecialArgs = {
+          inherit inputs;
+          isLaptop = true;
+        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -109,6 +122,8 @@
       powerManagement.cpuFreqGovernor = "performance";
 
       console.font = lib.mkForce "ter-v32b";
+
+      users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII00su22rL1ZJ59mb8+HVw21zft7IMLrd6yVvKd6f9Y2"];
     };
   };
 }
