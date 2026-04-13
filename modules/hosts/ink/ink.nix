@@ -1,6 +1,10 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
-  flake = {
+  flake = {config, ...}: {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = with self.nixosModules; [
@@ -28,6 +32,7 @@
 
         tablet
         keyd
+        sops
         grub
         nvidia
         systemGeneral
@@ -91,6 +96,14 @@
           motherboard = "amd";
         };
       };
+
+      programs.ssh.extraConfig = ''
+        HostName papyr
+          HostName 10.123.78.161
+          User max
+          IdentityFile ${config.sops.secrets.ssh_ink_to_papyr.path}
+          IdentitiesOnly yes
+      '';
 
       fileSystems = {
         "/mnt/win" = {
