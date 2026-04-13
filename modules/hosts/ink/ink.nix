@@ -86,6 +86,7 @@
         enableAllFirmware = true;
         cpu.amd.updateMicrocode = true;
       };
+
       powerManagement.cpuFreqGovernor = "performance";
 
       services = {
