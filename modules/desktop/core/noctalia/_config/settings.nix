@@ -189,6 +189,7 @@
         fontDefaultScale = 1;
         fontFixedScale = 1;
         panelBackgroundOpacity = lib.mkForce 0;
+        translucentWidgets = true;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;

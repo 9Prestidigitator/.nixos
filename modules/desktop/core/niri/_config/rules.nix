@@ -113,21 +113,21 @@
             match app-id="kitty"
             background-effect {
                 blur true
-                xray true
+                xray false
             }
         }
         window-rule {
             match app-id="Nautilus"
             background-effect {
                 blur true
-                xray true
+                xray false
             }
             popups {
                 geometry-corner-radius 15
                 opacity 0.5
                 background-effect {
                     blur true
-                    xray true
+                    xray false
                 }
             }
         }

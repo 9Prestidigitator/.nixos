@@ -1,6 +1,63 @@
 {
   flake.nixosModules.terminalTools = {pkgs, ...}: {
-    programs.git.enable = true;
+    programs = {
+      git.enable = true;
+      starship = {
+        enable = true;
+        presets = ["nerd-font-symbols"];
+      };
+      tmux = {
+        enable = true;
+        shortcut = "a";
+        terminal = "tmux-256color";
+        newSession = true;
+        keyMode = "vi";
+        customPaneNavigationAndResize = true;
+        plugins = with pkgs; [
+          tmuxPlugins.resurrect
+          tmuxPlugins.continuum
+          tmuxPlugins.catppuccin
+          tmuxPlugins.yank
+        ];
+        escapeTime = 0;
+        extraConfigBeforePlugins = ''
+          set -g mouse on
+          set -g focus-events on
+          set -g history-limit 20000
+          set -g display-time 4000
+
+          bind-key -n C-p previous-window
+          bind-key -n C-n next-window
+          bind-key a last-window
+          bind-key P swap-window -t -1 -d
+          bind-key N swap-window -t +1 -d
+          bind-key Tab switch-client -l
+
+          set-option -g set-clipboard on
+          set-option -g status-position top
+          setw -g aggressive-resize on
+
+          set -g @continuum-restore 'on'
+
+          set -g @catppuccin_flavor "mocha"
+          set -g @catppuccin_window_status_style "basic"
+          set -g @catppuccin_status_background "none"
+          set -g @catppuccin_window_default_text " #W"
+          set -g @catppuccin_window_current_text " #W"
+          set -g @catppuccin_window_text " #W"
+        '';
+        extraConfig = ''
+          set -g status-left-length 100
+          set -g status-left ""
+
+          set -g status-right-length 100
+          set -g status-right "#{E:@catppuccin_status_session}"
+          set -ag status-right "#{E:@catppuccin_status_uptime}"
+          set -ag status-right "#{E:@catppuccin_status_date_time}"
+          set -agF status-right "#{E:@catppuccin_status_host}"
+        '';
+      };
+    };
     environment.systemPackages = with pkgs; [
       btop
       vim
@@ -10,14 +67,10 @@
       fd
       fzf
       tree
-      zoxide
-      f3d
       yazi
       fd
       delta
-      libqalculate
       calc
-      lf
       just
       wget
       zip
@@ -44,45 +97,14 @@
     programs = {
       kitty = {
         enable = true;
+        themeFile = "SpaceGray_Eighties";
         settings = {
           dynamic_background_opacity = true;
           cursor_shape = "block";
           hide_window_decorations = "yes";
           wayland_enable_ime = "yes";
+          enable_audio_bell = false;
         };
-      };
-
-      tmux = {
-        enable = true;
-        terminal = "tmux-256color";
-        prefix = "C-b";
-        keyMode = "vi";
-        mouse = true;
-        plugins = with pkgs; [
-          tmuxPlugins.resurrect
-          tmuxPlugins.nord
-        ];
-        escapeTime = 0;
-        extraConfig = ''
-          bind-key h select-pane -L
-          bind-key l select-pane -R
-          bind-key j select-pane -D
-          bind-key k select-pane -U
-          bind-key a last-window
-          bind-key J swap-window -t -1 -d
-          bind-key K swap-window -t +1 -d
-          bind-key Tab switch-client -l
-          bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "wl-copy"
-          set-option -g set-clipboard on
-          set-option -g focus-events on
-          set-option -g status-position top
-          set-option -g status-style bg=default
-        '';
-      };
-
-      starship = {
-        enable = true;
-        presets = ["nerd-font-symbols"];
       };
 
       fastfetch = {
@@ -92,7 +114,6 @@
             separator = "";
           };
           modules = [
-            "break"
             "break"
             {
               type = "custom";
@@ -157,6 +178,8 @@
           [ $(tput cols) -lt 78 ] && fastfetch --logo none
         '';
       };
+
+      zoxide.enable = true;
     };
 
     home = {
