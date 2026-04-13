@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
-  flake = {config, ...}: {
+  flake = {
     nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = with inputs.self.nixosModules; [
@@ -28,6 +28,7 @@
 
         tablet
         keyd
+        sops
         grub
         intel
         systemGeneral
@@ -37,7 +38,7 @@
       ];
     };
 
-    nixosModules.papyr = {
+    nixosModules.papyr = {config, ...}: {
       networking = {
         hostName = "papyr";
         networkmanager.enable = true;

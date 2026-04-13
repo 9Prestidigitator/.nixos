@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [inputs.home-manager.flakeModules.home-manager];
-  flake = {config, ...}: {
+  flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = with self.nixosModules; [
@@ -42,7 +42,7 @@
       ];
     };
 
-    nixosModules.ink = {pkgs, ...}: {
+    nixosModules.ink = {pkgs, config, ...}: {
       networking = {
         hostName = "ink";
         networkmanager.enable = true;
