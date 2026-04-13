@@ -94,7 +94,7 @@
       networking.wg-quick.interfaces.wg0 = {
         autostart = false;
         address = ["10.177.136.3/24"];
-        DNS = ["1.1.1.1" "1.0.0.1"];
+        dns = ["1.1.1.1" "1.0.0.1"];
         privateKeyFile = "${config.sops.secrets."wg0/interface-key".path}";
         peers = [
           {
