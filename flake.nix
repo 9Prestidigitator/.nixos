@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "github:9prestidigitator/nvim";
+    maxvim.url = "github:9prestidigitator/nvim";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
 

@@ -12,21 +12,15 @@ Dendritic Nix flake configuration for five x86-64 NixOS systems with five deskto
 - **book**: Chromebook
 - **cardboard**: Laptop
 
-# Desktop Options
+# Desktop Modules
 
 1. Niri
    - Noctalia Shell
-   - XDG gnome desktop portal
 2. KDE
 3. GNOME
 4. Hyprland
    - Caelestia Shell
-   - XDG hyprland desktop portal
 5. i3
-
-# Package Derivations
-
-- Overwitch: Jack bridge for Overbridge 2 device.
 
 # Dev shells
 
@@ -45,6 +39,7 @@ alias ds-nix='nix develop ~/.nixos#nix'
 alias ds-md='nix develop ~/.nixos#markdown'
 alias ds-py='nix develop ~/.nixos#python'
 alias ds-cs='nix develop ~/.nixos#csharp'
+alias ds-cpp='nix develop ~/.nixos#cpp'
 ```
 
 There are alternative dsv commands for each to launch neovim upon entering the environment.
