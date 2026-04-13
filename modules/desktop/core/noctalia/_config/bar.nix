@@ -5,7 +5,6 @@
         capsuleOpacity = lib.mkForce 1;
         density = "comfortable";
         barType = "simple";
-        floating = true;
         marginVertical = 9;
         marginHorizontal = 9;
         position = "top";
