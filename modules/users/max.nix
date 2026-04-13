@@ -10,6 +10,8 @@
     services.syncthing = {
       user = "max";
       dataDir = "/home/max";
+      key = "${config}";
+      cert = "${config}";
     };
 
     programs.ssh.extraConfig = ''
@@ -47,6 +49,16 @@
         "wg0/interface-key" = {};
         "wg0/peer-key" = {};
         "mullvad" = {
+          owner = config.users.users.max.name;
+          group = config.users.users.max.group;
+          mode = "0600";
+        };
+        "syncthing/cert" = {
+          owner = config.users.users.max.name;
+          group = config.users.users.max.group;
+          mode = "0600";
+        };
+        "syncthing/perm" = {
           owner = config.users.users.max.name;
           group = config.users.users.max.group;
           mode = "0600";
