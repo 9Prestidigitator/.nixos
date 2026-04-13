@@ -42,7 +42,11 @@
       ];
     };
 
-    nixosModules.ink = {pkgs, config, ...}: {
+    nixosModules.ink = {
+      pkgs,
+      config,
+      ...
+    }: {
       networking = {
         hostName = "ink";
         networkmanager.enable = true;
@@ -86,7 +90,6 @@
         enableAllFirmware = true;
         cpu.amd.updateMicrocode = true;
       };
-
       powerManagement.cpuFreqGovernor = "performance";
 
       services = {
@@ -98,9 +101,12 @@
         };
       };
 
-      users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGYhcsf8FpAjdREk4TIAbugQlICIejGI8g+DLyAJ2ENi"];
+      users.users.max.openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGYhcsf8FpAjdREk4TIAbugQlICIejGI8g+DLyAJ2ENi"
+        "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIE7a6cld/4ZWzzQT70YA/DWgt7lVf9NcWTqOdDi58onE8qrwjoH7PkmY8Ygd5HJQT0/a2jXPhnq7cCEHFtPCPk="
+      ];
       programs.ssh.extraConfig = ''
-        HostName papyr
+        Host papyr
           HostName 10.123.78.161
           User max
           IdentityFile ${config.sops.secrets."ssh/papyr".path}

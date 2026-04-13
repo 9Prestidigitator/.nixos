@@ -91,7 +91,7 @@
 
       users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKWcs2PiK8MvDfOEadtln1NnnP3TYtdZUiY3Z8uov7u"];
       programs.ssh.extraConfig = ''
-        HostName ink
+        Host ink
           HostName 10.123.78.170
           User max
           IdentityFile ${config.sops.secrets."ssh/ink".path}

@@ -21,7 +21,7 @@
     };
 
     programs.ssh.extraConfig = ''
-      HostName github.com
+      Host github.com
         HostName github.com
         User git
         IdentityFile ${config.sops.secrets."ssh/gh".path}
