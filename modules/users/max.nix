@@ -17,8 +17,8 @@
       user = "max";
       dataDir = "/home/max";
     };
-    age.keyFile = "/home/max/.config/sops/age/keys.txt";
     sops.secrets = {
+      age.keyFile = "/home/max/.config/sops/age/keys.txt";
       ssh_ink_to_papyr = {
         owner = config.users.users.max.name;
         mode = "0600";
