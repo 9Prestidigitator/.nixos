@@ -97,11 +97,12 @@
         };
       };
 
+      users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGYhcsf8FpAjdREk4TIAbugQlICIejGI8g+DLyAJ2ENi"];
       programs.ssh.extraConfig = ''
         HostName papyr
           HostName 10.123.78.161
           User max
-          IdentityFile ${config.sops.secrets.ssh-ink-to-papyr.path}
+          IdentityFile ${config.sops.secrets."ssh/papyr".path}
           IdentitiesOnly yes
       '';
 
