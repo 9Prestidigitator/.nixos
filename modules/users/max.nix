@@ -45,6 +45,11 @@
           group = config.users.users.max.group;
           mode = "0600";
         };
+        "ssh/cardboard" = {
+          owner = config.users.users.max.name;
+          group = config.users.users.max.group;
+          mode = "0600";
+        };
         "ssh/builders/ink" = {};
         "wg0/interface-key" = {};
         "wg0/peer-key" = {};

@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.cardboard = inputs.nixpkgs.lib.nixosSystem {
@@ -24,6 +28,7 @@
         stylix
         fonts
 
+        sops
         grub
         intel
         systemGeneral
@@ -44,7 +49,10 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "backup";
-        extraSpecialArgs = {inherit inputs; isLaptop = true;};
+        extraSpecialArgs = {
+          inherit inputs;
+          isLaptop = true;
+        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -68,6 +76,8 @@
 
       powerManagement.cpuFreqGovernor = "performance";
       services.blueman.enable = true;
+
+      users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK7+7QTIxfPUGf8bYnZ8U/M7deNYriv6upTRsUtafdAA"];
     };
   };
 }

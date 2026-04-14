@@ -101,6 +101,11 @@
           User max
           IdentityFile ${config.sops.secrets."ssh/surface".path}
           IdentitiesOnly yes
+        Host cardboard
+          HostName 10.123.78.156
+          User max
+          IdentityFile ${config.sops.secrets."ssh/cardboard".path}
+          IdentitiesOnly yes
       '';
 
       networking.wg-quick.interfaces.wg0 = {
