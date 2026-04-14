@@ -7,7 +7,10 @@
       };
     };
   in {
-    imports = [inputs.musnix.nixosModules.musnix];
+    imports = [
+      inputs.musnix.nixosModules.musnix
+      inputs.self.nixosModules.overwitch
+    ];
     musnix.enable = true;
     environment.systemPackages = with pkgs; [
       # Compatibility

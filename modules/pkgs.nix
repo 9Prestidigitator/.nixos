@@ -1,51 +1,36 @@
 {
-  perSystem = {pkgs, ...}: {
-    packages.overwitch = pkgs.callPackage ../pkgs/overwitch.nix {};
-  };
+  flake.nixosModules.overwitch = {lib, config, pkgs, ...}: let
+    cfg = config.services.overwitch;
+  in {
+    options.services.overwitch = {
+      enable = lib.mkEnableOption "Overwitch Overbridge daemon";
 
-  flake = {
-    overlays.default = final: prev: {
-      overwitch = final.callPackage ../pkgs/overwitch.nix {};
+      package = lib.mkOption {
+        type = lib.types.package;
+        default = pkgs.overwitch;
+        description = "Overwitch package to use";
+      };
     };
 
-    nixosModules.overwitch = {
-      lib,
-      config,
-      pkgs,
-      ...
-    }: let
-      cfg = config.services.overwitch;
-    in {
-      options.services.overwitch = {
-        enable = lib.mkEnableOption "Overwitch Overbridge daemon";
-
-        package = lib.mkOption {
-          type = lib.types.package;
-          default = pkgs.overwitch;
-          description = "Overwitch package to use";
-        };
+    config = lib.mkIf cfg.enable {
+      environment.systemPackages = [cfg.package];
+      services = {
+        udev.packages = [cfg.package];
+        udev.extraRules = ''
+          SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
+        '';
       };
 
-      config = lib.mkIf cfg.enable {
-        environment.systemPackages = [cfg.package];
-        services = {
-          udev.packages = [cfg.package];
-          udev.extraRules = ''
-            SUBSYSTEM=="usb", ATTR{idVendor}=="1935", MODE="0666"
-          '';
-        };
+      systemd.user.services.overwitch = {
+        description = "Overwitch overbridge Daemon";
+        wantedBy = ["default.target"];
+        after = [
+          "pipewire.service"
+        ];
 
-        systemd.user.services.overwitch = {
-          description = "Overwitch overbridge Daemon";
-          wantedBy = ["default.target"];
-          after = [
-            "pipewire.service"
-          ];
-
-          serviceConfig = {
-            ExecStart = "${cfg.package}/bin/overwitch-service";
-            Restart = "on-failure";
-          };
+        serviceConfig = {
+          ExecStart = "${cfg.package}/bin/overwitch-service";
+          Restart = "on-failure";
         };
       };
     };

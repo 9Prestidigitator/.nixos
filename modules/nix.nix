@@ -8,10 +8,9 @@
     nixpkgs = {
       config.allowUnfree = true;
       overlays = [
-        inputs.self.overlays.default
-        inputs.maxpkgs.overlays.default
-        inputs.niri-flake.overlays.niri
         inputs.audio-nix.overlays.default
+        inputs.niri-flake.overlays.niri
+        inputs.maxpkgs.overlays.default
       ];
     };
     nix = {
