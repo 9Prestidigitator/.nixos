@@ -14,6 +14,9 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    maxpkgs.url = "github:9Prestidigitator/maxpkgs";
+    maxvim.url = "github:9prestidigitator/nvim";
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,8 +26,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    maxvim.url = "github:9prestidigitator/nvim";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
 

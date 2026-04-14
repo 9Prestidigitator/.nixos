@@ -23,11 +23,12 @@
       yabridgectl
       overwitch
       # DAWs
-      bitwig-studio-latest
+      bitwig6
       reaper
       reaper-sws-extension
       reaper-reapack-extension
       # plugins
+      amplocker
       lsp-plugins
       x42-avldrums
       x42-plugins
