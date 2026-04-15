@@ -2,15 +2,10 @@
   flake.nixosModules.niri = {pkgs, ...}: {
     # noctalia as a dependency
     imports = [inputs.self.nixosModules.noctalia];
+
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable.overrideAttrs (old: rec {
-        src = inputs.niri-blur-pr;
-        cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
-          inherit src;
-          hash = "sha256-soJYT6TavlyqtVqMD70QYDZ+8swn6TVXsFHadJxaxWo=";
-        };
-      });
+      package = pkgs.niri-unstable;
     };
 
     services = {
@@ -34,19 +29,6 @@
       dconf.enable = true;
     };
 
-    xdg.portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gnome
-        xdg-desktop-portal-gtk
-      ];
-      config.common.default = [
-        "gtk"
-        "gnome"
-      ];
-    };
-
     environment.sessionVariables = {
       XDG_CURRENT_DESKTOP = "niri";
       XDG_SESSION_DESKTOP = "niri";
@@ -58,17 +40,18 @@
       seahorse
       polkit_gnome
       wl-clipboard
-      linux-wallpaperengine
+      file-roller
       pulseaudio
       imv
-      file-roller
     ];
   };
 
   flake.homeModules.niri = {
     imports = [
+      # niri-flake is responsible for the configuration and desktop portal startup
       inputs.niri-flake.homeModules.config
       (inputs.import-tree ./_config)
+
       # noctalia as a dependency
       inputs.self.homeModules.noctalia
     ];
