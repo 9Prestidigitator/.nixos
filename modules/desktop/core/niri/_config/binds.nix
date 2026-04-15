@@ -387,8 +387,13 @@ in {
       }
       {
         key = "g";
-        desc = "Restart xdg-desktop-portal-gnome";
+        desc = "Restart gnome xdg desktop portal";
         cmd = "systemctl --user restart xdg-desktop-portal-gnome.service";
+      }
+      {
+        key = "d";
+        desc = "Restart xdg desktop portal's";
+        cmd = "systemctl --user restart xdg-desktop-portal.service";
       }
     ];
 
