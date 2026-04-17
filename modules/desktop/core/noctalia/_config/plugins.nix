@@ -105,6 +105,18 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        noctalia-calculator = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        usb-drive-manager = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        dmenu = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
       };
       version = 1;
     };

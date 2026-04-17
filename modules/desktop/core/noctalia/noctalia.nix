@@ -1,7 +1,6 @@
 {inputs, ...}: {
   flake.nixosModules.noctalia = {pkgs, ...}: {
     services.gnome.evolution-data-server.enable = true;
-
     programs.gpu-screen-recorder.enable = true;
 
     environment.systemPackages = with pkgs; [

@@ -11,14 +11,7 @@
     ];
     musnix.enable = true;
     environment.systemPackages = with pkgs; [
-      # Compatibility
-      # wineWow64Packages.yabridge
-      # wineWow64Packages.full
-      winetricks
-      winePackages.fonts
-      wineasio
-      yabridge
-      yabridgectl
+      # hardware
       overwitch
       # DAWs
       bitwig6

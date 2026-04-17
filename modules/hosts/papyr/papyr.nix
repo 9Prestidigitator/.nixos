@@ -21,6 +21,7 @@
         terminalTools
         mullvad
         syncthing
+        wine
 
         buildMachines
         stylix

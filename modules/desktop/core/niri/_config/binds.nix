@@ -162,6 +162,16 @@ in {
             desc = "Wallpaper Engine";
             cmd = noctalia "plugin togglePanel linux-wallpaperengine-controller";
           }
+          {
+            key = "u";
+            desc = "USB Drive Manager";
+            cmd = noctalia "plugin togglePanel usb-drive-manager";
+          }
+          {
+            key = "1";
+            desc = "Calculator";
+            cmd = noctalia "plugin togglePanel noctalia-calculator";
+          }
         ];
       }
       {
