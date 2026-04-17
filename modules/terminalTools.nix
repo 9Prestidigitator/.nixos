@@ -59,6 +59,7 @@
       };
     };
     environment.systemPackages = with pkgs; [
+      bashInteractive
       btop
       vim
       lazygit

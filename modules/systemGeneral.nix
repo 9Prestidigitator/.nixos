@@ -1,9 +1,13 @@
-{
-  flake.nixosModules.systemGeneral = {pkgs, lib, ...}: {
-    boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+{inputs, ...}: {
+  flake.nixosModules.systemGeneral = {pkgs, lib, ...}: let
+    pkgsMaster = import inputs.nixpkgs-master {
+      system = pkgs.stdenv.hostPlatform.system;
+      config.allowUnfree = true;
+    };
+  in {
+    boot.kernelPackages = lib.mkDefault pkgsMaster.linuxKernel.packages.linux_7_0;
 
     time.timeZone = "US/Eastern";
-
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
       earlySetup = true;
@@ -13,7 +17,6 @@
     };
 
     networking.firewall.enable = true;
-
     security = {
       polkit.enable = true;
       rtkit.enable = true;

@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
@@ -26,6 +22,7 @@
         terminalTools
         mullvad
         syncthing
+        wine
 
         stylix
         fonts
@@ -42,11 +39,7 @@
       ];
     };
 
-    nixosModules.ink = {
-      pkgs,
-      config,
-      ...
-    }: {
+    nixosModules.ink = {pkgs, config, ...}: {
       networking = {
         hostName = "ink";
         networkmanager.enable = true;

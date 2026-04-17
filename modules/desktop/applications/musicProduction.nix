@@ -2,9 +2,7 @@
   flake.nixosModules.musicProduction = {pkgs, ...}: let
     pkgsStable = import inputs.nixpkgs-stable {
       system = pkgs.stdenv.hostPlatform.system;
-      config = {
-        allowUnfree = true;
-      };
+      config.allowUnfree = true;
     };
   in {
     imports = [
@@ -14,8 +12,8 @@
     musnix.enable = true;
     environment.systemPackages = with pkgs; [
       # Compatibility
-      wineWow64Packages.yabridge
-      wineWow64Packages.full
+      # wineWow64Packages.yabridge
+      # wineWow64Packages.full
       winetricks
       winePackages.fonts
       wineasio
