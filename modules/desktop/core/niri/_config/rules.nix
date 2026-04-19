@@ -132,6 +132,13 @@
             }
         }
         layer-rule {
+            match namespace="wlr_which_key"
+            background-effect {
+                blur true
+                xray false
+            }
+        }
+        layer-rule {
             background-effect {
                 xray false
             }
