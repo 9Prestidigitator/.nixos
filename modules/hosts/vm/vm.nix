@@ -18,6 +18,7 @@
 
         stylix
 
+        sops
         grub
         systemGeneral
         nix
