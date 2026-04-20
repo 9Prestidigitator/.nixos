@@ -13,6 +13,7 @@
         plasma
 
         essentials
+        braveBrowser
 
         terminalTools
 
