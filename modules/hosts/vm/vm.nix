@@ -10,7 +10,7 @@
       modules = with self.nixosModules; [
         max
 
-        niri
+        plasma
 
         essentials
 
@@ -43,8 +43,6 @@
         users.max = {
           imports = with self.homeModules; [
             max
-
-            niri
 
             neovim
             terminalTools
