@@ -63,7 +63,6 @@
       btop
       vim
       lazygit
-      lazydocker
       ripgrep
       fd
       fzf
@@ -189,28 +188,32 @@
         EDITOR = "nvim";
       };
       shellAliases = {
-        # Standard stuff
+
         ls = "ls -a --color=auto";
-        nv = "nvim";
-        tm = "tmux a || tmux";
         fman = "compgen -c | sort -hr | fzf | xargs man";
-        # Nix config stuff
+
         nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
-        nixup = "nix flake update";
         nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
-        # Development Shell commands
+        nixup = "nix flake update";
+
+        tm = "tmux a || tmux";
+
         ds = "nix develop";
         dsv = "nix develop -c nvim";
-        ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
         ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";
         ds-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown";
-        ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
+        ds-cpp = "nix develop ${config.home.homeDirectory}/.nixos#cpp";
         ds-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp";
-        dsv-full = "nix develop ${config.home.homeDirectory}/.nixos#default -c nvim";
-        dsv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";
-        dsv-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown -c nvim";
-        dsv-py = "nix develop ${config.home.homeDirectory}/.nixos#python -c nvim";
-        dsv-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp -c nvim";
+        ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
+        ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
+
+        nv = "nvim";
+        nv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";
+        nv-md = "nix develop ${config.home.homeDirectory}/.nixos#markdown -c nvim";
+        nv-cpp = "nix develop ${config.home.homeDirectory}/.nixos#cpp -c nvim";
+        nv-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp -c nvim";
+        nv-py = "nix develop ${config.home.homeDirectory}/.nixos#python -c nvim";
+        nv-full = "nix develop ${config.home.homeDirectory}/.nixos#default -c nvim";
       };
     };
   };
