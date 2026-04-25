@@ -51,8 +51,8 @@
           mode = "0600";
         };
         "ssh/builders/ink" = {};
-        "wg0/interface-key" = {};
-        "wg0/peer-key" = {};
+        "wg0/private-key" = {};
+        "wg0/peer-preshared-key" = {};
         "mullvad" = {
           owner = config.users.users.max.name;
           group = config.users.users.max.group;
