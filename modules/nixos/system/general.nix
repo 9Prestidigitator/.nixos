@@ -51,8 +51,10 @@
           enable = true;
           jack.enable = true;
           pulse.enable = true;
-          alsa.enable = true;
-          alsa.support32Bit = true;
+          alsa = {
+            enable = true;
+            support32Bit = true;
+          };
           extraConfig.pipewire."10-clock-rate"."context.properties" = {
             "default.clock.rate" = 48000;
             "default.clock.quantum" = lib.mkDefault 128;
