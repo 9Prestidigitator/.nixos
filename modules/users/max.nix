@@ -1,7 +1,5 @@
-{inputs, ...}: {
+{
   flake.nixosModules.max = {config, ...}: {
-    imports = [inputs.sops-nix.nixosModules.sops];
-
     users.users.max = {
       isNormalUser = true;
       extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
@@ -70,11 +68,15 @@
         };
       };
     };
+
+    home-manager.extraSpecialArgs = {
+      sshGhKeyPath = config.sops.secrets."ssh/gh".path;
+    };
   };
 
   flake.homeModules.max = {
     lib,
-    config,
+    sshGhKeyPath,
     ...
   }: {
     programs = {
@@ -87,12 +89,16 @@
           };
         };
       };
-      ssh.matchBlocks.github = {
-        host = "github.com";
-        hostname = "github.com";
-        user = "git";
-        identityFile = config.sops.secrets."ssh/gh".path;
-        identitiesOnly = true;
+      ssh = {
+        enable = true;
+        enableDefaultConfig = false;
+        matchBlocks.github = {
+          host = "github.com";
+          hostname = "github.com";
+          user = "git";
+          identityFile = sshGhKeyPath;
+          identitiesOnly = true;
+        };
       };
     };
 
