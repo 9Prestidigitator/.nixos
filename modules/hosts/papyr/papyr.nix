@@ -71,7 +71,7 @@
           ];
 
           programs.ssh.matchBlocks = {
-            papyr = {
+            ink = {
               host = "ink";
               user = "max";
               hostname = "10.123.78.170";
