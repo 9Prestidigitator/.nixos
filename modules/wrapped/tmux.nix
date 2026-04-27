@@ -8,18 +8,29 @@
       inherit pkgs;
       package = pkgs.tmux;
       prefix = "C-a";
+      terminal = "tmux-256color";
       mouse = true;
       historyLimit = 20000;
-      terminal = "tmux-256color";
+      escapeTime = 0;
       secureSocket = true;
+      historyLimit = 20000;
+      statusKeys = "vi";
+      modeKeys = "vi";
       configBefore = ''
-        set -g base-index 1
-        setw -g pane-base-index 1
-        set -g renumber-windows on
-
         set -g focus-events on
-        set -g history-limit 20000
         set -g display-time 4000
+
+        new-session -A -s 0
+
+        bind h select-pane -L
+        bind j select-pane -D
+        bind k select-pane -U
+        bind l select-pane -R
+
+        bind -r H resize-pane -L 5
+        bind -r J resize-pane -D 5
+        bind -r K resize-pane -U 5
+        bind -r L resize-pane -R 5
 
         bind-key -n C-p previous-window
         bind-key -n C-n next-window
