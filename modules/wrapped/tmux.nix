@@ -1,9 +1,5 @@
 {inputs, ...}: {
-  perSystem = {
-    pkgs,
-    system,
-    ...
-  }: {
+  perSystem = {pkgs, ...}: {
     packages.tmux = inputs.wrappers.wrappers.tmux.wrap {
       inherit pkgs;
       package = pkgs.tmux;

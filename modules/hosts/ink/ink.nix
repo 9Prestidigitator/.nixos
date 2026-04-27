@@ -45,11 +45,7 @@
       ];
     };
 
-    nixosModules.ink = {
-      pkgs,
-      config,
-      ...
-    }: {
+    nixosModules.ink = {pkgs, config, ...}: {
       host.name = "ink";
 
       home-manager = {

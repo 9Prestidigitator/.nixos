@@ -1,15 +1,10 @@
-{inputs, ...}: {
+{
   flake.nixosModules.system-general = {
     pkgs,
     lib,
     config,
     ...
-  }: let
-    pkgsMaster = import inputs.nixpkgs-master {
-      system = pkgs.stdenv.hostPlatform.system;
-      config.allowUnfree = true;
-    };
-  in {
+  }: {
     options.host = {
       name = lib.mkOption {
         type = lib.types.str;
@@ -24,7 +19,7 @@
     };
 
     config = {
-      boot.kernelPackages = lib.mkDefault pkgsMaster.linuxKernel.packages.linux_7_0;
+      boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_7_0;
 
       time.timeZone = "US/Eastern";
       i18n.defaultLocale = "en_US.UTF-8";
