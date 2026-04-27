@@ -371,11 +371,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1777251435,
-        "narHash": "sha256-x+hiUc4SEzl5LpsZyIf0eFRApx/kaytQAr4c+e1DS7M=",
+        "lastModified": 1777314293,
+        "narHash": "sha256-rqIDKlBW4DAKnxt3zc7nUDlldmuhg4TH/KZkHqGjaX0=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "6d696d6248c4185fc87dfcb86cf3b5dc5e7d285b",
+        "rev": "d1e4afcfb5facda17bf8c1f219c1b95fd4acc1a4",
         "type": "github"
       },
       "original": {
