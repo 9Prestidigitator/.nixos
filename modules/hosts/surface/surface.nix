@@ -3,7 +3,6 @@
   self,
   ...
 }: {
-  imports = [inputs.home-manager.flakeModules.home-manager];
   flake = {
     nixosConfigurations.surface = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -14,10 +13,10 @@
         gnome
 
         essentials
-        braveBrowser
+        brave-browser
 
-        terminalTools
-        minecraftServer
+        terminal-tools
+        minecraft-server
 
         buildMachines
         stylix
@@ -27,16 +26,18 @@
         grub
         intel
         systemGeneral
+        home-manager
         nix
 
         surface
+
+        inputs.nixos-hardware.nixosModules.microsoft-surface-common
       ];
     };
 
     nixosModules.surface = {
       pkgs,
       lib,
-      config,
       ...
     }: {
       networking = {
@@ -44,11 +45,7 @@
         networkmanager.enable = true;
       };
 
-      imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common inputs.home-manager.nixosModules.default];
       home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        backupFileExtension = "backup";
         extraSpecialArgs = {
           inherit inputs;
           isLaptop = true;
@@ -60,7 +57,7 @@
             gnome
 
             neovim
-            terminalTools
+            terminal-tools
 
             stylix
           ];

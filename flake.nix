@@ -40,20 +40,15 @@
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.6";
 
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     steam-config-nix.url = "github:different-name/steam-config-nix";
     nixcord.url = "github:kaylorben/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     stoney-kernel = {
       url = "github:chrultrabook/stoney-kernel";
       flake = false;
     };
-
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 }

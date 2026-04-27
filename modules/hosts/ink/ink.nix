@@ -1,5 +1,8 @@
-{inputs, self, ...}: {
-  imports = [inputs.home-manager.flakeModules.home-manager];
+{
+  inputs,
+  self,
+  ...
+}: {
   flake = {
     nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -11,15 +14,16 @@
         niri
 
         essentials
-        braveBrowser
-        musicProduction
+        brave-browser
+        music-production
         design
         gaming
         media
+        video-editing
         communications
         virtualisation
 
-        terminalTools
+        terminal-tools
         mullvad
         syncthing
         wine
@@ -33,23 +37,24 @@
         grub
         nvidia
         systemGeneral
+        home-manager
         nix
 
         ink
       ];
     };
 
-    nixosModules.ink = {pkgs, config, ...}: {
+    nixosModules.ink = {
+      pkgs,
+      config,
+      ...
+    }: {
       networking = {
         hostName = "ink";
         networkmanager.enable = true;
       };
 
-      imports = [inputs.home-manager.nixosModules.default];
       home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        backupFileExtension = "backup";
         extraSpecialArgs = {
           inherit inputs;
           isLaptop = false;
@@ -61,7 +66,7 @@
             niri
 
             neovim
-            terminalTools
+            terminal-tools
 
             stylix
 
