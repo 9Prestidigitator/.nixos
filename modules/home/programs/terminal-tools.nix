@@ -112,6 +112,7 @@
         fman = "compgen -c | sort -hr | fzf | xargs man";
 
         nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
+        nhbo = "nh os boot ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
         nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
         nixup = "nix flake update";
 

@@ -79,20 +79,7 @@
       }
     ];
 
-    "Mod+V".action.spawn = mkWlrWhichKeyMenu "VPN" (
-      lib.optional isLaptop [
-        {
-          key = "w";
-          desc = "Stop Wireguard";
-          cmd = "pkexec systemctl stop wg-quick-wg0.service";
-        }
-        {
-          key = "W";
-          desc = "Start Wireguard";
-          cmd = "pkexec systemctl start wg-quick-wg0.service";
-        }
-      ]
-      ++ [
+    "Mod+V".action.spawn = mkWlrWhichKeyMenu "VPN" ([
         {
           key = "m";
           desc = "Mullvad";
@@ -120,7 +107,19 @@
           ];
         }
       ]
-    );
+      ++ lib.optionals isLaptop
+      [
+        {
+          key = "w";
+          desc = "Stop Wireguard";
+          cmd = "pkexec systemctl stop wg-quick-wg0.service";
+        }
+        {
+          key = "W";
+          desc = "Start Wireguard";
+          cmd = "pkexec systemctl start wg-quick-wg0.service";
+        }
+      ]);
 
     "Ctrl+Shift+Escape" = {
       hotkey-overlay.title = "btop";

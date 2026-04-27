@@ -15,6 +15,10 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
     import-tree.url = "github:vic/import-tree";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     maxpkgs.url = "github:9Prestidigitator/maxpkgs";
     maxvim.url = "github:9prestidigitator/nvim";
