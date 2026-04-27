@@ -1,5 +1,6 @@
 {
   flake.nixosModules.build-machines = {config, ...}: {
+    # TODO(max): Separate this into it's own key
     sops.secrets."ssh/builders/ink" = {};
     nix = {
       distributedBuilds = true;
