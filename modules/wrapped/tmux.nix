@@ -13,7 +13,6 @@
       historyLimit = 20000;
       escapeTime = 0;
       secureSocket = true;
-      historyLimit = 20000;
       statusKeys = "vi";
       modeKeys = "vi";
       configBefore = ''
