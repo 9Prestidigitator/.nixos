@@ -40,16 +40,12 @@
       lib,
       ...
     }: {
-      networking = {
-        hostName = "surface";
-        networkmanager.enable = true;
+      host = {
+        name = "surface";
+        isLaptop = true;
       };
 
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-          isLaptop = true;
-        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -61,11 +57,6 @@
 
             stylix
           ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "26.05";
-          };
         };
       };
       hardware.microsoft-surface.kernelVersion = "longterm";

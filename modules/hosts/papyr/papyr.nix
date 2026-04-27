@@ -45,16 +45,12 @@
     };
 
     nixosModules.papyr = {config, ...}: {
-      networking = {
-        hostName = "papyr";
-        networkmanager.enable = true;
+      host = {
+        name = "papyr";
+        isLaptop = true;
       };
 
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-          isLaptop = true;
-        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -64,6 +60,7 @@
 
             neovim
             terminal-tools
+            mpd
 
             stylix
 
@@ -72,10 +69,29 @@
             media
             communications
           ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "26.05";
+
+          programs.ssh.matchBlocks = {
+            papyr = {
+              host = "ink";
+              user = "max";
+              hostname = "10.123.78.170";
+              identityFile = config.sops.secrets."ssh/ink".path;
+              identitiesOnly = true;
+            };
+            surface = {
+              host = "surface";
+              user = "max";
+              hostname = "10.123.78.31";
+              identityFile = config.sops.secrets."ssh/surface".path;
+              identitiesOnly = true;
+            };
+            cardboard = {
+              host = "cardboard";
+              user = "max";
+              hostname = "10.123.78.156";
+              identityFile = config.sops.secrets."ssh/cardboard".path;
+              identitiesOnly = true;
+            };
           };
         };
       };
@@ -93,23 +109,6 @@
       };
 
       users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKWcs2PiK8MvDfOEadtln1NnnP3TYtdZUiY3Z8uov7u"];
-      programs.ssh.extraConfig = ''
-        Host ink
-          HostName 10.123.78.170
-          User max
-          IdentityFile ${config.sops.secrets."ssh/ink".path}
-          IdentitiesOnly yes
-        Host surface
-          HostName 10.123.78.31
-          User max
-          IdentityFile ${config.sops.secrets."ssh/surface".path}
-          IdentitiesOnly yes
-        Host cardboard
-          HostName 10.123.78.156
-          User max
-          IdentityFile ${config.sops.secrets."ssh/cardboard".path}
-          IdentitiesOnly yes
-      '';
 
       networking.wg-quick.interfaces.wg0 = {
         autostart = false;

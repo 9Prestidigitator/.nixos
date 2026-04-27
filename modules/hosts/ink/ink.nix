@@ -50,16 +50,9 @@
       config,
       ...
     }: {
-      networking = {
-        hostName = "ink";
-        networkmanager.enable = true;
-      };
+      host.name = "ink";
 
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-          isLaptop = false;
-        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -69,6 +62,7 @@
 
             neovim
             terminal-tools
+            mpd
 
             stylix
 
@@ -77,10 +71,29 @@
             media
             communications
           ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "26.05";
+
+          programs.ssh.matchBlocks = {
+            papyr = {
+              host = "papyr";
+              user = "max";
+              hostname = "10.123.78.161";
+              identityFile = config.sops.secrets."ssh/papyr".path;
+              identitiesOnly = true;
+            };
+            surface = {
+              host = "surface";
+              user = "max";
+              hostname = "10.123.78.31";
+              identityFile = config.sops.secrets."ssh/surface".path;
+              identitiesOnly = true;
+            };
+            cardboard = {
+              host = "cardboard";
+              user = "max";
+              hostname = "10.123.78.156";
+              identityFile = config.sops.secrets."ssh/cardboard".path;
+              identitiesOnly = true;
+            };
           };
         };
       };
@@ -107,23 +120,6 @@
         # FONE->ink
         "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIE7a6cld/4ZWzzQT70YA/DWgt7lVf9NcWTqOdDi58onE8qrwjoH7PkmY8Ygd5HJQT0/a2jXPhnq7cCEHFtPCPk="
       ];
-      programs.ssh.extraConfig = ''
-        Host papyr
-          HostName 10.123.78.161
-          User max
-          IdentityFile ${config.sops.secrets."ssh/papyr".path}
-          IdentitiesOnly yes
-        Host surface
-          HostName 10.123.78.31
-          User max
-          IdentityFile ${config.sops.secrets."ssh/surface".path}
-          IdentitiesOnly yes
-        Host cardboard
-          HostName 10.123.78.156
-          User max
-          IdentityFile ${config.sops.secrets."ssh/cardboard".path}
-          IdentitiesOnly yes
-      '';
 
       fileSystems = {
         "/mnt/win" = {

@@ -28,16 +28,8 @@
       ];
     };
     nixosModules.vm = {
-      networking = {
-        hostName = "vm";
-        networkmanager.enable = true;
-      };
-
+      host.name = "vm";
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-          isLaptop = true;
-        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -49,11 +41,6 @@
 
             essentials
           ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "26.05";
-          };
         };
       };
     };

@@ -39,17 +39,12 @@
     };
 
     nixosModules.cardboard = {
-      networking = {
-        hostName = "cardboard";
-        networkmanager.enable = true;
+      host = {
+        name = "cardboard";
+        isLaptop = true;
       };
 
-      imports = [inputs.home-manager.nixosModules.default];
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-          isLaptop = true;
-        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -63,11 +58,6 @@
             media
             communications
           ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "26.05";
-          };
         };
       };
 

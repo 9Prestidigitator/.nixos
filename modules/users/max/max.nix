@@ -12,22 +12,9 @@
       # cert = "${config.sops.secrets."syncthing/cert".path}";
     };
 
-    # programs.ssh.extraConfig = ''
-    #   Host github.com
-    #     HostName github.com
-    #     User git
-    #     IdentityFile ${config.sops.secrets."ssh/gh".path}
-    #     IdentitiesOnly yes
-    # '';
-
     sops = {
       age.keyFile = "/home/max/.config/sops/age/keys.txt";
       secrets = {
-        "ssh/gh" = {
-          owner = config.users.users.max.name;
-          group = config.users.users.max.group;
-          mode = "0600";
-        };
         "ssh/ink" = {
           owner = config.users.users.max.name;
           group = config.users.users.max.group;
@@ -48,7 +35,6 @@
           group = config.users.users.max.group;
           mode = "0600";
         };
-        "ssh/builders/ink" = {};
         "wg0/private-key" = {};
         "wg0/peer-preshared-key" = {};
         "mullvad" = {
@@ -71,49 +57,6 @@
 
     home-manager.extraSpecialArgs = {
       sshGhKeyPath = config.sops.secrets."ssh/gh".path;
-    };
-  };
-
-  flake.homeModules.max = {
-    lib,
-    sshGhKeyPath,
-    ...
-  }: {
-    programs = {
-      git = {
-        settings = {
-          url."ssh://git@github.com".insteadOf = "https://github.com";
-          user = {
-            name = "9Prestidigitator";
-            email = "9Prestidigitator@gmail.com";
-          };
-        };
-      };
-      ssh = {
-        enable = true;
-        enableDefaultConfig = false;
-        matchBlocks.github = {
-          host = "github.com";
-          hostname = "github.com";
-          user = "git";
-          identityFile = sshGhKeyPath;
-          identitiesOnly = true;
-        };
-      };
-    };
-
-    home.activation.ensureNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''mkdir -p "$HOME/notes"'';
-
-    services.mpd = {
-      enable = true;
-      musicDirectory = "/home/max/Music";
-      network.listenAddress = "any";
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "PipeWire"
-        }
-      '';
     };
   };
 }

@@ -22,6 +22,7 @@
         build-machines
         stylix
 
+        sops
         grub
         system-general
         home-manager
@@ -32,16 +33,12 @@
     };
 
     nixosModules.book = {
-      networking = {
-        hostName = "book";
-        networkmanager.enable = true;
+      host = {
+        name = "book";
+        isLaptop = true;
       };
 
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-          isLaptop = true;
-        };
         users.max = {
           imports = with self.homeModules; [
             max
@@ -54,11 +51,6 @@
 
             stylix
           ];
-          home = {
-            username = "max";
-            homeDirectory = "/home/max";
-            stateVersion = "26.05";
-          };
         };
       };
 
