@@ -18,14 +18,14 @@
         terminal-tools
         minecraft-server
 
-        buildMachines
+        build-machines
         stylix
 
         keyd
         sops
         grub
         intel
-        systemGeneral
+        system-general
         home-manager
         nix
 

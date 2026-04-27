@@ -4,9 +4,6 @@
   ...
 }: {
   flake.nixosModules.niri = {pkgs, ...}: {
-    # noctalia as a dependency
-    # imports = [self.nixosModules.noctalia];
-
     programs.niri = {
       enable = true;
       package = pkgs.niri-unstable;

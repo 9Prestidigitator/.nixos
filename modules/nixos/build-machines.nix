@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.buildMachines = {config, ...}: {
+  flake.nixosModules.build-machines = {config, ...}: {
     nix = {
       buildMachines = [
         {

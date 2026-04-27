@@ -13,6 +13,7 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
     import-tree.url = "github:vic/import-tree";
 
     maxpkgs.url = "github:9Prestidigitator/maxpkgs";

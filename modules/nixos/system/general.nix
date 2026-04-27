@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.systemGeneral = {pkgs, lib, ...}: let
+  flake.nixosModules.system-general = {pkgs, lib, ...}: let
     pkgsMaster = import inputs.nixpkgs-master {
       system = pkgs.stdenv.hostPlatform.system;
       config.allowUnfree = true;

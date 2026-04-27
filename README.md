@@ -18,8 +18,6 @@ Dendritic Nix flake configuration for five x86-64 NixOS systems with five deskto
    - Noctalia Shell
 2. KDE
 3. GNOME
-4. Hyprland
-   - Caelestia Shell
 5. i3
 
 # Dev shells

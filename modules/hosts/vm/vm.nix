@@ -20,7 +20,7 @@
 
         sops
         grub
-        systemGeneral
+        system-general
         home-manager
         nix
 

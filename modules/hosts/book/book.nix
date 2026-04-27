@@ -11,6 +11,7 @@
 
         ly
         niri
+        noctalia
 
         essentials
         brave-browser
@@ -18,11 +19,11 @@
         terminal-tools
         mullvad
 
-        buildMachines
+        build-machines
         stylix
 
         grub
-        systemGeneral
+        system-general
         home-manager
         nix
 
@@ -46,6 +47,7 @@
             max
 
             niri
+            noctalia
 
             neovim
             terminal-tools

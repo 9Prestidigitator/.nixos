@@ -15,7 +15,6 @@
         mouse = {
           accel-profile = "flat";
         };
-        # Uncomment this to make the mouse warp to the center of newly focused windows.
         warp-mouse-to-focus.enable = false;
       };
       overview = {

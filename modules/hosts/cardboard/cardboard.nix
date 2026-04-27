@@ -23,14 +23,14 @@
         terminal-tools
         mullvad
 
-        buildMachines
+        build-machines
         stylix
         fonts
 
         sops
         grub
         intel
-        systemGeneral
+        system-general
         home-manager
         nix
 

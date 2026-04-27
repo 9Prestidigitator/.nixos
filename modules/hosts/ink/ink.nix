@@ -12,6 +12,7 @@
 
         ly
         niri
+        noctalia
 
         essentials
         brave-browser
@@ -36,7 +37,7 @@
         sops
         grub
         nvidia
-        systemGeneral
+        system-general
         home-manager
         nix
 
@@ -64,6 +65,7 @@
             max
 
             niri
+            noctalia
 
             neovim
             terminal-tools

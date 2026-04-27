@@ -14,13 +14,13 @@
       # cert = "${config.sops.secrets."syncthing/cert".path}";
     };
 
-    programs.ssh.extraConfig = ''
-      Host github.com
-        HostName github.com
-        User git
-        IdentityFile ${config.sops.secrets."ssh/gh".path}
-        IdentitiesOnly yes
-    '';
+    # programs.ssh.extraConfig = ''
+    #   Host github.com
+    #     HostName github.com
+    #     User git
+    #     IdentityFile ${config.sops.secrets."ssh/gh".path}
+    #     IdentitiesOnly yes
+    # '';
 
     sops = {
       age.keyFile = "/home/max/.config/sops/age/keys.txt";
@@ -72,14 +72,27 @@
     };
   };
 
-  flake.homeModules.max = {lib, ...}: {
-    programs.git = {
-      settings = {
-        url."ssh://git@github.com".insteadOf = "https://github.com";
-        user = {
-          name = "9Prestidigitator";
-          email = "9Prestidigitator@gmail.com";
+  flake.homeModules.max = {
+    lib,
+    config,
+    ...
+  }: {
+    programs = {
+      git = {
+        settings = {
+          url."ssh://git@github.com".insteadOf = "https://github.com";
+          user = {
+            name = "9Prestidigitator";
+            email = "9Prestidigitator@gmail.com";
+          };
         };
+      };
+      ssh.matchBlocks.github = {
+        host = "github.com";
+        hostname = "github.com";
+        user = "git";
+        identityFile = config.sops.secrets."ssh/gh".path;
+        identitiesOnly = true;
       };
     };
 
