@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.homeModules.neovim = {pkgs, config, ...}: {
-    imports = [inputs.maxvim.homeManagerModules.default];
+    imports = [inputs.maxvim.homeModules.default];
     programs.maxvim = {
       enable = true;
       package = pkgs.neovim;

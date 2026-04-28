@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.build-machines = {config, ...}: {
+  flake.nixosModules.ink-build-machine = {config, ...}: {
     # TODO(max): Separate this into it's own key
     sops.secrets."ssh/builders/ink" = {};
     nix = {

@@ -7,7 +7,7 @@
     home = {
       username = "max";
       homeDirectory = "/home/max";
-      stateVersion = "26.05";
+      stateVersion = "26.05"; # TODO(max): move stateVersions to hosts
     };
 
     sops = {
