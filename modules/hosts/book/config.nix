@@ -1,4 +1,4 @@
-{self, ...}: {
+{self, inputs, ...}: {
   flake.nixosModules.book = {
     host = {
       name = "book";
