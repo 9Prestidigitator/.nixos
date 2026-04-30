@@ -12,7 +12,7 @@
 
     sops = {
       age.keyFile = "/home/max/.config/sops/age/keys.txt";
-      defaultSopsFile = ../../../secrets.yaml;
+      defaultSopsFile = ../../../secrets/max.yaml;
       defaultSopsFormat = "yaml";
       secrets = {
         "ssh/gh".mode = "0600";
