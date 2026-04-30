@@ -4,9 +4,6 @@
     programs.gpu-screen-recorder.enable = true;
 
     environment = {
-      # sessionVariables = {
-      #   QS_ICON_THEME = "breeze-dark";
-      # };
       systemPackages = with pkgs; [
         (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
           calendarSupport = true;
@@ -29,6 +26,9 @@
         gifski
         linux-wallpaperengine
       ];
+      sessionVariables = {
+        QS_ICON_THEME = "breeze-dark";
+      };
     };
   };
 }

@@ -1,15 +1,9 @@
 {
-  flake.homeModules.stylix = {pkgs, ...}: {
+  flake.homeModules.stylix = {
     stylix = {
       targets = {
         spicetify.enable = false;
         neovim.enable = false;
-      };
-      icons = {
-        enable = true;
-        package = pkgs.kdePackages.breeze;
-        dark = "breeze-dark";
-        light = "breeze";
       };
     };
   };
