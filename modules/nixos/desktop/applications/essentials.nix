@@ -3,6 +3,7 @@
     imports = [inputs.nix-flatpak.nixosModules.nix-flatpak];
     hardware.uinput.enable = true;
     programs.java.enable = true;
+
     services = {
       flatpak.enable = true;
       sunshine = {
@@ -13,32 +14,35 @@
       };
     };
 
-    xdg.mime.defaultApplications = {
-      "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
-      "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
-      "application/pdf" = ["org.pwmt.zathura.desktop"];
-      "inode/directory" = ["org.gnome.Nautilus.desktop"];
-      "image/png" = ["imv.desktop"];
-      "image/jpg" = ["imv.desktop"];
-      "image/jpeg" = ["imv.desktop"];
-      "application/zip" = ["org.gnome.FileRoller.desktop"];
-      "application/vnd.rar" = ["org.gnome.FileRoller.desktop"];
-      "application/x-7z-compressed" = ["org.gnome.FileRoller.desktop"];
-      "application/x-tar" = ["org.gnome.FileRoller.desktop"];
-      "application/x-xz" = ["org.gnome.FileRoller.desktop"];
-      "application/gzip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-bzip2" = ["org.gnome.FileRoller.desktop"];
-      "audio/mpeg" = ["mpv.desktop"];
-      "audio/flac" = ["mpv.desktop"];
-      "audio/ogg" = ["mpv.desktop"];
-      "audio/wav" = ["mpv.desktop"];
-      "audio/x-wav" = ["mpv.desktop"];
-      "audio/mp3" = ["mpv.desktop"];
-      "audio/x-mp3" = ["mpv.desktop"];
-      "video/mp4" = ["mpv.desktop"];
-      "video/webm" = ["mpv.desktop"];
-      "video/x-matroska" = ["mpv.desktop"];
-      "video/x-msvideo" = ["mpv.desktop"];
+    xdg = {
+      portal.enable = true;
+      mime.defaultApplications = {
+        "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
+        "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
+        "application/pdf" = ["org.pwmt.zathura.desktop"];
+        "inode/directory" = ["org.gnome.Nautilus.desktop"];
+        "image/png" = ["imv.desktop"];
+        "image/jpg" = ["imv.desktop"];
+        "image/jpeg" = ["imv.desktop"];
+        "application/zip" = ["org.gnome.FileRoller.desktop"];
+        "application/vnd.rar" = ["org.gnome.FileRoller.desktop"];
+        "application/x-7z-compressed" = ["org.gnome.FileRoller.desktop"];
+        "application/x-tar" = ["org.gnome.FileRoller.desktop"];
+        "application/x-xz" = ["org.gnome.FileRoller.desktop"];
+        "application/gzip" = ["org.gnome.FileRoller.desktop"];
+        "application/x-bzip2" = ["org.gnome.FileRoller.desktop"];
+        "audio/mpeg" = ["mpv.desktop"];
+        "audio/flac" = ["mpv.desktop"];
+        "audio/ogg" = ["mpv.desktop"];
+        "audio/wav" = ["mpv.desktop"];
+        "audio/x-wav" = ["mpv.desktop"];
+        "audio/mp3" = ["mpv.desktop"];
+        "audio/x-mp3" = ["mpv.desktop"];
+        "video/mp4" = ["mpv.desktop"];
+        "video/webm" = ["mpv.desktop"];
+        "video/x-matroska" = ["mpv.desktop"];
+        "video/x-msvideo" = ["mpv.desktop"];
+      };
     };
 
     environment.systemPackages = with pkgs; [

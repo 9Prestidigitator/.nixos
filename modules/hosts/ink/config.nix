@@ -68,5 +68,7 @@
         motherboard = "amd";
       };
     };
+
+    services.flatpak.overrides."com.github.Matoking.protontricks".Context.filesystems = ["/mnt/1tb_ssd/SteamLibrary"];
   };
 }
