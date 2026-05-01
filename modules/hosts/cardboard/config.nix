@@ -4,8 +4,10 @@
       name = "cardboard";
       isLaptop = true;
     };
+    system.stateVersion = "25.11";
 
     home-manager.users.max = {
+      home.stateVersion = "25.11";
       imports = with self.homeModules; [
         max
 

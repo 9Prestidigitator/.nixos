@@ -1,8 +1,10 @@
 {self, ...}: {
   flake.nixosModules.ink = {pkgs, ...}: {
     host.name = "ink";
+    system.stateVersion = "25.11";
 
     home-manager.users.max = {config, ...}: {
+      home.stateVersion = "25.11";
       imports = with self.homeModules; [
         max
 

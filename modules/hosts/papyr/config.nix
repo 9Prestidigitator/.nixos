@@ -4,8 +4,10 @@
       name = "papyr";
       isLaptop = true;
     };
+    system.stateVersion = "25.11";
 
     home-manager.users.max = {config, ...}: {
+      home.stateVersion = "25.11";
       imports = with self.homeModules; [
         max
 

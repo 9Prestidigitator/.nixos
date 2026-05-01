@@ -8,8 +8,10 @@
       name = "surface";
       isLaptop = true;
     };
+    system.stateVersion = "25.11";
 
     home-manager.users.max = {
+      home.stateVersion = "25.11";
       imports = with self.homeModules; [
         max
 
@@ -21,6 +23,7 @@
         stylix
       ];
     };
+
     users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII00su22rL1ZJ59mb8+HVw21zft7IMLrd6yVvKd6f9Y2"];
 
     boot = {
@@ -64,6 +67,7 @@
       microsoft-surface.kernelVersion = "longterm";
       sensor.iio.enable = true;
     };
+    console.font = lib.mkForce "ter-v32b";
 
     environment.systemPackages = with pkgs; [iptsd surface-control];
 
@@ -73,7 +77,5 @@
     };
 
     powerManagement.cpuFreqGovernor = "performance";
-
-    console.font = lib.mkForce "ter-v32b";
   };
 }
