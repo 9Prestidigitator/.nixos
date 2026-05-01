@@ -1,7 +1,7 @@
 {
   flake.nixosModules.ink-build-machine = {config, ...}: {
     sops.secrets."ssh/builders/ink" = {
-      defaultSopsFile = ../../../secrets/builders.yaml;
+      sopsFile = ../../../secrets/builders.yaml;
       owner = "root";
       group = "root";
       mode = "0400";

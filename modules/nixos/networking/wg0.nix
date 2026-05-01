@@ -3,13 +3,13 @@
     sops = {
       secrets = {
         "wg0/private-key" = {
-          defaultSopsFile = ../../../secrets/wg0.yaml;
+          sopsFile = ../../../secrets/wg0.yaml;
           owner = "root";
           group = "root";
           mode = "0400";
         };
         "wg0/peer-preshared-key" = {
-          defaultSopsFile = ../../../secrets/wg0.yaml;
+          sopsFile = ../../../secrets/wg0.yaml;
           owner = "root";
           group = "root";
           mode = "0400";
