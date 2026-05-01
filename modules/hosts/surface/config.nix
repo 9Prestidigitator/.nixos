@@ -9,19 +9,17 @@
       isLaptop = true;
     };
 
-    home-manager = {
-      users.max = {
-        imports = with self.homeModules; [
-          max
+    home-manager.users.max = {
+      imports = with self.homeModules; [
+        max
 
-          gnome
+        gnome
 
-          neovim
-          terminal-tools
+        neovim
+        terminal-tools
 
-          stylix
-        ];
-      };
+        stylix
+      ];
     };
     users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII00su22rL1ZJ59mb8+HVw21zft7IMLrd6yVvKd6f9Y2"];
 

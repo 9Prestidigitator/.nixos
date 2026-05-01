@@ -1,7 +1,11 @@
 {
   flake.nixosModules.ink-build-machine = {config, ...}: {
-    # TODO(max): Separate this into it's own key
-    sops.secrets."ssh/builders/ink" = {};
+    sops.secrets."ssh/builders/ink" = {
+      defaultSopsFile = ../../../secrets/builders.yaml;
+      owner = "root";
+      group = "root";
+      mode = "0400";
+    };
     nix = {
       distributedBuilds = true;
       settings.builders-use-substitutes = true;

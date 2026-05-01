@@ -1,7 +1,17 @@
 keys:
   - &user_max age18vu75ncpyslfcew3jrh48a2egqqnjwn2qxjy5luvfcwflyd0eu2qcg7fym
+  - &wg0 age1x9uw0glqfg9z7kgurq64w6jnsru205jrr0s3d75a39k78zl8vq7q25zcjw
+  - &builders age1dcmleztfmk6vpnfuu665a7q0ftc94uqhdg6qs337lfh80jl2dcuq6wne5a
 creation_rules:
   - path_regex: ^secrets/max.yaml$
     key_groups:
       - age:
           - *user_max
+  - path_regex: ^secrets/wg0.yaml$
+    key_groups:
+      - age:
+          - *wg0
+  - path_regex: ^secrets/builders.yaml$
+    key_groups:
+      - age:
+          - *builders

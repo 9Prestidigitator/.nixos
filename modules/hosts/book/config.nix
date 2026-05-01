@@ -1,24 +1,26 @@
-{self, inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.book = {
     host = {
       name = "book";
       isLaptop = true;
     };
 
-    home-manager = {
-      users.max = {
-        imports = with self.homeModules; [
-          max
+    home-manager.users.max = {
+      imports = with self.homeModules; [
+        max
 
-          niri
-          noctalia
+        niri
+        noctalia
 
-          neovim
-          terminal-tools
+        neovim
+        terminal-tools
 
-          stylix
-        ];
-      };
+        stylix
+      ];
     };
 
     boot.kernelPatches = [

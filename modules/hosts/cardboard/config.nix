@@ -5,21 +5,19 @@
       isLaptop = true;
     };
 
-    home-manager = {
-      users.max = {
-        imports = with self.homeModules; [
-          max
+    home-manager.users.max = {
+      imports = with self.homeModules; [
+        max
 
-          neovim
-          terminal-tools
+        neovim
+        terminal-tools
 
-          stylix
+        stylix
 
-          essentials
-          media
-          communications
-        ];
-      };
+        essentials
+        media
+        communications
+      ];
     };
 
     powerManagement.cpuFreqGovernor = "performance";

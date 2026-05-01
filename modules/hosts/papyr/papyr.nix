@@ -23,6 +23,7 @@
       wine
 
       ink-build-machine
+      wg0
       stylix
       fonts
 

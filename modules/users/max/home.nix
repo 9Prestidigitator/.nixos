@@ -16,8 +16,16 @@
       defaultSopsFormat = "yaml";
       secrets = {
         "ssh/gh".mode = "0600";
+        "ssh/ink".mode = "0600";
+        "ssh/papyr".mode = "0600";
+        "ssh/surface".mode = "0600";
+        "ssh/cardboard".mode = "0600";
+        "mullvad".mode = "0600";
+        "syncthing/key".mode = "0600";
+        "syncthing/perm".mode = "0600";
       };
     };
+
     programs = {
       git.settings = {
         url."ssh://git@github.com".insteadOf = "https://github.com";

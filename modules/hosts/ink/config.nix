@@ -1,53 +1,47 @@
 {self, ...}: {
-  flake.nixosModules.ink = {
-    pkgs,
-    config,
-    ...
-  }: {
+  flake.nixosModules.ink = {pkgs, ...}: {
     host.name = "ink";
 
-    home-manager = {
-      users.max = {
-        imports = with self.homeModules; [
-          max
+    home-manager.users.max = {config, ...}: {
+      imports = with self.homeModules; [
+        max
 
-          niri
-          noctalia
+        niri
+        noctalia
 
-          neovim
-          terminal-tools
-          mpd
+        neovim
+        terminal-tools
+        mpd
 
-          stylix
+        stylix
 
-          essentials
-          gaming
-          media
-          communications
-        ];
+        essentials
+        gaming
+        media
+        communications
+      ];
 
-        programs.ssh.matchBlocks = {
-          papyr = {
-            host = "papyr";
-            user = "max";
-            hostname = "10.123.78.161";
-            identityFile = config.sops.secrets."ssh/papyr".path;
-            identitiesOnly = true;
-          };
-          surface = {
-            host = "surface";
-            user = "max";
-            hostname = "10.123.78.31";
-            identityFile = config.sops.secrets."ssh/surface".path;
-            identitiesOnly = true;
-          };
-          cardboard = {
-            host = "cardboard";
-            user = "max";
-            hostname = "10.123.78.156";
-            identityFile = config.sops.secrets."ssh/cardboard".path;
-            identitiesOnly = true;
-          };
+      programs.ssh.matchBlocks = {
+        papyr = {
+          host = "papyr";
+          user = "max";
+          hostname = "10.123.78.161";
+          identityFile = config.sops.secrets."ssh/papyr".path;
+          identitiesOnly = true;
+        };
+        surface = {
+          host = "surface";
+          user = "max";
+          hostname = "10.123.78.31";
+          identityFile = config.sops.secrets."ssh/surface".path;
+          identitiesOnly = true;
+        };
+        cardboard = {
+          host = "cardboard";
+          user = "max";
+          hostname = "10.123.78.156";
+          identityFile = config.sops.secrets."ssh/cardboard".path;
+          identitiesOnly = true;
         };
       };
     };
