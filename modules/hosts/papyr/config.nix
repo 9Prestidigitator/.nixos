@@ -23,7 +23,7 @@
         essentials
         gaming
         media
-        communications
+        discord
       ];
 
       programs.ssh.matchBlocks = {

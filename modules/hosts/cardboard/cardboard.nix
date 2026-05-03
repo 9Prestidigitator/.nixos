@@ -12,7 +12,6 @@
       design
       gaming
       media
-      communications
       virtualisation
 
       terminal-tools

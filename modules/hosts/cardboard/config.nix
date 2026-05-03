@@ -18,7 +18,7 @@
 
         essentials
         media
-        communications
+        discord
       ];
     };
 

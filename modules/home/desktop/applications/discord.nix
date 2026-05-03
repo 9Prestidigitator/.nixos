@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.homeModules.communications = {
+  flake.homeModules.discord = {
     imports = [inputs.nixcord.homeModules.nixcord];
     programs.nixcord = {
       enable = true;
