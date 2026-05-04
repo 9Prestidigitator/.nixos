@@ -41,6 +41,8 @@
     };
 
     niri-flake.url = "github:9prestidigitator/niri-flake";
+    niri-float-sticky.url = "github:probeldev/niri-float-sticky";
+    niri-screen-time.url = "github:probeldev/niri-screen-time";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.6";
 

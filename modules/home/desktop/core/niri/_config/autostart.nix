@@ -10,8 +10,11 @@ in {
     {
       spawn-at-startup = [
         {command = ["noctalia-shell"];}
+        {command = ["niri-float-sticky" "-title" "^Picture in picture$"];}
+        {command = ["niri-screen-time" "-daemon"];}
       ];
     }
+
     (lib.mkIf (hostName == "ink") {
       spawn-at-startup = [
         {argv = ["sunshine"];}
@@ -36,7 +39,7 @@ in {
         "browse".open-on-output = "HDMI-A-1";
         "notes".open-on-output = "HDMI-A-1";
         "comms".open-on-output = "HDMI-A-1";
-        "gaming".open-on-output = "HDMI-A-1";
+        "gaming".open-on-output = "DP-1";
       };
     })
 

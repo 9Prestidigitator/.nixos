@@ -10,6 +10,7 @@
       self.nixosModules.overwitch
     ];
     musnix.enable = true;
+    services.overwitch.enable = true;
     environment.systemPackages = with pkgs; [
       # hardware
       overwitch

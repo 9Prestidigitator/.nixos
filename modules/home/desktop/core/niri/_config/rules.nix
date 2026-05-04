@@ -86,6 +86,17 @@
           open-floating = true;
         }
         {
+          matches = [{app-id = "mpv";}];
+          open-floating = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "top-right";
+          };
+          default-column-width = {proportion = 0.4;};
+          default-window-height = {proportion = 0.4;};
+        }
+        {
           matches = [{title = "Picture in picture";}];
           open-floating = true;
           default-floating-position = {
@@ -93,8 +104,8 @@
             y = 32;
             relative-to = "bottom-right";
           };
-          default-column-width = {fixed = 480;};
-          default-window-height = {fixed = 270;};
+          default-column-width = {proportion = 0.3333;};
+          default-window-height = {proportion = 0.3333;};
         }
       ];
       layer-rules = [
@@ -133,6 +144,7 @@
         }
         layer-rule {
             match namespace="wlr_which_key"
+            geometry-corner-radius 16
             background-effect {
                 blur true
                 xray false

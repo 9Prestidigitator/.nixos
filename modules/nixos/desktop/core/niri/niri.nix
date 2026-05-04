@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, ...}: {
   flake.nixosModules.niri = {pkgs, ...}: {
     programs.niri = {
       enable = true;
@@ -38,6 +34,8 @@
 
     environment.systemPackages = with pkgs; [
       inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.niri-float-sticky.packages.${pkgs.system}.default
+      inputs.niri-screen-time.packages.${pkgs.system}.default
       seahorse
       polkit_gnome
       wl-clipboard

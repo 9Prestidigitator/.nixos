@@ -18,18 +18,70 @@
 
     "Mod+G".action.spawn = mkWlrWhichKeyMenu "Applications" [
       {
+        key = "a";
+        desc = "Audio";
+        submenu = [
+          {
+            key = "b";
+            desc = "Bitwig";
+            cmd = "bitwig-studio";
+          }
+          {
+            key = "j";
+            desc = "QJackCtl";
+            cmd = "qjackctl";
+          }
+          {
+            key = "q";
+            desc = "qpwgraph";
+            cmd = "qpwgraph";
+          }
+          {
+            key = "r";
+            desc = "Reaper";
+            cmd = "reaper";
+          }
+          {
+            key = "s";
+            desc = "Spotify";
+            cmd = "spotify";
+          }
+        ];
+      }
+      {
         key = "b";
-        desc = "Browser (Brave)";
+        desc = "Brave";
         cmd = "brave";
       }
       {
+        key = "c";
+        desc = "Communications";
+        submenu = [
+          {
+            key = "d";
+            desc = "Discord";
+            cmd = "discord";
+          }
+          {
+            key = "s";
+            desc = "Signal";
+            cmd = "signal-desktop";
+          }
+        ];
+      }
+      {
         key = "e";
-        desc = "Explorer (Nautilus)";
+        desc = "Files";
         cmd = "nautilus -w";
       }
       {
+        key = "m";
+        desc = "Moonlight";
+        cmd = "moonlight";
+      }
+      {
         key = "n";
-        desc = "Text Editor (Neovim)";
+        desc = "Neovim";
         cmd = "kitty --title Neovim -e nvim";
       }
       {
@@ -38,44 +90,30 @@
         cmd = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
       }
       {
-        key = "t";
-        desc = "tmux";
-        cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
-      }
-      {
         key = "s";
-        desc = "Spotify";
-        cmd = "spotify";
-      }
-      {
-        key = "m";
-        desc = "Bitwig";
-        cmd = "bitwig-studio";
-      }
-      {
-        key = "j";
-        desc = "qpwgraph";
-        cmd = "qpwgraph";
-      }
-      {
-        key = "J";
-        desc = "QJackCtl";
-        cmd = "qjackctl";
-      }
-      {
-        key = "i";
-        desc = "Moonlight";
-        cmd = "moonlight";
-      }
-      {
-        key = "y";
         desc = "Steam";
         cmd = "steam";
       }
       {
-        key = "d";
-        desc = "Discord";
-        cmd = "discord";
+        key = "t";
+        desc = "Terminal";
+        submenu = [
+          {
+            key = "b";
+            desc = "btop";
+            cmd = "kitty --title btop bash -lc 'btop'";
+          }
+          {
+            key = "k";
+            desc = "kitty";
+            cmd = "kitty";
+          }
+          {
+            key = "t";
+            desc = "tmux";
+            cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
+          }
+        ];
       }
     ];
 
@@ -111,13 +149,19 @@
       [
         {
           key = "w";
-          desc = "Stop Wireguard";
-          cmd = "pkexec systemctl stop wg-quick-wg0.service";
-        }
-        {
-          key = "W";
-          desc = "Start Wireguard";
-          cmd = "pkexec systemctl start wg-quick-wg0.service";
+          desc = "wg0";
+          submenu = [
+            {
+              key = "d";
+              desc = "Stop wg0";
+              cmd = "pkexec systemctl stop wg-quick-wg0.service";
+            }
+            {
+              key = "c";
+              desc = "Start wg0";
+              cmd = "pkexec systemctl start wg-quick-wg0.service";
+            }
+          ];
         }
       ]);
 
