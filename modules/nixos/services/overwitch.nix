@@ -22,16 +22,19 @@
       };
 
       systemd.user.services.overwitch = {
-        description = "Overwitch overbridge Daemon";
-        wantedBy = ["default.target"];
-        after = [
-          "pipewire.service"
-        ];
+        description = "Overwitch service";
+
+        after = ["pipewire.service"];
+        requires = ["pipewire.service"];
 
         serviceConfig = {
+          Type = "notify-reload";
+          GuessMainPID = true;
           ExecStart = "${cfg.package}/bin/overwitch-service";
           Restart = "on-failure";
         };
+
+        wantedBy = ["default.target"];
       };
     };
   };
