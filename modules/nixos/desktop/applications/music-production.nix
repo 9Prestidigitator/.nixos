@@ -1,4 +1,4 @@
-{inputs, self, ...}: {
+{inputs, ...}: {
   flake.nixosModules.music-production = {pkgs, ...}: let
     pkgsStable = import inputs.nixpkgs-stable {
       system = pkgs.stdenv.hostPlatform.system;
@@ -7,7 +7,7 @@
   in {
     imports = [
       inputs.musnix.nixosModules.musnix
-      self.nixosModules.overwitch
+      inputs.maxpkgs.nixosModules.overwitch
     ];
     musnix.enable = true;
     services.overwitch.enable = true;
