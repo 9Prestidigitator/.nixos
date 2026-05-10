@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   flake.nixosModules.iso = {
     pkgs,
     lib,
@@ -8,6 +8,8 @@
     system.stateVersion = "26.05";
 
     isoImage.isoName = "nixos-installer.iso";
+
+    environment.systemPackages = [inputs.maxvim.packages.${pkgs.stdenv.hostPlatform.system}.default];
 
     boot.supportedFilesystems = lib.mkForce [
       "btrfs"
@@ -34,6 +36,7 @@
           cryptsetup
           util-linux
           coreutils
+          systemd
         ];
 
         script = ''
@@ -41,19 +44,26 @@
 
           mkdir -p /etc/sops/age
           tmpmnt=/run/iso-secrets-test
+          passfile=/run/iso-secrets-passphrase
           mkdir -p "$tmpmnt"
 
+          cleanup() {
+            rm -f "$passfile"
+          }
+          trap cleanup EXIT
           if ! mountpoint -q /etc/sops/age; then
             found=0
+
+            systemd-ask-password --timeout=0 "Passphrase for ISO secrets LUKS partition:" > "$passfile"
+            chmod 0400 "$passfile"
+
             for dev in $(blkid -t TYPE=crypto_LUKS -o device); do
               echo "Trying LUKS device $dev"
-
-              # If a stale mapper exists, close it first.
               if [ -e /dev/mapper/iso-secrets ]; then
                 cryptsetup close iso-secrets || true
               fi
 
-              if cryptsetup open "$dev" iso-secrets; then
+              if cryptsetup open --key-file "$passfile" "$dev" iso-secrets; then
                 if mount /dev/mapper/iso-secrets "$tmpmnt"; then
                   if [ -f "$tmpmnt/keys.txt" ]; then
                     echo "Found ISO secrets partition on $dev"
