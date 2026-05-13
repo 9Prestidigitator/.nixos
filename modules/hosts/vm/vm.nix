@@ -13,7 +13,6 @@
 
       stylix
 
-      sops
       grub
       system-general
       home-manager

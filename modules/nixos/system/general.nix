@@ -11,11 +11,6 @@
         default = "nixos";
         description = "Name of the host.";
       };
-      isLaptop = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Use laptop config settings instead of desktop.";
-      };
     };
 
     config = {

@@ -29,7 +29,6 @@
 
       tablet
       keyd
-      sops
       grub
       intel
       system-general

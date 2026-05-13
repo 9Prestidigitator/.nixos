@@ -1,9 +1,10 @@
-{self, inputs, ...}: {
-  flake.nixosModules.book = {
-    host = {
-      name = "book";
-      isLaptop = true;
-    };
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.book = {pkgs, ...}: {
+    host.name = "book";
     system.stateVersion = "25.11";
 
     home-manager.users.max = {
@@ -21,12 +22,15 @@
       ];
     };
 
-    boot.kernelPatches = [
-      {
-        name = "chrultrabook-stoney-audio";
-        patch = inputs.stoney-kernel + "/patches/audio.patch";
-      }
-    ];
+    boot = {
+      kernelPackages = pkgs.linuxPackages_6_12;
+      kernelPatches = [
+        {
+          name = "chrultrabook-stoney-audio";
+          patch = inputs.stoney-kernel + "/patches/audio.patch";
+        }
+      ];
+    };
 
     services.blueman.enable = true;
 

@@ -11,9 +11,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
-    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
     import-tree.url = "github:vic/import-tree";
+
+    impermanence.url = "github:nix-community/impermanence";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +52,7 @@
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
     niri-screen-time.url = "github:probeldev/niri-screen-time";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
-    noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.6";
+    noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
 
     steam-config-nix.url = "github:different-name/steam-config-nix";
     nixcord.url = "github:kaylorben/nixcord";

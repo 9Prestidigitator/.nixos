@@ -1,9 +1,6 @@
 {self, ...}: {
   flake.nixosModules.papyr = {
-    host = {
-      name = "papyr";
-      isLaptop = true;
-    };
+    host.name = "papyr";
     system.stateVersion = "25.11";
 
     home-manager.users.max = {config, ...}: {

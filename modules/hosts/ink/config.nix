@@ -53,7 +53,6 @@
       "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIE7a6cld/4ZWzzQT70YA/DWgt7lVf9NcWTqOdDi58onE8qrwjoH7PkmY8Ygd5HJQT0/a2jXPhnq7cCEHFtPCPk=" # FONE->ink
     ];
 
-    boot.kernelParams = ["threadirqs"];
     hardware = {
       enableAllFirmware = true;
       cpu.amd.updateMicrocode = true;

@@ -4,10 +4,7 @@
     lib,
     ...
   }: {
-    host = {
-      name = "surface";
-      isLaptop = true;
-    };
+    host.name = "surface";
     system.stateVersion = "25.11";
 
     home-manager.users.max = {

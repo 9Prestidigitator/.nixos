@@ -1,9 +1,14 @@
 {
   lib,
   config,
-  isLaptop,
+  osConfig,
   ...
-}: {
+}: let
+  isLaptop =
+    if osConfig.networking.hostName == "ink"
+    then false
+    else true;
+in {
   programs.noctalia-shell = {
     enable = true;
     settings = {

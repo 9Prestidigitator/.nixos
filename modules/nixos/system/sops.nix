@@ -6,6 +6,5 @@
       defaultSopsFormat = "yaml";
     };
     environment.systemPackages = with pkgs; [sops age];
-    home-manager.sharedModules = [inputs.sops-nix.homeManagerModules.sops];
   };
 }

@@ -1,9 +1,6 @@
 {self, ...}: {
   flake.nixosModules.cardboard = {
-    host = {
-      name = "cardboard";
-      isLaptop = true;
-    };
+    host.name = "cardboard";
     system.stateVersion = "25.11";
 
     home-manager.users.max = {

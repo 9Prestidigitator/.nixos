@@ -6,10 +6,9 @@
   }: {
     host.name = "iso";
     system.stateVersion = "26.05";
-
     isoImage.isoName = "nixos-installer.iso";
 
-    environment.systemPackages = [inputs.maxvim.packages.${pkgs.stdenv.hostPlatform.system}.default];
+    environment.systemPackages = with pkgs; [neovim];
 
     boot.supportedFilesystems = lib.mkForce [
       "btrfs"
@@ -20,12 +19,14 @@
       "cifs"
     ];
 
+    # TODO(max): fix this
     systemd.services = {
       unlock-iso-secrets = {
         description = "Unlock LUKS secrets partition for ISO sops-nix";
 
         wantedBy = ["multi-user.target"];
         before = ["sops-nix.service"];
+        requiredBy = ["sops-nix.service"];
 
         serviceConfig = {
           Type = "oneshot";
@@ -40,57 +41,60 @@
         ];
 
         script = ''
-          set -euo pipefail
-
-          mkdir -p /etc/sops/age
+          mapper=iso-secrets
+          keydir=/etc/sops/age
           tmpmnt=/run/iso-secrets-test
           passfile=/run/iso-secrets-passphrase
-          mkdir -p "$tmpmnt"
 
+          mkdir -p "$keydir" "$tmpmnt"
           cleanup() {
             rm -f "$passfile"
           }
           trap cleanup EXIT
-          if ! mountpoint -q /etc/sops/age; then
-            found=0
-
-            systemd-ask-password --timeout=0 "Passphrase for ISO secrets LUKS partition:" > "$passfile"
-            chmod 0400 "$passfile"
-
-            for dev in $(blkid -t TYPE=crypto_LUKS -o device); do
-              echo "Trying LUKS device $dev"
-              if [ -e /dev/mapper/iso-secrets ]; then
-                cryptsetup close iso-secrets || true
-              fi
-
-              if cryptsetup open --key-file "$passfile" "$dev" iso-secrets; then
-                if mount /dev/mapper/iso-secrets "$tmpmnt"; then
-                  if [ -f "$tmpmnt/keys.txt" ]; then
-                    echo "Found ISO secrets partition on $dev"
-                    umount "$tmpmnt"
-                    mount /dev/mapper/iso-secrets /etc/sops/age
-                    found=1
-                    break
-                  fi
-                  umount "$tmpmnt"
-                fi
-                cryptsetup close iso-secrets || true
-              fi
-            done
-
-            if [ "$found" != 1 ]; then
-              echo "Could not find a LUKS partition containing keys.txt"
-              exit 1
-            fi
+          if mountpoint -q "$keydir"; then
+            echo "$keydir is already mounted"
+            exit 0
           fi
 
-          if [ ! -f /etc/sops/age/keys.txt ]; then
-            echo "Missing /etc/sops/age/keys.txt after mounting secrets partition"
+          systemd-ask-password --timeout=0 "Passphrase for ISO secrets LUKS partition:" > "$passfile"
+          chmod 0400 "$passfile"
+          found=0
+
+          for dev in $(blkid -t TYPE=crypto_LUKS -o device); do
+            echo "Trying LUKS device $dev"
+
+            if [ -e "/dev/mapper/$mapper" ]; then
+              cryptsetup close "$mapper" || true
+            fi
+
+            if cryptsetup open --key-file "$passfile" "$dev" "$mapper"; then
+              if mount "/dev/mapper/$mapper" "$tmpmnt"; then
+                if [ -f "$tmpmnt/keys.txt" ]; then
+                  echo "Found ISO secrets partition on $dev"
+                  umount "$tmpmnt"
+                  mount "/dev/mapper/$mapper" "$keydir"
+                  found=1
+                  break
+                fi
+                umount "$tmpmnt"
+              fi
+              cryptsetup close "$mapper" || true
+            fi
+          done
+
+          if [ "$found" != 1 ]; then
+            echo "Could not find a LUKS partition containing keys.txt"
             exit 1
           fi
 
-          chmod 0700 /etc/sops/age
-          chmod 0400 /etc/sops/age/keys.txt
+          if [ ! -f "$keydir/keys.txt" ]; then
+            echo "Missing $keydir/keys.txt after mounting secrets partition"
+            exit 1
+          fi
+
+          chmod 0700 "$keydir"
+          chmod 0400 "$keydir/keys.txt"
+          echo "ISO SOPS age key mounted at $keydir/keys.txt"
         '';
       };
 

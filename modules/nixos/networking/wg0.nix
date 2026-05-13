@@ -1,5 +1,7 @@
-{
+{self, ...}: {
   flake.nixosModules.wg0 = {config, ...}: {
+    imports = [self.nixosModules.sops];
+
     sops = {
       secrets = {
         "wg0/private-key" = {

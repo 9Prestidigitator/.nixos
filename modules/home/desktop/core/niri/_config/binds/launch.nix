@@ -1,10 +1,12 @@
 {
   config,
+  osConfig,
   lib,
-  isLaptop,
   mkWlrWhichKeyMenu,
   ...
-}: {
+}: let
+  hostName = osConfig.networking.hostName;
+in {
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+Space" = {
       hotkey-overlay.title = "Toggle launcher";
@@ -109,6 +111,11 @@
             cmd = "kitty";
           }
           {
+            key = "l";
+            desc = "leetcode";
+            cmd = "nvim leetcode.nvim";
+          }
+          {
             key = "t";
             desc = "tmux";
             cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
@@ -145,7 +152,7 @@
           ];
         }
       ]
-      ++ lib.optionals isLaptop
+      ++ lib.optionals (hostName == "papyr")
       [
         {
           key = "w";

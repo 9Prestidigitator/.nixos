@@ -1,4 +1,13 @@
-{lib, isLaptop, ...}: {
+{
+  lib,
+  osConfig,
+  ...
+}: let
+  isLaptop =
+    if osConfig.networking.hostName == "ink"
+    then false
+    else true;
+in {
   programs.noctalia-shell = {
     settings = {
       controlCenter = {
@@ -55,7 +64,7 @@
                 id = "NightLight";
               }
             ]
-            ++ lib.optional isLaptop {
+            ++ lib.optional (osConfig.networking.hostName == "papyr") {
               id = "CustomButton";
               enableOnStateLogic = false;
               generalTooltipText = "Wireguard VPN";

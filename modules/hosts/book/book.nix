@@ -17,7 +17,6 @@
       ink-build-machine
       stylix
 
-      sops
       grub
       system-general
       home-manager

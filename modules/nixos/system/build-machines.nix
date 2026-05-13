@@ -1,5 +1,7 @@
-{
+{self, ...}: {
   flake.nixosModules.ink-build-machine = {config, ...}: {
+    imports = [self.nixosModules.sops];
+
     sops.secrets."ssh/builders/ink" = {
       sopsFile = ../../../secrets/builders.yaml;
       owner = "root";

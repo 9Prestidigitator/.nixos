@@ -1,9 +1,11 @@
-{
+{inputs, ...}: {
   flake.homeModules.max = {
     lib,
     config,
     ...
   }: {
+    imports = [inputs.sops-nix.homeManagerModules.sops];
+
     home = {
       username = "max";
       homeDirectory = "/home/max";
