@@ -26,6 +26,8 @@
       zip
       unrar
       unzip
+      cryptsetup
+      gptfdisk
     ];
   };
 }
