@@ -33,7 +33,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      inputs.xwayland-satellite.packages.${pkgs.stdenv.hostPlatform.system}.default
+      xwayland-satellite
       inputs.niri-float-sticky.packages.${pkgs.system}.default
       inputs.niri-screen-time.packages.${pkgs.system}.default
       seahorse
