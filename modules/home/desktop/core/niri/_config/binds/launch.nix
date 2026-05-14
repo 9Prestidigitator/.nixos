@@ -113,7 +113,7 @@ in {
           {
             key = "l";
             desc = "leetcode";
-            cmd = "nvim leetcode.nvim";
+            cmd = "kitty --title btop bash -lc 'nvim leetcode.nvim'";
           }
           {
             key = "t";
