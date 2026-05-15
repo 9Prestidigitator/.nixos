@@ -12,7 +12,9 @@
 
       terminal-tools
       minecraft-server
+      gitlab
 
+      builder
       ink-build-machine
       stylix
 

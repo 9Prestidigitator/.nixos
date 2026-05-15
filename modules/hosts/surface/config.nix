@@ -37,7 +37,6 @@
         availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
         kernelModules = ["surface_aggregator" "surface_aggregator_registry" "surface_aggregator_hub"];
       };
-
       kernelPatches = [
         {
           name = "surface-config";
@@ -71,6 +70,7 @@
     services = {
       udev.packages = with pkgs; [iptsd surface-control];
       blueman.enable = true;
+      displayManager.gdm.autoSuspend = false;
     };
 
     powerManagement.cpuFreqGovernor = "performance";
