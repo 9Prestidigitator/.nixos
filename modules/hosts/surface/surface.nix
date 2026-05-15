@@ -12,7 +12,7 @@
 
       terminal-tools
       minecraft-server
-      gitlab
+      # gitlab
 
       builder
       ink-build-machine
