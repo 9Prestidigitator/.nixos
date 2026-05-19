@@ -1,9 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.surface = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.surface = {pkgs, ...}: {
     host.name = "surface";
     system.stateVersion = "25.11";
 
@@ -63,7 +59,7 @@
       microsoft-surface.kernelVersion = "longterm";
       sensor.iio.enable = true;
     };
-    console.font = lib.mkForce "ter-v32b";
+    console.font = "ter-v32b";
 
     environment.systemPackages = with pkgs; [iptsd surface-control];
 

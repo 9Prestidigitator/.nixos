@@ -19,6 +19,8 @@
       "cifs"
     ];
 
+    imports = [inputs.sops-nix.nixosModules.sops];
+
     # TODO(max): fix this
     systemd.services = {
       unlock-iso-secrets = {
