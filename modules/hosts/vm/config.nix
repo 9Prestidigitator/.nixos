@@ -21,5 +21,16 @@
       root.initialPassword = "nixos";
       max.initialPassword = "nixos";
     };
+
+    boot.loader = {
+      efi = {
+        canTouchEfiVariables = false;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        efiInstallAsRemovable = true;
+        useOsProber = false;
+      };
+    };
   };
 }
