@@ -128,11 +128,10 @@
     system.stateVersion = "25.11";
     isoImage.isoName = "nixos-installer.iso";
 
-    imports = [inputs.sops-nix.nixosModules.sops];
-
     environment.systemPackages = with pkgs; [
       neovim
       disko
+      inputs.packages.${system}.disko-install
       cryptsetup
       sops
       age

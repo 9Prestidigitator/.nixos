@@ -17,6 +17,7 @@
       stylix
 
       keyd
+      sops
       system-general
       home-manager
       nix
