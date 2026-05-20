@@ -53,6 +53,14 @@
     niri-screen-time.url = "github:probeldev/niri-screen-time";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager/trunk";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
     steam-config-nix.url = "github:different-name/steam-config-nix";
     nixcord.url = "github:kaylorben/nixcord";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
