@@ -16,5 +16,10 @@
         essentials
       ];
     };
+
+    users.users = {
+      root.initialPassword = "nixos";
+      max.initialPassword = "nixos";
+    };
   };
 }
