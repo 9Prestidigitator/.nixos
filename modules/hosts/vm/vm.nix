@@ -1,24 +1,26 @@
-{inputs, self, ...}: {
+{ inputs, self, ... }: {
   flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    modules = with self.nixosModules; [
-      max
+    modules = with self; [
+      nixosModules.max
 
-      plasma
+      nixosModules.plasma
 
-      essentials
-      brave-browser
+      nixosModules.essentials
+      nixosModules.brave-browser
 
-      terminal-tools
+      nixosModules.terminal-tools
 
-      stylix
+      nixosModules.stylix
 
-      grub
-      system-general
-      home-manager
-      nix
+      nixosModules.grub
+      nixosModules.system-general
+      nixosModules.home-manager
+      nixosModules.nix
 
-      vm
+      nixosModules.vm
+
+      diskoConfigurations.vm
     ];
   };
 }

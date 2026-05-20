@@ -58,6 +58,16 @@ in {
             cmd = noctalia "volume togglePanel";
           }
           {
+            key = "B";
+            desc = "Bluetooth";
+            cmd = noctalia "bluetooth togglePanel";
+          }
+          {
+            key = "b";
+            desc = "Toggle Bluetooth";
+            cmd = noctalia "bluetooth toggle";
+          }
+          {
             key = "c";
             desc = "Show Calendar";
             cmd = noctalia "calendar toggle";
@@ -76,11 +86,6 @@ in {
             key = "p";
             desc = "Power panel";
             cmd = noctalia "battery togglePanel";
-          }
-          {
-            key = "t";
-            desc = "Show Timer";
-            cmd = noctalia "plugin:timer toggle";
           }
           {
             key = "w";
@@ -155,6 +160,11 @@ in {
           }
           {
             key = "t";
+            desc = "Show Timer";
+            cmd = noctalia "plugin:timer toggle";
+          }
+          {
+            key = "T";
             desc = "To-do list";
             cmd = noctalia "plugin togglePanel todo";
           }
