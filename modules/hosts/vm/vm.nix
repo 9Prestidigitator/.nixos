@@ -1,8 +1,8 @@
 { inputs, self, ... }: {
-  flake.nixosConfigurations.vm-host-1 = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = with self; [
-      nixosModules.max
+      userModules.max.nixosModule
 
       nixosModules.plasma
 

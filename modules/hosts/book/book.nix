@@ -1,28 +1,28 @@
 {inputs, self, ...}: {
   flake.nixosConfigurations.book = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    modules = with self.nixosModules; [
-      max
+    modules = with self; [
+      userModules.max.nixosModule
 
-      ly
-      niri
-      noctalia
+      nixosModules.ly
+      nixosModules.niri
+      nixosModules.noctalia
 
-      essentials
-      brave-browser
+      nixosModules.essentials
+      nixosModules.brave-browser
 
-      terminal-tools
-      mullvad
+      nixosModules.terminal-tools
+      nixosModules.mullvad
 
-      ink-build-machine
-      stylix
+      nixosModules.ink-build-machine
+      nixosModules.stylix
 
-      grub
-      system-general
-      home-manager
-      nix
+      nixosModules.grub
+      nixosModules.system-general
+      nixosModules.home-manager
+      nixosModules.nix
 
-      book
+      nixosModules.book
     ];
   };
 }

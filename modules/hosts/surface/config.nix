@@ -1,23 +1,25 @@
-{self, ...}: {
+{inputs, self, ...}: {
   flake.nixosModules.surface = {pkgs, ...}: {
     host.name = "surface";
     system.stateVersion = "25.11";
 
     home-manager.users.max = {
       home.stateVersion = "25.11";
-      imports = with self.homeModules; [
-        max
+      imports = with self; [
+        userModules.max.homeModule
 
-        gnome
+        homeModules.gnome
 
-        neovim
-        terminal-tools
+        homeModules.neovim
+        homeModules.terminal-tools
 
-        stylix
+        homeModules.stylix
       ];
     };
 
     users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII00su22rL1ZJ59mb8+HVw21zft7IMLrd6yVvKd6f9Y2"];
+
+    imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common];
 
     boot = {
       kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];

@@ -5,17 +5,17 @@
 
     home-manager.users.max = {
       home.stateVersion = "25.11";
-      imports = with self.homeModules; [
-        max
+      imports = with self; [
+        userModules.max.homeModule
 
-        neovim
-        terminal-tools
+        homeModules.neovim
+        homeModules.terminal-tools
 
-        stylix
+        homeModules.stylix
 
-        essentials
-        media
-        discord
+        homeModules.essentials
+        homeModules.media
+        homeModules.discord
       ];
     };
 

@@ -1,34 +1,38 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.nixosConfigurations.cardboard = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    modules = with self.nixosModules; [
-      max
-      guest
+    modules = with self; [
+      userModules.max.nixosModule
+      userModules.guest.nixosModule
 
-      plasma
+      nixosModules.plasma
 
-      essentials
-      brave-browser
-      design
-      gaming
-      media
-      virtualisation
+      nixosModules.essentials
+      nixosModules.brave-browser
+      nixosModules.design
+      nixosModules.gaming
+      nixosModules.media
+      nixosModules.virtualisation
 
-      terminal-tools
-      mullvad
+      nixosModules.terminal-tools
+      nixosModules.mullvad
 
-      ink-build-machine
-      stylix
-      fonts
+      nixosModules.ink-build-machine
+      nixosModules.stylix
+      nixosModules.fonts
 
-      sops
-      grub
-      intel
-      system-general
-      home-manager
-      nix
+      nixosModules.sops
+      nixosModules.grub
+      nixosModules.intel
+      nixosModules.system-general
+      nixosModules.home-manager
+      nixosModules.nix
 
-      cardboard
+      nixosModules.cardboard
     ];
   };
 }

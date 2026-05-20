@@ -1,33 +1,31 @@
 {inputs, self, ...}: {
   flake.nixosConfigurations.surface = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    modules = with self.nixosModules; [
-      max
+    modules = with self; [
+      userModules.max.nixosModule
 
-      gdm
-      gnome
+      nixosModules.gdm
+      nixosModules.gnome
 
-      essentials
-      brave-browser
+      nixosModules.essentials
+      nixosModules.brave-browser
 
-      terminal-tools
-      minecraft-server
-      # gitlab
+      nixosModules.terminal-tools
+      nixosModules.minecraft-server
+      # nixosModules.gitlab
 
-      builder
-      ink-build-machine
-      stylix
+      nixosModules.builder
+      nixosModules.ink-build-machine
+      nixosModules.stylix
 
-      keyd
-      grub
-      intel
-      system-general
-      home-manager
-      nix
+      nixosModules.keyd
+      nixosModules.grub
+      nixosModules.intel
+      nixosModules.system-general
+      nixosModules.home-manager
+      nixosModules.nix
 
-      surface
-
-      inputs.nixos-hardware.nixosModules.microsoft-surface-common
+      nixosModules.surface
     ];
   };
 }

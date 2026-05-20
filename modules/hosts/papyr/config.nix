@@ -5,22 +5,22 @@
 
     home-manager.users.max = {config, ...}: {
       home.stateVersion = "25.11";
-      imports = with self.homeModules; [
-        max
+      imports = with self; [
+        userModules.max.homeModule
 
-        niri
-        noctalia
+        homeModules.niri
+        homeModules.noctalia
 
-        neovim
-        terminal-tools
-        mpd
+        homeModules.neovim
+        homeModules.terminal-tools
+        homeModules.mpd
 
-        stylix
+        homeModules.stylix
 
-        essentials
-        gaming
-        media
-        discord
+        homeModules.essentials
+        homeModules.gaming
+        homeModules.media
+        homeModules.discord
       ];
 
       programs.ssh.matchBlocks = {

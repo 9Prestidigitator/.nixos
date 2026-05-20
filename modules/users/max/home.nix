@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.homeModules.max = {
+  flake.userModules.max.homeModule = {
     lib,
     config,
     ...

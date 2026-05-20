@@ -1,41 +1,41 @@
 {inputs, self, ...}: {
   flake.nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    modules = with self.nixosModules; [
-      max
+    modules = with self; [
+      userModules.max.nixosModule
 
-      ly
-      niri
-      noctalia
+      nixosModules.ly
+      nixosModules.niri
+      nixosModules.noctalia
 
-      essentials
-      brave-browser
-      music-production
-      design
-      gaming
-      media
-      communications
-      virtualisation
+      nixosModules.essentials
+      nixosModules.brave-browser
+      nixosModules.music-production
+      nixosModules.design
+      nixosModules.gaming
+      nixosModules.media
+      nixosModules.communications
+      nixosModules.virtualisation
 
-      terminal-tools
-      mullvad
-      syncthing
-      wine
+      nixosModules.terminal-tools
+      nixosModules.mullvad
+      nixosModules.syncthing
+      nixosModules.wine
 
-      ink-build-machine
-      wg0
-      stylix
-      fonts
+      nixosModules.ink-build-machine
+      nixosModules.wg0
+      nixosModules.stylix
+      nixosModules.fonts
 
-      tablet
-      keyd
-      grub
-      intel
-      system-general
-      home-manager
-      nix
+      nixosModules.tablet
+      nixosModules.keyd
+      nixosModules.grub
+      nixosModules.intel
+      nixosModules.system-general
+      nixosModules.home-manager
+      nixosModules.nix
 
-      papyr
+      nixosModules.papyr
     ];
   };
 }

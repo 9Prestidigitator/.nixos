@@ -5,24 +5,22 @@
 }: {
   flake.nixosConfigurations.iso = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    modules = with self.nixosModules; [
-      ({modulesPath, ...}: {
-        imports = ["${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"];
-      })
+    modules = with self; [
+      ({modulesPath, ...}: {imports = ["${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"];})
 
-      terminal-tools
-      mullvad
+      nixosModules.terminal-tools
+      nixosModules.mullvad
 
-      ink-build-machine
-      stylix
+      nixosModules.ink-build-machine
+      nixosModules.stylix
 
-      keyd
-      sops
-      system-general
-      home-manager
-      nix
+      nixosModules.keyd
+      nixosModules.sops
+      nixosModules.system-general
+      nixosModules.home-manager
+      nixosModules.nix
 
-      iso
+      nixosModules.iso
     ];
   };
 }
