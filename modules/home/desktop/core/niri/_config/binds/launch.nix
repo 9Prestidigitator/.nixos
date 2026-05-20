@@ -87,9 +87,9 @@ in {
         cmd = "kitty --title Neovim -e nvim";
       }
       {
-        key = "N";
-        desc = "Open Notes";
-        cmd = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
+        key = "o";
+        desc = "Obsidian";
+        cmd = "obsidian";
       }
       {
         key = "s";
@@ -114,6 +114,11 @@ in {
             key = "l";
             desc = "leetcode";
             cmd = "kitty --title btop bash -lc 'nix develop ~/.nixos#default -c nvim leetcode.nvim'";
+          }
+          {
+            key = "n";
+            desc = "Open Notes";
+            cmd = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
           }
           {
             key = "t";

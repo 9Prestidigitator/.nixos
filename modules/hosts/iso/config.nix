@@ -131,7 +131,6 @@
     environment.systemPackages = with pkgs; [
       neovim
       disko
-      inputs.packages.${system}.disko-install
       cryptsetup
       sops
       age
