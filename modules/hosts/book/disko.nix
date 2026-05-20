@@ -1,6 +1,6 @@
-{inputs, ...}: {
-  flake.diskoConfigurations.book = {
-    imports = [inputs.disko.nixosModules.disko];
-    
-  };
-}
+# {inputs, ...}: {
+#   flake.diskoConfigurations.book = {
+#     imports = [inputs.disko.nixosModules.disko];
+#
+#   };
+# }
