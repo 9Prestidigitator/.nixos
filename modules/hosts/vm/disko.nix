@@ -1,6 +1,9 @@
 {inputs, ...}: {
   flake.diskoConfigurations.vm = {
     imports = [inputs.disko.nixosModules.disko];
+    fileSystems."/nix".neededForBoot = true;
+    fileSystems."/persist".neededForBoot = true;
+
     disko.devices = {
       nodev."/" = {
         fsType = "tmpfs";
