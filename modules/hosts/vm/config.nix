@@ -28,8 +28,11 @@
         efiSysMountPoint = "/boot";
       };
       grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
         efiInstallAsRemovable = true;
-        useOsProber = false;
+        useOSProber = false;
       };
     };
   };
