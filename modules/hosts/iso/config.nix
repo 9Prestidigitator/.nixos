@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.iso = {
+  flake.hostModules.iso = {
     pkgs,
     lib,
     ...

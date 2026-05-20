@@ -1,5 +1,5 @@
 {inputs, self, ...}: {
-  flake.nixosModules.surface = {pkgs, ...}: {
+  flake.hostModules.surface = {pkgs, ...}: {
     host.name = "surface";
     system.stateVersion = "25.11";
 

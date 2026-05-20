@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.book = {pkgs, ...}: {
+{self, inputs, ...}: {
+  flake.hostModules.book = {pkgs, ...}: {
     host.name = "book";
     system.stateVersion = "25.11";
 

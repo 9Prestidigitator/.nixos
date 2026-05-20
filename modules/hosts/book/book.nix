@@ -22,7 +22,8 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.book
+      diskoConfigurations.book
+      hostModules.book
     ];
   };
 }

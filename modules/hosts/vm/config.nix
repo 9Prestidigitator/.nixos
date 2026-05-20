@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.vm = {lib, ...}: {
+  flake.hostModules.vm = {lib, ...}: {
     host.name = "vm";
     system.stateVersion = "25.11";
 

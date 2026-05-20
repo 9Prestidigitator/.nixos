@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.vm = {lib, modulesPath, ...}: {
+  flake.hostModules.vm = {lib, modulesPath, ...}: {
     imports = [(modulesPath + "/profiles/qemu-guest.nix")];
 
     boot.initrd.availableKernelModules = ["ahci" "xhci_pci" "virtio_pci" "virtio_blk" "usb_storage" "sd_mod" "sr_mod"];

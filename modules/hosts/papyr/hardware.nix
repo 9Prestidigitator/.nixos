@@ -1,8 +1,11 @@
 {
-  flake.nixosModules.papyr = {config, lib, modulesPath, ...}: {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  flake.hostModules.papyr = {
+    config,
+    lib,
+    modulesPath,
+    ...
+  }: {
+    imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
     boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
     boot.initrd.kernelModules = [];
@@ -20,9 +23,7 @@
       options = ["fmask=0022" "dmask=0022"];
     };
 
-    swapDevices = [
-      {device = "/dev/disk/by-uuid/a1c4eb0e-11d3-4744-accc-e4c88854d0e8";}
-    ];
+    swapDevices = [{device = "/dev/disk/by-uuid/a1c4eb0e-11d3-4744-accc-e4c88854d0e8";}];
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

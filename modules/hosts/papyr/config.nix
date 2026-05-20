@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.papyr = {
+  flake.hostModules.papyr = {
     host.name = "papyr";
     system.stateVersion = "25.11";
 

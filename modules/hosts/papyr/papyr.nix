@@ -35,7 +35,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.papyr
+      hostModules.papyr
     ];
   };
 }

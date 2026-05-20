@@ -25,7 +25,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.surface
+      hostModules.surface
     ];
   };
 }

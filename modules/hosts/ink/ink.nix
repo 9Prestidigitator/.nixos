@@ -40,7 +40,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.ink
+      hostModules.ink
     ];
   };
 }

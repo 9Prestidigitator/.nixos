@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.cardboard = {
+  flake.hostModules.cardboard = {
     host.name = "cardboard";
     system.stateVersion = "25.11";
 

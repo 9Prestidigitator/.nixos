@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.ink = {
+  flake.hostModules.ink = {
     fileSystems = {
       "/mnt/win" = {
         device = "/dev/disk/by-uuid/01DC699B1D247C50";

@@ -1,4 +1,4 @@
-{ inputs, self, ... }: {
+{inputs, self, ...}: {
   flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = with self; [
@@ -18,8 +18,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.vm
-
+      hostModules.vm
       diskoConfigurations.vm
     ];
   };

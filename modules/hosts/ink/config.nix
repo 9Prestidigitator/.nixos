@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.ink = {pkgs, ...}: {
+  flake.hostModules.ink = {pkgs, ...}: {
     host.name = "ink";
     system.stateVersion = "25.11";
 

@@ -20,7 +20,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.iso
+      hostModules.iso
     ];
   };
 }

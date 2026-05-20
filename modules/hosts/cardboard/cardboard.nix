@@ -32,7 +32,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      nixosModules.cardboard
+      hostModules.cardboard
     ];
   };
 }

@@ -1,8 +1,18 @@
 {
-  flake.nixosModules.surface = {config, lib, modulesPath, ...}: {
+  flake.hostModules.surface = {
+    config,
+    lib,
+    modulesPath,
+    ...
+  }: {
     imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
-    boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
+    boot.initrd.availableKernelModules = [
+      "xhci_pci"
+      "nvme"
+      "usb_storage"
+      "sd_mod"
+    ];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel"];
     boot.extraModulePackages = [];
@@ -18,9 +28,7 @@
       options = ["fmask=0022" "dmask=0022"];
     };
 
-    swapDevices = [
-      {device = "/dev/disk/by-uuid/9f56d711-6f2c-4555-a657-fa0c0c856cc0";}
-    ];
+    swapDevices = [{device = "/dev/disk/by-uuid/9f56d711-6f2c-4555-a657-fa0c0c856cc0";}];
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
