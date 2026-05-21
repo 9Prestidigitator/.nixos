@@ -90,8 +90,14 @@
 
       bash = {
         enable = true;
+        historyFile = "$HOME/.bash_history";
+        historySize = 100000;
+        historyFileSize = 100000;
         # fastfetch
         initExtra = ''
+          shopt -s histappend
+          PROMPT_COMMAND="history -a; history -n''${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+
           clear
           [ $(tput cols) -ge 120 ] && fastfetch --file-raw "${logoLarge}" --logo-padding-left $((($(tput cols) - 120) / 2))
           [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
@@ -136,5 +142,7 @@
         nv-full = "nix develop ${config.home.homeDirectory}/.nixos#default -c nvim";
       };
     };
+
+    persist.files = [".bash_history"];
   };
 }
