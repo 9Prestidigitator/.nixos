@@ -4,10 +4,7 @@
     programs.plasma = {
       enable = true;
 
-      kwin.effects = {
-        blur.enable = true;
-        backgroundContrast.enable = true;
-      };
+      kwin.effects.blur.enable = true;
 
       hotkeys.commands = {
         "launch-terminal" = {
