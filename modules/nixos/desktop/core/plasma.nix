@@ -20,7 +20,7 @@
         ".local/state/ksmserver"
       ];
       userFiles = [
-        ".config/ksmserverrc"
+        # ".config/ksmserverrc"
       ];
     };
   };
