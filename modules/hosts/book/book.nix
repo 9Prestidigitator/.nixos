@@ -17,6 +17,7 @@
       nixosModules.ink-build-machine
       nixosModules.stylix
 
+      nixosModules.impermanence
       nixosModules.grub
       nixosModules.system-general
       nixosModules.home-manager

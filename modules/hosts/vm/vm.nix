@@ -14,6 +14,7 @@
       nixosModules.stylix
 
       nixosModules.grub
+      nixosModules.impermanence
       nixosModules.system-general
       nixosModules.home-manager
       nixosModules.nix
