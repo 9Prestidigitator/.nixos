@@ -1,36 +1,59 @@
 {inputs, ...}: {
-  flake.diskoConfigurations.book = {lib, ...}: {
+  flake.diskoConfigurations.book = {pkgs, ...}: {
     imports = [inputs.disko.nixosModules.disko];
 
     fileSystems."/".neededForBoot = true;
     fileSystems."/nix".neededForBoot = true;
     fileSystems."/persist".neededForBoot = true;
 
-    boot.initrd.postResumeCommands = lib.mkAfter ''
-      mkdir /btrfs_tmp
-      mount -t btrfs -o subvolid=5 /dev/mapper/crypted-root /btrfs_tmp
+    boot.initrd.systemd.services.rollback-root = {
+      description = "Rollback Btrfs root subvolume";
+      wantedBy = ["initrd.target"];
+      # Must happen after LUKS root is opened, but before / is mounted.
+      after = ["systemd-cryptsetup@crypted\\x2droot.service"];
+      before = ["sysroot.mount"];
 
-      if [[ -e /btrfs_tmp/@root ]]; then
-        mkdir -p /btrfs_tmp/old_roots
-        timestamp="$(date --date="@$(stat -c %Y /btrfs_tmp/@root)" "+%Y-%m-%d_%H:%M:%S")"
-        mv /btrfs_tmp/@root "/btrfs_tmp/old_roots/$timestamp"
-      fi
+      unitConfig.DefaultDependencies = "no";
+      serviceConfig = {
+        Type = "oneshot";
+      };
+      path = [
+        pkgs.btrfs-progs
+        pkgs.coreutils
+        pkgs.findutils
+        pkgs.gnused
+        pkgs.util-linux
+      ];
 
-      delete_subvolume_recursively() {
-        IFS=$'\n'
-        for subvolume in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-          delete_subvolume_recursively "/btrfs_tmp/$subvolume"
-        done
-        btrfs subvolume delete "$1"
-      }
+      script = ''
+        mkdir -p /btrfs_tmp
+        mount -t btrfs -o subvolid=5 /dev/mapper/crypted-root /btrfs_tmp
 
-      for old_root in $(find /btrfs_tmp/old_roots/ -mindepth 1 -maxdepth 1 -mtime +30 2>/dev/null || true); do
-        delete_subvolume_recursively "$old_root"
-      done
+        if [[ -e /btrfs_tmp/@root ]]; then
+          mkdir -p /btrfs_tmp/old_roots
+          timestamp="$(date --date="@$(stat -c %Y /btrfs_tmp/@root)" "+%Y-%m-%d_%H:%M:%S")"
+          mv /btrfs_tmp/@root "/btrfs_tmp/old_roots/$timestamp"
+        fi
 
-      btrfs subvolume create /btrfs_tmp/@root
-      umount /btrfs_tmp
-    '';
+        delete_subvolume_recursively() {
+          IFS=$'\n'
+          for subvolume in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+            delete_subvolume_recursively "/btrfs_tmp/$subvolume"
+          done
+
+          btrfs subvolume delete "$1"
+        }
+
+        if [[ -d /btrfs_tmp/old_roots ]]; then
+          for old_root in $(find /btrfs_tmp/old_roots -mindepth 1 -maxdepth 1 -mtime +30); do
+            delete_subvolume_recursively "$old_root"
+          done
+        fi
+
+        btrfs subvolume create /btrfs_tmp/@root
+        umount /btrfs_tmp
+      '';
+    };
 
     disko.devices = {
       disk.main = {

@@ -503,11 +503,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1778881459,
-        "narHash": "sha256-MiGLuZR1lmsTXJO3rtyQN4BBTyN/9lfmFVraxF+zhcY=",
+        "lastModified": 1779334781,
+        "narHash": "sha256-oiLepHFghdKFtYQhdNWiaL60nWk/uEdAp38TU2/ulQo=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "9ce9150c884409636f87a12162364698d90031fd",
+        "rev": "2becf40ac5f26a7355fd1ca10d142fbde194b850",
         "type": "github"
       },
       "original": {
