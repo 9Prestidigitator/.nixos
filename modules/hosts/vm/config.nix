@@ -15,7 +15,6 @@
 
         homeModules.stylix
 
-        homeModules.discord
         homeModules.essentials
       ];
     };
