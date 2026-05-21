@@ -48,6 +48,20 @@
       };
     };
 
+    persist.directories = [
+      "Desktop"
+      "Documents"
+      "Downloads"
+      "Music"
+      "Pictures"
+      "Videos"
+      "Projects"
+      "notes"
+
+      ".config/sops"
+      ".local/share/keyrings"
+    ];
+
     home.activation.ensureNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''mkdir -p "$HOME/notes"'';
   };
 }

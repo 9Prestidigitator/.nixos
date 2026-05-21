@@ -39,5 +39,7 @@
         };
       };
     };
+
+    persist.directories = [".config/discord"];
   };
 }
