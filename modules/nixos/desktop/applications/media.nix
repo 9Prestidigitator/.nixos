@@ -26,7 +26,7 @@
       cava
       yt-dlp
     ];
-  };
 
-  persist.userDirs = [".config/aacs"];
+    persist.userDirs = [".config/aacs"];
+  };
 }
