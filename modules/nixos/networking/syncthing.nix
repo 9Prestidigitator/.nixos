@@ -5,5 +5,7 @@
       enable = true;
       openDefaultPorts = true;
     };
+
+    persist.userDirs = [".config/syncthing"];
   };
 }

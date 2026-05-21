@@ -7,5 +7,7 @@
     environment.systemPackages = with pkgs; [mullvad];
     services.resolved.enable = true;
     networking.firewall.checkReversePath = "loose";
+
+    persist.directories = ["/etc/mullvad-vpn"];
   };
 }

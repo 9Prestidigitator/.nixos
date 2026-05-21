@@ -78,5 +78,10 @@
       steam-run
       appimage-run
     ];
+
+    persist = {
+      directories = ["/var/lib/flatpak"];
+      userDirs = [".var/app"];
+    };
   };
 }

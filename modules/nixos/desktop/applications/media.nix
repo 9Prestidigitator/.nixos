@@ -27,4 +27,6 @@
       yt-dlp
     ];
   };
+
+  persist.userDirs = [".config/aacs"];
 }

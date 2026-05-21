@@ -18,6 +18,11 @@
       ];
     };
 
+    users.users = {
+      root.initialPassword = "nixos";
+      max.initialPassword = "nixos";
+    };
+
     boot = {
       kernelPackages = pkgs.linuxPackages_6_12;
       kernelPatches = [

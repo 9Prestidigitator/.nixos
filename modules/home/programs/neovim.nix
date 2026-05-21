@@ -6,5 +6,7 @@
       package = pkgs.neovim;
       config.dir = "${config.xdg.configHome}/maxvim";
     };
+
+    persist.userDirs = [".config/maxvim"];
   };
 }

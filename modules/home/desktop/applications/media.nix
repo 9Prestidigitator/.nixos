@@ -15,6 +15,7 @@
         ncsVisualizer
       ];
     };
+
     programs.mpv = {
       enable = true;
 

@@ -6,7 +6,6 @@
   imports = [inputs.home-manager.flakeModules.home-manager];
 
   options = {
-    # custom flake-parts modules
     flake = {
       diskoConfigurations = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.deferredModule;

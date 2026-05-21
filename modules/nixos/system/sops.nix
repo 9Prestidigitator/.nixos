@@ -6,5 +6,7 @@
       defaultSopsFormat = "yaml";
     };
     environment.systemPackages = with pkgs; [sops age];
+
+    persist.directories = ["/etc/sops"];
   };
 }
