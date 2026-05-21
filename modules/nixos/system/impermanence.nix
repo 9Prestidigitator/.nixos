@@ -21,6 +21,11 @@
       normalUsers;
   in {
     imports = [inputs.impermanence.nixosModules.impermanence];
+
+    fileSystems."/".neededForBoot = true;
+    fileSystems."/nix".neededForBoot = true;
+    fileSystems."/persist".neededForBoot = true;
+
     persist = {
       directories = [
         "/etc/NetworkManager/system-connections"
@@ -36,6 +41,7 @@
         "/etc/ssh/ssh_host_ed25519_key.pub"
       ];
     };
+
     environment.persistence."/persist" = {
       hideMounts = true;
       directories = config.persist.directories;

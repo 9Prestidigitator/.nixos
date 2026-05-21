@@ -23,6 +23,7 @@
       nixosModules.home-manager
       nixosModules.nix
 
+      inputs.disko.nixosModules.disko
       diskoConfigurations.book
       hostModules.book
     ];

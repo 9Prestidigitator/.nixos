@@ -19,8 +19,9 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      hostModules.vm
+      inputs.disko.nixosModules.disko
       diskoConfigurations.vm
+      hostModules.vm
     ];
   };
 }
