@@ -5,11 +5,42 @@
     config,
     ...
   }: {
-    options.host = {
-      name = lib.mkOption {
-        type = lib.types.str;
-        default = "nixos";
-        description = "Name of the host.";
+    options = {
+      host = {
+        name = lib.mkOption {
+          type = lib.types.str;
+          default = "nixos";
+          description = "Name of the host.";
+        };
+      };
+
+      # Persistence options
+      persist = {
+        root = lib.mkOption {
+          type = lib.types.str;
+          default = "/persist";
+          description = "Root path used by impermanence-backed persistence.";
+        };
+        directories = lib.mkOption {
+          type = lib.types.listOf lib.types.anaything;
+          default = [];
+          description = "System directories to persist.";
+        };
+        files = lib.mkOption {
+          type = lib.types.listOf lib.types.anaything;
+          default = [];
+          description = "System files to persist.";
+        };
+        userDirs = lib.mkOption {
+          type = lib.types.listOf lib.types.anaything;
+          default = [];
+          description = "User directories to persist for every normal user.";
+        };
+        userFiles = lib.mkOption {
+          type = lib.types.listOf lib.types.anaything;
+          default = [];
+          description = "User files to persist for every normal user.";
+        };
       };
     };
 

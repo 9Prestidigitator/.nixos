@@ -5,36 +5,39 @@
 }: {
   imports = [inputs.home-manager.flakeModules.home-manager];
 
-  options.flake = {
-    diskoConfigurations = lib.mkOption {
-      type = lib.types.lazyAttrsOf lib.types.deferredModule;
-      default = {};
-      description = "Disko configurations exposed as flake outputs.";
-    };
+  options = {
+    # custom flake-parts modules
+    flake = {
+      diskoConfigurations = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.deferredModule;
+        default = {};
+        description = "Disko configurations exposed as flake outputs.";
+      };
 
-    hostModules = lib.mkOption {
-      type = lib.types.lazyAttrsOf lib.types.deferredModule;
-      default = {};
-      description = "Host specific modules.";
-    };
+      hostModules = lib.mkOption {
+        type = lib.types.lazyAttrsOf lib.types.deferredModule;
+        default = {};
+        description = "Host specific modules.";
+      };
 
-    userModules = lib.mkOption {
-      type = lib.types.lazyAttrsOf (lib.types.submodule {
-        options = {
-          nixosModule = lib.mkOption {
-            type = lib.types.nullOr lib.types.deferredModule;
-            default = null;
-            description = "NixOS module for this user.";
+      userModules = lib.mkOption {
+        type = lib.types.lazyAttrsOf (lib.types.submodule {
+          options = {
+            nixosModule = lib.mkOption {
+              type = lib.types.nullOr lib.types.deferredModule;
+              default = null;
+              description = "NixOS module for this user.";
+            };
+            homeModule = lib.mkOption {
+              type = lib.types.nullOr lib.types.deferredModule;
+              default = null;
+              description = "Home Manager module for this user.";
+            };
           };
-          homeModule = lib.mkOption {
-            type = lib.types.nullOr lib.types.deferredModule;
-            default = null;
-            description = "Home Manager module for this user.";
-          };
-        };
-      });
-      default = {};
-      description = "User specific modules.";
+        });
+        default = {};
+        description = "User specific modules.";
+      };
     };
   };
 
