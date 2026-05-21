@@ -36,5 +36,20 @@
       carla
       qpwgraph
     ];
+
+    persist.userDirs = [
+      ".vst"
+      ".vst3"
+      ".clap"
+      ".lv2"
+      ".BitwigStudio"
+      ".config/REAPER"
+      ".config/REAPER-backup"
+      ".config/yabridgectl"
+      ".config/MuseScore"
+      ".config/overwitch"
+      ".config/falkTX"
+      "Audio Assault"
+    ];
   };
 }

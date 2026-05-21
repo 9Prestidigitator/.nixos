@@ -27,6 +27,12 @@
       yt-dlp
     ];
 
-    persist.userDirs = [".config/aacs"];
+    persist.userDirs = [
+      ".config/aacs"
+      ".config/calibre"
+      ".cache/calibre"
+      "Calibre Library"
+      ".local/share/calibre-ebook.com"
+    ];
   };
 }

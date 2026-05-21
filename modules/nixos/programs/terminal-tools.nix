@@ -29,5 +29,10 @@
       cryptsetup
       gptfdisk
     ];
+
+    persist.userDirs = [
+      ".config/btop"
+      ".tmux"
+    ];
   };
 }

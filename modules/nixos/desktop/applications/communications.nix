@@ -4,5 +4,10 @@
       signal-desktop
       element-desktop
     ];
+
+    persist.userDirs = [
+      ".config/Signal"
+      ".config/Element"
+    ];
   };
 }

@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.homeModules.gaming = {
+  flake.homeModules.steam = {
     imports = [inputs.steam-config-nix.homeModules.default];
     programs.steam.config = {
       enable = true;
@@ -32,5 +32,6 @@
         };
       };
     };
+    persist.directories = [".local/share/steam"];
   };
 }

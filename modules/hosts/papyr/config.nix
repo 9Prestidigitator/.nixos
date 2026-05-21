@@ -18,7 +18,7 @@
         homeModules.stylix
 
         homeModules.essentials
-        homeModules.gaming
+        homeModules.steam
         homeModules.media
         homeModules.discord
       ];

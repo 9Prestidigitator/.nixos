@@ -13,5 +13,10 @@
       qemu
       virt-manager
     ];
+
+    persist.directories = [
+      "/var/lib/libvirt"
+      ".config/virt-manager"
+    ];
   };
 }

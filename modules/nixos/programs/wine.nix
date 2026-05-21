@@ -8,5 +8,6 @@
       winePackages.fonts
       wineasio
     ];
+    persist.userDirs = [".wine"];
   };
 }
