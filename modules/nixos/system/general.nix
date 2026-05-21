@@ -32,7 +32,7 @@
           description = "System files to persist.";
         };
         userDirs = lib.mkOption {
-          type = lib.types.listOf lib.types.anaything;
+          type = lib.types.listOf lib.types.anything;
           default = [];
           description = "User directories to persist for every normal user.";
         };
