@@ -22,12 +22,12 @@
           description = "Root path used by impermanence-backed persistence.";
         };
         directories = lib.mkOption {
-          type = lib.types.listOf lib.types.anaything;
+          type = lib.types.listOf lib.types.anything;
           default = [];
           description = "System directories to persist.";
         };
         files = lib.mkOption {
-          type = lib.types.listOf lib.types.anaything;
+          type = lib.types.listOf lib.types.anything;
           default = [];
           description = "System files to persist.";
         };
@@ -37,7 +37,7 @@
           description = "User directories to persist for every normal user.";
         };
         userFiles = lib.mkOption {
-          type = lib.types.listOf lib.types.anaything;
+          type = lib.types.listOf lib.types.anything;
           default = [];
           description = "User files to persist for every normal user.";
         };
