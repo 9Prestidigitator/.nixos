@@ -12,5 +12,7 @@
       maliit-keyboard
       maliit-framework
     ];
+
+    persist.userDirs = [".local/share/kwalletd"];
   };
 }

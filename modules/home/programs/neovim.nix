@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.homeModules.neovim = {pkgs, config, ...}: {
+  flake.homeModules.neovim = {
+    pkgs,
+    config,
+    ...
+  }: {
     imports = [inputs.maxvim.homeModules.default];
     programs.maxvim = {
       enable = true;
@@ -7,6 +11,6 @@
       config.dir = "${config.xdg.configHome}/maxvim";
     };
 
-    persist.userDirs = [".config/maxvim"];
+    persist.userDirs = [".config/maxvim" ".local/share/maxvim"];
   };
 }
