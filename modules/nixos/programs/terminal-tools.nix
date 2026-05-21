@@ -7,6 +7,7 @@
         presets = ["nerd-font-symbols"];
       };
     };
+
     environment.systemPackages = with pkgs; [
       bashInteractive
       self.packages.${pkgs.system}.tmux
