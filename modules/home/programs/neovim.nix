@@ -11,6 +11,6 @@
       config.dir = "${config.xdg.configHome}/maxvim";
     };
 
-    persist.userDirs = [".config/maxvim" ".local/share/maxvim"];
+    persist.directories = [".config/maxvim" ".local/share/maxvim"];
   };
 }
