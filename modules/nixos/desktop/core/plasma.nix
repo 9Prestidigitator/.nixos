@@ -13,6 +13,15 @@
       maliit-framework
     ];
 
-    persist.userDirs = [".local/share/kwalletd"];
+    persist = {
+      userDirs = [
+        ".local/share/kwalletd"
+        ".config/session"
+        ".local/state/ksmserver"
+      ];
+      userFiles = [
+        ".config/ksmserverrc"
+      ];
+    };
   };
 }
