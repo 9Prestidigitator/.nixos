@@ -16,6 +16,152 @@
     mv = "${pkgs.coreutils}/bin/mv";
     stat = "${pkgs.coreutils}/bin/stat";
     umount = "${config.boot.initrd.systemd.package.util-linux}/bin/umount";
+
+    cleanOldRoots = pkgs.writeShellApplication {
+      name = "clean-old-roots";
+      runtimeInputs = [
+        pkgs.btrfs-progs
+        pkgs.coreutils
+        pkgs.findutils
+        pkgs.gawk
+        pkgs.util-linux
+      ];
+      text = ''
+        set -euo pipefail
+
+        device=${lib.escapeShellArg cfg.device}
+        old_roots_name=${lib.escapeShellArg cfg.oldRootsSubvolume}
+        retention_days=${toString cfg.retentionDays}
+        mode=older
+        days="$retention_days"
+        roots=()
+
+        usage() {
+          cat <<EOF
+        Usage: clean-old-roots [--older-than DAYS | --all] [OLD_ROOT...]
+
+        Deletes saved Btrfs impermanence roots from $old_roots_name on $device.
+
+        Without OLD_ROOT arguments, deletes roots older than $retention_days days.
+        OLD_ROOT arguments are names under $old_roots_name, for example:
+          clean-old-roots 2026-05-22_16:09:04
+
+        Options:
+          --older-than DAYS  Delete roots older than DAYS days.
+          --all              Delete every saved old root.
+          -h, --help         Show this help.
+        EOF
+        }
+
+        while (($#)); do
+          case "$1" in
+            --older-than)
+              if [[ $# -lt 2 || ! "$2" =~ ^[0-9]+$ ]]; then
+                echo "--older-than requires a non-negative integer day count" >&2
+                exit 2
+              fi
+              mode=older
+              days="$2"
+              shift 2
+              ;;
+            --all)
+              mode=all
+              shift
+              ;;
+            -h|--help)
+              usage
+              exit 0
+              ;;
+            --)
+              shift
+              while (($#)); do
+                roots+=("$1")
+                shift
+              done
+              ;;
+            -*)
+              echo "Unknown option: $1" >&2
+              usage >&2
+              exit 2
+              ;;
+            *)
+              roots+=("$1")
+              shift
+              ;;
+          esac
+        done
+
+        if [[ $EUID -ne 0 ]]; then
+          echo "clean-old-roots must be run as root." >&2
+          exit 1
+        fi
+
+        tmp="$(mktemp -d /tmp/btrfs-old-roots.XXXXXX)"
+        cleanup() {
+          umount "$tmp" >/dev/null 2>&1 || true
+          rmdir "$tmp" >/dev/null 2>&1 || true
+        }
+        trap cleanup EXIT
+
+        mount -t btrfs -o subvolid=5 "$device" "$tmp"
+        old_roots_path="$tmp/$old_roots_name"
+
+        if [[ ! -d "$old_roots_path" ]]; then
+          echo "No old roots directory found at $old_roots_name on $device."
+          exit 0
+        fi
+
+        targets=()
+        if ((''${#roots[@]})); then
+          for root in "''${roots[@]}"; do
+            root="''${root#/}"
+            if [[ "$root" == */* ]]; then
+              echo "Old root names must be direct children of $old_roots_name: $root" >&2
+              exit 2
+            fi
+            targets+=("$old_roots_path/$root")
+          done
+        elif [[ "$mode" == all ]]; then
+          mapfile -t targets < <(find "$old_roots_path" -mindepth 1 -maxdepth 1)
+        else
+          mapfile -t targets < <(find "$old_roots_path" -mindepth 1 -maxdepth 1 -mtime +"$days")
+        fi
+
+        if ((''${#targets[@]} == 0)); then
+          echo "No old roots matched."
+          exit 0
+        fi
+
+        delete_subvolume_recursively() {
+          local target="$1"
+
+          if [[ ! -e "$target" ]]; then
+            echo "Skipping missing old root: $target" >&2
+            return
+          fi
+
+          mapfile -t children < <(
+            btrfs subvolume list -o "$target" \
+              | cut -f 9- -d ' ' \
+              | awk '{ print length, $0 }' \
+              | sort -rn \
+              | cut -f 2- -d ' '
+          )
+
+          for child in "''${children[@]}"; do
+            if [[ -e "$tmp/$child" ]]; then
+              btrfs subvolume delete "$tmp/$child"
+            fi
+          done
+
+          btrfs subvolume delete "$target"
+        }
+
+        for target in "''${targets[@]}"; do
+          delete_subvolume_recursively "$target"
+        done
+      '';
+    };
   in {
     options.impermanence.btrfs.rollbackRoot = {
       enable = lib.mkEnableOption "Btrfs root subvolume rollback during initrd";
@@ -52,6 +198,8 @@
     };
 
     config = lib.mkIf cfg.enable {
+      environment.systemPackages = [cleanOldRoots];
+
       boot.initrd.systemd.services.rollback-root = {
         description = "Rollback Btrfs root subvolume";
         wantedBy = ["initrd.target"];
