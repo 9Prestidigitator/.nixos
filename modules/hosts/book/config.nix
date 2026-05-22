@@ -95,7 +95,7 @@
             up = "pageup";
             down = "pagedown";
           };
-          "shift+backspace" = "delete";
+          shift.backspace = "delete";
         };
       };
     };
