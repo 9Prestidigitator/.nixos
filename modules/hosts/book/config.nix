@@ -60,8 +60,6 @@
             f9 = "volumedown";
             f10 = "volumeup";
           };
-
-          # Allow F1-10 access through meta+fnX
           meta = {
             f1 = "f1";
             f2 = "f2";
@@ -74,8 +72,6 @@
             f9 = "f9";
             f10 = "f10";
           };
-
-          # Allow TTY access
           "control+alt" = {
             f1 = "C-A-f1";
             f2 = "C-A-f2";
@@ -95,12 +91,11 @@
             up = "home";
             down = "end";
           };
-
           "alt" = {
-            backspace = "delete";
             up = "pageup";
             down = "pagedown";
           };
+          "shift+backspace" = "delete";
         };
       };
     };
