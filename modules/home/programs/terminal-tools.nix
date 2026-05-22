@@ -143,6 +143,9 @@
       };
     };
 
-    persist.files = [".bash_history"];
+    persist = {
+      directories = [".local/share/zoxide"];
+      files = [".bash_history"];
+    };
   };
 }

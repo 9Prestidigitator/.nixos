@@ -42,5 +42,11 @@
         QS_ICON_THEME = "breeze-dark";
       };
     };
+
+    persist.userDirs = [
+      ".cache/noctalia"
+      ".config/evolution"
+      ".local/share/evolution"
+    ];
   };
 }

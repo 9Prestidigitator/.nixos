@@ -6,6 +6,9 @@
       openDefaultPorts = true;
     };
 
-    persist.userDirs = [".config/syncthing"];
+    persist.userDirs = [
+      ".config/syncthing"
+      ".local/state/syncthing"
+    ];
   };
 }

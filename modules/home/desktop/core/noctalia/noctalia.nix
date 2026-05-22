@@ -11,5 +11,11 @@
         indicator = true;
       };
     };
+
+    persist.directories = [
+      ".cache/noctalia"
+      ".cache/cliphist"
+      ".config/kdeconnect"
+    ];
   };
 }

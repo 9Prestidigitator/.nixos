@@ -19,7 +19,8 @@
 
         homeModules.essentials
         homeModules.steam
-        homeModules.media
+        homeModules.mpv
+        homeModules.spicetify
         homeModules.discord
       ];
 

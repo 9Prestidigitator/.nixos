@@ -14,9 +14,9 @@
         hmCfg = hmUsers.${name} or {};
       in {
         directories =
-          config.persist.userDirs ++ (hmCfg.persist.directories or []);
+          lib.unique (config.persist.userDirs ++ (hmCfg.persist.directories or []));
         files =
-          config.persist.userFiles ++ (hmCfg.persist.files or []);
+          lib.unique (config.persist.userFiles ++ (hmCfg.persist.files or []));
       })
       normalUsers;
   in {
@@ -44,8 +44,8 @@
 
     environment.persistence."/persist" = {
       hideMounts = true;
-      directories = config.persist.directories;
-      files = config.persist.files;
+      directories = lib.unique config.persist.directories;
+      files = lib.unique config.persist.files;
       users = userPersistence;
     };
   };

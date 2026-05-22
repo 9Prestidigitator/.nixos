@@ -49,9 +49,6 @@
       };
     };
 
-    gtk.gtk4.theme = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") config.gtk.theme;
-    xdg.userDirs.setSessionVariables = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") true;
-
     persist.directories = [
       "Desktop"
       "Documents"
@@ -65,6 +62,9 @@
       ".config/sops"
       ".local/share/keyrings"
     ];
+
+    gtk.gtk4.theme = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") config.gtk.theme;
+    xdg.userDirs.setSessionVariables = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") true;
 
     home.activation.ensureNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''mkdir -p "$HOME/notes"'';
   };

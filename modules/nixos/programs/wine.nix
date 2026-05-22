@@ -8,6 +8,10 @@
       winePackages.fonts
       wineasio
     ];
-    persist.userDirs = [".wine"];
+    persist.userDirs = [
+      ".wine"
+      ".local/share/applications/wine"
+      ".local/share/mime"
+    ];
   };
 }

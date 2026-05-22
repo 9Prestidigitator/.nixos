@@ -31,5 +31,7 @@
         };
       };
     };
+
+    persist.directories = ["/srv/minecraft"];
   };
 }

@@ -1,22 +1,5 @@
-{inputs, ...}: {
-  flake.homeModules.media = {pkgs, ...}: {
-    imports = [inputs.spicetify-nix.homeManagerModules.default];
-
-    programs.spicetify = let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-    in {
-      enable = true;
-      theme = spicePkgs.themes.hazy;
-      enabledExtensions = with spicePkgs.extensions; [
-        adblock
-        hidePodcasts
-      ];
-      enabledCustomApps = with spicePkgs.apps; [
-        newReleases
-        ncsVisualizer
-      ];
-    };
-
+{
+  flake.homeModules.mpv = {pkgs, ...}: {
     programs.mpv = {
       enable = true;
 
@@ -28,7 +11,6 @@
       config = {
         keep-open = "yes";
         ao = "pipewire";
-
         osd-bar = "no";
 
         layout = "bottombar";
@@ -43,6 +25,7 @@
         seekrangeseparate = true;
         seekrangealpha = 30;
       };
+
       bindings = {
         "SPACE" = "cycle pause";
         q = "quit";

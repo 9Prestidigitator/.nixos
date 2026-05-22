@@ -81,7 +81,16 @@
 
     persist = {
       directories = ["/var/lib/flatpak"];
-      userDirs = [".var/app"];
+      userDirs = [
+        ".config/Moonlight Game Streaming Project"
+        ".config/sunshine"
+        ".local/share/nautilus"
+        ".local/share/zathura"
+        ".var/app"
+      ];
+      userFiles = [
+        ".local/share/recently-used.xbel"
+      ];
     };
   };
 }

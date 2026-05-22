@@ -16,8 +16,10 @@
         ".config/libreoffice"
         ".config/inkscape"
         ".cache/inkscape"
+        ".local/share/inkscape"
         ".local/share/krita"
         ".cache/krita"
+        ".local/share/libreoffice"
       ];
       userFiles = [
         ".config/kritarc"

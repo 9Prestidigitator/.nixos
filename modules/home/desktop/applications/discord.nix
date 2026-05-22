@@ -40,6 +40,9 @@
       };
     };
 
-    persist.directories = [".config/discord"];
+    persist.directories = [
+      ".cache/discord"
+      ".config/discord"
+    ];
   };
 }

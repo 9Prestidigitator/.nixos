@@ -9,5 +9,9 @@
       self.homeModules.wlr-which-key
       (inputs.import-tree ./_config)
     ];
+
+    persist.directories = [
+      ".local/share/niri-screen-time"
+    ];
   };
 }

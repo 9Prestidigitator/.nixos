@@ -34,5 +34,15 @@
       pulseaudio
       imv
     ];
+
+    persist = {
+      directories = ["/var/lib/AccountsService"];
+      userDirs = [
+        ".local/state/niri-screen-time"
+        ".local/share/evolution"
+        ".config/evolution"
+        ".config/goa-1.0"
+      ];
+    };
   };
 }

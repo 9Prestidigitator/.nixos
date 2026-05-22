@@ -29,10 +29,20 @@
 
     persist.userDirs = [
       ".config/aacs"
+      ".config/obs-studio"
+      ".config/obsidian"
+      ".config/vlc"
       ".config/calibre"
       ".cache/calibre"
       "Calibre Library"
       ".local/share/calibre-ebook.com"
+      ".local/share/vlc"
+      ".local/share/zathura"
+      ".MakeMKV"
+      ".config/MakeMKV"
+      ".config/qBittorrent"
+      ".cache/qBittorrent"
+      ".local/share/qBittorrent"
     ];
   };
 }

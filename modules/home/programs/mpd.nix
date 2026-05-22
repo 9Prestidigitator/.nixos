@@ -11,5 +11,7 @@
         }
       '';
     };
+
+    persist.directories = [".local/share/mpd"];
   };
 }

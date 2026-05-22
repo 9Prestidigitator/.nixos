@@ -107,6 +107,11 @@
         udev.extraRules = ''KERNEL=="sr[0-9]*", GROUP="cdrom", MODE="0660"'';
         printing.enable = true;
       };
+
+      persist.directories = [
+        "/etc/cups"
+        "/var/lib/cups"
+      ];
     };
   };
 }

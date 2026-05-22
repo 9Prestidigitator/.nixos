@@ -18,5 +18,18 @@
       gnomeExtensions.just-perfection
       gnomeExtensions.arc-menu
     ];
+
+    persist = {
+      directories = ["/var/lib/AccountsService"];
+      userDirs = [
+        ".local/share/gnome-shell"
+        ".local/share/gnome-settings-daemon"
+        ".config/dconf"
+        ".config/evolution"
+        ".local/share/evolution"
+        ".config/goa-1.0"
+      ];
+      userFiles = [".local/share/recently-used.xbel"];
+    };
   };
 }

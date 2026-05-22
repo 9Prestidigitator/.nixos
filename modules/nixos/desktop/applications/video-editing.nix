@@ -9,6 +9,8 @@
     persist = {
       userDirs = [
         ".config/blender"
+        ".config/kdenlive"
+        ".local/share/blender"
         ".cache/kdenlive"
         ".local/share/kdenlive"
         ".local/state/kdenlivestaterc"

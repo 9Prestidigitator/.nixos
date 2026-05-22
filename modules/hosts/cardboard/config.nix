@@ -14,7 +14,8 @@
         homeModules.stylix
 
         homeModules.essentials
-        homeModules.media
+        homeModules.mpv
+        homeModules.spicetify
         homeModules.discord
       ];
     };

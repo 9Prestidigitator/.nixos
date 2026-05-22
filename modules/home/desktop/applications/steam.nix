@@ -32,6 +32,10 @@
         };
       };
     };
-    persist.directories = [".local/share/steam"];
+    persist.directories = [
+      ".steam"
+      ".local/share/Steam"
+      ".local/share/steam"
+    ];
   };
 }

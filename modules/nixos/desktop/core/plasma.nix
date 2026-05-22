@@ -18,9 +18,15 @@
         ".local/share/kwalletd"
         ".config/session"
         ".local/state/ksmserver"
+        ".local/share/kscreen"
+        ".local/share/kactivitymanagerd"
+        ".local/share/dolphin"
       ];
       userFiles = [
-        # ".config/ksmserverrc"
+        ".config/ksmserverrc"
+        ".config/kwinoutputconfig.json"
+        ".config/kactivitymanagerdrc"
+        ".local/state/plasmasessionrestorestaterc"
       ];
     };
   };

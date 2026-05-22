@@ -14,9 +14,13 @@
       virt-manager
     ];
 
-    persist.directories = [
-      "/var/lib/libvirt"
-      ".config/virt-manager"
-    ];
+    persist = {
+      directories = ["/var/lib/libvirt"];
+      userDirs = [
+        ".config/libvirt"
+        ".config/virt-manager"
+        ".cache/virt-manager"
+      ];
+    };
   };
 }

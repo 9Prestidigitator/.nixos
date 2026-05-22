@@ -27,9 +27,16 @@
     ];
 
     persist.userDirs = [
-      ".local/share/steam"
+      ".cache/nvidia"
+      ".cache/mesa_shader_cache"
+      ".cache/mesa_shader_cache_db"
+      ".steam"
+      ".local/share/Steam"
+      "Games"
       ".config/heroic"
-      ".local/share/Heroic"
+      ".cache/heroic"
+      ".local/state/Heroic"
+      ".local/share/PrismLauncher"
       ".local/share/eden"
       ".config/dolphin-emu"
       ".local/share/dolphin-emu"

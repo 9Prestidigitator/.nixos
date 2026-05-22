@@ -16,6 +16,9 @@
 
     environment.systemPackages = with pkgs; [brave];
 
-    persist.userDirs = [".config/BraveSoftware"];
+    persist.userDirs = [
+      ".cache/BraveSoftware"
+      ".config/BraveSoftware"
+    ];
   };
 }
