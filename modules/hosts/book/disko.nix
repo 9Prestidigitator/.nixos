@@ -2,7 +2,7 @@
   flake.diskoConfigurations.book = {
     disko.devices = {
       disk.main = {
-        device = "/dev/vda";
+        device = "/dev/mmcblk1";
         type = "disk";
 
         content = {
