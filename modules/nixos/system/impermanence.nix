@@ -26,6 +26,11 @@
     fileSystems."/nix".neededForBoot = true;
     fileSystems."/persist".neededForBoot = true;
 
+    users.users = {
+      root.initialPassword = "nixos";
+      max.initialPassword = "nixos";
+    };
+
     persist = {
       directories = [
         "/etc/NetworkManager/system-connections"

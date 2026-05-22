@@ -18,11 +18,6 @@
       homeModules.stylix
     ];
 
-    users.users = {
-      root.initialPassword = "nixos";
-      max.initialPassword = "nixos";
-    };
-
     boot.initrd.systemd.services.rollback-root = {
       description = "Rollback Btrfs root subvolume";
       wantedBy = ["initrd.target"];

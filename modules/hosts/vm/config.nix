@@ -15,11 +15,6 @@
       homeModules.essentials
     ];
 
-    users.users = {
-      root.initialPassword = "nixos";
-      max.initialPassword = "nixos";
-    };
-
     boot.loader = {
       efi = {
         canTouchEfiVariables = lib.mkForce false;

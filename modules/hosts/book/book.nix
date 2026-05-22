@@ -18,6 +18,7 @@
       nixosModules.stylix
       nixosModules.fonts
 
+      nixosModules.keyd
       nixosModules.grub
       nixosModules.impermanence
       nixosModules.system-general

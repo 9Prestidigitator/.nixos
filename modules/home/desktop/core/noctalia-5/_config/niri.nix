@@ -10,19 +10,25 @@ in {
 
     binds = with config.lib.niri.actions; {
       "XF86Favorites" = {
-        hotkey-overlay.title = "Dashboard";
+        hotkey-overlay.title = "Control Center";
         allow-when-locked = false;
-        action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
+        action = spawn "noctalia" "msg" "panel-toggle" "control-center";
       };
       "Mod+z" = {
-        hotkey-overlay.title = "Dashboard";
-        action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
+        hotkey-overlay.title = "Control Center";
+        allow-when-locked = false;
+        action = spawn "noctalia" "msg" "panel-toggle" "control-center";
+      };
+
+      "Mod+Space" = {
+        hotkey-overlay.title = "Toggle launcher";
+        action = spawn "noctalia" "msg" "panel-toggle" "launcher";
       };
 
       "Mod+Escape" = {
         hotkey-overlay.title = "Lock";
         allow-when-locked = true;
-        action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+        action = spawn "noctalia" "msg" "screen-lock";
       };
 
       "Mod+N".action.spawn = mkWlrWhichKeyMenu "Noctalia" [

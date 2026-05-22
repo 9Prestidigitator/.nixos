@@ -19,6 +19,11 @@ in {
         action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
       };
 
+      "Mod+Space" = {
+        hotkey-overlay.title = "Toggle launcher";
+        action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
+      };
+
       "Mod+Escape" = {
         hotkey-overlay.title = "Lock";
         allow-when-locked = true;

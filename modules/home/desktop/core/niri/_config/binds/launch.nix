@@ -8,11 +8,6 @@
   hostName = osConfig.networking.hostName;
 in {
   programs.niri.settings.binds = with config.lib.niri.actions; {
-    "Mod+Space" = {
-      hotkey-overlay.title = "Toggle launcher";
-      action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
-    };
-
     "Mod+Return" = {
       hotkey-overlay.title = "Launch terminal (Kitty)";
       action = spawn "kitty";
