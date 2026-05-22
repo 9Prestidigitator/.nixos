@@ -27,6 +27,7 @@
       xwayland-satellite
       inputs.niri-float-sticky.packages.${system}.default
       inputs.niri-screen-time.packages.${system}.default
+      nautilus
       seahorse
       polkit_gnome
       wl-clipboard
@@ -35,10 +36,13 @@
       imv
     ];
 
+    xdg.mime.defaultApplications."inode/directory" = ["org.gnome.Nautilus.desktop"];
+
     persist = {
       directories = ["/var/lib/AccountsService"];
       userDirs = [
         ".local/state/niri-screen-time"
+        ".local/share/nautilus"
         ".local/share/evolution"
         ".config/evolution"
         ".config/goa-1.0"

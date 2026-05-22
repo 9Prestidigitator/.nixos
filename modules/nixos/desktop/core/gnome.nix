@@ -12,6 +12,7 @@
     environment.gnome.excludePackages = with pkgs; [gnome-tour gnome-user-docs];
 
     environment.systemPackages = with pkgs; [
+      nautilus
       adwaita-icon-theme
       gnome-tweaks
       gnomeExtensions.blur-my-shell
@@ -19,11 +20,14 @@
       gnomeExtensions.arc-menu
     ];
 
+    xdg.mime.defaultApplications."inode/directory" = ["org.gnome.Nautilus.desktop"];
+
     persist = {
       directories = ["/var/lib/AccountsService"];
       userDirs = [
         ".local/share/gnome-shell"
         ".local/share/gnome-settings-daemon"
+        ".local/share/nautilus"
         ".config/dconf"
         ".config/evolution"
         ".local/share/evolution"

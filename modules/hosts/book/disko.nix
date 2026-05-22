@@ -34,13 +34,8 @@
               name = "swap";
               size = "2G";
               content = {
-                type = "luks";
-                name = "crypted-swap";
-                settings.allowDiscards = true;
-                content = {
-                  type = "swap";
-                  resumeDevice = true;
-                };
+                type = "swap";
+                randomEncryption = true;
               };
             };
 

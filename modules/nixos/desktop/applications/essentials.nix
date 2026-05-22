@@ -20,7 +20,6 @@
         "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
         "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
         "application/pdf" = ["org.pwmt.zathura.desktop"];
-        "inode/directory" = ["org.gnome.Nautilus.desktop"];
         "image/png" = ["imv.desktop"];
         "image/jpg" = ["imv.desktop"];
         "image/jpeg" = ["imv.desktop"];
@@ -47,7 +46,6 @@
 
     environment.systemPackages = with pkgs; [
       kitty
-      nautilus
       moonlight-qt
 
       playerctl
@@ -84,7 +82,6 @@
       userDirs = [
         ".config/Moonlight Game Streaming Project"
         ".config/sunshine"
-        ".local/share/nautilus"
         ".local/share/zathura"
         ".var/app"
       ];
