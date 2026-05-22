@@ -48,22 +48,35 @@
       if [ -e "/dev/mapper/$MAPPER_NAME" ]; then
         echo "/dev/mapper/$MAPPER_NAME already exists"
       else
-        START="$(cat "/sys/class/block/$PARTNAME/start")"
-        SECTORS="$(cat "/sys/class/block/$PARTNAME/size")"
-        SECTOR_SIZE="$(cat "/sys/class/block/$DISKNAME/queue/logical_block_size")"
+        if cryptsetup isLuks "$PARTDEV" >/dev/null 2>&1; then
+          echo "Opening LUKS container directly from $PARTDEV"
+          if ! cryptsetup open "$PARTDEV" "$MAPPER_NAME"; then
+            echo "Direct open failed; falling back to loop device over parent disk"
+          fi
+        fi
 
-        OFFSET=$(( START * SECTOR_SIZE ))
-        SIZE=$(( SECTORS * SECTOR_SIZE ))
+        if ! [ -e "/dev/mapper/$MAPPER_NAME" ]; then
+          START="$(cat "/sys/class/block/$PARTNAME/start")"
+          SECTORS="$(cat "/sys/class/block/$PARTNAME/size")"
+          SECTOR_SIZE="$(cat "/sys/class/block/$DISKNAME/queue/logical_block_size")"
 
-        echo "Creating loop device for $PARTDEV"
-        echo "  offset: $OFFSET"
-        echo "  size:   $SIZE"
+          OFFSET=$(( START * SECTOR_SIZE ))
+          SIZE=$(( SECTORS * SECTOR_SIZE ))
 
-        LOOP="$(losetup --find --show --offset "$OFFSET" --sizelimit "$SIZE" "$DISKDEV")"
-        echo "$LOOP" > "$LOOP_FILE"
+          echo "Creating loop device for $PARTDEV"
+          echo "  offset: $OFFSET"
+          echo "  size:   $SIZE"
 
-        echo "Opening LUKS container through $LOOP"
-        cryptsetup open "$LOOP" "$MAPPER_NAME"
+          LOOP="$(losetup --find --show --offset "$OFFSET" --sizelimit "$SIZE" "$DISKDEV")"
+          echo "$LOOP" > "$LOOP_FILE"
+
+          echo "Opening LUKS container through $LOOP"
+          if ! cryptsetup open "$LOOP" "$MAPPER_NAME"; then
+            losetup -d "$LOOP" 2>/dev/null || true
+            rm -f "$LOOP_FILE"
+            exit 1
+          fi
+        fi
       fi
 
       mkdir -p "$MOUNTPOINT"
@@ -102,7 +115,7 @@
       LOOP_FILE="/run/secrets-loop-device"
 
       echo "Removing sops-nix age key symlink..."
-      rm -f /etc/sops/age/key.txt
+      rm -f /etc/sops/age/keys.txt
 
       echo "Removing runtime decrypted secrets..."
       rm -rf /run/secrets
@@ -126,7 +139,7 @@
   in {
     host.name = "iso";
     system.stateVersion = "25.11";
-    isoImage.isoName = "nixos-installer.iso";
+    image.fileName = "nixos-installer.iso";
 
     environment.systemPackages = with pkgs; [
       neovim

@@ -8,6 +8,7 @@
       group = "root";
       mode = "0400";
     };
+
     nix = {
       distributedBuilds = true;
       settings.builders-use-substitutes = true;
@@ -17,7 +18,10 @@
           sshUser = "nixremote";
           sshKey = config.sops.secrets."ssh/builders/ink".path;
 
-          system = "x86_64-linux";
+          systems = [
+            "x86_64-linux"
+            "builtin"
+          ];
           protocol = "ssh-ng";
           maxJobs = 8;
           speedFactor = 3;

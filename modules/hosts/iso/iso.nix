@@ -1,7 +1,11 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.nixosConfigurations.iso = inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
     modules = with self; [
+      {nixpkgs.hostPlatform = "x86_64-linux";}
       ({modulesPath, ...}: {imports = ["${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"];})
 
       nixosModules.terminal-tools
