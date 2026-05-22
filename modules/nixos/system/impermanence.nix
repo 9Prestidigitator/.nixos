@@ -60,12 +60,12 @@
         "/var/lib/bluetooth"
         "/var/lib/nixos"
         "/var/lib/systemd"
+        "/var/lib/systemd/timers"
         "/var/lib/NetworkManager"
         "/var/db/sudo"
       ];
       files = [
         "/etc/machine-id"
-        "/etc/shadow"
         "/etc/ssh/ssh_host_ed25519_key"
         "/etc/ssh/ssh_host_ed25519_key.pub"
         "/etc/ssh/ssh_host_rsa_key"
