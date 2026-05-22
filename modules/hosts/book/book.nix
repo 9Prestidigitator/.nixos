@@ -1,4 +1,8 @@
-{self, inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosConfigurations.book = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = with self; [
@@ -21,6 +25,7 @@
       nixosModules.keyd
       nixosModules.grub
       nixosModules.impermanence
+      nixosModules.btrfs-impermanence
       nixosModules.system-general
       nixosModules.home-manager
       nixosModules.nix
