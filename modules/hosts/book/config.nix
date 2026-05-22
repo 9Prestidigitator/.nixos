@@ -1,22 +1,21 @@
-{self, inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.hostModules.book = {pkgs, ...}: {
     host.name = "book";
-    system.stateVersion = "25.11";
 
-    home-manager.users.max = {
-      home.stateVersion = "25.11";
-      imports = with self; [
-        userModules.max.homeModule
+    home-manager.users.max.imports = with self; [
+      userModules.max.homeModule
 
-        homeModules.niri
-        homeModules.noctalia
+      homeModules.niri
 
-        homeModules.neovim
-        homeModules.terminal-tools
+      homeModules.neovim
+      homeModules.terminal-tools
 
-        homeModules.stylix
-      ];
-    };
+      homeModules.stylix
+    ];
 
     users.users = {
       root.initialPassword = "nixos";
@@ -174,5 +173,8 @@
         };
       };
     };
+
+    system.stateVersion = "26.05";
+    home-manager.sharedModules = [{home.stateVersion = "26.05";}];
   };
 }

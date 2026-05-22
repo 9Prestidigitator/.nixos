@@ -6,7 +6,7 @@
 
       nixosModules.ly
       nixosModules.niri
-      nixosModules.noctalia
+      nixosModules.noctalia-5
 
       nixosModules.essentials
       nixosModules.brave-browser

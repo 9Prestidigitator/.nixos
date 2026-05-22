@@ -1,23 +1,19 @@
 {self, ...}: {
   flake.hostModules.vm = {lib, ...}: {
     host.name = "vm";
-    system.stateVersion = "25.11";
 
-    home-manager.users.max = {
-      home.stateVersion = "25.11";
-      imports = with self; [
-        userModules.max.homeModule
+    home-manager.users.max.imports = with self; [
+      userModules.max.homeModule
 
-        homeModules.plasma
+      homeModules.plasma
 
-        homeModules.neovim
-        homeModules.terminal-tools
+      homeModules.neovim
+      homeModules.terminal-tools
 
-        homeModules.stylix
+      homeModules.stylix
 
-        homeModules.essentials
-      ];
-    };
+      homeModules.essentials
+    ];
 
     users.users = {
       root.initialPassword = "nixos";
@@ -31,5 +27,8 @@
       };
       grub.efiInstallAsRemovable = true;
     };
+
+    system.stateVersion = "26.05";
+    home-manager.sharedModules = [{home.stateVersion = "26.05";}];
   };
 }
