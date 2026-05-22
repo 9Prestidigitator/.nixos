@@ -45,6 +45,7 @@
 
     persist.userDirs = [
       ".cache/noctalia"
+      ".local/state/noctalia"
       ".config/evolution"
       ".local/share/evolution"
     ];

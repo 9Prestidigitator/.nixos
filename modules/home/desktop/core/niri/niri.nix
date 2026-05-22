@@ -1,8 +1,4 @@
-{
-  inputs,
-  self,
-  ...
-}: {
+{inputs, self, ...}: {
   flake.homeModules.niri = {
     imports = [
       inputs.niri-flake.homeModules.config

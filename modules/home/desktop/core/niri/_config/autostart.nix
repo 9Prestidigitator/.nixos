@@ -9,7 +9,6 @@ in {
   programs.niri.settings = lib.mkMerge [
     {
       spawn-at-startup = [
-        {command = ["noctalia-shell"];}
         {command = ["niri-float-sticky" "-title" "^Picture in picture$"];}
         {command = ["niri-screen-time" "-daemon"];}
       ];

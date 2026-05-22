@@ -11,7 +11,9 @@
 
       nixosModules.terminal-tools
 
+      nixosModules.ink-build-machine
       nixosModules.stylix
+      nixosModules.fonts
 
       nixosModules.grub
       nixosModules.impermanence
