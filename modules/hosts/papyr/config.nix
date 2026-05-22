@@ -23,27 +23,24 @@
         homeModules.discord
       ];
 
-      programs.ssh.matchBlocks = {
+      programs.ssh.settings = {
         ink = {
-          host = "ink";
-          user = "max";
-          hostname = "10.123.78.170";
-          identityFile = config.sops.secrets."ssh/ink".path;
-          identitiesOnly = true;
+          User = "max";
+          HostName = "10.123.78.170";
+          IdentityFile = config.sops.secrets."ssh/ink".path;
+          IdentitiesOnly = true;
         };
         surface = {
-          host = "surface";
-          user = "max";
-          hostname = "10.123.78.31";
-          identityFile = config.sops.secrets."ssh/surface".path;
-          identitiesOnly = true;
+          User = "max";
+          HostName = "10.123.78.31";
+          IdentityFile = config.sops.secrets."ssh/surface".path;
+          IdentitiesOnly = true;
         };
         cardboard = {
-          host = "cardboard";
-          user = "max";
-          hostname = "10.123.78.156";
-          identityFile = config.sops.secrets."ssh/cardboard".path;
-          identitiesOnly = true;
+          User = "max";
+          HostName = "10.123.78.156";
+          IdentityFile = config.sops.secrets."ssh/cardboard".path;
+          IdentitiesOnly = true;
         };
       };
     };

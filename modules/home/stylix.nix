@@ -4,6 +4,7 @@
       targets = {
         spicetify.enable = false;
         neovim.enable = false;
+        qt.platform = "qtct";
       };
     };
   };

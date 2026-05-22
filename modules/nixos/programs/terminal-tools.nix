@@ -1,5 +1,7 @@
 {self, ...}: {
-  flake.nixosModules.terminal-tools = {pkgs, ...}: {
+  flake.nixosModules.terminal-tools = {pkgs, ...}: let
+    system = pkgs.stdenv.hostPlatform.system;
+  in {
     programs = {
       git.enable = true;
       starship = {
@@ -10,7 +12,7 @@
 
     environment.systemPackages = with pkgs; [
       bashInteractive
-      self.packages.${pkgs.system}.tmux
+      self.packages.${system}.tmux
       btop
       vim
       lazygit

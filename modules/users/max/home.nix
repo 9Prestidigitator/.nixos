@@ -38,15 +38,19 @@
       ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks.github = {
-          host = "github.com";
-          hostname = "github.com";
-          user = "git";
-          identityFile = config.sops.secrets."ssh/gh".path;
-          identitiesOnly = true;
+        settings = {
+          github = {
+            HostName = "github.com";
+            User = "git";
+            IdentityFile = config.sops.secrets."ssh/gh".path;
+            IdentitiesOnly = true;
+          };
         };
       };
     };
+
+    gtk.gtk4.theme = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") config.gtk.theme;
+    xdg.userDirs.setSessionVariables = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") true;
 
     persist.directories = [
       "Desktop"
