@@ -109,7 +109,7 @@
       };
 
       persist.directories = [
-        "/etc/cups"
+        # "/etc/cups"
         "/var/lib/cups"
       ];
     };
