@@ -8,7 +8,7 @@
   options = {
     flake = {
       diskoConfigurations = lib.mkOption {
-        type = lib.types.lazyAttrsOf lib.types.deferredModule;
+        type = lib.types.lazyAttrsOf lib.types.anything;
         default = {};
         description = "Disko configurations exposed as flake outputs.";
       };
