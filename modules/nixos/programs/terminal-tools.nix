@@ -33,9 +33,12 @@
       gptfdisk
     ];
 
-    persist.userDirs = [
-      ".config/btop"
-      ".tmux"
-    ];
+    persist = {
+      userDirs = [
+        ".config/lazygit"
+        ".config/btop"
+        ".tmux"
+      ];
+    };
   };
 }

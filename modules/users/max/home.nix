@@ -28,11 +28,13 @@
     };
 
     programs = {
-      git.settings = {
-        url."ssh://git@github.com".insteadOf = "https://github.com";
-        user = {
-          name = "9Prestidigitator";
-          email = "9Prestidigitator@gmail.com";
+      git = {
+        enable = true;
+        settings = {
+          user = {
+            name = "9Prestidigitator";
+            email = "9Prestidigitator@gmail.com";
+          };
         };
       };
       ssh = {
@@ -58,6 +60,8 @@
       "Videos"
       "Projects"
       "notes"
+
+      ".nixos"
 
       ".config/sops"
       ".local/share/keyrings"

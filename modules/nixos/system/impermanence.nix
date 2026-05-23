@@ -5,26 +5,25 @@
     pkgs,
     ...
   }: let
-    normalizePersistFile = file:
-      if builtins.isString file
-      then {
-        filePath = file;
-        persistentStoragePath = config.persist.root;
-      }
-      else {
-        filePath = file.file or file.filePath;
-        persistentStoragePath = file.persistentStoragePath or config.persist.root;
-      };
-
-    persistedFiles = map normalizePersistFile config.persist.files;
-    adoptPersistedFile = {
-      filePath,
-      persistentStoragePath,
-    }: ''
-      adopt_persisted_file \
-        ${lib.escapeShellArg filePath} \
-        ${lib.escapeShellArg "${persistentStoragePath}${filePath}"}
-    '';
+    # normalizePersistFile = file:
+    #   if builtins.isString file
+    #   then {
+    #     filePath = file;
+    #     persistentStoragePath = config.persist.root;
+    #   }
+    #   else {
+    #     filePath = file.file or file.filePath;
+    #     persistentStoragePath = file.persistentStoragePath or config.persist.root;
+    #   };
+    # persistedFiles = map normalizePersistFile config.persist.files;
+    # adoptPersistedFile = {
+    #   filePath,
+    #   persistentStoragePath,
+    # }: ''
+    #   adopt_persisted_file \
+    #     ${lib.escapeShellArg filePath} \
+    #     ${lib.escapeShellArg "${persistentStoragePath}${filePath}"}
+    # '';
 
     normalUsers =
       lib.filterAttrs
@@ -48,11 +47,6 @@
     fileSystems."/".neededForBoot = true;
     fileSystems."/nix".neededForBoot = true;
     fileSystems."/persist".neededForBoot = true;
-
-    users.users = {
-      root.initialPassword = "nixos";
-      max.initialPassword = "nixos";
-    };
 
     persist = {
       directories = [
@@ -80,33 +74,30 @@
       users = userPersistence;
     };
 
-    system.activationScripts = lib.mkIf (persistedFiles != []) {
-      adoptExistingPersistedFiles = {
-        deps = ["createPersistentStorageDirs"];
-        text = ''
-          adopt_persisted_file() {
-            local source="$1"
-            local target="$2"
+    # system.activationScripts = lib.mkIf (persistedFiles != []) {
+    #   adoptExistingPersistedFiles = {
+    #     deps = ["createPersistentStorageDirs"];
+    #     text = ''
+    #       adopt_persisted_file() {
+    #         local source="$1"
+    #         local target="$2"
+    #         if ${pkgs.util-linux}/bin/findmnt "$source" >/dev/null 2>&1; then
+    #           return
+    #         fi
+    #         if [[ ! -e "$target" && -s "$source" ]]; then
+    #           ${pkgs.coreutils}/bin/mkdir -p "$(${pkgs.coreutils}/bin/dirname "$target")"
+    #           ${pkgs.coreutils}/bin/cp -a "$source" "$target"
+    #         fi
+    #         if [[ -e "$target" && -e "$source" && -s "$source" ]]; then
+    #           ${pkgs.util-linux}/bin/mount --bind "$target" "$source"
+    #         fi
+    #       }
+    #       ${lib.concatMapStrings adoptPersistedFile persistedFiles}
+    #     '';
+    #   };
+    #
+    #   persist-files.deps = lib.mkAfter ["adoptExistingPersistedFiles"];
+    # };
 
-            if ${pkgs.util-linux}/bin/findmnt "$source" >/dev/null 2>&1; then
-              return
-            fi
-
-            if [[ ! -e "$target" && -s "$source" ]]; then
-              ${pkgs.coreutils}/bin/mkdir -p "$(${pkgs.coreutils}/bin/dirname "$target")"
-              ${pkgs.coreutils}/bin/cp -a "$source" "$target"
-            fi
-
-            if [[ -e "$target" && -e "$source" && -s "$source" ]]; then
-              ${pkgs.util-linux}/bin/mount --bind "$target" "$source"
-            fi
-          }
-
-          ${lib.concatMapStrings adoptPersistedFile persistedFiles}
-        '';
-      };
-
-      persist-files.deps = lib.mkAfter ["adoptExistingPersistedFiles"];
-    };
   };
 }
