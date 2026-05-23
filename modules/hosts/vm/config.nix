@@ -2,19 +2,21 @@
   flake.hostModules.vm = {lib, ...}: {
     host.name = "vm";
 
-    home-manager.users.max.imports = with self; [
-      userModules.max.homeModule
+    home-manager.users.max = {
+      imports = with self; [
+        userModules.max.homeModule
 
-      homeModules.plasma
+        homeModules.plasma
 
-      homeModules.neovim
-      homeModules.terminal-tools
+        homeModules.neovim
+        homeModules.terminal-tools
 
-      homeModules.stylix
+        homeModules.stylix
 
-      homeModules.essentials
-    ];
-    users.users.max.hashedPasswordFile = "/persist/passwds/max";
+        homeModules.essentials
+      ];
+    };
+    # users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
     boot.loader = {
       efi = {
