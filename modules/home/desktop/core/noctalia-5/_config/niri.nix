@@ -35,27 +35,27 @@ in {
         {
           key = "b";
           desc = "Toggle Noctalia bar";
-          cmd = noctalia "bar toggle";
+          cmd = noctalia "bar-toggle";
         }
         {
           key = "B";
           desc = "Toggle Noctalia dock";
-          cmd = noctalia "dock toggle";
+          cmd = noctalia "dock-toggle";
         }
         {
           key = "c";
           desc = "Clipboard history";
-          cmd = noctalia "launcher clipboard";
+          cmd = noctalia "panel-toggle clipboard";
         }
         {
           key = "i";
           desc = "Toggle idle inhibition";
-          cmd = noctalia "idleInhibitor toggle";
+          cmd = noctalia "caffeine-toggle";
         }
         {
           key = "l";
           desc = "Toggle Nightlight";
-          cmd = noctalia "nightLight toggle";
+          cmd = noctalia "nightLight-toggle";
         }
         {
           key = "n";
@@ -99,7 +99,7 @@ in {
             {
               key = "w";
               desc = "Choose Wallpaper";
-              cmd = noctalia "wallpaper toggle";
+              cmd = noctalia "panel-toggle wallpaper";
             }
           ];
         }
@@ -109,105 +109,14 @@ in {
           cmd = noctalia "notifications toggleHistory";
         }
         {
-          key = "p";
-          desc = "Plugins";
-          submenu = [
-            {
-              key = "1";
-              desc = "Calculator";
-              cmd = noctalia "plugin togglePanel noctalia-calculator";
-            }
-            {
-              key = "a";
-              desc = "Assistant Panel";
-              cmd = noctalia "plugin openPanel assistant-panel";
-            }
-            {
-              key = "c";
-              desc = "Clipper";
-              cmd = noctalia "plugin openPanel clipper";
-            }
-            {
-              key = "d";
-              desc = "Mirror";
-              cmd = noctalia "plugin togglePanel mirror-mirror";
-            }
-            {
-              key = "k";
-              desc = "KDEConnect";
-              cmd = noctalia "plugin:kde-connect toggle";
-            }
-            {
-              key = "m";
-              desc = "MPD";
-              cmd = noctalia "plugin togglePanel mpd";
-            }
-            {
-              key = "n";
-              desc = "Notepad";
-              cmd = noctalia "plugin togglePanel notes-scratchpad";
-            }
-            {
-              key = "p";
-              desc = "Privacy";
-              cmd = noctalia "plugin openPanel privacy-indicator";
-            }
-            {
-              key = "P";
-              desc = "Port Monitor";
-              cmd = noctalia "plugin togglePanel port-monitor";
-            }
-            {
-              key = "r";
-              desc = "Syncthing";
-              cmd = noctalia "plugin togglePanel syncthing-status";
-            }
-            {
-              key = "s";
-              desc = "Screen Toolkit";
-              cmd = noctalia "plugin openPanel screen-toolkit";
-            }
-            {
-              key = "t";
-              desc = "Show Timer";
-              cmd = noctalia "plugin:timer toggle";
-            }
-            {
-              key = "T";
-              desc = "To-do list";
-              cmd = noctalia "plugin togglePanel todo";
-            }
-            {
-              key = "u";
-              desc = "USB Drive Manager";
-              cmd = noctalia "plugin togglePanel usb-drive-manager";
-            }
-            {
-              key = "w";
-              desc = "Wallpaper Engine";
-              cmd = noctalia "plugin togglePanel linux-wallpaperengine-controller";
-            }
-            {
-              key = "y";
-              desc = "Music Search";
-              cmd = noctalia "plugin togglePanel music-search";
-            }
-          ];
-        }
-        {
           key = "s";
           desc = "Noctalia Settings";
-          cmd = noctalia "settings openTab about";
-        }
-        {
-          key = "S";
-          desc = "Plugin Settings";
-          cmd = noctalia "settings toggleTab plugins";
+          cmd = noctalia "settings-toggle";
         }
         {
           key = "W";
           desc = "Random Wallpaper";
-          cmd = noctalia "wallpaper random all";
+          cmd = noctalia "wallpaper-random";
         }
       ];
     };

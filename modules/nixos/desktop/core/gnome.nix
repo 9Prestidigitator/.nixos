@@ -18,6 +18,7 @@
       gnomeExtensions.blur-my-shell
       gnomeExtensions.just-perfection
       gnomeExtensions.arc-menu
+      gjs
     ];
 
     xdg.mime.defaultApplications."inode/directory" = ["org.gnome.Nautilus.desktop"];

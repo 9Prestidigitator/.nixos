@@ -112,6 +112,11 @@
         cmd = "pkill .quickshell-wra* || noctalia-shell";
       }
       {
+        key = "N";
+        desc = "Kill or Start Noctalia-5";
+        cmd = "pkill noctalia || noctalia";
+      }
+      {
         key = "X";
         desc = "Restart Xwayland Satellite";
         cmd = "systemctl --user restart xwayland-satellite";
