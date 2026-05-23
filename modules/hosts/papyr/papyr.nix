@@ -35,7 +35,8 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      hostModules.papyr
+      ./_config.nix
+      ./_hardware.nix
     ];
   };
 }

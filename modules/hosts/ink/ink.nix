@@ -40,7 +40,9 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      hostModules.ink
+      ./_config.nix
+      ./_fs.nix
+      ./_hardware.nix
     ];
   };
 }

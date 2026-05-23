@@ -32,7 +32,8 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      hostModules.cardboard
+      ./_config.nix
+      ./_hardware.nix
     ];
   };
 }

@@ -31,7 +31,8 @@
 
       inputs.disko.nixosModules.disko
       diskoConfigurations.book
-      hostModules.book
+      ./_config.nix
+      ./_hardware.nix
     ];
   };
 }

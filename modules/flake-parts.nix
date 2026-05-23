@@ -10,12 +10,6 @@
 
   options = {
     flake = {
-      hostModules = lib.mkOption {
-        type = lib.types.lazyAttrsOf lib.types.deferredModule;
-        default = {};
-        description = "Host specific modules.";
-      };
-
       userModules = lib.mkOption {
         type = lib.types.lazyAttrsOf (lib.types.submodule {
           options = {

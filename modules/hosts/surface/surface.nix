@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.nixosConfigurations.surface = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = with self; [
@@ -25,7 +29,9 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      hostModules.surface
+      inputs.nixos-hardware.nixosModules.microsoft-surface-common
+      ./_config.nix
+      ./_hardware.nix
     ];
   };
 }
