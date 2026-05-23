@@ -53,7 +53,7 @@
           TerminalApplications = "kitty";
           TerminalService = "kitty.desktop";
         };
-        kwinrc.Plugins."${kittyForceBlurEffect}Enabled" = true;
+        # kwinrc.Plugins."${kittyForceBlurEffect}Enabled" = true;
       };
 
       panels = [
