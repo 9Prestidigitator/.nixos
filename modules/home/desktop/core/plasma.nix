@@ -1,42 +1,39 @@
 {inputs, ...}: {
   flake.homeModules.plasma = let
-    kittyForceBlurEffect = "kitty-force-blur";
+    # kittyForceBlurEffect = "kitty-force-blur";
   in {
     imports = [inputs.plasma-manager.homeModules.plasma-manager];
 
-    xdg.dataFile."kwin/effects/${kittyForceBlurEffect}/metadata.json".text = builtins.toJSON {
-      KPackageStructure = "KWin/Effect";
-      KPlugin = {
-        Id = kittyForceBlurEffect;
-        Name = "Kitty Force Blur";
-        Description = "Force KWin background blur for Kitty windows.";
-        Category = "Appearance";
-        Version = "1.0";
-        License = "MIT";
-        EnabledByDefault = false;
-      };
-      X-Plasma-API = "javascript";
-    };
+    # xdg.dataFile."kwin/effects/${kittyForceBlurEffect}/metadata.json".text = builtins.toJSON {
+    #   KPackageStructure = "KWin/Effect";
+    #   KPlugin = {
+    #     Id = kittyForceBlurEffect;
+    #     Name = "Kitty Force Blur";
+    #     Description = "Force KWin background blur for Kitty windows.";
+    #     Category = "Appearance";
+    #     Version = "1.0";
+    #     License = "MIT";
+    #     EnabledByDefault = false;
+    #   };
+    #   X-Plasma-API = "javascript";
+    # };
 
-    xdg.dataFile."kwin/effects/${kittyForceBlurEffect}/contents/code/main.js".text = ''
-      "use strict";
-
-      function isKitty(window) {
-          const windowClass = String(window.windowClass || "").toLowerCase();
-          return windowClass.split(" ").indexOf("kitty") !== -1;
-      }
-
-      function forceBlur(window) {
-          if (isKitty(window)) {
-              window.setData(Effect.WindowForceBlurRole, true);
-          }
-      }
-
-      effects.windowAdded.connect(forceBlur);
-      for (const window of effects.stackingOrder) {
-          forceBlur(window);
-      }
-    '';
+    # xdg.dataFile."kwin/effects/${kittyForceBlurEffect}/contents/code/main.js".text = ''
+    #   "use strict";
+    #   function isKitty(window) {
+    #       const windowClass = String(window.windowClass || "").toLowerCase();
+    #       return windowClass.split(" ").indexOf("kitty") !== -1;
+    #   }
+    #   function forceBlur(window) {
+    #       if (isKitty(window)) {
+    #           window.setData(Effect.WindowForceBlurRole, true);
+    #       }
+    #   }
+    #   effects.windowAdded.connect(forceBlur);
+    #   for (const window of effects.stackingOrder) {
+    #       forceBlur(window);
+    #   }
+    # '';
 
     programs.plasma = {
       enable = true;
