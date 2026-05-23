@@ -23,7 +23,8 @@
 
       inputs.disko.nixosModules.disko
       diskoConfigurations.vm
-      hostModules.vm
+      ./_config.nix
+      ./_hardware.nix
     ];
   };
 }
