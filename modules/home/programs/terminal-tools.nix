@@ -144,10 +144,7 @@
     };
 
     persist = {
-      directories = [
-        ".local/share/zoxide"
-        ".config/lazygit"
-      ];
+      directories = [".local/share/zoxide"];
       files = [".bash_history"];
     };
   };

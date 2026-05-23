@@ -36,6 +36,7 @@
     persist = {
       userDirs = [
         ".config/lazygit"
+        ".local/state/lazygit"
         ".config/btop"
         ".tmux"
       ];

@@ -52,13 +52,6 @@
     };
 
     persist.directories = [
-      "Desktop"
-      "Documents"
-      "Downloads"
-      "Music"
-      "Pictures"
-      "Videos"
-      "Projects"
       "notes"
 
       ".nixos"

@@ -1,10 +1,8 @@
 {self, ...}: {
   flake.hostModules.ink = {pkgs, ...}: {
     host.name = "ink";
-    system.stateVersion = "25.11";
 
     home-manager.users.max = {config, ...}: {
-      home.stateVersion = "25.11";
       imports = with self; [
         userModules.max.homeModule
 
@@ -67,5 +65,8 @@
     };
 
     services.flatpak.overrides."com.github.Matoking.protontricks".Context.filesystems = ["/mnt/1tb_ssd/SteamLibrary"];
+
+    system.stateVersion = "25.11";
+    home-manager.sharedModules = [{home.stateVersion = "25.11";}];
   };
 }
