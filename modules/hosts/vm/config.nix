@@ -16,7 +16,7 @@
         homeModules.essentials
       ];
     };
-    # users.users.max.hashedPasswordFile = "/persist/passwds/max";
+    users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
     boot.loader = {
       efi = {
