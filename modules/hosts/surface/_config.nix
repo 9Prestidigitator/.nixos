@@ -57,7 +57,7 @@
     microsoft-surface.kernelVersion = "longterm";
     sensor.iio.enable = true;
   };
-  environment.systemPackages = with pkgs; [iptsd surface-control];
+  environment.systemPackages = with pkgs; [iptsd surface-control libinput libinput-gestures];
   powerManagement.cpuFreqGovernor = "performance";
 
   services = {
