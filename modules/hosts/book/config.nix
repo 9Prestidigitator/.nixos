@@ -17,6 +17,7 @@
 
       homeModules.stylix
     ];
+    users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
     impermanence.btrfs.rollbackRoot.enable = true;
 

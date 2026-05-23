@@ -4,7 +4,6 @@
       isNormalUser = true;
       extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
       initialPassword = "nixos";
-      hashedPasswordFile = "/persist/passwds/max";
     };
 
     services.syncthing = {
