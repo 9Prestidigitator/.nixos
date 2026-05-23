@@ -3,16 +3,13 @@
   lib,
   ...
 }: {
-  imports = [inputs.home-manager.flakeModules.home-manager];
+  imports = [
+    inputs.home-manager.flakeModules.home-manager
+    inputs.disko.flakeModules.default
+  ];
 
   options = {
     flake = {
-      diskoConfigurations = lib.mkOption {
-        type = lib.types.lazyAttrsOf lib.types.anything;
-        default = {};
-        description = "Disko configurations exposed as flake outputs.";
-      };
-
       hostModules = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.deferredModule;
         default = {};
