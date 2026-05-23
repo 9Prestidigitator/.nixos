@@ -41,7 +41,7 @@
         enable = true;
         enableDefaultConfig = false;
         settings = {
-          github = {
+          "github.com" = {
             HostName = "github.com";
             User = "git";
             IdentityFile = config.sops.secrets."ssh/gh".path;
