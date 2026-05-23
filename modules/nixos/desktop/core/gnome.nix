@@ -28,6 +28,7 @@
         ".local/share/gnome-shell"
         ".local/share/gnome-settings-daemon"
         ".local/share/nautilus"
+        ".local/share/gvfs-metadata"
         ".config/dconf"
         ".config/evolution"
         ".local/share/evolution"

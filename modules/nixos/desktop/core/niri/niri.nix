@@ -43,6 +43,8 @@
       userDirs = [
         ".local/state/niri-screen-time"
         ".local/share/nautilus"
+        ".local/share/gvfs-metadata"
+        ".config/dconf"
         ".local/share/evolution"
         ".config/evolution"
         ".config/goa-1.0"
