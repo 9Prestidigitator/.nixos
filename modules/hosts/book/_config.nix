@@ -1,8 +1,4 @@
 {
-  inputs,
-  pkgs,
-  ...
-}: {
   host.name = "book";
 
   home-manager.users.max = {self, ...}: {
