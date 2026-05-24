@@ -83,17 +83,6 @@
       action = spawn "brightnessctl" "--class=backlight" "set" "5%-";
     };
 
-    "XF86Tools" = {
-      hotkey-overlay.title = "Lock";
-      allow-when-locked = true;
-      action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
-    };
-    "Mod+XF86Tools" = {
-      hotkey-overlay.title = "Session Actions";
-      allow-when-locked = false;
-      action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
-    };
-
     "XF86Display" = {
       hotkey-overlay.title = "Power off monitors";
       action = power-off-monitors;

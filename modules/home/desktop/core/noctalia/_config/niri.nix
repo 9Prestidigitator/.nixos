@@ -19,6 +19,18 @@ in {
         action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
       };
 
+      "XF86Tools" = {
+        hotkey-overlay.title = "Lock";
+        allow-when-locked = true;
+        action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+      };
+
+      "Mod+XF86Tools" = {
+        hotkey-overlay.title = "Session Actions";
+        allow-when-locked = false;
+        action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+      };
+
       "Mod+Space" = {
         hotkey-overlay.title = "Toggle launcher";
         action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";

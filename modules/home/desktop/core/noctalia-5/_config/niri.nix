@@ -31,6 +31,18 @@ in {
         action = spawn "noctalia" "msg" "screen-lock";
       };
 
+      "XF86Tools" = {
+        hotkey-overlay.title = "Lock";
+        allow-when-locked = true;
+        action = spawn "noctalia" "msg" "screen-lock";
+      };
+
+      "Mod+XF86Tools" = {
+        hotkey-overlay.title = "Session";
+        allow-when-locked = false;
+        action = spawn "noctalia" "msg" "panel-toggle" "session";
+      };
+
       "Mod+N".action.spawn = mkWlrWhichKeyMenu "Noctalia" [
         {
           key = "b";
