@@ -19,21 +19,21 @@
 
     persist = {
       userDirs = [
-        # ".config/dolphin"
-        # ".local/share/dolphin"
+        ".config/dolphin"
+        ".local/share/dolphin"
 
-        # ".local/share/kwalletd"
+        ".local/share/kwalletd"
 
-        # ".local/state/ksmserver"
-        # ".config/session"
-        # ".local/share/kscreen"
-        # ".local/share/kactivitymanagerd"
+        ".local/state/ksmserver"
+        ".config/session"
+        ".local/share/kscreen"
+        ".local/share/kactivitymanagerd"
       ];
       userFiles = [
-        # ".config/ksmserverrc"
-        # ".config/kwinoutputconfig.json"
-        # ".config/kactivitymanagerdrc"
-        # ".local/state/plasmasessionrestorestaterc"
+        ".config/ksmserverrc"
+        ".config/kwinoutputconfig.json"
+        ".config/kactivitymanagerdrc"
+        ".local/state/plasmasessionrestorestaterc"
       ];
     };
   };
