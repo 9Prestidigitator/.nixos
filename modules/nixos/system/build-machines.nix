@@ -2,17 +2,16 @@
   flake.nixosModules.ink-build-machine = {config, ...}: {
     imports = [self.nixosModules.sops];
 
-    programs.ssh.knownHosts.ink = {
-      hostNames = ["10.123.78.170" "ink"];
-      # You can find this at /etc/ssh/ssh_host_<type>_key.pub
-      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0Y/FJPDKzaGNR/XeqeSZ4IzaJp+PiCgifWPwishRUo root@ink";
-    };
-
     sops.secrets."ssh/builders/ink" = {
       sopsFile = ../../../secrets/builders.yaml;
       owner = "root";
       group = "root";
       mode = "0400";
+    };
+
+    programs.ssh.knownHosts.ink = {
+      hostNames = ["10.123.78.170" "ink"];
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ0Y/FJPDKzaGNR/XeqeSZ4IzaJp+PiCgifWPwishRUo root@ink"; # You can find this at /etc/ssh/ssh_host_<type>_key.pub
     };
 
     nix = {
