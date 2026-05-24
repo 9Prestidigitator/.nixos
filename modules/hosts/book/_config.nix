@@ -5,7 +5,7 @@
     imports = with self; [
       userModules.max.homeModule
 
-      homeModules.niri
+      # homeModules.niri
       # homeModules.noctalia-5
       homeModules.plasma
 
