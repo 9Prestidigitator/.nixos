@@ -97,6 +97,7 @@
     #   ];
     # };
 
+    # The default tty font size is too small!
     console.font = "ter-v32b";
 
     hardware = {
