@@ -85,9 +85,7 @@
         ".local/share/zathura"
         ".var/app"
       ];
-      userFiles = [
-        ".local/share/recently-used.xbel"
-      ];
+      userFiles = [".local/share/recently-used.xbel"];
     };
   };
 }

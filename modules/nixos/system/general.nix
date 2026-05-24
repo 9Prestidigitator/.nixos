@@ -5,6 +5,7 @@
     config,
     ...
   }: {
+    # TODO(max): Make these options in some universally applied location without module import specification
     options = {
       host = {
         name = lib.mkOption {

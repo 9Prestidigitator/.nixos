@@ -15,21 +15,22 @@
       nixosModules.essentials
       nixosModules.brave-browser
 
-      nixosModules.terminal-tools
+      nixosModules.keyd
       nixosModules.minecraft-server
       # nixosModules.gitlab
 
       nixosModules.builder
       nixosModules.ink-build-machine
       nixosModules.stylix
-
-      nixosModules.surface-6
-      nixosModules.keyd
-      nixosModules.grub
-      nixosModules.intel
-      nixosModules.system-general
       nixosModules.home-manager
       nixosModules.nix
+
+      nixosModules.terminal-tools
+      nixosModules.grub
+      nixosModules.fonts
+      nixosModules.intel
+      nixosModules.surface-6
+      nixosModules.system-general
 
       ./_config.nix
       ./_hardware.nix
