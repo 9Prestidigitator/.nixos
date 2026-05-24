@@ -22,16 +22,6 @@
 
   impermanence.btrfs.rollbackRoot.enable = true;
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_6_12;
-    kernelPatches = [
-      {
-        name = "chrultrabook-stoney-audio";
-        patch = inputs.stoney-kernel + "/patches/audio.patch";
-      }
-    ];
-  };
-
   services.blueman.enable = true;
 
   fileSystems."/mnt/SD" = {
