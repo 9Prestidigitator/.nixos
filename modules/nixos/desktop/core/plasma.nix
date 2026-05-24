@@ -19,10 +19,10 @@
 
     persist = {
       userDirs = [
-        ".config/dolphin"
-        ".local/share/dolphin"
+        # ".config/dolphin"
+        # ".local/share/dolphin"
 
-        ".local/share/kwalletd"
+        # ".local/share/kwalletd"
 
         # ".local/state/ksmserver"
         # ".config/session"
