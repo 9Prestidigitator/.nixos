@@ -29,7 +29,7 @@
       nixosModules.chromebook-treeya
       nixosModules.system-general
 
-      # inputs.disko.nixosModules.disko
+      inputs.disko.nixosModules.disko
       diskoConfigurations.book
       ./_config.nix
       ./_hardware.nix

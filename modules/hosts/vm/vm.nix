@@ -20,7 +20,7 @@
       nixosModules.grub
       nixosModules.system-general
 
-      # inputs.disko.nixosModules.disko
+      inputs.disko.nixosModules.disko
       diskoConfigurations.vm
       ./_config.nix
       ./_hardware.nix
