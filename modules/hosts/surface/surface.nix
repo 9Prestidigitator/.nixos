@@ -26,8 +26,8 @@
       nixosModules.nix
 
       nixosModules.terminal-tools
-      nixosModules.grub
       nixosModules.fonts
+      nixosModules.grub
       nixosModules.intel
       nixosModules.surface-6
       nixosModules.system-general

@@ -9,19 +9,18 @@
       nixosModules.essentials
       nixosModules.brave-browser
 
-      nixosModules.terminal-tools
-
       nixosModules.ink-build-machine
       nixosModules.stylix
-      nixosModules.fonts
-
-      nixosModules.grub
       nixosModules.impermanence
-      nixosModules.system-general
       nixosModules.home-manager
       nixosModules.nix
 
-      inputs.disko.nixosModules.disko
+      nixosModules.terminal-tools
+      nixosModules.fonts
+      nixosModules.grub
+      nixosModules.system-general
+
+      # inputs.disko.nixosModules.disko
       diskoConfigurations.vm
       ./_config.nix
       ./_hardware.nix

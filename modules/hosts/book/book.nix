@@ -14,23 +14,22 @@
 
       nixosModules.essentials
       nixosModules.brave-browser
-
-      nixosModules.terminal-tools
       nixosModules.mullvad
 
       nixosModules.ink-build-machine
       nixosModules.stylix
-      nixosModules.fonts
-
-      nixosModules.chromebook-treeya
-      nixosModules.grub
-      nixosModules.impermanence
       nixosModules.btrfs-impermanence
-      nixosModules.system-general
+      nixosModules.impermanence
       nixosModules.home-manager
       nixosModules.nix
 
-      inputs.disko.nixosModules.disko
+      nixosModules.terminal-tools
+      nixosModules.fonts
+      nixosModules.grub
+      nixosModules.chromebook-treeya
+      nixosModules.system-general
+
+      # inputs.disko.nixosModules.disko
       diskoConfigurations.book
       ./_config.nix
       ./_hardware.nix
