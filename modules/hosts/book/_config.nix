@@ -19,6 +19,7 @@
   impermanence.btrfs.rollbackRoot.enable = true;
 
   services.blueman.enable = true;
+  boot.kernelParams = ["nvidia-drm.fbdev=1"];
 
   fileSystems."/mnt/SD" = {
     device = "/dev/disk/by-label/SD";

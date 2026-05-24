@@ -12,11 +12,6 @@
     "usb_storage"
     "sd_mod"
     "sdhci_pci"
-
-    "ahci"
-    "virtio_pci"
-    "virtio_blk"
-    "sr_mod"
   ];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
