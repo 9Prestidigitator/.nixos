@@ -22,6 +22,7 @@
       nixosModules.ink-build-machine
       nixosModules.stylix
 
+      nixosModules.surface-6
       nixosModules.keyd
       nixosModules.grub
       nixosModules.intel
@@ -29,7 +30,6 @@
       nixosModules.home-manager
       nixosModules.nix
 
-      inputs.nixos-hardware.nixosModules.microsoft-surface-common
       ./_config.nix
       ./_hardware.nix
     ];
