@@ -53,6 +53,7 @@
         "Videos"
         "Projects"
       ];
+      userFiles = [".ssh/known_hosts"];
     };
 
     environment.persistence."/persist" = {
