@@ -25,6 +25,8 @@
     grub.efiInstallAsRemovable = true;
   };
 
+  boot.kernelParams = ["nvidia-drm.fbdev=1"];
+
   system.stateVersion = "26.05";
   home-manager.sharedModules = [{home.stateVersion = "26.05";}];
 }
