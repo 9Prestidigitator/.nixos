@@ -2,36 +2,36 @@
   flake.nixosModules.surface-6 = {pkgs, ...}: {
     imports = [inputs.nixos-hardware.nixosModules.microsoft-surface-common];
 
-    boot = {
-      kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
-      extraModprobeConfig = ''
-        options i915 enable_fbc=1 enable_rc6=1 modeset=1
-        options snd_hda_intel power_save=1
-        options snd_ac97_codec power_save=1
-        options iwldvm force_cam=N
-        options iwlwifi power_save=N
-        options iwlmvm power_schema=1
-      '';
-      initrd = {
-        availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
-        kernelModules = ["surface_aggregator" "surface_aggregator_registry" "surface_aggregator_hub"];
-      };
-      kernelPatches = [
-        {
-          name = "surface-config";
-          patch = null;
-          # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-6.18.config
-          extraConfig = ''
-            ##
-            ## Surface Aggregator Module
-            ##
-            CONFIG_SURFACE_AGGREGATOR=m
-            # CONFIG_SURFACE_AGGREGATOR_ERROR_INJECTION is not set
-            CONFIG_SURFACE_AGGREGATOR_BUS=y
-            CONFIG_SURFACE_AGGREGATOR_CDEV=m
-            CONFIG_SURFACE_AGGREGATOR_HUB=m
-            CONFIG_SURFACE_AGGREGATOR_REGISTRY=m
-            CONFIG_SURFACE_AGGREGATOR_TABLET_SWITCH=m
+    # boot = {
+    #   kernelParams = ["mem_sleep_default=deep" "kernel.nmi_watchdog=0" "vm.dirty_writeback_centisecs=1500"];
+    #   extraModprobeConfig = ''
+    #     options i915 enable_fbc=1 enable_rc6=1 modeset=1
+    #     options snd_hda_intel power_save=1
+    #     options snd_ac97_codec power_save=1
+    #     options iwldvm force_cam=N
+    #     options iwlwifi power_save=N
+    #     options iwlmvm power_schema=1
+    #   '';
+    #   initrd = {
+    #     availableKernelModules = ["xhci_pci" "nvme" "usbhid"];
+    #     kernelModules = ["surface_aggregator" "surface_aggregator_registry" "surface_aggregator_hub"];
+    #   };
+    #   kernelPatches = [
+    #     {
+    #       name = "surface-config";
+    #       patch = null;
+    #       # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-6.18.config
+    #       extraConfig = ''
+    #         ##
+    #         ## Surface Aggregator Module
+    #         ##
+    #         CONFIG_SURFACE_AGGREGATOR=m
+    #         # CONFIG_SURFACE_AGGREGATOR_ERROR_INJECTION is not set
+    #         CONFIG_SURFACE_AGGREGATOR_BUS=y
+    #         CONFIG_SURFACE_AGGREGATOR_CDEV=m
+    #         CONFIG_SURFACE_AGGREGATOR_HUB=m
+    #         CONFIG_SURFACE_AGGREGATOR_REGISTRY=m
+    #         CONFIG_SURFACE_AGGREGATOR_TABLET_SWITCH=m
 
             CONFIG_SURFACE_ACPI_NOTIFY=m
             CONFIG_SURFACE_DTX=m
