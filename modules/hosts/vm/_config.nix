@@ -10,7 +10,7 @@
       homeModules.neovim
       homeModules.terminal-tools
 
-      # homeModules.stylix
+      homeModules.stylix
 
       homeModules.essentials
     ];

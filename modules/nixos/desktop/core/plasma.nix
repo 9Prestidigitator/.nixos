@@ -10,7 +10,7 @@
     # On-screen keyboard
     environment.systemPackages = with pkgs; [
       kdePackages.dolphin
-      # kdePackages.kio-extras
+      kdePackages.kio-extras
       maliit-keyboard
       maliit-framework
     ];
