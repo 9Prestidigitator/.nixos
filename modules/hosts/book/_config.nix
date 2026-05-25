@@ -11,7 +11,7 @@
       homeModules.neovim
       homeModules.terminal-tools
 
-      homeModules.stylix
+      # homeModules.stylix
     ];
   };
   users.users.max.hashedPasswordFile = "/persist/passwds/max";
