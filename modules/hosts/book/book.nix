@@ -16,6 +16,7 @@
       nixosModules.brave-browser
       nixosModules.mullvad
 
+      nixosModules.surface-build-machine
       nixosModules.ink-build-machine
       nixosModules.stylix
       nixosModules.btrfs-impermanence
