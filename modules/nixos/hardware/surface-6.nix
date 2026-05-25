@@ -22,76 +22,55 @@
           patch = null;
           # Options from https://github.com/linux-surface/linux-surface/blob/master/configs/surface-6.18.config
           extraConfig = ''
-            ##
-            ## Surface Aggregator Module
-            ##
-            CONFIG_SURFACE_AGGREGATOR=m
-            # CONFIG_SURFACE_AGGREGATOR_ERROR_INJECTION is not set
-            CONFIG_SURFACE_AGGREGATOR_BUS=y
-            CONFIG_SURFACE_AGGREGATOR_CDEV=m
-            CONFIG_SURFACE_AGGREGATOR_HUB=m
-            CONFIG_SURFACE_AGGREGATOR_REGISTRY=m
-            CONFIG_SURFACE_AGGREGATOR_TABLET_SWITCH=m
+            SURFACE_AGGREGATOR m
+            SURFACE_AGGREGATOR_ERROR_INJECTION n
+            SURFACE_AGGREGATOR_BUS y
+            SURFACE_AGGREGATOR_CDEV m
+            SURFACE_AGGREGATOR_HUB m
+            SURFACE_AGGREGATOR_REGISTRY m
+            SURFACE_AGGREGATOR_TABLET_SWITCH m
 
-            CONFIG_SURFACE_ACPI_NOTIFY=m
-            CONFIG_SURFACE_DTX=m
-            CONFIG_SURFACE_PLATFORM_PROFILE=m
+            SURFACE_ACPI_NOTIFY m
+            SURFACE_DTX m
+            SURFACE_PLATFORM_PROFILE m
 
-            CONFIG_SURFACE_HID=m
-            CONFIG_SURFACE_KBD=m
+            SURFACE_HID m
+            SURFACE_KBD m
 
-            CONFIG_BATTERY_SURFACE=m
-            CONFIG_CHARGER_SURFACE=m
+            BATTERY_SURFACE m
+            CHARGER_SURFACE m
 
-            CONFIG_SENSORS_SURFACE_TEMP=m
-            CONFIG_SENSORS_SURFACE_FAN=m
+            SENSORS_SURFACE_TEMP m
+            SENSORS_SURFACE_FAN m
 
-            CONFIG_RTC_DRV_SURFACE=m
+            RTC_DRV_SURFACE m
 
-            ##
-            ## Surface Hotplug
-            ##
-            CONFIG_SURFACE_HOTPLUG=m
+            SURFACE_HOTPLUG m
 
-            ##
-            ## IPTS and ITHC touchscreen
-            ##
-            ## This only enables the user interface for IPTS/ITHC data.
-            ## For the touchscreen to work, you need to install iptsd.
-            ##
-            CONFIG_HID_IPTS=m
-            CONFIG_HID_ITHC=m
-            CONFIG_INTEL_THC_HID=m
-            CONFIG_INTEL_QUICKSPI=m
+            HID_IPTS m
+            HID_ITHC m
+            INTEL_THC_HID m
+            INTEL_QUICKSPI m
 
-            ##
-            ## Cameras: IPU3
-            ##
-            CONFIG_VIDEO_DW9719=m
-            CONFIG_VIDEO_IPU3_IMGU=m
-            CONFIG_VIDEO_IPU3_CIO2=m
-            CONFIG_IPU_BRIDGE=m
-            CONFIG_INTEL_SKL_INT3472=m
-            CONFIG_REGULATOR_TPS68470=m
-            CONFIG_COMMON_CLK_TPS68470=m
-            CONFIG_LEDS_TPS68470=m
+            VIDEO_DW9719 m
+            VIDEO_IPU3_IMGU m
+            VIDEO_IPU3_CIO2 m
+            IPU_BRIDGE m
+            INTEL_SKL_INT3472 m
+            REGULATOR_TPS68470 m
+            COMMON_CLK_TPS68470 m
+            LEDS_TPS68470 m
 
-            ##
-            ## Cameras: Sensor drivers
-            ##
-            CONFIG_VIDEO_OV5693=m
-            CONFIG_VIDEO_OV7251=m
-            CONFIG_VIDEO_OV8865=m
+            VIDEO_OV5693 m
+            VIDEO_OV7251 m
+            VIDEO_OV8865 m
 
-            ##
-            ## Other Drivers
-            ##
-            CONFIG_INPUT_SOC_BUTTON_ARRAY=m
-            CONFIG_SURFACE_3_POWER_OPREGION=m
-            CONFIG_SURFACE_PRO3_BUTTON=m
-            CONFIG_SURFACE_GPE=m
-            CONFIG_SURFACE_BOOK1_DGPU_SWITCH=m
-            CONFIG_HID_SURFACE=m
+            INPUT_SOC_BUTTON_ARRAY m
+            SURFACE_3_POWER_OPREGION m
+            SURFACE_PRO3_BUTTON m
+            SURFACE_GPE m
+            SURFACE_BOOK1_DGPU_SWITCH m
+            HID_SURFACE m
           '';
         }
       ];
