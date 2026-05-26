@@ -34,7 +34,7 @@
       nixosModules.system-general
 
       inputs.disko.nixosModules.disko
-      diskoConfigurations.vm
+      diskoConfigurations.surface
       ./_config.nix
       ./_hardware.nix
     ];
