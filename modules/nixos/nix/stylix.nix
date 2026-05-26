@@ -1,5 +1,10 @@
 {inputs, ...}: {
-  flake.nixosModules.stylix = {pkgs, config, ... }: {
+  flake.nixosModules.stylix = {
+    pkgs,
+    config,
+    lib,
+    ...
+  }: {
     imports = [inputs.stylix.nixosModules.stylix];
     stylix = {
       enable = true;
@@ -26,9 +31,9 @@
       };
       icons = {
         enable = true;
-        package = pkgs.kdePackages.breeze;
-        dark = "breeze-dark";
-        light = "breeze";
+        package = lib.mkDefault pkgs.kdePackages.breeze;
+        dark = lib.mkDefault "breeze-dark";
+        light = lib.mkDefault "breeze";
       };
       opacity = {
         desktop = 0.7;
