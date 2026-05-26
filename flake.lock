@@ -797,11 +797,11 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1779683956,
-        "narHash": "sha256-EdPBHy/AaP0aIRbDms+Wfhec5xsc6OpPGHAdi3PCp4E=",
+        "lastModified": 1779768841,
+        "narHash": "sha256-lzDWYWg0s4Vvb7lJMdM7ySEHDuSOY8fXMUAXl2ReiAo=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "b8d634f86c6aca3cb8a11a165a0cdb7bd89d2fae",
+        "rev": "8996e4e811210fc7b51ead34a8c0ae5ba8df8eef",
         "type": "github"
       },
       "original": {
@@ -1230,11 +1230,11 @@
         "nixpkgs": "nixpkgs_13"
       },
       "locked": {
-        "lastModified": 1779734618,
-        "narHash": "sha256-ebDv9dua6mVyTqrUw1QR5Za4s4ua7pa++1q/qeQhgRY=",
+        "lastModified": 1779812722,
+        "narHash": "sha256-KaBV6rLXdP1WsWf/p8BIj3fOno7BnDwy9ajsJSWetKY=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "d9a807ef7f787b05aecf79cbb263be7692f200ea",
+        "rev": "a4b796f1e680079c54e3b0a6ae47d5fa3e5796f3",
         "type": "github"
       },
       "original": {
@@ -1483,11 +1483,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1779378391,
-        "narHash": "sha256-IsDb9erotvx9npI94UDosvMeYQK17p7/vmU2v9batrY=",
+        "lastModified": 1779768303,
+        "narHash": "sha256-glV4wcBH6fWub101jWj3c577T5Af8jOg6CdZPKKi4N8=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "c1456cc4ba3c9485e7b4158c909eeca5a752cd59",
+        "rev": "8fbb6e8561ee72b57916c4ffd0e173fa42070dc2",
         "type": "github"
       },
       "original": {
