@@ -30,6 +30,8 @@
         # ".local/state/ksmserver"
         # ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
+
+        ".cache"
       ];
       userFiles = [
         ".config/kwinrc"

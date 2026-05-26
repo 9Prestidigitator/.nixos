@@ -5,7 +5,7 @@
       enable = true;
 
       kwin = {
-        effects.blur.enable = true;
+        effects.blur.enable = false;
       };
 
       hotkeys.commands = {
@@ -21,9 +21,14 @@
           TerminalApplications = "kitty";
           TerminalService = "kitty.desktop";
         };
-        "kwinrc"."Plugins" = {
-          "dynamic_workspacesEnabled" = true;
-          "glassEnabled" = true;
+        "kwinrc" = {
+          "Plugins" = {
+            "dynamic_workspacesEnabled" = true;
+            "glassEnabled" = true;
+          };
+          "Effects-blurplus" = {
+            "WindowClasses" = "kitty";
+          };
         };
       };
 
