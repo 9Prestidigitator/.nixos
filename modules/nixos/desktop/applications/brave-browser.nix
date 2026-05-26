@@ -9,9 +9,6 @@
         "gebbhagfogifgggkldgodflihgfeippi"
         "ioimlbgefgadofblnajllknopjboejda"
       ];
-      # extraOpts = {
-      #   "WaylandWpColorManagerV1" = false;
-      # };
     };
 
     environment.systemPackages = with pkgs; [brave];

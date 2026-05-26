@@ -27,16 +27,16 @@
         ".local/share/kwalletd"
 
         ".config/session"
-        ".local/state/ksmserver"
-        ".local/share/kscreen"
+        # ".local/state/ksmserver"
+        # ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
       ];
       userFiles = [
         ".config/kwinrc"
         ".config/ksmserverrc"
         ".config/kwinoutputconfig.json"
-        ".config/kactivitymanagerdrc"
-        ".local/state/plasmasessionrestorestaterc"
+        # ".config/kactivitymanagerdrc"
+        # ".local/state/plasmasessionrestorestaterc"
       ];
     };
   };

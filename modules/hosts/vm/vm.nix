@@ -17,6 +17,7 @@
 
       nixosModules.terminal-tools
       nixosModules.fonts
+      nixosModules.bluetooth
       nixosModules.grub
       nixosModules.system-general
 
