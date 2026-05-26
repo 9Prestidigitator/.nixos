@@ -1,9 +1,7 @@
 {
   flake.nixosModules.plasma = {pkgs, ...}: {
     services = {
-      desktopManager.plasma6 = {
-        enable = true;
-      };
+      desktopManager.plasma6.enable = true;
       displayManager.plasma-login-manager.enable = true;
     };
 
@@ -11,6 +9,8 @@
     environment.systemPackages = with pkgs; [
       kdePackages.dolphin
       kdePackages.kio-extras
+      kdePackages.karousel
+      kdePackages.dynamic-workspaces
       maliit-keyboard
       maliit-framework
     ];

@@ -26,6 +26,7 @@
 
       nixosModules.terminal-tools
       nixosModules.fonts
+      nixosModules.bluetooth
       nixosModules.grub
       nixosModules.chromebook-treeya
       nixosModules.system-general

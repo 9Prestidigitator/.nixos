@@ -4,7 +4,6 @@
     environment.systemPackages = with pkgs; [nix-inspect];
 
     programs = {
-      nh.enable = true;
       nix-ld.enable = true;
       nix-index-database.comma.enable = true;
     };

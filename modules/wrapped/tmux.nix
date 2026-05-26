@@ -3,6 +3,7 @@
     packages.tmux = inputs.wrappers.wrappers.tmux.wrap {
       inherit pkgs;
       package = pkgs.tmux;
+
       prefix = "C-a";
       terminal = "tmux-256color";
       mouse = true;

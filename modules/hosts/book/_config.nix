@@ -10,6 +10,7 @@
 
       homeModules.neovim
       homeModules.terminal-tools
+      homeModules.bluetooth
 
       homeModules.stylix
     ];
