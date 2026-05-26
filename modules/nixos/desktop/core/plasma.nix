@@ -31,7 +31,8 @@
         # ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
 
-        ".cache"
+        # TODO(max): TESTING
+        ".local"
       ];
       userFiles = [
         ".config/kwinrc"
