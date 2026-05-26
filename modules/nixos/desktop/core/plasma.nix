@@ -22,21 +22,18 @@
     persist = {
       userDirs = [
         ".config/dolphin"
-        ".local/share/dolphin"
-
-        # ".local/share/kwalletd"
-
         ".config/session"
+
+        ".local/share/dolphin"
+        ".local/share/kwalletd"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
-
-        # TODO(max): TESTING
-        # ".local"
       ];
       userFiles = [
         ".config/kwinrc"
         ".config/ksmserverrc"
         ".config/kwinoutputconfig.json"
+
         ".local/state/kactivitymanagerdstaterc"
         ".local/state/dolphinstaterc"
         ".local/state/plasmasessionrestorestaterc"
