@@ -61,6 +61,10 @@
         home-manager.follows = "home-manager";
       };
     };
+    kwin-effects-glass = {
+      url = "github:4v3ngR/kwin-effects-glass";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     steam-config-nix.url = "github:different-name/steam-config-nix";
     nixcord.url = "github:kaylorben/nixcord";

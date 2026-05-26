@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   flake.nixosModules.plasma = {pkgs, ...}: {
     services = {
       desktopManager.plasma6.enable = true;
@@ -11,6 +11,7 @@
       kdePackages.kio-extras
       kdePackages.karousel
       kdePackages.dynamic-workspaces
+      inputs.kwin-effects-glass.packages.${pkgs.system}.default
       maliit-keyboard
       maliit-framework
     ];
