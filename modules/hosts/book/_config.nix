@@ -19,8 +19,6 @@
 
   impermanence.btrfs.rollbackRoot.enable = true;
 
-  services.blueman.enable = true;
-
   fileSystems."/mnt/SD" = {
     device = "/dev/disk/by-label/SD";
     fsType = "exfat";

@@ -1,4 +1,4 @@
-{
+{self, ...}: {
   flake.userModules.max.nixosModule = {pkgs, ...}: {
     users.users.max = {
       isNormalUser = true;
