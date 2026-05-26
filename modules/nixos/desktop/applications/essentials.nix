@@ -82,6 +82,7 @@
       userDirs = [
         ".config/Moonlight Game Streaming Project"
         ".config/sunshine"
+        ".local/share/flatpak"
         ".local/share/zathura"
         ".var/app"
       ];

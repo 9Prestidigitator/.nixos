@@ -24,22 +24,24 @@
         ".config/dolphin"
         ".local/share/dolphin"
 
-        ".local/share/kwalletd"
+        # ".local/share/kwalletd"
 
         ".config/session"
-        # ".local/state/ksmserver"
-        # ".local/share/kscreen"
+        ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
 
         # TODO(max): TESTING
-        ".local"
+        # ".local"
       ];
       userFiles = [
         ".config/kwinrc"
         ".config/ksmserverrc"
         ".config/kwinoutputconfig.json"
-        # ".config/kactivitymanagerdrc"
-        # ".local/state/plasmasessionrestorestaterc"
+        ".local/state/kactivitymanagerdstaterc"
+        ".local/state/dolphinstaterc"
+        ".local/state/plasmasessionrestorestaterc"
+        ".local/state/kwinstaterc"
+        ".local/state/plasmashellstaterc"
       ];
     };
   };
