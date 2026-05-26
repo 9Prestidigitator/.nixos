@@ -86,7 +86,7 @@
         ".local/share/flatpak"
         ".var/app"
       ];
-      userFiles = [".local/share/recently-used.xbel"];
+      # userFiles = [".local/share/recently-used.xbel"];
     };
   };
 }
