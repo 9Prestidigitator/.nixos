@@ -26,14 +26,15 @@
     persist = {
       directories = ["/var/lib/AccountsService"];
       userDirs = [
-        ".local/share/gnome-shell"
-        ".local/share/gnome-settings-daemon"
         ".local/share/nautilus"
-        ".local/share/gvfs-metadata"
-        ".config/dconf"
         ".config/evolution"
         ".local/share/evolution"
+
+        ".local/share/gvfs-metadata"
+        ".config/dconf"
         ".config/goa-1.0"
+        ".local/share/gnome-shell"
+        ".local/share/gnome-settings-daemon"
       ];
       userFiles = [".local/share/recently-used.xbel"];
     };

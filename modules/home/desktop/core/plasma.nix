@@ -22,8 +22,8 @@
           TerminalService = "kitty.desktop";
         };
         "kwinrc"."Plugins" = {
-          "karouselEnabled" = true;
           "dynamic_workspacesEnabled" = true;
+          "glassEnabled" = true;
         };
       };
 
@@ -63,6 +63,7 @@
                 shown = [
                   "org.kde.plasma.volume"
                   "org.kde.plasma.networkmanagement"
+                  "org.kde.plasma.battery"
                 ];
 
                 hidden = [
@@ -70,7 +71,6 @@
                   "org.kde.plasma.clipboard"
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
-                  "org.kde.plasma.battery"
                 ];
               };
             }

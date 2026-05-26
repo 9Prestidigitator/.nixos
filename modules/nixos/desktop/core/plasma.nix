@@ -15,7 +15,8 @@
       maliit-keyboard
       maliit-framework
     ];
-
+  
+    programs.chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
 
     persist = {
@@ -25,12 +26,13 @@
 
         ".local/share/kwalletd"
 
-        ".local/state/ksmserver"
         ".config/session"
+        ".local/state/ksmserver"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
       ];
       userFiles = [
+        ".config/kwinrc"
         ".config/ksmserverrc"
         ".config/kwinoutputconfig.json"
         ".config/kactivitymanagerdrc"
