@@ -23,22 +23,23 @@
       nixosModules.communications
       nixosModules.virtualisation
 
-      nixosModules.terminal-tools
       nixosModules.mullvad
       nixosModules.syncthing
       nixosModules.wine
 
+      nixosModules.sops
       nixosModules.stylix
-      nixosModules.fonts
+      nixosModules.home-manager
+      nixosModules.nix
 
+      nixosModules.terminal-tools
+      nixosModules.fonts
       nixosModules.tablet
       nixosModules.keyd
-      nixosModules.sops
+      nixosModules.bluetooth
       nixosModules.grub
       nixosModules.nvidia
       nixosModules.system-general
-      nixosModules.home-manager
-      nixosModules.nix
 
       ./_config.nix
       ./_fs.nix

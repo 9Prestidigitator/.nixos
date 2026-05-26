@@ -15,6 +15,7 @@
       homeModules.neovim
       homeModules.terminal-tools
       homeModules.mpd
+      homeModules.bluetooth
 
       homeModules.stylix
 
@@ -58,13 +59,10 @@
   };
   powerManagement.cpuFreqGovernor = "performance";
 
-  services = {
-    blueman.enable = true;
-    hardware.openrgb = {
-      enable = true;
-      package = pkgs.openrgb-with-all-plugins;
-      motherboard = "amd";
-    };
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+    motherboard = "amd";
   };
 
   services.flatpak.overrides."com.github.Matoking.protontricks".Context.filesystems = ["/mnt/1tb_ssd/SteamLibrary"];

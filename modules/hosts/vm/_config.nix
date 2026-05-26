@@ -17,6 +17,7 @@
   };
   users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
+  # Stuff nixos needs in a vm
   boot.loader = {
     efi = {
       canTouchEfiVariables = lib.mkForce false;

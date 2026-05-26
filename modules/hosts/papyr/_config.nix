@@ -15,6 +15,7 @@
       homeModules.neovim
       homeModules.terminal-tools
       homeModules.mpd
+      homeModules.bluetooth
 
       homeModules.stylix
 
@@ -54,10 +55,7 @@
     pam.services.sudo.fprintAuth = true;
   };
 
-  services = {
-    blueman.enable = true;
-    fprintd.enable = true;
-  };
+  services.fprintd.enable = true;
 
   hardware.cpu.intel.updateMicrocode = true;
 

@@ -29,6 +29,7 @@
 
       nixosModules.tablet
       nixosModules.keyd
+      nixosModules.bluetooth
       nixosModules.grub
       nixosModules.intel
       nixosModules.system-general
