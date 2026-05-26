@@ -82,8 +82,8 @@
       userDirs = [
         ".config/Moonlight Game Streaming Project"
         ".config/sunshine"
-        ".local/share/flatpak"
         ".local/share/zathura"
+        ".local/share/flatpak"
         ".var/app"
       ];
       userFiles = [".local/share/recently-used.xbel"];
