@@ -27,20 +27,21 @@
     ];
 
     persist.userDirs = [
+      ".steam"
+      ".factorio"
+      "Games"
       ".cache/nvidia"
       ".cache/mesa_shader_cache"
       ".cache/mesa_shader_cache_db"
-      ".steam"
-      ".local/share/Steam"
-      "Games"
       ".config/heroic"
+      ".config/dolphin-emu"
+      ".config/melonDS"
       ".cache/heroic"
       ".local/state/Heroic"
       ".local/share/PrismLauncher"
+      ".local/share/Steam"
       ".local/share/eden"
-      ".config/dolphin-emu"
       ".local/share/dolphin-emu"
-      ".config/melonDS"
       ".local/share/azahar-emu"
     ];
   };
