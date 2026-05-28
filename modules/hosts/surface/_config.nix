@@ -15,6 +15,8 @@
   };
   users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
+  impermanence.btrfs.rollbackRoot.enable = true;
+
   users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII00su22rL1ZJ59mb8+HVw21zft7IMLrd6yVvKd6f9Y2"];
 
   powerManagement.cpuFreqGovernor = "performance";
