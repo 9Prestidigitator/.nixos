@@ -28,6 +28,7 @@
       gxplugins-lv2
       dragonfly-reverb
       pkgsStable.surge
+      neural-amp-modeler-lv2
       # Utilities
       musescore
       paulxstretch
