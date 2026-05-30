@@ -1,5 +1,10 @@
 {inputs, ...}: {
-  flake.nixosModules.music-production = {pkgs, ...}: {
+  flake.nixosModules.music-production = {pkgs, ...}: let
+    pkgs-25 = import inputs.nixpkgs-25 {
+      system = pkgs.stdenv.hostPlatform.system;
+      config.allowUnfree = true;
+    };
+  in {
     imports = [
       inputs.musnix.nixosModules.musnix
       inputs.maxpkgs.nixosModules.overwitch
@@ -22,7 +27,7 @@
       guitarix
       gxplugins-lv2
       dragonfly-reverb
-      surge
+      pkgs-25.surge
       neural-amp-modeler-lv2
       # Utilities
       musescore

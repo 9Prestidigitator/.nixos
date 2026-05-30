@@ -20,19 +20,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixpkgs-25.url = "github:nixos/nixpkgs/nixos-25.11";
+
     maxpkgs.url = "github:9Prestidigitator/maxpkgs";
     maxvim.url = "github:9prestidigitator/nvim";
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     stylix = {
       url = "github:nix-community/stylix";

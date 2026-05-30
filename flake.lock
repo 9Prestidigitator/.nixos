@@ -866,6 +866,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-25": {
+      "locked": {
+        "lastModified": 1779796641,
+        "narHash": "sha256-ZsIrKmhp4vbBXoXXmR/tBXA/UCsAQiJL9vsgZEduhVY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "25f538306313eae3927264466c70d7001dcea1df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1777168982,
@@ -1230,11 +1246,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1780180107,
-        "narHash": "sha256-jXNnhzubkDEGXELBl9MNkhYohOcoWXVQISi6wGXi/2Y=",
+        "lastModified": 1780181500,
+        "narHash": "sha256-RH6sGRhlTY/FHO2yqB73dOYzi8B5PStwJu7uVpGJXg8=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "2255902cda9d5576f95708e0843f96107d3e8460",
+        "rev": "3c14a5f85a9095956c96bbe733764338fa662101",
         "type": "github"
       },
       "original": {
@@ -1337,6 +1353,7 @@
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_12",
+        "nixpkgs-25": "nixpkgs-25",
         "noctalia": "noctalia",
         "noctalia-5": "noctalia-5",
         "plasma-manager": "plasma-manager",
