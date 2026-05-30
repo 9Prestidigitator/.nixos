@@ -1,12 +1,5 @@
-{inputs, ...}: {
-  flake.nixosModules.media = {pkgs, ...}: let
-    pkgsStable = import inputs.nixpkgs-stable {
-      system = pkgs.stdenv.hostPlatform.system;
-      config = {
-        allowUnfree = true;
-      };
-    };
-  in {
+{
+  flake.nixosModules.media = {pkgs, ...}: {
     services.printing.drivers = [pkgs.hplipWithPlugin];
     environment.systemPackages = with pkgs; [
       libbluray-full
@@ -19,7 +12,7 @@
       obsidian
       easytag
       mpv
-      pkgsStable.makemkv
+      makemkv
       handbrake
       ffmpeg
       rmpc
