@@ -23,11 +23,7 @@
 
     xdg.mime.defaultApplications."inode/directory" = ["org.gnome.Nautilus.desktop"];
 
-    stylix.icons = {
-      package = pkgs.adwaita-icon-theme;
-      dark = "Adwaita";
-      light = "Adwaita";
-    };
+    iconStyle = "adwaita";
 
     persist = {
       directories = ["/var/lib/AccountsService"];

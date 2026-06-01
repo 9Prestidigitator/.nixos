@@ -1,6 +1,9 @@
-{inputs, self, ...}: {
-  flake.nixosConfigurations.papyr = inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
+{
+  myLib,
+  self,
+  ...
+}: {
+  flake.nixosConfigurations.papyr = myLib.mkNixosHost {
     modules = with self; [
       userModules.max.nixosModule
 
@@ -25,16 +28,16 @@
       nixosModules.ink-build-machine
       nixosModules.wg0
       nixosModules.stylix
-      nixosModules.fonts
+      nixosModules.home-manager
+      nixosModules.nix
 
       nixosModules.tablet
+      nixosModules.fonts
       nixosModules.keyd
       nixosModules.bluetooth
       nixosModules.grub
       nixosModules.intel
       nixosModules.system-general
-      nixosModules.home-manager
-      nixosModules.nix
 
       ./_config.nix
       ./_hardware.nix

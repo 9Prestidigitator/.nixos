@@ -1,5 +1,5 @@
 {
-  flake.homeModules.persistence = {lib, ...}: {
+  flake.homeModules.global-options = {lib, ...}: {
     options.persist = {
       directories = lib.mkOption {
         type = lib.types.listOf lib.types.anything;

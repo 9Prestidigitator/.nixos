@@ -2,10 +2,10 @@
   flake.nixosModules.stylix = {
     pkgs,
     config,
-    lib,
     ...
   }: {
     imports = [inputs.stylix.nixosModules.stylix];
+
     stylix = {
       enable = true;
       autoEnable = true;
@@ -29,12 +29,22 @@
           name = "Hack Nerd Font Mono";
         };
       };
-      icons = {
-        enable = true;
-        package = lib.mkDefault pkgs.kdePackages.breeze;
-        dark = lib.mkDefault "breeze-dark";
-        light = lib.mkDefault "breeze";
-      };
+
+      icons =
+        if config.iconStyle == "breeze"
+        then {
+          enable = true;
+          package = pkgs.kdePackages.breeze;
+          dark = "breeze-dark";
+          light = "breeze";
+        }
+        else {
+          enable = true;
+          package = pkgs.adwaita-icon-theme;
+          dark = "Adwaita";
+          light = "Adwaita";
+        };
+
       opacity = {
         desktop = 0.7;
         terminal = 0.7;

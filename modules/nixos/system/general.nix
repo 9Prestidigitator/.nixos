@@ -5,46 +5,6 @@
     config,
     ...
   }: {
-    # TODO(max): Make these options in some universally applied location without module import specification
-    options = {
-      host = {
-        name = lib.mkOption {
-          type = lib.types.str;
-          default = "nixos";
-          description = "Name of the host.";
-        };
-      };
-
-      # Persistence options
-      persist = {
-        root = lib.mkOption {
-          type = lib.types.str;
-          default = "/persist";
-          description = "Root path used by impermanence-backed persistence.";
-        };
-        directories = lib.mkOption {
-          type = lib.types.listOf lib.types.anything;
-          default = [];
-          description = "System directories to persist.";
-        };
-        files = lib.mkOption {
-          type = lib.types.listOf lib.types.anything;
-          default = [];
-          description = "System files to persist.";
-        };
-        userDirs = lib.mkOption {
-          type = lib.types.listOf lib.types.anything;
-          default = [];
-          description = "User directories to persist for every normal user.";
-        };
-        userFiles = lib.mkOption {
-          type = lib.types.listOf lib.types.anything;
-          default = [];
-          description = "User files to persist for every normal user.";
-        };
-      };
-    };
-
     config = {
       boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_7_0;
 

@@ -1,10 +1,9 @@
 {
-  inputs,
+  myLib,
   self,
   ...
 }: {
-  flake.nixosConfigurations.cardboard = inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
+  flake.nixosConfigurations.cardboard = myLib.mkNixosHost {
     modules = with self; [
       userModules.max.nixosModule
       userModules.guest.nixosModule

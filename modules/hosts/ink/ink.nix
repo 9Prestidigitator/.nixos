@@ -1,10 +1,9 @@
 {
-  inputs,
+  myLib,
   self,
   ...
 }: {
-  flake.nixosConfigurations.ink = inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
+  flake.nixosConfigurations.ink = myLib.mkNixosHost {
     modules = with self; [
       userModules.max.nixosModule
       userModules.guest.nixosModule
@@ -25,6 +24,7 @@
 
       nixosModules.mullvad
       nixosModules.syncthing
+      nixosModules.keyd
       nixosModules.wine
 
       nixosModules.sops
@@ -35,7 +35,6 @@
       nixosModules.terminal-tools
       nixosModules.fonts
       nixosModules.tablet
-      nixosModules.keyd
       nixosModules.bluetooth
       nixosModules.grub
       nixosModules.nvidia

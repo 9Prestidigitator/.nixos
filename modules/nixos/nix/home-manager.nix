@@ -11,7 +11,7 @@
       backupFileExtension = "backup";
       extraSpecialArgs = {inherit inputs self;};
 
-      sharedModules = [self.homeModules.persistence];
+      sharedModules = [self.homeModules.global-options];
     };
   };
 }

@@ -1,6 +1,7 @@
 {
   inputs,
   lib,
+  self,
   ...
 }: {
   imports = [
@@ -32,6 +33,8 @@
   };
 
   config = {
+    _module.args.myLib = import ../lib {inherit inputs self;};
+
     systems = [
       "aarch64-darwin"
       "aarch64-linux"

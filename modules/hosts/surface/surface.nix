@@ -1,10 +1,9 @@
 {
-  inputs,
+  myLib,
   self,
   ...
 }: {
-  flake.nixosConfigurations.surface = inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
+  flake.nixosConfigurations.surface = myLib.mkNixosHost {
     modules = with self; [
       userModules.max.nixosModule
 
