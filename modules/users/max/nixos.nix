@@ -14,8 +14,8 @@
     };
 
     environment.systemPackages = with pkgs; [
-      self.packages.${system}.nh
-      self.packages.${system}.max-git
+      self.packages.${stdenv.hostPlatform.system}.nh
+      self.packages.${stdenv.hostPlatform.system}.max-git
     ];
 
     persist = {

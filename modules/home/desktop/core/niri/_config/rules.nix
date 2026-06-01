@@ -133,6 +133,12 @@
       # TODO(max): Experimental options. Will need to revise this on next
       # version of niri/niri-flake
       extraConfig = ''
+        blur {
+          passes 3
+          offset 3.0
+          noise 0.03
+          saturation 1.0
+        }
         window-rule {
             match app-id="kitty"
             background-effect {

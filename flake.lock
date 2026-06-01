@@ -393,15 +393,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1780099287,
-        "narHash": "sha256-efIPwVGtIWIjWcznhaop6XN6HxnOL8800hF6CBNvlqQ=",
+        "lastModified": 1779726825,
+        "narHash": "sha256-RUkMrREjKDQrA+dA9+xZviGAxM5W1aVdyOr/bSYpHrE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7d8127d308c3fb9664f7e643eec944be74ebb37d",
+        "rev": "b179bde238977f7d4454fc770b1a727eaf55111c",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "release-26.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -484,11 +485,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1780184020,
-        "narHash": "sha256-DF5qYLAkYxdwGDTUoWkHoJ0GwgQiv1rtQtR81lhQtc4=",
+        "lastModified": 1780268197,
+        "narHash": "sha256-X++F8LQ8/GBiazpmfqb8zPhOiMvzqq1zeTqmELqCnL0=",
         "owner": "4v3ngR",
         "repo": "kwin-effects-glass",
-        "rev": "44ee961858e1959c4f2edb728a717f56e19ea716",
+        "rev": "4876ca39aaa5b6da45e7005efc7c8c631f6bd0f0",
         "type": "github"
       },
       "original": {
@@ -1246,11 +1247,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1780249183,
-        "narHash": "sha256-046/BZB4f3mOJ0B3q3ImdGmvgfvWqfsxAKWOn3Qf7WE=",
+        "lastModified": 1780276586,
+        "narHash": "sha256-uz+hLABc12p9deY+BRpLbi3qJ4lWszWtw3K82axOgmA=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "8346d3ce5d65dc9fe4b64dca850bd48e51b8f97d",
+        "rev": "2d77c7dfa5ead9dc2381ddb9d944e6e3336d7522",
         "type": "github"
       },
       "original": {
