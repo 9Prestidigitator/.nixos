@@ -164,7 +164,11 @@
     };
   in {
     options.impermanence.btrfs.rollbackRoot = {
-      enable = lib.mkEnableOption "Btrfs root subvolume rollback during initrd";
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Btrfs root subvolume rollback during initrd";
+      };
 
       device = lib.mkOption {
         type = lib.types.str;

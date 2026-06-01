@@ -17,8 +17,6 @@
   };
   users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
-  impermanence.btrfs.rollbackRoot.enable = true;
-
   fileSystems."/mnt/SD" = {
     device = "/dev/disk/by-label/SD";
     fsType = "exfat";
