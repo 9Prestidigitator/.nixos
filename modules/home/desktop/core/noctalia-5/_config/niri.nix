@@ -28,13 +28,13 @@ in {
       "Mod+Escape" = {
         hotkey-overlay.title = "Lock";
         allow-when-locked = true;
-        action = spawn "noctalia" "msg" "screen-lock";
+        action = spawn "noctalia" "msg" "session" "lock";
       };
 
       "XF86Tools" = {
         hotkey-overlay.title = "Lock";
         allow-when-locked = true;
-        action = spawn "noctalia" "msg" "screen-lock";
+        action = spawn "noctalia" "msg" "session" "lock";
       };
 
       "Mod+XF86Tools" = {
