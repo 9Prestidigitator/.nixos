@@ -19,14 +19,11 @@
               name = "ESP";
               size = "1G";
               type = "EF00";
-
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [
-                  "umask=0077"
-                ];
+                mountOptions = ["umask=0077"];
               };
             };
 
@@ -47,6 +44,7 @@
                 name = "crypted-root";
                 settings.allowDiscards = true;
                 content = {
+
                   type = "btrfs";
                   extraArgs = [
                     "-f"

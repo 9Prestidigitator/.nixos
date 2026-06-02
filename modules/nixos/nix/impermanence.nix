@@ -4,9 +4,11 @@
     lib,
     ...
   }: let
-    normalUsers =
+    persistedUsers =
       lib.filterAttrs
-      (_name: user: user.isNormalUser or false)
+      (name: user:
+        (user.isNormalUser or false)
+        && !(builtins.elem name config.persist.excludedUsers))
       config.users.users;
     hmUsers = config.home-manager.users or {};
 
@@ -19,13 +21,13 @@
         files =
           lib.unique (config.persist.userFiles ++ (hmCfg.persist.files or []));
       })
-      normalUsers;
+      persistedUsers;
   in {
     imports = [inputs.impermanence.nixosModules.impermanence];
 
     fileSystems."/".neededForBoot = true;
     fileSystems."/nix".neededForBoot = true;
-    fileSystems."/persist".neededForBoot = true;
+    fileSystems.${config.persist.root}.neededForBoot = true;
 
     persist = {
       directories = [
@@ -56,7 +58,7 @@
       userFiles = [".ssh/known_hosts"];
     };
 
-    environment.persistence."/persist" = {
+    environment.persistence.${config.persist.root} = {
       hideMounts = true;
       directories = lib.unique config.persist.directories;
       files = lib.unique config.persist.files;

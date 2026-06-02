@@ -36,6 +36,7 @@
         translate-shell
         wf-recorder
         gifski
+        ddcutil
         linux-wallpaperengine
       ];
       sessionVariables = {

@@ -13,7 +13,7 @@
         root = lib.mkOption {
           type = lib.types.str;
           default = "/persist";
-          description = "Root path used by impermanence-backed persistence.";
+          description = "Root path used for persistent state.";
         };
         directories = lib.mkOption {
           type = lib.types.listOf lib.types.anything;
@@ -34,6 +34,11 @@
           type = lib.types.listOf lib.types.anything;
           default = [];
           description = "User files to persist for every normal user.";
+        };
+        excludedUsers = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = ["nixremote"];
+          description = "Normal users that should not receive global per-user persistence.";
         };
       };
 
