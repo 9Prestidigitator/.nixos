@@ -21,7 +21,7 @@
       nixosModules.ink-build-machine
       nixosModules.stylix
       nixosModules.btrfs-impermanence
-      nixosModules.preservation
+      nixosModules.impermanence
       nixosModules.home-manager
       nixosModules.nix
 
