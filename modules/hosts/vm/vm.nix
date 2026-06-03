@@ -7,8 +7,7 @@
     modules = with self; [
       userModules.max.nixosModule
 
-      nixosModules.gdm
-      nixosModules.gnome
+      nixosModules.plasma
 
       nixosModules.essentials
       nixosModules.brave-browser
