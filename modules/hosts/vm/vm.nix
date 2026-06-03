@@ -14,7 +14,7 @@
 
       nixosModules.ink-build-machine
       nixosModules.stylix
-      nixosModules.preservation
+      nixosModules.impermanence
       nixosModules.home-manager
       nixosModules.nix
 
