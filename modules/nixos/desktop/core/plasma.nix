@@ -33,9 +33,9 @@
         ".local/state"
       ];
       userFiles = [
-        ".config/kwinrc"
-        ".config/ksmserverrc"
-        ".config/kwinoutputconfig.json"
+        # ".config/kwinrc"
+        # ".config/ksmserverrc"
+        # ".config/kwinoutputconfig.json"
 
         # ".local/state/kactivitymanagerdstaterc"
         # ".local/state/dolphinstaterc"
