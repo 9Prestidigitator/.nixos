@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.btrfs-impermanence = {
+  flake.nixosModules.btrfs-rollback = {
     config,
     lib,
     pkgs,

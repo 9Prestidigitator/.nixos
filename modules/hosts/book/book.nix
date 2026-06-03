@@ -18,7 +18,7 @@
       nixosModules.surface-build-machine
       nixosModules.ink-build-machine
       nixosModules.stylix
-      nixosModules.btrfs-impermanence
+      nixosModules.btrfs-rollback
       nixosModules.impermanence
       nixosModules.home-manager
       nixosModules.nix
