@@ -28,6 +28,9 @@
         ".local/share/kwalletd"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
+
+        # TODO(max): Temporary fix
+        ".local/state"
       ];
       userFiles = [
         ".config/kwinrc"

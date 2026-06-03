@@ -5,6 +5,8 @@
       element-desktop
     ];
 
+    services.flatpak.packages = ["app.fluxer.Fluxer"];
+
     persist.userDirs = [
       ".config/Signal"
       ".config/Element"

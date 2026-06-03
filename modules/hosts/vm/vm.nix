@@ -11,6 +11,7 @@
 
       nixosModules.essentials
       nixosModules.brave-browser
+      nixosModules.communications
 
       nixosModules.ink-build-machine
       nixosModules.stylix
