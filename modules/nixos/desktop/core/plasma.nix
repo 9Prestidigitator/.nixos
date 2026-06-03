@@ -36,7 +36,7 @@
 
         ".local/state/kactivitymanagerdstaterc"
         ".local/state/dolphinstaterc"
-        ".local/state/plasmasessionrestorestaterc"
+        # ".local/state/plasmasessionrestorestaterc"
         ".local/state/kwinstaterc"
         ".local/state/plasmashellstaterc"
       ];
