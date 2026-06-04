@@ -31,7 +31,7 @@
         {
           matches = [
             {
-              app-id = "org.rncbc.qjackctl";
+              app-id = "Qjackctl";
               title = "(default).*";
             }
           ];
@@ -157,7 +157,7 @@
         }
 
         window-rule {
-          match app-id="REAPER" title=".*REAPER v.*"
+          match app-id="REAPER" title="^REAPER v[0-9].*"
           open-maximized false
           open-maximized-to-edges true
           default-column-width {
