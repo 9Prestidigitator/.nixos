@@ -20,17 +20,17 @@
       reaper-sws-extension
       reaper-reapack-extension
       # plugins
-      amplocker
+      neural-amp-modeler-lv2
       lsp-plugins
+      pianoteq-trial
+      gvst
       x42-avldrums
       x42-plugins
       guitarix
       gxplugins-lv2
       dragonfly-reverb
       pkgs-25.surge
-      neural-amp-modeler-lv2
-      pianoteq-trial
-      gvst
+      amplocker
       # Utilities
       musescore
       paulxstretch
