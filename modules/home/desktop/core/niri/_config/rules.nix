@@ -31,8 +31,12 @@
         {
           matches = [
             {
-              app-id = "Qjackctl";
-              title = "(default).*";
+              app-id = "org.rncbc.qjackctl";
+              title = "\\(default\\).*";
+            }
+            {
+              app-id = "QjackCtl";
+              title = "\\(default\\).*";
             }
           ];
           default-window-height = {fixed = 100;};
@@ -158,7 +162,7 @@
 
         window-rule {
           match app-id="REAPER" title="^REAPER v[0-9].*"
-          open-maximized false
+          open-fullscreen false
           open-maximized-to-edges true
           default-column-width {
             proportion 0.6666
@@ -167,7 +171,7 @@
 
         window-rule {
           match app-id="com.bitwig.BitwigStudio"
-          open-maximized false
+          open-fullscreen false
           open-maximized-to-edges true
           geometry-corner-radius 0.0 
         }
