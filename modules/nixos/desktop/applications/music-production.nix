@@ -29,7 +29,8 @@
       dragonfly-reverb
       pkgs-25.surge
       neural-amp-modeler-lv2
-      pianoteq.standard-trial_8
+      pianoteq-trial
+      gvst
       # Utilities
       musescore
       paulxstretch
