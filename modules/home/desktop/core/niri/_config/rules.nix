@@ -2,6 +2,7 @@
   programs.niri = {
     settings = {
       prefer-no-csd = true;
+
       window-rules = [
         {
           geometry-corner-radius = let
@@ -15,6 +16,7 @@
           draw-border-with-background = false;
           clip-to-geometry = true;
         }
+
         {
           matches = [{is-floating = true;}];
           shadow.enable = true;
@@ -22,25 +24,35 @@
           focus-ring.enable = false;
         }
         {
-          matches = [
-            {app-id = "brave-browser";}
-          ];
+          matches = [{app-id = "brave-browser";}];
           open-maximized = true;
         }
+
         {
           matches = [
             {
-              app-id = "QjackCtl";
+              app-id = "org.rncbc.qjackctl";
               title = "(default).*";
             }
           ];
           default-window-height = {fixed = 100;};
+          default-column-width = {proportion = 0.3333;};
         }
         {
           matches = [
-            {app-id = "com.bitwig.BitwigStudio";}
+            {
+              title = ".*REAPER v.*";
+              app-id = "REAPER";
+            }
           ];
-          open-maximized = true;
+          open-maximized = false;
+          open-maximized-to-edges = true;
+          default-column-width = {proportion = 0.6666;};
+        }
+        {
+          matches = [{app-id = "com.bitwig.BitwigStudio";}];
+          open-maximized = false;
+          open-maximized-to-edges = true;
           geometry-corner-radius = let
             radius = 0.0;
           in {
@@ -50,6 +62,7 @@
             top-right = radius;
           };
         }
+
         {
           matches = [
             {
@@ -121,6 +134,7 @@
           default-window-height = {proportion = 0.3333;};
         }
       ];
+
       layer-rules = [
         {
           matches = [
@@ -130,6 +144,7 @@
           place-within-backdrop = true;
         }
       ];
+
       # TODO(max): Experimental options. Will need to revise this on next
       # version of niri/niri-flake
       extraConfig = ''
@@ -139,6 +154,7 @@
           noise 0.03
           saturation 1.0
         }
+
         window-rule {
             match app-id="kitty"
             background-effect {
