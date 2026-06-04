@@ -20,17 +20,18 @@
       nixosModules.communications
       nixosModules.virtualisation
 
-      nixosModules.terminal-tools
       nixosModules.mullvad
       nixosModules.syncthing
       nixosModules.wine
+      nixosModules.wg0
+      nixosModules.uxplay
 
       nixosModules.ink-build-machine
-      nixosModules.wg0
       nixosModules.stylix
       nixosModules.home-manager
       nixosModules.nix
 
+      nixosModules.terminal-tools
       nixosModules.tablet
       nixosModules.fonts
       nixosModules.keyd

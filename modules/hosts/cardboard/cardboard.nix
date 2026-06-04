@@ -17,19 +17,22 @@
       nixosModules.media
       nixosModules.virtualisation
 
-      nixosModules.terminal-tools
       nixosModules.mullvad
+      nixosModules.uxplay
 
+      nixosModules.surface-build-machine
       nixosModules.ink-build-machine
       nixosModules.stylix
-      nixosModules.fonts
-
       nixosModules.sops
+      nixosModules.home-manager
+      nixosModules.nix
+
+      nixosModules.terminal-tools
+      nixosModules.fonts
+      nixosModules.bluetooth
       nixosModules.grub
       nixosModules.intel
       nixosModules.system-general
-      nixosModules.home-manager
-      nixosModules.nix
 
       ./_config.nix
       ./_hardware.nix
