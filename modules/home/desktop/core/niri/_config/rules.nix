@@ -38,30 +38,31 @@
           default-window-height = {fixed = 100;};
           default-column-width = {proportion = 0.3333;};
         }
-        {
-          matches = [
-            {
-              title = ".*REAPER v.*";
-              app-id = "REAPER";
-            }
-          ];
-          open-maximized = false;
-          open-maximized-to-edges = true;
-          default-column-width = {proportion = 0.6666;};
-        }
-        {
-          matches = [{app-id = "com.bitwig.BitwigStudio";}];
-          open-maximized = false;
-          open-maximized-to-edges = true;
-          geometry-corner-radius = let
-            radius = 0.0;
-          in {
-            bottom-left = radius;
-            bottom-right = radius;
-            top-left = radius;
-            top-right = radius;
-          };
-        }
+
+        # {
+        #   matches = [
+        #     {
+        #       title = ".*REAPER v.*";
+        #       app-id = "REAPER";
+        #     }
+        #   ];
+        #   open-maximized = false;
+        #   open-maximized-to-edges = true;
+        #   default-column-width = {proportion = 0.6666;};
+        # }
+        # {
+        #   matches = [{app-id = "com.bitwig.BitwigStudio";}];
+        #   open-maximized = false;
+        #   open-maximized-to-edges = true;
+        #   geometry-corner-radius = let
+        #     radius = 0.0;
+        #   in {
+        #     bottom-left = radius;
+        #     bottom-right = radius;
+        #     top-left = radius;
+        #     top-right = radius;
+        #   };
+        # }
 
         {
           matches = [
@@ -153,6 +154,22 @@
           offset 3.0
           noise 0.03
           saturation 1.0
+        }
+
+        window-rule {
+          match app-id="REAPER" title=".*REAPER v.*"
+          open-maximized false
+          open-maximized-to-edges true
+          default-column-width {
+            proportion 0.6666
+          }
+        }
+
+        window-rule {
+          match app-id="com.bitwig.BitwigStudio"
+          open-maximized false
+          open-maximized-to-edges true
+          geometry-corner-radius 0.0 
         }
 
         window-rule {
