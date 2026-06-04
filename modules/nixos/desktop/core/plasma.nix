@@ -15,7 +15,7 @@
       maliit-keyboard
       maliit-framework
     ];
-  
+
     programs.chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
 
@@ -29,7 +29,8 @@
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
 
-        # TODO(max): Temporary fix
+        # TODO(max): Temporary fix. This is because kde plasma does NOT like
+        # writing to individual preserved files for some reason.
         ".local/state"
       ];
       userFiles = [

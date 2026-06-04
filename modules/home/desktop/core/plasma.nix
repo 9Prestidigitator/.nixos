@@ -27,7 +27,9 @@
             "glassEnabled" = true;
           };
           "Effects-blurplus" = {
-            "WindowClasses" = "kitty";
+            "BlurMatching" = false;
+            "BlurNonMatching" = true;
+            "BlurDecorations" = true;
           };
         };
       };
