@@ -26,6 +26,7 @@
       nixosModules.syncthing
       nixosModules.keyd
       nixosModules.wine
+      nixosModules.localsend
 
       nixosModules.sops
       nixosModules.stylix
