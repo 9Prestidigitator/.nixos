@@ -50,7 +50,7 @@
 
       playerctl
       brightnessctl
-      qjackctl
+      qpwgraph
       pavucontrol
       wireplumber
 

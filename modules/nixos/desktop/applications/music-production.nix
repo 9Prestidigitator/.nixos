@@ -29,9 +29,9 @@
       guitarix
       gxplugins-lv2
       dragonfly-reverb
-      rubberband
-      js-inflator
       pkgs-25.surge
+      rubberband-lv2
+      js-inflator
       amplocker
 
       # Utilities
@@ -39,7 +39,7 @@
       paulxstretch
       papu
       easyeffects
-      qpwgraph
+      qjackctl
 
       # hardware
       overwitch
