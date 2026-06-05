@@ -26,7 +26,6 @@
     environment.systemPackages = with pkgs; [
       xwayland-satellite
       inputs.niri-float-sticky.packages.${system}.default
-      inputs.niri-screen-time.packages.${system}.default
       nautilus
       seahorse
       polkit_gnome
@@ -41,7 +40,6 @@
     persist = {
       directories = ["/var/lib/AccountsService"];
       userDirs = [
-        ".local/state/niri-screen-time"
         ".local/share/nautilus"
         ".local/share/gvfs-metadata"
         ".config/dconf"

@@ -8,10 +8,7 @@
 in {
   programs.niri.settings = lib.mkMerge [
     {
-      spawn-at-startup = [
-        {command = ["niri-float-sticky" "-title" "^Picture in picture$"];}
-        {command = ["niri-screen-time" "-daemon"];}
-      ];
+      spawn-at-startup = [{command = ["niri-float-sticky" "-title" "^Picture in picture$"];}];
     }
 
     (lib.mkIf (hostName == "ink") {

@@ -52,7 +52,6 @@
 
     niri-flake.url = "github:sodiboo/niri-flake/pull/1717/merge";
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
-    niri-screen-time.url = "github:probeldev/niri-screen-time";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
     noctalia-5.url = "github:noctalia-dev/noctalia-shell/v5";
 

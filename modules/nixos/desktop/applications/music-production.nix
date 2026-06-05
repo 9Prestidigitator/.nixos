@@ -12,33 +12,37 @@
     musnix.enable = true;
     services.overwitch.enable = true;
     environment.systemPackages = with pkgs; [
-      # hardware
-      overwitch
       # DAWs
       bitwig6
       reaper
       reaper-sws-extension
       reaper-reapack-extension
+
       # plugins
+      carla
+      gvst
       neural-amp-modeler-lv2
       lsp-plugins
       pianoteq-trial
-      gvst
       x42-avldrums
       x42-plugins
       guitarix
       gxplugins-lv2
       dragonfly-reverb
       rubberband
+      js-inflator
       pkgs-25.surge
       amplocker
+
       # Utilities
       musescore
       paulxstretch
       papu
       easyeffects
-      carla
       qpwgraph
+
+      # hardware
+      overwitch
     ];
 
     persist.userDirs = [
