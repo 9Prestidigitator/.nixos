@@ -15,7 +15,10 @@
       };
     };
 
-    programs.gpu-screen-recorder.enable = true;
+    programs = {
+      gpu-screen-recorder.enable = true;
+      kdeconnect.enable = true;
+    };
 
     environment = {
       systemPackages = with pkgs; [
