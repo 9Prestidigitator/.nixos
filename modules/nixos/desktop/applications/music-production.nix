@@ -29,6 +29,7 @@
       guitarix
       gxplugins-lv2
       dragonfly-reverb
+      rubberband
       pkgs-25.surge
       amplocker
       # Utilities
