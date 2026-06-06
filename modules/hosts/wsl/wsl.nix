@@ -10,6 +10,7 @@
 
       userModules.max.nixosModule
 
+      nixosModules.sops
       nixosModules.stylix
       nixosModules.home-manager
       nixosModules.nix
