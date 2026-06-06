@@ -1,16 +1,13 @@
 {inputs, ...}: {
-  flake.nixosModules.music-production = {pkgs, ...}: let
-    pkgs-25 = import inputs.nixpkgs-25 {
-      system = pkgs.stdenv.hostPlatform.system;
-      config.allowUnfree = true;
-    };
-  in {
+  flake.nixosModules.music-production = {pkgs, ...}: {
     imports = [
       inputs.musnix.nixosModules.musnix
       inputs.maxpkgs.nixosModules.overwitch
     ];
+
     musnix.enable = true;
     services.overwitch.enable = true;
+
     environment.systemPackages = with pkgs; [
       # DAWs
       bitwig6
@@ -22,17 +19,18 @@
       carla
       gvst
       neural-amp-modeler-lv2
-      lsp-plugins
+      rubberband-lv2
+      js-inflator
+      amplocker
       pianoteq-trial
+      lsp-plugins
       x42-avldrums
       x42-plugins
       guitarix
       gxplugins-lv2
       dragonfly-reverb
-      pkgs-25.surge
-      rubberband-lv2
-      js-inflator
-      amplocker
+      # surge
+      helm
 
       # Utilities
       musescore

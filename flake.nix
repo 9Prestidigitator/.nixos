@@ -32,7 +32,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs-25.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     maxpkgs.url = "github:9Prestidigitator/maxpkgs";
     maxvim.url = "github:9prestidigitator/nvim";

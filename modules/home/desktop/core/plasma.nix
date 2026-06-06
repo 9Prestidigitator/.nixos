@@ -26,7 +26,7 @@
             "dynamic_workspacesEnabled" = true;
             "glassEnabled" = true;
           };
-          "Effects-blurplus" = {
+          "Effect-blurplus" = {
             "BlurMatching" = false;
             "BlurNonMatching" = true;
             "BlurDecorations" = true;
