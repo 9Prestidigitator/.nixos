@@ -25,15 +25,9 @@
 
   networking = {
     networkmanager.enable = lib.mkForce false;
-    wireless.enable = lib.mkForce false;
+    # wireless.enable = lib.mkForce false;
     useDHCP = lib.mkForce false;
   };
-
-  # systemd.services = {
-  #   wpa_supplicant.enable = lib.mkForce false;
-  #   NetworkManager.enable = lib.mkForce false;
-  #   NetworkManager-dispatcher.enable = lib.mkForce false;
-  # };
 
   environment.systemPackages = with pkgs; [usbutils kmod cryptsetup];
 
