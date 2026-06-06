@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   host.name = "wsl";
   home-manager.users.max = {self, ...}: {
     imports = with self; [
@@ -18,6 +18,8 @@
     defaultUser = "max";
     startMenuLaunchers = true;
   };
+
+  environment.systemPackages = with pkgs; [usbutils kmod cryptsetup];
 
   system.stateVersion = "26.05";
   home-manager.sharedModules = [{home.stateVersion = "26.05";}];
