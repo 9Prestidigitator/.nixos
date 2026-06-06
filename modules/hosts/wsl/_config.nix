@@ -25,8 +25,7 @@
 
   networking = {
     networkmanager.enable = lib.mkForce false;
-    # wireless.enable = lib.mkForce false;
-    useDHCP = lib.mkForce false;
+    # useDHCP = lib.mkForce false;
   };
 
   environment.systemPackages = with pkgs; [usbutils kmod cryptsetup];

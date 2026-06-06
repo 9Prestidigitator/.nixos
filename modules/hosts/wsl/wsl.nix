@@ -10,6 +10,8 @@
 
       userModules.max.nixosModule
 
+      nixosModules.media
+
       nixosModules.sops
       nixosModules.stylix
       nixosModules.home-manager
