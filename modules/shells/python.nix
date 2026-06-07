@@ -16,7 +16,7 @@
             ]))
 
         basedpyright
-          ruff
+        ruff
       ];
     };
   };
