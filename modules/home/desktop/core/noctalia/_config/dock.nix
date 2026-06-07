@@ -27,14 +27,9 @@
           "org.gnome.Nautilus"
           "brave-browser"
           "steam"
+          "cockos-reaper"
           "com.bitwig.BitwigStudio"
         ];
-        # ++ lib.optionals osConfig.desktop.gaming.enable [
-        #   "steam"
-        # ]
-        # ++ lib.optionals osConfig.desktop.musicprod.enable [
-        #   "com.bitwig.BitwigStudio"
-        # ];
       };
     };
   };
