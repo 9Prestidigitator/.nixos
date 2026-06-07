@@ -22,6 +22,7 @@
       rubberband-lv2
       js-inflator
       amplocker
+      neuralnote
       pianoteq-trial
       lsp-plugins
       x42-avldrums
