@@ -1,7 +1,11 @@
 {
   host.name = "book";
 
-  home-manager.users.max = {self, ...}: {
+  home-manager.users.max = {
+    self,
+    config,
+    ...
+  }: {
     imports = with self; [
       userModules.max.homeModule
 
@@ -14,6 +18,14 @@
 
       homeModules.stylix
     ];
+    programs.ssh.settings = {
+      ink = {
+        User = "max";
+        HostName = "10.123.78.170";
+        IdentityFile = config.sops.secrets."ssh/ink".path;
+        IdentitiesOnly = true;
+      };
+    };
   };
   users.users.max.hashedPasswordFile = "/persist/passwds/max";
 
