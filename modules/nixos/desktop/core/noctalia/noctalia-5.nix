@@ -19,7 +19,7 @@
 
     environment = {
       systemPackages = with pkgs; [
-        inputs.noctalia-5.packages.${pkgs.stdenv.hostPlatform.system}.default
+        # inputs.noctalia-5.packages.${pkgs.stdenv.hostPlatform.system}.default
         wlsunset
         wl-mirror
         cliphist

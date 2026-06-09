@@ -33,7 +33,7 @@
 
         counter-strike-2 = {
           id = 730;
-          launchOptions = "%command% -sdlaudiodriver pulse";
+          launchOptionsStr = "%command% -sdlaudiodriver pulse";
         };
       };
     };

@@ -10,10 +10,10 @@
 
     environment.systemPackages = with pkgs; [
       # DAWs
-      bitwig6
       reaper
       reaper-sws-extension
       reaper-reapack-extension
+      bitwig6
 
       # plugins
       carla

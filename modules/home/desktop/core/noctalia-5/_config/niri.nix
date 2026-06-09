@@ -6,7 +6,7 @@
   noctalia = cmd: "noctalia msg ${cmd}";
 in {
   programs.niri.settings = {
-    spawn-at-startup = [{command = ["noctalia"];}];
+    # spawn-at-startup = [{command = ["noctalia"];}];
 
     binds = with config.lib.niri.actions; {
       "XF86Favorites" = {
