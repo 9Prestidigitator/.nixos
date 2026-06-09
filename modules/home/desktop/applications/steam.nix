@@ -30,8 +30,14 @@
           id = 1111390;
           compatTool = "proton_9";
         };
+
+        counter-strike-2 = {
+          id = 730;
+          launchOptions = "%command% -sdlaudiodriver pulse";
+        };
       };
     };
+
     persist.directories = [
       ".steam"
       ".local/share/Steam"
