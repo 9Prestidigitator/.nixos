@@ -1,8 +1,4 @@
 {
-  lib,
-  config,
-  ...
-}: {
   programs.noctalia.settings = {
     shell = {
       font_family = "Noto Sans";
@@ -24,6 +20,7 @@
     };
 
     nightlight.enabled = true;
+    calendar.enabled = true;
 
     dock = {
       enabled = true;
@@ -41,6 +38,11 @@
       pinned = ["files" "Brave Web Browser"];
       radius = 30;
       margin_edge = 7;
+    };
+
+    lockscreen = {
+      blur_intensity = 0.7;
+      blurred_desktop = true;
     };
   };
 }

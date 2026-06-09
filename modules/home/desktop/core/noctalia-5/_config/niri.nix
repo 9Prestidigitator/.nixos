@@ -6,7 +6,10 @@
   noctalia = cmd: "noctalia msg ${cmd}";
 in {
   programs.niri.settings = {
+    # Don't use with systemd enabled
     # spawn-at-startup = [{command = ["noctalia"];}];
+
+    switch-events.lid-close.action.spawn = ["noctalia" "msg" "session" "lock"];
 
     binds = with config.lib.niri.actions; {
       "XF86Favorites" = {
