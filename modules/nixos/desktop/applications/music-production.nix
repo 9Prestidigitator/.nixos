@@ -27,6 +27,10 @@
       lsp-plugins
       x42-avldrums
       x42-plugins
+      x42-gmsynth
+      drumgizmo
+      ripplerx
+      drumkv1
       guitarix
       gxplugins-lv2
       dragonfly-reverb
