@@ -23,7 +23,7 @@
       mt-power-drumkit-2
       neuralnote
       pianoteq-trial
-      inner-pitch-free
+      auburn-sounds-free
       lsp-plugins
       x42-avldrums
       x42-plugins
