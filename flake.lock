@@ -1053,6 +1053,19 @@
     "nixpkgs_14": {
       "locked": {
         "lastModified": 1780749050,
+        "narHash": "sha256-G5B1h4sOH4DN/RZ85xYi6zPm2MHdOrNMeUmMslZ28Qs=",
+        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1011622.a799d3e3886d/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
+    "nixpkgs_15": {
+      "locked": {
+        "lastModified": 1780749050,
         "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
         "owner": "nixos",
         "repo": "nixpkgs",
@@ -1066,7 +1079,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_15": {
+    "nixpkgs_16": {
       "locked": {
         "lastModified": 1780749050,
         "narHash": "sha256-G5B1h4sOH4DN/RZ85xYi6zPm2MHdOrNMeUmMslZ28Qs=",
@@ -1079,7 +1092,7 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
-    "nixpkgs_16": {
+    "nixpkgs_17": {
       "locked": {
         "lastModified": 1765838191,
         "narHash": "sha256-m5KWt1nOm76ILk/JSCxBM4MfK3rYY7Wq9/TZIIeGnT8=",
@@ -1095,7 +1108,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_17": {
+    "nixpkgs_18": {
       "locked": {
         "lastModified": 1780336545,
         "narHash": "sha256-vhVhuXzFrIOfcssC/9hDHx7MHzDKjF3keHuREOQqQiQ=",
@@ -1264,16 +1277,35 @@
         "nixpkgs": "nixpkgs_13"
       },
       "locked": {
-        "lastModified": 1781106339,
-        "narHash": "sha256-Buumw5UQNE4lxa4zCUFNrJ5Y4GKs2pGRBjOq0PnjwL0=",
+        "lastModified": 1781108032,
+        "narHash": "sha256-fb6w7nhSN7RYsDzcSwZiloVc8V6ZlGcL1S7fRE3O3vw=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "1ff5b389fa000f98ab36aa5095e428517c55319b",
+        "rev": "d967ed5f5484e57866350106be8bfe3b50f90cfd",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
+    "noctalia-greeter": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_14"
+      },
+      "locked": {
+        "lastModified": 1781054744,
+        "narHash": "sha256-q0+1Gdr34l66A9FAiG0p9xSRP5D49ei7DYv5HtcSdOc=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-greeter",
+        "rev": "7d85576fd59e6a6846691cf0872306d91fd77c3a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "ref": "pull/3/head",
+        "repo": "noctalia-greeter",
         "type": "github"
       }
     },
@@ -1367,7 +1399,7 @@
     "reaper-flake": {
       "inputs": {
         "flake-parts": "flake-parts_6",
-        "nixpkgs": "nixpkgs_14"
+        "nixpkgs": "nixpkgs_15"
       },
       "locked": {
         "lastModified": 1781074236,
@@ -1406,6 +1438,7 @@
         "nixpkgs": "nixpkgs_11",
         "noctalia": "noctalia",
         "noctalia-5": "noctalia-5",
+        "noctalia-greeter": "noctalia-greeter",
         "plasma-manager": "plasma-manager",
         "preservation": "preservation",
         "reaper-flake": "reaper-flake",
@@ -1478,7 +1511,7 @@
     },
     "spicetify-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_15",
+        "nixpkgs": "nixpkgs_16",
         "systems": "systems_5"
       },
       "locked": {
@@ -1498,7 +1531,7 @@
     "steam-config-nix": {
       "inputs": {
         "flake-parts": "flake-parts_7",
-        "nixpkgs": "nixpkgs_16",
+        "nixpkgs": "nixpkgs_17",
         "systems": "systems_6"
       },
       "locked": {
@@ -1776,7 +1809,7 @@
     },
     "wrappers": {
       "inputs": {
-        "nixpkgs": "nixpkgs_17"
+        "nixpkgs": "nixpkgs_18"
       },
       "locked": {
         "lastModified": 1780661205,
