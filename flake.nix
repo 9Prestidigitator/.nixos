@@ -60,7 +60,7 @@
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
     noctalia-5.url = "github:noctalia-dev/noctalia-shell";
-    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter/pull/3/head";
+    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
 
     plasma-manager = {
       url = "github:nix-community/plasma-manager/trunk";
