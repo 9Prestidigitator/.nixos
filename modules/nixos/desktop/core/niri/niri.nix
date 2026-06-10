@@ -28,7 +28,6 @@
       inputs.niri-float-sticky.packages.${system}.default
       nautilus
       seahorse
-      polkit_gnome
       wl-clipboard
       file-roller
       pulseaudio

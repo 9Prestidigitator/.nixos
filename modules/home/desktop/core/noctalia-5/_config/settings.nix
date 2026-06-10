@@ -22,23 +22,28 @@
 
     nightlight.enabled = true;
     calendar.enabled = true;
+    weather.auto_locate = true;
 
     dock = {
       enabled = true;
       auto_hide = true;
-      background_opacity = 0.0;
+      background_opacity = 0;
       icon_size = 30;
       item_spacing = 0;
+      show_dots = true;
 
       magnification_scale = 1.3;
-      show_dots = true;
+      radius = 30;
       padding = 4;
+      margin_edge = 7;
 
       launcher_icon = "brand-snowflake";
       launcher_position = "start";
-      pinned = ["files" "Brave Web Browser"];
-      radius = 30;
-      margin_edge = 7;
+
+      pinned = [
+        "files"
+        "Brave Web Browser"
+      ];
     };
 
     lockscreen = {

@@ -5,6 +5,9 @@
       auto_hide = true;
       layer = "overlay";
       scale = 1;
+      background_opacity = 1;
+      thickness = 34;
+      padding = 14;
 
       start = ["workspaces" "active_window"];
       center = ["control-center"];
@@ -22,8 +25,8 @@
 
       margin_edge = 0;
       margin_ends = 0;
-
       radius = 0;
+
       widget_spacing = 8;
       reserve_space = false;
     };
