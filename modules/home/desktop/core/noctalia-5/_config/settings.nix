@@ -1,11 +1,12 @@
 {
   programs.noctalia.settings = {
     shell = {
-      font_family = "Noto Sans";
+      launch_apps_as_systemd_services = true;
 
-      niri_overview_type_to_launch_enabled = true;
+      niri_overview_type_to_launch_enabled = false;
       polkit_agent = true;
 
+      font_family = "Noto Sans";
       animation.speed = 1.10;
 
       panel = {
