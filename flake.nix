@@ -53,6 +53,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    reaper-flake.url = "github:9Prestidigitator/reaper-flake";
+
     niri-flake.url = "github:sodiboo/niri-flake/pull/1717/merge";
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
     noctalia.url = "github:noctalia-dev/noctalia-shell/v4.7.7";

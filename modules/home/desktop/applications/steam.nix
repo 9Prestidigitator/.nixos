@@ -3,7 +3,7 @@
     imports = [inputs.steam-config-nix.homeModules.default];
     programs.steam.config = {
       enable = true;
-      closeSteam = true;
+      # closeSteam = true;
       defaultCompatTool = "proton_11";
       apps = {
         chaos-head-noah = {
