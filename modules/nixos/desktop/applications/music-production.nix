@@ -22,6 +22,8 @@
       rubberband-lv2
       js-inflator
       amplocker
+      drumlocker
+      mt-power-drumkit-2
       neuralnote
       pianoteq-trial
       lsp-plugins
