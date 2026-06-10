@@ -1277,11 +1277,11 @@
         "nixpkgs": "nixpkgs_13"
       },
       "locked": {
-        "lastModified": 1781110470,
-        "narHash": "sha256-qqCct5gh5A9RL8RKGSJiZZtukAvrf1jtx4oy+pv4fiE=",
+        "lastModified": 1781114072,
+        "narHash": "sha256-AXSVg1/DNTl4vAKUSh8lgmupBLHP5vrCNW09WakOwTQ=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "98fb018e8baeca234878ead7111ee8a23ff7e2c9",
+        "rev": "d6e55dce0f8143dec17025bcc61f1aea33e10dfe",
         "type": "github"
       },
       "original": {
