@@ -1,5 +1,10 @@
 {inputs, ...}: {
-  flake.nixosModules.gaming = {pkgs, ...}: {
+  flake.nixosModules.gaming = {pkgs, ...}: let
+    pkgsUnstable = import inputs.nixpkgs-unstable {
+      system = pkgs.stdenv.hostPlatform.system;
+      config.allowUnfree = true;
+    };
+  in {
     imports = [inputs.steam-config-nix.nixosModules.default];
 
     programs.steam = {
@@ -18,7 +23,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
-      eden
+      pkgsUnstable.eden
       prismlauncher
       heroic
       dolphin-emu
