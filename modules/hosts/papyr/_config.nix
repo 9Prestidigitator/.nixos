@@ -21,6 +21,7 @@
 
       homeModules.essentials
       homeModules.steam
+      homeModules.reaper
       homeModules.mpv
       homeModules.spicetify
       homeModules.discord

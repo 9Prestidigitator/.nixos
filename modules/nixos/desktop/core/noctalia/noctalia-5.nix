@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   flake.nixosModules.noctalia-5 = {pkgs, ...}: {
     services = {
       gnome.evolution-data-server.enable = true;

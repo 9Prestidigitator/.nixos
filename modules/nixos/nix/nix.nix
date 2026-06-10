@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.nixosModules.nix = {pkgs, lib, ...}: {
+  flake.nixosModules.nix = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [inputs.nix-index-database.nixosModules.default];
     environment.systemPackages = with pkgs; [nix-inspect];
 
@@ -26,6 +30,9 @@
         experimental-features = ["nix-command" "flakes"];
         allowed-users = ["@wheel"];
         trusted-users = ["@wheel" "nixremote"];
+
+        substituters = ["https://noctalia.cachix.org"];
+        trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
       };
     };
   };

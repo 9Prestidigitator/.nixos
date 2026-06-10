@@ -1,9 +1,11 @@
 {inputs, ...}: {
-  flake.homeModules.reaper = {config, ...}: {
+  flake.homeModules.reaper = {config, ...}: let
+    reaper-config-dir = "${config.xdg.configHome}/reaper-flake";
+  in {
     imports = [inputs.reaper-flake.homeModules.reaper];
     programs.reaper = {
       enable = true;
-      configPath = "${config.xdg.configHome}/reaper-flake";
+      configPath = reaper-config-dir;
 
       extensions = {
         reapack.enable = true;
@@ -12,5 +14,7 @@
 
       # pythonSupport.enable = true;
     };
+
+    persist.directories = [reaper-config-dir];
   };
 }
