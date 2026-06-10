@@ -12,10 +12,10 @@
           accountPanelServerProfile.enable = true;
           alwaysAnimate.enable = true;
           betterFolders.enable = true;
-          BlurNSFW.enable = true;
+          blurNsfw.enable = true;
           callTimer.enable = true;
           copyFileContents.enable = true;
-          CopyUserURLs.enable = true;
+          copyUserUrls.enable = true;
           experiments.enable = true;
           fakeNitro = {
             enable = true;
@@ -27,7 +27,7 @@
           gifPaste.enable = true;
           noMosaic.enable = true;
           notificationVolume.enable = true;
-          PinDMs.enable = true;
+          pinDms.enable = true;
           volumeBooster.enable = true;
           relationshipNotifier.enable = true;
           serverInfo.enable = true;
