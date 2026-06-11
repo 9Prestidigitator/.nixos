@@ -20,6 +20,18 @@
       shadow.direction = "center";
     };
 
+    control_center = {
+      compact = false;
+      shortcuts = [
+        {type = "wifi";}
+        {type = "caffeine";}
+        {type = "notification";}
+        {type = "clipboard";}
+        {type = "noctalia/screen_recorder:toggle";}
+        {type = "power_profile";}
+      ];
+    };
+
     nightlight.enabled = true;
     calendar.enabled = true;
     weather.auto_locate = true;
