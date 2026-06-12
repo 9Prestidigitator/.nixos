@@ -18,6 +18,7 @@
         inputs.audio-nix.overlays.default
         inputs.niri-flake.overlays.niri
         inputs.maxpkgs.overlays.default
+        inputs.millennium.overlays.default
       ];
     };
     nix = {
