@@ -4,7 +4,6 @@
 
     programs.noctalia-greeter = {
       enable = true;
-      greeter-args = "--session niri";
     };
 
     persist.directories = [
