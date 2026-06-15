@@ -38,7 +38,7 @@
 
     programs.ssh.knownHosts.surface = {
       hostNames = ["10.123.78.31" "surface"];
-      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsqWpspLPQaZ0ck74fbjW1F5E+GG7Qk0gZuJ0crUCWR root@surface"; # You can find this at /etc/ssh/ssh_host_<type>_key.pub
+      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFv97qAok1Yc9Pdx0tCWMyiYtbw0WNyqhqZg48DBMRC6 root@surface"; # You can find this at /etc/ssh/ssh_host_<type>_key.pub
     };
 
     nix = {
@@ -51,8 +51,7 @@
           sshKey = config.sops.secrets."ssh/builders".path;
           protocol = "ssh-ng";
           # You can find via base64 -w0 /etc/ssh/ssh_host_<type>_key.pub
-          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUdzcVdwc3BMUFFhWjBjazc0ZmJqVzFGNUUrR0c3UWswZ1p1SjBjclVDV1Igcm9vdEBzdXJmYWNlCg==";
-
+          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUZ2OTdxQW9rMVljOVBkeDB0Q1dNeWlZdGJ3MFdOeXFocVpnNDhEQk1SQzYgcm9vdEBzdXJmYWNlCg==";
           systems = ["x86_64-linux" "builtin"];
           maxJobs = 8;
           speedFactor = 2;
