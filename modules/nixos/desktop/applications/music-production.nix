@@ -36,6 +36,7 @@
       dragonfly-reverb
       surge-xt
       helm
+      bespokesynth
 
       # Utilities
       musescore
