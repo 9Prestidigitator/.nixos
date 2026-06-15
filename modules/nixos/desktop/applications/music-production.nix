@@ -37,6 +37,14 @@
       surge-xt
       helm
       bespokesynth
+      # Looks like these are broken too, will fix in my own repository
+      # chow-centaur
+      # chow-kick
+      # chow-phaser
+      # chow-tape-model
+      # chow-multitool
+      minimeters
+      pulse-visualizer
 
       # Utilities
       musescore
