@@ -13,21 +13,29 @@
       bitwig6
 
       # plugins
-      carla
       gvst
       neural-amp-modeler-lv2
       rubberband-lv2
       js-inflator
       amplocker
       drumlocker
+      mixlocker
       mt-power-drumkit-2
       neuralnote
       pianoteq-trial
       auburn-sounds-free
+      chow-tape-model
+      melissa
+      spice-oss
+      pulse-visualizer
+      minimeters
+
+      carla
       lsp-plugins
       x42-avldrums
       x42-plugins
       x42-gmsynth
+      wolf-shaper
       drumgizmo
       ripplerx
       drumkv1
@@ -37,14 +45,6 @@
       surge-xt
       helm
       bespokesynth
-      # Looks like these are broken too, will fix in my own repository
-      # chow-centaur
-      # chow-kick
-      # chow-phaser
-      # chow-tape-model
-      # chow-multitool
-      minimeters
-      pulse-visualizer
 
       # Utilities
       musescore
