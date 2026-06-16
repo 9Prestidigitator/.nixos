@@ -776,11 +776,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1781521281,
-        "narHash": "sha256-r7mV4UzNol+15K6PrAFWiM1THVkocpZ+TTPUtFdKOB4=",
+        "lastModified": 1781591551,
+        "narHash": "sha256-nP48u8w8EFJQSYCaWpL0pjLZNZ717EgNsrw2q/XfK00=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "dd408ea1761f3bda047330c005ebc95705206150",
+        "rev": "b0784a567dab3a76e489d0056454b9f4cd7328ca",
         "type": "github"
       },
       "original": {
@@ -829,11 +829,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1781517123,
-        "narHash": "sha256-PJ4vgpf87bc2TB+6LZhTwRff9UefCLWZlnKL0EQXo5M=",
+        "lastModified": 1781588278,
+        "narHash": "sha256-Fw/Zo0hwgn9ulgY5duQy51WHtqpNoLjNDZYLdEI1SS4=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "a4b5539baa5c5869ebbc9a5d63fd860f8c34ad90",
+        "rev": "fdb6d85fc78355762bcf3cf71fe4037681a766f9",
         "type": "github"
       },
       "original": {
@@ -928,11 +928,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1781573253,
-        "narHash": "sha256-K6aElUfbIzNU/sBBD0V5Ex//o1n01n75Pnvcvt5Yvks=",
+        "lastModified": 1781603972,
+        "narHash": "sha256-w+vYlzaw2h0h8ALEpQSXCqlgvh5HjQZagfdPg8Nr12o=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "28249548126d737f4301788701b5561fe4cfaefd",
+        "rev": "bb2d2dd4d7a49b9a23074911f6fcb1feddd050f1",
         "type": "github"
       },
       "original": {
@@ -1452,11 +1452,11 @@
         "nixpkgs": "nixpkgs_15"
       },
       "locked": {
-        "lastModified": 1781581126,
-        "narHash": "sha256-GXzO08gNKZsEuVgMhIfuUvc5G4Xh1rNot8KWjZsKNos=",
+        "lastModified": 1781617459,
+        "narHash": "sha256-rfKBHtZlk8mY4ZeB5VW0pqouKHL4Zzj8G76yqSC6OLo=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "de82488dc60db736acd5bf95fb448405ea99f404",
+        "rev": "ce640d769eac4d6c32035047abf547c51fd10d3f",
         "type": "github"
       },
       "original": {
@@ -1470,11 +1470,11 @@
         "nixpkgs": "nixpkgs_16"
       },
       "locked": {
-        "lastModified": 1781469970,
-        "narHash": "sha256-b1BFKXdcfsylt8aOF9mBEib791kPPY/OiF7wgpcqcs0=",
+        "lastModified": 1781614784,
+        "narHash": "sha256-xP7OXSz9xWZyqqhoeBMxvOBiLXoh+pFCgH1kcwQlNr8=",
         "owner": "noctalia-dev",
         "repo": "noctalia-greeter",
-        "rev": "f19b5fe2e20f1a80de178c8dedfbd838ce8eb2ca",
+        "rev": "773e322418f904ffb9f0b1b4d378e7766bc1847e",
         "type": "github"
       },
       "original": {
