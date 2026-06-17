@@ -15,6 +15,7 @@ in {
       animation.speed = 1.50;
 
       panel = {
+        open_near_click_control_center = true;
         clipboard_placement = "attached";
         launcher_compact = true;
         open_near_click_launcher = true;
@@ -72,6 +73,10 @@ in {
       blurred_desktop = true;
     };
 
+    lockscreen_widgets = {
+      enabled = true;
+    };
+
     idle = {
       behavior_order = ["lock" "screen-off" "suspend"];
       behavior = {
@@ -107,6 +112,8 @@ in {
       builtin = "Ayu";
       source = "wallpaper";
     };
+
+    wallpaper.transition_on_startup = true;
 
     brightness.enable_ddcutil = true;
   };
