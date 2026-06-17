@@ -7,7 +7,7 @@
       polkit_agent = true;
 
       font_family = "Noto Sans";
-      animation.speed = 1.10;
+      animation.speed = 1.50;
 
       panel = {
         clipboard_placement = "attached";

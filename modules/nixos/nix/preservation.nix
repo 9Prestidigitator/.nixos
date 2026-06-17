@@ -30,20 +30,20 @@
         file = "/etc/machine-id";
         settings.inInitrd = true;
       }
-      {
-        file = "/etc/ssh/ssh_host_ed25519_key";
-        settings = {
-          how = "symlink";
-          configureParent = true;
-        };
-      }
-      {
-        file = "/etc/ssh/ssh_host_rsa_key";
-        settings = {
-          how = "symlink";
-          configureParent = true;
-        };
-      }
+      # {
+      #   file = "/etc/ssh/ssh_host_ed25519_key";
+      #   settings = {
+      #     how = "symlink";
+      #     configureParent = true;
+      #   };
+      # }
+      # {
+      #   file = "/etc/ssh/ssh_host_rsa_key";
+      #   settings = {
+      #     how = "symlink";
+      #     configureParent = true;
+      #   };
+      # }
     ];
 
     fileSettings =
@@ -72,6 +72,7 @@
     persist = {
       directories = [
         "/etc/NetworkManager/system-connections"
+        "/etc/ssh"
         "/var/lib/bluetooth"
         "/var/lib/nixos"
         "/var/lib/systemd"

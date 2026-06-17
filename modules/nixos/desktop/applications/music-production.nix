@@ -29,6 +29,7 @@
       spice-oss
       pulse-visualizer
       minimeters
+      ultimate-vocal-remover-gui
 
       carla
       lsp-plugins
