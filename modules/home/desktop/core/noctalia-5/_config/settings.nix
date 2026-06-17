@@ -1,4 +1,9 @@
-{
+{osConfig, ...}: let
+  isLaptop =
+    if osConfig.networking.hostName == "ink"
+    then false
+    else true;
+in {
   programs.noctalia.settings = {
     shell = {
       launch_apps_as_systemd_services = true;
@@ -35,6 +40,7 @@
     nightlight.enabled = true;
     calendar.enabled = true;
     weather.auto_locate = true;
+    location.auto_locate = true;
 
     dock = {
       enabled = true;
@@ -48,19 +54,43 @@
       radius = 30;
       padding = 4;
       margin_edge = 7;
+      reserve_space = false;
 
       launcher_icon = "brand-snowflake";
       launcher_position = "start";
 
       pinned = [
+        "kitty"
         "files"
         "Brave Web Browser"
+        "REAPER"
       ];
     };
 
     lockscreen = {
       blur_intensity = 0.7;
       blurred_desktop = true;
+    };
+
+    idle = {
+      behavior_order = ["lock" "screen-off" "suspend"];
+      behavior = {
+        lock = {
+          enabled = true;
+          action = "lock";
+          timeout = 600;
+        };
+        screen-off = {
+          enabled = true;
+          action = "screen_off";
+          timeout = 660;
+        };
+        lock-and-suspend = {
+          enabled = isLaptop;
+          action = "lock_and_suspend";
+          timeout = 900;
+        };
+      };
     };
   };
 }

@@ -42,6 +42,15 @@
       tray = {
         drawer = true;
       };
+      volume.show_label = false;
+      notifications.hide_when_no_unread = true;
+      network.show_label = false;
+      battery = {
+        display_mode = "graphic";
+        hide_when_full = true;
+        scale = 0.7;
+        show_label = false;
+      };
     };
   };
 }

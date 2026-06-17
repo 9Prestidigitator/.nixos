@@ -15,6 +15,6 @@
       # pythonSupport.enable = true;
     };
 
-    persist.directories = [reaper-config-dir];
+    persist.directories = ["${reaper-config-dir}"];
   };
 }
