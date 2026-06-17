@@ -1597,11 +1597,11 @@
         "nixpkgs": "nixpkgs_17"
       },
       "locked": {
-        "lastModified": 1781731254,
-        "narHash": "sha256-e7m7yJiNwE6XUXzn6KuQG+dNAbQ6deivImXVuasLihI=",
+        "lastModified": 1781732303,
+        "narHash": "sha256-st/RTZ5odRJ2heFCoOTSf2Da4y74If8HInA1+OhoU44=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "cbe98c7ff43f7edf2886b5ac3b9008eda5c1e924",
+        "rev": "c6c4f9c5af89d99a86c71691e3bfe54a6090e16d",
         "type": "github"
       },
       "original": {
