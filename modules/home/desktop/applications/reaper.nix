@@ -12,7 +12,7 @@
         sws.enable = true;
       };
 
-      # pythonSupport.enable = true;
+      pythonSupport.enable = true;
     };
 
     persist.directories = [".config/${reaper-config}"];
