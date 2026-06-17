@@ -92,5 +92,22 @@ in {
         };
       };
     };
+
+    notification = {
+      layer = "overlay";
+      position = "bottom_right";
+    };
+
+    osd = {
+      orientation = "vertical";
+      position = "center_right";
+    };
+
+    theme = {
+      builtin = "Ayu";
+      source = "wallpaper";
+    };
+
+    brightness.enable_ddcutil = true;
   };
 }
