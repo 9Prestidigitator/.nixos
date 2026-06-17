@@ -9,6 +9,7 @@ in {
       launch_apps_as_systemd_services = true;
 
       niri_overview_type_to_launch_enabled = false;
+      screen_time_enabled = true;
       polkit_agent = true;
 
       font_family = "Noto Sans";
