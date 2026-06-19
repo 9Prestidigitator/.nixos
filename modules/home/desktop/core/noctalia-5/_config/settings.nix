@@ -1,4 +1,8 @@
-{osConfig, ...}: let
+{
+  osConfig,
+  pkgs,
+  ...
+}: let
   isLaptop =
     if osConfig.networking.hostName == "ink"
     then false
@@ -58,7 +62,7 @@ in {
       margin_edge = 7;
       reserve_space = false;
 
-      launcher_icon = "brand-snowflake";
+      launcher_icon = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake-white.png";
       launcher_position = "start";
 
       pinned = [
@@ -96,8 +100,9 @@ in {
     };
 
     osd = {
-      orientation = "vertical";
-      position = "center_right";
+      orientation = "horizontal";
+      position = "bottom_center";
+      background_opacity = 0.4;
     };
 
     theme = {

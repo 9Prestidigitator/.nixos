@@ -31,6 +31,7 @@
           settings = {
             background = false;
             clock_style = "digital";
+            color = "primary";
           };
         };
 
@@ -48,6 +49,8 @@
             bands = 36.0;
             mirrored = false;
             show_when_idle = false;
+            color_1 = "secondary";
+            color_2 = "tertiary";
           };
         };
 
@@ -61,7 +64,7 @@
           type = "sticker";
           settings = {
             background = false;
-            image_path = "${pkgs.nixos-icons}/share/icons/hicolor/256x256/apps/nix-snowflake.png";
+            image_path = "${pkgs.nixos-icons}/share/icons/hicolor/256x256/apps/nix-snowflake-white.png";
             opacity = 1.0;
           };
         };
