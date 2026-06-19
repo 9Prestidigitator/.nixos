@@ -62,7 +62,7 @@ in {
       margin_edge = 7;
       reserve_space = false;
 
-      launcher_icon = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake-white.png";
+      launcher_icon = "grid-dots";
       launcher_position = "start";
 
       pinned = [
