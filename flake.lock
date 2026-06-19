@@ -776,11 +776,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1781650169,
-        "narHash": "sha256-USw6HrxkULOi79x0DC8hzm1BIOe+Nw3gI4l7v6SXdqw=",
+        "lastModified": 1781795649,
+        "narHash": "sha256-tNQxxECHMIUfMQm9tQoyJNd7nFlh3G61tAvyl4MDWYY=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "a319c6201d225680c2288e8aea2c8e9fa795c3d4",
+        "rev": "c598ab0e2d7cc13f42da7347fe8870dc85d072aa",
         "type": "github"
       },
       "original": {
@@ -829,11 +829,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1781588278,
-        "narHash": "sha256-Fw/Zo0hwgn9ulgY5duQy51WHtqpNoLjNDZYLdEI1SS4=",
+        "lastModified": 1781781064,
+        "narHash": "sha256-Ii/koEm/sRyg65qbAQWqEgboSEIhdH0EL4KglAc14p0=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "fdb6d85fc78355762bcf3cf71fe4037681a766f9",
+        "rev": "49fc6117fd6c043adaa2ead316b82db5ed735d36",
         "type": "github"
       },
       "original": {
@@ -928,11 +928,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1781716424,
-        "narHash": "sha256-vzNMgPYXQ0Uz9tPEKqsgJE2+l3reQZ6Js9i7dIeMxTc=",
+        "lastModified": 1781803019,
+        "narHash": "sha256-0SlSlmT8rbmvMSxgfx+KWv1C2y1Gu0UL2JD+a0YJkyk=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "1a7c514d94dffde42b59431c135d161c9cd837ea",
+        "rev": "ee22d6c0794e97a7cb896a01b80d601d8fa52618",
         "type": "github"
       },
       "original": {
@@ -1452,11 +1452,11 @@
         "nixpkgs": "nixpkgs_15"
       },
       "locked": {
-        "lastModified": 1781731747,
-        "narHash": "sha256-Kf7Qw02O1fsWSYTGYAl+4HljS9Wmt0rBIkMEIFZsmWQ=",
+        "lastModified": 1781819536,
+        "narHash": "sha256-v7TwET8a1wtdae/1D+ewIEauTh39hT3zBONv6XkRHe8=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "23d69b565f49670ee5b6568149b810822560f8fa",
+        "rev": "7bc707b611fcb88401f64a52f483f389e2771f43",
         "type": "github"
       },
       "original": {
@@ -1597,11 +1597,11 @@
         "nixpkgs": "nixpkgs_17"
       },
       "locked": {
-        "lastModified": 1781735290,
-        "narHash": "sha256-WOCIB1rxmWK5slUzPXIP8DqFup8TwgeMtrvtXvfHrTQ=",
+        "lastModified": 1781736916,
+        "narHash": "sha256-sObW41PxdB+NCQpoP6QnSieDYFAoNg9tiLsHD5WeOKM=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "94f3d185e4b7be6313cd14a02d8ed79a833bcb75",
+        "rev": "b6689e0d6be717d2737f9a67b3dc28c8e3f9b61c",
         "type": "github"
       },
       "original": {
@@ -1732,11 +1732,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1773421780,
-        "narHash": "sha256-bkZGvIWV8JavLMQ2KzddrMCf9YBeiIM4OgdiwKcFx8M=",
+        "lastModified": 1781829414,
+        "narHash": "sha256-yRg1G5ac2392PPwsGZ8xtS8OQIhXnAJn01jLNwMtFa0=",
         "owner": "different-name",
         "repo": "steam-config-nix",
-        "rev": "7b8021b2739733c547e2fe02739e6b8452813aa7",
+        "rev": "327ca2ecfccf7e7979c4d03ec747dd5d66c4b03d",
         "type": "github"
       },
       "original": {
