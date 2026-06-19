@@ -6,9 +6,6 @@
   noctalia = cmd: "noctalia msg ${cmd}";
 in {
   programs.niri.settings = {
-    # Don't use with systemd enabled
-    # spawn-at-startup = [{command = ["noctalia"];}];
-
     switch-events.lid-close.action.spawn = ["noctalia" "msg" "session" "lock"];
 
     binds = with config.lib.niri.actions; {
@@ -84,32 +81,27 @@ in {
             {
               key = "B";
               desc = "Bluetooth";
-              cmd = noctalia "bluetooth togglePanel";
+              cmd = noctalia "panel-toggle control-center bluetooth";
             }
             {
               key = "b";
               desc = "Toggle Bluetooth";
-              cmd = noctalia "bluetooth toggle";
+              cmd = noctalia "bluetooth-toggle";
             }
             {
               key = "c";
               desc = "Show Calendar";
-              cmd = noctalia "calendar toggle";
+              cmd = noctalia "panel-toggle control-center calendar";
             }
             {
               key = "m";
               desc = "Show System Monitor";
-              cmd = noctalia "systemMonitor toggle";
+              cmd = noctalia "panel-toggle control-center system";
             }
             {
               key = "n";
               desc = "Show Network Panel";
-              cmd = noctalia "network togglePanel";
-            }
-            {
-              key = "p";
-              desc = "Power panel";
-              cmd = noctalia "battery togglePanel";
+              cmd = noctalia "panel-toggle control-center network";
             }
             {
               key = "w";
@@ -121,7 +113,7 @@ in {
         {
           key = "o";
           desc = "Show Notifications";
-          cmd = noctalia "notifications toggleHistory";
+          cmd = noctalia "panel-toggle control-center notifications";
         }
         {
           key = "s";

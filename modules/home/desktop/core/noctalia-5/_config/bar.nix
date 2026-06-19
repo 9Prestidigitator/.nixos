@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.noctalia.settings = {
     bar = {
       order = ["default"];
@@ -51,6 +51,7 @@
         scale = 0.7;
         show_label = false;
       };
+      control-center.custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake-white.png";
     };
   };
 }

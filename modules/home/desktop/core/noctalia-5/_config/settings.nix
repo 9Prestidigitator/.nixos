@@ -69,15 +69,6 @@ in {
       ];
     };
 
-    lockscreen = {
-      blur_intensity = 0.7;
-      blurred_desktop = true;
-    };
-
-    lockscreen_widgets = {
-      enabled = true;
-    };
-
     idle = {
       behavior_order = ["lock" "screen-off" "suspend"];
       behavior = {
