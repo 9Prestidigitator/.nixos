@@ -11,20 +11,19 @@
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/ffdec63e-17eb-4b5b-b5a5-7c21be204c9a";
-    fsType = "ext4";
-  };
+  # fileSystems."/" = {
+  #   device = "/dev/disk/by-uuid/ffdec63e-17eb-4b5b-b5a5-7c21be204c9a";
+  #   fsType = "ext4";
+  # };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/1E1E-C700";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
-  };
+  # fileSystems."/boot" = {
+  #   device = "/dev/disk/by-uuid/1E1E-C700";
+  #   fsType = "vfat";
+  #   options = ["fmask=0022" "dmask=0022"];
+  # };
 
-  swapDevices = [{device = "/dev/disk/by-uuid/a1c4eb0e-11d3-4744-accc-e4c88854d0e8";}];
+  # swapDevices = [{device = "/dev/disk/by-uuid/a1c4eb0e-11d3-4744-accc-e4c88854d0e8";}];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.bluetooth.enable = true;
 }

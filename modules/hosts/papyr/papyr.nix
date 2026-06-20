@@ -28,6 +28,8 @@
 
       nixosModules.ink-build-machine
       nixosModules.stylix
+      nixosModules.btrfs-rollback
+      nixosModules.preservation
       nixosModules.home-manager
       nixosModules.nix
 
