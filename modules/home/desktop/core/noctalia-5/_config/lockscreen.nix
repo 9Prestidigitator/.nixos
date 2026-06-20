@@ -12,8 +12,8 @@
     if osConfig.networking.hostName == "book"
     then rec {
       name = "eDP-1";
-      width = 1241;
-      height = 698;
+      width = 1366;
+      height = 768;
       scale = 1.1;
       logicalWidth = width / scale;
       logicalHeight = height / scale;
