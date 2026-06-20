@@ -125,6 +125,11 @@ in {
               desc = "Choose Wallpaper";
               cmd = noctalia "panel-toggle wallpaper";
             }
+            {
+              key = "W";
+              desc = "Show Weather Panel";
+              cmd = noctalia "panel-toggle control-center weather";
+            }
           ];
         }
         {

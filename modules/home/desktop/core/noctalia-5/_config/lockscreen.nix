@@ -65,13 +65,13 @@ in {
           cy = primaryMonitor.logicalHeight / 3 * 2;
           output = primaryMonitor.name;
           rotation = 0;
-          type = "logic_box";
+          type = "login_box";
           settings = {
             background_color = "surface_variant";
             background_opacity = 0;
-            background_radius = 12;
+            background_radius = 30;
             input_opacity = 1;
-            input_radius = 12;
+            input_radius = 30;
             show_login_button = false;
           };
         };

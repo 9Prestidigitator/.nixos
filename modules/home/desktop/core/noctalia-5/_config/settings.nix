@@ -1,4 +1,8 @@
-{osConfig, ...}: let
+{
+  config,
+  osConfig,
+  ...
+}: let
   isLaptop =
     if osConfig.networking.hostName == "ink"
     then false
@@ -14,6 +18,7 @@ in {
 
       font_family = "Noto Sans";
       animation.speed = 1.50;
+      avatar_path = "${config.xdg.userDirs.pictures}/.face";
 
       panel = {
         open_near_click_control_center = true;
