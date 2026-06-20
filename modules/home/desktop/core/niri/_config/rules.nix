@@ -27,7 +27,6 @@
           matches = [{app-id = "brave-browser";}];
           open-maximized = true;
         }
-
         {
           matches = [
             {
@@ -41,6 +40,140 @@
           ];
           default-window-height = {fixed = 100;};
           default-column-width = {proportion = 0.3333;};
+        }
+
+        {
+          matches = [
+            {
+              app-id = "kitty";
+              title = "tmux";
+            }
+          ];
+          open-maximized = true;
+        }
+        {
+          matches = [
+            {
+              app-id = "steam";
+              title = "Friends List";
+            }
+          ];
+          default-column-width = {fixed = 187;};
+        }
+        {
+          matches = [
+            {title = "^Amp Locker$";}
+            {title = "^Melissa$";}
+          ];
+          open-floating = true;
+        }
+        {
+          matches = [
+            {
+              app-id = "steam";
+              title = "^notificationtoasts_\\d+_desktop$";
+            }
+          ];
+          open-focused = false;
+          default-floating-position = {
+            x = 0;
+            y = 0;
+            relative-to = "bottom-right";
+          };
+        }
+        {
+          matches = [
+            {
+              app-id = "virt-manager";
+              title = "Virtual Machine Manager";
+            }
+          ];
+          default-column-width = {fixed = 280;};
+        }
+        {
+          matches = [
+            {title = "Confirm";}
+            {title = "Authentication Required";}
+            {title = "xdg-desktop-portal-gtk";}
+          ];
+          open-floating = true;
+        }
+        {
+          matches = [
+            {app-id = "org.gnome.seahorse.Application";}
+            {app-id = "^signal$";}
+            {
+              app-id = "brave-browser";
+              title = "Password";
+            }
+          ];
+          block-out-from = "screencast";
+        }
+        {
+          matches = [{app-id = "mpv";}];
+          open-floating = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "top-right";
+          };
+          default-column-width = {proportion = 0.4;};
+          default-window-height = {proportion = 0.4;};
+        }
+        {
+          matches = [{title = "Picture in picture";}];
+          open-floating = true;
+          open-focused = false;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-right";
+          };
+          default-column-width = {proportion = 0.3333;};
+          default-window-height = {proportion = 0.3333;};
+        }
+        {
+          matches = [{app-id = "Mullvad VPN";}];
+          open-floating = true;
+          open-focused = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-left";
+          };
+        }
+
+        {
+          matches = [
+            {
+              app-id = "REAPER";
+              title = "Add FX.*";
+            }
+          ];
+          open-floating = true;
+          open-focused = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-right";
+          };
+          default-column-width = {proportion = 0.35;};
+          default-window-height = {proportion = 0.5;};
+        }
+        {
+          matches = [
+            {
+              app-id = "REAPER";
+              title = "Routing.*";
+            }
+          ];
+          open-floating = true;
+          open-focused = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-left";
+          };
         }
 
         # {
@@ -67,77 +200,6 @@
         #     top-right = radius;
         #   };
         # }
-
-        {
-          matches = [
-            {
-              app-id = "kitty";
-              title = "tmux";
-            }
-          ];
-          open-maximized = true;
-        }
-        {
-          matches = [
-            {
-              app-id = "steam";
-              title = "Friends List";
-            }
-          ];
-          default-column-width = {fixed = 187;};
-        }
-        {
-          matches = [
-            {
-              app-id = "steam";
-              title = "^notificationtoasts_\\d+_desktop$";
-            }
-          ];
-          default-floating-position = {
-            x = 10;
-            y = 10;
-            relative-to = "bottom-right";
-          };
-        }
-        {
-          matches = [
-            {
-              app-id = "virt-manager";
-              title = "Virtual Machine Manager";
-            }
-          ];
-          default-column-width = {fixed = 280;};
-        }
-        {
-          matches = [
-            {title = "Confirm";}
-            {title = "Authentication Required";}
-            {title = "xdg-desktop-portal-gtk";}
-          ];
-          open-floating = true;
-        }
-        {
-          matches = [{app-id = "mpv";}];
-          open-floating = true;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "top-right";
-          };
-          default-column-width = {proportion = 0.4;};
-          default-window-height = {proportion = 0.4;};
-        }
-        {
-          matches = [{title = "Picture in picture";}];
-          open-floating = true;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "bottom-right";
-          };
-          default-column-width = {proportion = 0.3333;};
-          default-window-height = {proportion = 0.3333;};
-        }
       ];
 
       layer-rules = [
@@ -173,7 +235,7 @@
           match app-id="com.bitwig.BitwigStudio"
           open-fullscreen false
           open-maximized-to-edges true
-          geometry-corner-radius 0.0 
+          geometry-corner-radius 0.0
         }
 
         window-rule {

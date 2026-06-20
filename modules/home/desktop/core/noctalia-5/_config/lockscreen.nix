@@ -36,11 +36,10 @@
         };
 
         lockscreen-widget-0000000000000002 = {
-          box_height = 240.0;
-          box_width = 480.0;
+          box_height = 240;
+          box_width = 480;
           cx = 621.0;
           cy = 181.0;
-          # output = "eDP-1";
           rotation = 0.0;
           type = "audio_visualizer";
           settings = {
@@ -59,7 +58,6 @@
           box_width = 240.0;
           cx = 621.0;
           cy = 181.0;
-          # output = "eDP-1";
           rotation = 0.0;
           type = "sticker";
           settings = {
