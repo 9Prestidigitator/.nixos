@@ -58,6 +58,6 @@
 
   services.fprintd.enable = true;
 
-  system.stateVersion = "25.11";
-  home-manager.sharedModules = [{home.stateVersion = "25.11";}];
+  system.stateVersion = "26.05";
+  home-manager.sharedModules = [{home.stateVersion = "26.05";}];
 }
