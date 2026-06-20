@@ -49,6 +49,7 @@
     };
   };
 
+  users.users.max.hashedPasswordFile = "/persist/passwds/max";
   users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKWcs2PiK8MvDfOEadtln1NnnP3TYtdZUiY3Z8uov7u"]; # ink->papyr
 
   security = {
