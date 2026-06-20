@@ -40,6 +40,8 @@
       nixosModules.intel
       nixosModules.system-general
 
+      # inputs.disko.nixosModules.disko
+      # diskoConfigurations.papyr
       ./_config.nix
       ./_hardware.nix
     ];

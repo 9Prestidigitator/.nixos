@@ -1,5 +1,5 @@
 {
-  flake.diskoConfigurations.surface = {
+  flake.diskoConfigurations.papyr = {
     disko.devices = {
       disk.main = {
         device = "/dev/nvme0n1";
@@ -24,7 +24,7 @@
 
             swap = {
               name = "swap";
-              size = "8G";
+              size = "4G";
               content = {
                 type = "swap";
                 randomEncryption = true;
