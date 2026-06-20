@@ -14,6 +14,7 @@ in {
         allow-when-locked = false;
         action = spawn "noctalia" "msg" "panel-toggle" "control-center";
       };
+
       "Mod+z" = {
         hotkey-overlay.title = "Control Center";
         allow-when-locked = false;
@@ -38,6 +39,12 @@ in {
       };
 
       "Mod+XF86Tools" = {
+        hotkey-overlay.title = "Session";
+        allow-when-locked = false;
+        action = spawn "noctalia" "msg" "panel-toggle" "session";
+      };
+
+      "Mod+Alt+Delete" = {
         hotkey-overlay.title = "Session";
         allow-when-locked = false;
         action = spawn "noctalia" "msg" "panel-toggle" "session";

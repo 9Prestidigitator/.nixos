@@ -33,6 +33,7 @@ in {
 
     control_center = {
       compact = false;
+      width = 750;
       shortcuts = [
         {type = "wifi";}
         {type = "caffeine";}

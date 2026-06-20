@@ -31,6 +31,11 @@ in {
         action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
       };
 
+      "Mod+Alt+Delete" = {
+        hotkey-overlay.title = "Session Options";
+        action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+      };
+
       "Mod+Space" = {
         hotkey-overlay.title = "Toggle launcher";
         action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";

@@ -12,7 +12,6 @@ in {
   programs.noctalia-shell = {
     enable = true;
     settings = {
-      settingsVersion = 26;
       general = {
         animationDisabled = false;
         animationSpeed = 1.75;

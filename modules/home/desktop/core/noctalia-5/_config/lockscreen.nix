@@ -1,4 +1,40 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  osConfig,
+  ...
+}: let
+  isLaptop =
+    if osConfig.networking.hostName == "ink"
+    then false
+    else true;
+  primaryMonitor =
+    if osConfig.networking.hostName == "book"
+    then rec {
+      name = "eDP-1";
+      width = 1241;
+      height = 698;
+      scale = 1.1;
+      logicalWidth = width / scale;
+      logicalHeight = height / scale;
+    }
+    else if isLaptop
+    then rec {
+      name = "eDP-1";
+      width = 1920;
+      height = 1080;
+      scale = 1.3;
+      logicalWidth = width / scale;
+      logicalHeight = height / scale;
+    }
+    else rec {
+      name = "DP-1";
+      width = 1920;
+      height = 1080;
+      scale = 1.0;
+      logicalWidth = width / scale;
+      logicalHeight = height / scale;
+    };
+in {
   programs.noctalia.settings = {
     lockscreen = {
       blur_intensity = 0.7;
@@ -11,6 +47,7 @@
         "lockscreen-widget-0000000000000003"
         "lockscreen-widget-0000000000000002"
         "lockscreen-widget-0000000000000001"
+        "lockscreen-login-box@${primaryMonitor.name}"
       ];
 
       grid = {
@@ -20,12 +57,30 @@
       };
 
       widget = {
+        "lockscreen-login-box@${primaryMonitor.name}" = {
+          box_height = 70;
+          box_width = 400;
+          cx = primaryMonitor.logicalWidth / 2;
+          cy = primaryMonitor.logicalHeight / 3 * 2;
+          output = primaryMonitor.name;
+          rotation = 0;
+          type = "logic_box";
+          settings = {
+            background_color = "surface_variant";
+            background_opacity = 0;
+            background_radius = 12;
+            input_opacity = 1;
+            input_radius = 12;
+            show_login_button = false;
+          };
+        };
+
         lockscreen-widget-0000000000000001 = {
           box_height = 208.0;
           box_width = 304.0;
-          cx = 621.0;
-          cy = 181.0;
-          # output = "eDP-1";
+          cx = primaryMonitor.logicalWidth / 2;
+          cy = primaryMonitor.logicalHeight / 3;
+          output = primaryMonitor.name;
           rotation = 0.0;
           type = "clock";
           settings = {
@@ -38,8 +93,9 @@
         lockscreen-widget-0000000000000002 = {
           box_height = 240;
           box_width = 480;
-          cx = 621.0;
-          cy = 181.0;
+          cx = primaryMonitor.logicalWidth / 2;
+          cy = primaryMonitor.logicalHeight / 3;
+          output = primaryMonitor.name;
           rotation = 0.0;
           type = "audio_visualizer";
           settings = {
@@ -56,8 +112,9 @@
         lockscreen-widget-0000000000000003 = {
           box_height = 240.0;
           box_width = 240.0;
-          cx = 621.0;
-          cy = 181.0;
+          cx = primaryMonitor.logicalWidth / 2;
+          cy = primaryMonitor.logicalHeight / 3;
+          output = primaryMonitor.name;
           rotation = 0.0;
           type = "sticker";
           settings = {

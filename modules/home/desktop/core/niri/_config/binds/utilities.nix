@@ -129,10 +129,6 @@
     # Take a screenshot of the focused window
     "Alt+Print".action.screenshot-window = [];
 
-    "Mod+Alt+Delete" = {
-      hotkey-overlay.title = "Session Options";
-      action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
-    };
     "Ctrl+Alt+Delete" = {
       hotkey-overlay.title = "Logout";
       action.quit.skip-confirmation = false;
