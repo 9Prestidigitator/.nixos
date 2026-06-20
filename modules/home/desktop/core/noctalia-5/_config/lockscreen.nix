@@ -7,6 +7,7 @@
     if osConfig.networking.hostName == "ink"
     then false
     else true;
+
   primaryMonitor =
     if osConfig.networking.hostName == "book"
     then rec {
@@ -37,7 +38,7 @@
 in {
   programs.noctalia.settings = {
     lockscreen = {
-      blur_intensity = 0.7;
+      blur_intensity = 1;
       blurred_desktop = true;
     };
 
