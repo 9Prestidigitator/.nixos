@@ -10,7 +10,7 @@
       userModules.max.homeModule
 
       homeModules.niri
-      homeModules.noctalia
+      homeModules.noctalia-5
 
       homeModules.neovim
       homeModules.terminal-tools

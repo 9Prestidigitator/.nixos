@@ -62,8 +62,8 @@
         }
         {
           matches = [
-            {title = "^Amp Locker$";}
-            {title = "^Melissa$";}
+            {app-id = "^Amp Locker$";}
+            {app-id = "^Melissa$";}
           ];
           open-floating = true;
         }
@@ -142,12 +142,18 @@
             relative-to = "bottom-left";
           };
         }
+        {
+          matches = [{app-id = "^org.qbittorrent.qBittorrent$";}];
+          excludes = [{title = "^qBittorrent v[0-9].*";}];
+          open-floating = true;
+          open-focused = true;
+        }
 
         {
           matches = [
             {
-              app-id = "REAPER";
-              title = "Add FX.*";
+              app-id = "^REAPER$";
+              title = "^Add FX.*";
             }
           ];
           open-floating = true;
@@ -163,8 +169,8 @@
         {
           matches = [
             {
-              app-id = "REAPER";
-              title = "Routing.*";
+              app-id = "^REAPER$";
+              title = "^Routing.*";
             }
           ];
           open-floating = true;
