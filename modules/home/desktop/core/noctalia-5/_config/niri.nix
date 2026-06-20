@@ -53,11 +53,16 @@ in {
       "Mod+N".action.spawn = mkWlrWhichKeyMenu "Noctalia" [
         {
           key = "b";
+          desc = "Toggle Bluetooth";
+          cmd = noctalia "bluetooth-toggle";
+        }
+        {
+          key = "B";
           desc = "Toggle Noctalia bar";
           cmd = noctalia "bar-toggle";
         }
         {
-          key = "B";
+          key = "D";
           desc = "Toggle Noctalia dock";
           cmd = noctalia "dock-toggle";
         }
@@ -86,14 +91,9 @@ in {
               cmd = noctalia "volume togglePanel";
             }
             {
-              key = "B";
-              desc = "Bluetooth";
-              cmd = noctalia "panel-toggle control-center bluetooth";
-            }
-            {
               key = "b";
-              desc = "Toggle Bluetooth";
-              cmd = noctalia "bluetooth-toggle";
+              desc = "Bluetooth Panel";
+              cmd = noctalia "panel-toggle control-center bluetooth";
             }
             {
               key = "c";
@@ -109,6 +109,16 @@ in {
               key = "n";
               desc = "Show Network Panel";
               cmd = noctalia "panel-toggle control-center network";
+            }
+            {
+              key = "s";
+              desc = "Show Screen Time";
+              cmd = noctalia "panel-toggle screen-time";
+            }
+            {
+              key = "t";
+              desc = "Open tray";
+              cmd = noctalia "panel-toggle tray-drawer";
             }
             {
               key = "w";

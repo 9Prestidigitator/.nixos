@@ -1,8 +1,4 @@
-{
-  osConfig,
-  pkgs,
-  ...
-}: let
+{osConfig, ...}: let
   isLaptop =
     if osConfig.networking.hostName == "ink"
     then false
@@ -107,8 +103,8 @@ in {
     };
 
     theme = {
-      builtin = "Ayu";
-      source = "wallpaper";
+      source = "community";
+      community_palette = "GitHub Dark";
     };
 
     wallpaper.transition_on_startup = true;
