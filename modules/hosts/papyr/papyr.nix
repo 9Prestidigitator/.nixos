@@ -25,6 +25,7 @@
       nixosModules.wine
       nixosModules.wg0
       nixosModules.uxplay
+      nixosModules.fprintd
 
       nixosModules.ink-build-machine
       nixosModules.stylix
