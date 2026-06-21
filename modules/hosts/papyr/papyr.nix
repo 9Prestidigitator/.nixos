@@ -7,9 +7,7 @@
     modules = with self; [
       userModules.max.nixosModule
 
-      nixosModules.noctalia-greeter
-      nixosModules.noctalia-5
-      nixosModules.niri
+      nixosModules.plasma
 
       nixosModules.essentials
       nixosModules.brave-browser
