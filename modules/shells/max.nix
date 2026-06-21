@@ -1,6 +1,6 @@
 {
   perSystem = {pkgs, ...}: {
-    devShells.default = pkgs.mkShell {
+    devShells.max = pkgs.mkShell {
       name = "base";
       packages = with pkgs; [
         # C/C++

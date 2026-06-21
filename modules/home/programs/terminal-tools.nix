@@ -131,7 +131,7 @@
         ds-cpp = "nix develop ${config.home.homeDirectory}/.nixos#cpp";
         ds-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp";
         ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
-        ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
+        ds-max = "nix develop ${config.home.homeDirectory}/.nixos#max";
 
         nv = "nvim";
         nv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";

@@ -1,5 +1,5 @@
 {
-  perSystem = {pkgs, ...}: {
+  perSystem = {pkgs, ...}: rec {
     devShells.nix = pkgs.mkShell {
       name = "nix";
       packages = with pkgs; [
@@ -10,5 +10,7 @@
         prettierd
       ];
     };
+
+    devShells.default = devShells.nix;
   };
 }
