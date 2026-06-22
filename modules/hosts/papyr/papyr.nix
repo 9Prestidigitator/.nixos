@@ -19,6 +19,7 @@
       nixosModules.media
       nixosModules.communications
       nixosModules.virtualisation
+      nixosModules.ai
 
       nixosModules.mullvad
       nixosModules.syncthing
