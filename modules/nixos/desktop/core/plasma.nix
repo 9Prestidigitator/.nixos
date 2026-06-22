@@ -7,6 +7,7 @@
 
     # Disable KWallet hooks so Plasma uses GNOME Keyring instead.
     services.gnome.gnome-keyring.enable = true;
+    programs.seahorse.enable = true;
     security.pam.services = {
       login.kwallet.enable = lib.mkForce false;
       kde.kwallet.enable = lib.mkForce false;
