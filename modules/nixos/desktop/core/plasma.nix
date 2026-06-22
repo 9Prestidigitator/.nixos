@@ -65,6 +65,7 @@
         # ".config/kwinrc"
         # ".config/ksmserverrc"
         # ".config/kwinoutputconfig.json"
+        # ".config/plasma-org.kde.plasma.desktop-appletsrc"
 
         # ".local/state/kactivitymanagerdstaterc"
         # ".local/state/dolphinstaterc"

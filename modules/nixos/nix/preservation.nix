@@ -104,5 +104,17 @@
     };
 
     systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
+
+    systemd.services.sops-setup-secrets-after-persistence = lib.mkIf (config.system.activationScripts ? setupSecrets) {
+      description = "Set up sops-nix secrets after persistent state is mounted";
+      wantedBy = ["sysinit.target"];
+      after = ["local-fs.target" "preservation.target"];
+      before = ["sysinit.target"];
+
+      unitConfig.DefaultDependencies = "no";
+      serviceConfig.Type = "oneshot";
+
+      script = config.system.activationScripts.setupSecrets.text;
+    };
   };
 }

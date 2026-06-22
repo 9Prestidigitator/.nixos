@@ -3,7 +3,6 @@
     programs.chromium = {
       enable = true;
       extensions = [
-        "inomeogfingihgjfjlpeplalcfajhgai"
         "dbepggeogbaibhgnhhndojpepiihcmeb"
         "hkgfoiooedgoejojocmhlaklaeopbecg"
         "gebbhagfogifgggkldgodflihgfeippi"
