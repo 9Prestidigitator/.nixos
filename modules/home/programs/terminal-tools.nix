@@ -116,6 +116,8 @@
       shellAliases = {
         ls = "ls -a --color=auto";
         fman = "compgen -c | sort -hr | fzf | xargs man";
+        # This is useful for impermanent systems
+        lsblk = "lsblk -e7 -o NAME,SIZE,TYPE,FSTYPE,LABEL,UUID,MOUNTPOINT";
 
         nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
         nhbo = "nh os boot ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
@@ -131,7 +133,7 @@
         ds-cpp = "nix develop ${config.home.homeDirectory}/.nixos#cpp";
         ds-cs = "nix develop ${config.home.homeDirectory}/.nixos#csharp";
         ds-py = "nix develop ${config.home.homeDirectory}/.nixos#python";
-        ds-full = "nix develop ${config.home.homeDirectory}/.nixos#default";
+        ds-max = "nix develop ${config.home.homeDirectory}/.nixos#max";
 
         nv = "nvim";
         nv-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix -c nvim";

@@ -58,6 +58,7 @@
       ".nixos"
 
       ".config/sops"
+      ".config/chromium"
       ".local/share/keyrings"
     ];
 
