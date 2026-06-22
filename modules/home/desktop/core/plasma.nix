@@ -34,6 +34,7 @@
           "Plugins" = {
             "better_blur_dxEnabled" = true;
             "dynamic_workspacesEnabled" = true;
+            # Been having issues with glass lately
             "glassEnabled" = false;
           };
           "Effect-better-blur-dx" = {
