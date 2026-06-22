@@ -1,9 +1,27 @@
 {inputs, ...}: {
-  flake.nixosModules.plasma = {pkgs, ...}: {
+  flake.nixosModules.plasma = {pkgs, lib, ...}: {
     services = {
       desktopManager.plasma6.enable = true;
       displayManager.plasma-login-manager.enable = true;
     };
+
+    # Disable KWallet hooks so Plasma uses GNOME Keyring instead.
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services = {
+      login.kwallet.enable = lib.mkForce false;
+      kde.kwallet.enable = lib.mkForce false;
+    };
+    xdg.portal.extraPortals = lib.mkForce [
+      pkgs.gnome-keyring
+      pkgs.kdePackages.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-gtk
+    ];
+
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      kwallet
+      kwallet-pam
+      kwalletmanager
+    ];
 
     # On-screen keyboard
     environment = {
@@ -17,7 +35,6 @@
         maliit-keyboard
         maliit-framework
       ];
-
       sessionVariables.NIXOS_OZONE_WL = "1";
     };
 

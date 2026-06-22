@@ -488,11 +488,11 @@
         "uv2nix": "uv2nix_2"
       },
       "locked": {
-        "lastModified": 1782094134,
-        "narHash": "sha256-9a7z01xFSw+0Ujv19ZovCTvnNiiax9Dv/fY6n6NJhPg=",
+        "lastModified": 1782098508,
+        "narHash": "sha256-lJorB+AuOWuA3ncsw1qgdqDmgJq5bVJK5GzAqlbycKo=",
         "owner": "NousResearch",
         "repo": "hermes-agent",
-        "rev": "5bf23ff251ed54961f5560d2d2f95474dcc09386",
+        "rev": "e448b21414b9dece9b74c3281f04ba4f5c79a771",
         "type": "github"
       },
       "original": {
@@ -1515,11 +1515,11 @@
         "nixpkgs": "nixpkgs_16"
       },
       "locked": {
-        "lastModified": 1782095309,
-        "narHash": "sha256-7CYP5kFsNxYJeduo3Z4ocVFfLFQCvY/4PQykvmj3SCk=",
+        "lastModified": 1782100759,
+        "narHash": "sha256-czjbgYPRV1RzJcYCMsZiVi7LWtJyy7vWMmzDGKqu2n8=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "b4fcc17e99bb6893466300325d79d557b3de4a7c",
+        "rev": "b1d8377cb241fcae959ddba4fc21b894feb6e9f6",
         "type": "github"
       },
       "original": {

@@ -13,7 +13,7 @@
     };
 
     programs = {
-      evolution.enable = true;
+      seahorse.enable = true;
       dconf.enable = true;
     };
 
@@ -27,7 +27,6 @@
       xwayland-satellite
       inputs.niri-float-sticky.packages.${system}.default
       nautilus
-      seahorse
       wl-clipboard
       file-roller
       pulseaudio
