@@ -32,14 +32,15 @@
         };
         "kwinrc" = {
           "Plugins" = {
+            "better_blur_dxEnabled" = true;
             "dynamic_workspacesEnabled" = true;
-            # "glassEnabled" = true;
+            "glassEnabled" = false;
           };
-          # "Effect-blurplus" = {
-          #   "BlurMatching" = false;
-          #   "BlurNonMatching" = true;
-          #   "BlurDecorations" = true;
-          # };
+          "Effect-better-blur-dx" = {
+            "BlurMatching" = false;
+            "BlurNonMatching" = true;
+            "BlurDecorations" = true;
+          };
         };
       };
 
