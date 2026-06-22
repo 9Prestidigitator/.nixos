@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.nixosModules.plasma = {pkgs, lib, ...}: {
+  flake.nixosModules.plasma = {
+    pkgs,
+    lib,
+    ...
+  }: {
     services = {
       desktopManager.plasma6.enable = true;
       displayManager.plasma-login-manager.enable = true;
@@ -43,6 +47,7 @@
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
 
     persist = {
+      directories = ["/var/lib/plasmalogin"];
       userDirs = [
         ".config/dolphin"
         ".config/session"
