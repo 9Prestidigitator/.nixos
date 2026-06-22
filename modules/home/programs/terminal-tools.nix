@@ -116,6 +116,8 @@
       shellAliases = {
         ls = "ls -a --color=auto";
         fman = "compgen -c | sort -hr | fzf | xargs man";
+        # This is useful for impermanent systems
+        lsblk = "lsblk -e7 -o NAME,SIZE,TYPE,FSTYPE,LABEL,UUID,MOUNTPOINT";
 
         nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
         nhbo = "nh os boot ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
