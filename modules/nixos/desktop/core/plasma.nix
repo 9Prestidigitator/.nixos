@@ -13,6 +13,7 @@
         kdePackages.karousel
         kdePackages.dynamic-workspaces
         inputs.kwin-effects-glass.packages.${pkgs.system}.default
+        inputs.kwin-effects-better-blur-dx.packages.${pkgs.system}.default
         maliit-keyboard
         maliit-framework
       ];
