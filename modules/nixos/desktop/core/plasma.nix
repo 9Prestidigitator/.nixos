@@ -6,15 +6,19 @@
     };
 
     # On-screen keyboard
-    environment.systemPackages = with pkgs; [
-      kdePackages.dolphin
-      kdePackages.kio-extras
-      kdePackages.karousel
-      kdePackages.dynamic-workspaces
-      inputs.kwin-effects-glass.packages.${pkgs.system}.default
-      maliit-keyboard
-      maliit-framework
-    ];
+    environment = {
+      systemPackages = with pkgs; [
+        kdePackages.dolphin
+        kdePackages.kio-extras
+        kdePackages.karousel
+        kdePackages.dynamic-workspaces
+        inputs.kwin-effects-glass.packages.${pkgs.system}.default
+        maliit-keyboard
+        maliit-framework
+      ];
+
+      sessionVariables.NIXOS_OZONE_WL = "1";
+    };
 
     programs.chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
