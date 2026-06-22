@@ -8,6 +8,15 @@
         effects.blur.enable = false;
       };
 
+      input.touchpads = [
+        {
+          name = "SYNA8006:00 06CB:CD8B Touchpad";
+          vendorId = "06CB";
+          productId = "CD8B";
+          naturalScroll = true;
+        }
+      ];
+
       hotkeys.commands = {
         "launch-terminal" = {
           name = "Launch terminal";
@@ -24,13 +33,13 @@
         "kwinrc" = {
           "Plugins" = {
             "dynamic_workspacesEnabled" = true;
-            "glassEnabled" = true;
+            # "glassEnabled" = true;
           };
-          "Effect-blurplus" = {
-            "BlurMatching" = false;
-            "BlurNonMatching" = true;
-            "BlurDecorations" = true;
-          };
+          # "Effect-blurplus" = {
+          #   "BlurMatching" = false;
+          #   "BlurNonMatching" = true;
+          #   "BlurDecorations" = true;
+          # };
         };
       };
 
