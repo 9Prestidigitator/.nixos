@@ -27,7 +27,6 @@
               command = 40285;
               actionName = "Track: Go to next track";
             })
-
             (shortcut {
               shortcut = "K";
               command = 40286;
@@ -52,21 +51,21 @@
 
         appearance.zoomScrollOffset = {
           verticalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.vertical.lastSelectedTrack;
-          maximumVerticalZoom = 0.80;
-          envelopeLaneVerticalZoom = 0.4;
+          maximumVerticalZoom = 0.90;
+          envelopeLaneVerticalZoom = 0.5;
           horizontalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.horizontal.mouseCursor;
-          limitHorizontalZoomScrollToProjectStart = false;
-          disableMousewheelVerticalZoomForTracksThatArePinnedInArrangeView = true;
+
+          limitHorizontalZoomScrollToProjectStart = true;
           verticalScrollStep = {
             unit = reaperAppearance.zoomScrollOffset.verticalScrollStep.units.trackHeight;
-            trackHeight = 0.6;
-            arrangeViewHeight = 0.2;
+            trackHeight = 0.5;
+            arrangeViewHeight = 0.1;
           };
-
+          disableMousewheelVerticalZoomForTracksThatArePinnedInArrangeView = true;
           overlappingMediaItems = {
-            offset = 90;
+            offset = 100;
             drawAsOpaque = true;
-            arrangeInCreationOrder = true;
+            arrangeInCreationOrder = false;
           };
         };
 
