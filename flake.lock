@@ -642,11 +642,11 @@
         "pulse-visualizer": "pulse-visualizer"
       },
       "locked": {
-        "lastModified": 1782198188,
-        "narHash": "sha256-pAI/8jvr6aWpUSupzQmRmQq74BmVajOqN7OS8tDWRpo=",
+        "lastModified": 1782242234,
+        "narHash": "sha256-WrfQTTziV/KCowy8V10HVQpezGfSv9cindtTuTgSuwA=",
         "owner": "9Prestidigitator",
         "repo": "maxpkgs",
-        "rev": "f408585c703b3f156f37f4cb395cce9a6610bb84",
+        "rev": "7cb9718dfb57e67a1a22c4bdc73fb8c23ddf3b68",
         "type": "github"
       },
       "original": {

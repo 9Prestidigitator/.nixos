@@ -181,6 +181,16 @@
             relative-to = "bottom-left";
           };
         }
+        {
+          matches = [{title = "^Open File$";}];
+          open-floating = true;
+          open-focused = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-right";
+          };
+        }
 
         # {
         #   matches = [
