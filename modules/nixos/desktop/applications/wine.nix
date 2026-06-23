@@ -1,21 +1,21 @@
 {
   flake.nixosModules.wine = {pkgs, ...}: {
     environment.systemPackages = let
-      latestWineForYabridge = pkgs.wineWow64Packages.base.override {wineRelease = "staging";};
+      latestWineForYabridge =
+        (
+          pkgs.wineWow64Packages.base.override {wineRelease = "staging";}
+        ).overrideAttrs (old: {
+          patches =
+            (old.patches or [])
+            ++ [
+              (pkgs.fetchurl {
+                url = "https://gitlab.winehq.org/-/project/5/uploads/dea8a1e711846f7e7642c16eacd284b4/bug51357.patch";
+                hash = "sha256-ZfW94gCDLGauKEZOid7ndQsaPA6SVGk22CQ3EBWAPm8=";
+              })
+            ];
+        });
 
-      # latestWineForYabridge =
-      #   (
-      #     pkgs.wineWow64Packages.base.override {wineRelease = "staging";}
-      #   ).overrideAttrs (old: {
-      #     patches =
-      #       (old.patches or [])
-      #       ++ [
-      #         (pkgs.fetchurl {
-      #           url = "https://gitlab.winehq.org/-/project/5/uploads/dea8a1e711846f7e7642c16eacd284b4/bug51357.patch";
-      #           hash = "sha256-ZfW94gCDLGauKEZOid7ndQsaPA6SVGk22CQ3EBWAPm8=";
-      #         })
-      #       ];
-      #   });
+      # latestWineForYabridge = pkgs.wineWow64Packages.base.override {wineRelease = "staging";};
 
       wineSetForYabridge = pkgs.wineWow64Packages // {yabridge = latestWineForYabridge;};
 
