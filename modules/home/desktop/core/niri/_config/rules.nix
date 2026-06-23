@@ -218,8 +218,7 @@
         }
       ];
 
-      # TODO(max): Experimental options. Will need to revise this on next
-      # version of niri/niri-flake
+      # TODO(max): Will need to revise this on next version of niri-flake
       extraConfig = ''
         blur {
           passes 3

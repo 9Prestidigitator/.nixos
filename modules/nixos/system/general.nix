@@ -35,7 +35,7 @@
           pulse.enable = true;
           alsa = {
             enable = true;
-            support32Bit = true;
+            support32Bit = lib.mkForce false; # TODO(max): This hasn't been cached yet :(
           };
           extraConfig.pipewire."10-clock-rate"."context.properties" = {
             "default.clock.rate" = 48000;
