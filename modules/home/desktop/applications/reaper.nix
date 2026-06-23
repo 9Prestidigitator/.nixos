@@ -56,6 +56,18 @@
           envelopeLaneVerticalZoom = 0.4;
           horizontalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.horizontal.mouseCursor;
           limitHorizontalZoomScrollToProjectStart = false;
+          disableMousewheelVerticalZoomForTracksThatArePinnedInArrangeView = true;
+          verticalScrollStep = {
+            unit = reaperAppearance.zoomScrollOffset.verticalScrollStep.units.trackHeight;
+            trackHeight = 0.6;
+            arrangeViewHeight = 0.2;
+          };
+
+          overlappingMediaItems = {
+            offset = 90;
+            drawAsOpaque = true;
+            arrangeInCreationOrder = true;
+          };
         };
 
         mouse = {
