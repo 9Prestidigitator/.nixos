@@ -49,6 +49,42 @@
           mixer.show = false;
         };
 
+        project = {
+          backups = {
+            whenSaving = {
+              preservePreviouslySavedVersionOfProjectAsRppBak = {
+                enable = true;
+                saveTimestampedBackupsToProjectBackupsSubdirectory = true;
+
+                limitAutoSavedBackupsToMostRecent = {
+                  enable = true;
+                  count = 50;
+                  unit = "copies";
+                };
+              };
+            };
+
+            autoSave = {
+              autoSaveToTimestampedFileInProjectDirectory = {
+                enable = true;
+                saveBackupsToProjectAutoSavesSubdirectory = true;
+
+                limitAutoSavedBackupsToMostRecent = {
+                  enable = true;
+                  count = 50;
+                  unit = "copies";
+                };
+              };
+
+              autoSaveUnsavedProjectsToTemporaryFile = true;
+              autoSaveInterval = {
+                minutes = 10;
+                mode = "whenNotRecording";
+              };
+            };
+          };
+        };
+
         appearance = {
           trackControlPanels = {
             setTrackLabelBackgroundToCustomTrackColors = true;
