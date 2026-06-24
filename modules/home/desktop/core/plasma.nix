@@ -1,11 +1,22 @@
 {inputs, ...}: {
   flake.homeModules.plasma = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [inputs.plasma-manager.homeModules.plasma-manager];
     programs.plasma = {
       enable = true;
 
-      kwin = {
-        effects.blur.enable = false;
+      kwin.effects.blur.enable = false;
+
+      workspace = let
+        wallpaper-image = pkgs.fetchurl {
+          url = "https://svs.gsfc.nasa.gov/vis/a010000/a014100/a014146/SupermassiveBinaryBlackHoles_desktop.png";
+          hash = "sha256-9oUogUnwTIs3yGyZ/+w5eYTLGFF3xVUg/htqEcT4rA4=";
+        };
+      in {
+        wallpaper = wallpaper-image;
       };
 
       input.touchpads = [
@@ -23,6 +34,33 @@
           key = "Meta+Return";
           command = "kitty";
         };
+        "launch-monitor" = {
+          name = "btop";
+          key = "Ctrl+Shift+Esc";
+          command = "kitty --title btop bash -lc 'btop'";
+        };
+      };
+
+      shortcuts = {
+        ksmserver = {
+          # original: Lock Session=Meta+L\tScreensaver,Meta+L\tScreensaver,Lock Session
+          "Lock Session" = ["Meta+Escape" "Screensaver"];
+        };
+        kwin = {
+          # original: Window Close=Alt+F4,Alt+F4,Close Window
+          "Window Close" = ["Meta+Q" "Close Window"];
+          "Expose" = "Meta+o";
+          "Switch Window Down" = "Meta+J";
+          "Switch Window Left" = "Meta+H";
+          "Switch Window Right" = "Meta+L";
+          "Switch Window Up" = "Meta+K";
+          "Switch One Desktop to the Left" = "Meta+D";
+          "Switch One Desktop to the Right" = "Meta+U";
+        };
+        plasmashell = {
+          # original: manage activities=Meta+Q,Meta+Q,Show Activity Switcher
+          "manage activities" = ["Meta+Z" "Show Activity Switcher"];
+        };
       };
 
       configFile = {
@@ -30,17 +68,21 @@
           TerminalApplications = "kitty";
           TerminalService = "kitty.desktop";
         };
-        "kwinrc" = {
-          "Plugins" = {
+        kwinrc = {
+          Plugins = {
             "better_blur_dxEnabled" = true;
             "dynamic_workspacesEnabled" = true;
             # Been having issues with glass lately
             "glassEnabled" = false;
           };
-          "Effect-better-blur-dx" = {
+          Effect-better-blur-dx = {
             "BlurMatching" = false;
             "BlurNonMatching" = true;
             "BlurDecorations" = true;
+            "BlurMenus" = true;
+            "BlurDocks" = true;
+            "BlurStrength" = 9;
+            "NoiseStrength" = 4;
           };
         };
       };
@@ -61,6 +103,7 @@
                   "applications:kitty.desktop"
                   "applications:org.kde.dolphin.desktop"
                   "applications:brave-browser.desktop"
+                  "applications:steam.desktop"
                   "applications:cockos-reaper.desktop"
                 ];
               };
@@ -91,7 +134,7 @@
                   "org.kde.plasma.clipboard"
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
-                  "Notifier_org.kde.DiscoverNotifier"
+                  "Discover Notifier_org.kde.DiscoverNotifier"
                 ];
               };
             }

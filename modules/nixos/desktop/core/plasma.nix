@@ -58,10 +58,12 @@
         ".local/share/kactivitymanagerd"
       ];
       kdeUserFiles = [
+        # This file doesn't play well with impermanence and plasma-manager
+        # ".config/plasma-org.kde.plasma.desktop-appletsrc"
+
         ".config/kwinrc"
         ".config/kdeglobals"
         ".config/kwalletrc"
-        ".config/plasma-org.kde.plasma.desktop-appletsrc"
         ".config/ksmserverrc"
         ".config/kscreenlockerrc"
         ".config/ksplashrc"
