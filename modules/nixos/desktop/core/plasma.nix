@@ -73,11 +73,11 @@
           how = "symlink";
           configureParent = true;
         }
-        {
-          file = ".config/plasma-org.kde.plasma.desktop-appletsrc";
-          how = "symlink";
-          configureParent = true;
-        }
+        # {
+        #   file = ".config/plasma-org.kde.plasma.desktop-appletsrc";
+        #   how = "symlink";
+        #   configureParent = true;
+        # }
         # {
         #   file = ".config/ksmserverrc";
         #   how = "symlink";
