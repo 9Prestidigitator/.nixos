@@ -21,6 +21,7 @@
       nixosModules.video-editing
       nixosModules.communications
       nixosModules.virtualisation
+      nixosModules.ai
 
       nixosModules.mullvad
       nixosModules.syncthing

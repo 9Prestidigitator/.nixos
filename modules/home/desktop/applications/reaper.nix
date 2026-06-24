@@ -49,23 +49,40 @@
           mixer.show = false;
         };
 
-        appearance.zoomScrollOffset = {
-          verticalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.vertical.lastSelectedTrack;
-          maximumVerticalZoom = 0.90;
-          envelopeLaneVerticalZoom = 0.5;
-          horizontalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.horizontal.mouseCursor;
+        appearance = {
+          trackControlPanels = {
+            setTrackLabelBackgroundToCustomTrackColors = true;
+            tintTrackPanelBackgrounds = false;
 
-          limitHorizontalZoomScrollToProjectStart = true;
-          verticalScrollStep = {
-            unit = reaperAppearance.zoomScrollOffset.verticalScrollStep.units.trackHeight;
-            trackHeight = 0.5;
-            arrangeViewHeight = 0.1;
+            showFxInserts = true;
+            showSends = true;
+            groupSendsWithFxInserts = false;
+            groupFxParametersWithInserts = true;
+
+            alignTcpControlsWhenTrackIconsOrFixedItemLanesAreUsed = true;
+            trackGroupingIndicators = reaperAppearance.trackControlPanels.trackGroupingIndicators.ribbons;
+            folderCollapseButtonCyclesTrackHeights = reaperAppearance.trackControlPanels.folderCollapseButtonCyclesTrackHeights.normalHidden;
+            fixedLaneCollapseButtonChangesDisplay = reaperAppearance.trackControlPanels.fixedLaneCollapseButtonChangesDisplay.oneManyLanes;
           };
-          disableMousewheelVerticalZoomForTracksThatArePinnedInArrangeView = true;
-          overlappingMediaItems = {
-            offset = 100;
-            drawAsOpaque = true;
-            arrangeInCreationOrder = false;
+
+          zoomScrollOffset = {
+            verticalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.vertical.lastSelectedTrack;
+            maximumVerticalZoom = 0.90;
+            envelopeLaneVerticalZoom = 0.5;
+            horizontalZoomCenter = reaperAppearance.zoomScrollOffset.zoomCenter.horizontal.mouseCursor;
+
+            limitHorizontalZoomScrollToProjectStart = true;
+            verticalScrollStep = {
+              unit = reaperAppearance.zoomScrollOffset.verticalScrollStep.units.trackHeight;
+              trackHeight = 0.5;
+              arrangeViewHeight = 0.1;
+            };
+            disableMousewheelVerticalZoomForTracksThatArePinnedInArrangeView = true;
+            overlappingMediaItems = {
+              offset = 100;
+              drawAsOpaque = true;
+              arrangeInCreationOrder = false;
+            };
           };
         };
 
