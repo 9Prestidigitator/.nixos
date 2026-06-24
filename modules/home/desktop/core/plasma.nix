@@ -91,6 +91,7 @@
                   "org.kde.plasma.clipboard"
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
+                  "org.kde.discover.notifier"
                 ];
               };
             }
