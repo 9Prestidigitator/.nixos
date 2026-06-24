@@ -37,7 +37,7 @@
         "launch-monitor" = {
           name = "btop";
           key = "Ctrl+Shift+Esc";
-          command = "kitty --title btop bash -lc 'btop'";
+          command = "kitty --title btop -e btop";
         };
       };
 
