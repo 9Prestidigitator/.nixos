@@ -32,6 +32,7 @@
       ultimate-vocal-remover-gui
 
       carla
+      ildaeil
       lsp-plugins
       x42-avldrums
       x42-plugins

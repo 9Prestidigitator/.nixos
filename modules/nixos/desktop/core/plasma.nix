@@ -59,7 +59,7 @@
 
         # TODO(max): Temporary fix. This is because kde plasma does NOT like
         # writing to individual preserved files for some reason.
-        ".local/state"
+        # ".local/state"
       ];
       userFiles = [
         # ".config/kwinrc"
@@ -72,6 +72,47 @@
         # ".local/state/plasmasessionrestorestaterc"
         # ".local/state/kwinstaterc"
         # ".local/state/plasmashellstaterc"
+
+        {
+          file = ".config/kwinrc";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".config/kdeglobals";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".config/plasma-org.kde.plasma.desktop-appletsrc";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".config/ksmserverrc";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".config/kwinoutputconfig.json";
+          how = "symlink";
+        }
+        {
+          file = ".local/state/plasmasessionrestorestaterc";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".local/state/kwinstaterc";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".local/state/plasmashellstaterc";
+          how = "symlink";
+          configureParent = true;
+        }
+
       ];
     };
   };

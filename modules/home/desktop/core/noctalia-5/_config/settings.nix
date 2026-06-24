@@ -71,6 +71,7 @@ in {
         "kitty"
         "files"
         "Brave Web Browser"
+        "Bitwig Studio"
         "REAPER"
       ];
     };

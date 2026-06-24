@@ -181,6 +181,16 @@
             relative-to = "bottom-left";
           };
         }
+        {
+          matches = [{title = "^Open File$";}];
+          open-floating = true;
+          open-focused = true;
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-right";
+          };
+        }
 
         # {
         #   matches = [
@@ -218,8 +228,7 @@
         }
       ];
 
-      # TODO(max): Experimental options. Will need to revise this on next
-      # version of niri/niri-flake
+      # TODO(max): Will need to revise this on next version of niri-flake
       extraConfig = ''
         blur {
           passes 3
