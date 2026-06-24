@@ -21,17 +21,9 @@
         ".cache/krita"
         ".local/share/libreoffice"
       ];
-      userFiles = [
-        {
-          file = ".config/kritarc";
-          how = "symlink";
-          configureParent = true;
-        }
-        {
-          file = ".config/kritadisplayrc";
-          how = "symlink";
-          configureParent = true;
-        }
+      kdeUserFiles = [
+        ".config/kritarc"
+        ".config/kritadisplayrc"
       ];
     };
   };

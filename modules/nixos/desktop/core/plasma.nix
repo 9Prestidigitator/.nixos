@@ -57,51 +57,18 @@
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
       ];
-      userFiles = [
-        # {
-        #   file = ".config/kwinrc";
-        #   how = "symlink";
-        #   configureParent = true;
-        # }
-        {
-          file = ".config/kdeglobals";
-          how = "symlink";
-          configureParent = true;
-        }
-        {
-          file = ".config/kwalletrc";
-          how = "symlink";
-          configureParent = true;
-        }
-        # {
-        #   file = ".config/plasma-org.kde.plasma.desktop-appletsrc";
-        #   how = "symlink";
-        #   configureParent = true;
-        # }
-        # {
-        #   file = ".config/ksmserverrc";
-        #   how = "symlink";
-        #   configureParent = true;
-        # }
-        {
-          file = ".config/kwinoutputconfig.json";
-          how = "symlink";
-        }
-        {
-          file = ".local/state/plasmasessionrestorestaterc";
-          how = "symlink";
-          configureParent = true;
-        }
-        {
-          file = ".local/state/kwinstaterc";
-          how = "symlink";
-          configureParent = true;
-        }
-        {
-          file = ".local/state/plasmashellstaterc";
-          how = "symlink";
-          configureParent = true;
-        }
+      kdeUserFiles = [
+        ".config/kwinrc"
+        ".config/kdeglobals"
+        ".config/kwalletrc"
+        ".config/plasma-org.kde.plasma.desktop-appletsrc"
+        ".config/ksmserverrc"
+        ".config/kscreenlockerrc"
+        ".config/ksplashrc"
+        ".config/kwinoutputconfig.json"
+        ".local/state/plasmasessionrestorestaterc"
+        ".local/state/kwinstaterc"
+        ".local/state/plasmashellstaterc"
       ];
     };
   };

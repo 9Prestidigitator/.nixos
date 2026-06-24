@@ -10,7 +10,20 @@
         (user.isNormalUser or false)
         && !(builtins.elem name config.persist.excludedUsers))
       config.users.users;
+
     hmUsers = config.home-manager.users or {};
+
+    kdeUserFiles =
+      map (file: {
+        inherit file;
+        how = "symlink";
+        configureParent = true;
+      })
+      config.persist.kdeUserFiles;
+
+    allUserFiles =
+      config.persist.userFiles
+      ++ kdeUserFiles;
 
     userPersistence =
       lib.filterAttrs
@@ -20,7 +33,7 @@
           hmCfg = hmUsers.${name} or {};
         in {
           directories = lib.unique (config.persist.userDirs ++ (hmCfg.persist.directories or []));
-          files = lib.unique (config.persist.userFiles ++ (hmCfg.persist.files or []));
+          files = lib.unique (allUserFiles ++ (hmCfg.persist.files or []));
         })
         persistedUsers
       );
@@ -62,6 +75,21 @@
       settings = fileSettings.${normalized.file} or {};
     in
       settings // normalized;
+
+    seedKdeUserFileCommands = lib.concatMapStringsSep "\n" (userName: let
+      user = config.users.users.${userName};
+      home = user.home;
+      group = user.group or "users";
+    in
+      lib.concatMapStringsSep "\n" (file: let
+        path = lib.escapeShellArg "${config.persist.root}${home}/${file}";
+      in ''
+        install -d -o ${userName} -g ${group} -m 700 "$(dirname ${path})"
+        [ -e ${path} ] || touch ${path}
+        chown ${userName}:${group} ${path}
+      '')
+      config.persist.kdeUserFiles)
+    (lib.attrNames persistedUsers);
   in {
     imports = [inputs.preservation.nixosModules.preservation];
 
@@ -91,6 +119,7 @@
         "Projects"
       ];
       userFiles = [".ssh/known_hosts"];
+      kdeUserFiles = [];
     };
 
     preservation = {
@@ -102,6 +131,8 @@
         users = userPersistence;
       };
     };
+
+    system.activationScripts.seedKdeUserFiles.text = seedKdeUserFileCommands;
 
     systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
 

@@ -35,6 +35,11 @@
           default = [];
           description = "User files to persist for every normal user.";
         };
+        kdeUserFiles = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [];
+          description = "KDE/Plasma user files to persist as symlinks and pre-create as blank files.";
+        };
         excludedUsers = lib.mkOption {
           type = lib.types.listOf lib.types.str;
           default = ["nixremote"];

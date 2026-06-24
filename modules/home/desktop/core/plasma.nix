@@ -61,7 +61,7 @@
                   "applications:kitty.desktop"
                   "applications:org.kde.dolphin.desktop"
                   "applications:brave-browser.desktop"
-                  "applications:reaper.desktop"
+                  "applications:cockos-reaper.desktop"
                 ];
               };
             }
@@ -91,7 +91,7 @@
                   "org.kde.plasma.clipboard"
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
-                  "org.kde.discover.notifier"
+                  "Notifier_org.kde.DiscoverNotifier"
                 ];
               };
             }
