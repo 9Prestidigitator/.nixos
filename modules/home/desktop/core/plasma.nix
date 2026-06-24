@@ -61,6 +61,7 @@
                   "applications:kitty.desktop"
                   "applications:org.kde.dolphin.desktop"
                   "applications:brave-browser.desktop"
+                  "applications:reaper.desktop"
                 ];
               };
             }

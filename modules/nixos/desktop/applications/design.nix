@@ -22,8 +22,16 @@
         ".local/share/libreoffice"
       ];
       userFiles = [
-        ".config/kritarc"
-        ".config/kritadisplayrc"
+        {
+          file = ".config/kritarc";
+          how = "symlink";
+          configureParent = true;
+        }
+        {
+          file = ".config/kritadisplayrc";
+          how = "symlink";
+          configureParent = true;
+        }
       ];
     };
   };
