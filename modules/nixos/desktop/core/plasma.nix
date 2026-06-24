@@ -56,30 +56,20 @@
         ".local/share/kwalletd"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
-
-        # TODO(max): Temporary fix. This is because kde plasma does NOT like
-        # writing to individual preserved files for some reason.
-        # ".local/state"
       ];
       userFiles = [
-        # ".config/kwinrc"
-        # ".config/ksmserverrc"
-        # ".config/kwinoutputconfig.json"
-        # ".config/plasma-org.kde.plasma.desktop-appletsrc"
-
-        # ".local/state/kactivitymanagerdstaterc"
-        # ".local/state/dolphinstaterc"
-        # ".local/state/plasmasessionrestorestaterc"
-        # ".local/state/kwinstaterc"
-        # ".local/state/plasmashellstaterc"
-
+        # {
+        #   file = ".config/kwinrc";
+        #   how = "symlink";
+        #   configureParent = true;
+        # }
         {
-          file = ".config/kwinrc";
+          file = ".config/kdeglobals";
           how = "symlink";
           configureParent = true;
         }
         {
-          file = ".config/kdeglobals";
+          file = ".config/kwalletrc";
           how = "symlink";
           configureParent = true;
         }
@@ -88,11 +78,11 @@
           how = "symlink";
           configureParent = true;
         }
-        {
-          file = ".config/ksmserverrc";
-          how = "symlink";
-          configureParent = true;
-        }
+        # {
+        #   file = ".config/ksmserverrc";
+        #   how = "symlink";
+        #   configureParent = true;
+        # }
         {
           file = ".config/kwinoutputconfig.json";
           how = "symlink";
@@ -112,7 +102,6 @@
           how = "symlink";
           configureParent = true;
         }
-
       ];
     };
   };
