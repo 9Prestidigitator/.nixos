@@ -15,6 +15,7 @@
         kdePackages.kio-extras
         kdePackages.karousel
         kdePackages.dynamic-workspaces
+        kdePackages.kdeconnect-kde
         inputs.kwin-effects-glass.packages.${pkgs.system}.default
         inputs.kwin-effects-better-blur-dx.packages.${pkgs.system}.default
       ];
@@ -32,7 +33,10 @@
         };
     };
 
-    programs.chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];
+    programs = {
+      chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];
+      kdeconnect.enable = true;
+    };
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
 
     persist = {
@@ -40,11 +44,13 @@
       userDirs = [
         ".config/dolphin"
         ".config/session"
+        ".config/kdeconnect"
 
         ".local/share/dolphin"
         ".local/share/kwalletd"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
+        ".local/share/kdeconnect"
       ];
       kdeUserFiles = [
         ".config/kwinrc"
