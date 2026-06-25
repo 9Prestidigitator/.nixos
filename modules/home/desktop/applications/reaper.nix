@@ -57,6 +57,8 @@
         project = {
           backups = {
             whenSaving = {
+              preservePreviousVersionAsRppBak = false;
+              preserveAllPreviousVersionsInOneRppBak = false;
               preservePreviouslySavedVersionOfProjectAsRppBak = {
                 enable = true;
                 saveTimestampedBackupsToProjectBackupsSubdirectory = true;

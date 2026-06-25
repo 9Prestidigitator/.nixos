@@ -79,6 +79,8 @@
         ".config/ksmserverrc"
         ".config/kscreenlockerrc"
         ".config/ksplashrc"
+        ".config/plasmashellrc"
+        ".config/plasmashellstaterc"
         ".config/kwinoutputconfig.json"
 
         ".config/korganizerrc"

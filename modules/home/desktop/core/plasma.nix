@@ -205,7 +205,9 @@
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
                   "Discover Notifier_org.kde.DiscoverNotifier"
+                  "org.kde.merkuro.contact.applet"
                   "Sunshine_dev.lizardbyte.app.Sunshine"
+                  "spotify-client"
                 ];
               };
             }
