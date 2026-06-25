@@ -66,7 +66,6 @@
       ".lv2"
       ".BitwigStudio"
       ".config/REAPER"
-      ".config/REAPER-backup"
       ".config/yabridgectl"
       ".config/MuseScore"
       ".config/overwitch"

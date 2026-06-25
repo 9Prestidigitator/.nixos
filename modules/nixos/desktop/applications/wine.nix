@@ -15,8 +15,6 @@
             ];
         });
 
-      # latestWineForYabridge = pkgs.wineWow64Packages.base.override {wineRelease = "staging";};
-
       wineSetForYabridge = pkgs.wineWow64Packages // {yabridge = latestWineForYabridge;};
 
       yabridgePatched = pkgs.yabridge.override {wineWow64Packages = wineSetForYabridge;};

@@ -23,6 +23,22 @@
         };
       };
 
+      krunner.shortcuts.launch = "Meta+Space";
+
+      startup.startupScript.sunshine = {
+        runAlways = true;
+        text = ''
+          sunshine=/run/wrappers/bin/sunshine
+          if ! [ -x "$sunshine" ]; then
+            sunshine=${pkgs.sunshine}/bin/sunshine
+          fi
+
+          if ! ${pkgs.procps}/bin/pgrep -x sunshine >/dev/null; then
+            "$sunshine" &
+          fi
+        '';
+      };
+
       workspace = let
         wallpaper-image = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nixos-wallpaper-catppuccin-mocha.png";
@@ -88,7 +104,7 @@
         };
       };
 
-      powerdevil = lib.mkIf isLaptop {
+      powerdevil = lib.mkIf (!isLaptop) {
         AC.autoSuspend.action = "nothing";
       };
 
