@@ -20,6 +20,8 @@
   powerManagement.cpuFreqGovernor = "performance";
   services.displayManager.gdm.autoSuspend = false;
 
+  systemd.sleep.settings.Sleep.AllowSuspend = "no";
+
   system.stateVersion = "26.05";
   home-manager.sharedModules = [{home.stateVersion = "26.05";}];
 }

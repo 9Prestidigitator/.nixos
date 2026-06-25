@@ -141,8 +141,8 @@
           Windows.RollOverDesktops = false;
           Script-desktopchangeosd.PopupHideDelay = 200;
           Wayland = {
-            "InputMethod[$e]" = "/run/current-system/sw/share/applications/org.kde.plasma.keyboard.desktop";
             VirtualKeyboardEnabled = true;
+            EnablePrimarySelection = false;
           };
         };
       };
@@ -196,7 +196,6 @@
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
                   "Discover Notifier_org.kde.DiscoverNotifier"
-                  "trayid403131"
                 ];
               };
             }

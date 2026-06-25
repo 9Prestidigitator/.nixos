@@ -66,6 +66,8 @@
     motherboard = "amd";
   };
 
+  systemd.sleep.settings.Sleep.AllowSuspend = "no";
+
   services.flatpak.overrides."com.github.Matoking.protontricks".Context.filesystems = ["/mnt/1tb_ssd/SteamLibrary"];
 
   system.stateVersion = "25.11";
