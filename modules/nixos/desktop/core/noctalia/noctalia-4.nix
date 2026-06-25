@@ -1,27 +1,30 @@
-{
-  flake.nixosModules.noctalia-5 = {pkgs, ...}: {
+{inputs, ...}: {
+  flake.nixosModules.noctalia = {pkgs, ...}: {
     services = {
       gnome.evolution-data-server.enable = true;
       # Making super key tap-able
       keyd = {
-        keyboards.default.settings = {
-          settings.overload_tap_timeout = 25;
-          main.leftmeta = "overload(meta, favorites)";
-        };
+        keyboards.default.settings.main.leftmeta = "overload(meta, favorites)";
         keyboards.qmk = {
-          ids = ["cb10:8256" "3434:0430"];
-          settings = {
-            settings.overload_tap_timeout = 25;
-            main.leftmeta = "overload(meta, favorites)";
-          };
+          ids = [
+            "cb10:8256"
+            "3434:0430"
+          ];
+          settings.main.leftmeta = "overload(meta, favorites)";
         };
       };
     };
 
-    programs.gpu-screen-recorder.enable = true;
+    programs = {
+      gpu-screen-recorder.enable = true;
+      kdeconnect.enable = true;
+    };
 
     environment = {
       systemPackages = with pkgs; [
+        (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+          calendarSupport = true;
+        })
         wlsunset
         wl-mirror
         cliphist
@@ -38,7 +41,6 @@
         translate-shell
         wf-recorder
         gifski
-        ddcutil
         linux-wallpaperengine
       ];
       sessionVariables = {
@@ -48,7 +50,6 @@
 
     persist.userDirs = [
       ".cache/noctalia"
-      ".local/state/noctalia"
       ".config/evolution"
       ".local/share/evolution"
     ];

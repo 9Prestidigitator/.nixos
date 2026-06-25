@@ -1,94 +1,59 @@
-{lib, ...}: {
-  programs.noctalia-shell = {
-    settings = {
-      bar = {
-        capsuleOpacity = lib.mkForce 1;
-        density = "comfortable";
-        barType = "simple";
-        marginVertical = 9;
-        marginHorizontal = 9;
-        position = "top";
-        displayMode = "auto_hide";
-        autoHideDelay = 500;
-        autoShowDelay = 150;
-        showCapsule = false;
-        showOutline = false;
-        outerCorners = false;
-        useSeparateOpacity = false;
-        backgroundOpacity = lib.mkForce 0;
-        showOnWorkspaceSwitch = true;
-        widgets = {
-          left = [
-            {
-              id = "TaskbarGrouped";
-              characterCount = 2;
-              colorizeIcons = false;
-              hideUnoccupied = true;
-              labelMode = "index";
-              showNumbersOnlyWhenOccupied = true;
-              showWorkspaceNumbers = false;
-              iconScale = 0.85;
-              groupedBorderOpacity = 0.5;
-              unfocusedIconsOpacity = 0.9;
-            }
-            {
-              id = "plugin:catwalk";
-            }
-          ];
-          center = [
-            {
-              id = "ControlCenter";
-              colorizeDistroLogo = false;
-              customIconPath = "";
-              icon = "";
-              useDistroLogo = true;
-            }
-          ];
-          right = [
-            {
-              blacklist = [];
-              colorizeIcons = false;
-              drawerEnabled = true;
-              id = "Tray";
-              pinned = [];
-            }
-            {
-              id = "NotificationHistory";
-              hideWhenZero = true;
-              showUnreadBadge = true;
-            }
-            {
-              id = "Bluetooth";
-              displayMode = "onhover";
-            }
-            {
-              id = "Volume";
-              displayMode = "onhover";
-            }
-            {
-              id = "Network";
-              displayMode = "onhover";
-            }
-            {
-              id = "Battery";
-              hideIfNotDetected = true;
-              deviceNativePath = "BAT0";
-              showNoctaliaPerformance = true;
-              showPowerProfiles = true;
-              warningThreshold = 25;
-              displayMode = "onhover";
-            }
-            {
-              customFont = "";
-              formatHorizontal = "HH:mm:ss - MM dd yy";
-              formatVertical = "ss mm HH - dd MM yy";
-              tooltipFormat = "HH:mm - ddd, MMM dd yyyy";
-              id = "Clock";
-              useCustomFont = false;
-              usePrimaryColor = true;
-            }
-          ];
-        };
+{pkgs, ...}: {
+  programs.noctalia.settings = {
+    bar = {
+      order = ["default"];
+      default = {
+        auto_hide = true;
+        layer = "overlay";
+        scale = 1;
+        background_opacity = 1;
+        thickness = 34;
+        padding = 14;
+
+        start = ["taskbar"];
+        center = ["control-center"];
+        end = [
+          "tray"
+          "notifications"
+          "bluetooth"
+          "volume"
+          "network"
+          "battery"
+          "clock"
+          "date"
+        ];
+
+        margin_edge = 0;
+        margin_ends = 0;
+        radius = 0;
+
+        widget_spacing = 8;
+        reserve_space = false;
+      };
+    };
+
+    widget = {
+      taskbar = {
+        group_by_workspace = true;
+        hide_empty_workspaces = true;
+        inactive_opacity = 0.9;
+        workspace_label_placement = "centered";
+      };
+      tray = {
+        drawer = true;
+      };
+      volume.show_label = false;
+      notifications.hide_when_no_unread = true;
+      network.show_label = false;
+      battery = {
+        display_mode = "graphic";
+        hide_when_full = true;
+        scale = 0.7;
+        show_label = false;
+      };
+      control-center = {
+        scale = 1.5;
+        custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake-white.png";
       };
     };
   };

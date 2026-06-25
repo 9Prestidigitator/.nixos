@@ -8,7 +8,7 @@
       userModules.max.nixosModule
 
       nixosModules.noctalia-greeter
-      nixosModules.noctalia-5
+      nixosModules.noctalia
       nixosModules.niri
 
       nixosModules.essentials

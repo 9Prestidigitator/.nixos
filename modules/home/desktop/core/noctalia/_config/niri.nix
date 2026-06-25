@@ -3,75 +3,83 @@
   mkWlrWhichKeyMenu,
   ...
 }: let
-  noctalia = cmd: "noctalia-shell ipc call ${cmd}";
+  noctalia = cmd: "noctalia msg ${cmd}";
 in {
   programs.niri.settings = {
-    spawn-at-startup = [{command = ["noctalia-shell"];}];
+    switch-events.lid-close.action.spawn = ["noctalia" "msg" "session" "lock"];
 
     binds = with config.lib.niri.actions; {
       "XF86Favorites" = {
-        hotkey-overlay.title = "Dashboard";
+        hotkey-overlay.title = "Control Center";
         allow-when-locked = false;
-        action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
+        action = spawn "noctalia" "msg" "panel-toggle" "control-center";
       };
+
       "Mod+z" = {
-        hotkey-overlay.title = "Dashboard";
-        action = spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle";
-      };
-
-      "XF86Tools" = {
-        hotkey-overlay.title = "Lock";
-        allow-when-locked = true;
-        action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
-      };
-
-      "Mod+XF86Tools" = {
-        hotkey-overlay.title = "Session Actions";
+        hotkey-overlay.title = "Control Center";
         allow-when-locked = false;
-        action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
-      };
-
-      "Mod+Alt+Delete" = {
-        hotkey-overlay.title = "Session Options";
-        action = spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";
+        action = spawn "noctalia" "msg" "panel-toggle" "control-center";
       };
 
       "Mod+Space" = {
         hotkey-overlay.title = "Toggle launcher";
-        action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
+        action = spawn "noctalia" "msg" "panel-toggle" "launcher";
       };
 
       "Mod+Escape" = {
         hotkey-overlay.title = "Lock";
         allow-when-locked = true;
-        action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+        action = spawn "noctalia" "msg" "session" "lock";
+      };
+
+      "XF86Tools" = {
+        hotkey-overlay.title = "Lock";
+        allow-when-locked = true;
+        action = spawn "noctalia" "msg" "session" "lock";
+      };
+
+      "Mod+XF86Tools" = {
+        hotkey-overlay.title = "Session";
+        allow-when-locked = false;
+        action = spawn "noctalia" "msg" "panel-toggle" "session";
+      };
+
+      "Mod+Alt+Delete" = {
+        hotkey-overlay.title = "Session";
+        allow-when-locked = false;
+        action = spawn "noctalia" "msg" "panel-toggle" "session";
       };
 
       "Mod+N".action.spawn = mkWlrWhichKeyMenu "Noctalia" [
         {
           key = "b";
-          desc = "Toggle Noctalia bar";
-          cmd = noctalia "bar toggle";
+          desc = "Toggle Bluetooth";
+          cmd = noctalia "bluetooth-toggle";
         }
         {
           key = "B";
+          desc = "Toggle Noctalia bar";
+          cmd = noctalia "bar-toggle";
+        }
+        {
+          key = "D";
           desc = "Toggle Noctalia dock";
-          cmd = noctalia "dock toggle";
+          cmd = noctalia "dock-toggle";
         }
         {
           key = "c";
           desc = "Clipboard history";
-          cmd = noctalia "launcher clipboard";
+          cmd = noctalia "panel-toggle clipboard";
         }
         {
           key = "i";
           desc = "Toggle idle inhibition";
-          cmd = noctalia "idleInhibitor toggle";
+          cmd = noctalia "caffeine-toggle";
         }
         {
           key = "l";
           desc = "Toggle Nightlight";
-          cmd = noctalia "nightLight toggle";
+          cmd = noctalia "nightLight-toggle";
         }
         {
           key = "n";
@@ -83,147 +91,61 @@ in {
               cmd = noctalia "volume togglePanel";
             }
             {
-              key = "B";
-              desc = "Bluetooth";
-              cmd = noctalia "bluetooth togglePanel";
-            }
-            {
               key = "b";
-              desc = "Toggle Bluetooth";
-              cmd = noctalia "bluetooth toggle";
+              desc = "Bluetooth Panel";
+              cmd = noctalia "panel-toggle control-center bluetooth";
             }
             {
               key = "c";
               desc = "Show Calendar";
-              cmd = noctalia "calendar toggle";
+              cmd = noctalia "panel-toggle control-center calendar";
             }
             {
               key = "m";
               desc = "Show System Monitor";
-              cmd = noctalia "systemMonitor toggle";
+              cmd = noctalia "panel-toggle control-center system";
             }
             {
               key = "n";
               desc = "Show Network Panel";
-              cmd = noctalia "network togglePanel";
+              cmd = noctalia "panel-toggle control-center network";
             }
             {
-              key = "p";
-              desc = "Power panel";
-              cmd = noctalia "battery togglePanel";
+              key = "s";
+              desc = "Show Screen Time";
+              cmd = noctalia "panel-toggle screen-time";
+            }
+            {
+              key = "t";
+              desc = "Open tray";
+              cmd = noctalia "panel-toggle tray-drawer";
             }
             {
               key = "w";
               desc = "Choose Wallpaper";
-              cmd = noctalia "wallpaper toggle";
+              cmd = noctalia "panel-toggle wallpaper";
+            }
+            {
+              key = "W";
+              desc = "Show Weather Panel";
+              cmd = noctalia "panel-toggle control-center weather";
             }
           ];
         }
         {
           key = "o";
           desc = "Show Notifications";
-          cmd = noctalia "notifications toggleHistory";
-        }
-        {
-          key = "p";
-          desc = "Plugins";
-          submenu = [
-            {
-              key = "1";
-              desc = "Calculator";
-              cmd = noctalia "plugin togglePanel noctalia-calculator";
-            }
-            {
-              key = "a";
-              desc = "Assistant Panel";
-              cmd = noctalia "plugin openPanel assistant-panel";
-            }
-            {
-              key = "c";
-              desc = "Clipper";
-              cmd = noctalia "plugin openPanel clipper";
-            }
-            {
-              key = "d";
-              desc = "Mirror";
-              cmd = noctalia "plugin togglePanel mirror-mirror";
-            }
-            {
-              key = "k";
-              desc = "KDEConnect";
-              cmd = noctalia "plugin:kde-connect toggle";
-            }
-            {
-              key = "m";
-              desc = "MPD";
-              cmd = noctalia "plugin togglePanel mpd";
-            }
-            {
-              key = "n";
-              desc = "Notepad";
-              cmd = noctalia "plugin togglePanel notes-scratchpad";
-            }
-            {
-              key = "p";
-              desc = "Privacy";
-              cmd = noctalia "plugin openPanel privacy-indicator";
-            }
-            {
-              key = "P";
-              desc = "Port Monitor";
-              cmd = noctalia "plugin togglePanel port-monitor";
-            }
-            {
-              key = "r";
-              desc = "Syncthing";
-              cmd = noctalia "plugin togglePanel syncthing-status";
-            }
-            {
-              key = "s";
-              desc = "Screen Toolkit";
-              cmd = noctalia "plugin openPanel screen-toolkit";
-            }
-            {
-              key = "t";
-              desc = "Show Timer";
-              cmd = noctalia "plugin:timer toggle";
-            }
-            {
-              key = "T";
-              desc = "To-do list";
-              cmd = noctalia "plugin togglePanel todo";
-            }
-            {
-              key = "u";
-              desc = "USB Drive Manager";
-              cmd = noctalia "plugin togglePanel usb-drive-manager";
-            }
-            {
-              key = "w";
-              desc = "Wallpaper Engine";
-              cmd = noctalia "plugin togglePanel linux-wallpaperengine-controller";
-            }
-            {
-              key = "y";
-              desc = "Music Search";
-              cmd = noctalia "plugin togglePanel music-search";
-            }
-          ];
+          cmd = noctalia "panel-toggle control-center notifications";
         }
         {
           key = "s";
           desc = "Noctalia Settings";
-          cmd = noctalia "settings openTab about";
-        }
-        {
-          key = "S";
-          desc = "Plugin Settings";
-          cmd = noctalia "settings toggleTab plugins";
+          cmd = noctalia "settings-toggle";
         }
         {
           key = "W";
           desc = "Random Wallpaper";
-          cmd = noctalia "wallpaper random all";
+          cmd = noctalia "wallpaper-random";
         }
       ];
     };

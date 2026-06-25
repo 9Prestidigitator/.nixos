@@ -5,10 +5,14 @@
       (inputs.import-tree ./_config)
     ];
 
+    programs.noctalia = {
+      enable = true;
+      systemd.enable = true;
+    };
+
     persist.directories = [
       ".cache/noctalia"
       ".cache/cliphist"
-      ".config/kdeconnect"
     ];
   };
 }
