@@ -15,8 +15,12 @@
       enable = true;
 
       kwin = {
-        virtualDesktops.rows = 10;
+        # virtualDesktops.rows = 10;
         effects.blur.enable = false;
+        nightLight = {
+          enable = true;
+          mode = "automatic";
+        };
       };
 
       workspace = let
