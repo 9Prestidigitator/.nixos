@@ -75,12 +75,14 @@
       kdeUserFiles = [
         ".config/kwinrc"
         ".config/kdeglobals"
+        ".config/plasmarc"
         ".config/kwalletrc"
         ".config/ksmserverrc"
         ".config/kscreenlockerrc"
         ".config/ksplashrc"
         ".config/plasmashellrc"
-        ".config/plasmashellstaterc"
+        ".config/kactivitymanagerd"
+        ".config/kactivitymanagerd-pluginsrc"
         ".config/kwinoutputconfig.json"
 
         ".config/korganizerrc"
