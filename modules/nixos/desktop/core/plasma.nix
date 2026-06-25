@@ -23,8 +23,8 @@
 
       etc."plasmalogin.conf".text = let
         wallpaper-image = pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nixos-wallpaper-catppuccin-mocha.png";
-          hash = "sha256-fmKFYw2gYAYFjOv4lr8IkXPtZfE1+88yKQ4vjEcax1s=";
+          url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nix-wallpaper-simple-dark-gray.png";
+          hash = "sha256-JaLHdBxwrphKVherDVe5fgh+3zqUtpcwuNbjwrBlAok=";
         };
       in
         lib.generators.toINI {mkSectionName = name: name;} {
@@ -36,7 +36,6 @@
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
 
     persist = {
-      # files = ["/etc/plasmalogin.conf"];
       directories = ["/var/lib/plasmalogin"];
       userDirs = [
         ".config/dolphin"
