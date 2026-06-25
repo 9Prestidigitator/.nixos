@@ -87,16 +87,25 @@
         kwin = {
           # original: Window Close=Alt+F4,Alt+F4,Close Window
           "Window Close" = ["Meta+Q" "Close Window"];
-          "Expose" = "Meta+O";
-          "ExposeAll" = "Meta+Shift+O";
-          "Switch Window Left" = "Meta+Shift+H";
-          "Switch Window Down" = "Meta+Shift+J";
-          "Switch Window Up" = "Meta+Shift+K";
-          "Switch Window Right" = "Meta+Shift+L";
+          "Expose" = "Meta+Shift+O";
+          "ExposeAll" = "Meta+O";
+          "Switch Window Left" = "Meta+Alt+H";
+          "Switch Window Down" = "Meta+Alt+J";
+          "Switch Window Up" = "Meta+Alt+K";
+          "Switch Window Right" = "Meta+Alt+L";
+          "Switch to Screen to the Left" = "Meta+Shift+H";
+          "Switch to Screen Below" = "Meta+Shift+J";
+          "Switch to Screen Above" = "Meta+Shift+K";
+          "Switch to Screen to the Right" = "Meta+Shift+L";
           "Switch One Desktop to the Left" = "Meta+H";
           "Switch One Desktop Down" = "Meta+J";
           "Switch One Desktop Up" = "Meta+K";
           "Switch One Desktop to the Right" = "Meta+L";
+          "Window One Desktop to the Left" = "Meta+Ctrl+H";
+          "Window One Desktop Down" = "Meta+Ctrl+J";
+          "Window One Desktop Up" = "Meta+Ctrl+K";
+          "Window One Desktop to the Right" = "Meta+Ctrl+L";
+          "Window Maximize" = "Meta+U";
         };
         plasmashell = {
           # original: manage activities=Meta+Q,Meta+Q,Show Activity Switcher
@@ -157,6 +166,7 @@
                   "applications:steam.desktop"
                   "applications:cockos-reaper.desktop"
                 ];
+                behavior.showTasks.onlyInCurrentDesktop = false;
               };
             }
 
@@ -186,6 +196,7 @@
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
                   "Discover Notifier_org.kde.DiscoverNotifier"
+                  "trayid403131"
                 ];
               };
             }
