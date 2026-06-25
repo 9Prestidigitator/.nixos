@@ -1,22 +1,40 @@
 {inputs, ...}: {
   flake.homeModules.plasma = {
     pkgs,
+    osConfig,
     lib,
     ...
-  }: {
+  }: let
+    isLaptop =
+      if osConfig.networking.hostName == "ink"
+      then false
+      else true;
+  in {
     imports = [inputs.plasma-manager.homeModules.plasma-manager];
     programs.plasma = {
       enable = true;
 
-      kwin.effects.blur.enable = false;
+      kwin = {
+        virtualDesktops.rows = 10;
+        effects.blur.enable = false;
+      };
 
       workspace = let
         wallpaper-image = pkgs.fetchurl {
-          url = "https://svs.gsfc.nasa.gov/vis/a010000/a014100/a014146/SupermassiveBinaryBlackHoles_desktop.png";
-          hash = "sha256-9oUogUnwTIs3yGyZ/+w5eYTLGFF3xVUg/htqEcT4rA4=";
+          url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nixos-wallpaper-catppuccin-mocha.png";
+          hash = "sha256-fmKFYw2gYAYFjOv4lr8IkXPtZfE1+88yKQ4vjEcax1s=";
         };
       in {
         wallpaper = wallpaper-image;
+      };
+
+      kscreenlocker.appearance = let
+        lockscreen-image = pkgs.fetchurl {
+          url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nixos-wallpaper-catppuccin-mocha.png";
+          hash = "sha256-fmKFYw2gYAYFjOv4lr8IkXPtZfE1+88yKQ4vjEcax1s=";
+        };
+      in {
+        wallpaper = lockscreen-image;
       };
 
       input.touchpads = [
@@ -49,18 +67,25 @@
         kwin = {
           # original: Window Close=Alt+F4,Alt+F4,Close Window
           "Window Close" = ["Meta+Q" "Close Window"];
-          "Expose" = "Meta+o";
-          "Switch Window Down" = "Meta+J";
-          "Switch Window Left" = "Meta+H";
-          "Switch Window Right" = "Meta+L";
-          "Switch Window Up" = "Meta+K";
-          "Switch One Desktop to the Left" = "Meta+D";
-          "Switch One Desktop to the Right" = "Meta+U";
+          "Expose" = "Meta+O";
+          "ExposeAll" = "Meta+Shift+O";
+          "Switch Window Left" = "Meta+Shift+H";
+          "Switch Window Down" = "Meta+Shift+J";
+          "Switch Window Up" = "Meta+Shift+K";
+          "Switch Window Right" = "Meta+Shift+L";
+          "Switch One Desktop to the Left" = "Meta+H";
+          "Switch One Desktop Down" = "Meta+J";
+          "Switch One Desktop Up" = "Meta+K";
+          "Switch One Desktop to the Right" = "Meta+L";
         };
         plasmashell = {
           # original: manage activities=Meta+Q,Meta+Q,Show Activity Switcher
           "manage activities" = ["Meta+Z" "Show Activity Switcher"];
         };
+      };
+
+      powerdevil = lib.mkIf isLaptop {
+        AC.autoSuspend.action = "nothing";
       };
 
       configFile = {
@@ -84,6 +109,8 @@
             "BlurStrength" = 9;
             "NoiseStrength" = 4;
           };
+          Windows.RollOverDesktops = false;
+          Script-desktopchangeosd.PopupHideDelay = 200;
         };
       };
 

@@ -69,6 +69,11 @@
         printing.enable = true;
       };
 
+      systemd.sleep.settings.Sleep = {
+        AllowHibernation = "no";
+        AllowSuspendThenHibernate = "no";
+      };
+
       persist.directories = [
         # "/etc/cups"
         "/var/lib/cups"
