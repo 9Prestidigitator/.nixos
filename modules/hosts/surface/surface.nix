@@ -16,6 +16,7 @@
 
       nixosModules.keyd
       nixosModules.minecraft-server
+      nixosModules.uxplay
       # nixosModules.gitlab
 
       nixosModules.builder
