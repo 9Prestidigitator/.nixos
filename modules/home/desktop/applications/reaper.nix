@@ -19,6 +19,11 @@
         sws.enable = true;
       };
 
+      swell.colortheme = {
+        enable = true;
+        preset = "stylix";
+      };
+
       actions = {
         keyBindings = with reaperActions;
           bindings [
