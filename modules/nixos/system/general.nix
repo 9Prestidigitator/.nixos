@@ -70,8 +70,8 @@
       };
 
       systemd.sleep.settings.Sleep = {
-        AllowHibernation = "no";
-        AllowSuspendThenHibernate = "no";
+        AllowHibernation = lib.mkDefault "no";
+        AllowSuspendThenHibernate = lib.mkDefault "no";
       };
 
       persist.directories = [

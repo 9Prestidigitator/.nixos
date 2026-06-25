@@ -17,6 +17,7 @@
         kdePackages.dynamic-workspaces
         kdePackages.kdeconnect-kde
         kdePackages.akonadi
+        kdePackages.akonadi-contacts
         kdePackages.akonadi-calendar
         kdePackages.kcontacts
         kdePackages.kdepim-runtime
