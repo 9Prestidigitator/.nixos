@@ -89,6 +89,10 @@
           "Window Close" = ["Meta+Q" "Close Window"];
           "Expose" = "Meta+Shift+O";
           "ExposeAll" = "Meta+O";
+          "Walk Through Windows" = "Alt+Tab";
+          "Walk Through Windows (Reverse)" = "Alt+Shift+Tab";
+          "Walk Through Windows Alternative" = "Meta+Tab";
+          "Walk Through Windows Alternative (Reverse)" = "Meta+Shift+Tab";
           "Switch Window Left" = "Meta+Alt+H";
           "Switch Window Down" = "Meta+Alt+J";
           "Switch Window Up" = "Meta+Alt+K";
@@ -106,6 +110,9 @@
           "Window One Desktop Up" = "Meta+Ctrl+K";
           "Window One Desktop to the Right" = "Meta+Ctrl+L";
           "Window Maximize" = "Meta+U";
+          "Window Minimize" = "Meta+D";
+          "Window Above Other Windows" = "Meta+Ctrl+U";
+          "Window Below Other Windows" = "Meta+Ctrl+D";
         };
         plasmashell = {
           # original: manage activities=Meta+Q,Meta+Q,Show Activity Switcher
@@ -139,6 +146,8 @@
             "NoiseStrength" = 4;
           };
           Windows.RollOverDesktops = false;
+          TabBox.DesktopMode = 1;
+          TabBoxAlternative.DesktopMode = 0;
           Script-desktopchangeosd.PopupHideDelay = 200;
           Wayland = {
             VirtualKeyboardEnabled = true;
@@ -196,6 +205,7 @@
                   "org.kde.plasma.brightness"
                   "org.kde.plasma.devicenotifier"
                   "Discover Notifier_org.kde.DiscoverNotifier"
+                  "Sunshine_dev.lizardbyte.app.Sunshine"
                 ];
               };
             }

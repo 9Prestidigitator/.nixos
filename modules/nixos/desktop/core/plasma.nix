@@ -16,6 +16,14 @@
         kdePackages.karousel
         kdePackages.dynamic-workspaces
         kdePackages.kdeconnect-kde
+        kdePackages.akonadi
+        kdePackages.akonadi-calendar
+        kdePackages.kdepim-runtime
+        kdePackages.kaccounts-integration
+        kdePackages.kaccounts-providers
+        kdePackages.korganizer
+        kdePackages.merkuro
+        kdePackages.signon-kwallet-extension
         inputs.kwin-effects-glass.packages.${pkgs.system}.default
         inputs.kwin-effects-better-blur-dx.packages.${pkgs.system}.default
       ];
@@ -46,11 +54,21 @@
         ".config/session"
         ".config/kdeconnect"
 
+        ".config/akonadi"
+        ".config/libaccounts-glib"
+        ".config/signond"
+
         ".local/share/dolphin"
         ".local/share/kwalletd"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
         ".local/share/kdeconnect"
+
+        ".local/share/akonadi"
+        ".local/share/accounts"
+        ".local/share/korganizer"
+        ".local/share/merkuro"
+        ".local/share/signon"
       ];
       kdeUserFiles = [
         ".config/kwinrc"
@@ -60,6 +78,10 @@
         ".config/kscreenlockerrc"
         ".config/ksplashrc"
         ".config/kwinoutputconfig.json"
+
+        ".config/korganizerrc"
+        ".config/merkurocalendarrc"
+
         ".local/state/plasmasessionrestorestaterc"
         ".local/state/kwinstaterc"
         ".local/state/plasmashellstaterc"
