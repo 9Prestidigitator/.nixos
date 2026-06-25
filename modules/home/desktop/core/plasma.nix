@@ -41,8 +41,8 @@
 
       workspace = let
         wallpaper-image = pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nixos-wallpaper-catppuccin-mocha.png";
-          hash = "sha256-fmKFYw2gYAYFjOv4lr8IkXPtZfE1+88yKQ4vjEcax1s=";
+          url = "https://raw.githubusercontent.com/dharmx/walls/main/unsorted/a_black_and_white_swirly_pattern.jpg";
+          hash = "sha256-XyyEJX4j6ZFhla6ay0rcYnGqAb5quWmwE9PmFkzWJk0=";
         };
       in {
         wallpaper = wallpaper-image;
@@ -50,8 +50,8 @@
 
       kscreenlocker.appearance = let
         lockscreen-image = pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/wallpapers/nixos-wallpaper-catppuccin-mocha.png";
-          hash = "sha256-fmKFYw2gYAYFjOv4lr8IkXPtZfE1+88yKQ4vjEcax1s=";
+          url = "https://raw.githubusercontent.com/dharmx/walls/main/unsorted/a_black_background_with_purple_and_blue_spots.png";
+          hash = "sha256-ngvhgrV+ph30C1HrqITKJEgWP6UtsXi7HFOZ6qnL3qg=";
         };
       in {
         wallpaper = lockscreen-image;
