@@ -1515,11 +1515,11 @@
         "nixpkgs": "nixpkgs_16"
       },
       "locked": {
-        "lastModified": 1782350666,
-        "narHash": "sha256-SCGQk5eFnFJNzZ4D1glJ9krQ6b2hjsSi8lKBfqq45VI=",
+        "lastModified": 1782352761,
+        "narHash": "sha256-aDYx9GxhosKD02ModNHsE8fwjg3xCwMTtowPiHowBVc=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "6b02d04d30540cd382c8dd0e4ad7ea7d92954148",
+        "rev": "fcd6977d7eaca16dd43010441951d3642f156cd2",
         "type": "github"
       },
       "original": {

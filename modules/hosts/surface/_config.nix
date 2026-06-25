@@ -5,7 +5,8 @@
     imports = with self; [
       userModules.max.homeModule
 
-      homeModules.gnome
+      # homeModules.gnome
+      homeModules.plasma
 
       homeModules.neovim
       homeModules.terminal-tools
