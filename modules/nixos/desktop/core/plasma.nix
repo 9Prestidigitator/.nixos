@@ -18,6 +18,7 @@
         kdePackages.kdeconnect-kde
         kdePackages.akonadi
         kdePackages.akonadi-calendar
+        kdePackages.kcontacts
         kdePackages.kdepim-runtime
         kdePackages.kaccounts-integration
         kdePackages.kaccounts-providers
