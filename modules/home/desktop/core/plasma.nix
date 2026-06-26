@@ -113,6 +113,7 @@
           "Window Minimize" = "Meta+D";
           "Window Above Other Windows" = "Meta+Ctrl+U";
           "Window Below Other Windows" = "Meta+Ctrl+D";
+          "Show Desktop" = "Meta+Shift+D";
         };
         plasmashell = {
           # original: manage activities=Meta+Q,Meta+Q,Show Activity Switcher
@@ -145,7 +146,11 @@
             "BlurStrength" = 9;
             "NoiseStrength" = 4;
           };
-          Windows.RollOverDesktops = false;
+          Windows = {
+            RollOverDesktops = false;
+            ActivationDesktopPolicy = "SwitchToOtherDesktop";
+            FocusStealingPreventionLevel = 0;
+          };
           TabBox.DesktopMode = 1;
           TabBoxAlternative.DesktopMode = 0;
           Script-desktopchangeosd.PopupHideDelay = 200;
