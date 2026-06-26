@@ -33,22 +33,27 @@
     ];
 
     persist.userDirs = [
-      ".steam"
-      ".factorio"
-      "Games"
-      ".cache/nvidia"
-      ".cache/mesa_shader_cache"
-      ".cache/mesa_shader_cache_db"
       ".config/heroic"
       ".config/dolphin-emu"
       ".config/melonDS"
+      ".config/millennium"
+
+      ".steam"
+      ".factorio"
+      "Games"
+
+      ".cache/nvidia"
+      ".cache/mesa_shader_cache"
+      ".cache/mesa_shader_cache_db"
       ".cache/heroic"
+
       ".local/state/Heroic"
       ".local/share/PrismLauncher"
       ".local/share/Steam"
       ".local/share/eden"
       ".local/share/dolphin-emu"
       ".local/share/azahar-emu"
+      ".local/share/millennium"
     ];
   };
 }
