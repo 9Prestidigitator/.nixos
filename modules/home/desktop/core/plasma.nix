@@ -163,9 +163,10 @@
 
       panels = [
         {
+          screen = "all";
           location = "top";
           alignment = "center";
-          height = 50;
+          height = 45;
           lengthMode = "fill";
           hiding = "normalpanel";
           opacity = "adaptive";
@@ -219,6 +220,46 @@
             {
               digitalClock = {
                 time.format = "24h";
+              };
+            }
+          ];
+        }
+
+        {
+          screen = "all";
+          location = "bottom";
+          alignment = "center";
+          height = 72;
+          lengthMode = "fit";
+          hiding = "dodgewindows"; # or "autohide"
+          opacity = "adaptive";
+          floating = true;
+
+          widgets = [
+            {
+              iconTasks = {
+                launchers = [
+                  "applications:kitty.desktop"
+                  "applications:org.kde.dolphin.desktop"
+                  "applications:brave-browser.desktop"
+                  "applications:steam.desktop"
+                  "applications:cockos-reaper.desktop"
+                ];
+
+                appearance = {
+                  fill = false;
+                  iconSpacing = "large";
+                  showTooltips = true;
+                };
+
+                behavior = {
+                  sortingMethod = "manually";
+                  grouping.method = "byProgramName";
+                  minimizeActiveTaskOnClick = true;
+                  middleClickAction = "newInstance";
+                  showTasks.onlyInCurrentDesktop = false;
+                  showTasks.onlyInCurrentScreen = false;
+                };
               };
             }
           ];
