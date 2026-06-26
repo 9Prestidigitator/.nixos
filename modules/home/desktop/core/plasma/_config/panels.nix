@@ -13,13 +13,6 @@
         widgets = [
           {
             iconTasks = {
-              launchers = [
-                "applications:kitty.desktop"
-                "applications:org.kde.dolphin.desktop"
-                "applications:brave-browser.desktop"
-                "applications:steam.desktop"
-                "applications:cockos-reaper.desktop"
-              ];
               behavior.showTasks.onlyInCurrentDesktop = true;
             };
           }
@@ -70,7 +63,7 @@
         alignment = "center";
         height = 50;
         lengthMode = "fit";
-        hiding = "dodgewindows"; # or "autohide"
+        hiding = "dodgewindows";
         opacity = "adaptive";
         floating = true;
 
