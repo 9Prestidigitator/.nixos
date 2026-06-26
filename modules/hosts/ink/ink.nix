@@ -8,9 +8,10 @@
       userModules.max.nixosModule
       userModules.guest.nixosModule
 
-      nixosModules.noctalia-greeter
-      nixosModules.noctalia
-      nixosModules.niri
+      # nixosModules.noctalia-greeter
+      # nixosModules.noctalia
+      # nixosModules.niri
+      nixosModules.plasma
 
       nixosModules.essentials
       nixosModules.brave-browser
