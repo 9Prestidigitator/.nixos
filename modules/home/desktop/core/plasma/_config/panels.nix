@@ -13,6 +13,7 @@
         widgets = [
           {
             iconTasks = {
+              launchers = [];
               behavior.showTasks.onlyInCurrentDesktop = true;
             };
           }
