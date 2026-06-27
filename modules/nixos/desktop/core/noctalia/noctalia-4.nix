@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.noctalia = {pkgs, ...}: {
+  flake.nixosModules.noctalia-4 = {pkgs, ...}: {
     services = {
       gnome.evolution-data-server.enable = true;
       # Making super key tap-able
