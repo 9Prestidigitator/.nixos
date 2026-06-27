@@ -23,7 +23,6 @@
             enableStickerBypass = true;
           };
           fixYoutubeEmbeds.enable = true;
-          friendsSince.enable = true;
           gifPaste.enable = true;
           noMosaic.enable = true;
           notificationVolume.enable = true;
