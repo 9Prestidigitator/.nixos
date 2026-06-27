@@ -77,6 +77,7 @@
           RollOverDesktops = false;
           ActivationDesktopPolicy = "SwitchToOtherDesktop";
           FocusStealingPreventionLevel = 0;
+          PerOutputVirtualDesktops = true;
         };
         TabBox.DesktopMode = 1;
         TabBoxAlternative.DesktopMode = 0;
