@@ -81,7 +81,7 @@
         ".config/kscreenlockerrc"
         ".config/ksplashrc"
         ".config/plasmashellrc"
-        ".config/kactivitymanagerd"
+        ".config/kactivitymanagerdrc"
         ".config/kactivitymanagerd-pluginsrc"
         ".config/kwinoutputconfig.json"
 
