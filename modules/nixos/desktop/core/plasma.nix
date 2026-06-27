@@ -15,7 +15,6 @@
         kdePackages.kio-extras
         kdePackages.karousel
         kdePackages.dynamic-workspaces
-        kdePackages.kdeconnect-kde
         kdePackages.akonadi
         kdePackages.akonadi-contacts
         kdePackages.akonadi-calendar
@@ -47,6 +46,7 @@
       chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];
       kdeconnect.enable = true;
     };
+
     xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
 
     persist = {
