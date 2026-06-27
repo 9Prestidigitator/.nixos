@@ -39,6 +39,7 @@
         wf-recorder
         gifski
         ddcutil
+        mpvpaper
         linux-wallpaperengine
       ];
       sessionVariables = {

@@ -17,6 +17,8 @@
       enabled = [
         "noctalia/screen_recorder"
         "noctalia/translator"
+        "noctalia/kaomoji"
+        "noctalia/wallhaven"
       ];
     };
     plugin_settings = {

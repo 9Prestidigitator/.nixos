@@ -88,7 +88,7 @@ in {
             {
               key = "a";
               desc = "Audio Panel";
-              cmd = noctalia "volume togglePanel";
+              cmd = noctalia "panel-toggle control-center audio";
             }
             {
               key = "b";
@@ -113,7 +113,7 @@ in {
             {
               key = "s";
               desc = "Show Screen Time";
-              cmd = noctalia "panel-toggle screen-time";
+              cmd = noctalia "panel-toggle control-center screen-time";
             }
             {
               key = "t";
@@ -146,6 +146,17 @@ in {
           key = "W";
           desc = "Random Wallpaper";
           cmd = noctalia "wallpaper-random";
+        }
+        {
+          key = "p";
+          desc = "Plugins";
+          submenu = [
+            {
+              key = "w";
+              desc = "Browse Wallhaven";
+              cmd = noctalia "panel-toggle noctalia/wallhaven:browser";
+            }
+          ];
         }
       ];
     };
