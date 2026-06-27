@@ -19,6 +19,7 @@
         "noctalia/translator"
         "noctalia/kaomoji"
         "noctalia/wallhaven"
+        "noctalia/mpvpaper"
       ];
     };
     plugin_settings = {
