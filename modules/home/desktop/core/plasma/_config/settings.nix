@@ -59,19 +59,20 @@
       };
       kwinrc = {
         Plugins = {
-          "better_blur_dxEnabled" = true;
-          "dynamic_workspacesEnabled" = true;
+          dynamic_workspacesEnabled = true;
+          desktopchangeosdEnabled = true;
+          better_blur_dxEnabled = true;
           # Been having issues with glass lately
-          "glassEnabled" = false;
+          glassEnabled = false;
         };
         Effect-better-blur-dx = {
-          "BlurMatching" = false;
-          "BlurNonMatching" = true;
-          "BlurDecorations" = true;
-          "BlurMenus" = true;
-          "BlurDocks" = true;
-          "BlurStrength" = 9;
-          "NoiseStrength" = 4;
+          BlurMatching = false;
+          BlurNonMatching = true;
+          BlurDecorations = true;
+          BlurMenus = true;
+          BlurDocks = true;
+          BlurStrength = 9;
+          NoiseStrength = 4;
         };
         Windows = {
           RollOverDesktops = false;
