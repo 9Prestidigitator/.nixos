@@ -14,7 +14,13 @@
           {
             iconTasks = {
               launchers = [];
-              behavior.showTasks.onlyInCurrentDesktop = true;
+              behavior = {
+                grouping.method = "doNotGroup";
+                showTasks = {
+                  onlyInCurrentDesktop = true;
+                  onlyInCurrentScreen = true;
+                };
+              };
             };
           }
 
@@ -32,6 +38,7 @@
           {
             systemTray.items = {
               shown = [
+                "org.kde.plasma.notifications"
                 "org.kde.plasma.bluetooth"
                 "org.kde.plasma.volume"
                 "org.kde.plasma.networkmanagement"
@@ -39,7 +46,6 @@
               ];
 
               hidden = [
-                "org.kde.plasma.notifications"
                 "org.kde.plasma.clipboard"
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.devicenotifier"
@@ -87,11 +93,13 @@
 
               behavior = {
                 sortingMethod = "manually";
-                grouping.method = "byProgramName";
                 minimizeActiveTaskOnClick = true;
                 middleClickAction = "newInstance";
-                showTasks.onlyInCurrentDesktop = false;
-                showTasks.onlyInCurrentScreen = false;
+                grouping.method = "byProgramName";
+                showTasks = {
+                  onlyInCurrentDesktop = false;
+                  onlyInCurrentScreen = false;
+                };
               };
             };
           }

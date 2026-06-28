@@ -124,6 +124,21 @@ in {
             opacity = 1.0;
           };
         };
+
+        lockscreen-widget-0000000000000004 = {
+          box_height = 64;
+          box_width = 160;
+          cx = primaryMonitor.logicalWidth / 2;
+          cy = primaryMonitor.logicalHeight * 0.55;
+          output = primaryMonitor.name;
+          rotation = 0.0;
+          type = "media_player";
+          settings = {
+            background = false;
+            hide_when_no_media = true;
+            layout = "horizontal";
+          };
+        };
       };
     };
   };
