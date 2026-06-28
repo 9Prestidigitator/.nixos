@@ -15,7 +15,7 @@
             iconTasks = {
               launchers = [];
               behavior = {
-                grouping.method = "doNotGroup";
+                grouping.method = "none";
                 showTasks = {
                   onlyInCurrentDesktop = true;
                   onlyInCurrentScreen = true;
