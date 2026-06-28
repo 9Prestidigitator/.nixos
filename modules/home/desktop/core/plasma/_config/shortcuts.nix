@@ -43,14 +43,30 @@
         "Window One Desktop Down" = "Meta+Ctrl+J";
         "Window One Desktop Up" = "Meta+Ctrl+K";
         "Window One Desktop to the Right" = "Meta+Ctrl+L";
+        "Window to Next Screen" = "Meta+Ctrl+Shift+L";
+        "Window to Previous Screen" = "Meta+Ctrl+Shift+H";
         "Window Maximize" = "Meta+U";
         "Window Minimize" = "Meta+D";
         "Window Above Other Windows" = "Meta+Ctrl+U";
         "Window Below Other Windows" = "Meta+Ctrl+D";
         "Show Desktop" = "Meta+Shift+D";
+        "Window Fullscreen" = "Meta+F";
+        "Window Grow Horizontal"= "Meta++";
+        "Window Shrink Horizontal"= "Meta+-";
+        "Window Grow Vertical"= "Meta+Shift++";
+        "Window Shrink Vertical"= "Meta+Shift+-";
+        "Window Move Center"= "Meta+Ctrl+Shift+M";
+        "Window Maximize Horizontal" = "Meta+S";
+        "Window Maximize Vertical" = "Meta+Shift+S";
+        "Window On All Desktops" = "Meta+P";
+        "MoveMouseToFocus" = "Meta+M";
+        "MoveMouseToCenter" = "Meta+Shift+M";
       };
       plasmashell = {
         "manage activities" = ["Meta+Z" "Show Activity Switcher"];
+        "next activity" = "Meta+~";
+        "previous activity" = "Meta+Shift+~";
+        "repeat_action" = "Meta+;";
       };
     };
     # The #1 thing on my christmas wishlist is vim-like modal keybinds on kde plasma

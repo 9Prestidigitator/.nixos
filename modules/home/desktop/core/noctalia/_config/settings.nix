@@ -54,7 +54,7 @@ in {
       enabled = true;
       auto_hide = true;
       background_opacity = 0;
-      icon_size = 30;
+      icon_size = 35;
       item_spacing = 0;
       show_dots = true;
 

@@ -41,6 +41,7 @@
       };
       tray = {
         drawer = true;
+        pinned = ["Disconnected"];
       };
       volume.show_label = false;
       notifications.hide_when_no_unread = true;
