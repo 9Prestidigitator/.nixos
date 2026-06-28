@@ -20,7 +20,7 @@
 
     programs = {
       gpu-screen-recorder.enable = true;
-      kdeconnect.eable = true;
+      kdeconnect.enable = true;
     };
 
     environment = {
