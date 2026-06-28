@@ -56,8 +56,9 @@
         "Window Grow Vertical"= "Meta+Shift++";
         "Window Shrink Vertical"= "Meta+Shift+-";
         "Window Move Center"= "Meta+Ctrl+Shift+M";
-        "Window Maximize Horizontal" = "Meta+N";
-        "Window Maximize Vertical" = "Meta+Shift+N";
+        "Window Maximize Horizontal" = "Meta+S";
+        "Window Maximize Vertical" = "Meta+Shift+S";
+        "Window On All Desktops" = "Meta+P";
         "MoveMouseToFocus" = "Meta+M";
         "MoveMouseToCenter" = "Meta+Shift+M";
       };

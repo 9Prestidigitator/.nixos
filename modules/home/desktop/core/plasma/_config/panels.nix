@@ -30,6 +30,17 @@
             kickoff = {
               icon = "nix-snowflake-white";
               sortAlphabetically = true;
+              showButtonsFor = "session";
+              settings.General = {
+                switchCategoryOnHover = true;
+                favorites = [
+                  "systemsettings.desktop"
+                  "kitty.desktop"
+                  "org.kde.dolphin.desktop"
+                  "preferred://browser"
+                  "steam.desktop"
+                ];
+              };
             };
           }
 
