@@ -30,6 +30,7 @@
         homeModules.neovim
         homeModules.mpv
         homeModules.spicetify
+        homeModules.discord
         homeModules.bluetooth
 
         homeModules.stylix
