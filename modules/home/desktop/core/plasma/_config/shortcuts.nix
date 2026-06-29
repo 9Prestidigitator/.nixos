@@ -64,8 +64,8 @@
       };
       plasmashell = {
         "manage activities" = ["Meta+Z" "Show Activity Switcher"];
-        "next activity" = "Meta+~";
-        "previous activity" = "Meta+Shift+~";
+        "next activity" = "Alt+`";
+        "previous activity" = "Alt+~";
         "repeat_action" = "Meta+;";
       };
     };
