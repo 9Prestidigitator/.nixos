@@ -77,7 +77,7 @@ in {
         };
 
         lockscreen-widget-0000000000000001 = {
-          box_height = 240.0;
+          box_height = 360.0;
           box_width = 360.0;
           cx = primaryMonitor.logicalWidth / 2;
           cy = primaryMonitor.logicalHeight / 3;
@@ -88,6 +88,7 @@ in {
             background = false;
             clock_style = "digital";
             color = "primary";
+            center_text = true;
           };
         };
 
