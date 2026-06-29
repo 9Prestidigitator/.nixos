@@ -45,6 +45,7 @@ in {
     lockscreen_widgets = {
       enabled = true;
       widget_order = [
+        "lockscreen-widget-0000000000000004"
         "lockscreen-widget-0000000000000003"
         "lockscreen-widget-0000000000000002"
         "lockscreen-widget-0000000000000001"
