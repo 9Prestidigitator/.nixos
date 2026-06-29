@@ -29,11 +29,9 @@
       };
       settings = {
         experimental-features = ["nix-command" "flakes"];
-        allowed-users = ["@wheel"];
+        # TODO(max): Do more research into the implications of including guest in this
+        allowed-users = ["@wheel" "guest"];
         trusted-users = ["@wheel" "nixremote"];
-
-        substituters = ["https://noctalia.cachix.org"];
-        trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
       };
     };
   };
