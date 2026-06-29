@@ -56,6 +56,7 @@
       qjackctl
 
       # hardware
+      elektroid
       overwitch
     ];
 
