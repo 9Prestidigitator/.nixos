@@ -59,7 +59,6 @@
     enableAllFirmware = true;
     cpu.amd.updateMicrocode = true;
   };
-  powerManagement.cpuFreqGovernor = "performance";
 
   services.hardware.openrgb = {
     enable = true;
@@ -68,6 +67,7 @@
   };
 
   systemd.sleep.settings.Sleep.AllowSuspend = "no";
+  powerManagement.cpuFreqGovernor = "performance";
 
   services.flatpak.overrides."com.github.Matoking.protontricks".Context.filesystems = ["/mnt/1tb_ssd/SteamLibrary"];
 
