@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.nixosModules.essentials = {pkgs, ...}: {
+  flake.nixosModules.essentials = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [inputs.nix-flatpak.nixosModules.nix-flatpak];
     hardware.uinput.enable = true;
     programs.java.enable = true;
@@ -8,7 +12,7 @@
       flatpak.enable = true;
       sunshine = {
         enable = true;
-        autoStart = false;
+        autoStart = lib.mkDefault false;
         capSysAdmin = true;
         openFirewall = true;
       };
