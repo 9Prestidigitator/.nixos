@@ -60,6 +60,7 @@
       ".local/state/noctalia"
       ".config/evolution"
       ".local/share/evolution"
+      ".local/share/kdeconnect"
     ];
   };
 }
