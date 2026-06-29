@@ -108,7 +108,7 @@ in {
           {
             key = "l";
             desc = "leetcode";
-            cmd = "kitty --title btop bash -lc \"nix develop ~/.nixos#default -c nvim /path/to/your/leetcode.nvim\"";
+            cmd = "kitty --title btop bash -lc 'nix develop ~/.nixos#python -c nvim leetcode.nvim'";
           }
           {
             key = "n";
