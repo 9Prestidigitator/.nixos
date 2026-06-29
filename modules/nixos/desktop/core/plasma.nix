@@ -12,21 +12,24 @@
     };
 
     environment = {
-      systemPackages = with pkgs; [
-        kdePackages.dolphin
-        kdePackages.kio-extras
-        kdePackages.karousel
-        kdePackages.dynamic-workspaces
-        kdePackages.akonadi
-        kdePackages.akonadi-contacts
-        kdePackages.akonadi-calendar
-        kdePackages.kcontacts
-        kdePackages.kdepim-runtime
-        kdePackages.kaccounts-integration
-        kdePackages.kaccounts-providers
-        kdePackages.korganizer
-        kdePackages.merkuro
-        kdePackages.signon-kwallet-extension
+      systemPackages = with pkgs.kdePackages; [
+        krfb
+        kscreen
+        dolphin
+        kio-extras
+        karousel
+        dynamic-workspaces
+        akonadi
+        akonadi-contacts
+        akonadi-calendar
+        kcontacts
+        kdepim-runtime
+        kaccounts-integration
+        kaccounts-providers
+        korganizer
+        merkuro
+        signon-kwallet-extension
+
         inputs.kwin-effects-glass.packages.${pkgs.system}.default
         inputs.kwin-effects-better-blur-dx.packages.${pkgs.system}.default
       ];
