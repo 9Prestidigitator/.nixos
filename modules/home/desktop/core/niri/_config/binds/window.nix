@@ -50,16 +50,6 @@
         desc = "Switch focus between floating and tiling";
         cmd = "niri msg action switch-focus-between-floating-and-tiling";
       }
-      {
-        key = "z";
-        desc = "Center current window";
-        cmd = "niri msg action center-column";
-      }
-      {
-        key = "Z";
-        desc = "Center visible columns";
-        cmd = "niri msg action center-visible-columns";
-      }
     ];
 
     "Mod+R".action = switch-preset-column-width-back;

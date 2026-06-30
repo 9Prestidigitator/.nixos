@@ -1,8 +1,20 @@
 {
+  pkgs,
   config,
   mkWlrWhichKeyMenu,
   ...
-}: {
+}: let
+  niriFloatMove = pkgs.writeShellApplication {
+    name = "niri-float-move";
+    runtimeInputs = [
+      pkgs.niri
+      pkgs.jq
+    ];
+    text = builtins.readFile ./niri-float-move.sh;
+  };
+in {
+  home.packages = [niriFloatMove];
+
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+Ctrl+Home".action = move-column-to-first;
     "Mod+Ctrl+End".action = move-column-to-last;
@@ -67,42 +79,6 @@
 
     "Mod+M".action.spawn = mkWlrWhichKeyMenu "Move Window" [
       {
-        key = "w";
-        desc = "Move Workspace";
-        submenu = [
-          {
-            key = "j";
-            desc = "Move workspace down";
-            cmd = "niri msg action move-workspace-down";
-          }
-          {
-            key = "k";
-            desc = "Move workspace up";
-            cmd = "niri msg action move-workspace-up";
-          }
-          {
-            key = "h";
-            desc = "Move workspace to monitor on left";
-            cmd = "niri msg action move-workspace-to-monitor-left";
-          }
-          {
-            key = "l";
-            desc = "Move workspace to monitor on right";
-            cmd = "niri msg action move-workspace-to-monitor-right";
-          }
-          {
-            key = "J";
-            desc = "Move workspace to monitor below";
-            cmd = "niri msg action move-workspace-to-monitor-down";
-          }
-          {
-            key = "K";
-            desc = "Move workspace to monitor above";
-            cmd = "niri msg action move-workspace-to-monitor-up";
-          }
-        ];
-      }
-      {
         key = "g";
         desc = "Move window furthest left position";
         cmd = "niri msg action move-column-to-first";
@@ -141,6 +117,98 @@
         key = "L";
         desc = "Move column right";
         cmd = "niri msg action move-column-right";
+      }
+      {
+        key = "m";
+        desc = "Move Floating window";
+        submenu = [
+          {
+            key = "h";
+            desc = "Move window to left edge";
+            cmd = "${niriFloatMove}/bin/niri-float-move left";
+          }
+          {
+            key = "H";
+            desc = "Move window to top left corner";
+            cmd = "${niriFloatMove}/bin/niri-float-move top-left";
+          }
+          {
+            key = "j";
+            desc = "Move window to bottom edge";
+            cmd = "${niriFloatMove}/bin/niri-float-move bottom";
+          }
+          {
+            key = "J";
+            desc = "Move window to bottom left corner";
+            cmd = "${niriFloatMove}/bin/niri-float-move bottom-left";
+          }
+          {
+            key = "k";
+            desc = "Move window to top edge";
+            cmd = "${niriFloatMove}/bin/niri-float-move top";
+          }
+          {
+            key = "K";
+            desc = "Move window to bottom right corner";
+            cmd = "${niriFloatMove}/bin/niri-float-move bottom-right";
+          }
+          {
+            key = "l";
+            desc = "Move window to right edge";
+            cmd = "${niriFloatMove}/bin/niri-float-move right";
+          }
+          {
+            key = "L";
+            desc = "Move window to top right corner";
+            cmd = "${niriFloatMove}/bin/niri-float-move top-right";
+          }
+        ];
+      }
+      {
+        key = "w";
+        desc = "Move Workspace";
+        submenu = [
+          {
+            key = "j";
+            desc = "Move workspace down";
+            cmd = "niri msg action move-workspace-down";
+          }
+          {
+            key = "k";
+            desc = "Move workspace up";
+            cmd = "niri msg action move-workspace-up";
+          }
+          {
+            key = "h";
+            desc = "Move workspace to monitor on left";
+            cmd = "niri msg action move-workspace-to-monitor-left";
+          }
+          {
+            key = "l";
+            desc = "Move workspace to monitor on right";
+            cmd = "niri msg action move-workspace-to-monitor-right";
+          }
+          {
+            key = "J";
+            desc = "Move workspace to monitor below";
+            cmd = "niri msg action move-workspace-to-monitor-down";
+          }
+          {
+            key = "K";
+            desc = "Move workspace to monitor above";
+            cmd = "niri msg action move-workspace-to-monitor-up";
+          }
+        ];
+      }
+      {
+        key = "z";
+        desc = "Center current window";
+        cmd = "niri msg action center-column";
+      }
+      {
+        key = "Z";
+        desc = "Center visible columns";
+        cmd = "niri msg action center-visible-columns";
       }
       {
         key = "1";
