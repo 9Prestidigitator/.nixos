@@ -79,11 +79,11 @@ in {
         {
           key = "l";
           desc = "Toggle Nightlight";
-          cmd = noctalia "nightLight-toggle";
+          cmd = noctalia "nightlight-toggle";
         }
         {
           key = "n";
-          desc = "Panels";
+          desc = "Control Center";
           submenu = [
             {
               key = "a";
@@ -111,6 +111,11 @@ in {
               cmd = noctalia "panel-toggle control-center network";
             }
             {
+              key = "p";
+              desc = "Show Power Panel";
+              cmd = noctalia "panel-toggle control-center power";
+            }
+            {
               key = "s";
               desc = "Show Screen Time";
               cmd = noctalia "panel-toggle control-center screen-time";
@@ -119,11 +124,6 @@ in {
               key = "t";
               desc = "Open tray";
               cmd = noctalia "panel-toggle tray-drawer";
-            }
-            {
-              key = "w";
-              desc = "Choose Wallpaper";
-              cmd = noctalia "panel-toggle wallpaper";
             }
             {
               key = "W";
@@ -141,6 +141,11 @@ in {
           key = "s";
           desc = "Noctalia Settings";
           cmd = noctalia "settings-toggle";
+        }
+        {
+          key = "w";
+          desc = "Choose Wallpaper";
+          cmd = noctalia "panel-toggle wallpaper";
         }
         {
           key = "W";
