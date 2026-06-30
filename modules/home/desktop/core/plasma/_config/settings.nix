@@ -5,24 +5,12 @@
     kwin = {
       # virtualDesktops.rows = 3;
       effects.blur.enable = false;
+      effects.zoom.enable = true;
       nightLight = {
         enable = true;
         mode = "automatic";
       };
     };
-
-    # startup.startupScript.sunshine = {
-    #   runAlways = true;
-    #   text = ''
-    #     sunshine=/run/wrappers/bin/sunshine
-    #     if ! [ -x "$sunshine" ]; then
-    #       sunshine=${pkgs.sunshine}/bin/sunshine
-    #     fi
-    #     if ! ${pkgs.procps}/bin/pgrep -x sunshine >/dev/null; then
-    #       "$sunshine" &
-    #     fi
-    #   '';
-    # };
 
     workspace = let
       wallpaper-image = pkgs.fetchurl {

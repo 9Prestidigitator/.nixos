@@ -51,20 +51,20 @@
         "Window Below Other Windows" = "Meta+Ctrl+D";
         "Show Desktop" = "Meta+Shift+D";
         "Window Fullscreen" = "Meta+F";
-        "Window Grow Horizontal"= "Meta++";
-        "Window Shrink Horizontal"= "Meta+-";
-        "Window Grow Vertical"= "Meta+Shift++";
-        "Window Shrink Vertical"= "Meta+Shift+-";
-        "view_zoom_in" = "Meta+Ctrl++";
+        "Window Grow Horizontal" = ["Meta++" "Meta+="];
+        "Window Shrink Horizontal" = "Meta+-";
+        "Window Grow Vertical" = ["Meta+Shift++" "Meta+Shift+="];
+        "Window Shrink Vertical" = "Meta+Shift+-";
+        "view_zoom_in" = ["Meta+Ctrl++" "Meta+Ctrl+="];
         "view_zoom_out" = "Meta+Ctrl+-";
-        "Window Move Center"= "Meta+Ctrl+Shift+M";
+        "Window Move Center" = "Meta+Ctrl+Shift+M";
         "Window Maximize Horizontal" = "Meta+S";
         "Window Maximize Vertical" = "Meta+Shift+S";
         "Window On All Desktops" = "Meta+P";
         "MoveMouseToFocus" = "Meta+M";
         "MoveMouseToCenter" = "Meta+Shift+M";
-        "Walk Through Windows of Current Application"="Ctrl+Alt+Tab";
-        "Walk Through Windows of Current Application (Reverse)"="Ctrl+Shift+Alt+Tab";
+        "Walk Through Windows of Current Application" = "Ctrl+Alt+Tab";
+        "Walk Through Windows of Current Application (Reverse)" = "Ctrl+Shift+Alt+Tab";
       };
       plasmashell = {
         "manage activities" = ["Meta+Z" "Show Activity Switcher"];
