@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.homeModules.spicetify = {pkgs, ...}: {
+  flake.homeModules.spotify = {pkgs, ...}: {
     imports = [inputs.spicetify-nix.homeManagerModules.default];
 
     programs.spicetify = let

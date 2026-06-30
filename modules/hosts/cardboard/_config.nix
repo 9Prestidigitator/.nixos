@@ -12,7 +12,7 @@
         homeModules.terminal-tools
         homeModules.neovim
         homeModules.mpv
-        homeModules.spicetify
+        homeModules.spotify
         homeModules.bluetooth
 
         homeModules.stylix
@@ -29,7 +29,7 @@
         homeModules.terminal-tools
         homeModules.neovim
         homeModules.mpv
-        homeModules.spicetify
+        homeModules.spotify
         homeModules.discord
         homeModules.bluetooth
 
