@@ -5,17 +5,22 @@ gap=12
 
 pos="${1:?usage: niri-float-move POSITION}"
 
+# Make sure the focused window is actually floating before reading its floating layout.
+niri msg action move-window-to-floating || true
+
 win_json="$(niri msg --json focused-window)"
 out_json="$(niri msg --json focused-output)"
 
-out_w="$(printf '%s' "$out_json" | jq '.logical.width')"
-out_h="$(printf '%s' "$out_json" | jq '.logical.height')"
+out_w="$(printf '%s' "$out_json" | jq -r '.logical.width')"
+out_h="$(printf '%s' "$out_json" | jq -r '.logical.height')"
 
-win_w="$(printf '%s' "$win_json" | jq '.size.w')"
-win_h="$(printf '%s' "$win_json" | jq '.size.h')"
+# tile_size is what niri considers the visual window/tile size, including niri decorations.
+win_w="$(printf '%s' "$win_json" | jq -r '.layout.tile_size[0] | floor')"
+win_h="$(printf '%s' "$win_json" | jq -r '.layout.tile_size[1] | floor')"
 
-cur_x="$(printf '%s' "$win_json" | jq '.layout.pos_in_scrolling_layout[0] // .layout.pos_in_workspace[0] // 0')"
-cur_y="$(printf '%s' "$win_json" | jq '.layout.pos_in_scrolling_layout[1] // .layout.pos_in_workspace[1] // 0')"
+# Current visible position inside the workspace view.
+cur_x="$(printf '%s' "$win_json" | jq -r '.layout.tile_pos_in_workspace_view[0] // 0 | floor')"
+cur_y="$(printf '%s' "$win_json" | jq -r '.layout.tile_pos_in_workspace_view[1] // 0 | floor')"
 
 case "$pos" in
 top-left)
@@ -58,5 +63,13 @@ bottom)
     ;;
 esac
 
-niri msg action move-window-to-floating || true
+# Prevent negative coordinates if the window is larger than the output.
+if [ "$x" -lt "$gap" ]; then
+    x="$gap"
+fi
+
+if [ "$y" -lt "$gap" ]; then
+    y="$gap"
+fi
+
 niri msg action move-floating-window -x "$x" -y "$y"
