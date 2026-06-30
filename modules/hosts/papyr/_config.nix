@@ -23,7 +23,7 @@
       homeModules.steam
       homeModules.reaper
       homeModules.mpv
-      homeModules.spicetify
+      homeModules.spotify
       homeModules.discord
     ];
 
