@@ -6,7 +6,6 @@
   flake.nixosConfigurations.ink = myLib.mkNixosHost {
     modules = with self; [
       userModules.max.nixosModule
-      userModules.guest.nixosModule
 
       # nixosModules.noctalia-greeter
       # nixosModules.noctalia
