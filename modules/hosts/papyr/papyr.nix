@@ -26,6 +26,7 @@
       nixosModules.wine
       nixosModules.wg0
       nixosModules.uxplay
+      nixosModules.localsend
       nixosModules.fprintd
 
       nixosModules.ink-build-machine
