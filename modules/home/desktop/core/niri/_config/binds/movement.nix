@@ -6,10 +6,7 @@
 }: let
   niriFloatMove = pkgs.writeShellApplication {
     name = "niri-float-move";
-    runtimeInputs = [
-      pkgs.niri
-      pkgs.jq
-    ];
+    runtimeInputs = [pkgs.jq];
     text = builtins.readFile ./niri-float-move.sh;
   };
 in {
