@@ -9,8 +9,6 @@
     imports = with self; [
       userModules.max.homeModule
 
-      # homeModules.noctalia
-      # homeModules.niri
       homeModules.plasma
 
       homeModules.neovim
