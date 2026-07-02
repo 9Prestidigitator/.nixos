@@ -52,6 +52,10 @@
         windows = {
           transportDockPosition = reaperWindows.transport.topOfMainWindow;
           mixer.show = false;
+          tcpHelpBar = {
+            informationDisplay = reaperWindows.tcpHelpBar.informationDisplay.cpuRamUseTimeSinceLastSave;
+            showMouseEditingHelp = true;
+          };
         };
 
         project = {
