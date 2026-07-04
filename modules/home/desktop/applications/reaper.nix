@@ -5,6 +5,7 @@
     reaperMouse,
     reaperWindows,
     reaperAppearance,
+    reaperLayout,
     ...
   }: let
     reaper-config = "reaper-flake";
@@ -50,8 +51,6 @@
 
       preferences = {
         windows = {
-          transportDockPosition = reaperWindows.transport.topOfMainWindow;
-          mixer.show = false;
           tcpHelpBar = {
             informationDisplay = reaperWindows.tcpHelpBar.informationDisplay.cpuRamUseTimeSinceLastSave;
             showMouseEditingHelp = true;
@@ -133,20 +132,103 @@
           };
         };
 
-        mouse = {
-          importedContexts = with reaperMouse; [
-            contexts.arrange.middleDrag
-            contexts.midiPianoRoll.leftClick
-          ];
-
-          contexts = with reaperMouse;
-            merge [
-              (set contexts.arrange.middleDrag modifiers.none (mouse 9))
-              (set contexts.midiPianoRoll.leftClick modifiers.none (mouse 4))
+        editingBehavior = {
+          mouseModifiers = {
+            importedContexts = with reaperMouse; [
+              contexts.arrange.middleDrag
+              contexts.midiPianoRoll.leftClick
             ];
+
+            contexts = with reaperMouse;
+              merge [
+                (set contexts.arrange.middleDrag modifiers.none (mouse 9))
+                (set contexts.midiPianoRoll.leftClick modifiers.none (mouse 4))
+              ];
+          };
         };
 
         plugIns.reascript.python.enable = true;
+      };
+
+      layout = {
+        dockers = {
+          main = {
+            id = reaperLayout.dock.mainDocker;
+            position = "main";
+          };
+
+          left = {
+            id = 1;
+            position = "left";
+            size = 320;
+            preference = "0.85531396 1";
+          };
+        };
+
+        mainWindow = {
+          position = {
+            x = 0;
+            y = 0;
+          };
+          size = {
+            width = 1600;
+            height = 900;
+          };
+          state = reaperLayout.windowState.normal;
+        };
+
+        mixer = {
+          visible = true;
+          docked = true;
+          docker = "main";
+          position = {
+            x = 0;
+            y = 580;
+          };
+          size = {
+            width = 1600;
+            height = 320;
+          };
+          maximized = false;
+        };
+
+        masterMixer = {
+          visible = false;
+          docked = true;
+          docker = "main";
+          position = {
+            x = 80;
+            y = 80;
+          };
+          size = {
+            width = 260;
+            height = 500;
+          };
+        };
+
+        transport = {
+          visible = true;
+          docked = true;
+          docker = "main";
+          dockPosition = reaperWindows.transport.topOfMainWindow;
+        };
+
+        dockedWindows = {
+          explorer.docker = "left";
+        };
+
+        dockPreferences = {
+          navigator = reaperLayout.dock.mainDocker;
+        };
+
+        rawSections = {
+          reaper_explorer = {
+            window_x = 80;
+            window_y = 80;
+            window_w = 900;
+            window_h = 420;
+          };
+        };
       };
     };
 
