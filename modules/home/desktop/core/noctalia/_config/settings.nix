@@ -16,7 +16,7 @@ in {
       screen_time_enabled = true;
       polkit_agent = true;
 
-      font_family = "Noto Sans";
+      # font_family = "Noto Sans";
       animation.speed = 1.50;
       avatar_path = "${config.xdg.userDirs.pictures}/.face";
 
@@ -53,7 +53,6 @@ in {
     dock = {
       enabled = true;
       auto_hide = true;
-      background_opacity = 0;
       icon_size = 35;
       item_spacing = 0;
       show_dots = true;
@@ -105,13 +104,13 @@ in {
     osd = {
       orientation = "horizontal";
       position = "bottom_center";
-      background_opacity = 0.4;
+      # background_opacity = 0.4;
     };
 
-    theme = {
-      source = "community";
-      community_palette = "GitHub Dark";
-    };
+    # theme = {
+    #   source = "community";
+    #   community_palette = "GitHub Dark";
+    # };
 
     wallpaper.transition_on_startup = true;
 
