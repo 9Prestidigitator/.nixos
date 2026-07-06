@@ -78,8 +78,8 @@ in {
         };
 
         lockscreen-widget-0000000000000001 = {
-          box_height = 370;
-          box_width = 370;
+          box_height = 256;
+          box_width = 416;
           cx = primaryMonitor.logicalWidth / 2;
           cy = primaryMonitor.logicalHeight / 3;
           output = primaryMonitor.name;
