@@ -55,6 +55,7 @@
             informationDisplay = reaperWindows.tcpHelpBar.informationDisplay.cpuRamUseTimeSinceLastSave;
             showMouseEditingHelp = true;
           };
+          mixer.master.showInDockerOrWindow = true;
         };
 
         project = {
@@ -174,7 +175,6 @@
 
         transport = {
           visible = true;
-          docked = false;
           dockPosition = reaperWindows.transport.topOfMainWindow;
         };
 
@@ -186,7 +186,7 @@
         };
 
         mixer = {
-          visible = true;
+          visible = false;
           docked = true;
           dock = "bottom";
           tabOrder = 0.0;
