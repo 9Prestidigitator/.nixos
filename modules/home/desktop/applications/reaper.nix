@@ -151,83 +151,55 @@
       };
 
       layout = {
-        dockers = {
-          main = {
-            id = reaperLayout.dock.mainDocker;
-            position = "main";
+        docks = {
+          bottom = {
+            id = 3;
+            position = "bottom";
+            selectedPanel = "mixer";
           };
 
           left = {
-            id = 1;
+            id = 2;
             position = "left";
-            size = 320;
-            preference = "0.85531396 1";
+            size = 395;
+            selectedPanel = "explorer";
           };
-        };
 
-        mainWindow = {
-          position = {
-            x = 0;
-            y = 0;
-          };
-          size = {
-            width = 1600;
-            height = 900;
-          };
-          state = reaperLayout.windowState.normal;
-        };
-
-        mixer = {
-          visible = true;
-          docked = true;
-          docker = "main";
-          position = {
-            x = 0;
-            y = 580;
-          };
-          size = {
-            width = 1600;
-            height = 320;
-          };
-          maximized = false;
-        };
-
-        masterMixer = {
-          visible = false;
-          docked = true;
-          docker = "main";
-          position = {
-            x = 80;
-            y = 80;
-          };
-          size = {
-            width = 260;
-            height = 500;
+          right = {
+            id = 1;
+            position = "right";
+            selectedPanel = "mastermixer";
           };
         };
 
         transport = {
           visible = true;
-          docked = true;
-          docker = "main";
+          docked = false;
           dockPosition = reaperWindows.transport.topOfMainWindow;
         };
 
-        dockedWindows = {
-          explorer.docker = "left";
+        masterMixer = {
+          visible = true;
+          docked = true;
+          dock = "right";
+          tabOrder = 0.0;
         };
 
-        dockPreferences = {
-          navigator = reaperLayout.dock.mainDocker;
+        mixer = {
+          visible = true;
+          docked = true;
+          dock = "bottom";
+          tabOrder = 0.0;
         };
 
-        rawSections = {
-          reaper_explorer = {
-            window_x = 80;
-            window_y = 80;
-            window_w = 900;
-            window_h = 420;
-          };
+        panels.explorer = {
+          id = "explorer";
+          section = "reaper_sexplorer";
+          keyStyle = "window";
+          visible = false;
+          docked = true;
+          dock = "left";
+          tabOrder = 0.5;
         };
       };
     };
