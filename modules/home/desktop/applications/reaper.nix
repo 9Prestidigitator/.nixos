@@ -99,13 +99,13 @@
           trackControlPanels = {
             setTrackLabelBackgroundToCustomTrackColors = true;
             tintTrackPanelBackgrounds = false;
+            alignTcpControlsWhenTrackIconsOrFixedItemLanesAreUsed = true;
 
             showFxInserts = true;
             showSends = true;
             groupSendsWithFxInserts = false;
             groupFxParametersWithInserts = true;
 
-            alignTcpControlsWhenTrackIconsOrFixedItemLanesAreUsed = true;
             trackGroupingIndicators = reaperAppearance.trackControlPanels.trackGroupingIndicators.ribbons;
             folderCollapseButtonCyclesTrackHeights = reaperAppearance.trackControlPanels.folderCollapseButtonCyclesTrackHeights.normalHidden;
             fixedLaneCollapseButtonChangesDisplay = reaperAppearance.trackControlPanels.fixedLaneCollapseButtonChangesDisplay.oneManyLanes;
