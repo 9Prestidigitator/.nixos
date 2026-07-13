@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   host.name = "cardboard";
 
   home-manager.users = {
@@ -44,6 +44,7 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   services.uxplay.dynamicFirewall = false;
+  environment.systemPackages = [pkgs.kdePackages.plasma-bigscreen];
 
   system.stateVersion = "25.11";
   home-manager.sharedModules = [{home.stateVersion = "25.11";}];
