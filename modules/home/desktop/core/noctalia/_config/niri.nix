@@ -157,6 +157,16 @@ in {
           desc = "Plugins";
           submenu = [
             {
+              key = "n";
+              desc = "Notes";
+              cmd = noctalia "panel-toggle noctalia/notes:panel";
+            }
+            {
+              key = "s";
+              desc = "Nix Monitor";
+              cmd = noctalia "panel-toggle avivbintangaringga/nix-monitor:panel";
+            }
+            {
               key = "w";
               desc = "Browse Wallhaven";
               cmd = noctalia "panel-toggle noctalia/wallhaven:browser";
