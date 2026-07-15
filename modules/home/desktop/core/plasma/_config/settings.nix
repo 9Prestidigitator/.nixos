@@ -30,14 +30,17 @@
       wallpaper = lockscreen-image;
     };
 
-    input.touchpads = [
-      {
-        name = "SYNA8006:00 06CB:CD8B Touchpad";
-        vendorId = "06CB";
-        productId = "CD8B";
-        naturalScroll = true;
-      }
-    ];
+    input = {
+      keyboard.numlockOnStartup = "on";
+      touchpads = [
+        {
+          name = "SYNA8006:00 06CB:CD8B Touchpad";
+          vendorId = "06CB";
+          productId = "CD8B";
+          naturalScroll = true;
+        }
+      ];
+    };
 
     configFile = {
       kdeglobals.General = {
