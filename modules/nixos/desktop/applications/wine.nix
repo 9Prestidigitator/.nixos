@@ -1,7 +1,7 @@
 {
   flake.nixosModules.wine = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
-      latestWineForYabridge
+      wineStagingPatched
       yabridgePatched
       yabridgectlPatched
       winetricks
