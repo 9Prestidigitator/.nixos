@@ -504,11 +504,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1784397000,
-        "narHash": "sha256-eHMPhO7Q3iaYcJ0ZDe4NVosz7G0X3sLZ2dKfijuab48=",
+        "lastModified": 1784321724,
+        "narHash": "sha256-cz1nYwi/NDuVLmrVdSCbOiyuz7egu4h6a9dY+/N4QOo=",
         "owner": "NousResearch",
         "repo": "hermes-agent",
-        "rev": "ad0ddfb15d2a3589fac70162a181cfbfffe49d97",
+        "rev": "597615ade48c3e1892323da84b4f98eaa1625a09",
         "type": "github"
       },
       "original": {
