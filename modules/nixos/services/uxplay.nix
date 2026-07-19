@@ -18,7 +18,7 @@
       (cfg.portBase + 2)
     ];
 
-    args = ["-n" receiverName "-p" (toString cfg.portBase) "-vs" cfg.videoSink];
+    args = ["-n" receiverName "-p" (toString cfg.portBase) "-vs" cfg.videoSink "-vsync" "no"];
 
     portsCsv = lib.concatMapStringsSep "," toString ports;
 
