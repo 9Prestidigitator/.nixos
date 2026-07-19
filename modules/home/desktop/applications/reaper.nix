@@ -16,7 +16,17 @@
       configPath = "${config.xdg.configHome}/${reaper-config}";
 
       extensions = {
-        reapack.enable = true;
+        reapack = {
+          enable = true;
+          repositories = [
+            {
+              name = "reaper-keys";
+              url = "https://raw.githubusercontent.com/gwatcha/reaper-keys/master/index.xml";
+            }
+          ];
+          synchronizeOnActivation = true;
+        };
+
         sws.enable = true;
       };
 
