@@ -14,6 +14,7 @@
 
     persist.userDirs = [
       ".wine"
+      ".wine-11"
       ".local/share/applications/wine"
       ".local/share/mime"
     ];
