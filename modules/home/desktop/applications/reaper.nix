@@ -60,6 +60,19 @@
       };
 
       preferences = {
+        general = {
+          undo = {
+            maximumUndoMemory = 512;
+            saveHistoryWithProjectFiles = true;
+          };
+        };
+
+        project = {
+          projectLoading = {
+            lookForProjectMediaInProjectDirectoryBeforeQualifiedPath = true;
+          };
+        };
+
         windows = {
           tcpHelpBar = {
             informationDisplay = reaperWindows.tcpHelpBar.informationDisplay.cpuRamUseTimeSinceLastSave;
