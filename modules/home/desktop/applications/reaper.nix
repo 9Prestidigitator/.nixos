@@ -1,6 +1,7 @@
 {inputs, ...}: {
   flake.homeModules.reaper = {
     config,
+    pkgs,
     reaperActions,
     reaperMouse,
     reaperWindows,
@@ -224,6 +225,14 @@
           dock = "left";
           tabOrder = 0.5;
         };
+      };
+
+      theme = {
+        active = "Reapertips Theme.ReaperThemeZip";
+        packages = [
+          inputs.reaper-flake.packages.${pkgs.system}.smooth6-theme
+          inputs.reaper-flake.packages.${pkgs.system}.reapertips-theme
+        ];
       };
     };
 
