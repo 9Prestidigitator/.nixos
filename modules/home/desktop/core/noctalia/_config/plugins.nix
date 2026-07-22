@@ -23,6 +23,14 @@
         "noctalia/notes"
         "avivbintangaringga/nix-monitor"
         "nzlov/daily-wallpaper"
+        "rxtsel/portctl"
+        "oldirtty/color_picker"
+        "nightwatch75/file-search"
+        "yocraft/web-launcher"
+        "nightwatch75/todo"
+        "dotnetrob/cat"
+        "gustav0ar/drive-health"
+        "alexander/game-launcher"
       ];
     };
     plugin_settings = {

@@ -3,14 +3,14 @@
     bar = {
       order = ["default"];
       default = {
-        auto_hide = true;
+        smart_auto_hide = true;
         layer = "overlay";
         scale = 1;
         background_opacity = 1;
         thickness = 34;
         padding = 14;
 
-        start = ["taskbar"];
+        start = ["taskbar" "cat"];
         center = ["control-center"];
         end = [
           "tray"

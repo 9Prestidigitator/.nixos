@@ -16,15 +16,6 @@
             icon = "toolbar_new.png";
           }
           {
-            action = 40025;
-            label = "Open project...";
-          }
-          {
-            action = 40026;
-            label = "Save project";
-          }
-          reaperMenus.divider
-          {
             action = 40029;
             label = "Undo";
           }

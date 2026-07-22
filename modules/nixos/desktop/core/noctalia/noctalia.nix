@@ -43,6 +43,7 @@
         gifski
         ddcutil
         mpvpaper
+        smartmontools
         linux-wallpaperengine
       ];
       sessionVariables = {

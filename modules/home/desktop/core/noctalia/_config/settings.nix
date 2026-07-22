@@ -52,7 +52,7 @@ in {
 
     dock = {
       enabled = true;
-      auto_hide = true;
+      smart_auto_hide = true;
       icon_size = 35;
       item_spacing = 0;
       show_dots = true;
