@@ -1,6 +1,7 @@
 {
   reaperWindows,
   reaperLayout,
+  ...
 }: {
   programs.reaper = {
     layout = {

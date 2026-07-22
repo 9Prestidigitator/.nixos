@@ -2,14 +2,13 @@
   reaperGeneral,
   reaperAppearance,
   reaperMouse,
-  reaperWindows,
   ...
 }: {
   programs.reaper = {
     preferences = {
       general = {
         startupSettings = {
-          openProjectOnStartup = reaperGeneral.openProjectOnStartup.newProjectIgnoreDefaultTemplate;
+          openProjectOnStartup = reaperGeneral.openProjectOnStartup.prompt;
           createNewProjectTabWhenOpeningMedia = true;
         };
 
