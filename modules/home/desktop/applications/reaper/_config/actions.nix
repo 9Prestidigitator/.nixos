@@ -42,6 +42,11 @@
             actionName = "Toggle master visibility";
           })
           (shortcut {
+            shortcut = "Shift+M";
+            command = 40716;
+            actionName = "Toggle midi editor";
+          })
+          (shortcut {
             shortcut = "Shift+E";
             command = 50124;
             actionName = "Toggle explorer";
