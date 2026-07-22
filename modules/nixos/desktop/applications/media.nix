@@ -13,7 +13,7 @@
       easytag
       mpv
       makemkv
-      # handbrake
+      handbrake
       ffmpeg
       rmpc
       cava
