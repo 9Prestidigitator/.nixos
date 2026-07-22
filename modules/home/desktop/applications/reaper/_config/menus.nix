@@ -38,10 +38,14 @@
             label = "Enable Metronome";
           }
           {
-            action = 42616;
-            label = "Marquee selection";
-            toolbarFlags = 1;
+            action = 40145;
+            label = "Show arrange view grid";
           }
+          {
+            action = 1157;
+            label = "Enable snapping";
+          }
+          reaperMenus.divider
           {
             action = 40041;
             label = "Enable auto-crossfade";
@@ -58,14 +62,6 @@
             action = 1162;
             label = "Toggle ripple editing";
             toolbarFlags = 1;
-          }
-          {
-            action = 40145;
-            label = "Show arrange view grid";
-          }
-          {
-            action = 1157;
-            label = "Enable snapping";
           }
           {
             action = 42618;
@@ -93,6 +89,12 @@
             label = "Continuous follow playhead";
             icon = "toolbar_misc_run_forward.png";
             toolbarFlags = 1;
+          }
+          reaperMenus.divider
+          {
+            action = 40015;
+            label = "Render";
+            icon = "toolbar_audio_waveform_render_disk_stereo.png";
           }
         ];
       };

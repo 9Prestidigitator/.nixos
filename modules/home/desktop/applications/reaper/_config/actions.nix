@@ -37,14 +37,15 @@
           })
 
           (shortcut {
+            shortcut = "Ctrl+Shift+I";
+            command = 40214;
+            actionName = "Insert Midi item";
+          })
+
+          (shortcut {
             shortcut = "M";
             command = 41610;
             actionName = "Toggle master visibility";
-          })
-          (shortcut {
-            shortcut = "Shift+M";
-            command = 40716;
-            actionName = "Toggle midi editor";
           })
           (shortcut {
             shortcut = "Shift+E";
@@ -57,10 +58,11 @@
             actionName = "Toggle TCP";
           })
 
-          (shortcut {
-            shortcut = "Ctrl+Shift+I";
-            command = 40214;
-            actionName = "Insert Midi item";
+          (globalShortcut {
+            shortcut = "Shift+M";
+            command = 40716;
+            actionName = "Toggle midi editor";
+            scope = "global";
           })
 
           {

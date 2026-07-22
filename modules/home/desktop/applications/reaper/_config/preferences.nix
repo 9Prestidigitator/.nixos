@@ -25,6 +25,10 @@
       };
 
       project = {
+        trackSendDefaults = {
+          trackVolumeFaderGain = -10.0;
+        };
+
         backups = {
           whenSaving = {
             preservePreviousVersionAsRppBak = false;
