@@ -11,11 +11,6 @@
       (inputs.import-tree ./_config)
     ];
 
-    # TODO(max):
-    # 1. Start playback/recording with apple watch
-    # 2. Add high latency plugin bypass toggle
-    # 3. Individual packages from reapack in reaper-flake
-
     programs.reaper = {
       enable = true;
       configPath = "${config.xdg.configHome}/${reaper-config}";
