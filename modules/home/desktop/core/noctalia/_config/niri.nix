@@ -138,6 +138,11 @@ in {
           cmd = noctalia "panel-toggle control-center notifications";
         }
         {
+          key = "O";
+          desc = "Show Notifications";
+          cmd = noctalia "notification-dnd-toggle";
+        }
+        {
           key = "s";
           desc = "Noctalia Settings";
           cmd = noctalia "settings-toggle";
@@ -157,14 +162,34 @@ in {
           desc = "Plugins";
           submenu = [
             {
+              key = "d";
+              desc = "Drive health";
+              cmd = noctalia "panel-toggle gustav0ar/drive-health:drives";
+            }
+            {
               key = "n";
               desc = "Notes";
               cmd = noctalia "panel-toggle noctalia/notes:panel";
             }
             {
+              key = "p";
+              desc = "Color Picker";
+              cmd = noctalia "panel-toggle oldirtty/color_picker:panel";
+            }
+            {
+              key = "P";
+              desc = "Port monitor";
+              cmd = noctalia "panel-toggle rxtsel/portctl:panel";
+            }
+            {
               key = "s";
               desc = "Nix Monitor";
               cmd = noctalia "panel-toggle avivbintangaringga/nix-monitor:panel";
+            }
+            {
+              key = "t";
+              desc = "Todo";
+              cmd = noctalia "panel-toggle nightwatch75/todo:panel";
             }
             {
               key = "w";

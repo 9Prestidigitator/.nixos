@@ -44,6 +44,7 @@
         ddcutil
         mpvpaper
         smartmontools
+        hyprpicker
         linux-wallpaperengine
       ];
       sessionVariables = {
