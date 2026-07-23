@@ -1,6 +1,10 @@
 {
   flake.nixosModules.media = {pkgs, ...}: {
-    services.printing.drivers = [pkgs.hplipWithPlugin];
+    services.printing.drivers = [
+      (pkgs.hplipWithPlugin.override {
+        python3Packages = pkgs.python313Packages;
+      })
+    ];
     environment.systemPackages = with pkgs; [
       libbluray-full
       vlc

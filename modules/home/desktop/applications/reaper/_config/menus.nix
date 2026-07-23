@@ -59,6 +59,11 @@
             label = "Razor editing";
             toolbarFlags = 1;
           }
+          {
+            action = "_RSa3ce2b5fed8e25570e453559e79b447bb6c36cda";
+            label = "Toggle FX bypass over 64 samples";
+            icon = "toolbar_item_effects_fx_delete_remove.png";
+          }
           reaperMenus.divider
           {
             action = 1135;

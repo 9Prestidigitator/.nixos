@@ -27,6 +27,7 @@
       project = {
         trackSendDefaults = {
           trackVolumeFaderGain = -10.0;
+          mainParentSend = true;
         };
 
         backups = {
@@ -119,6 +120,22 @@
       };
 
       plugIns.reascript.python.enable = true;
+
+      controlOscWeb.controlSurfaces = [
+        {
+          mode = "webBrowserInterface";
+
+          runWebServerOnPort = {
+            enable = true;
+            port = 8181;
+          };
+
+          # usernamePassword = "watch:choose-a-password";
+          defaultInterface = "basic.html";
+
+          useRcReaperFm.enable = false;
+        }
+      ];
     };
   };
 }
