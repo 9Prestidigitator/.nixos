@@ -15,6 +15,7 @@
       # plugins
       gvst
       neural-amp-modeler-lv2
+      neural-amp-modeler-ui
       rubberband-lv2
       js-inflator
       amplocker
@@ -29,10 +30,10 @@
       spice-oss
       pulse-visualizer
       minimeters
+      ildaeil
       ultimate-vocal-remover-gui
 
       carla
-      ildaeil
       lsp-plugins
       x42-avldrums
       x42-plugins
