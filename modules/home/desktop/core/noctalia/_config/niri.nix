@@ -162,9 +162,49 @@ in {
           desc = "Plugins";
           submenu = [
             {
+              key = "a";
+              desc = "anilist";
+              cmd = noctalia "panel-toggle cleboost/anilist:library";
+            }
+            {
+              key = "A";
+              desc = "Audio Switcher";
+              cmd = noctalia "panel-toggle blackbartblues/audio-switcher:audio-switcher";
+            }
+            {
               key = "d";
               desc = "Drive health";
               cmd = noctalia "panel-toggle gustav0ar/drive-health:drives";
+            }
+            {
+              key = "f";
+              desc = "filepicker";
+              cmd = noctalia "panel-toggle nightwatch75/file-search:panel";
+            }
+            {
+              key = "k";
+              desc = "keybinds";
+              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
+            }
+            {
+              key = "k";
+              desc = "keybinds";
+              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
+            }
+            {
+              key = "k";
+              desc = "keybinds";
+              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
+            }
+            {
+              key = "k";
+              desc = "keybinds";
+              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
+            }
+            {
+              key = "m";
+              desc = "Screen Mirror";
+              cmd = noctalia "panel-toggle elijaharch/wl-screen-mirror:controls";
             }
             {
               key = "n";
@@ -182,14 +222,14 @@ in {
               cmd = noctalia "panel-toggle rxtsel/portctl:panel";
             }
             {
-              key = "s";
-              desc = "Nix Monitor";
-              cmd = noctalia "panel-toggle avivbintangaringga/nix-monitor:panel";
-            }
-            {
               key = "t";
               desc = "Todo";
               cmd = noctalia "panel-toggle nightwatch75/todo:panel";
+            }
+            {
+              key = "u";
+              desc = "Nix Monitor";
+              cmd = noctalia "panel-toggle avivbintangaringga/nix-monitor:panel";
             }
             {
               key = "w";

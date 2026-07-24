@@ -15,22 +15,26 @@
         }
       ];
       enabled = [
+        "alexander/game-launcher"
+        "avivbintangaringga/nix-monitor"
+        "blackbartblues/audio-switcher"
+        "cleboost/anilist"
+        "dotnetrob/cat"
+        "elijaharch/wl-screen-mirror"
+        "gustav0ar/drive-health"
+        "kenn/keybind-cheatsheet"
+        "nightwatch75/file-search"
+        "nightwatch75/todo"
         "noctalia/screen_recorder"
         "noctalia/translator"
         "noctalia/kaomoji"
         "noctalia/wallhaven"
         "noctalia/mpvpaper"
         "noctalia/notes"
-        "avivbintangaringga/nix-monitor"
         "nzlov/daily-wallpaper"
-        "rxtsel/portctl"
         "oldirtty/color_picker"
-        "nightwatch75/file-search"
+        "rxtsel/portctl"
         "yocraft/web-launcher"
-        "nightwatch75/todo"
-        "dotnetrob/cat"
-        "gustav0ar/drive-health"
-        "alexander/game-launcher"
       ];
     };
     plugin_settings = {
