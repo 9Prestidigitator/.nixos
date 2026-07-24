@@ -187,21 +187,6 @@ in {
               cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
             }
             {
-              key = "k";
-              desc = "keybinds";
-              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
-            }
-            {
-              key = "k";
-              desc = "keybinds";
-              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
-            }
-            {
-              key = "k";
-              desc = "keybinds";
-              cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
-            }
-            {
               key = "m";
               desc = "Screen Mirror";
               cmd = noctalia "panel-toggle elijaharch/wl-screen-mirror:controls";

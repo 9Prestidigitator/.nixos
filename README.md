@@ -17,9 +17,7 @@ Dendritic Nix flake configuration for five x86-64 NixOS systems with five deskto
 
 # Desktop Modules
 
-1. Niri
-   - Noctalia v4
-   - Noctalia v5
+1. Niri (Noctalia v5)
 2. KDE Plasma
 3. Gnome
 4. i3
