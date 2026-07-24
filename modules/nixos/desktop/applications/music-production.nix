@@ -15,7 +15,6 @@
       # plugins
       gvst
       neural-amp-modeler-lv2
-      neural-amp-modeler-ui
       rubberband-lv2
       js-inflator
       amplocker
