@@ -78,7 +78,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hermes-agent.url = "github:NousResearch/hermes-agent";
+    hermes-agent.url = "github:NousResearch/hermes-agent/v2026.7.20";
 
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     steam-config-nix.url = "github:different-name/steam-config-nix";
