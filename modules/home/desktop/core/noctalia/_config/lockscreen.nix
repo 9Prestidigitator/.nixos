@@ -60,20 +60,21 @@ in {
 
       widget = {
         "lockscreen-login-box@${primaryMonitor.name}" = {
-          box_height = 65;
-          box_width = 300;
+          # box_height = 65;
+          # box_width = 300;
           cx = primaryMonitor.logicalWidth / 2;
           cy = primaryMonitor.logicalHeight / 3 * 2;
           output = primaryMonitor.name;
           rotation = 0;
           type = "login_box";
           settings = {
+            show_session_buttons = false;
+            show_login_button = false;
             background_color = "surface_variant";
             background_opacity = 0;
-            background_radius = 35;
+            # background_radius = 35;
             input_opacity = 0.5;
             input_radius = 30;
-            show_login_button = true;
           };
         };
 
