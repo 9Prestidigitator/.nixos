@@ -163,13 +163,13 @@ in {
           submenu = [
             {
               key = "a";
-              desc = "anilist";
-              cmd = noctalia "panel-toggle cleboost/anilist:library";
+              desc = "Audio Switcher";
+              cmd = noctalia "panel-toggle blackbartblues/audio-switcher:audio-switcher";
             }
             {
               key = "A";
-              desc = "Audio Switcher";
-              cmd = noctalia "panel-toggle blackbartblues/audio-switcher:audio-switcher";
+              desc = "anilist";
+              cmd = noctalia "panel-toggle cleboost/anilist:library";
             }
             {
               key = "d";
