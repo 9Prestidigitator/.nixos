@@ -34,6 +34,7 @@
         "nzlov/daily-wallpaper"
         "oldirtty/color_picker"
         "rxtsel/portctl"
+        "tadomika_ari/w-engine"
         "yocraft/web-launcher"
       ];
     };

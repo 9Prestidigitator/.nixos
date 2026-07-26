@@ -221,6 +221,11 @@ in {
               desc = "Browse Wallhaven";
               cmd = noctalia "panel-toggle noctalia/wallhaven:browser";
             }
+            {
+              key = "W";
+              desc = "Wallpaper Engine";
+              cmd = noctalia "panel-toggle tadomika_ari/w-engine:w-engine-panel";
+            }
           ];
         }
       ];
