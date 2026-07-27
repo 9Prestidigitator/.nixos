@@ -26,16 +26,18 @@
         "nightwatch75/file-search"
         "nightwatch75/todo"
         "noctalia/screen_recorder"
-        "noctalia/translator"
         "noctalia/kaomoji"
-        "noctalia/wallhaven"
         "noctalia/mpvpaper"
         "noctalia/notes"
+        "noctalia/timer"
+        "noctalia/translator"
+        "noctalia/wallhaven"
         "nzlov/daily-wallpaper"
         "oldirtty/color_picker"
         "rxtsel/portctl"
         "tadomika_ari/w-engine"
         "yocraft/web-launcher"
+        "yuuto/calculator"
       ];
     };
     plugin_settings = {

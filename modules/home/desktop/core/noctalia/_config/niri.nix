@@ -162,6 +162,11 @@ in {
           desc = "Plugins";
           submenu = [
             {
+              key = "1";
+              desc = "Calculator Panel";
+              cmd = noctalia "yuuto/calculator:panel";
+            }
+            {
               key = "a";
               desc = "Audio Switcher";
               cmd = noctalia "panel-toggle blackbartblues/audio-switcher:audio-switcher";
@@ -208,6 +213,11 @@ in {
             }
             {
               key = "t";
+              desc = "Timer";
+              cmd = noctalia "panel-toggle noctalia/timer:panel";
+            }
+            {
+              key = "T";
               desc = "Todo";
               cmd = noctalia "panel-toggle nightwatch75/todo:panel";
             }

@@ -56,6 +56,11 @@
         scale = 1.5;
         custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake-white.png";
       };
+      cat = {
+        cat_color = "#FFFFFF";
+        cat_color_mode = "custom";
+        type = "dotnetrob/cat:cat";
+      };
     };
   };
 }
