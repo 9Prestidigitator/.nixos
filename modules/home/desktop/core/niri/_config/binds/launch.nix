@@ -132,7 +132,7 @@ in {
             {
               key = "m";
               desc = "Open mullvad panel";
-              cmd = "mullvad-gui";
+              cmd = "mullvad-vpn";
             }
             {
               key = "c";
