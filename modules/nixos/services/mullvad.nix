@@ -1,12 +1,10 @@
 {
-  flake.nixosModules.mullvad = {pkgs, ...}: {
+  flake.nixosModules.mullvad = {
     services.mullvad-vpn = {
       enable = true;
-      package = pkgs.mullvad-vpn;
+      gui.enable = true;
     };
-    environment.systemPackages = with pkgs; [mullvad];
-    services.resolved.enable = true;
-    networking.firewall.checkReversePath = "loose";
+    # networking.firewall.checkReversePath = "loose";
 
     persist.directories = ["/etc/mullvad-vpn"];
   };
