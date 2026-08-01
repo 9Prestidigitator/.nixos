@@ -964,11 +964,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1785594524,
-        "narHash": "sha256-ZGTOCeTMUluq5L4t0LXLOlQUMA9pMRaJRYM0Jz49720=",
+        "lastModified": 1785614885,
+        "narHash": "sha256-TBFu1I6SzdxZyF7RetSlzHzEETE0XGiuZHpSWteq8JM=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "5febd0b2dc5f9246e8ae1e74c1cd01e0484abe5a",
+        "rev": "d3da3560efc5ab158d1889b7df1b2fe29d3795ce",
         "type": "github"
       },
       "original": {
@@ -1468,11 +1468,11 @@
         "nixpkgs": "nixpkgs_15"
       },
       "locked": {
-        "lastModified": 1785603479,
-        "narHash": "sha256-BembuDefgisohYMY/RGe1gi1Ldkr0CUjP1TMgLphUI4=",
+        "lastModified": 1785614863,
+        "narHash": "sha256-1+3qap1e9txUbbI1MzTDLt5I3krAosO4nAgFfs/lW3E=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "73e498510e6f134b038a1c399bfe18e4e807102a",
+        "rev": "726b1d3e56dab716f44a1fff180b157676e322ba",
         "type": "github"
       },
       "original": {
@@ -1889,11 +1889,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1785610152,
-        "narHash": "sha256-A9ULLA7jySD8VcDj2igqhiHeddRHDAPAofdBizQctNQ=",
+        "lastModified": 1785613910,
+        "narHash": "sha256-W4/A/IblbnvsQNc8hE3+2mFJWF9YjGzVr91cwHeppEQ=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "e491a6a6fa8d170e872b92864fc51fb6080c934c",
+        "rev": "930b6d474221a2241dbecc6757b987db2484d9ba",
         "type": "github"
       },
       "original": {
