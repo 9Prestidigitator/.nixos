@@ -631,11 +631,11 @@
         "pulse-visualizer": "pulse-visualizer"
       },
       "locked": {
-        "lastModified": 1784922712,
-        "narHash": "sha256-Ez5kAevhSq0jlZjwzNwuB3uM+odBd/4ozgwmrnCndVE=",
+        "lastModified": 1785610209,
+        "narHash": "sha256-lVpCp2QOH4PUwVqyRNtgIemnrhhgGhpU1eou5l9QooI=",
         "owner": "9Prestidigitator",
         "repo": "maxpkgs",
-        "rev": "fbaea6578b48dfe1f9902fada0555836df466756",
+        "rev": "b0f367ba919bde34eab04e8109ebdaf0f2636e13",
         "type": "github"
       },
       "original": {
@@ -1889,11 +1889,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1785518890,
-        "narHash": "sha256-BeXpCHTPZ+ZlRR12nYe/0JHjfp/fgJVY2YV2xAz8JHs=",
+        "lastModified": 1785610152,
+        "narHash": "sha256-A9ULLA7jySD8VcDj2igqhiHeddRHDAPAofdBizQctNQ=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "6316d1d03e7a12cae7cdb007f34d2eaebbfc802a",
+        "rev": "e491a6a6fa8d170e872b92864fc51fb6080c934c",
         "type": "github"
       },
       "original": {
