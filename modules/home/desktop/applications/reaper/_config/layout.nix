@@ -6,6 +6,11 @@
   programs.reaper = {
     layout = {
       docks = {
+        top = {
+          id = 0;
+          position = "top";
+        };
+
         bottom = {
           id = 3;
           position = "bottom";
@@ -45,14 +50,20 @@
         tabOrder = 0.0;
       };
 
-      panels.explorer = {
-        id = "explorer";
-        section = "reaper_sexplorer";
-        keyStyle = "window";
-        visible = false;
-        docked = true;
-        dock = "left";
-        tabOrder = 0.5;
+      panels = {
+        explorer = {
+          id = "explorer";
+          section = "reaper_sexplorer";
+          keyStyle = "window";
+          visible = false;
+          docked = true;
+          dock = "left";
+          tabOrder = 0.5;
+        };
+      };
+
+      dockPreferences = {
+        "BirdBird_Global Sampler.lua" = "0.5000 0";
       };
     };
 
