@@ -47,14 +47,13 @@ in {
             name = "Suzuki Scripts";
             url = "https://github.com/Suzuki-Re/Suzuki-Scripts/raw/master/index.xml";
           }
+          {
+            name = "Reaticulate";
+            url = "https://reaticulate.com/index.xml";
+          }
         ];
 
         packages = [
-          {
-            repository = "MPL Scripts";
-            category = "FX";
-            name = "mpl_Toggle bypass FX with latency (PDC) higher than X samples.lua";
-          }
           {
             repository = "ReaTeam Extensions";
             category = "API";
@@ -64,16 +63,6 @@ in {
             repository = "ReaTeam Extensions";
             category = "API";
             name = "reaper_imgui.ext";
-          }
-          {
-            repository = "Sexan_Scripts";
-            category = "ParanormalFX";
-            name = "Sexan_ParaNormal_FX_Router.lua";
-          }
-          {
-            repository = "Bird-Bird";
-            category = "Global Sampler";
-            name = "BirdBird_Global Sampler.lua";
           }
           {
             repository = "Suzuki Scripts";
@@ -99,6 +88,66 @@ in {
             repository = "Sexan_Scripts";
             category = "ImGui_Tools";
             name = "FileManager.lua";
+          }
+          {
+            repository = "MPL Scripts";
+            category = "FX";
+            name = "mpl_Toggle bypass FX with latency (PDC) higher than X samples.lua";
+          }
+          {
+            repository = "ReaTeam Scripts";
+            category = "MIDI Editor";
+            name = "Lokasenna_MIDI Randomization Tool.lua";
+          }
+          {
+            repository = "Sexan_Scripts";
+            category = "ParanormalFX";
+            name = "Sexan_ParaNormal_FX_Router.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "Global Sampler";
+            name = "BirdBird_Global Sampler.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "FX Inspector";
+            name = "BirdBird_FX Inspector.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "Envelope Palette";
+            name = "BirdBird_Envelope Palette.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "Track Tags";
+            name = "BirdBird_Track Tags.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "FX Mangler";
+            name = "BirdBird_FX Mangler.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "Item Modifiers";
+            name = "BirdBird_Item Modifiers.lua";
+          }
+          {
+            repository = "Bird-Bird";
+            category = "Functional Console";
+            name = "BirdBird_Functional Console.lua";
+          }
+          {
+            repository = "Helgobox";
+            category = "Extensions";
+            name = "ReaLearn-x64";
+          }
+          {
+            repository = "Reaticulate";
+            category = "MIDI Articulations";
+            name = "Reaticulate: an articulation management system for REAPER";
           }
         ];
 
