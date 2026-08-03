@@ -95,6 +95,11 @@ in {
             name = "mpl_Toggle bypass FX with latency (PDC) higher than X samples.lua";
           }
           {
+            repository = "X-Raym Scripts";
+            category = "JSFX";
+            name = "X-Raym_Tap tempo.lua";
+          }
+          {
             repository = "ReaTeam Scripts";
             category = "MIDI Editor";
             name = "Lokasenna_MIDI Randomization Tool.lua";
