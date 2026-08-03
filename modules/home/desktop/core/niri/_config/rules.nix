@@ -133,7 +133,7 @@
           default-window-height = {proportion = 0.3333;};
         }
         {
-          matches = [{app-id = "Mullvad VPN";}];
+          matches = [{app-id = "mullvad-vpn";}];
           open-floating = true;
           open-focused = true;
           default-floating-position = {
