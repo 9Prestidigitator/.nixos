@@ -97,7 +97,7 @@ in {
           {
             repository = "X-Raym Scripts";
             category = "JSFX";
-            name = "X-Raym_Tap tempo.lua";
+            name = "X-Raym_Tap tempo.jsfx";
           }
           {
             repository = "ReaTeam Scripts";
