@@ -24,6 +24,17 @@
             command = 43647;
             actionName = "Track: Move up";
           })
+          
+          (shortcut {
+            shortcut = "F2";
+            command = 40696;
+            actionName = "Rename last touched track";
+          })
+          (shortcut {
+            shortcut = "F3";
+            command = 41589;
+            actionName = "Show media item/take properties";
+          })
 
           (shortcut {
             shortcut = "Shift+H";
@@ -57,11 +68,38 @@
             command = 43185;
             actionName = "Toggle TCP";
           })
+          (shortcut {
+            shortcut = "Alt+V";
+            command = "_RS5f688cc3f0ccdcb59dbeec10cfae4545059b5f20";
+            actionName = "Global Sampler";
+          })
 
+          (shortcut {
+            shortcut = "$";
+            command = "_RSfc9d5d2c7b02b7984564819f689b3bbf279dae50";
+            actionName = "Tap Tempo";
+          })
+          (shortcut {
+            shortcut = "Alt+Shift+P";
+            command = "_REAPACK_BROWSE";
+            actionName = "Browse ReaPack packages";
+          })
           (globalShortcut {
             shortcut = "Shift+M";
             command = 40716;
             actionName = "Toggle midi editor";
+            scope = "global";
+          })
+          (globalShortcut {
+            shortcut = "N";
+            command = "_S&M_SHOWNOTESHELP";
+            actionName = "Toggle Project Notes";
+            scope = "global";
+          })
+          (globalShortcut {
+            shortcut = "Shift+N";
+            command = "_S&M_ACTIONHELPTGLOCK";
+            actionName = "Toggle Notes Lock";
             scope = "global";
           })
 

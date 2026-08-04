@@ -58,12 +58,14 @@
           visible = false;
           docked = true;
           dock = "left";
-          tabOrder = 0.5;
+          tabOrder = 0.0;
         };
       };
 
       dockPreferences = {
         "BirdBird_Global Sampler.lua" = "0.5000 0";
+         midiedit = "0.50000000 3";
+         SnMNotesHelp = "0.50000000 2";
       };
     };
 

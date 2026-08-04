@@ -100,6 +100,11 @@ in {
             name = "X-Raym_Tap tempo.jsfx";
           }
           {
+            repository = "X-Raym Scripts";
+            category = "Tempo and Time Signature";
+            name = "X-Raym_Tap tempo.lua";
+          }
+          {
             repository = "ReaTeam Scripts";
             category = "MIDI Editor";
             name = "Lokasenna_MIDI Randomization Tool.lua";

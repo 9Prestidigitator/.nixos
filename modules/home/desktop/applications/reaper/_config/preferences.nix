@@ -28,6 +28,7 @@
         trackSendDefaults = {
           trackVolumeFaderGain = -10.0;
           mainParentSend = true;
+          showInMixer = true;
         };
 
         backups = {
