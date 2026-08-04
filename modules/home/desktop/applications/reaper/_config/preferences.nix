@@ -10,6 +10,7 @@
         startupSettings = {
           openProjectOnStartup = reaperGeneral.openProjectOnStartup.prompt;
           createNewProjectTabWhenOpeningMedia = true;
+          skipAnimation = false;
         };
 
         undo = {
