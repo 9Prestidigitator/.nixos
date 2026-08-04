@@ -51,6 +51,14 @@ in {
             name = "Reaticulate";
             url = "https://reaticulate.com/index.xml";
           }
+          {
+            name = "Hackey-Trackey";
+            url = "https://github.com/joepvanlier/Hackey-Trackey/raw/master/index.xml";
+          }
+          {
+            name = "Hackey-Machines";
+            url = "https://github.com/joepvanlier/Hackey-Machines/raw/master/index.xml";
+          }
         ];
 
         packages = [
@@ -158,6 +166,16 @@ in {
             repository = "Reaticulate";
             category = "MIDI Articulations";
             name = "Reaticulate: an articulation management system for REAPER";
+          }
+          {
+            repository = "Hackey-Trackey";
+            category = "Tracker";
+            name = "tracker.lua";
+          }
+          {
+            repository = "Hackey-Machines";
+            category = "MachineView";
+            name = "MachineView_exec.lua";
           }
         ];
 
