@@ -183,7 +183,27 @@ in {
         synchronizeOnActivation = true;
       };
 
-      sws.enable = true;
+      sws = {
+        enable = true;
+        colors = [
+          "F5E0E6" # rosewater
+          "F2CDCD" # flamingo
+          "F5C2E7" # pink
+          "CBA6F7" # mauve
+          "F38BA8" # red; typos: ignore
+          "EBA0AC" # maroon
+          "FAB387" # peach
+          "F9E2AF" # yellow
+          "A6E3A1" # green
+          "94E2D5" # teal
+          "89DCEB" # sky
+          "74C7EC" # sapphire
+          "89B4FA" # blue
+          "B4BEFE" # lavender
+          "CDD6F4" # text
+          "BAC2DE" # subtext1
+        ];
+      };
     };
 
     # Ugggh yet another config file to manage...

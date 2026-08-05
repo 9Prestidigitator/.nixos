@@ -47,6 +47,7 @@
       surge-xt
       helm
       bespokesynth
+      ysfx
 
       # Utilities
       musescore

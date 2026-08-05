@@ -90,16 +90,16 @@
             actionName = "Toggle midi editor";
             scope = "global";
           })
-          (shortcut {
-            shortcut = "N";
-            command = "_S&M_SHOWNOTESHELP";
-            actionName = "Toggle Project Notes";
-          })
           (globalShortcut {
             shortcut = "Shift+N";
             command = "_S&M_ACTIONHELPTGLOCK";
             actionName = "Toggle Notes Lock";
             scope = "global";
+          })
+          (shortcut {
+            shortcut = "N";
+            command = "_S&M_SHOWNOTESHELP";
+            actionName = "Toggle Project Notes ";
           })
 
           {
