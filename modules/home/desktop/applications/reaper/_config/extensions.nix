@@ -15,7 +15,6 @@ in {
       gtk3
       cairo
       glib
-      stdenv.cc.cc.lib
     ];
 
     extensions = {
