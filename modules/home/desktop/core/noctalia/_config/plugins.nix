@@ -20,8 +20,10 @@
         "blackbartblues/audio-switcher"
         "cleboost/anilist"
         "dotnetrob/cat"
+        "dunarand/tmux-provider"
         "elijaharch/wl-screen-mirror"
         "gustav0ar/drive-health"
+        "icefish/phone-connect"
         "kenn/keybind-cheatsheet"
         "nightwatch75/file-search"
         "nightwatch75/todo"
@@ -36,6 +38,7 @@
         "oldirtty/color_picker"
         "rxtsel/portctl"
         "tadomika_ari/w-engine"
+        "yocraft/qrcode"
         "yocraft/web-launcher"
         "yuuto/calculator"
       ];
