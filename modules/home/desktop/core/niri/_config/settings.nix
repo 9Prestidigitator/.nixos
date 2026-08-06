@@ -1,6 +1,6 @@
 {config, pkgs, ...}: {
   programs.niri = {
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
     settings = with config.lib.stylix.colors; {
       input = {
         keyboard = {
