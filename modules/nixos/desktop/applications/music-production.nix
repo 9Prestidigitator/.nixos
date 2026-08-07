@@ -67,12 +67,14 @@
       ".vst3"
       ".clap"
       ".lv2"
-      ".BitwigStudio"
       ".config/REAPER"
       ".config/yabridgectl"
       ".config/MuseScore"
       ".config/overwitch"
       ".config/falkTX"
+      ".config/rncbc.org"
+      ".local/state/Serum2"
+      ".BitwigStudio"
       "Audio Assault"
     ];
   };
