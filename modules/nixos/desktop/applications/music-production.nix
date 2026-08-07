@@ -31,6 +31,7 @@
       minimeters
       ildaeil
       ultimate-vocal-remover-gui
+      serum2
 
       carla
       lsp-plugins
