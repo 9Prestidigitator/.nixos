@@ -68,6 +68,7 @@
       ".clap"
       ".lv2"
       ".config/REAPER"
+      ".config/lsp-plugins"
       ".config/yabridgectl"
       ".config/MuseScore"
       ".config/overwitch"
