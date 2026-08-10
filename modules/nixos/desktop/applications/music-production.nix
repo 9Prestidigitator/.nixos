@@ -32,6 +32,7 @@
       ildaeil
       ultimate-vocal-remover-gui
       serum2
+      dexed
 
       carla
       lsp-plugins
