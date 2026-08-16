@@ -37,6 +37,7 @@
         "nzlov/daily-wallpaper"
         "oldirtty/color_picker"
         "rxtsel/portctl"
+        "rylos/syncthing"
         "tadomika_ari/w-engine"
         "yocraft/qrcode"
         "yocraft/web-launcher"
@@ -46,6 +47,7 @@
     plugin_settings = {
       "noctalia/screen_recorder".video_codec = "hevc";
       "avivbintangaringga/nix-monitor" = {
+        show_text = false;
         clean_command = "nh clean all";
         update_command = "nhre -u";
         panel_placement = "floating";

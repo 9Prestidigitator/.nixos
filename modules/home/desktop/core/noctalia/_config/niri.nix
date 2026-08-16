@@ -212,6 +212,16 @@ in {
               cmd = noctalia "panel-toggle rxtsel/portctl:panel";
             }
             {
+              key = "q";
+              desc = "qr-code";
+              cmd = noctalia "panel-toggle yocraft/qrcode:panel";
+            }
+            {
+              key = "s";
+              desc = "syncthing";
+              cmd = noctalia "panel-toggle rylos/syncthing:panel";
+            }
+            {
               key = "t";
               desc = "Timer";
               cmd = noctalia "panel-toggle noctalia/timer:panel";

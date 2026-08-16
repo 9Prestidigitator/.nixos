@@ -24,6 +24,7 @@
         "x-scheme-handler/http" = ["com.brave.Browser.desktop"];
         "x-scheme-handler/https" = ["com.brave.Browser.desktop"];
         "application/pdf" = ["org.pwmt.zathura.desktop"];
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = ["writer.desktop"];
         "image/png" = ["imv.desktop"];
         "image/jpg" = ["imv.desktop"];
         "image/jpeg" = ["imv.desktop"];
