@@ -46,6 +46,7 @@
         smartmontools
         hyprpicker
         linux-wallpaperengine
+        qrencode
       ];
       sessionVariables = {
         QS_ICON_THEME = "breeze-dark";
