@@ -138,8 +138,8 @@
           open-focused = true;
           default-floating-position = {
             x = 32;
-            y = 32;
-            relative-to = "bottom-left";
+            y = 48;
+            relative-to = "top-right";
           };
         }
         {

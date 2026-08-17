@@ -86,7 +86,7 @@
 
         match.title = {
           type = "regex";
-          value = ".*(Picture-in-Picture|Picture in Picture).*";
+          value = "(?i).*picture[- ]in[- ]picture.*";
         };
 
         apply = {
@@ -104,8 +104,8 @@
           };
 
           position = {
-            value = "1500,900";
-            apply = "force";
+            value = "1214,676";
+            apply = "initially";
           };
         };
       }
