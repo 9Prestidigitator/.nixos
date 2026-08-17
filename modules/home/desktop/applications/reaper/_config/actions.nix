@@ -113,7 +113,7 @@
 
           (shortcut {
             shortcut = "Shift+R";
-            command = "9";
+            command = 9;
             actionName = "Toggle Arm selected tracks.";
           })
 
