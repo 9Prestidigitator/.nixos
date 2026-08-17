@@ -79,5 +79,36 @@
         };
       };
     };
+
+    window-rules = [
+      {
+        description = "Browser Picture-in-Picture";
+
+        match.title = {
+          type = "regex";
+          value = ".*(Picture-in-Picture|Picture in Picture).*";
+        };
+
+        apply = {
+          above = {
+            value = true;
+            apply = "force";
+          };
+          fsplevel = {
+            value = 4;
+            apply = "force";
+          };
+          skipswitcher = {
+            value = true;
+            apply = "force";
+          };
+
+          position = {
+            value = "1500,900";
+            apply = "force";
+          };
+        };
+      }
+    ];
   };
 }
