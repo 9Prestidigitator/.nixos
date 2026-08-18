@@ -192,6 +192,11 @@ in {
               cmd = noctalia "panel-toggle kenn/keybind-cheatsheet:cheatsheet";
             }
             {
+              key = "l";
+              desc = "Screen toolkit";
+              cmd = noctalia "panel-toggle alexander/screen-toolkit:panel";
+            }
+            {
               key = "m";
               desc = "Screen Mirror";
               cmd = noctalia "panel-toggle elijaharch/wl-screen-mirror:controls";

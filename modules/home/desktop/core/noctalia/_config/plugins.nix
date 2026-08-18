@@ -16,6 +16,7 @@
       ];
       enabled = [
         "alexander/game-launcher"
+        "alexander/screen-toolkit"
         "avivbintangaringga/nix-monitor"
         "blackbartblues/audio-switcher"
         "cleboost/anilist"
