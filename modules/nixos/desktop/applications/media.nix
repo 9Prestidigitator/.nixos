@@ -16,7 +16,7 @@
       obsidian
       easytag
       mpv
-      makemkv
+      # makemkv
       handbrake
       ffmpeg
       rmpc

@@ -9,9 +9,8 @@
     imports = with self; [
       userModules.max.homeModule
 
-      nixosModules.noctalia-greeter
-      nixosModules.noctalia
-      nixosModules.niri
+      homeModules.noctalia
+      homeModules.niri
 
       homeModules.neovim
       homeModules.terminal-tools
