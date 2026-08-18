@@ -83,7 +83,7 @@ in {
         {
           matches = [
             {
-              app-id = "obsidian";
+              app-id = "md.Obsidian";
               at-startup = true;
             }
           ];
