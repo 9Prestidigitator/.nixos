@@ -111,10 +111,10 @@ in {
       # background_opacity = 0.4;
     };
 
-    # theme = {
-    #   source = "community";
-    #   community_palette = "GitHub Dark";
-    # };
+    theme.templates = {
+      enable_builtin_templates = false;
+      enable_community_templates = false;
+    };
 
     wallpaper.transition_on_startup = true;
 
