@@ -71,6 +71,11 @@ in {
         "org.gnome.Nautilus"
         "brave-browser"
         "cockos-reaper"
+        "obsidian"
+        "steam"
+        "discord"
+        "signal"
+        "spotify"
       ];
     };
 
