@@ -1704,11 +1704,11 @@
         "nixpkgs": "nixpkgs_18"
       },
       "locked": {
-        "lastModified": 1787028768,
-        "narHash": "sha256-PG7tBZ6ea3jngSBPW3sUlXANl9K1I3bpbhz2BsqsRh4=",
+        "lastModified": 1787030565,
+        "narHash": "sha256-8rPI4Jl3AwfylnpTqz87tWYzo7eFtRD4et6VuYXmavs=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "df478178510c4492ef7d544dce23fc3e46d90cd3",
+        "rev": "a84aeceb3136fbbdc25338ee5c14bbd24cc27c5a",
         "type": "github"
       },
       "original": {
