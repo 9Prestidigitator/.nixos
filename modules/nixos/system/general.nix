@@ -6,7 +6,7 @@
     ...
   }: {
     config = {
-      boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_7_1;
+      boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_7_2;
 
       time.timeZone = "US/Eastern";
       i18n.defaultLocale = "en_US.UTF-8";
