@@ -68,9 +68,9 @@ in {
 
       pinned = [
         "kitty"
-        "files"
-        "Brave Web Browser"
-        "REAPER"
+        "org.gnome.Nautilus"
+        "brave-browser"
+        "cockos-reaper"
       ];
     };
 

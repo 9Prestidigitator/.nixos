@@ -93,22 +93,17 @@
       {
         key = "p";
         desc = "Restart pipewire";
-        cmd = "systemctl --user restart pipewire";
-      }
-      {
-        key = "n";
-        desc = "Kill or Start Noctalia Shell";
-        cmd = "pkill .quickshell-wra* || noctalia-shell";
+        cmd = "systemctl --user restart pipewire.service";
       }
       {
         key = "N";
-        desc = "Kill or Start Noctalia-5";
-        cmd = "pkill noctalia || noctalia";
+        desc = "Kill or Start Noctalia";
+        cmd = "systemctl restart --user noctalia.service";
       }
       {
         key = "X";
         desc = "Restart Xwayland Satellite";
-        cmd = "systemctl --user restart xwayland-satellite";
+        cmd = "systemctl --user restart xwayland-satellite.service";
       }
       {
         key = "g";
