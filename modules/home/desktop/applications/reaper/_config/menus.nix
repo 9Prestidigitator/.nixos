@@ -25,6 +25,11 @@
           label = "Enable Metronome";
         }
         {
+          action = 40377;
+          label = "Virtual MIDI Keyboard";
+          icon = "toolbar_midi_mode_piano_roll.png";
+        }
+        {
           action = 40145;
           label = "Show arrange view grid";
         }
@@ -38,14 +43,6 @@
           label = "Enable auto-crossfade";
         }
         {
-          action = 1156;
-          label = "Enable item and track media/razor edit grouping";
-        }
-        {
-          action = 40070;
-          label = "Move envelope points with media items";
-        }
-        {
           action = 1162;
           label = "Toggle ripple editing";
           toolbarFlags = 1;
@@ -56,11 +53,14 @@
           toolbarFlags = 1;
         }
         {
-          action = "_RSa3ce2b5fed8e25570e453559e79b447bb6c36cda";
-          label = "Toggle FX bypass over 64 samples";
-          icon = "toolbar_item_effects_fx_delete_remove.png";
+          action = 1156;
+          label = "Enable item and track media/razor edit grouping";
         }
         reaperMenus.divider
+        {
+          action = 40070;
+          label = "Move envelope points with media items";
+        }
         {
           action = 1135;
           label = "Enable locking";
@@ -69,6 +69,11 @@
           action = 42336;
           label = "Toggle track height lock";
           icon = "toolbar_zoom_selected.png";
+        }
+        {
+          action = "_RSa3ce2b5fed8e25570e453559e79b447bb6c36cda";
+          label = "Toggle FX bypass over 64 samples";
+          icon = "toolbar_item_effects_fx_delete_remove.png";
         }
         reaperMenus.divider
         {
