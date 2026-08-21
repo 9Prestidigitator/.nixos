@@ -105,7 +105,10 @@
 
     plasma-manager = {
       url = "github:nix-community/plasma-manager/trunk";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
     };
     kwin-effects-glass = {
       url = "github:4v3ngR/kwin-effects-glass";
