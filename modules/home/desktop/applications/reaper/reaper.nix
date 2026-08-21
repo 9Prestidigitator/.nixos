@@ -14,7 +14,7 @@
     programs.reaper = {
       enable = true;
       configPath = "${config.xdg.configHome}/${reaper-config}";
-      # experimental.swell-wayland.enable = true;
+      experimental.swell-wayland.enable = true;
 
       theme = {
         active = "Reapertips Theme.ReaperThemeZip";
