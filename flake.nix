@@ -4,29 +4,37 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
-    preservation.url = "github:nix-community/preservation";
+    preservation = {
+      url = "github:nix-community/preservation";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence.url = "github:nix-community/impermanence";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
+    wrappers = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,37 +45,61 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    maxpkgs.url = "github:9Prestidigitator/maxpkgs";
-    maxvim.url = "github:9prestidigitator/nvim";
+    maxpkgs = {
+      url = "github:9Prestidigitator/maxpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        import-tree.follows = "import-tree";
+      };
+    };
+    maxvim = {
+      url = "github:9prestidigitator/nvim";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
     stylix = {
       url = "github:nix-community/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    musnix.url = "github:musnix/musnix";
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     audio-nix = {
       url = "github:polygon/audio.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    reaper-flake.url = "github:9Prestidigitator/reaper-flake";
+    reaper-flake = {
+      url = "github:9Prestidigitator/reaper-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
-    niri-flake.url = "github:sodiboo/niri-flake/pull/1717/merge";
+    niri-flake = {
+      url = "github:sodiboo/niri-flake/pull/1717/merge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
 
-    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     noctalia.url = "github:noctalia-dev/noctalia-shell";
-    noctalia-4.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
 
     plasma-manager = {
       url = "github:nix-community/plasma-manager/trunk";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     kwin-effects-glass = {
       url = "github:4v3ngR/kwin-effects-glass";
@@ -78,14 +110,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hermes-agent.url = "github:NousResearch/hermes-agent/v2026.7.20";
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent/v2026.7.20";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    steam-config-nix.url = "github:different-name/steam-config-nix";
-    nixcord.url = "github:kaylorben/nixcord";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixcord = {
+      url = "github:4evy/nixcord";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stoney-kernel = {
       url = "github:chrultrabook/stoney-kernel";
