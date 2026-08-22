@@ -73,7 +73,7 @@ in {
               at-startup = true;
             }
             {
-              app-id = "Spotify";
+              app-id = "spotify";
               at-startup = true;
             }
           ];
