@@ -6,33 +6,33 @@
       # closeSteam = true;
       defaultCompatTool = "proton_11";
       apps = {
-        chaos-head-noah = {
-          id = 1961950;
+        "1961950" = {
+          name = "chaos-head-noah";
           compatTool = "proton_9";
         };
-        steins-gate = {
-          id = 412830;
+        "412830" = {
+          name = "steins-gate";
           compatTool = "proton_8";
         };
-        robotics-notes-elite = {
-          id = 1111380;
+        "1111380" = {
+          name = "robotics-notes-elite";
           compatTool = "proton_9";
         };
-        chaos-child = {
-          id = 970570;
+        "970570" = {
+          name = "chaos-child";
           compatTool = "proton_8";
         };
-        steins-gate-0 = {
-          id = 825630;
+        "825630" = {
+          name = "steins-gate-0";
           compatTool = "proton_8";
         };
-        robotics-notes-dash = {
-          id = 1111390;
+        "1111390" = {
+          name = "robotics-notes-dash";
           compatTool = "proton_9";
         };
 
-        counter-strike-2 = {
-          id = 730;
+        "730" = {
+          name = "counter-strike-2";
           launchOptionsStr = "%command% -sdlaudiodriver pulse";
         };
       };
