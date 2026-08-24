@@ -1,23 +1,5 @@
 {
   flake.nixosModules.noctalia = {pkgs, ...}: {
-    services = {
-      gnome.evolution-data-server.enable = true;
-      # Making super key tap-able
-      keyd = {
-        keyboards.default.settings = {
-          settings.overload_tap_timeout = 25;
-          main.leftmeta = "overload(meta, favorites)";
-        };
-        keyboards.qmk = {
-          ids = ["cb10:8256" "3434:0430"];
-          settings = {
-            settings.overload_tap_timeout = 25;
-            main.leftmeta = "overload(meta, favorites)";
-          };
-        };
-      };
-    };
-
     programs = {
       gpu-screen-recorder.enable = true;
       kdeconnect.enable = true;
@@ -48,9 +30,7 @@
         linux-wallpaperengine
         qrencode
       ];
-      sessionVariables = {
-        QS_ICON_THEME = "breeze-dark";
-      };
+      sessionVariables.QS_ICON_THEME = "breeze-dark";
     };
 
     nix.settings = {
