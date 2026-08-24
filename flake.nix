@@ -94,15 +94,6 @@
     };
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
 
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v5.0.0-beta.9";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     plasma-manager = {
       url = "github:nix-community/plasma-manager/trunk";
       inputs = {
