@@ -1113,7 +1113,9 @@
         "steam-config-nix": "steam-config-nix",
         "stoney-kernel": "stoney-kernel",
         "stylix": "stylix",
-        "wrappers": "wrappers"
+        "umbriel": "umbriel",
+        "wrappers": "wrappers",
+        "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       }
     },
     "rust-analyzer-src": {
@@ -1463,6 +1465,27 @@
         "type": "github"
       }
     },
+    "umbriel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787608835,
+        "narHash": "sha256-2hFPScqIfRyicZ06Pu4OfFSRNoGjXNwpQ3D/hEQUl4Q=",
+        "ref": "refs/heads/main",
+        "rev": "dd4d5a0ec771b5b4aa7961799eed23d70df44939",
+        "revCount": 497,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/noctalia-dev/umbriel"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/noctalia-dev/umbriel"
+      }
+    },
     "utils": {
       "inputs": {
         "systems": "systems"
@@ -1541,6 +1564,26 @@
       "original": {
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
+        "type": "github"
+      }
+    },
+    "xdg-desktop-portal-umbriel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787580138,
+        "narHash": "sha256-fqU58lZeFchlY5aqyQgIfrN5ec/jqbhXNwNxyL2lp/g=",
+        "owner": "noctalia-dev",
+        "repo": "xdg-desktop-portal-umbriel",
+        "rev": "515c9f70f13ba4b4b9e19930b3e899c4ac8a50a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "xdg-desktop-portal-umbriel",
         "type": "github"
       }
     },

@@ -1,6 +1,10 @@
 {
   flake.nixosModules.noctalia = {pkgs, ...}: {
     programs = {
+      noctalia = {
+        enable = true;
+        systemd.enable = true;
+      };
       gpu-screen-recorder.enable = true;
       kdeconnect.enable = true;
     };
