@@ -14,14 +14,10 @@
           description = "Home files to persist.";
         };
       };
+
       desktop = {
-        compositor = lib.mkOption {
-          type = lib.types.nullOr lib.types.enum ["niri" "kwin" "gnome" "i3"];
-          default = null;
-          description = "Metadata option letting other modules know what compositor is being used.";
-        };
         shell = lib.mkOption {
-          type = lib.types.nullOr lib.types.enum ["noctalia"];
+          type = lib.types.nullOr (lib.types.enum ["noctalia"]);
           default = null;
           description = "Metadata option letting other modules know what shell is being used.";
         };
