@@ -23,7 +23,16 @@
           "Mod+Return" = "spawn:kitty";
           "Mod+Q" = "window-close";
         };
-        appearance.blur.enabled = true;
+        appearance.blur = {
+          enabled = true;
+          optimized = true;
+          passes = 3;
+          radius = 5;
+          noise = 0.02;
+          brightness = 0.9;
+          contrast = 0.9;
+          saturation = 1.1;
+        };
       };
     };
   };

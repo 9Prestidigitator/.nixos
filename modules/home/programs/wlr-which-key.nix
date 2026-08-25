@@ -4,10 +4,13 @@
     lib,
     ...
   }: let
-    mkWlrWhichKeyMenu = name: menu: let
-      configFile =
-        pkgs.writeText "${name}.yaml"
-        (lib.generators.toYAML {} {
+    mkWlrWhichKeyMenuWith = {
+      name,
+      menu,
+      inhibitCompositorKeyboardShortcuts ? true,
+    }: let
+      configFile = pkgs.writeText "${name}.yaml" (
+        lib.generators.toYAML {} {
           font = "JetBrainsMono Nerd Font 12";
           anchor = "bottom-right";
           background = "#28282860";
@@ -17,16 +20,19 @@
           margin_bottom = 10;
           margin_left = 10;
           margin_top = 10;
-          inhibit_compositor_keyboard_shortcuts = true;
+
+          inhibit_compositor_keyboard_shortcuts = inhibitCompositorKeyboardShortcuts;
+
           inherit menu;
-        });
+        }
+      );
     in
       lib.getExe (pkgs.writeShellScriptBin "wlr-which-key-${name}" ''
         exec ${lib.getExe pkgs.wlr-which-key} ${configFile}
       '');
+
+    mkWlrWhichKeyMenu = name: menu: mkWlrWhichKeyMenuWith {inherit name menu;};
   in {
-    _module.args = {
-      inherit mkWlrWhichKeyMenu;
-    };
+    _module.args = {inherit mkWlrWhichKeyMenu mkWlrWhichKeyMenuWith;};
   };
 }
