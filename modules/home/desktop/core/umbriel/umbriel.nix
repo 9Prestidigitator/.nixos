@@ -15,12 +15,15 @@
       enable = true;
       settings = {
         layout.gap = 5;
-        input.keyboard.layout = "de";
+        input.touchpad = {
+          tap = true;
+          natural_scroll = true;
+        };
         keybinds = {
           "Mod+Return" = "spawn:kitty";
           "Mod+Q" = "window-close";
         };
-        appearance.blur.enable = true;
+        appearance.blur.enabled = true;
       };
     };
   };
