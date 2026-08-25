@@ -11,7 +11,7 @@ in {
       keybinds = {
         "Mod" = noctalia "panel-toggle dashboard";
         "Mod+Space" = noctalia "panel-toggle launcher";
-        "Mod+N" = mkWlrWhichKeyMenu "Noctalia" [
+        "Mod+N" = noctalia mkWlrWhichKeyMenu "Noctalia" [
           {
             key = "b";
             desc = "Toggle Bluetooth";
