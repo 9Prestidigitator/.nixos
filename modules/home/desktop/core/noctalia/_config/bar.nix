@@ -23,6 +23,7 @@
           "date"
         ];
 
+        panel_overlap = 0;
         margin_edge = 0;
         margin_ends = 0;
         radius = 0;
