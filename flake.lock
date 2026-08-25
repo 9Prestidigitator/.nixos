@@ -740,11 +740,11 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1787535981,
-        "narHash": "sha256-XomjiVXFmz/k9S9kxH4bjVGVkNSqhg3du1emVP0GNFo=",
+        "lastModified": 1787622081,
+        "narHash": "sha256-N79fmlnKWnOxkXw0o8dyiB14DTNOoBHmGy+VpUbJ6Zw=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "9d708c4cccd94e0ce8fbf8f726471d727e48f756",
+        "rev": "25b4dfcd9a7c1215d1647529326250a9cf871fa7",
         "type": "github"
       },
       "original": {
@@ -765,11 +765,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1787619753,
-        "narHash": "sha256-ntRWTOtCKloiPFaOAxcJHb1nBG8xzIP8I8WsKoKU39w=",
+        "lastModified": 1787632366,
+        "narHash": "sha256-PZuvIVFEgfJWwp/OuDE7HO4KbnQRghIo5mgUYj3Qtqo=",
         "owner": "4evy",
         "repo": "nixcord",
-        "rev": "7fcc18bb246bf078bca3cf0aed991ddf611c6bb6",
+        "rev": "4a125b90e4eaeaa99781554965212a27ed9c9561",
         "type": "github"
       },
       "original": {
@@ -1472,11 +1472,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787619929,
-        "narHash": "sha256-TIU3SCeVrAXVRZ1wnidOX9Ao51u7FlGoi/b2s+Xqgng=",
+        "lastModified": 1787634012,
+        "narHash": "sha256-dz4zFy9Y731B9yW3CmyHeqVhKCQr8VAQuxdEuiP/T60=",
         "ref": "refs/heads/main",
-        "rev": "61075ddef2e68f6718927978ac99aad1a914d6df",
-        "revCount": 499,
+        "rev": "8af073895d32bd93f0192c0092f76f40bd9d25a6",
+        "revCount": 502,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/noctalia-dev/umbriel"

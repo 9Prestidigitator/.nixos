@@ -1,5 +1,5 @@
 {
-  programs.umbriel.window_rule = [
+  programs.umbriel.settings.window_rule = [
     {
       blur = true;
     }
