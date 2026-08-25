@@ -25,13 +25,13 @@ in {
 
       "Mod+Minus" = "window-modify-width:-0.1";
       "Mod+Equal" = "window-modify-width:0.1";
-      "Mod+Shift+Minus" = "window-modify-height:-0.1";
-      "Mod+Shift+Equal" = "window-modify-height:0.1";
+      # "Mod+Shift+Minus" = "window-modify-height:-0.1";
+      # "Mod+Shift+Equal" = "window-modify-height:0.1";
 
-      "Mod+PageUp" = "workspace-previous";
       "Mod+U" = "workspace-previous";
-      "Mod+PageDown" = "workspace-next";
       "Mod+D" = "workspace-next";
+      # "Mod+PageUp" = "workspace-previous";
+      # "Mod+PageDown" = "workspace-next";
 
       "Mod+WheelUp" = "workspace-previous";
       "Mod+WheelDown" = "workspace-next";
@@ -56,9 +56,9 @@ in {
       "Mod+Ctrl+K" = "window-move-up";
       "Mod+Ctrl+J" = "window-move-down";
 
-      "Mod+Ctrl+PageUp" = "window-move-to-workspace-previous";
+      # "Mod+Ctrl+PageUp" = "window-move-to-workspace-previous";
       "Mod+Ctrl+U" = "window-move-to-workspace-previous";
-      "Mod+Ctrl+PageDown" = "window-move-to-workspace-next";
+      # "Mod+Ctrl+PageDown" = "window-move-to-workspace-next";
       "Mod+Ctrl+D" = "window-move-to-workspace-next";
 
       "Mod+Ctrl+1" = "window-move-to-workspace:1";
