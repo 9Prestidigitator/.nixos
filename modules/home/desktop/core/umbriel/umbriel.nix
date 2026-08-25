@@ -20,6 +20,8 @@
           natural_scroll = true;
         };
         keybinds = {
+          "Mod+Return" = "spawn:kitty";
+
           "Mod+Left" = "window-focus-left";
           "Mod+Right" = "window-focus-right";
           "Mod+Up" = "window-focus-up";

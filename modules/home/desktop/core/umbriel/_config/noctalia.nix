@@ -7,7 +7,7 @@
   msg = cmd: "noctalia msg ${cmd}";
   spawn = cmd: "spawn:${cmd}";
 in {
-  config = lib.mkIf (config.desktop.shell == "msg") {
+  config = lib.mkIf (config.desktop.shell == "noctalia") {
     programs.umbriel.settings = {
       keybinds = {
         "Mod" = spawn (msg "panel-toggle control-center");
