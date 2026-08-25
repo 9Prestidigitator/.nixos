@@ -20,6 +20,7 @@
           "Mod+Return" = "spawn:kitty";
           "Mod+Q" = "window-close";
         };
+        appearance.blur.enable = true;
       };
     };
   };

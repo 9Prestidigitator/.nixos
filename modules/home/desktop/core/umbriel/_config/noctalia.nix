@@ -4,14 +4,15 @@
   mkWlrWhichKeyMenu,
   ...
 }: let
-  noctalia = cmd: "spawn:noctalia msg ${cmd}";
+  noctalia = cmd: "noctalia msg ${cmd}";
+  spawn = cmd: "spawn:${cmd}";
 in {
   config = lib.mkIf (config.desktop.shell == "noctalia") {
     programs.umbriel.settings = {
       keybinds = {
-        "Mod" = noctalia "panel-toggle dashboard";
-        "Mod+Space" = noctalia "panel-toggle launcher";
-        "Mod+N" = noctalia mkWlrWhichKeyMenu "Noctalia" [
+        "Mod" = spawn (noctalia "panel-toggle dashboard");
+        "Mod+Space" = spawn (noctalia "panel-toggle launcher");
+        "Mod+N" = spawn (mkWlrWhichKeyMenu "Noctalia" [
           {
             key = "b";
             desc = "Toggle Bluetooth";
@@ -214,7 +215,7 @@ in {
               }
             ];
           }
-        ];
+        ]);
       };
     };
   };
