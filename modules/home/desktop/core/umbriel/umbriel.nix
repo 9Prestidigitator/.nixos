@@ -12,6 +12,7 @@
     ];
 
     programs.umbriel = {
+      enable = true;
       settings = {
         layout.gap = 5;
         input.keyboard.layout = "de";
