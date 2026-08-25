@@ -8,7 +8,7 @@
       [
         noctalia-greeter
         noctalia
-        niri
+        umbriel
 
         essentials
         brave-browser

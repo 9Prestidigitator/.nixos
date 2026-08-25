@@ -9,7 +9,7 @@
     imports = with self.homeModules;
       [
         noctalia
-        niri
+        umbriel
 
         neovim
         terminal-tools
