@@ -2,18 +2,20 @@
   host.name = "vm";
 
   home-manager.users.max = {self, ...}: {
-    imports = with self; [
-      userModules.max.homeModule
+    imports = with self.homeModules; [
+      self.userModules.max.homeModule
 
-      homeModules.plasma
+      plasma
 
-      homeModules.neovim
-      homeModules.terminal-tools
+      bash
+      neovim
+      fastfetch
 
-      homeModules.bluetooth
-      homeModules.stylix
+      essentials
+      kitty
 
-      homeModules.essentials
+      bluetooth
+      stylix
     ];
   };
   users.users.max.hashedPasswordFile = "/persist/passwds/max";

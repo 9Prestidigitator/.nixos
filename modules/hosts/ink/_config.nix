@@ -11,14 +11,16 @@
         noctalia
         niri
 
+        bash
         neovim
-        terminal-tools
+        fastfetch
         mpd
         bluetooth
 
         stylix
 
         essentials
+        kitty
         steam
         reaper
         mpv

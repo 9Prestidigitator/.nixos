@@ -6,17 +6,19 @@
     config,
     ...
   }: {
-    imports = with self; [
-      userModules.max.homeModule
+    imports = with self.homeModules; [
+      self.userModules.max.homeModule
 
-      homeModules.noctalia
-      homeModules.niri
+      noctalia
+      niri
 
-      homeModules.neovim
-      homeModules.terminal-tools
-      homeModules.bluetooth
+      bash
+      neovim
+      fastfetch
 
-      homeModules.stylix
+      bluetooth
+
+      stylix
     ];
     programs.ssh.settings = {
       ink = {

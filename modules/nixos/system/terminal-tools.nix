@@ -12,8 +12,10 @@
 
     environment.systemPackages = with pkgs; [
       bashInteractive
+
       self.packages.${system}.tmux
       btop
+
       vim
       lazygit
       ripgrep
@@ -26,9 +28,11 @@
       calc
       just
       wget
+
       zip
       unrar
       unzip
+
       cryptsetup
       gptfdisk
     ];

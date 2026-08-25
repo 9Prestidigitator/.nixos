@@ -3,37 +3,43 @@
 
   home-manager.users = {
     max = {self, ...}: {
-      imports = with self; [
-        userModules.max.homeModule
+      imports = with self.homeModules; [
+          self.userModules.max.homeModule
 
-        homeModules.plasma
+          plasma
 
-        homeModules.essentials
-        homeModules.terminal-tools
-        homeModules.neovim
-        homeModules.mpv
-        homeModules.spotify
-        homeModules.bluetooth
+          bash
+          neovim
+          fastfetch
 
-        homeModules.stylix
-      ];
+          essentials
+          mpv
+          spotify
+          bluetooth
+
+          stylix
+        ]
+        ++ [];
     };
 
     guest = {self, ...}: {
-      imports = with self; [
-        userModules.guest.homeModule
+      imports = with self.homeModules; [
+        self.userModules.guest.homeModule
 
-        homeModules.plasma
+        plasma
 
-        homeModules.essentials
-        homeModules.terminal-tools
-        homeModules.neovim
-        homeModules.mpv
-        homeModules.spotify
-        homeModules.discord
-        homeModules.bluetooth
+        bash
+        neovim
+        fastfetch
 
-        homeModules.stylix
+        essentials
+        kitty
+        mpv
+        spotify
+        discord
+        bluetooth
+
+        stylix
       ];
     };
   };

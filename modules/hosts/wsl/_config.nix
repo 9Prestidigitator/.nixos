@@ -5,15 +5,16 @@
 }: {
   host.name = "wsl";
   home-manager.users.max = {self, ...}: {
-    imports = with self; [
-      userModules.max.homeModule
+    imports = with self.homeModules; [
+      self.userModules.max.homeModule
 
-      homeModules.neovim
-      homeModules.terminal-tools
+      bash
+      neovim
+      fastfetch
 
-      homeModules.stylix
+      essentials
 
-      homeModules.essentials
+      stylix
     ];
   };
 

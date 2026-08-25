@@ -2,15 +2,18 @@
   host.name = "surface";
 
   home-manager.users.max = {self, ...}: {
-    imports = with self; [
-      userModules.max.homeModule
+    imports = with self.homeModules; [
+      self.userModules.max.homeModule
 
-      homeModules.gnome
+      gnome
 
-      homeModules.neovim
-      homeModules.terminal-tools
+      fastfetch
+      neovim
+      bash
 
-      homeModules.stylix
+      kitty
+
+      stylix
     ];
   };
 
