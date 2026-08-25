@@ -4,51 +4,53 @@
   ...
 }: {
   flake.nixosConfigurations.papyr = myLib.mkNixosHost {
-    modules = with self; [
-      userModules.max.nixosModule
+    modules = with self.nixosModules;
+      [
+        noctalia-greeter
+        noctalia
+        niri
 
-      nixosModules.noctalia-greeter
-      nixosModules.noctalia
-      nixosModules.niri
+        essentials
+        brave-browser
+        music-production
+        design
+        gaming
+        media
+        communications
+        virtualisation
+        ai
 
-      nixosModules.essentials
-      nixosModules.brave-browser
-      nixosModules.music-production
-      nixosModules.design
-      nixosModules.gaming
-      nixosModules.media
-      nixosModules.communications
-      nixosModules.virtualisation
-      nixosModules.ai
+        mullvad
+        syncthing
+        wine
+        wg0
+        uxplay
+        localsend
+        fprintd
 
-      nixosModules.mullvad
-      nixosModules.syncthing
-      nixosModules.wine
-      nixosModules.wg0
-      nixosModules.uxplay
-      nixosModules.localsend
-      nixosModules.fprintd
+        ink-build-machine
+        stylix
+        btrfs-rollback
+        preservation
+        home-manager
+        nix
 
-      nixosModules.ink-build-machine
-      nixosModules.stylix
-      nixosModules.btrfs-rollback
-      nixosModules.preservation
-      nixosModules.home-manager
-      nixosModules.nix
+        terminal-tools
+        tablet
+        fonts
+        keyd
+        bluetooth
+        grub
+        intel
+        system-general
+      ]
+      ++ (with self; [
+        userModules.max.nixosModule
 
-      nixosModules.terminal-tools
-      nixosModules.tablet
-      nixosModules.fonts
-      nixosModules.keyd
-      nixosModules.bluetooth
-      nixosModules.grub
-      nixosModules.intel
-      nixosModules.system-general
-
-      inputs.disko.nixosModules.disko
-      diskoConfigurations.papyr
-      ./_config.nix
-      ./_hardware.nix
-    ];
+        inputs.disko.nixosModules.disko
+        diskoConfigurations.papyr
+        ./_config.nix
+        ./_hardware.nix
+      ]);
   };
 }
