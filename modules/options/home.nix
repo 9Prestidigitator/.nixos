@@ -52,7 +52,7 @@
 
         browser = {
           name = lib.mkOption {
-            type = lib.types.nullOr (lib.types.enum ["brave"]);
+            type = lib.types.nullOr (lib.types.enum ["brave" "librewolf"]);
             default = null;
             description = "Metadata option letting other home modules know what file browser is being used.";
           };
@@ -94,6 +94,7 @@
           else
             {
               brave = "brave-browser";
+              librewolf = "librewolf";
             }.${
               config.desktop.browser.name
             };

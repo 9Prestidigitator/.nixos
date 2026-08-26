@@ -7,9 +7,9 @@
 
       gnome
 
-      fastfetch
-      neovim
       bash
+      neovim
+      fastfetch
 
       kitty
       nautilus

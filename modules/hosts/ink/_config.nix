@@ -6,29 +6,29 @@
     config,
     ...
   }: {
-    imports = with self.homeModules;
-      [
-        noctalia
-        niri
+    imports = with self.homeModules; [
+      self.userModules.max.homeModule
 
-        bash
-        neovim
-        fastfetch
-        mpd
-        bluetooth
+      noctalia
+      niri
 
-        stylix
+      bash
+      neovim
+      fastfetch
+      mpd
+      bluetooth
 
-        kitty
-        nautilus
-        brave
-        steam
-        reaper
-        mpv
-        spotify
-        discord
-      ]
-      ++ [self.userModules.max.homeModule];
+      stylix
+
+      kitty
+      nautilus
+      brave
+      steam
+      reaper
+      mpv
+      spotify
+      discord
+    ];
 
     programs.ssh.settings = {
       papyr = {

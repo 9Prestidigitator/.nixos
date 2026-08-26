@@ -18,7 +18,7 @@
 
       ghostty
       nautilus
-      brave
+      librewolf
       steam
       reaper
       mpv
@@ -52,8 +52,10 @@
     };
   };
 
-  users.users.max.hashedPasswordFile = "/persist/passwds/max";
-  users.users.max.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKWcs2PiK8MvDfOEadtln1NnnP3TYtdZUiY3Z8uov7u"]; # ink->papyr
+  users.users.max = {
+    hashedPasswordFile = "/persist/passwds/max";
+    openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKWcs2PiK8MvDfOEadtln1NnnP3TYtdZUiY3Z8uov7u"]; # ink->papyr
+  };
 
   system.stateVersion = "26.05";
   home-manager.sharedModules = [{home.stateVersion = "26.05";}];
