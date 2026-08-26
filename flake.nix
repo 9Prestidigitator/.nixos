@@ -98,7 +98,7 @@
     };
 
     niri-flake = {
-      url = "github:sodiboo/niri-flake/pull/1717/merge";
+      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";

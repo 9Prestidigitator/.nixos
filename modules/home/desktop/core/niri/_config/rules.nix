@@ -1,298 +1,298 @@
 {
-  programs.niri = {
-    settings = {
-      prefer-no-csd = true;
-
-      window-rules = [
-        {
-          geometry-corner-radius = let
-            radius = 5.4;
-          in {
-            bottom-left = radius;
-            bottom-right = radius;
-            top-left = radius;
-            top-right = radius;
-          };
-          draw-border-with-background = false;
-          clip-to-geometry = true;
-        }
-
-        {
-          matches = [{is-floating = true;}];
-          shadow.enable = true;
-          border.enable = false;
-          focus-ring.enable = false;
-        }
-        {
-          matches = [{app-id = "brave-browser";}];
-          open-maximized = true;
-        }
-        {
-          matches = [
-            {
-              app-id = "org.rncbc.qjackctl";
-              title = "\\(default\\).*";
-            }
-            {
-              app-id = "QjackCtl";
-              title = "\\(default\\).*";
-            }
-          ];
-          default-window-height = {fixed = 100;};
-          default-column-width = {proportion = 0.3333;};
-        }
-
-        {
-          matches = [
-            {
-              app-id = "kitty";
-              title = "tmux";
-            }
-          ];
-          open-maximized = true;
-        }
-        {
-          matches = [
-            {
-              app-id = "steam";
-              title = "Friends List";
-            }
-          ];
-          default-column-width = {fixed = 187;};
-        }
-        {
-          matches = [
-            {app-id = "^Amp Locker$";}
-            {app-id = "^Melissa$";}
-          ];
-          open-floating = true;
-        }
-        {
-          matches = [
-            {
-              app-id = "steam";
-              title = "^notificationtoasts_\\d+_desktop$";
-            }
-          ];
-          open-focused = false;
-          default-floating-position = {
-            x = 0;
-            y = 0;
-            relative-to = "bottom-right";
-          };
-        }
-        {
-          matches = [
-            {
-              app-id = "virt-manager";
-              title = "Virtual Machine Manager";
-            }
-          ];
-          default-column-width = {fixed = 280;};
-        }
-        {
-          matches = [
-            {title = "Confirm";}
-            {title = "Authentication Required";}
-            {title = "xdg-desktop-portal-gtk";}
-          ];
-          open-floating = true;
-        }
-        {
-          matches = [
-            {app-id = "org.gnome.seahorse.Application";}
-            {app-id = "^signal$";}
-            {
-              app-id = "brave-browser";
-              title = "Password";
-            }
-          ];
-          block-out-from = "screencast";
-        }
-        {
-          matches = [{app-id = "mpv";}];
-          open-floating = true;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "top-right";
-          };
-          default-column-width = {proportion = 0.4;};
-          default-window-height = {proportion = 0.4;};
-        }
-        {
-          matches = [{title = "Picture in picture";}];
-          open-floating = true;
-          open-focused = false;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "bottom-right";
-          };
-          default-column-width = {proportion = 0.3333;};
-          default-window-height = {proportion = 0.3333;};
-        }
-        {
-          matches = [{app-id = "mullvad-vpn";}];
-          open-floating = true;
-          open-focused = true;
-          default-floating-position = {
-            x = 32;
-            y = 48;
-            relative-to = "top-right";
-          };
-        }
-        {
-          matches = [{app-id = "^org.qbittorrent.qBittorrent$";}];
-          excludes = [{title = "^qBittorrent v[0-9].*";}];
-          open-floating = true;
-          open-focused = true;
-        }
-
-        {
-          matches = [
-            {
-              app-id = "^REAPER$";
-              title = "^Add FX.*";
-            }
-          ];
-          open-floating = true;
-          open-focused = true;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "bottom-right";
-          };
-          default-column-width = {proportion = 0.35;};
-          default-window-height = {proportion = 0.5;};
-        }
-        {
-          matches = [
-            {
-              app-id = "^REAPER$";
-              title = "^Routing.*";
-            }
-          ];
-          open-floating = true;
-          open-focused = true;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "bottom-left";
-          };
-        }
-        {
-          matches = [{title = "^Open File$";}];
-          open-floating = true;
-          open-focused = true;
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "bottom-right";
-          };
-        }
-
-        # {
-        #   matches = [
-        #     {
-        #       title = ".*REAPER v.*";
-        #       app-id = "REAPER";
-        #     }
-        #   ];
-        #   open-maximized = false;
-        #   open-maximized-to-edges = true;
-        #   default-column-width = {proportion = 0.6666;};
-        # }
-        # {
-        #   matches = [{app-id = "com.bitwig.BitwigStudio";}];
-        #   open-maximized = false;
-        #   open-maximized-to-edges = true;
-        #   geometry-corner-radius = let
-        #     radius = 0.0;
-        #   in {
-        #     bottom-left = radius;
-        #     bottom-right = radius;
-        #     top-left = radius;
-        #     top-right = radius;
-        #   };
-        # }
-      ];
-
-      layer-rules = [
-        {
-          matches = [
-            {namespace = "noctalia-wallpaper*";}
-            {namespace = "linux-wallpaperengine";}
-          ];
-          place-within-backdrop = true;
-        }
-      ];
-
-      # TODO(max): Will need to revise this on next version of niri-flake
-      extraConfig = ''
-        blur {
-          passes 3
-          offset 3.0
-          noise 0.03
-          saturation 1.0
-        }
-
-        window-rule {
-          match app-id="REAPER" title="^REAPER v[0-9].*"
-          open-fullscreen false
-          open-maximized-to-edges true
-          default-column-width {
-            proportion 0.6666
-          }
-        }
-
-        window-rule {
-          match app-id="com.bitwig.BitwigStudio"
-          open-fullscreen false
-          open-maximized-to-edges true
-          geometry-corner-radius 0.0
-        }
-
-        window-rule {
-            match app-id="kitty"
-            background-effect {
-                blur true
-                xray false
-            }
-        }
-        window-rule {
-            match app-id="Nautilus"
-            background-effect {
-                blur true
-                xray false
-            }
-            popups {
-                geometry-corner-radius 15
-                opacity 0.5
-                background-effect {
-                    blur true
-                    xray false
-                }
-            }
-        }
-        layer-rule {
-            match namespace="wlr_which_key"
-            geometry-corner-radius 16
-            background-effect {
-                blur true
-                xray false
-            }
-        }
-        layer-rule {
-            background-effect {
-                xray false
-            }
-        }
-
-        debug {
-            honor-xdg-activation-with-invalid-serial
-        }
-      '';
+  programs.niri.settings = let
+    corners = radius: {
+      top-left = radius;
+      top-right = radius;
+      bottom-right = radius;
+      bottom-left = radius;
     };
+  in {
+    prefer-no-csd = true;
+
+    window-rules = [
+      {
+        geometry-corner-radius = let
+          radius = 5.4;
+        in {
+          bottom-left = radius;
+          bottom-right = radius;
+          top-left = radius;
+          top-right = radius;
+        };
+        draw-border-with-background = false;
+        clip-to-geometry = true;
+      }
+
+      {
+        matches = [{is-floating = true;}];
+        shadow.enable = true;
+        border.enable = false;
+        focus-ring.enable = false;
+      }
+      {
+        matches = [{app-id = "brave-browser";}];
+        open-maximized = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "org.rncbc.qjackctl";
+            title = "\\(default\\).*";
+          }
+          {
+            app-id = "QjackCtl";
+            title = "\\(default\\).*";
+          }
+        ];
+        default-window-height = {fixed = 100;};
+        default-column-width = {proportion = 0.3333;};
+      }
+
+      {
+        matches = [
+          {
+            app-id = "kitty";
+            title = "tmux";
+          }
+        ];
+        open-maximized = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "steam";
+            title = "Friends List";
+          }
+        ];
+        default-column-width = {fixed = 187;};
+      }
+      {
+        matches = [
+          {app-id = "^Amp Locker$";}
+          {app-id = "^Melissa$";}
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          {
+            app-id = "steam";
+            title = "^notificationtoasts_\\d+_desktop$";
+          }
+        ];
+        open-focused = false;
+        default-floating-position = {
+          x = 0;
+          y = 0;
+          relative-to = "bottom-right";
+        };
+      }
+      {
+        matches = [
+          {
+            app-id = "virt-manager";
+            title = "Virtual Machine Manager";
+          }
+        ];
+        default-column-width = {fixed = 280;};
+      }
+      {
+        matches = [
+          {title = "Confirm";}
+          {title = "Authentication Required";}
+          {title = "xdg-desktop-portal-gtk";}
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          {app-id = "org.gnome.seahorse.Application";}
+          {app-id = "^signal$";}
+          {
+            app-id = "brave-browser";
+            title = "Password";
+          }
+        ];
+        block-out-from = "screencast";
+      }
+      {
+        matches = [{app-id = "mpv";}];
+        open-floating = true;
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "top-right";
+        };
+        default-column-width = {proportion = 0.4;};
+        default-window-height = {proportion = 0.4;};
+      }
+      {
+        matches = [{title = "Picture in picture";}];
+        open-floating = true;
+        open-focused = false;
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-right";
+        };
+        default-column-width = {proportion = 0.3333;};
+        default-window-height = {proportion = 0.3333;};
+      }
+      {
+        matches = [{app-id = "mullvad-vpn";}];
+        open-floating = true;
+        open-focused = true;
+        default-floating-position = {
+          x = 32;
+          y = 48;
+          relative-to = "top-right";
+        };
+      }
+      {
+        matches = [{app-id = "^org.qbittorrent.qBittorrent$";}];
+        excludes = [{title = "^qBittorrent v[0-9].*";}];
+        open-floating = true;
+        open-focused = true;
+      }
+
+      {
+        matches = [
+          {
+            app-id = "^REAPER$";
+            title = "^Add FX.*";
+          }
+        ];
+        open-floating = true;
+        open-focused = true;
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-right";
+        };
+        default-column-width = {proportion = 0.35;};
+        default-window-height = {proportion = 0.5;};
+      }
+      {
+        matches = [
+          {
+            app-id = "^REAPER$";
+            title = "^Routing.*";
+          }
+        ];
+        open-floating = true;
+        open-focused = true;
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-left";
+        };
+      }
+      {
+        matches = [{title = "^Open File$";}];
+        open-floating = true;
+        open-focused = true;
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-right";
+        };
+      }
+
+      {
+        matches = [
+          {
+            title = ".*REAPER v.*";
+            app-id = "REAPER";
+          }
+        ];
+        open-maximized = false;
+        open-maximized-to-edges = true;
+        default-column-width = {proportion = 0.6666;};
+      }
+      {
+        matches = [{app-id = "com.bitwig.BitwigStudio";}];
+        open-maximized = false;
+        open-maximized-to-edges = true;
+        geometry-corner-radius = let
+          radius = 0.0;
+        in {
+          bottom-left = radius;
+          bottom-right = radius;
+          top-left = radius;
+          top-right = radius;
+        };
+      }
+
+      {
+        matches = [
+          {
+            app-id = "REAPER";
+            title = "^REAPER v[0-9].*";
+          }
+        ];
+        open-fullscreen = false;
+        open-maximized-to-edges = true;
+        default-column-width.proportion = 0.6666;
+      }
+
+      {
+        matches = [{app-id = "com.bitwig.BitwigStudio";}];
+        open-fullscreen = false;
+        open-maximized-to-edges = true;
+        geometry-corner-radius = corners 0.0;
+      }
+
+      {
+        matches = [{app-id = "kitty";}];
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
+      }
+      {
+        matches = [{app-id = "com.mitchellh.ghostty";}];
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
+      }
+
+      {
+        matches = [{app-id = "Nautilus";}];
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
+        popups = {
+          geometry-corner-radius = corners 15.0;
+          opacity = 0.5;
+          background-effect = {
+            blur = true;
+            xray = false;
+          };
+        };
+      }
+    ];
+
+    layer-rules = [
+      {
+        matches = [
+          {namespace = "noctalia-wallpaper*";}
+          {namespace = "linux-wallpaperengine";}
+        ];
+        place-within-backdrop = true;
+      }
+
+      {
+        matches = [{namespace = "wlr_which_key";}];
+        geometry-corner-radius = corners 16.0;
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
+      }
+
+      {background-effect.xray = false;}
+    ];
   };
 }
