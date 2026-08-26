@@ -54,9 +54,11 @@ in {
     dock = {
       enabled = true;
       smart_auto_hide = true;
+
       icon_size = 35;
       item_spacing = 0;
       show_dots = true;
+      background_opacity = 0.0;
 
       magnification_scale = 1.3;
       radius = 30;
