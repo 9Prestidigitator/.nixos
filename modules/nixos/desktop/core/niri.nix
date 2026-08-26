@@ -31,6 +31,8 @@
       dconf.enable = true;
     };
 
+    xdg.portal.enable = true;
+
     environment.sessionVariables = {
       XDG_CURRENT_DESKTOP = "niri";
       XDG_SESSION_DESKTOP = "niri";
@@ -42,7 +44,6 @@
       inputs.niri-float-sticky.packages.${system}.default
       wl-clipboard
       pulseaudio
-      imv
     ];
 
     persist = {

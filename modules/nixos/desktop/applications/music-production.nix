@@ -57,6 +57,7 @@
       papu
       easyeffects
       qjackctl
+      qpwgraph
 
       # hardware
       elektroid

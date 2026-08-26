@@ -11,6 +11,8 @@
 
     environment = {
       systemPackages = with pkgs; [
+        playerctl
+        brightnessctl
         wlsunset
         wl-mirror
         cliphist

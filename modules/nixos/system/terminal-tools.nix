@@ -18,16 +18,16 @@
 
       vim
       lazygit
-      ripgrep
+      yazi
+
       fd
       fzf
-      nix-search-tv
-      tree
-      yazi
-      fd
-      delta
-      calc
       just
+      ripgrep
+      nix-search-tv
+      delta
+      tree
+      calc
       wget
 
       zip

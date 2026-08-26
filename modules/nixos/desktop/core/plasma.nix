@@ -52,7 +52,10 @@
       kdeconnect.enable = true;
     };
 
-    xdg.mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
+    xdg = {
+      portal.enable = true;
+      mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
+    };
 
     persist = {
       directories = ["/var/lib/plasmalogin"];
@@ -113,14 +116,14 @@
     # shows up as everything in the session feeling slow to launch — and it is
     # far worse on storage with high per-operation latency, such as a VM disk.
     #
-    # The fix, 
+    # The fix,
     # https://github.com/NixOS/nixpkgs/issues/126590#issuecomment-3194531220:
     # build a single derivation that merges the contents of all those share/
     # directories into one, strip the wrapper's XDG_DATA_DIRS injection, and
     # point it at the merged directory instead. XDG_DATA_DIRS goes from ~18 KB
     # and hundreds of entries down to two.
     #
-    # COST: this rebuilds plasma-workspace from source. 
+    # COST: this rebuilds plasma-workspace from source.
     nixpkgs.overlays = lib.singleton (
       final: prev: {
         kdePackages =

@@ -1,6 +1,9 @@
 {
   flake.nixosModules.fonts = {pkgs, ...}: {
     fonts.packages = with pkgs; [
+      freetype
+      fontconfig
+
       corefonts
       vista-fonts
       material-design-icons

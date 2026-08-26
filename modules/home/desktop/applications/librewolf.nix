@@ -2,8 +2,12 @@
   flake.homeModules.librewolf = {pkgs, ...}: {
     home.packages = with pkgs; [librewolf];
 
-    desktop.browser.name = "librewolf";
+    xdg.mimeApps.defaultApplications = {
+      "x-scheme-handler/http" = ["librewolf.desktop"];
+      "x-scheme-handler/https" = ["librewolf.desktop"];
+    };
 
+    desktop.browser.name = "librewolf";
     persist.directories = [
       ".cache/librewolf"
       ".config/librewolf"
