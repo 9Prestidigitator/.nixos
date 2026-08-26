@@ -25,8 +25,8 @@
 
         panel_overlap = 0;
         margin_edge = 0;
-        margin_ends = 0;
-        radius = 0;
+        margin_ends = lib.mkDefault 180;
+        radius = lib.mkDefault 60;
 
         widget_spacing = 8;
         reserve_space = false;
