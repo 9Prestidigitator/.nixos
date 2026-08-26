@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      umbriel
+      niri
 
       essentials
       chromium
