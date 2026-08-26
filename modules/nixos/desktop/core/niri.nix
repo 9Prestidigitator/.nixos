@@ -40,26 +40,20 @@
     environment.systemPackages = with pkgs; [
       xwayland-satellite
       inputs.niri-float-sticky.packages.${system}.default
-      nautilus
       wl-clipboard
-      file-roller
       pulseaudio
       imv
     ];
 
-    xdg.mime.defaultApplications."inode/directory" = ["org.gnome.Nautilus.desktop"];
-
     persist = {
       directories = ["/var/lib/AccountsService"];
       userDirs = [
-        ".local/share/nautilus"
         ".local/share/gvfs-metadata"
         ".config/dconf"
         ".local/share/evolution"
         ".config/evolution"
         ".config/goa-1.0"
       ];
-      userFiles = [".config/gtk-3.0/bookmarks"];
     };
   };
 }

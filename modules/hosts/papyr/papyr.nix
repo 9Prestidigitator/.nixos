@@ -4,53 +4,51 @@
   ...
 }: {
   flake.nixosConfigurations.papyr = myLib.mkNixosHost {
-    modules = with self.nixosModules;
-      [
-        noctalia-greeter
-        noctalia
-        umbriel
+    modules = with self.nixosModules; [
+      self.userModules.max.nixosModule
 
-        essentials
-        brave-browser
-        music-production
-        design
-        gaming
-        media
-        communications
-        virtualisation
-        ai
+      noctalia-greeter
+      noctalia
+      umbriel
 
-        mullvad
-        syncthing
-        wine
-        wg0
-        uxplay
-        localsend
-        fprintd
+      essentials
+      brave-browser
+      music-production
+      design
+      gaming
+      media
+      communications
+      virtualisation
+      ai
 
-        ink-build-machine
-        stylix
-        btrfs-rollback
-        preservation
-        home-manager
-        nix
+      mullvad
+      syncthing
+      wine
+      wg0
+      uxplay
+      localsend
+      fprintd
 
-        terminal-tools
-        tablet
-        fonts
-        keyd
-        bluetooth
-        grub
-        intel
-        system-general
-      ]
-      ++ (with self; [
-        userModules.max.nixosModule
+      ink-build-machine
+      stylix
+      btrfs-rollback
+      preservation
+      home-manager
+      nix
 
-        inputs.disko.nixosModules.disko
-        diskoConfigurations.papyr
-        ./_config.nix
-        ./_hardware.nix
-      ]);
+      terminal-tools
+      tablet
+      fonts
+      keyd
+      bluetooth
+      grub
+      intel
+      system-general
+
+      self.inputs.disko.nixosModules.disko
+      self.diskoConfigurations.papyr
+      ./_config.nix
+      ./_hardware.nix
+    ];
   };
 }

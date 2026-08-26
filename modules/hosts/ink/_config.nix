@@ -19,8 +19,8 @@
 
         stylix
 
-        essentials
         kitty
+        nautilus
         steam
         reaper
         mpv

@@ -27,6 +27,8 @@
         # This is useful for impermanent systems
         lsblk = "lsblk -e7 -o NAME,SIZE,TYPE,FSTYPE,LABEL,UUID,MOUNTPOINT";
 
+        tm = "tmux a || tmux";
+
         leet-lsp = "nix develop ${config.home.homeDirectory}/.nixos#python -c sh -c 'nvim leetcode.nvim'";
         leet = "nvim leetcode.nvim";
 
@@ -35,7 +37,7 @@
         nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
         nixup = "nix flake update";
 
-        tm = "tmux a || tmux";
+        ns = "$nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
 
         ds = "nix develop";
         ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";

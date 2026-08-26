@@ -4,37 +4,37 @@
   ...
 }: {
   flake.nixosConfigurations.surface = myLib.mkNixosHost {
-    modules = with self; [
-      userModules.max.nixosModule
+    modules = with self.nixosModules; [
+      self.userModules.max.nixosModule
 
-      nixosModules.gdm
-      nixosModules.gnome
+      gdm
+      gnome
 
-      nixosModules.essentials
-      nixosModules.brave-browser
+      essentials
+      brave-browser
 
-      nixosModules.keyd
-      nixosModules.minecraft-server
-      nixosModules.uxplay
-      # nixosModules.gitlab
+      keyd
+      minecraft-server
+      uxplay
+      # gitlab
 
-      nixosModules.builder
-      nixosModules.ink-build-machine
-      nixosModules.stylix
-      nixosModules.btrfs-rollback
-      nixosModules.preservation
-      nixosModules.home-manager
-      nixosModules.nix
+      builder
+      ink-build-machine
+      stylix
+      btrfs-rollback
+      preservation
+      home-manager
+      nix
 
-      nixosModules.terminal-tools
-      nixosModules.fonts
-      nixosModules.grub
-      nixosModules.intel
-      nixosModules.surface-6
-      nixosModules.system-general
+      terminal-tools
+      fonts
+      grub
+      intel
+      surface-6
+      system-general
 
-      inputs.disko.nixosModules.disko
-      diskoConfigurations.surface
+      self.inputs.disko.nixosModules.disko
+      self.diskoConfigurations.surface
       ./_config.nix
       ./_hardware.nix
     ];

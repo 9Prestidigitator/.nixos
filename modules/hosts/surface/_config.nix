@@ -12,6 +12,7 @@
       bash
 
       kitty
+      nautilus
 
       stylix
     ];

@@ -4,48 +4,46 @@
   ...
 }: {
   flake.nixosConfigurations.ink = myLib.mkNixosHost {
-    modules = with self.nixosModules;
-      [
-        noctalia-greeter
-        noctalia
-        niri
+    modules = with self.nixosModules; [
+      self.userModules.max.nixosModule
 
-        essentials
-        brave-browser
-        music-production
-        design
-        gaming
-        media
-        video-editing
-        communications
-        virtualisation
-        ai
+      noctalia-greeter
+      noctalia
+      niri
 
-        mullvad
-        syncthing
-        keyd
-        wine
-        localsend
+      essentials
+      brave-browser
+      music-production
+      design
+      gaming
+      media
+      video-editing
+      communications
+      virtualisation
+      ai
 
-        sops
-        stylix
-        home-manager
-        nix
+      mullvad
+      syncthing
+      keyd
+      wine
+      localsend
 
-        terminal-tools
-        fonts
-        tablet
-        bluetooth
-        grub
-        nvidia
-        system-general
-      ]
-      ++ (with self; [
-        userModules.max.nixosModule
+      sops
+      stylix
+      home-manager
+      nix
 
-        ./_config.nix
-        ./_fs.nix
-        ./_hardware.nix
-      ]);
+      terminal-tools
+      fonts
+      tablet
+      bluetooth
+      grub
+      nvidia
+      system-general
+
+      ./_config.nix
+      ./_fs.nix
+      ./_hardware.nix
+    ];
   };
 }

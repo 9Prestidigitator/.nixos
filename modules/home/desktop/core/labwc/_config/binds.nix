@@ -94,7 +94,7 @@
     {
       key = "e";
       desc = "Files";
-      cmd = "nautilus -w";
+      cmd = "${config.desktop.explorer.name} -w";
     }
     {
       key = "m";
@@ -126,9 +126,9 @@
           cmd = "kitty --title btop -e btop";
         }
         {
-          key = "k";
-          desc = "kitty";
-          cmd = "kitty";
+          key = "e";
+          desc = "${config.desktop.terminal.name}";
+          cmd = "${config.desktop.terminal.name}";
         }
         {
           key = "n";
@@ -316,7 +316,7 @@
   ]) (lib.range 1 9);
 
   genericKeybinds = [
-    (mkKeybind "W-Return" (execute "kitty"))
+    (mkKeybind "W-Return" (execute "${config.desktop.terminal.name}"))
     (mkKeybind "C-S-Escape" (execute "kitty --title btop -e btop"))
 
     (mkKeybind "W-Left" (mkAction "PreviousWindowImmediate" {}))
@@ -445,8 +445,9 @@
   ];
 
   noctaliaKeybinds = lib.optionals (config.desktop.shell == "noctalia") [
-    (mkKeybind "XF86Favorites" (execute (noctalia "panel-toggle control-center")))
-    (mkKeybind "W-z" (execute (noctalia "panel-toggle control-center")))
+    (mkKeybindWith "Super_L" {
+      onRelease = "yes";
+    } (execute (noctalia "panel-toggle control-center")))
     (mkKeybind "W-space" (execute (noctalia "panel-toggle launcher")))
     (mkKeybindWith "W-Escape" {allowWhenLocked = "yes";} (execute (noctalia "session lock")))
     (mkKeybindWith "XF86Tools" {allowWhenLocked = "yes";} (execute (noctalia "session lock")))

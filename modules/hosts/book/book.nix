@@ -4,34 +4,34 @@
   ...
 }: {
   flake.nixosConfigurations.book = myLib.mkNixosHost {
-    modules = with self; [
-      userModules.max.nixosModule
+    modules = with self.nixosModules; [
+      self.userModules.max.nixosModule
 
-      nixosModules.noctalia-greeter
-      nixosModules.noctalia
-      nixosModules.niri
+      noctalia-greeter
+      noctalia
+      niri
 
-      nixosModules.essentials
-      nixosModules.brave-browser
-      nixosModules.mullvad
+      essentials
+      brave-browser
+      mullvad
 
-      nixosModules.surface-build-machine
-      nixosModules.ink-build-machine
-      nixosModules.stylix
-      nixosModules.btrfs-rollback
-      nixosModules.preservation
-      nixosModules.home-manager
-      nixosModules.nix
+      surface-build-machine
+      ink-build-machine
+      stylix
+      btrfs-rollback
+      preservation
+      home-manager
+      nix
 
-      nixosModules.terminal-tools
-      nixosModules.fonts
-      nixosModules.bluetooth
-      nixosModules.grub
-      nixosModules.chromebook-treeya
-      nixosModules.system-general
+      terminal-tools
+      fonts
+      bluetooth
+      grub
+      chromebook-treeya
+      system-general
 
-      inputs.disko.nixosModules.disko
-      diskoConfigurations.book
+      self.inputs.disko.nixosModules.disko
+      self.diskoConfigurations.book
       ./_config.nix
       ./_hardware.nix
     ];

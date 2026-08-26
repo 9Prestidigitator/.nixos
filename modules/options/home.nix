@@ -1,5 +1,9 @@
 {
-  flake.homeModules.global-options = {lib, ...}: {
+  flake.homeModules.global-options = {
+    lib,
+    config,
+    ...
+  }: {
     options = {
       persist = {
         directories = lib.mkOption {
@@ -19,8 +23,80 @@
         shell = lib.mkOption {
           type = lib.types.nullOr (lib.types.enum ["noctalia"]);
           default = null;
-          description = "Metadata option letting other modules know what shell is being used.";
+          description = "Metadata option letting other home modules know what shell is being used.";
         };
+
+        explorer = {
+          name = lib.mkOption {
+            type = lib.types.nullOr (lib.types.enum ["nautilus" "dolphin"]);
+            default = null;
+            description = "Metadata option letting other home modules know what file explorer is being used.";
+          };
+          desktop = lib.mkOption {
+            type = lib.types.nullOr lib.types.str;
+            default = null;
+          };
+        };
+
+        terminal = {
+          name = lib.mkOption {
+            type = lib.types.nullOr (lib.types.enum ["kitty" "ghostty"]);
+            default = null;
+            description = "Metadata option letting other home modules know what file terminal emulator is being used.";
+          };
+          desktop = lib.mkOption {
+            type = lib.types.nullOr lib.types.str;
+            default = null;
+          };
+        };
+
+        browser = {
+          name = lib.mkOption {
+            type = lib.types.nullOr (lib.types.enum ["brave"]);
+            default = null;
+            description = "Metadata option letting other home modules know what file browser is being used.";
+          };
+          desktop = lib.mkOption {
+            type = lib.types.nullOr lib.types.str;
+            default = null;
+          };
+        };
+      };
+    };
+
+    config = {
+      desktop = {
+        explorer.desktop =
+          if config.desktop.explorer.name == null
+          then null
+          else
+            {
+              nautilus = "org.gnome.Nautilus";
+              dolphin = "org.kde.dolphin";
+            }.${
+              config.desktop.explorer.name
+            };
+
+        terminal.desktop =
+          if config.desktop.terminal.name == null
+          then null
+          else
+            {
+              kitty = "kitty";
+              ghostty = "com.mitchellh.ghostty";
+            }.${
+              config.desktop.terminal.name
+            };
+
+        browser.desktop =
+          if config.desktop.browser.name == null
+          then null
+          else
+            {
+              brave = "brave-browser";
+            }.${
+              config.desktop.browser.name
+            };
       };
     };
   };

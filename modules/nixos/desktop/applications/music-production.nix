@@ -63,21 +63,24 @@
       overwitch
     ];
 
-    persist.userDirs = [
-      ".vst"
-      ".vst3"
-      ".clap"
-      ".lv2"
-      ".config/REAPER"
-      ".config/lsp-plugins"
-      ".config/yabridgectl"
-      ".config/MuseScore"
-      ".config/overwitch"
-      ".config/falkTX"
-      ".config/rncbc.org"
-      ".local/state/Serum2"
-      ".BitwigStudio"
-      "Audio Assault"
-    ];
+    persist = {
+      userDirs = [
+        ".vst"
+        ".vst3"
+        ".clap"
+        ".lv2"
+        ".config/REAPER"
+        ".config/lsp-plugins"
+        ".config/yabridgectl"
+        ".config/MuseScore"
+        ".config/overwitch"
+        ".config/falkTX"
+        ".config/rncbc.org"
+        ".local/state/Serum2"
+        ".BitwigStudio"
+        "Audio Assault"
+      ];
+      userFiles = [".config/Serum2Prefs.json"];
+    };
   };
 }

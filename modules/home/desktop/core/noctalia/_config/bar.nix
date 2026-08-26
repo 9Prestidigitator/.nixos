@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   programs.noctalia.settings = {
     bar = {
       order = ["default"];
@@ -6,11 +6,11 @@
         smart_auto_hide = true;
         layer = "overlay";
         scale = 1;
-        background_opacity = 1;
+        background_opacity = lib.mkDefault 1;
         thickness = 34;
         padding = 14;
 
-        start = ["taskbar" "cat"];
+        start = lib.mkDefault ["taskbar" "cat"];
         center = ["control-center"];
         end = [
           "tray"

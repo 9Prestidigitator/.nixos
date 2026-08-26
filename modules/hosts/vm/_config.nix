@@ -11,8 +11,8 @@
       neovim
       fastfetch
 
-      essentials
       kitty
+      nautilus
 
       bluetooth
       stylix

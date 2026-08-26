@@ -56,7 +56,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      kitty
       moonlight-qt
 
       playerctl

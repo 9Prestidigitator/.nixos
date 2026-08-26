@@ -4,22 +4,22 @@
   home-manager.users = {
     max = {self, ...}: {
       imports = with self.homeModules; [
-          self.userModules.max.homeModule
+        self.userModules.max.homeModule
 
-          plasma
+        plasma
 
-          bash
-          neovim
-          fastfetch
+        bash
+        neovim
+        fastfetch
 
-          essentials
-          mpv
-          spotify
-          bluetooth
+        kitty
+        nautilus
+        mpv
+        spotify
+        bluetooth
 
-          stylix
-        ]
-        ++ [];
+        stylix
+      ];
     };
 
     guest = {self, ...}: {
@@ -32,8 +32,7 @@
         neovim
         fastfetch
 
-        essentials
-        kitty
+        nautilus
         mpv
         spotify
         discord

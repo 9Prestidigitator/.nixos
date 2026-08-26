@@ -21,6 +21,7 @@
       ripgrep
       fd
       fzf
+      nix-search-tv
       tree
       yazi
       fd

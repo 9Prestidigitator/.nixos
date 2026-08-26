@@ -12,7 +12,8 @@
       neovim
       fastfetch
 
-      essentials
+      kitty
+      nautilus
 
       stylix
     ];

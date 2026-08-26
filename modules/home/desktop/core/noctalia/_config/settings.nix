@@ -1,6 +1,7 @@
 {
   config,
   osConfig,
+  lib,
   ...
 }: let
   isLaptop =
@@ -66,17 +67,24 @@ in {
       launcher_icon = "grid-dots";
       launcher_position = "start";
 
-      pinned = [
-        "kitty"
-        "org.gnome.Nautilus"
-        "brave-browser"
-        "cockos-reaper"
-        "obsidian"
-        "steam"
-        "discord"
-        "signal"
-        "spotify"
-      ];
+      pinned =
+        lib.optionals (config.desktop.terminal.desktop != null) [
+          config.desktop.terminal.desktop
+        ]
+        ++ lib.optionals (config.desktop.explorer.desktop != null) [
+          config.desktop.explorer.desktop
+        ]
+        ++ lib.optionals (config.desktop.browser.desktop != null) [
+          config.desktop.browser.desktop
+        ]
+        ++ [
+          "cockos-reaper"
+          "obsidian"
+          "steam"
+          "discord"
+          "signal"
+          "spotify"
+        ];
     };
 
     idle = {

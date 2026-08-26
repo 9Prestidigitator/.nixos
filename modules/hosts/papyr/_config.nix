@@ -6,28 +6,28 @@
     config,
     ...
   }: {
-    imports = with self.homeModules;
-      [
-        noctalia
-        umbriel
+    imports = with self.homeModules; [
+      self.userModules.max.homeModule
 
-        bash
-        neovim
-        fastfetch
-        mpd
-        bluetooth
+      noctalia
+      umbriel
 
-        stylix
+      bash
+      neovim
+      fastfetch
 
-        essentials
-        kitty
-        steam
-        reaper
-        mpv
-        spotify
-        discord
-      ]
-      ++ [self.userModules.max.homeModule];
+      kitty
+      nautilus
+      steam
+      reaper
+      mpv
+      spotify
+      discord
+      bluetooth
+      mpd
+
+      stylix
+    ];
 
     programs.ssh.settings = {
       ink = {

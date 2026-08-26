@@ -12,7 +12,6 @@
     environment.gnome.excludePackages = with pkgs; [gnome-tour gnome-user-docs];
 
     environment.systemPackages = with pkgs; [
-      nautilus
       adwaita-icon-theme
       gnome-tweaks
       gnomeExtensions.blur-my-shell
@@ -20,8 +19,6 @@
       gnomeExtensions.arc-menu
       gjs
     ];
-
-    xdg.mime.defaultApplications."inode/directory" = ["org.gnome.Nautilus.desktop"];
 
     iconStyle = "adwaita";
 
@@ -32,7 +29,6 @@
         ".config/dconf"
         ".config/goa-1.0"
 
-        ".local/share/nautilus"
         ".local/share/evolution"
         ".local/share/gvfs-metadata"
         ".local/share/gnome-shell"
