@@ -4,29 +4,29 @@
   ...
 }: {
   flake.nixosConfigurations.vm = myLib.mkNixosHost {
-    modules = with self; [
-      userModules.max.nixosModule
+    modules = with self.nixosModules; [
+      self.userModules.max.nixosModule
 
-      nixosModules.plasma
+      plasma
 
-      nixosModules.essentials
-      nixosModules.brave-browser
-      nixosModules.communications
+      essentials
+      chromium
+      communications
 
-      nixosModules.ink-build-machine
-      nixosModules.stylix
-      nixosModules.preservation
-      nixosModules.home-manager
-      nixosModules.nix
+      ink-build-machine
+      stylix
+      preservation
+      home-manager
+      nix
 
-      nixosModules.terminal-tools
-      nixosModules.fonts
-      nixosModules.bluetooth
-      nixosModules.grub
-      nixosModules.system-general
+      terminal-tools
+      fonts
+      bluetooth
+      grub
+      system-general
 
-      inputs.disko.nixosModules.disko
-      diskoConfigurations.vm
+      self.inputs.disko.nixosModules.disko
+      self.diskoConfigurations.vm
       ./_config.nix
       ./_hardware.nix
     ];

@@ -11,7 +11,7 @@
       gnome
 
       essentials
-      brave-browser
+      chromium
 
       keyd
       minecraft-server

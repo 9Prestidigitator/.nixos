@@ -4,19 +4,19 @@
   ...
 }: {
   flake.nixosConfigurations.iso = myLib.mkNixosHost {
-    modules = with self; [
+    modules = with self.nixosModules; [
       ({modulesPath, ...}: {imports = ["${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"];})
 
-      nixosModules.terminal-tools
-      nixosModules.mullvad
+      terminal-tools
+      mullvad
 
-      nixosModules.ink-build-machine
-      nixosModules.stylix
+      ink-build-machine
+      stylix
 
-      nixosModules.keyd
-      nixosModules.sops
-      nixosModules.system-general
-      nixosModules.nix
+      keyd
+      sops
+      system-general
+      nix
 
       ./_config.nix
     ];

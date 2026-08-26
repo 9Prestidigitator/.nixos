@@ -12,7 +12,7 @@
       niri
 
       essentials
-      brave-browser
+      chromium
       mullvad
 
       surface-build-machine

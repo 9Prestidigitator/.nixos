@@ -16,8 +16,9 @@
       neovim
       fastfetch
 
-      kitty
+      ghostty
       nautilus
+      brave
       steam
       reaper
       mpv

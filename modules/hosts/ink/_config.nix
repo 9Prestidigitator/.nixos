@@ -21,6 +21,7 @@
 
         kitty
         nautilus
+        brave
         steam
         reaper
         mpv

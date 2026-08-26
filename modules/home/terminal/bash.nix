@@ -37,7 +37,7 @@
         nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
         nixup = "nix flake update";
 
-        ns = "$nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+        ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
 
         ds = "nix develop";
         ds-nix = "nix develop ${config.home.homeDirectory}/.nixos#nix";

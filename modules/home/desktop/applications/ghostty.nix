@@ -1,5 +1,5 @@
 {
-  flake.homeModules.kitty = {
+  flake.homeModules.ghostty = {
     programs.ghostty = {
       enable = true;
     };

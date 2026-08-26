@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.brave-browser = {pkgs, ...}: {
+  flake.nixosModules.chromium = {
     programs.chromium = {
       enable = true;
       extensions = [
@@ -9,12 +9,5 @@
         "ioimlbgefgadofblnajllknopjboejda"
       ];
     };
-
-    environment.systemPackages = with pkgs; [brave];
-
-    persist.userDirs = [
-      ".cache/BraveSoftware"
-      ".config/BraveSoftware"
-    ];
   };
 }
