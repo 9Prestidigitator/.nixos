@@ -9,6 +9,6 @@
       settings.default = ["com.mitchellh.ghostty.desktop"];
     };
 
-    desktop.terminal.name = "kitty";
+    desktop.terminal.name = "ghostty";
   };
 }
