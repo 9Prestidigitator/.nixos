@@ -6,8 +6,6 @@
     hardware.uinput.enable = true;
     programs.java.enable = true;
 
-    xdg.portal.enable = true;
-
     environment.systemPackages = with pkgs; [
       wireplumber
 
