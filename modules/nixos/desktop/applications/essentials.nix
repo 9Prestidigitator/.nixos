@@ -1,22 +1,9 @@
 {inputs, ...}: {
-  flake.nixosModules.essentials = {
-    pkgs,
-    lib,
-    ...
-  }: {
+  flake.nixosModules.essentials = {pkgs, ...}: {
     imports = [inputs.nix-flatpak.nixosModules.nix-flatpak];
     hardware.uinput.enable = true;
     programs.java.enable = true;
-
-    services = {
-      flatpak.enable = true;
-      sunshine = {
-        enable = true;
-        autoStart = lib.mkDefault false;
-        capSysAdmin = true;
-        openFirewall = true;
-      };
-    };
+    services.flatpak.enable = true;
 
     xdg = {
       portal.enable = true;
@@ -56,8 +43,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      moonlight-qt
-
       playerctl
       brightnessctl
       qpwgraph
@@ -90,8 +75,6 @@
     persist = {
       directories = ["/var/lib/flatpak"];
       userDirs = [
-        ".config/Moonlight Game Streaming Project"
-        ".config/sunshine"
         ".local/share/zathura"
         ".local/share/flatpak"
         ".var/app"

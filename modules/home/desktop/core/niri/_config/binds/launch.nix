@@ -9,8 +9,8 @@
 in {
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+Return" = {
-      hotkey-overlay.title = "Launch terminal (Kitty)";
-      action = spawn "kitty";
+      hotkey-overlay.title = "Launch terminal";
+      action = spawn "${config.desktop.terminal.name}";
     };
 
     "Mod+G".action.spawn = mkWlrWhichKeyMenu "Applications" [

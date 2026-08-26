@@ -20,6 +20,7 @@
       video-editing
       communications
       virtualisation
+      sunshine-moonlight
       ai
 
       mullvad

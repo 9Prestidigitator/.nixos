@@ -16,6 +16,7 @@
       gaming
       media
       virtualisation
+      sunshine-moonlight
 
       mullvad
       uxplay

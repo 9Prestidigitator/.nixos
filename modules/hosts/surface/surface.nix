@@ -12,6 +12,7 @@
 
       essentials
       chromium
+      sunshine-moonlight
 
       keyd
       minecraft-server

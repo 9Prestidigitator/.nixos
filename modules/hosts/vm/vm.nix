@@ -12,6 +12,7 @@
       essentials
       chromium
       communications
+      sunshine-moonlight
 
       ink-build-machine
       stylix

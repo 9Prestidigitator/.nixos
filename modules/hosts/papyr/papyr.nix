@@ -19,6 +19,7 @@
       media
       communications
       virtualisation
+      sunshine-moonlight
       ai
 
       mullvad

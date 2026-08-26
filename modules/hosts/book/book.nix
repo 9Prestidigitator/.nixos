@@ -14,6 +14,7 @@
       essentials
       chromium
       mullvad
+      sunshine-moonlight
 
       surface-build-machine
       ink-build-machine
