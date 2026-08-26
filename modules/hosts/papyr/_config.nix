@@ -18,7 +18,7 @@
 
       ghostty
       nautilus
-      librewolf
+      brave
       steam
       reaper
       mpv

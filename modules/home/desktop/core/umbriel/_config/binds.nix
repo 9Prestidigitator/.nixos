@@ -1,10 +1,14 @@
-{mkWlrWhichKeyMenuWith, ...}: let
+{
+  mkWlrWhichKeyMenuWith,
+  config,
+  ...
+}: let
   msg = cmd: "noctalia msg ${cmd}";
   spawn = cmd: "spawn:${cmd}";
 in {
   programs.umbriel = {
     settings.keybinds = {
-      "Mod+Return" = "spawn:kitty";
+      "Mod+Return" = "spawn:${config.desktop.terminal.name}";
 
       "Mod+Left" = "window-focus-left";
       "Mod+Right" = "window-focus-right";
