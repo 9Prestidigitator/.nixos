@@ -10,7 +10,6 @@
       gdm
       gnome
 
-      essentials
       chromium
       sunshine-moonlight
 

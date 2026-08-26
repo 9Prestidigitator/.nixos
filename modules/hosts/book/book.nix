@@ -11,7 +11,6 @@
       noctalia
       niri
 
-      essentials
       chromium
       mullvad
       sunshine-moonlight

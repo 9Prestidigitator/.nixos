@@ -10,7 +10,6 @@
 
       plasma
 
-      essentials
       chromium
       design
       gaming
@@ -20,6 +19,7 @@
 
       mullvad
       uxplay
+      flatpak
 
       surface-build-machine
       ink-build-machine
