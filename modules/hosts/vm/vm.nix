@@ -9,7 +9,6 @@
 
       plasma
 
-      essentials
       chromium
       communications
       sunshine-moonlight
@@ -21,6 +20,7 @@
       nix
 
       terminal-tools
+      flatpak
       fonts
       bluetooth
       grub

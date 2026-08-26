@@ -11,7 +11,6 @@
       noctalia
       niri
 
-      essentials
       chromium
       music-production
       design
@@ -23,11 +22,12 @@
       sunshine-moonlight
       ai
 
-      mullvad
       syncthing
+      localsend
+      mullvad
+      flatpak
       keyd
       wine
-      localsend
 
       sops
       stylix

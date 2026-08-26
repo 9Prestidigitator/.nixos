@@ -16,6 +16,7 @@
 
       keyd
       minecraft-server
+      flatpak
       uxplay
       # gitlab
 

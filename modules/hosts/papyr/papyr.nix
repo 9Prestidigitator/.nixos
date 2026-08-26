@@ -11,7 +11,6 @@
       noctalia
       niri
 
-      essentials
       chromium
       music-production
       design
@@ -28,6 +27,7 @@
       wg0
       uxplay
       localsend
+      flatpak
       fprintd
 
       ink-build-machine

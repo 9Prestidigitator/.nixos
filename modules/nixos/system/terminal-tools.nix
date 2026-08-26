@@ -36,6 +36,19 @@
 
       cryptsetup
       gptfdisk
+      usbutils
+      pciutils
+
+      brotli
+      ntfs3g
+      gvfs
+      p7zip
+      parted
+
+      zenity
+      pkg-config
+      steam-run
+      appimage-run
     ];
 
     persist = {

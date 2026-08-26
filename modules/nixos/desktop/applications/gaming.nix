@@ -27,6 +27,8 @@
       azahar
     ];
 
+    programs.java.enable = true;
+
     persist.userDirs = [
       ".config/heroic"
       ".config/dolphin-emu"

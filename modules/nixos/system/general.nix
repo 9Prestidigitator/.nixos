@@ -26,6 +26,7 @@
         polkit.enable = true;
         rtkit.enable = true;
       };
+      hardware.uinput.enable = true;
 
       environment.systemPackages = with pkgs; [dbus];
       services = {
