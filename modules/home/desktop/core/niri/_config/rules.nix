@@ -158,57 +158,48 @@
       {
         matches = [
           {
-            app-id = "^REAPER$";
-            title = "^Add FX.*";
+            app-id = "REAPER";
+            title = "^REAPER v[0-9].*";
           }
         ];
-        open-floating = true;
-        open-focused = true;
-        default-floating-position = {
-          x = 32;
-          y = 32;
-          relative-to = "bottom-right";
-        };
-        default-column-width = {proportion = 0.35;};
-        default-window-height = {proportion = 0.5;};
-      }
-      {
-        matches = [
-          {
-            app-id = "^REAPER$";
-            title = "^Routing.*";
-          }
-        ];
-        open-floating = true;
-        open-focused = true;
-        default-floating-position = {
-          x = 32;
-          y = 32;
-          relative-to = "bottom-left";
-        };
-      }
-      {
-        matches = [{title = "^Open File$";}];
-        open-floating = true;
-        open-focused = true;
-        default-floating-position = {
-          x = 32;
-          y = 32;
-          relative-to = "bottom-right";
-        };
+        open-fullscreen = false;
+        open-maximized-to-edges = true;
+        default-column-width.proportion = 0.6666;
       }
 
-      {
-        matches = [
-          {
-            title = ".*REAPER v.*";
-            app-id = "REAPER";
-          }
-        ];
-        open-maximized = false;
-        open-maximized-to-edges = true;
-        default-column-width = {proportion = 0.6666;};
-      }
+      # {
+      #   matches = [
+      #     {
+      #       app-id = "^REAPER$";
+      #       title = "^Add FX.*";
+      #     }
+      #   ];
+      #   open-floating = true;
+      #   open-focused = true;
+      #   default-floating-position = {
+      #     x = 32;
+      #     y = 32;
+      #     relative-to = "bottom-right";
+      #   };
+      #   default-column-width = {proportion = 0.35;};
+      #   default-window-height = {proportion = 0.5;};
+      # }
+      # {
+      #   matches = [
+      #     {
+      #       app-id = "^REAPER$";
+      #       title = "^Routing.*";
+      #     }
+      #   ];
+      #   open-floating = true;
+      #   open-focused = true;
+      #   default-floating-position = {
+      #     x = 32;
+      #     y = 32;
+      #     relative-to = "bottom-left";
+      #   };
+      # }
+
       {
         matches = [{app-id = "com.bitwig.BitwigStudio";}];
         open-maximized = false;
@@ -221,18 +212,6 @@
           top-left = radius;
           top-right = radius;
         };
-      }
-
-      {
-        matches = [
-          {
-            app-id = "REAPER";
-            title = "^REAPER v[0-9].*";
-          }
-        ];
-        open-fullscreen = false;
-        open-maximized-to-edges = true;
-        default-column-width.proportion = 0.6666;
       }
 
       {
@@ -257,6 +236,16 @@
         };
       }
 
+      {
+        matches = [{title = "^Open File$";}];
+        open-floating = true;
+        open-focused = true;
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-right";
+        };
+      }
       {
         matches = [{app-id = "Nautilus";}];
         background-effect = {
