@@ -23,11 +23,13 @@ in {
 
         "SUPER+CTRL,space,togglefloating"
         "SUPER,g,toggleglobal"
-        "SUPER+SHIFT,o,toggleoverlay"
-        "SUPER,f,togglefullscreen"
+        "SUPER,z,toggle_scratchpad"
+
+        "SUPER,f,togglemaximizescreen"
+        "SUPER+SHIFT,f,togglefullscreen"
+
         "SUPER,i,minimized"
         "SUPER+SHIFT,i,restore_minimized"
-        "SUPER,z,toggle_scratchpad"
 
         "SUPER,h,focusdir,left"
         "SUPER,j,focusdir,down"
@@ -42,22 +44,41 @@ in {
         "SUPER+SHIFT,j,focusmon,down"
         "SUPER+SHIFT,k,focusmon,up"
         "SUPER+SHIFT,l,focusmon,right"
-        "SUPER+CTRL+SHIFT,h,tagmon,left,0"
-        "SUPER+CTRL+SHIFT,j,tagmon,down,0"
-        "SUPER+CTRL+SHIFT,k,tagmon,up,0"
-        "SUPER+CTRL+SHIFT,l,tagmon,right,0"
+        "SUPER+ALT,h,tagmon,left,0"
+        "SUPER+ALT,j,tagmon,down,0"
+        "SUPER+ALT,k,tagmon,up,0"
+        "SUPER+ALT,l,tagmon,right,0"
 
         "SUPER,u,viewtoleft,0"
         "SUPER,d,viewtoright,0"
+
         "SUPER,o,toggleoverview"
+        "SUPER+SHIFT,o,toggleoverlay"
         "ALT,Tab,togglejump"
+
         "SUPER,n,switch_layout"
         "SUPER+SHIFT,n,setlayout,scroller"
+
         "SUPER,m,setkeymode,move"
         "SUPER,r,setkeymode,resize"
+
         "SUPER+CTRL,1,toggleview,1"
         "SUPER+CTRL,2,toggleview,2"
         "SUPER+CTRL,3,toggleview,3"
+
+        "NONE,XF86MonBrightnessUp,spawn,brightnessctl s +5%"
+        "SHIFT,XF86MonBrightnessUp,spawn,brightnessctl s 100%"
+        "NONE,XF86MonBrightnessDown,spawn,brightnessctl s 5%-"
+        "SHIFT,XF86MonBrightnessDown,spawn,brightnessctl s 1%"
+
+        "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%+"
+        "NONE,XF86AudioLowerVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%-"
+        "NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SINK@ toggle"
+        "SHIFT,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SOURCE@ toggle"
+
+        "NONE,XF86AudioNext,spawn,playerctl next"
+        "NONE,XF86AudioPrev,spawn,playerctl previous"
+        "NONE,XF86AudioPlay,spawn,playerctl play-pause"
       ]
       ++ tagBinds;
 

@@ -23,7 +23,8 @@ in {
       shadows_position_x = 0;
       shadows_position_y = 0;
 
-      border_radius = 0;
+      border_radius = 5;
+      no_radius_when_single = 0;
 
       gappih = 10;
       gappiv = 10;
@@ -56,7 +57,7 @@ in {
 
       animations = 1;
       layer_animations = 1;
-      animation_type_open = "slide";
+      animation_type_open = "fade";
       animation_type_close = "fade";
       animation_duration = {
         move = 200;
