@@ -1,4 +1,4 @@
-{self, ...}: {
+{
   flake.homeModules.sway = {
     config,
     lib,
@@ -18,7 +18,6 @@
           else config.desktop.terminal.name;
         menu = "noctalia msg panel-toggle launcher";
 
-        # These feed Sway's default focus, move, and resize bindings.
         left = "h";
         down = "j";
         up = "k";
