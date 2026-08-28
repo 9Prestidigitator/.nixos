@@ -23,6 +23,8 @@ in {
 
         "SUPER+CTRL,space,togglefloating"
         "SUPER,g,toggleglobal"
+        "SUPER+SHIFT,o,toggleoverlay"
+
         "SUPER,z,toggle_scratchpad"
 
         "SUPER,f,togglemaximizescreen"
@@ -53,7 +55,6 @@ in {
         "SUPER,d,viewtoright,0"
 
         "SUPER,o,toggleoverview"
-        "SUPER+SHIFT,o,toggleoverlay"
         "ALT,Tab,togglejump"
 
         "SUPER,n,switch_layout"

@@ -23,13 +23,13 @@ in {
       shadows_position_x = 0;
       shadows_position_y = 0;
 
-      border_radius = 5;
-      no_radius_when_single = 0;
+      border_radius = 8;
+      no_radius_when_single = 1;
 
-      gappih = 10;
-      gappiv = 10;
-      gappoh = 5;
-      gappov = 5;
+      gappih = 5;
+      gappiv = 5;
+      gappoh = 0;
+      gappov = 0;
       borderpx = 2;
 
       sloppyfocus = 0;
