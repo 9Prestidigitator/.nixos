@@ -17,7 +17,7 @@
         ];
       }
       // lib.optionalAttrs (options ? stylix.opacity) {
-        stylix.opacity = lib.mkDefault {
+        stylix.opacity = {
           desktop = 1.0;
           terminal = 1.0;
           applications = 1.0;
