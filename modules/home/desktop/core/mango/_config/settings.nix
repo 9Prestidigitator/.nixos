@@ -9,7 +9,9 @@
       noise = 0.02;
     };
     shadows = 1;
-    layer_shadows = 1;
+    # Noctalia uses transparent layer-shell hit areas for its widgets. A
+    # compositor shadow makes those otherwise invisible surfaces visible.
+    layer_shadows = 0;
     border_radius = 10;
 
     gappih = 10;
@@ -57,16 +59,21 @@
     scratchpad_cross_monitor = 1;
 
     gesturebind = [
-      "NONE,left,4,viewtoleft_have_client"
-      "NONE,right,4,viewtoright_have_client"
-      "NONE,up,4,toggleoverview"
-      "NONE,down,4,toggleoverview"
+      "NONE,left,3,viewtoleft_have_client"
+      "NONE,right,3,viewtoright_have_client"
+      "NONE,up,3,toggleoverview"
+      "NONE,down,3,toggleoverview"
     ];
 
-    windowrule = [
-      "isfloating:1,width:0.8,height:0.8,appid:REAPER"
-      "isfloating:1,width:0.8,height:0.8,appid:reaper"
-      "idleinhibit_when_focus:1,appid:steam"
+    mousebind = [
+      "SUPER,btn_left,moveresize,curmove"
+      "SUPER,btn_right,moveresize,curresize"
     ];
+
+    # windowrule = [
+    #   "isfloating:1,width:0.8,height:0.8,appid:REAPER"
+    #   "isfloating:1,width:0.8,height:0.8,appid:reaper"
+    #   "idleinhibit_when_focus:1,appid:steam"
+    # ];
   };
 }

@@ -12,7 +12,13 @@
 
     wayland.windowManager.mango = {
       enable = true;
-      systemd.enable = true;
+      systemd = {
+        enable = true;
+        extraCommands = [
+          "systemctl --user reset-failed"
+          "systemctl --user start graphical-session.target mango-session.target"
+        ];
+      };
     };
   };
 }
