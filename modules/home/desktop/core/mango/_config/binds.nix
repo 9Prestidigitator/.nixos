@@ -44,6 +44,7 @@ in {
         "SUPER,k,focusstack,prev"
         "SUPER,h,focusdir,left"
         "SUPER,l,focusdir,right"
+
         "SUPER+CTRL,h,exchange_client,left"
         "SUPER+CTRL,j,exchange_client,down"
         "SUPER+CTRL,k,exchange_client,up"
@@ -53,10 +54,16 @@ in {
         "SUPER+SHIFT,j,focusmon,down"
         "SUPER+SHIFT,k,focusmon,up"
         "SUPER+SHIFT,l,focusmon,right"
+
         "SUPER+ALT,h,tagmon,left,0"
         "SUPER+ALT,j,tagmon,down,0"
         "SUPER+ALT,k,tagmon,up,0"
         "SUPER+ALT,l,tagmon,right,0"
+
+        "SUPER+CTRL+SHIFT,h,smartmovewin,left"
+        "SUPER+CTRL+SHIFT,j,smartmovewin,down"
+        "SUPER+CTRL+SHIFT,k,smartmovewin,up"
+        "SUPER+CTRL+SHIFT,l,smartmovewin,right"
 
         "SUPER+CTRL,u,tagtoleft,0"
         "SUPER+CTRL,d,tagtoright,0"

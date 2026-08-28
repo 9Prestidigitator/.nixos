@@ -37,11 +37,12 @@ in {
       sloppyfocus = 0;
       warpcursor = 1;
       new_is_master = 0;
-      enable_hotarea = 1; # might not like this
       axis_bind_apply_timeout = 100;
       drag_tile_to_tile = 1;
       enable_floating_snap = 0;
       snap_distance = 30;
+      enable_hotarea = 1;
+      hotarea_corner = 0;
 
       tap_to_click = 1;
       trackpad_natural_scrolling = 1;
