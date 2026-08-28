@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      labwc
+      sway
 
       chromium
       music-production

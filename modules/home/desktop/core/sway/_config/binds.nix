@@ -19,6 +19,7 @@
       "${modifier}+Return" = "exec ${terminal}";
       "${modifier}+q" = "kill";
       "${modifier}+Shift+r" = "reload";
+      "${modifier}+Control+space" = "floating toggle";
 
       "${modifier}+h" = "focus left";
       "${modifier}+j" = "focus down";
