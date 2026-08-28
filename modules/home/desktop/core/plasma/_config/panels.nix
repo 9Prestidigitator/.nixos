@@ -1,4 +1,4 @@
-{
+{config, ...}: {
   programs.plasma = {
     panels = [
       {
@@ -82,9 +82,9 @@
           {
             iconTasks = {
               launchers = [
-                "applications:kitty.desktop"
+                "applications:${config.desktop.terminal.desktop}.desktop"
                 "applications:org.kde.dolphin.desktop"
-                "applications:brave-browser.desktop"
+                "applications:${config.desktop.browser.desktop}.desktop"
                 "applications:steam.desktop"
                 "applications:cockos-reaper.desktop"
               ];
