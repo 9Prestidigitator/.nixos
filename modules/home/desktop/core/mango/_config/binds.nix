@@ -33,6 +33,8 @@ in {
         "SUPER,i,minimized"
         "SUPER+SHIFT,i,restore_minimized"
 
+        "SUPER,Tab,focusstack,next"
+        "SUPER+SHIFT,Tab,focusstack,prev"
         "SUPER,h,focusdir,left"
         "SUPER,j,focusdir,down"
         "SUPER,k,focusdir,up"
