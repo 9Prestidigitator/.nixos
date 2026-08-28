@@ -84,7 +84,7 @@ in {
         ++ lib.optional osConfig.programs.steam.enable "steam"
         ++ lib.optional (options ? programs.nixcord.enable && config.programs.nixcord.enable) "discord"
         ++ lib.optional (lib.elem pkgs.signal-desktop osConfig.environment.systemPackages) "signal"
-        ++ lib.optional (options ? programs.spicetify.enable && config.programs.spicetify.enable) "spotify";
+        ++ lib.optional (options ? programs.spicetify && config.programs.spicetify.enable) "spotify";
     };
 
     idle = {
