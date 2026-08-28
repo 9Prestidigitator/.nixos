@@ -150,11 +150,12 @@ in {
       "NONE,left,3,focusdir,right"
       "NONE,down,3,focusdir,up"
       "NONE,up,3,focusdir,down"
-      "NONE,right,4,viewtoleft"
-      "NONE,left,4,viewtoright"
 
-      "NONE,up,4,toggleoverview"
-      "NONE,down,4,togglejump"
+      "NONE,down,4,viewtoleft"
+      "NONE,up,4,viewtoright"
+
+      "NONE,left,4,toggleoverview"
+      "NONE,right,4,togglejump"
     ];
 
     mousebind = [

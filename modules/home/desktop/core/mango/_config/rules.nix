@@ -1,7 +1,7 @@
 {...}: {
   wayland.windowManager.mango.settings = {
     windowrule = [
-      "isfloating:1,isopensilent:1,isoverlay:1,width:480,height:270,offsetx:100,offsety:100,title:Picture in picture"
+      "isfloating:1,isopensilent:1,isglobal:1,isoverlay:1,width:480,height:270,offsetx:100,offsety:100,title:Picture in picture"
     ];
     layerrule = [
       "noblur:1,layer_name:noctalia-bar-exclusion-.*"

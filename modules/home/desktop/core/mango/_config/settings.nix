@@ -71,7 +71,7 @@ in {
 
       animations = 1;
       layer_animations = 1;
-      animation_type_open = "fade";
+      animation_type_open = "slide";
       animation_type_close = "fade";
       animation_duration = {
         move = 250;
@@ -79,6 +79,7 @@ in {
         tag = 250;
         close = 200;
       };
+      tag_animation_direction = 0;
 
       scratchpad_width_ratio = 0.8;
       scratchpad_height_ratio = 0.8;
