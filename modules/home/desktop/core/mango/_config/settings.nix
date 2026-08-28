@@ -9,28 +9,29 @@ in {
   wayland.windowManager.mango.settings =
     {
       blur = 1;
-      blur_layer = 0;
-      blur_optimized = 1;
+      blur_layer = 1;
+      blur_optimized = 0;
       blur_params = {
         radius = 5;
         num_passes = 3;
         noise = 0.02;
       };
 
-      shadows = 1;
+      shadows = 0;
       layer_shadows = 0;
-      shadows_only_floating = 1;
+      shadow_only_floating = 1;
       shadows_position_x = 0;
       shadows_position_y = 0;
 
-      gappih = 0;
-      gappiv = 0;
-      gappoh = 0;
-      gappov = 0;
-      borderpx = 0;
+      gappih = 4;
+      gappiv = 4;
+      gappoh = 4;
+      gappov = 4;
+      borderpx = 2;
       border_radius = 8;
       no_border_when_single = 1;
       no_radius_when_single = 1;
+      smartgaps = 1;
 
       focus_on_activate = 1;
       sloppyfocus = 0;
@@ -45,17 +46,18 @@ in {
       tap_to_click = 1;
       trackpad_natural_scrolling = 1;
 
-      # tagrule = [
-      #   "id:1,no_hide:1,layout_name:scroller,scroller_default_proportion:0.8"
-      #   "id:2,no_hide:1,layout_name:tile,nmaster:1,mfact:0.55"
-      #   "id:3,no_hide:1,layout_name:grid"
-      #   "id:4,no_hide:1,layout_name:monocle,no_render_border:1"
-      #   "id:5,layout_name:deck"
-      #   "id:6,layout_name:center_tile"
-      #   "id:7,layout_name:dwindle"
-      #   "id:8,layout_name:vertical_scroller"
-      #   "id:9,layout_name:vertical_tile"
-      # ];
+      tagrule = [
+        "id:*,layout_name:scroller"
+        # "id:1,no_hide:1,layout_name:scroller,scroller_default_proportion:0.8"
+        # "id:2,no_hide:1,layout_name:tile,nmaster:1,mfact:0.55"
+        # "id:3,no_hide:1,layout_name:grid"
+        # "id:4,no_hide:1,layout_name:monocle,no_render_border:1"
+        # "id:5,layout_name:deck"
+        # "id:6,layout_name:center_tile"
+        # "id:7,layout_name:dwindle"
+        # "id:8,layout_name:vertical_scroller"
+        # "id:9,layout_name:vertical_tile"
+      ];
 
       scroller_default_proportion = 0.8;
       scroller_proportion_preset = "0.5,0.8,1.0";
@@ -81,7 +83,7 @@ in {
     }
     // lib.optionalAttrs (stylixColors != null) {
       rootcolor = color stylixColors.base00 "ff";
-      bordercolor = color stylixColors.base03 "ff";
+      bordercolor = color stylixColors.base03 "00";
       dropcolor = color stylixColors.base0B "55";
       splitcolor = color stylixColors.base08 "ff";
       focuscolor = color stylixColors.base0D "ff";

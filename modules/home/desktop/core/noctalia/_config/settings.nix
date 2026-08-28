@@ -15,9 +15,9 @@ in {
     shell = {
       launch_apps_as_systemd_services = true;
 
-      niri_overview_type_to_launch_enabled = false;
       screen_time_enabled = true;
       polkit_agent = true;
+      popup_shadows = lib.mkDefault false;
 
       # font_family = "Noto Sans";
       animation.speed = 1.50;
@@ -60,7 +60,7 @@ in {
       icon_size = 35;
       item_spacing = 0;
       show_dots = true;
-      background_opacity = lib.mkForce 0.0;
+      background_opacity = lib.mkForce 0.01;
 
       magnification_scale = 1.3;
       radius = 30;

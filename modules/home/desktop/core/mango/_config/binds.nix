@@ -27,8 +27,15 @@ in {
 
         "SUPER,z,toggle_scratchpad"
 
-        "SUPER,f,togglemaximizescreen"
-        "SUPER+SHIFT,f,togglefullscreen"
+        "SUPER,f,togglefullscreen"
+
+        "SUPER,b,setoption,borderpx,0"
+        "SUPER+SHIFT,b,setoption,borderpx,2"
+
+        "SUPER,comma,toggle_render_border"
+        "SUPER,period,togglegaps"
+
+        "SUPER,x,centerwin"
 
         "SUPER,i,minimized"
         "SUPER+SHIFT,i,restore_minimized"
@@ -51,6 +58,8 @@ in {
         "SUPER+ALT,k,tagmon,up,0"
         "SUPER+ALT,l,tagmon,right,0"
 
+        "SUPER+CTRL,u,tagtoleft,0"
+        "SUPER+CTRL,d,tagtoright,0"
         "SUPER,u,viewtoleft,0"
         "SUPER,d,viewtoright,0"
 
@@ -131,8 +140,9 @@ in {
     mousebind = [
       "SUPER,btn_left,moveresize,curmove"
       "SUPER,btn_right,moveresize,curresize"
-      "NONE,btn_left,toggleoverview,-1"
-      "NONE,btn_right,killclient,0"
+
+      # "NONE,btn_left,toggleoverview,-1"
+      # "NONE,btn_right,killclient,0"
     ];
 
     axisbind = [
