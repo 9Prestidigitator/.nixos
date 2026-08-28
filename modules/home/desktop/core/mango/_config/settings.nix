@@ -48,7 +48,9 @@ in {
       trackpad_natural_scrolling = 1;
 
       tagrule = [
-        "id:*,layout_name:scroller"
+        "id:1,layout_name:monocle"
+        "id:2,layout_name:scroller"
+        "id:3,layout_name:vertical_scroller"
         # "id:1,no_hide:1,layout_name:scroller,scroller_default_proportion:0.8"
         # "id:2,no_hide:1,layout_name:tile,nmaster:1,mfact:0.55"
         # "id:3,no_hide:1,layout_name:grid"

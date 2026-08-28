@@ -21,19 +21,15 @@ in {
         "SUPER,q,killclient"
         "SUPER+SHIFT,r,reload_config"
 
+        "SUPER,f,togglefullscreen"
         "SUPER+CTRL,space,togglefloating"
         "SUPER,g,toggleglobal"
-        "SUPER+SHIFT,o,toggleoverlay"
+        "SUPER+SHIFT,g,toggleoverlay"
 
         "SUPER,z,toggle_scratchpad"
 
-        "SUPER,f,togglefullscreen"
-
         "SUPER,b,setoption,borderpx,0"
         "SUPER+SHIFT,b,setoption,borderpx,2"
-
-        "SUPER,comma,toggle_render_border"
-        "SUPER,period,togglegaps"
 
         "SUPER,x,centerwin"
 
@@ -82,6 +78,7 @@ in {
 
         "SUPER,m,setkeymode,move"
         "SUPER,r,setkeymode,resize"
+        "SUPER,a,setkeymode,layout"
 
         "SUPER+CTRL,1,toggleview,1"
         "SUPER+CTRL,2,toggleview,2"
@@ -127,6 +124,18 @@ in {
         "NONE,j,resizewin,0,30"
         "NONE,k,resizewin,0,-30"
         "NONE,l,resizewin,30,0"
+        "NONE,Escape,setkeymode,default"
+        "NONE,Return,setkeymode,default"
+      ];
+
+      layout.bind = [
+        "NONE,t,setlayout,tile"
+        "NONE,s,setlayout,scroller"
+        "NONE,v,setlayout,vertical_scroller"
+        "NONE,m,setlayout,monocle"
+        "NONE,g,setlayout,grid"
+        "NONE,d,setlayout,dwindle"
+        "NONE,f,setlayout,fair"
         "NONE,Escape,setkeymode,default"
         "NONE,Return,setkeymode,default"
       ];
