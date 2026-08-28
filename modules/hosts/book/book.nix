@@ -15,8 +15,10 @@
       mullvad
       sunshine-moonlight
 
-      surface-build-machine
+      gnome-keyring
+
       ink-build-machine
+      surface-build-machine
       stylix
       btrfs-rollback
       preservation

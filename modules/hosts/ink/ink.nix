@@ -22,6 +22,7 @@
       sunshine-moonlight
       ai
 
+      gnome-keyring
       syncthing
       localsend
       mullvad

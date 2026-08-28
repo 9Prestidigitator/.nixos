@@ -26,10 +26,7 @@
       };
     };
 
-    programs = {
-      seahorse.enable = true;
-      dconf.enable = true;
-    };
+    programs.dconf.enable = true;
 
     xdg.portal.enable = true;
 

@@ -13,6 +13,8 @@
       communications
       sunshine-moonlight
 
+      kde-wallet
+
       ink-build-machine
       stylix
       preservation

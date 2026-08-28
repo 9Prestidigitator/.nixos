@@ -69,7 +69,6 @@
         ".config/signond"
 
         ".local/share/dolphin"
-        ".local/share/kwalletd"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
         ".local/share/kdeconnect"
@@ -84,7 +83,6 @@
         ".config/kwinrc"
         ".config/kdeglobals"
         ".config/plasmarc"
-        ".config/kwalletrc"
         ".config/ksmserverrc"
         ".config/kscreenlockerrc"
         ".config/ksplashrc"

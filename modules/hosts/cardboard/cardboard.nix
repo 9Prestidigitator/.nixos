@@ -8,6 +8,7 @@
       self.userModules.max.nixosModule
       self.userModules.guest.nixosModule
 
+      kde-wallet
       plasma
 
       chromium

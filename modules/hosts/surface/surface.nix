@@ -13,6 +13,7 @@
       chromium
       sunshine-moonlight
 
+      gnome-keyring
       keyd
       minecraft-server
       flatpak

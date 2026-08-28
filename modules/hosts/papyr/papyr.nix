@@ -7,9 +7,7 @@
     modules = with self.nixosModules; [
       self.userModules.max.nixosModule
 
-      noctalia-greeter
-      noctalia
-      niri
+      plasma
 
       chromium
       music-production
@@ -21,14 +19,15 @@
       sunshine-moonlight
       ai
 
-      mullvad
+      gnome-keyring
       syncthing
-      wine
-      wg0
-      uxplay
       localsend
+      mullvad
+      uxplay
       flatpak
       fprintd
+      wine
+      wg0
 
       ink-build-machine
       stylix
