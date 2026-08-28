@@ -18,7 +18,7 @@
           protocol = "ssh-ng";
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUZ2OTdxQW9rMVljOVBkeDB0Q1dNeWlZdGJ3MFdOeXFocVpnNDhEQk1SQzYgcm9vdEBzdXJmYWNlCg==";
           systems = ["x86_64-linux" "builtin"];
-          maxJobs = 8;
+          maxJobs = 2;
           speedFactor = 2;
           supportedFeatures = [
             "nixos-test"

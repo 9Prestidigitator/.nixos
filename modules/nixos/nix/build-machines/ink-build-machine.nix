@@ -20,7 +20,7 @@
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUowWS9GSlBES3phR05SL1hlcWVTWjRJemFKcCtQaUNnaWZXUHdpc2hSVW8gcm9vdEBpbmsK";
 
           systems = ["x86_64-linux" "builtin"];
-          maxJobs = 8;
+          maxJobs = 4;
           speedFactor = 3;
           supportedFeatures = [
             "nixos-test"
