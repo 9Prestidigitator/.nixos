@@ -12,6 +12,7 @@
 
     wayland.windowManager.mango = {
       enable = true;
+      autostart_sh = "true";
       systemd = {
         enable = true;
         xdgAutostart = true;
