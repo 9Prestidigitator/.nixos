@@ -17,7 +17,7 @@ in {
         noise = 0.02;
       };
 
-      shadows = 0;
+      shadows = 1;
       layer_shadows = 0;
       shadow_only_floating = 1;
       shadows_position_x = 0;
