@@ -79,13 +79,12 @@ in {
         config.desktop.explorer.desktop
         ++ lib.optional (options ? desktop.browser.name && config.desktop.browser.name != null)
         config.desktop.browser.desktop
-        ++ lib.optional (lib.elem inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reaper config.home.packages) "cockos-reaper.desktop"
-        ++ lib.optional (lib.elem pkgs.discord config.home.packages) "discord"
+        ++ lib.optional (options ? programs.reaper.enable && config.programs.reaper.enable) "cockos-reaper"
         ++ lib.optional (lib.elem pkgs.obsidian config.home.packages) "obsidian"
-        ++ lib.optional (lib.elem pkgs.steam config.home.packages) "steam"
-        ++ lib.optional (lib.elem pkgs.discord config.home.packages) "discord"
-        ++ lib.optional (lib.elem pkgs.signal config.home.packages) "signal"
-        ++ lib.optional (lib.elem pkgs.spotify config.home.packages) "spotify";
+        ++ lib.optional osConfig.programs.steam.enable "steam"
+        ++ lib.optional (options ? programs.nixcord.enable && config.programs.nixcord.enable) "discord"
+        ++ lib.optional (lib.elem pkgs.signal-desktop osConfig.environment.systemPackages) "signal"
+        ++ lib.optional (options ? programs.spicetify.enable && config.programs.spicetify.enable) "spotify";
     };
 
     idle = {

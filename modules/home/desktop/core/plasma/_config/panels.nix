@@ -1,8 +1,7 @@
 {
-  pkgs,
   lib,
-  inputs,
   config,
+  osConfig,
   options,
   ...
 }: {
@@ -100,8 +99,8 @@
                   && config.desktop.browser.name
                   != null)
                 "applications:${config.desktop.browser.desktop}.desktop"
-                ++ lib.optional (lib.elem pkgs.steam config.home.packages) "applications:steam.desktop"
-                ++ lib.optional (lib.elem inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reaper config.home.packages) "applications:cockos-reaper.desktop";
+                ++ lib.optional osConfig.programs.steam.enable "applications:steam.desktop"
+                ++ lib.optional (options ? programs.reaper.enable && config.programs.reaper.enable) "applications:cockos-reaper.desktop";
 
               appearance = {
                 fill = false;
