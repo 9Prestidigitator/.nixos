@@ -61,6 +61,8 @@ in {
 
         "SUPER,n,switch_layout"
         "SUPER+SHIFT,n,setlayout,scroller"
+        "SUPER,minus,switch_proportion_preset,prev"
+        "SUPER,equal,switch_proportion_preset,next"
 
         "SUPER,m,setkeymode,move"
         "SUPER,r,setkeymode,resize"
