@@ -9,7 +9,8 @@
     imports = with self.homeModules; [
       self.userModules.max.homeModule
 
-      plasma
+      noctalia
+      labwc
 
       bash
       neovim

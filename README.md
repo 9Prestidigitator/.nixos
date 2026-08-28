@@ -15,13 +15,6 @@ Dendritic Nix flake configuration for five x86-64 NixOS systems with five deskto
 - **wsl**: For when I'm forced to use Windows
 - **vm**'s: For testing and future deployments.
 
-# Desktop Modules
-
-1. Niri (Noctalia v5)
-2. KDE Plasma
-3. Gnome
-4. i3
-
 # Dev shells
 
 - Base universal devshell with all packages that [Neovim](https://github.com/9Prestidigitator/nvim) relies on.
