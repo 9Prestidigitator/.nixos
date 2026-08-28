@@ -7,6 +7,7 @@
     imports = [
       inputs.mangowm.hmModules.mango
       self.homeModules.wlr-which-key
+      (inputs.import-tree ./_config)
     ];
 
     wayland.windowManager.mango = {

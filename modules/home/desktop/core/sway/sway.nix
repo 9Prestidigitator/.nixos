@@ -1,10 +1,5 @@
 {inputs, ...}: {
-  flake.homeModules.sway = {
-    config,
-    lib,
-    osConfig,
-    ...
-  }: {
+  flake.homeModules.sway = {osConfig, ...}: {
     imports = [(inputs.import-tree ./_config)];
 
     wayland.windowManager.sway = {

@@ -1,6 +1,10 @@
-{config, pkgs, ...}: {
+{
+  config,
+  osConfig,
+  ...
+}: {
   programs.niri = {
-    package = pkgs.niri;
+    package = osConfig.programs.niri.package;
     settings = with config.lib.stylix.colors; {
       input = {
         keyboard = {

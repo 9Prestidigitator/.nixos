@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      sway
+      mango
 
       chromium
       music-production
