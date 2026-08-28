@@ -1,9 +1,10 @@
 {
   config,
   lib,
+  options,
   ...
 }: {
-  wayland.windowManager.mango.settings = lib.mkIf (config.desktop.shell == "noctalia") {
+  wayland.windowManager.mango.settings = lib.mkIf (options ? programs.noctalia.enable && config.programs.noctalia.enable) {
     bind = [
       "SUPER,space,spawn,noctalia msg panel-toggle launcher"
       "NONE,XF86Favorites,spawn,noctalia msg panel-toggle control-center"

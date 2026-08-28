@@ -23,47 +23,56 @@ in {
       shadows_position_x = 0;
       shadows_position_y = 0;
 
-      border_radius = 8;
-      no_radius_when_single = 1;
-
-      gappih = 5;
-      gappiv = 5;
+      gappih = 0;
+      gappiv = 0;
       gappoh = 0;
       gappov = 0;
-      borderpx = 2;
+      borderpx = 0;
+      border_radius = 8;
+      no_border_when_single = 1;
+      no_radius_when_single = 1;
 
+      focus_on_activate = 1;
       sloppyfocus = 0;
       warpcursor = 1;
+      new_is_master = 0;
+      enable_hotarea = 1; # might not like this
+      axis_bind_apply_timeout = 100;
+      drag_tile_to_tile = 1;
+      enable_floating_snap = 0;
+      snap_distance = 30;
 
       tap_to_click = 1;
       trackpad_natural_scrolling = 1;
 
-      tagrule = [
-        "id:1,no_hide:1,layout_name:scroller,scroller_default_proportion:0.8"
-        "id:2,no_hide:1,layout_name:tile,nmaster:1,mfact:0.55"
-        "id:3,no_hide:1,layout_name:grid"
-        "id:4,no_hide:1,layout_name:monocle,no_render_border:1"
-        "id:5,layout_name:deck"
-        "id:6,layout_name:center_tile"
-        "id:7,layout_name:dwindle"
-        "id:8,layout_name:vertical_scroller"
-        "id:9,layout_name:vertical_tile"
-      ];
+      # tagrule = [
+      #   "id:1,no_hide:1,layout_name:scroller,scroller_default_proportion:0.8"
+      #   "id:2,no_hide:1,layout_name:tile,nmaster:1,mfact:0.55"
+      #   "id:3,no_hide:1,layout_name:grid"
+      #   "id:4,no_hide:1,layout_name:monocle,no_render_border:1"
+      #   "id:5,layout_name:deck"
+      #   "id:6,layout_name:center_tile"
+      #   "id:7,layout_name:dwindle"
+      #   "id:8,layout_name:vertical_scroller"
+      #   "id:9,layout_name:vertical_tile"
+      # ];
 
       scroller_default_proportion = 0.8;
       scroller_proportion_preset = "0.5,0.8,1.0";
+      scroller_structs = 0;
       default_mfact = 0.55;
       default_nmaster = 1;
+      center_master_overspread = 1;
 
       animations = 1;
       layer_animations = 1;
       animation_type_open = "fade";
       animation_type_close = "fade";
       animation_duration = {
-        move = 200;
-        open = 200;
-        tag = 200;
-        close = 150;
+        move = 250;
+        open = 250;
+        tag = 250;
+        close = 200;
       };
 
       scratchpad_width_ratio = 0.8;

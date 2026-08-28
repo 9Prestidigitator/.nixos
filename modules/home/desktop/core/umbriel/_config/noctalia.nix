@@ -1,13 +1,14 @@
 {
   lib,
   config,
+  options,
   mkWlrWhichKeyMenuWith,
   ...
 }: let
   msg = cmd: "noctalia msg ${cmd}";
   spawn = cmd: "spawn:${cmd}";
 in {
-  config = lib.mkIf (config.desktop.shell == "noctalia") {
+  config = lib.mkIf (options ? programs.noctalia.enable && config.programs.noctalia.enable) {
     programs.umbriel.settings = {
       keybinds = {
         "Mod" = spawn (msg "panel-toggle control-center");

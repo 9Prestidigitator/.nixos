@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   config,
@@ -30,7 +29,7 @@ in {
         launcher_compact = true;
         open_near_click_launcher = true;
         session_placement = "centered";
-        transparency_mode = "glass";
+        transparency_mode = lib.mkDefault "glass";
       };
 
       shadow.direction = "center";
@@ -110,7 +109,9 @@ in {
 
     notification = {
       layer = "overlay";
-      position = "bottom_right";
+      position = "top_right";
+      offset_x = 30;
+      offset_y = 40;
     };
 
     osd = {

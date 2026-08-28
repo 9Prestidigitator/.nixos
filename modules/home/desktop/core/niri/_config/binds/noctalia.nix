@@ -1,12 +1,13 @@
 {
   config,
+  options,
   lib,
   mkWlrWhichKeyMenu,
   ...
 }: let
   noctalia = cmd: "noctalia msg ${cmd}";
 in {
-  config = lib.mkIf (config.desktop.shell == "noctalia") {
+  config = lib.mkIf (options ? programs.noctalia.enable && config.programs.noctalia.enable) {
     programs.niri.settings = {
       switch-events.lid-close.action.spawn = ["noctalia" "msg" "session" "lock"];
 

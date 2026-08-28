@@ -20,12 +20,6 @@
       };
 
       desktop = {
-        shell = lib.mkOption {
-          type = lib.types.nullOr (lib.types.enum ["noctalia"]);
-          default = null;
-          description = "Metadata option letting other home modules know what shell is being used.";
-        };
-
         explorer = {
           name = lib.mkOption {
             type = lib.types.nullOr (lib.types.enum ["nautilus" "dolphin"]);

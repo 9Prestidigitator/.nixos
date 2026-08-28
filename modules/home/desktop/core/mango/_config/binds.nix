@@ -33,11 +33,9 @@ in {
         "SUPER,i,minimized"
         "SUPER+SHIFT,i,restore_minimized"
 
-        "SUPER,Tab,focusstack,next"
-        "SUPER+SHIFT,Tab,focusstack,prev"
+        "SUPER,j,focusstack,next"
+        "SUPER,k,focusstack,prev"
         "SUPER,h,focusdir,left"
-        "SUPER,j,focusdir,down"
-        "SUPER,k,focusdir,up"
         "SUPER,l,focusdir,right"
         "SUPER+CTRL,h,exchange_client,left"
         "SUPER+CTRL,j,exchange_client,down"
@@ -58,6 +56,8 @@ in {
 
         "SUPER,o,toggleoverview"
         "ALT,Tab,togglejump"
+        "SUPER,grave,view,-1"
+        "SUPER,Tab,focuslast"
 
         "SUPER,n,switch_layout"
         "SUPER+SHIFT,n,setlayout,scroller"
@@ -117,19 +117,27 @@ in {
     };
 
     gesturebind = [
-      "NONE,left,3,focusdir,left"
-      "NONE,right,3,focusdir,right"
-      "NONE,up,3,focusdir,up"
-      "NONE,down,3,focusdir,down"
-      "NONE,left,4,viewtoleft_have_client"
-      "NONE,right,4,viewtoright_have_client"
+      "NONE,right,3,focusdir,left"
+      "NONE,left,3,focusdir,right"
+      "NONE,down,3,focusdir,up"
+      "NONE,up,3,focusdir,down"
+      "NONE,right,4,viewtoleft"
+      "NONE,left,4,viewtoright"
+
       "NONE,up,4,toggleoverview"
-      "NONE,down,4,toggleoverview"
+      "NONE,down,4,togglejump"
     ];
 
     mousebind = [
       "SUPER,btn_left,moveresize,curmove"
       "SUPER,btn_right,moveresize,curresize"
+      "NONE,btn_left,toggleoverview,-1"
+      "NONE,btn_right,killclient,0"
+    ];
+
+    axisbind = [
+      "SUPER,UP,viewtoleft_have_client"
+      "SUPER,DOWN,viewtoright_have_client"
     ];
   };
 }

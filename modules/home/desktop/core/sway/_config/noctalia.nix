@@ -1,11 +1,12 @@
 {
   config,
   lib,
+  options,
   ...
 }: let
   modifier = "Mod4";
 in {
-  config = lib.mkIf (config.desktop.shell == "noctalia") {
+  config = lib.mkIf (options ? programs.noctalia.enable && config.programs.noctalia.enable) {
     wayland.windowManager.sway.config = rec {
       menu = "noctalia msg panel-toggle launcher";
       keybindings = lib.mkOptionDefault {
