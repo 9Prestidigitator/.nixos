@@ -40,7 +40,6 @@
       xwayland-satellite
       inputs.niri-float-sticky.packages.${system}.default
       wl-clipboard
-      pulseaudio
     ];
 
     persist = {

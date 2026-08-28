@@ -1,13 +1,28 @@
 {
-  flake.nixosModules.labwc = {pkgs, ...}: {
-    programs.labwc.enable = true;
+  flake.nixosModules.labwc = {
+    pkgs,
+    lib,
+    options,
+    ...
+  }: {
+    config =
+      {
+        programs.labwc.enable = true;
 
-    xdg.portal.enable = true;
+        xdg.portal.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      wdisplays
-      wl-clipboard
-      pulseaudio
-    ];
+        environment.systemPackages = with pkgs; [
+          wdisplays
+          wl-clipboard
+        ];
+      }
+      // lib.optionalAttrs (options ? stylix.opacity) {
+        stylix.opacity = lib.mkDefault {
+          desktop = 1.0;
+          terminal = 1.0;
+          applications = 1.0;
+          popups = 1.0;
+        };
+      };
   };
 }

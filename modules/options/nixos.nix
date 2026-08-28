@@ -46,12 +46,6 @@
           description = "Normal users that should not receive global per-user persistence.";
         };
       };
-
-      iconStyle = lib.mkOption {
-        type = lib.types.enum ["breeze" "adwaita"];
-        default = "breeze";
-        description = "Which icon set to use. This is typically done in compositor or DE modules.";
-      };
     };
   };
 }

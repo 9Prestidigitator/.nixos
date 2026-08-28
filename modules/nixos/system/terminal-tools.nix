@@ -29,6 +29,7 @@
       tree
       calc
       wget
+      ghostty.terminfo
 
       zip
       unrar

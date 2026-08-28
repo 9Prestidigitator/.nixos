@@ -1,4 +1,11 @@
-{config, ...}: {
+{
+  pkgs,
+  lib,
+  inputs,
+  config,
+  options,
+  ...
+}: {
   programs.plasma = {
     panels = [
       {
@@ -81,13 +88,20 @@
         widgets = [
           {
             iconTasks = {
-              launchers = [
+              launchers =
+                lib.optional (options ? desktop.terminal.name
+                  && config.desktop.terminal.name
+                  != null)
                 "applications:${config.desktop.terminal.desktop}.desktop"
-                "applications:org.kde.dolphin.desktop"
+                ++ [
+                  "applications:org.kde.dolphin.desktop"
+                ]
+                ++ lib.optional (options ? desktop.browser.name
+                  && config.desktop.browser.name
+                  != null)
                 "applications:${config.desktop.browser.desktop}.desktop"
-                "applications:steam.desktop"
-                "applications:cockos-reaper.desktop"
-              ];
+                ++ lib.optional (lib.elem pkgs.steam config.home.packages) "applications:steam.desktop"
+                ++ lib.optional (lib.elem inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reaper config.home.packages) "applications:cockos-reaper.desktop";
 
               appearance = {
                 fill = false;

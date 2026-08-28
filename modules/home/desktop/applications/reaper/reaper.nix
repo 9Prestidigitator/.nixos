@@ -19,8 +19,8 @@
       theme = {
         active = "Reapertips Theme.ReaperThemeZip";
         packages = [
-          inputs.reaper-flake.packages.${pkgs.system}.smooth6-theme
-          inputs.reaper-flake.packages.${pkgs.system}.reapertips-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.smooth6-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reapertips-theme
         ];
       };
 

@@ -8,7 +8,10 @@
       desktopManager.plasma6.enable = true;
       displayManager.plasma-login-manager.enable = true;
 
-      sunshine.autoStart = true;
+      sunshine = {
+        autoStart = true;
+        settings.capture = "kwin";
+      };
     };
 
     environment = {
@@ -30,8 +33,8 @@
         merkuro
         signon-kwallet-extension
 
-        inputs.kwin-effects-glass.packages.${pkgs.system}.default
-        inputs.kwin-effects-better-blur-dx.packages.${pkgs.system}.default
+        inputs.kwin-effects-glass.packages.${pkgs.stdenv.hostPlatform.system}.default
+        inputs.kwin-effects-better-blur-dx.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
       sessionVariables.NIXOS_OZONE_WL = "1";

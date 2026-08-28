@@ -2,6 +2,7 @@
   flake.nixosModules.stylix = {
     pkgs,
     config,
+    lib,
     ...
   }: {
     imports = [inputs.stylix.nixosModules.stylix];
@@ -9,6 +10,7 @@
     stylix = {
       enable = true;
       autoEnable = true;
+
       base16Scheme =
         if config.networking.hostName == "ink"
         then "${pkgs.base16-schemes}/share/themes/da-one-black.yaml"
@@ -18,11 +20,13 @@
 
       polarity = "dark";
       targets.grub.enable = false;
+
       cursor = {
         size = 24;
         name = "breeze_cursors";
         package = pkgs.kdePackages.breeze;
       };
+
       fonts = {
         monospace = {
           package = pkgs.nerd-fonts.hack;
@@ -30,22 +34,14 @@
         };
       };
 
-      icons =
-        if config.iconStyle == "breeze"
-        then {
-          enable = true;
-          package = pkgs.kdePackages.breeze;
-          dark = "breeze-dark";
-          light = "breeze";
-        }
-        else {
-          enable = true;
-          package = pkgs.adwaita-icon-theme;
-          dark = "Adwaita";
-          light = "Adwaita";
-        };
+      icons = lib.mkDefault {
+        enable = true;
+        package = pkgs.kdePackages.breeze;
+        dark = "breeze-dark";
+        light = "breeze";
+      };
 
-      opacity = {
+      opacity = lib.mkDefault {
         desktop = 0.7;
         terminal = 0.7;
         applications = 0.8;

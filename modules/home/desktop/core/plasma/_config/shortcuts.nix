@@ -1,19 +1,27 @@
 {
+  config,
+  lib,
+  options,
+  ...
+}: {
   programs.plasma = {
     krunner.shortcuts.launch = "Meta+Space";
 
-    hotkeys.commands = {
-      "launch-terminal" = {
-        name = "Launch terminal";
-        key = "Meta+Return";
-        command = "kitty";
+    hotkeys.commands =
+      {
+        "launch-monitor" = {
+          name = "btop";
+          key = "Ctrl+Shift+Esc";
+          command = "kitty --title btop -e btop";
+        };
+      }
+      // lib.optionalAttrs (options ? desktop.terminal.name && config.desktop.terminal.name != null) {
+        "launch-terminal" = {
+          name = "Launch terminal";
+          key = "Meta+Return";
+          command = "${config.desktop.terminal.name}";
+        };
       };
-      "launch-monitor" = {
-        name = "btop";
-        key = "Ctrl+Shift+Esc";
-        command = "kitty --title btop -e btop";
-      };
-    };
 
     shortcuts = {
       ksmserver = {

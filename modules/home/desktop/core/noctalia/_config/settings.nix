@@ -1,7 +1,10 @@
 {
-  config,
-  osConfig,
+  inputs,
+  pkgs,
   lib,
+  config,
+  options,
+  osConfig,
   ...
 }: let
   isLaptop =
@@ -70,23 +73,19 @@ in {
       launcher_position = "start";
 
       pinned =
-        lib.optionals (config.desktop.terminal.desktop != null) [
-          config.desktop.terminal.desktop
-        ]
-        ++ lib.optionals (config.desktop.explorer.desktop != null) [
-          config.desktop.explorer.desktop
-        ]
-        ++ lib.optionals (config.desktop.browser.desktop != null) [
-          config.desktop.browser.desktop
-        ]
-        ++ [
-          "cockos-reaper"
-          "obsidian"
-          "steam"
-          "discord"
-          "signal"
-          "spotify"
-        ];
+        lib.optional (options ? desktop.terminal.name && config.desktop.terminal.name != null)
+        config.desktop.terminal.desktop
+        ++ lib.optional (options ? desktop.explorer.name && config.desktop.explorer.name != null)
+        config.desktop.explorer.desktop
+        ++ lib.optional (options ? desktop.browser.name && config.desktop.browser.name != null)
+        config.desktop.browser.desktop
+        ++ lib.optional (lib.elem inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reaper config.home.packages) "cockos-reaper.desktop"
+        ++ lib.optional (lib.elem pkgs.discord config.home.packages) "discord"
+        ++ lib.optional (lib.elem pkgs.obsidian config.home.packages) "obsidian"
+        ++ lib.optional (lib.elem pkgs.steam config.home.packages) "steam"
+        ++ lib.optional (lib.elem pkgs.discord config.home.packages) "discord"
+        ++ lib.optional (lib.elem pkgs.signal config.home.packages) "signal"
+        ++ lib.optional (lib.elem pkgs.spotify config.home.packages) "spotify";
     };
 
     idle = {
