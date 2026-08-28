@@ -10,7 +10,7 @@
   tagBinds = lib.concatMap (
     tag: [
       "SUPER,${toString tag},view,${toString tag},0"
-      "SUPER+SHIFT,${toString tag},tag,${toString tag},0"
+      "SUPER+CTRL,${toString tag},tag,${toString tag},0"
     ]
   ) (lib.range 1 9);
 in {
@@ -33,15 +33,15 @@ in {
         "SUPER,j,focusdir,down"
         "SUPER,k,focusdir,up"
         "SUPER,l,focusdir,right"
-        "SUPER+SHIFT,h,exchange_client,left"
-        "SUPER+SHIFT,j,exchange_client,down"
-        "SUPER+SHIFT,k,exchange_client,up"
-        "SUPER+SHIFT,l,exchange_client,right"
+        "SUPER+CTRL,h,exchange_client,left"
+        "SUPER+CTRL,j,exchange_client,down"
+        "SUPER+CTRL,k,exchange_client,up"
+        "SUPER+CTRL,l,exchange_client,right"
 
-        "SUPER+CTRL,h,focusmon,left"
-        "SUPER+CTRL,j,focusmon,down"
-        "SUPER+CTRL,k,focusmon,up"
-        "SUPER+CTRL,l,focusmon,right"
+        "SUPER+SHIFT,h,focusmon,left"
+        "SUPER+SHIFT,j,focusmon,down"
+        "SUPER+SHIFT,k,focusmon,up"
+        "SUPER+SHIFT,l,focusmon,right"
         "SUPER+CTRL+SHIFT,h,tagmon,left,0"
         "SUPER+CTRL+SHIFT,j,tagmon,down,0"
         "SUPER+CTRL+SHIFT,k,tagmon,up,0"
@@ -80,5 +80,21 @@ in {
         "NONE,Return,setkeymode,default"
       ];
     };
+
+    gesturebind = [
+      "NONE,left,3,focusdir,left"
+      "NONE,right,3,focusdir,right"
+      "NONE,up,3,focusdir,up"
+      "NONE,down,3,focusdir,down"
+      "NONE,left,4,viewtoleft_have_client"
+      "NONE,right,4,viewtoright_have_client"
+      "NONE,up,4,toggleoverview"
+      "NONE,down,4,toggleoverview"
+    ];
+
+    mousebind = [
+      "SUPER,btn_left,moveresize,curmove"
+      "SUPER,btn_right,moveresize,curresize"
+    ];
   };
 }

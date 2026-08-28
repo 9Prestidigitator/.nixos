@@ -1,18 +1,19 @@
 {
   wayland.windowManager.mango.settings = {
     blur = 1;
-    blur_layer = 1;
+    blur_layer = 0;
     blur_optimized = 1;
     blur_params = {
       radius = 5;
       num_passes = 3;
       noise = 0.02;
     };
+
     shadows = 1;
-    # Noctalia uses transparent layer-shell hit areas for its widgets. A
-    # compositor shadow makes those otherwise invisible surfaces visible.
-    layer_shadows = 0;
-    border_radius = 10;
+    layer_shadows = 1;
+    shadows_only_floating = 1;
+
+    border_radius = 0;
 
     gappih = 10;
     gappiv = 10;
@@ -21,7 +22,7 @@
     borderpx = 2;
 
     sloppyfocus = 0;
-    warpcursor = 0;
+    warpcursor = 1;
 
     tap_to_click = 1;
     trackpad_natural_scrolling = 1;
@@ -48,32 +49,14 @@
     animation_type_open = "slide";
     animation_type_close = "slide";
     animation_duration = {
-      move = 250;
-      open = 250;
-      tag = 250;
-      close = 200;
+      move = 200;
+      open = 200;
+      tag = 200;
+      close = 150;
     };
 
     scratchpad_width_ratio = 0.8;
     scratchpad_height_ratio = 0.8;
     scratchpad_cross_monitor = 1;
-
-    gesturebind = [
-      "NONE,left,3,viewtoleft_have_client"
-      "NONE,right,3,viewtoright_have_client"
-      "NONE,up,3,toggleoverview"
-      "NONE,down,3,toggleoverview"
-    ];
-
-    mousebind = [
-      "SUPER,btn_left,moveresize,curmove"
-      "SUPER,btn_right,moveresize,curresize"
-    ];
-
-    # windowrule = [
-    #   "isfloating:1,width:0.8,height:0.8,appid:REAPER"
-    #   "isfloating:1,width:0.8,height:0.8,appid:reaper"
-    #   "idleinhibit_when_focus:1,appid:steam"
-    # ];
   };
 }

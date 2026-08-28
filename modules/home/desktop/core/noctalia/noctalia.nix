@@ -6,8 +6,8 @@
       enable = true;
       systemd.enable = true;
     };
-    desktop.shell = "noctalia";
 
+    desktop.shell = "noctalia";
     persist.directories = [
       ".cache/noctalia"
       ".cache/cliphist"

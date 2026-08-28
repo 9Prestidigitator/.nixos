@@ -13,5 +13,8 @@
       "SHIFT,Print,spawn,noctalia msg screenshot-fullscreen"
     ];
     bindr = ["SUPER,Super_L,spawn,noctalia msg panel-toggle control-center"];
+    switchbind = [
+      "fold,spawn,noctalia msg session lock"
+    ];
   };
 }
