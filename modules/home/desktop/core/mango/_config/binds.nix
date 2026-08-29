@@ -101,7 +101,7 @@ in {
       ++ tagBinds;
 
     keymode = {
-      move.bind = [
+      move.bindc = [
         "NONE,h,exchange_client,left"
         "NONE,j,exchange_client,down"
         "NONE,k,exchange_client,up"
@@ -111,19 +111,28 @@ in {
         "SHIFT,k,scroller_stack,up"
         "SHIFT,l,scroller_stack,right"
         "NONE,1,tag,1,0"
+        "NONE,1,setkeymode,default"
         "NONE,2,tag,2,0"
+        "NONE,2,setkeymode,default"
         "NONE,3,tag,3,0"
+        "NONE,3,setkeymode,default"
         "NONE,4,tag,4,0"
+        "NONE,4,setkeymode,default"
         "NONE,5,tag,5,0"
+        "NONE,5,setkeymode,default"
         "NONE,6,tag,6,0"
+        "NONE,6,setkeymode,default"
         "NONE,7,tag,7,0"
+        "NONE,7,setkeymode,default"
         "NONE,8,tag,8,0"
+        "NONE,8,setkeymode,default"
         "NONE,9,tag,9,0"
+        "NONE,9,setkeymode,default"
         "NONE,Escape,setkeymode,default"
         "NONE,Return,setkeymode,default"
       ];
 
-      resize.bind = [
+      resize.bindc = [
         "NONE,h,resizewin,-30,0"
         "NONE,j,resizewin,0,30"
         "NONE,k,resizewin,0,-30"
@@ -132,14 +141,21 @@ in {
         "NONE,Return,setkeymode,default"
       ];
 
-      layout.bind = [
+      layout.bindc = [
         "NONE,t,setlayout,tile"
+        "NONE,t,setkeymode,default"
         "NONE,s,setlayout,scroller"
+        "NONE,s,setkeymode,default"
         "NONE,v,setlayout,vertical_scroller"
+        "NONE,v,setkeymode,default"
         "NONE,m,setlayout,monocle"
+        "NONE,m,setkeymode,default"
         "NONE,g,setlayout,grid"
+        "NONE,g,setkeymode,default"
         "NONE,d,setlayout,dwindle"
+        "NONE,d,setkeymode,default"
         "NONE,f,setlayout,fair"
+        "NONE,f,setkeymode,default"
         "NONE,Escape,setkeymode,default"
         "NONE,Return,setkeymode,default"
       ];
@@ -161,9 +177,6 @@ in {
     mousebind = [
       "SUPER,btn_left,moveresize,curmove"
       "SUPER,btn_right,moveresize,curresize"
-
-      # "NONE,btn_left,toggleoverview,-1"
-      # "NONE,btn_right,killclient,0"
     ];
 
     axisbind = [
