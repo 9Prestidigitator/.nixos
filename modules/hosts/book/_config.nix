@@ -12,7 +12,7 @@
       noctalia
       niri
 
-      bash
+      fish
       neovim
       fastfetch
 
