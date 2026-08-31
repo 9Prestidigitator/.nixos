@@ -30,6 +30,7 @@
       calc
       wget
       ghostty.terminfo
+      kitty.terminfo
 
       zip
       unrar

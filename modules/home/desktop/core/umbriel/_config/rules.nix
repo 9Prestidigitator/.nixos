@@ -96,6 +96,11 @@
         blur_optimized = false;
         blur_popups = true;
       }
+      {
+        match.namespace = "^wlr_which_key$";
+        blur = true;
+        blur_optimized = false;
+      }
     ];
   };
 }

@@ -3,7 +3,12 @@
     imports = [self.homeModules.aliases];
 
     programs = {
-      fish.enable = true;
+      fish = {
+        enable = true;
+        interactiveShellInit = ''
+          set -g fish_greeting
+        '';
+      };
     };
 
     programs.zoxide.enableFishIntegration = true;

@@ -81,7 +81,7 @@
         empty_above = false;
       };
       overview = {
-        zoom = 0.5;
+        zoom = 0.4;
         background_blur = true;
       };
       hot_corners = {
