@@ -5,6 +5,7 @@
       extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
       initialPassword = "nixos";
     };
+    programs.fish.enable = true;
 
     services.syncthing = {
       user = "max";
