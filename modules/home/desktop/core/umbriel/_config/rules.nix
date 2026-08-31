@@ -69,14 +69,6 @@
         default_size = [1000 900];
       }
       {
-        match.is_focused = false;
-        opacity = 0.85;
-      }
-      {
-        match.is_focused = true;
-        opacity = 1.0;
-      }
-      {
         match.title = "^(Picture-in-Picture|Picture in picture)$";
         default_floating = true;
         default_maximize = false;
@@ -86,6 +78,14 @@
           anchor = "bottom_right";
         };
       }
+      # {
+      #   match.is_focused = false;
+      #   opacity = 0.85;
+      # }
+      # {
+      #   match.is_focused = true;
+      #   opacity = 1.0;
+      # }
     ];
     layer_rule = [
       {

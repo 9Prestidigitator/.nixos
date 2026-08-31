@@ -12,7 +12,7 @@
       noctalia
       umbriel
 
-      bash
+      fish
       neovim
       fastfetch
 

@@ -27,12 +27,24 @@
       "Mod+Alt+R" = "window-cycle-height";
       "Mod+Alt+Shift+R" = "window-cycle-height-back";
       "Mod+P" = "window-toggle-pinned";
-      "Mod+S" = "scratchpad-toggle";
       "Mod+Grave" = "window-focus-last";
 
-      "Mod+T" = "workspace-set-layout:toggle";
+      "Mod+T" = "window-move-to-scratchpad";
+      "Mod+Shift+T" = "window-restore-from-scratchpad";
+      "Mod+E" = "scratchpad-toggle";
+      "Mod+Shift+E" = "scratchpad-focus-next";
+
       "Mod+Z" = "window-center";
       "Mod+Shift+Z" = "column-center";
+
+      "Mod+S" = {
+        action = "submap:layout";
+        repeat = false;
+      };
+
+      "submap[layout],s" = "workspace-set-layout:scrolling";
+      "submap[layout],d" = "workspace-set-layout:dwindle";
+      "submap[layout],a" = "workspace-set-layout:master";
 
       "Mod+Minus" = "window-modify-width:-0.1";
       "Mod+Equal" = "window-modify-width:0.1";
