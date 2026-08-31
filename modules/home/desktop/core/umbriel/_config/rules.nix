@@ -98,6 +98,7 @@
       }
       {
         match.namespace = "^wlr_which_key$";
+        blur_ignore_alpha = 0.01;
         blur = true;
         blur_optimized = false;
       }
