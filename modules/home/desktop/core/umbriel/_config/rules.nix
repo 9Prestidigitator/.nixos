@@ -92,7 +92,7 @@
       {
         match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
         blur = true;
-        blur_ignore_alpha = 0.1;
+        blur_ignore_alpha = 0.005;
         blur_optimized = false;
         blur_popups = true;
       }
