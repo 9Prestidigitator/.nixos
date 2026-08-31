@@ -3,7 +3,7 @@
     window_rule = [
       {
         blur = true;
-        blur_optimized = true;
+        blur_optimized = false;
       }
       {
         match.app_id = "^(Alacritty|kitty|org\\.gnome\\.Nautilus)$";
@@ -51,7 +51,7 @@
         match.app_id = "^dev.noctalia.Noctalia$";
         default_floating = true;
         default_size = [1020 900];
-        blur_popups = false;
+        blur_popups = true;
       }
       {
         match.app_id = "^dev.noctalia.UmbrielSharePicker$";
@@ -76,12 +76,23 @@
         match.is_focused = true;
         opacity = 1.0;
       }
+      {
+        match.title = "^(Picture-in-Picture|Picture in picture)$";
+        default_floating = true;
+        default_maximize = false;
+        default_position = {
+          x = 20;
+          y = 20;
+          anchor = "bottom_right";
+        };
+      }
     ];
     layer_rule = [
       {
         match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$";
         blur = true;
         blur_ignore_alpha = 0.5;
+        blur_optimized = false;
         blur_popups = true;
       }
     ];

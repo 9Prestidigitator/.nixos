@@ -2,10 +2,7 @@
   mkWlrWhichKeyMenuWith,
   config,
   ...
-}: let
-  msg = cmd: "noctalia msg ${cmd}";
-  spawn = cmd: "spawn:${cmd}";
-in {
+}: {
   programs.umbriel = {
     settings.keybinds = {
       "Mod+Return" = "spawn:${config.desktop.terminal.name}";
@@ -26,16 +23,26 @@ in {
       "Mod+F" = "window-toggle-maximize-to-edges";
       "Mod+Shift+F" = "window-toggle-fullscreen";
       "Mod+R" = "window-cycle-width";
+      "Mod+Shift+R" = "window-cycle-width-back";
+      "Mod+Alt+R" = "window-cycle-height";
+      "Mod+Alt+Shift+R" = "window-cycle-height-back";
+      "Mod+P" = "window-toggle-pinned";
+      "Mod+S" = "scratchpad-toggle";
+      "Mod+Grave" = "window-focus-last";
+
+      "Mod+T" = "workspace-set-layout:toggle";
+      "Mod+Z" = "window-center";
+      "Mod+Shift+Z" = "column-center";
 
       "Mod+Minus" = "window-modify-width:-0.1";
       "Mod+Equal" = "window-modify-width:0.1";
-      # "Mod+Shift+Minus" = "window-modify-height:-0.1";
-      # "Mod+Shift+Equal" = "window-modify-height:0.1";
+      "Mod+Shift+Minus" = "window-modify-height:-0.1";
+      "Mod+Shift+Equal" = "window-modify-height:0.1";
 
       "Mod+U" = "workspace-previous";
       "Mod+D" = "workspace-next";
-      # "Mod+PageUp" = "workspace-previous";
-      # "Mod+PageDown" = "workspace-next";
+      "Mod+Page_Up" = "workspace-previous";
+      "Mod+Page_Down" = "workspace-next";
 
       "Mod+WheelUp" = "workspace-previous";
       "Mod+WheelDown" = "workspace-next";
@@ -60,9 +67,9 @@ in {
       "Mod+Ctrl+K" = "window-move-up";
       "Mod+Ctrl+J" = "window-move-down";
 
-      # "Mod+Ctrl+PageUp" = "window-move-to-workspace-previous";
+      "Mod+Ctrl+Page_Up" = "window-move-to-workspace-previous";
       "Mod+Ctrl+U" = "window-move-to-workspace-previous";
-      # "Mod+Ctrl+PageDown" = "window-move-to-workspace-next";
+      "Mod+Ctrl+Page_Down" = "window-move-to-workspace-next";
       "Mod+Ctrl+D" = "window-move-to-workspace-next";
 
       "Mod+Ctrl+1" = "window-move-to-workspace:1";
@@ -90,9 +97,26 @@ in {
       "Mod+Alt+K" = "workspace-move-to-output-up";
       "Mod+Alt+J" = "workspace-move-to-output-down";
 
-      "Mod+Shift+Slash" = "cheatsheet-toggle";
+      "Mod+Slash" = "cheatsheet-toggle";
       "Mod+Shift+P" = "dpms-off";
       "Ctrl+Alt+Delete" = "session-quit";
+
+      "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+      "XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+      "Mod+XF86AudioMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+
+      "XF86AudioPlay" = "spawn:playerctl play-pause";
+      "XF86AudioNext" = "spawn:playerctl next";
+      "XF86AudioPrev" = "spawn:playerctl prev";
+
+      "XF86MonBrightnessDown" = {
+        action = "spawn:noctalia msg brightness-down 10";
+        allow_when_locked = true;
+      };
+      "XF86MonBrightnessUp" = {
+        action = "spawn:noctalia msg brightness-up 10";
+        allow_when_locked = true;
+      };
     };
   };
 }
