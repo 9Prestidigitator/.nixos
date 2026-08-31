@@ -4,6 +4,7 @@
       isNormalUser = true;
       extraGroups = ["wheel" "audio" "rtkit" "realtime" "uinput" "libvirtd" "cdrom"];
       initialPassword = "nixos";
+      shell = pkgs.fish;
     };
     programs.fish.enable = true;
 
