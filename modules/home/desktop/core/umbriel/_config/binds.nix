@@ -42,9 +42,19 @@
         repeat = false;
       };
 
-      "submap[layout],s" = "workspace-set-layout:scrolling";
-      "submap[layout],d" = "workspace-set-layout:dwindle";
-      "submap[layout],a" = "workspace-set-layout:master";
+      "submap[layout],s" = {
+        action = "workspace-set-layout:scrolling";
+        submap = "reset";
+      };
+      "submap[layout],d" = {
+        action = "workspace-set-layout:dwindle";
+        submap = "reset";
+      };
+      "submap[layout],a" = {
+        action = "workspace-set-layout:master";
+        submap = "reset";
+      };
+      "submap[layout],Escape" = "submap:reset";
 
       "Mod+Minus" = "window-modify-width:-0.1";
       "Mod+Equal" = "window-modify-width:0.1";
