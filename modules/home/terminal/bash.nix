@@ -1,6 +1,6 @@
 {self, ...}: {
   flake.homeModules.bash = {
-    import = [self.homeModules.aliases];
+    imports = [self.homeModules.aliases];
 
     programs = {
       bash = {

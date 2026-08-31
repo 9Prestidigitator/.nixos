@@ -1,6 +1,6 @@
 {self, ...}: {
   flake.homeModules.fish = {
-    import = [self.homeModules.aliases];
+    imports = [self.homeModules.aliases];
 
     programs = {
       fish.enable = true;
