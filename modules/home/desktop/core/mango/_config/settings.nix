@@ -46,6 +46,7 @@ in {
 
       tap_to_click = 1;
       trackpad_natural_scrolling = 1;
+      mouse_accel_speed = -0.3;
 
       tagrule = [
         "id:1,layout_name:monocle"

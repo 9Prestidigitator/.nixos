@@ -20,7 +20,7 @@
     ];
 
     keymode = {
-      noctalia.bindc = [
+      noctalia.bind = [
         "NONE,b,spawn,noctalia msg bluetooth-toggle"
         "NONE,b,setkeymode,default"
         "SHIFT,b,spawn,noctalia msg bar-toggle"
@@ -49,7 +49,7 @@
         "NONE,Return,setkeymode,default"
       ];
 
-      "noctalia-control-center".bindc = [
+      "noctalia-control-center".bind = [
         "NONE,a,spawn,noctalia msg panel-toggle control-center audio"
         "NONE,a,setkeymode,default"
         "NONE,b,spawn,noctalia msg panel-toggle control-center bluetooth"
@@ -72,7 +72,7 @@
         "NONE,Return,setkeymode,default"
       ];
 
-      "noctalia-plugins".bindc = [
+      "noctalia-plugins".bind = [
         "NONE,1,spawn,noctalia msg yuuto/calculator:panel"
         "NONE,1,setkeymode,default"
         "NONE,a,spawn,noctalia msg panel-toggle blackbartblues/audio-switcher:audio-switcher"

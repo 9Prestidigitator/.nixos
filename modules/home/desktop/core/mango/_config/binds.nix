@@ -180,8 +180,8 @@ in {
     ];
 
     axisbind = [
-      "SUPER,UP,viewtoleft_have_client"
-      "SUPER,DOWN,viewtoright_have_client"
+      "SUPER,UP,viewtoleft,0"
+      "SUPER,DOWN,viewtoright,0"
     ];
   };
 }
