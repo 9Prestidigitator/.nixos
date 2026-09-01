@@ -1,5 +1,9 @@
 {self, ...}: {
   flake.homeModules.fish = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [self.homeModules.aliases];
 
     programs = {
@@ -7,6 +11,7 @@
         enable = true;
         interactiveShellInit = ''
           set -g fish_greeting
+          ${lib.getExe pkgs.any-nix-shell} fish --info-right | source
         '';
       };
     };
