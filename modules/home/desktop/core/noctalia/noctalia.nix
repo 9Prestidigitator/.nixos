@@ -1,6 +1,9 @@
 {inputs, ...}: {
   flake.homeModules.noctalia = {
-    imports = [(inputs.import-tree ./_config)];
+    imports = [
+      (inputs.import-tree ./_config)
+      inputs.noctalia.homeModules.default
+    ];
 
     programs.noctalia = {
       enable = true;

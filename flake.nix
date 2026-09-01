@@ -96,11 +96,20 @@
       };
     };
     umbriel = {
-      url = "git+https://github.com/noctalia-dev/umbriel";
+      url = "git+https://github.com/9prestidigitator/umbriel.git?ref=zones";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xdg-desktop-portal-umbriel = {
       url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/pull/4183/merge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    xwayland-satellite = {
+      url = "github:9prestidigitator/xwayland-satellite/zones";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

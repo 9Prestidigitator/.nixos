@@ -19,6 +19,8 @@
         inputs.niri-flake.overlays.niri
         inputs.maxpkgs.overlays.default
         inputs.millennium.overlays.default
+        inputs.xwayland-satellite.overlays.default
+        inputs.umbriel.overlays.default
       ];
     };
     nix = {
