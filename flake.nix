@@ -108,10 +108,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/pull/4183/merge";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     xwayland-satellite = {
       url = "github:9prestidigitator/xwayland-satellite/zones";
       inputs.nixpkgs.follows = "nixpkgs";
