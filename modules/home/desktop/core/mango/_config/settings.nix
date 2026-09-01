@@ -69,7 +69,7 @@ in {
 
       circle_layout = "scroller,monocle,tile,vertical_scroller";
 
-      scroller_default_proportion = 0.8;
+      scroller_default_proportion = 1;
       scroller_proportion_preset = "0.5,0.8,1.0";
       scroller_structs = 0;
       default_mfact = 0.55;
