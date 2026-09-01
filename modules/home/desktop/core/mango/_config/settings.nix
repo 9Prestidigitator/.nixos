@@ -62,6 +62,8 @@ in {
         # "id:9,layout_name:vertical_tile"
       ];
 
+      circle_layout = "scroller,monocle,tile,vertical_scroller";
+
       scroller_default_proportion = 0.8;
       scroller_proportion_preset = "0.5,0.8,1.0";
       scroller_structs = 0;

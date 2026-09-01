@@ -71,8 +71,8 @@ in {
         "SUPER,grave,view,-1"
         "SUPER,Tab,focuslast"
 
-        "SUPER,n,switch_layout"
-        "SUPER+SHIFT,n,setlayout,scroller"
+        "SUPER,w,switch_layout"
+        "SUPER+SHIFT,s,setlayout,scroller"
         "SUPER,minus,switch_proportion_preset,prev"
         "SUPER,equal,switch_proportion_preset,next"
 
