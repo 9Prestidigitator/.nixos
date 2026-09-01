@@ -3,7 +3,12 @@
   lib,
   options,
   ...
-}: {
+}: let
+  terminalCommand = title: command:
+    if config.desktop.terminal.name == "ghostty" then "ghostty --title=${title} -e ${command}"
+    else if config.desktop.terminal.name == "kitty" then "kitty --title ${title} -e ${command}"
+    else "${config.desktop.terminal.name} -e ${command}";
+in {
   programs.plasma = {
     krunner.shortcuts.launch = "Meta+Space";
 
@@ -12,7 +17,7 @@
         "launch-monitor" = {
           name = "btop";
           key = "Ctrl+Shift+Esc";
-          command = "kitty --title btop -e btop";
+          command = terminalCommand "btop" "btop";
         };
       }
       // lib.optionalAttrs (options ? desktop.terminal.name && config.desktop.terminal.name != null) {

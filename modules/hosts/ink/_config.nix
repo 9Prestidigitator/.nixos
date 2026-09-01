@@ -20,7 +20,7 @@
 
       stylix
 
-      kitty
+      ghostty
       nautilus
       brave
       steam

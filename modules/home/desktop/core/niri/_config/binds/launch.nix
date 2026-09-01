@@ -6,6 +6,10 @@
   ...
 }: let
   hostName = osConfig.networking.hostName;
+  terminalCommand = title: command:
+    if config.desktop.terminal.name == "ghostty" then "ghostty --title=${title} -e ${command}"
+    else if config.desktop.terminal.name == "kitty" then "kitty --title ${title} -e ${command}"
+    else "${config.desktop.terminal.name} -e ${command}";
 in {
   programs.niri.settings.binds = with config.lib.niri.actions; {
     "Mod+Return" = {
@@ -79,7 +83,7 @@ in {
       {
         key = "n";
         desc = "Neovim";
-        cmd = "kitty --title Neovim -e nvim";
+        cmd = terminalCommand "Neovim" "nvim";
       }
       {
         key = "o";
@@ -98,27 +102,27 @@ in {
           {
             key = "b";
             desc = "btop";
-            cmd = "kitty --title btop bash -lc 'btop'";
+            cmd = terminalCommand "btop" "bash -lc 'btop'";
           }
           {
             key = "k";
-            desc = "kitty";
-            cmd = "kitty";
+            desc = config.desktop.terminal.name;
+            cmd = config.desktop.terminal.name;
           }
           {
             key = "l";
             desc = "leetcode";
-            cmd = "kitty --title btop bash -lc 'nvim leetcode.nvim'";
+            cmd = terminalCommand "leetcode" "bash -lc 'nvim leetcode.nvim'";
           }
           {
             key = "n";
             desc = "Open Notes";
-            cmd = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
+            cmd = terminalCommand "Notes" "sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
           }
           {
             key = "t";
             desc = "tmux";
-            cmd = "kitty --title tmux bash -lc 'tmux a || tmux'";
+            cmd = terminalCommand "tmux" "bash -lc 'tmux a || tmux'";
           }
         ];
       }
@@ -174,7 +178,10 @@ in {
 
     "Ctrl+Shift+Escape" = {
       hotkey-overlay.title = "btop";
-      action = spawn "kitty" "--title" "'btop'" "-e" "btop";
+      action =
+        if config.desktop.terminal.name == "ghostty" then spawn "ghostty" "--title=btop" "-e" "btop"
+        else if config.desktop.terminal.name == "kitty" then spawn "kitty" "--title" "btop" "-e" "btop"
+        else spawn config.desktop.terminal.name "-e" "btop";
     };
   };
 }

@@ -7,6 +7,10 @@
   ...
 }: let
   hostName = osConfig.networking.hostName;
+  terminalCommand = title: command:
+    if config.desktop.terminal.name == "ghostty" then "ghostty --title=${title} -e ${command}"
+    else if config.desktop.terminal.name == "kitty" then "kitty --title ${title} -e ${command}"
+    else "${config.desktop.terminal.name} -e ${command}";
 
   mkAction = name: attrs:
     {"@name" = name;}
@@ -104,7 +108,7 @@
     {
       key = "n";
       desc = "Neovim";
-      cmd = "kitty --title Neovim -e nvim";
+      cmd = terminalCommand "Neovim" "nvim";
     }
     {
       key = "o";
@@ -123,7 +127,7 @@
         {
           key = "b";
           desc = "btop";
-          cmd = "kitty --title btop -e btop";
+          cmd = terminalCommand "btop" "btop";
         }
         {
           key = "e";
@@ -133,12 +137,12 @@
         {
           key = "n";
           desc = "Notes";
-          cmd = "kitty --title Notes -e sh -c 'cd ~/notes && nix develop -c nvim'";
+          cmd = terminalCommand "Notes" "sh -c 'cd ~/notes && nix develop -c nvim'";
         }
         {
           key = "t";
           desc = "tmux";
-          cmd = "kitty --title tmux -e sh -c 'tmux a || tmux'";
+          cmd = terminalCommand "tmux" "sh -c 'tmux a || tmux'";
         }
       ];
     }
@@ -253,7 +257,7 @@
 
   genericKeybinds = [
     (mkKeybind "W-Return" (execute "${config.desktop.terminal.name}"))
-    (mkKeybind "C-S-Escape" (execute "kitty --title btop -e btop"))
+    (mkKeybind "C-S-Escape" (execute (terminalCommand "btop" "btop")))
 
     (mkKeybind "W-Left" (mkAction "PreviousWindowImmediate" {}))
     (mkKeybind "W-h" (mkAction "PreviousWindowImmediate" {}))
