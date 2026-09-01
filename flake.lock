@@ -1746,11 +1746,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1788233428,
-        "narHash": "sha256-ztXpG0FXHXjEOAtAdQzo46hjee3DMEZFhwB4+qLe3iw=",
+        "lastModified": 1788234614,
+        "narHash": "sha256-1EGItLp/qNuonFIwOFTxMLJ019n1/3+UqTcMXJOwrCY=",
         "owner": "9prestidigitator",
         "repo": "xwayland-satellite",
-        "rev": "b845705eeb3e93d09ef5765a6277df83b49226a7",
+        "rev": "e2de14ba8ff24c018c0a37ca2ec3909726c345cc",
         "type": "github"
       },
       "original": {
