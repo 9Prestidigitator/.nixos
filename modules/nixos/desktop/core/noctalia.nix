@@ -1,5 +1,6 @@
-{
+{inputs, ...}: {
   flake.nixosModules.noctalia = {pkgs, ...}: {
+    imports = [inputs.noctalia.homeModules.default];
     programs = {
       noctalia = {
         enable = true;
