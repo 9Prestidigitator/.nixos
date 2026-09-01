@@ -1,8 +1,6 @@
 {
-  pkgs,
   lib,
   config,
-  options,
   osConfig,
   ...
 }: let
@@ -52,39 +50,6 @@ in {
     calendar.enabled = true;
     weather.auto_locate = true;
     location.auto_locate = true;
-
-    dock = {
-      enabled = true;
-      smart_auto_hide = true;
-
-      icon_size = 35;
-      item_spacing = 0;
-      show_dots = true;
-      background_opacity = lib.mkForce 0.01;
-
-      magnification_scale = 1.3;
-      radius = 30;
-      padding = 4;
-      margin_edge = 7;
-      reserve_space = false;
-
-      launcher_icon = "grid-dots";
-      launcher_position = "start";
-
-      pinned =
-        lib.optional (options ? desktop.terminal.name && config.desktop.terminal.name != null)
-        config.desktop.terminal.desktop
-        ++ lib.optional (options ? desktop.explorer.name && config.desktop.explorer.name != null)
-        config.desktop.explorer.desktop
-        ++ lib.optional (options ? desktop.browser.name && config.desktop.browser.name != null)
-        config.desktop.browser.desktop
-        ++ lib.optional (options ? programs.reaper.enable && config.programs.reaper.enable) "cockos-reaper"
-        ++ lib.optional (lib.elem pkgs.obsidian config.home.packages) "obsidian"
-        ++ lib.optional osConfig.programs.steam.enable "steam"
-        ++ lib.optional (options ? programs.nixcord.enable && config.programs.nixcord.enable) "discord"
-        ++ lib.optional (lib.elem pkgs.signal-desktop osConfig.environment.systemPackages) "signal"
-        ++ lib.optional (options ? programs.spicetify && config.programs.spicetify.enable) "spotify";
-    };
 
     idle = {
       behavior_order = ["lock" "screen-off" "suspend"];
