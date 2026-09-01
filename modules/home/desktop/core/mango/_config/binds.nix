@@ -20,6 +20,7 @@ in {
         "SUPER,Return,spawn,${terminal}"
         "SUPER,q,killclient"
         "SUPER+SHIFT,r,reload_config"
+        "SUPER+SHIFT,Escape,sleep_monitor,all"
 
         "SUPER,f,togglefullscreen"
         "SUPER+CTRL,space,togglefloating"

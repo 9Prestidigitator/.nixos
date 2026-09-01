@@ -77,6 +77,19 @@
         [ $(tput cols) -ge 78 ] && [ $(tput cols) -lt 110 ] && fastfetch --file-raw "${logoSmall}"  --logo-padding-top 3 --logo-padding-left $((($(tput cols) - 78) / 2)) --logo-padding-right 2
         [ $(tput cols) -lt 78 ] && fastfetch --logo none
       '';
+
+      fish.interactiveShellInit = ''
+        clear
+        set -l columns (tput cols)
+
+        if test "$columns" -ge 120
+          fastfetch --file-raw "${logoLarge}" --logo-padding-left (math --scale=0 "($columns - 120) / 2")
+        else if test "$columns" -ge 78; and test "$columns" -lt 110
+          fastfetch --file-raw "${logoSmall}" --logo-padding-top 3 --logo-padding-left (math --scale=0 "($columns - 78) / 2") --logo-padding-right 2
+        else
+          fastfetch --logo none
+        end
+      '';
     };
 
     persist = {

@@ -14,6 +14,7 @@
 
       fish
       neovim
+      direnv
       fastfetch
 
       ghostty

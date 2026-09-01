@@ -48,6 +48,10 @@ in {
       trackpad_natural_scrolling = 1;
       mouse_accel_speed = -0.3;
 
+      devicerule = [
+        "name:SteelSeries SteelSeries Aerox 3 Keyboard,accel_profile:0"
+      ];
+
       tagrule = [
         "id:1,layout_name:monocle"
         "id:2,layout_name:scroller"

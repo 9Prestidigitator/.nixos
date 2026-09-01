@@ -13,8 +13,9 @@
       "CTRL+ALT,Delete,spawn,noctalia msg panel-toggle session"
       "NONE,Print,spawn,noctalia msg screenshot-region"
       "SHIFT,Print,spawn,noctalia msg screenshot-fullscreen"
+      "NONE,Super_L,spawn,noctalia msg panel-toggle control-center"
     ];
-    bindr = ["SUPER,Super_L,spawn,noctalia msg panel-toggle control-center"];
+
     switchbind = [
       "fold,spawn,noctalia msg session lock"
     ];
