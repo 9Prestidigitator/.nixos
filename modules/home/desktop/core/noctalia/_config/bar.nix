@@ -4,7 +4,7 @@
       order = ["default"];
       default = {
         smart_auto_hide = true;
-        layer = "overlay";
+        layer = "smart";
         scale = 1;
         background_opacity = lib.mkDefault 1;
         thickness = 34;
