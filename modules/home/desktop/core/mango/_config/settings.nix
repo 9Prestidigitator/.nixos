@@ -46,6 +46,11 @@ in {
 
       tap_to_click = 1;
       trackpad_natural_scrolling = 1;
+      mouse_accel_speed = -0.3;
+
+      devicerule = [
+        "name:SteelSeries SteelSeries Aerox 3 Keyboard,accel_profile:0"
+      ];
 
       tagrule = [
         "id:1,layout_name:monocle"
@@ -61,6 +66,8 @@ in {
         # "id:8,layout_name:vertical_scroller"
         # "id:9,layout_name:vertical_tile"
       ];
+
+      circle_layout = "scroller,monocle,tile,vertical_scroller";
 
       scroller_default_proportion = 0.8;
       scroller_proportion_preset = "0.5,0.8,1.0";

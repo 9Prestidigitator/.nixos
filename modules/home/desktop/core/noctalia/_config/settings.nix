@@ -90,7 +90,10 @@ in {
       enable_community_templates = false;
     };
 
-    wallpaper.transition_on_startup = true;
+    wallpaper = {
+      directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
+      transition_on_startup = true;
+    };
 
     brightness.enable_ddcutil = true;
   };

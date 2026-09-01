@@ -20,6 +20,7 @@ in {
         "SUPER,Return,spawn,${terminal}"
         "SUPER,q,killclient"
         "SUPER+SHIFT,r,reload_config"
+        "SUPER+SHIFT,Escape,sleep_monitor,all"
 
         "SUPER,f,togglefullscreen"
         "SUPER+CTRL,space,togglefloating"
@@ -71,8 +72,8 @@ in {
         "SUPER,grave,view,-1"
         "SUPER,Tab,focuslast"
 
-        "SUPER,n,switch_layout"
-        "SUPER+SHIFT,n,setlayout,scroller"
+        "SUPER,w,switch_layout"
+        "SUPER+SHIFT,s,setlayout,scroller"
         "SUPER,minus,switch_proportion_preset,prev"
         "SUPER,equal,switch_proportion_preset,next"
 
@@ -180,8 +181,8 @@ in {
     ];
 
     axisbind = [
-      "SUPER,UP,viewtoleft_have_client"
-      "SUPER,DOWN,viewtoright_have_client"
+      "SUPER,UP,viewtoleft,0"
+      "SUPER,DOWN,viewtoright,0"
     ];
   };
 }
