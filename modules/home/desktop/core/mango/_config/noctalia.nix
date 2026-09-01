@@ -20,7 +20,7 @@
     ];
 
     keymode = {
-      noctalia.bind = [
+      noctalia.bindc = [
         "NONE,b,spawn,noctalia msg bluetooth-toggle"
         "NONE,b,setkeymode,default"
         "SHIFT,b,spawn,noctalia msg bar-toggle"
@@ -49,17 +49,17 @@
         "NONE,Return,setkeymode,default"
       ];
 
-      "noctalia-control-center".bind = [
+      "noctalia-control-center".bindc = [
         "NONE,a,spawn,noctalia msg panel-toggle control-center audio"
         "NONE,a,setkeymode,default"
         "NONE,b,spawn,noctalia msg panel-toggle control-center bluetooth"
         "NONE,b,setkeymode,default"
         "NONE,c,spawn,noctalia msg panel-toggle control-center calendar"
         "NONE,c,setkeymode,default"
+        "NONE,e,spawn,noctalia msg panel-toggle control-center network"
+        "NONE,e,setkeymode,default"
         "NONE,m,spawn,noctalia msg panel-toggle control-center system"
         "NONE,m,setkeymode,default"
-        "NONE,n,spawn,noctalia msg panel-toggle control-center network"
-        "NONE,n,setkeymode,default"
         "NONE,p,spawn,noctalia msg panel-toggle control-center power"
         "NONE,p,setkeymode,default"
         "NONE,s,spawn,noctalia msg panel-toggle control-center screen-time"
@@ -72,13 +72,15 @@
         "NONE,Return,setkeymode,default"
       ];
 
-      "noctalia-plugins".bind = [
+      "noctalia-plugins".bindc = [
         "NONE,1,spawn,noctalia msg yuuto/calculator:panel"
         "NONE,1,setkeymode,default"
         "NONE,a,spawn,noctalia msg panel-toggle blackbartblues/audio-switcher:audio-switcher"
         "NONE,a,setkeymode,default"
         "SHIFT,a,spawn,noctalia msg panel-toggle cleboost/anilist:library"
         "SHIFT,a,setkeymode,default"
+        "NONE,c,spawn,noctalia msg panel-toggle oldirtty/color_picker:panel"
+        "NONE,c,setkeymode,default"
         "NONE,d,spawn,noctalia msg panel-toggle gustav0ar/drive-health:drives"
         "NONE,d,setkeymode,default"
         "NONE,f,spawn,noctalia msg panel-toggle nightwatch75/file-search:panel"
@@ -91,8 +93,6 @@
         "NONE,m,setkeymode,default"
         "NONE,n,spawn,noctalia msg panel-toggle noctalia/notes:panel"
         "NONE,n,setkeymode,default"
-        "NONE,p,spawn,noctalia msg panel-toggle oldirtty/color_picker:panel"
-        "NONE,p,setkeymode,default"
         "SHIFT,p,spawn,noctalia msg panel-toggle rxtsel/portctl:panel"
         "SHIFT,p,setkeymode,default"
         "NONE,q,spawn,noctalia msg panel-toggle yocraft/qrcode:panel"
