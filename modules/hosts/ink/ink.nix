@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      niri
+      mango
 
       chromium
       music-production
