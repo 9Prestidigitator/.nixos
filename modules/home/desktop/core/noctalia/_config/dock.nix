@@ -13,6 +13,7 @@
     labwcEnabled = options ? wayland.windowManager.labwc.enable && config.wayland.windowManager.labwc.enable;
     swayEnabled = options ? wayland.windowManager.sway.enable && config.wayland.windowManager.sway.enable;
     i3Enabled = osConfig ? programs.i3.enable && osConfig.programs.i3.enable;
+
     mangoImage = pkgs.fetchurl {
       url = "https://raw.githubusercontent.com/mangowm/mango/main/assets/mango-transparency-256.png";
       hash = "sha256-7/WgDEk2qQHIVSWtH/4E52Pl4D7tZ8WfZnzGquewI2o=";
@@ -44,25 +45,7 @@
     margin_edge = 7;
     reserve_space = false;
 
-    # niri: "niri"
-    # umbriel: "ghost-2"
-    # mango-wm: "https://github.com/mangowm/mango/blob/main/assets/mango-transparency-256.png"
-    # labwc: "https://avatars.githubusercontent.com/u/93831657?s=60&v=4"
-    # sway: "https://github.com/swaywm/sway/blob/master/assets/Sway_Tree.png"
-    # i3: "https://avatars.githubusercontent.com/u/7904352?s=60&v=4"
-    # otherwise: grid-dots
-
-    launcher_icon =
-      if niriEnabled then "niri"
-      else if umbrielEnabled then "ghost-2"
-      else "grid-dots";
     launcher_position = "start";
-    launcher_custom_image =
-      if mangoEnabled then mangoImage
-      else if labwcEnabled then labwcImage
-      else if swayEnabled then swayImage
-      else if i3Enabled then i3Image
-      else "";
 
     pinned =
       lib.optional (options ? desktop.terminal.name && config.desktop.terminal.name != null)
@@ -77,5 +60,20 @@
       ++ lib.optional (options ? programs.nixcord.enable && config.programs.nixcord.enable) "discord"
       ++ lib.optional (lib.elem pkgs.signal-desktop osConfig.environment.systemPackages) "signal"
       ++ lib.optional (options ? programs.spicetify && config.programs.spicetify.enable) "spotify";
-  };
+  }
+    // (if niriEnabled then {
+      launcher_icon = "niri";
+    } else if umbrielEnabled then {
+      launcher_icon = "ghost-2";
+    } else if mangoEnabled then {
+      launcher_custom_image = mangoImage;
+    } else if labwcEnabled then {
+      launcher_custom_image = labwcImage;
+    } else if swayEnabled then {
+      launcher_custom_image = swayImage;
+    } else if i3Enabled then {
+      launcher_custom_image = i3Image;
+    } else {
+      launcher_icon = "grid-dots";
+    });
 }
