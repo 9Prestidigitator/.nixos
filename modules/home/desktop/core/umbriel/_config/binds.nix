@@ -34,8 +34,8 @@
       "Mod+E" = "scratchpad-toggle";
       "Mod+Shift+E" = "scratchpad-focus-next";
 
-      "Mod+Z" = "window-center";
-      "Mod+Shift+Z" = "column-center";
+      "Mod+Shift+Z" = "window-center";
+      "Mod+Z" = "column-center";
 
       "Mod+S" = {
         action = "submap:layout";
@@ -116,8 +116,10 @@
 
       "Mod+Alt+H" = "workspace-move-to-output-left";
       "Mod+Alt+L" = "workspace-move-to-output-right";
-      "Mod+Alt+K" = "workspace-move-to-output-up";
-      "Mod+Alt+J" = "workspace-move-to-output-down";
+      # "Mod+Alt+K" = "workspace-move-to-output-up";
+      # "Mod+Alt+J" = "workspace-move-to-output-down";
+      "Mod+Alt+K" = "workspace-move-up";
+      "Mod+Alt+J" = "workspace-move-down";
 
       "Mod+Slash" = "cheatsheet-toggle";
       "Mod+Shift+P" = "dpms-off";

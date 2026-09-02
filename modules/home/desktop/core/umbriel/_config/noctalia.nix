@@ -13,6 +13,7 @@ in {
       keybinds = {
         "Mod" = spawn (msg "panel-toggle control-center");
         "Mod+Space" = spawn (msg "panel-toggle launcher");
+        "Mod,Escape" = msg "session lock";
         "Mod+N" = spawn (mkWlrWhichKeyMenuWith {
           name = "Noctalia";
           inhibitCompositorKeyboardShortcuts = false;
@@ -223,7 +224,7 @@ in {
         });
       };
       events = {
-        lid_close = "noctalia msg session lock";
+        lid_close = msg "session lock";
       };
     };
   };
