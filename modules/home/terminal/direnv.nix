@@ -6,7 +6,6 @@
 
       config.global = {
         hide_env_diff = true;
-        log_filter = "^$";
       };
     };
     persist.directories = [".local/share/direnv"];
