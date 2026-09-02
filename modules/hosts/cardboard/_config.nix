@@ -8,11 +8,11 @@
 
         plasma
 
-        bash
+        fish
         neovim
         fastfetch
 
-        kitty
+        ghostty
         nautilus
         mpv
         spotify
@@ -32,6 +32,7 @@
         neovim
         fastfetch
 
+        ghostty
         nautilus
         mpv
         spotify
