@@ -8,8 +8,10 @@
   hostName = osConfig.networking.hostName;
 
   terminalCommand = title: command:
-    if config.desktop.terminal.name == "ghostty" then "ghostty --title=${title} -e ${command}"
-    else if config.desktop.terminal.name == "kitty" then "kitty --title ${title} -e ${command}"
+    if config.desktop.terminal.name == "ghostty"
+    then "ghostty --title=${title} -e ${command}"
+    else if config.desktop.terminal.name == "kitty"
+    then "kitty --title ${title} -e ${command}"
     else "${config.desktop.terminal.name} -e ${command}";
 
   wlrMenu = name: menu:
@@ -177,7 +179,6 @@
       }
     ]
   );
-
 in {
   programs.umbriel = {
     settings.keybinds = {
