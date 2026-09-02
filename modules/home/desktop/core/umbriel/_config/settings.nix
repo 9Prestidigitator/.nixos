@@ -41,6 +41,7 @@
           natural_scroll = true;
         };
         mouse = {
+          accel_profile = "flat"; # disables speed-dependent acceleration
           sensitivity = 0.0; # pointer speed, -1.0 to 1.0
           scroll_wheel_step = 60; # 1-1000
         };
