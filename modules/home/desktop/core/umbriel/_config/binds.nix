@@ -300,6 +300,8 @@ in {
       "Mod+Alt+K" = "workspace-move-up";
       "Mod+Alt+J" = "workspace-move-down";
 
+      "Mod+MouseMiddle" = "layout-scroll-drag";
+
       "Mod+Slash" = "cheatsheet-toggle";
       "Mod+Shift+P" = "dpms-off";
       "Ctrl+Alt+Delete" = "session-quit";
