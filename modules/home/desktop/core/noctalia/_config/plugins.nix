@@ -1,5 +1,9 @@
 {
-  programs.noctalia.settings = {config, osConfig, ...}: {
+  config,
+  osConfig,
+  ...
+}: {
+  programs.noctalia.settings = {
     plugins = {
       source = [
         {
