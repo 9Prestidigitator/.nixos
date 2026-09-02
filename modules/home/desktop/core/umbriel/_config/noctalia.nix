@@ -13,7 +13,7 @@ in {
       keybinds = {
         "Mod" = spawn (msg "panel-toggle control-center");
         "Mod+Space" = spawn (msg "panel-toggle launcher");
-        "Mod,Escape" = msg "session lock";
+        "Mod,Escape" = spawn (msg "session lock");
         "Mod+N" = spawn (mkWlrWhichKeyMenuWith {
           name = "Noctalia";
           inhibitCompositorKeyboardShortcuts = false;

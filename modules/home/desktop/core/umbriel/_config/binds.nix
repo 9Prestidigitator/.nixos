@@ -1,11 +1,189 @@
 {
   mkWlrWhichKeyMenuWith,
   config,
+  lib,
+  osConfig,
   ...
-}: {
+}: let
+  hostName = osConfig.networking.hostName;
+
+  terminalCommand = title: command:
+    if config.desktop.terminal.name == "ghostty" then "ghostty --title=${title} -e ${command}"
+    else if config.desktop.terminal.name == "kitty" then "kitty --title ${title} -e ${command}"
+    else "${config.desktop.terminal.name} -e ${command}";
+
+  wlrMenu = name: menu:
+    mkWlrWhichKeyMenuWith {
+      inherit name menu;
+      inhibitCompositorKeyboardShortcuts = false;
+    };
+
+  applicationsMenu = wlrMenu "Umbriel-Applications" [
+    {
+      key = "a";
+      desc = "Audio";
+      submenu = [
+        {
+          key = "b";
+          desc = "Bitwig";
+          cmd = "bitwig-studio";
+        }
+        {
+          key = "j";
+          desc = "QJackCtl";
+          cmd = "qjackctl";
+        }
+        {
+          key = "q";
+          desc = "qpwgraph";
+          cmd = "qpwgraph";
+        }
+        {
+          key = "r";
+          desc = "Reaper";
+          cmd = "reaper";
+        }
+        {
+          key = "s";
+          desc = "Spotify";
+          cmd = "spotify";
+        }
+      ];
+    }
+    {
+      key = "b";
+      desc = "Brave";
+      cmd = "brave";
+    }
+    {
+      key = "c";
+      desc = "Communications";
+      submenu = [
+        {
+          key = "d";
+          desc = "Discord";
+          cmd = "discord";
+        }
+        {
+          key = "s";
+          desc = "Signal";
+          cmd = "signal-desktop";
+        }
+      ];
+    }
+    {
+      key = "e";
+      desc = "Files";
+      cmd = "nautilus -w";
+    }
+    {
+      key = "m";
+      desc = "Moonlight";
+      cmd = "moonlight";
+    }
+    {
+      key = "n";
+      desc = "Neovim";
+      cmd = terminalCommand "Neovim" "nvim";
+    }
+    {
+      key = "o";
+      desc = "Obsidian";
+      cmd = "obsidian";
+    }
+    {
+      key = "s";
+      desc = "Steam";
+      cmd = "steam";
+    }
+    {
+      key = "t";
+      desc = "Terminal";
+      submenu = [
+        {
+          key = "b";
+          desc = "btop";
+          cmd = terminalCommand "btop" "bash -lc 'btop'";
+        }
+        {
+          key = "k";
+          desc = config.desktop.terminal.name;
+          cmd = config.desktop.terminal.name;
+        }
+        {
+          key = "l";
+          desc = "leetcode";
+          cmd = terminalCommand "leetcode" "bash -lc 'nvim leetcode.nvim'";
+        }
+        {
+          key = "n";
+          desc = "Open Notes";
+          cmd = terminalCommand "Notes" "sh -c 'cd ~/notes && nix develop -c sh -c nvim'";
+        }
+        {
+          key = "t";
+          desc = "tmux";
+          cmd = terminalCommand "tmux" "bash -lc 'tmux a || tmux'";
+        }
+      ];
+    }
+  ];
+
+  vpnMenu = wlrMenu "Umbriel-VPN" (
+    [
+      {
+        key = "m";
+        desc = "Mullvad";
+        submenu = [
+          {
+            key = "m";
+            desc = "Open mullvad panel";
+            cmd = "mullvad-vpn";
+          }
+          {
+            key = "c";
+            desc = "Connect mullvad";
+            cmd = "mullvad connect";
+          }
+          {
+            key = "d";
+            desc = "Disconnect mullvad";
+            cmd = "mullvad disconnect";
+          }
+          {
+            key = "r";
+            desc = "Reconnect mullvad";
+            cmd = "mullvad reconnect";
+          }
+        ];
+      }
+    ]
+    ++ lib.optionals (hostName == "papyr") [
+      {
+        key = "w";
+        desc = "wg0";
+        submenu = [
+          {
+            key = "d";
+            desc = "Stop wg0";
+            cmd = "pkexec systemctl stop wg-quick-wg0.service";
+          }
+          {
+            key = "c";
+            desc = "Start wg0";
+            cmd = "pkexec systemctl start wg-quick-wg0.service";
+          }
+        ];
+      }
+    ]
+  );
+
+in {
   programs.umbriel = {
     settings.keybinds = {
       "Mod+Return" = "spawn:${config.desktop.terminal.name}";
+      "Mod+G" = "spawn:${applicationsMenu}";
+      "Mod+V" = "spawn:${vpnMenu}";
 
       "Mod+Left" = "window-focus-left";
       "Mod+Right" = "window-focus-right";
