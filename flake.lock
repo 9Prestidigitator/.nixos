@@ -1601,11 +1601,11 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1788359729,
-        "narHash": "sha256-I5Ve1KXOguZSzzXh8fniFnOu7DRnlinbkic9g/HugOs=",
+        "lastModified": 1788360573,
+        "narHash": "sha256-Dek0jWBevHBgCJFXXz6mmMGvxXHhm7y8urnG8cRN998=",
         "ref": "zones",
-        "rev": "8acfcc1d4a55bcb25633210bf74af700a1f1639c",
-        "revCount": 764,
+        "rev": "4d4686058f046341373284bf83296ac71dde8302",
+        "revCount": 765,
         "type": "git",
         "url": "https://github.com/9prestidigitator/umbriel.git"
       },
