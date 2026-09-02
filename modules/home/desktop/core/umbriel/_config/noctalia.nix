@@ -14,6 +14,7 @@ in {
         "Mod" = spawn (msg "panel-toggle control-center");
         "Mod+Space" = spawn (msg "panel-toggle launcher");
         "Mod+Escape" = spawn (msg "session lock");
+        "Mod+Alt+Delete" = spawn (msg "panel-toggle session");
         "Mod+N" = spawn (mkWlrWhichKeyMenuWith {
           name = "Noctalia";
           inhibitCompositorKeyboardShortcuts = false;
