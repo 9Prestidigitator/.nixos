@@ -13,8 +13,13 @@ in {
       keybinds = {
         "Mod" = spawn (msg "panel-toggle control-center");
         "Mod+Space" = spawn (msg "panel-toggle launcher");
+
         "Mod+Escape" = spawn (msg "session lock");
         "Mod+Alt+Delete" = spawn (msg "panel-toggle session");
+
+        "Print" = spawn (msg "screenshot-region");
+        "Ctrl+Print" = spawn (msg "screenshot-fullscreen");
+
         "Mod+N" = spawn (mkWlrWhichKeyMenuWith {
           name = "Noctalia";
           inhibitCompositorKeyboardShortcuts = false;
@@ -224,9 +229,7 @@ in {
           ];
         });
       };
-      events = {
-        lid_close = msg "session lock";
-      };
+      events.lid_close = msg "session lock";
     };
   };
 }
