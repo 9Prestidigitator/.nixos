@@ -1135,11 +1135,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787273434,
-        "narHash": "sha256-eqP5PeN3ZTnIOoNsk33TCWq8xSqHzrlpCe6o8uorBnc=",
+        "lastModified": 1788316530,
+        "narHash": "sha256-joyID4Vm7ByrmGnw/iSDkIWUoR+a2Jtx7M8gfisc6hk=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "f36061bd3b1dbf6ba63c730ed007cb4e013e1c53",
+        "rev": "fe0a14502385458106e5683f5ab151e1d867db4e",
         "type": "github"
       },
       "original": {
