@@ -2,7 +2,6 @@
   flake.nixosModules.secret-service = {
     config,
     lib,
-    pkgs,
     ...
   }: let
     cfg = config.secretService;
