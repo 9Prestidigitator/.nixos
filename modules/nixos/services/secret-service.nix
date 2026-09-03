@@ -23,10 +23,7 @@
 
     pamConfig = lib.genAttrs pamServices (_: {
       enableGnomeKeyring = lib.mkForce isGnomeKeyring;
-      kwallet = {
-        enable = lib.mkForce isKdeWallet;
-        package = pkgs.kdePackages.kwallet-pam;
-      };
+      kwallet.enable = lib.mkForce isKdeWallet;
     });
   in {
     options.secretService.provider = lib.mkOption {
