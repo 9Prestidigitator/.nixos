@@ -193,8 +193,8 @@ in {
 
       "Mod+H" = "window-focus-left";
       "Mod+L" = "window-focus-right";
-      "Mod+K" = "window-focus-up";
-      "Mod+J" = "window-focus-down";
+      "Mod+K" = "window-focus-or-workspace-up";
+      "Mod+J" = "window-focus-or-workspace-down";
 
       "Mod+Q" = "window-close";
       "Mod+O" = "overview-toggle";
@@ -206,7 +206,9 @@ in {
       "Mod+Alt+R" = "window-cycle-height";
       "Mod+Alt+Shift+R" = "window-cycle-height-back";
       "Mod+P" = "window-toggle-pinned";
-      "Mod+Grave" = "window-focus-last";
+
+      "Mod+Grave" = "workspace-focus-last";
+      "Mod+Tab" = "window-focus-last";
 
       "Mod+T" = "window-move-to-scratchpad";
       "Mod+Shift+T" = "window-restore-from-scratchpad";
@@ -262,6 +264,9 @@ in {
       "Mod+Ctrl+Right" = "column-move-right";
       "Mod+Ctrl+Up" = "window-move-up";
       "Mod+Ctrl+Down" = "window-move-down";
+
+      "Mod+Comma" = "window-consume-or-expel-left";
+      "Mod+Period" = "window-consume-or-expel-right";
 
       "Mod+Ctrl+H" = "column-move-left";
       "Mod+Ctrl+L" = "column-move-right";

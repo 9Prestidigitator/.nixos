@@ -54,7 +54,7 @@
       "avivbintangaringga/nix-monitor" = {
         show_text = false;
         clean_command = "nh clean all";
-        update_command = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName} --update";
+        update_command = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName} --update nixpkgs";
         panel_placement = "attached";
       };
       "noctalia/notes" = {

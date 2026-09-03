@@ -77,7 +77,7 @@
         };
       };
       workspaces = {
-        back_and_forth = false;
+        back_and_forth = true;
         empty_above = false;
       };
       overview = {
@@ -114,7 +114,7 @@
           enabled = true;
           duration_ms = 150;
           curve = "easeout";
-          style = "popin"; # popin, zoom, slide, fade, none
+          style = "slide"; # popin, zoom, slide, fade, none
           scale = 0.85; # 0.1-1.0, used by popin
         };
         windows_out = {
