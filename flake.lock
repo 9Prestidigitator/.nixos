@@ -432,11 +432,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1788364750,
-        "narHash": "sha256-dAhRpI3zBfq6UTCeItVSzionV84NtzYqSdkgy9NP7ZY=",
+        "lastModified": 1788408707,
+        "narHash": "sha256-ZtYPlJTkhyHTNXWR77WHfKmCEDGGz6NQ3Avgby7c+4w=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "98818a61573f5ece1ea0cb5f98f179ef2061e6eb",
+        "rev": "1c6b6b10ba03aab16ab88a04728e8d071e34f2eb",
         "type": "github"
       },
       "original": {
@@ -459,11 +459,11 @@
         "pulse-visualizer": "pulse-visualizer"
       },
       "locked": {
-        "lastModified": 1788383336,
-        "narHash": "sha256-q6TUV7000BonuV6M1oTxSEiV+IHRtCqyUqIHQvGgF/Y=",
+        "lastModified": 1788416661,
+        "narHash": "sha256-SbDOuW4gQ9Xqwx4QAbAcGYqSM6G4G7Kj/5AhZc/ea+Q=",
         "owner": "9Prestidigitator",
         "repo": "maxpkgs",
-        "rev": "9b423a8810bdcc4671236c4ca490a6bf1a832bc8",
+        "rev": "8e8319e460970c77a4f1a8dad614ef0e6ab399e7",
         "type": "github"
       },
       "original": {
@@ -785,11 +785,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1788321994,
-        "narHash": "sha256-9o4DrF6Q9nU/Fe7UEof8PaN+82x7H4i1ojQsrZ54O/w=",
+        "lastModified": 1788408265,
+        "narHash": "sha256-0HEWTgmgdqQ/4GMSH72FdLQMJZV1Itn83lWOc1WYYcU=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "144d8fbe6d3b9fd6b1bc15e06ca6b71676c51015",
+        "rev": "32f3c1f02cf722976c5053ec993119ad6ef870b1",
         "type": "github"
       },
       "original": {
@@ -810,11 +810,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1788375003,
-        "narHash": "sha256-v7NEDMGu/m/+C28MjnIU2GECqlJ+NWcpvdmydhteQwo=",
+        "lastModified": 1788402825,
+        "narHash": "sha256-Sc40FzZ0gMmHB85IOpq6u62VLn+6onXnnE4QmniHmrY=",
         "owner": "4evy",
         "repo": "nixcord",
-        "rev": "26539622bdeda9512d8a33252e3848d0e054631e",
+        "rev": "4668e1f90d09ff1c75b3e2e88a45e681c1c2a72b",
         "type": "github"
       },
       "original": {
@@ -931,11 +931,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1788179007,
-        "narHash": "sha256-maQBa7XmWJ+a6te4QwF++R1FIXUrjvki0AtGOOhyZn0=",
-        "rev": "34ab99075ac4f7e40cf037eef32cb1c360bb85e9",
+        "lastModified": 1788316716,
+        "narHash": "sha256-7VBL4mi5M72FJtZOQt7SbCGWpGbsuH1ga6Zeu8bjtWk=",
+        "rev": "3ed67ec0a4d3c7ab4ae1f04f8ee8df07bfa506a2",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1064949.34ab99075ac4/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1066106.3ed67ec0a4d3/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -1300,11 +1300,11 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1787568509,
-        "narHash": "sha256-Ad1q/OuCeEdBBeK5yttG4SqOAmhRoNYf0J381sHV2w0=",
+        "lastModified": 1788394222,
+        "narHash": "sha256-5EpW81/2lxRmd8dLAxqA9gT4dsHF4WCKTVLbvc6CZ80=",
         "owner": "different-name",
         "repo": "steam-config-nix",
-        "rev": "e8c99d8e4aacf7e1854aa0196358b1b1c3b55067",
+        "rev": "11a11d36dce95d5c2e31b9c1506c77bca4471272",
         "type": "github"
       },
       "original": {
@@ -1579,11 +1579,11 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1788383575,
-        "narHash": "sha256-GHIBf5rWBe8L1z9q4ewfLE/+k5TlLP70VMmGqHO0Pz0=",
+        "lastModified": 1788405257,
+        "narHash": "sha256-+1BOzUs90KhgQPS8dwPyn0CIAI++7WlrYRjhN3i9c0w=",
         "ref": "refs/heads/main",
-        "rev": "16c7cd87256d5133bf04598d706bcd96aa990253",
-        "revCount": 761,
+        "rev": "8235b9e0cb97725bcaec9fe1757f5597c847b7e6",
+        "revCount": 763,
         "type": "git",
         "url": "https://github.com/noctalia-dev/umbriel"
       },
