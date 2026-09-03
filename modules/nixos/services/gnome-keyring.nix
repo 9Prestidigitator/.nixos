@@ -10,21 +10,46 @@
 
     services.gnome.gnome-keyring.enable = lib.mkForce true;
 
-    programs.seahorse.enable = true;
-
-    environment.etc."xdg/kwalletrc".text = lib.generators.toINI {} {
-      KSecretD.Enabled = false;
+    programs = {
+      seahorse.enable = true;
+      ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     };
 
-    # A mutable user kwalletrc takes precedence over /etc/xdg/kwalletrc.
-    # Reassert the selected provider before each graphical session.
+    environment.etc."xdg/kwalletrc".text = lib.generators.toINI {} {
+      Wallet = {
+        Enabled = false;
+        apiEnabled = false;
+      };
+      KSecretD.Enabled = false;
+      "org.freedesktop.secrets".apiEnabled = false;
+    };
+
+    services.dbus.packages = [
+      (pkgs.writeTextDir "share/dbus-1/session.d/disable-kwallet.conf" ''
+        <busconfig>
+          <policy context="default">
+            <deny own="org.kde.kwalletd5"/>
+            <deny own="org.kde.kwalletd6"/>
+          </policy>
+        </busconfig>
+      '')
+    ];
+
+    security.pam.services.kde.kwallet.enable = lib.mkForce false;
+
     systemd.user.services.select-secret-service-provider = {
       description = "Select GNOME Keyring as the Secret Service provider";
       wantedBy = ["graphical-session-pre.target"];
       before = ["graphical-session-pre.target"];
       serviceConfig = {
         Type = "oneshot";
-        ExecStart = "${lib.getExe' pkgs.kdePackages.kconfig "kwriteconfig6"} --file kwalletrc --group KSecretD --key Enabled --type bool false";
+        ExecStart = pkgs.writeShellScript "disable-kde-wallet" ''
+          kwriteconfig=${lib.getExe' pkgs.kdePackages.kconfig "kwriteconfig6"}
+          "$kwriteconfig" --file kwalletrc --group Wallet --key Enabled --type bool false
+          "$kwriteconfig" --file kwalletrc --group Wallet --key apiEnabled --type bool false
+          "$kwriteconfig" --file kwalletrc --group KSecretD --key Enabled --type bool false
+          "$kwriteconfig" --file kwalletrc --group org.freedesktop.secrets --key apiEnabled --type bool false
+        '';
         RemainAfterExit = true;
       };
     };

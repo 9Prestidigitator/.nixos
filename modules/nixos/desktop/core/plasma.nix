@@ -31,8 +31,6 @@
         kaccounts-providers
         korganizer
         merkuro
-        signon-kwallet-extension
-
         inputs.kwin-effects-glass.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.kwin-effects-better-blur-dx.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];

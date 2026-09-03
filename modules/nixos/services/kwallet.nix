@@ -25,6 +25,7 @@
       systemPackages = with pkgs.kdePackages; [
         kwallet
         kwalletmanager
+        signon-kwallet-extension
       ];
       etc."xdg/kwalletrc".text = lib.generators.toINI {} {
         Wallet = {
