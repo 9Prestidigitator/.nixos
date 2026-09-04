@@ -1,10 +1,10 @@
 {
   flake.nixosModules.media = {pkgs, ...}: {
-    services.printing.drivers = [
-      (pkgs.hplipWithPlugin.override {
-        python3Packages = pkgs.python313Packages;
-      })
-    ];
+    # services.printing.drivers = [
+    #   (pkgs.hplipWithPlugin.override {
+    #     python3Packages = pkgs.python313Packages;
+    #   })
+    # ];
 
     environment.systemPackages = with pkgs; [
       libbluray-full
@@ -18,7 +18,7 @@
       easytag
       mpv
       imv
-      # makemkv
+      makemkv
       handbrake
       ffmpeg
       rmpc

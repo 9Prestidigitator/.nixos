@@ -35,7 +35,7 @@
       serum2
       dexed
 
-      carla
+      # carla
       lsp-plugins
       x42-avldrums
       x42-plugins
