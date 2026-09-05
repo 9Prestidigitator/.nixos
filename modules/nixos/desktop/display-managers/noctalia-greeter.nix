@@ -2,7 +2,7 @@
   flake.nixosModules.noctalia-greeter = {
     services.displayManager.noctalia-greeter = {
       enable = true;
-      settings.cursor.size = 48;
+      settings.cursor.size = 24;
     };
 
     persist.directories = [
