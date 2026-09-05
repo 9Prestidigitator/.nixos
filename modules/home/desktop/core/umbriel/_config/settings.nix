@@ -83,6 +83,7 @@
       overview = {
         zoom = 0.3;
         background_blur = true;
+        workspace_wallpaper = false;
       };
       hot_corners = {
         top_left = {

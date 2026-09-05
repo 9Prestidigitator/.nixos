@@ -34,7 +34,11 @@
         default_floating = true;
       }
       {
-        match.app_id = "^(steam_proton|steam_app.*|overwatch|overwatch\\.exe)$";
+        match.content_type = "game";
+        vrr = "always";
+      }
+      {
+        match.xdg_tag = "^proton-game$";
         default_fullscreen = true;
       }
       {

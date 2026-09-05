@@ -308,23 +308,44 @@ in {
       "Mod+MouseMiddle" = "layout-scroll-drag";
 
       "Mod+Slash" = "cheatsheet-toggle";
-      "Mod+Shift+P" = "dpms-off";
       "Ctrl+Alt+Delete" = "session-quit";
+      "Mod+Shift+P" = {
+        action = "dpms-off";
+        allow_when_locked = true;
+      };
 
-      "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-      "XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-      "Mod+XF86AudioMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+      "XF86AudioRaiseVolume" = {
+        action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+        allow_when_locked = true;
+      };
+      "XF86AudioLowerVolume" = {
+        action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+        allow_when_locked = true;
+      };
+      "XF86AudioMute" = {
+        action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        allow_when_locked = true;
+      };
 
-      "XF86AudioPlay" = "spawn:playerctl play-pause";
-      "XF86AudioNext" = "spawn:playerctl next";
-      "XF86AudioPrev" = "spawn:playerctl prev";
+      "XF86AudioPlay" = {
+        action = "spawn:playerctl play-pause";
+        allow_when_locked = true;
+      };
+      "XF86AudioNext" = {
+        action = "spawn:playerctl next";
+        allow_when_locked = true;
+      };
+      "XF86AudioPrev" = {
+        action = "spawn:playerctl prev";
+        allow_when_locked = true;
+      };
 
       "XF86MonBrightnessDown" = {
-        action = "spawn:noctalia msg brightness-down 10";
+        action = "spawn:noctalia msg brightness-down 5";
         allow_when_locked = true;
       };
       "XF86MonBrightnessUp" = {
-        action = "spawn:noctalia msg brightness-up 10";
+        action = "spawn:noctalia msg brightness-up 5";
         allow_when_locked = true;
       };
     };
