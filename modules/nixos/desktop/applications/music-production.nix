@@ -51,6 +51,8 @@
       helm
       bespokesynth
       ysfx
+      vcv-rack
+      vital
 
       # Utilities
       musescore
