@@ -2,6 +2,7 @@
   reaperGeneral,
   reaperAppearance,
   reaperMouse,
+  reaperEditingBehavior,
   ...
 }: {
   programs.reaper = {
@@ -118,6 +119,24 @@
               (set contexts.arrange.middleDrag modifiers.none (mouse 9))
               (set contexts.midiPianoRoll.leftClick modifiers.none (mouse 4))
             ];
+        };
+        midiEditor = {
+          oneMidiEditorPer = reaperEditingBehavior.midiEditorPer.project;
+          behaviorForOpenItemsInBuiltInMidiEditor = reaperEditingBehavior.openItemsInBuiltInMidiEditor.openAllSelectedMidiItems;
+          whenUsingOneMidiEditorPerProject = {
+            activeMidiItemFollowsSelectionChangesInArrangeView = {
+              enable = true;
+              type = reaperEditingBehavior.arrangeSelection.mediaItem;
+            };
+            selectionIsLinkedToVisibility = true;
+            selectionIsLinkedToEditability = true;
+            closeEditorWhenTheActiveItemIsDeletedInTheArrangeView = false;
+          };
+          avoid = {
+            settingItemsOnOtherTracksEditable = true;
+            settingItemsOnNonPlayingLanesVisible = true;
+          };
+          doubleClickOutsideTheBoundsOfAnyMediaItemToExtendTheNearestMedia = false;
         };
       };
 
