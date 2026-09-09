@@ -81,7 +81,7 @@
         height = 50;
         lengthMode = "fit";
         hiding = "dodgewindows";
-        opacity = "adaptive";
+        opacity = "translucent";
         floating = true;
 
         widgets = [
