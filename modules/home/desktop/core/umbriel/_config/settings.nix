@@ -18,11 +18,9 @@
           bottom = 0;
         };
         scrolling = {
-          direction = "horizontal";
           default_width_fraction = 0.5; # remove to let clients choose their initial width
           center_underfull_strip = true; # center the strip whenever it is narrower than the viewport
-          center_focused = false; # always center the focused column
-          expand_single_column = true; # fill lone column to viewport width
+          center_focused = "never"; # always center the focused column
         };
         dwindle = {
           preserve_split = false;
