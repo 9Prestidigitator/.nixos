@@ -19,8 +19,13 @@
       theme = {
         active = "Reapertips Theme.ReaperThemeZip";
         packages = [
-          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.smooth6-theme
           inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reapertips-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.smooth6-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.imperial-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.part-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reark-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reaclassical-theme
+          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.xraym-analog-theme
         ];
       };
 

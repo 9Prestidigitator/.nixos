@@ -58,6 +58,10 @@ in {
             name = "Hackey-Machines";
             url = "https://github.com/joepvanlier/Hackey-Machines/raw/master/index.xml";
           }
+          {
+            name = "ReaSmoothPlayhead";
+            url = "https://github.com/Sakhnovkrg/ReaSmoothPlayheadReapack/raw/main/index.xml";
+          }
         ];
 
         packages = [
@@ -175,6 +179,11 @@ in {
             repository = "Hackey-Machines";
             category = "MachineView";
             name = "MachineView_exec.lua";
+          }
+          {
+            repository = "ReaSmoothPlayhead";
+            category = "Extensions";
+            name = "ReaSmoothPlayhead";
           }
         ];
 
