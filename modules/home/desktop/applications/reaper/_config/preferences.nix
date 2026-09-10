@@ -40,7 +40,7 @@
             preservePreviouslySavedVersionsOfProjectAsProjectTimestampRppBak = {
               enable = true;
               saveTimestampedBackupsToBackupsProjectSubdirectory = true;
-              limitAutoSavedBackupsToMostRecent = {
+              limitBackupsToMostRecent = {
                 enable = true;
                 count = 50;
                 unit = "copies";
