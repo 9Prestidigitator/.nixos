@@ -1,7 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.plasma = {
-    enable = true;
-
     kwin = {
       # virtualDesktops.rows = 3;
       effects.blur.enable = false;
@@ -44,8 +46,8 @@
 
     configFile = {
       kdeglobals.General = {
-        TerminalApplications = "kitty";
-        TerminalService = "kitty.desktop";
+        TerminalApplications = "${config.desktop.terminal.name}";
+        TerminalService = "${config.desktop.terminal.desktop}";
       };
       kwinrc = {
         Plugins = {

@@ -481,11 +481,11 @@
         "pulse-visualizer": "pulse-visualizer"
       },
       "locked": {
-        "lastModified": 1788927800,
-        "narHash": "sha256-HkOz76oxOMMqWaTnlpjj0yo7Q6OpZeVQq3wcCzzjvS8=",
+        "lastModified": 1789080996,
+        "narHash": "sha256-pSUWNnNuckJ3HsoAnvxaU9T2KUzRgq8v/QHUlkugrh4=",
         "owner": "9Prestidigitator",
         "repo": "maxpkgs",
-        "rev": "e253c1dbae87707c4556ad4598e06df8c82723ed",
+        "rev": "6d8a37f6cbf7283d1f6887807e43ca3d78a6194a",
         "type": "github"
       },
       "original": {
