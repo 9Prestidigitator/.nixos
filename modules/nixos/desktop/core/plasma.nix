@@ -14,6 +14,8 @@
       };
     };
 
+    desktop.explorer.name = "dolphin";
+
     environment = {
       systemPackages = with pkgs.kdePackages; [
         krfb
