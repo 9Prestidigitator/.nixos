@@ -13,7 +13,6 @@
         fastfetch
 
         ghostty
-        nautilus
         mpv
         spotify
         bluetooth
@@ -33,7 +32,6 @@
         fastfetch
 
         ghostty
-        nautilus
         mpv
         spotify
         discord

@@ -14,13 +14,17 @@
       };
     };
 
-    workspace = let
-      wallpaper-image = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/dharmx/walls/main/unsorted/a_black_and_white_swirly_pattern.jpg";
-        hash = "sha256-XyyEJX4j6ZFhla6ay0rcYnGqAb5quWmwE9PmFkzWJk0=";
-      };
-    in {
-      wallpaper = wallpaper-image;
+    # workspace = let
+    #   wallpaper-image = pkgs.fetchurl {
+    #     url = "https://raw.githubusercontent.com/dharmx/walls/main/unsorted/a_black_and_white_swirly_pattern.jpg";
+    #     hash = "sha256-XyyEJX4j6ZFhla6ay0rcYnGqAb5quWmwE9PmFkzWJk0=";
+    #   };
+    # in {
+    #   wallpaper = wallpaper-image;
+    # };
+
+    workspace.wallpaperCustomPlugin = {
+      plugin = "org.waywallen.kde";
     };
 
     kscreenlocker.appearance = let

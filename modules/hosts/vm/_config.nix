@@ -12,7 +12,6 @@
       fastfetch
 
       kitty
-      nautilus
 
       bluetooth
       stylix
