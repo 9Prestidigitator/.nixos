@@ -33,7 +33,7 @@
 
         "730" = {
           name = "counter-strike-2";
-          launchOptionsStr = "%command% -sdlaudiodriver pulse";
+          rawLaunchOptions = "%command% -sdlaudiodriver pulse";
         };
       };
     };

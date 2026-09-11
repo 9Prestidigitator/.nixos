@@ -5,7 +5,10 @@
       (inputs.import-tree ./_config)
     ];
 
-    programs.plasma.enable = true;
+    programs.plasma = {
+      enable = true;
+      # overrideConfig = true;
+    };
 
     desktop.explorer.name = "dolphin";
   };

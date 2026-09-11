@@ -42,6 +42,14 @@
           naturalScroll = true;
         }
       ];
+      mice = [
+        {
+          name = "SteelSeries SteelSeries Aerox 3";
+          vendorId = "1038";
+          productId = "1836";
+          accelerationProfile = "none";
+        }
+      ];
     };
 
     configFile = {

@@ -30,6 +30,15 @@
               };
             };
           }
+          {
+            pager = {
+              general = {
+                showApplicationIconsOnWindowOutlines = true;
+                navigationWrapsAround = true;
+                showOnlyCurrentScreen = true;
+              };
+            };
+          }
 
           "org.kde.plasma.panelspacer"
 
