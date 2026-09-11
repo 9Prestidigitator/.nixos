@@ -65,9 +65,29 @@
         Plugins = {
           dynamic_workspacesEnabled = true;
           desktopchangeosdEnabled = true;
-          better_blur_dxEnabled = true;
-          # Been having issues with glass lately
-          glassEnabled = false;
+          better_blur_dxEnabled = false;
+          glassEnabled = true;
+        };
+        Effect-blurplus = {
+          BlurMatching = false;
+          BlurNonMatching = true;
+          BlurDecorations = true;
+
+          TopCornerRadius = 5;
+          BottomCornerRadius = 3;
+          MenuCornerRadius = 5;
+
+          DecorationBlurStrength = 8;
+          DecorationNoiseStrength = 7;
+
+          RefractionStrength = 4;
+          RefractionEdgeSize = 12;
+          RefractionNormalPow = 11;
+          RefractionRGBFringing = 8;
+
+          PhysicallyBasedRefraction = true;
+          RefractionOffsetStrength = 4;
+          RefractionBevelIntensity = 10;
         };
         Effect-better-blur-dx = {
           BlurMatching = false;

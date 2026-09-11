@@ -122,7 +122,7 @@
       };
     };
     kwin-effects-glass = {
-      url = "github:4v3ngR/kwin-effects-glass";
+      url = "github:4v3ngR/kwin-effects-glass/20260627-1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kwin-effects-better-blur-dx = {

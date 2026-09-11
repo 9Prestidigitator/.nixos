@@ -36,7 +36,7 @@
 
       icons = lib.mkDefault {
         enable = true;
-        package = pkgs.kdePackages.breeze;
+        package = pkgs.kdePackages.breeze-icons;
         dark = "breeze-dark";
         light = "breeze";
       };
