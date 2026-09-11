@@ -22,18 +22,24 @@
     # in {
     #   wallpaper = wallpaper-image;
     # };
+    # kscreenlocker.appearance = let
+    #   lockscreen-image = pkgs.fetchurl {
+    #     url = "https://raw.githubusercontent.com/dharmx/walls/main/unsorted/a_black_background_with_purple_and_blue_spots.png";
+    #     hash = "sha256-ngvhgrV+ph30C1HrqITKJEgWP6UtsXi7HFOZ6qnL3qg=";
+    #   };
+    # in {
+    #   wallpaper = lockscreen-image;
+    # };
 
-    workspace.wallpaperCustomPlugin = {
-      plugin = "org.waywallen.kde";
-    };
-
-    kscreenlocker.appearance = let
-      lockscreen-image = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/dharmx/walls/main/unsorted/a_black_background_with_purple_and_blue_spots.png";
-        hash = "sha256-ngvhgrV+ph30C1HrqITKJEgWP6UtsXi7HFOZ6qnL3qg=";
+    kscreenlocker = {
+      appearance = {
+        alwaysShowClock = true;
+        showMediaControls = true;
+        wallpaperPictureOfTheDay = {
+          provider = "apod";
+          updateOverMeteredConnection = false;
+        };
       };
-    in {
-      wallpaper = lockscreen-image;
     };
 
     input = {
@@ -110,6 +116,12 @@
         Wayland = {
           VirtualKeyboardEnabled = true;
           EnablePrimarySelection = false;
+        };
+      };
+      kscreenlockerrc = {
+        "Greeter/Wallpaper/org.kde.potd/General" = {
+          FillMode = 2;
+          Color = "0,0,0";
         };
       };
     };

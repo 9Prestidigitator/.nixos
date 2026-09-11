@@ -18,18 +18,18 @@
         opacity = "adaptive";
         floating = true;
         widgets = [
-          {
-            iconTasks = {
-              launchers = [];
-              behavior = {
-                grouping.method = "none";
-                showTasks = {
-                  onlyInCurrentDesktop = true;
-                  onlyInCurrentScreen = true;
-                };
-              };
-            };
-          }
+          # {
+          #   iconTasks = {
+          #     launchers = [];
+          #     behavior = {
+          #       grouping.method = "none";
+          #       showTasks = {
+          #         onlyInCurrentDesktop = true;
+          #         onlyInCurrentScreen = true;
+          #       };
+          #     };
+          #   };
+          # }
           {
             pager = {
               general = {

@@ -3,7 +3,12 @@
     pkgs,
     lib,
     ...
-  }: {
+  }: let
+    plasmalogin-kcminputrc = pkgs.writeText "plasmalogin-kcminputrc" ''
+      [Keyboard]
+      NumLock=0
+    '';
+  in {
     services = {
       desktopManager.plasma6.enable = true;
       displayManager.plasma-login-manager.enable = true;
@@ -47,6 +52,12 @@
           "Greeter][Wallpaper][org.kde.image][General".Image = "file://${wallpaper-image}";
         };
     };
+
+    systemd.tmpfiles.rules = [
+      "d /var/lib/plasmalogin/.config 0755 plasmalogin plasmalogin -"
+      "d /var/lib/plasmalogin/.config/kdedefaults 0755 plasmalogin plasmalogin -"
+      "L+ /var/lib/plasmalogin/.config/kdedefaults/kcminputrc - - - - ${plasmalogin-kcminputrc}"
+    ];
 
     programs = {
       chromium.extensions = ["cimiefiiaegbelhefglklhhakcgmhkai"];

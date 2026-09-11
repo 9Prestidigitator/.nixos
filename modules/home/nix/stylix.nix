@@ -8,7 +8,8 @@
       targets = {
         spicetify.enable = false;
         neovim.enable = false;
-        kde.enable = false;
+        # Might explore more interesting kde ricing later
+        # kde.enable = false;
       };
     };
 
