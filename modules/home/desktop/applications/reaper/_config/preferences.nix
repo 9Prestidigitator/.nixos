@@ -28,7 +28,7 @@
 
       project = {
         trackSendDefaults = {
-          trackVolumeFaderGain = -10.0;
+          # trackVolumeFaderGain = -10.0;
           mainParentSend = true;
           showInMixer = true;
         };
