@@ -62,7 +62,7 @@
 
             autoSaveUnsavedProjectsToTemporaryFile = true;
             autoSaveInterval = {
-              minutes = 10;
+              minutes = 5;
               mode = "whenNotRecording";
             };
           };
