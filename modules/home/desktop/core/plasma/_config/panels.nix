@@ -127,7 +127,10 @@
                 sortingMethod = "manually";
                 minimizeActiveTaskOnClick = true;
                 middleClickAction = "newInstance";
-                grouping.method = "byProgramName";
+                grouping = {
+                  method = "byProgramName";
+                  clickAction = "showTooltips";
+                };
                 showTasks = {
                   onlyInCurrentDesktop = false;
                   onlyInCurrentScreen = false;

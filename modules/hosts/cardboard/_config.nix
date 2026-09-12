@@ -13,6 +13,7 @@
         fastfetch
 
         ghostty
+        brave
         mpv
         spotify
         bluetooth
@@ -32,6 +33,7 @@
         fastfetch
 
         ghostty
+        brave
         mpv
         spotify
         discord
