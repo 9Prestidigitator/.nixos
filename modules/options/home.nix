@@ -17,6 +17,12 @@
           default = [];
           description = "Home files to persist.";
         };
+
+        kdeFiles = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [];
+          description = "KDE/Plasma home files to persist as symlinks and pre-create as blank files.";
+        };
       };
 
       desktop = {

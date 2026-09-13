@@ -13,6 +13,7 @@
         fastfetch
 
         ghostty
+        dolphin
         brave
         mpv
         spotify
@@ -33,6 +34,7 @@
         fastfetch
 
         ghostty
+        dolphin
         brave
         mpv
         spotify

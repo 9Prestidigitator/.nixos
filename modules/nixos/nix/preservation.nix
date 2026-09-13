@@ -13,17 +13,16 @@
 
     hmUsers = config.home-manager.users or {};
 
-    kdeUserFiles =
+    kdeUserFilesFor = name:
+      lib.unique (config.persist.kdeUserFiles ++ (hmUsers.${name}.persist.kdeFiles or []));
+
+    toKdeUserFiles = files:
       map (file: {
         inherit file;
         how = "symlink";
         configureParent = true;
       })
-      config.persist.kdeUserFiles;
-
-    allUserFiles =
-      config.persist.userFiles
-      ++ kdeUserFiles;
+      files;
 
     userPersistence =
       lib.filterAttrs
@@ -33,7 +32,7 @@
           hmCfg = hmUsers.${name} or {};
         in {
           directories = lib.unique (config.persist.userDirs ++ (hmCfg.persist.directories or []));
-          files = lib.unique (allUserFiles ++ (hmCfg.persist.files or []));
+          files = lib.unique (config.persist.userFiles ++ (toKdeUserFiles (kdeUserFilesFor name)) ++ (hmCfg.persist.files or []));
         })
         persistedUsers
       );
@@ -74,7 +73,7 @@
         [ -e ${path} ] || touch ${path}
         chown ${userName}:${group} ${path}
       '')
-      config.persist.kdeUserFiles)
+      (kdeUserFilesFor userName))
     (lib.attrNames persistedUsers);
   in {
     imports = [inputs.preservation.nixosModules.preservation];

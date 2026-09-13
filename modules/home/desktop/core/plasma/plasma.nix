@@ -9,7 +9,5 @@
       enable = true;
       # overrideConfig = true;
     };
-
-    desktop.explorer.name = "dolphin";
   };
 }

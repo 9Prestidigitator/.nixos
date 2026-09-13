@@ -21,7 +21,7 @@
       stylix
 
       ghostty
-      # nautilus
+      dolphin
       brave
       steam
       reaper

@@ -23,7 +23,6 @@
       systemPackages = with pkgs.kdePackages; [
         krfb
         kscreen
-        dolphin
         kio-extras
         karousel
         dynamic-workspaces
@@ -64,15 +63,11 @@
       kdeconnect.enable = true;
     };
 
-    xdg = {
-      portal.enable = true;
-      mime.defaultApplications."inode/directory" = ["org.kde.dolphin.desktop"];
-    };
+    xdg.portal.enable = true;
 
     persist = {
       directories = ["/var/lib/plasmalogin"];
       userDirs = [
-        ".config/dolphin"
         ".config/session"
         ".config/kdeconnect"
 
@@ -80,7 +75,6 @@
         ".config/libaccounts-glib"
         ".config/signond"
 
-        ".local/share/dolphin"
         ".local/share/kscreen"
         ".local/share/kactivitymanagerd"
         ".local/share/kdeconnect"
@@ -109,7 +103,6 @@
         ".local/state/plasmasessionrestorestaterc"
         ".local/state/kwinstaterc"
         ".local/state/plasmashellstaterc"
-        ".local/state/dolphinstaterc"
         # This file doesn't play nice with impermanence and plasma-manager
         # ".config/plasma-org.kde.plasma.desktop-appletsrc";
       ];
