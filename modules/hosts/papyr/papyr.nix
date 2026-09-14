@@ -7,7 +7,9 @@
     modules = with self.nixosModules; [
       self.userModules.max.nixosModule
 
-      plasma
+      noctalia-greeter
+      noctalia
+      niri
 
       chromium
       music-production

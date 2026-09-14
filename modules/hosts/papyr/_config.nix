@@ -9,7 +9,9 @@
     imports = with self.homeModules; [
       self.userModules.max.homeModule
 
-      plasma
+      noctalia-greeter
+      noctalia
+      niri
 
       fish
       neovim
@@ -17,7 +19,7 @@
       fastfetch
 
       ghostty
-      dolphin
+      nautilus
       brave
       steam
       reaper
