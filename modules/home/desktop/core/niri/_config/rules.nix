@@ -235,6 +235,13 @@
           xray = false;
         };
       }
+      {
+        matches = [{app-id = "dev.noctalia.Noctalia";}];
+        background-effect = {
+          blur = true;
+          xray = true;
+        };
+      }
 
       {
         matches = [{title = "^Open File$";}];

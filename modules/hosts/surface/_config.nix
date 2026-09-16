@@ -12,6 +12,7 @@
       fastfetch
 
       kitty
+      librewolf
       nautilus
 
       stylix
