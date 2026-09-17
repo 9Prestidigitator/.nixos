@@ -19,6 +19,9 @@
         inputs.niri-flake.overlays.niri
         inputs.maxpkgs.overlays.default
         inputs.millennium.overlays.default
+        (final: prev: {
+          buildGo125Module = prev.buildGoModule;
+        })
       ];
     };
     nix = {
