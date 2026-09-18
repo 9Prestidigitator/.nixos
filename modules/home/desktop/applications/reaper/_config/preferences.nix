@@ -141,5 +141,6 @@
 
       plugIns.reascript.python.enable = true;
     };
+    windows.transport.centerTransportControls = true;
   };
 }

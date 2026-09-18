@@ -677,11 +677,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1789644705,
-        "narHash": "sha256-HhemsV/2kpOY2uF39ZA7TU9R25zi+urStEp3wKEFdhI=",
+        "lastModified": 1789663518,
+        "narHash": "sha256-hoUhKWBVRLdRT6MpF+0lqerEG1MrgA11hHQdNl5zFiM=",
         "owner": "epireyn",
         "repo": "niri-flake",
-        "rev": "22288d0cb07502764863af1a44541791d2d8cf7c",
+        "rev": "eb90b04214c86e980b1906bd9449b3ad8b888fd0",
         "type": "github"
       },
       "original": {
@@ -729,11 +729,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1789634183,
-        "narHash": "sha256-SioZiPfbi0NGT+eO75Z1sLYUh2nPkYxarPXVp7fQP3I=",
+        "lastModified": 1789656515,
+        "narHash": "sha256-Y7EZJ/Cz53VTwuSVB9aGDPqjkOrAxE4A3l6Hd21l4mU=",
         "owner": "niri-wm",
         "repo": "niri",
-        "rev": "818678e81e5d6332e9416c21fdf36c24175f3b87",
+        "rev": "b735805d00d2daae6cedb6823660e80636418d7c",
         "type": "github"
       },
       "original": {
@@ -1179,11 +1179,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789426361,
-        "narHash": "sha256-pTsIbZoqYsbp6mwHB5kM5n3QoYppM8vzsy87v5Gs+8s=",
+        "lastModified": 1789684374,
+        "narHash": "sha256-E5VV9LAVt5JCohhaCBGl+B6RbMNbu+noYE1vlZB1NmU=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "99d801300827475a907c92c84c280b05fab29e71",
+        "rev": "51ee6fca6ffcc2315c0cb3e662f21d36da5a9cf0",
         "type": "github"
       },
       "original": {
