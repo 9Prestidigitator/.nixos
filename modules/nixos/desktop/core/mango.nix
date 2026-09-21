@@ -1,6 +1,13 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.nixosModules.mango = {pkgs, ...}: {
-    imports = [inputs.mangowm.nixosModules.mango];
+    imports = [
+      inputs.mangowm.nixosModules.mango
+      self.nixosModules.super-tap
+    ];
 
     programs.mango.enable = true;
 
