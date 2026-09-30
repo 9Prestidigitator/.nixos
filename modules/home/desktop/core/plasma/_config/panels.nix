@@ -111,7 +111,7 @@
                   != null)
                 "applications:${config.desktop.browser.desktop}.desktop"
                 ++ lib.optional (options ? programs.reaper.enable && config.programs.reaper.enable) "applications:cockos-reaper.desktop"
-                ++ lib.optional (lib.elem pkgs.obsidian osConfig.environment.systemPackages) "applications:obsidian.desktop"
+                ++ lib.optional (lib.elem pkgs.obsidian osConfig.environment.systemPackages) "md.obsidian.Obsidian.desktop"
                 ++ lib.optional osConfig.programs.steam.enable "applications:steam.desktop"
                 ++ lib.optional (options ? programs.nixcord.enable && config.programs.nixcord.enable) "applications:discord.desktop"
                 ++ lib.optional (lib.elem pkgs.signal-desktop osConfig.environment.systemPackages) "applications:signal.desktop"
