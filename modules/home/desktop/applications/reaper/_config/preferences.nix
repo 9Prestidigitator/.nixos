@@ -51,7 +51,7 @@
           autoSave = {
             autoSaveToTimestampedFileInProjectDirectory = {
               enable = true;
-              saveBackupsToProjectAutoSavesSubdirectory = true;
+              saveAutoSavedProjectBackupsToAutoSavesProjectSubdirectory = true;
 
               limitAutoSavedBackupsToMostRecent = {
                 enable = true;
