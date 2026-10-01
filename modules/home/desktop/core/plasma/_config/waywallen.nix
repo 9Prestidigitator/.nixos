@@ -5,12 +5,12 @@
 }: let
   waywallen = pkgs.appimageTools.wrapAppImage rec {
     pname = "waywallen";
-    version = "0.3.9";
+    version = "0.4.3";
     src = pkgs.appimageTools.extract {
       inherit pname version;
       src = pkgs.fetchurl {
         url = "https://github.com/waywallen/waywallen/releases/download/v${version}/waywallen-${version}-x86_64.AppImage";
-        hash = "sha256-499tPXymKD0Owftj/Asgu08ZmHBMuFKPHdsR+ribmt8=";
+        hash = "sha256-eMaUjkoUEt3pj/egM+hoKkRh5nrB6oNo2UEsml8Sl04=";
       };
     };
     extraPkgs = pkgs: with pkgs; [lz4];
@@ -24,10 +24,10 @@
 
   waywallen-display = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "waywallen-display";
-    version = "0.3.3";
+    version = "0.4.0";
     src = pkgs.fetchurl {
       url = "https://github.com/waywallen/waywallen-display/releases/download/v${version}/waywallen-kde-${version}-x86_64-embed.zip";
-      hash = "sha256-0SGuTy/KLSZkts1qb1x3GticUwOI3CQVWyRNhzOuBZ4=";
+      hash = "sha256-CBGTomn7nQ9NQ/7mg+m+S70x8Dy/7imUBhYUT2SVeNY=";
     };
     nativeBuildInputs = [pkgs.unzip pkgs.autoPatchelfHook];
     buildInputs = [pkgs.kdePackages.qtbase pkgs.kdePackages.qtdeclarative];
@@ -45,10 +45,10 @@
 
   open-wallpaper-engine = pkgs.stdenv.mkDerivation rec {
     pname = "waywallen-open-wallpaper-engine";
-    version = "0.2.10";
+    version = "0.3.0";
     src = pkgs.fetchurl {
       url = "https://github.com/waywallen/open-wallpaper-engine/releases/download/v${version}/org.waywallen.open-wallpaper-engine-${version}-linux-x86_64.zip";
-      hash = "sha256-cDx3aRL9tB/9JhPPvgmuHZQuQJFHLvTalNAoZkwMDMs=";
+      hash = "sha256-LsU6867nf1Y1DpWWRryP3CVzIMpkAALvzX3o4ySudYk=";
     };
     dontUnpack = true;
     installPhase = ''
