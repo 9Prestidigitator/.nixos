@@ -26,8 +26,6 @@
         floating = {
           border = 2;
           titlebar = false;
-          # REAPER uses an XWayland class on some builds and a Wayland app_id on
-          # others, so match both variants rather than only its app_id.
           criteria = [
             {class = "REAPER";}
             {app_id = "REAPER";}
@@ -37,9 +35,7 @@
 
         focus.followMouse = "no";
 
-        # Discover connector names with `swaymsg -t get_outputs` before enabling
-        # an output. Sway positions are expressed in logical pixels.
-
+        # `swaymsg -t get_outputs`
         input."type:touchpad" = {
           tap = "enabled";
           natural_scroll = "enabled";

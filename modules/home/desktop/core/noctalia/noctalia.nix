@@ -4,6 +4,7 @@
       (inputs.import-tree ./_config)
       inputs.noctalia.homeModules.default
     ];
+    disabledModules = ["programs/noctalia"];
 
     programs.noctalia = {
       enable = true;
