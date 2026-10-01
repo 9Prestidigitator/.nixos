@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      niri
+      hyprland
 
       chromium
       music-production

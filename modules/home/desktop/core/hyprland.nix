@@ -3,23 +3,35 @@
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = true;
+
       settings = {
-        "$mod" = "SUPER";
+        config = {
+          general = {
+            layout = "scrolling";
+            gaps_in = 4;
+            gaps_out = 8;
+            border_size = 0;
+          };
 
-        general = {
-          layout = "scrolling";
-          gaps_in = 4;
-          gaps_out = 8;
-          border_size = 0;
+          scrolling = {
+            fullscreen_on_one_column = true;
+          };
         };
-
-        bind = [
-          "$mod, Return, exec, ${config.desktop.terminal.name}"
-          "$mod, Q, killactive"
-          "$mod, H, layoutmsg, focus l"
-          "$mod, L, layoutmsg, focus r"
-        ];
       };
+
+      extraConfig = ''
+        hl.bind("SUPER + Return",
+          hl.dsp.exec_cmd("${config.desktop.terminal.name}"))
+
+        hl.bind("SUPER + Q",
+          hl.dsp.window.close())
+
+        hl.bind("SUPER + H",
+          hl.dsp.layout("focus l"))
+
+        hl.bind("SUPER + L",
+          hl.dsp.layout("focus r"))
+      '';
     };
   };
 }
