@@ -26,7 +26,7 @@
       pianoteq-trial
       auburn-sounds-free
       chow-tape-model
-      melissa
+      # melissa
       spice-oss
       pulse-visualizer
       minimeters
