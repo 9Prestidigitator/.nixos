@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      hyprland
+      mango
 
       chromium
       music-production

@@ -55,7 +55,7 @@
       ++ lib.optional (options ? desktop.browser.name && config.desktop.browser.name != null)
       config.desktop.browser.desktop
       ++ lib.optional (options ? programs.reaper.enable && config.programs.reaper.enable) "cockos-reaper"
-      ++ lib.optional (lib.elem pkgs.obsidian osConfig.environment.systemPackages) "obsidian"
+      ++ lib.optional (lib.elem pkgs.obsidian osConfig.environment.systemPackages) "md.obsidian.Obsidian"
       ++ lib.optional osConfig.programs.steam.enable "steam"
       ++ lib.optional (options ? programs.nixcord.enable && config.programs.nixcord.enable) "discord"
       ++ lib.optional (lib.elem pkgs.signal-desktop osConfig.environment.systemPackages) "signal"
