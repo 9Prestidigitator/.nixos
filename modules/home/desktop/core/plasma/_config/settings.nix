@@ -36,7 +36,7 @@
         alwaysShowClock = true;
         showMediaControls = true;
         wallpaperPictureOfTheDay = {
-          provider = "apod";
+          provider = "simonstalenhag";
           updateOverMeteredConnection = false;
         };
       };

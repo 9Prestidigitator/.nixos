@@ -40,6 +40,8 @@ in {
     lockscreen = {
       blur_intensity = 1;
       blurred_desktop = true;
+      transition = ["fade"];
+      transition_duration = 100;
     };
 
     lockscreen_widgets = {

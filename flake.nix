@@ -138,7 +138,7 @@
       };
     };
 
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    millennium.url = "github:SteamClientHomebrew/Millennium/v3.5.0?dir=packages/nix";
     steam-config-nix = {
       url = "github:different-name/steam-config-nix";
       inputs = {
