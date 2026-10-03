@@ -69,8 +69,6 @@
       glib-networking
     ];
 
-    environment.sessionVariables.GIO_EXTRA_MODULES = ["${pkgs.glib-networking}/lib/gio/modules"];
-
     persist = {
       userDirs = [
         ".vst"
