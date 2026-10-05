@@ -1,12 +1,6 @@
 {inputs, ...}: {
-  flake.nixosModules.umbriel = {pkgs, ...}: {
+  flake.nixosModules.umbriel = {
     imports = [inputs.umbriel.nixosModules.default];
-
-    xdg.portal.enable = true;
-
-    programs.umbriel = {
-      enable = true;
-      portalPackage = inputs.xdg-desktop-portal-umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    };
+    programs.umbriel.enable = true;
   };
 }
