@@ -1191,11 +1191,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791340017,
-        "narHash": "sha256-XfdcE/Glkf8ry0pX2X9dOmA2ROEO7JmCidFBOCQY1ws=",
+        "lastModified": 1791343418,
+        "narHash": "sha256-XJiwbZQENLIIlL9HvMlrb8gIWJwrHzYnwTr88h5zg/U=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "533baca4986c79bb82c45bc5a4d66e1f58c2349f",
+        "rev": "88b5bc73cbf2d198a413f10c73c0498d06a33a6f",
         "type": "github"
       },
       "original": {
