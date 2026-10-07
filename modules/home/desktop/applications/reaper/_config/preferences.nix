@@ -141,10 +141,10 @@
 
       plugIns = {
         vst.searchPaths = [
-          "/run/current-system/sw/lib/Library/Audio/Plug-Ins/VST"
-          "/run/current-system/sw/lib/Library/Audio/Plug-Ins/VST3"
+          "/run/current-system/sw/Library/Audio/Plug-Ins/VST"
+          "/run/current-system/sw/Library/Audio/Plug-Ins/VST3"
         ];
-        clap.searchPaths = ["/run/current-system/sw/lib/Library/Audio/Plug-Ins/clap"];
+        clap.searchPaths = ["/run/current-system/sw/Library/Audio/Plug-Ins/clap"];
         reascript.python.enable = true;
       };
     };
