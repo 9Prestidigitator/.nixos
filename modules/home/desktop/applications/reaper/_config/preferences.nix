@@ -139,7 +139,14 @@
         };
       };
 
-      plugIns.reascript.python.enable = true;
+      plugIns = {
+        vst.searchPaths = [
+          "/run/current-system/sw/lib/Library/Audio/Plug-Ins/VST"
+          "/run/current-system/sw/lib/Library/Audio/Plug-Ins/VST3"
+        ];
+        clap.searchPaths = ["/run/current-system/sw/lib/Library/Audio/Plug-Ins/clap"];
+        reascript.python.enable = true;
+      };
     };
     windows.transport.centerTransportControls = true;
   };
