@@ -201,10 +201,10 @@ in {
       "Mod+Ctrl+Space" = "window-toggle-floating";
       "Mod+F" = "window-toggle-maximize-to-edges";
       "Mod+Shift+F" = "window-toggle-fullscreen";
-      "Mod+R" = "window-cycle-width";
-      "Mod+Shift+R" = "window-cycle-width-back";
-      "Mod+Alt+R" = "window-cycle-height";
-      "Mod+Alt+Shift+R" = "window-cycle-height-back";
+      "Mod+R" = "window-cycle-primary-extent";
+      "Mod+Shift+R" = "window-cycle-primary-extent-back";
+      "Mod+Alt+R" = "window-cycle-secondary-extent";
+      "Mod+Alt+Shift+R" = "window-cycle-secondary-extent-back";
       "Mod+P" = "window-toggle-pinned";
 
       "Mod+Grave" = "workspace-focus-last";
@@ -237,10 +237,10 @@ in {
       };
       "submap[layout],Escape" = "submap:reset";
 
-      "Mod+Minus" = "window-modify-width:-0.1";
-      "Mod+Equal" = "window-modify-width:0.1";
-      "Mod+Shift+Minus" = "window-modify-height:-0.1";
-      "Mod+Shift+Equal" = "window-modify-height:0.1";
+      "Mod+Minus" = "window-modify-primary-extent:-0.1";
+      "Mod+Equal" = "window-modify-primary-extent:0.1";
+      "Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1";
+      "Mod+Shift+Equal" = "window-modify-secondary-extent:0.1";
 
       "Mod+U" = "workspace-previous";
       "Mod+D" = "workspace-next";

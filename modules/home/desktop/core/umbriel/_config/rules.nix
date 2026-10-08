@@ -7,11 +7,11 @@
       }
       {
         match.app_id = "^(Alacritty|kitty|org\\.gnome\\.Nautilus)$";
-        default_width = 0.33;
+        default_scrolling_extent = 0.33;
       }
       {
         match.app_id = "^(helium|chromium)$";
-        default_width = 0.75;
+        default_scrolling_extent = 0.75;
       }
       {
         match.app_id = "^(steam_app_[0-9]+|gamescope)$";
@@ -54,13 +54,19 @@
       {
         match.app_id = "^dev.noctalia.Noctalia$";
         default_floating = true;
-        default_size = [1020 900];
+        default_floating_size_px = {
+          width = 1020;
+          height = 900;
+        };
         blur_popups = true;
       }
       {
         match.app_id = "^dev.noctalia.UmbrielSharePicker$";
         default_floating = true;
-        default_size = [800 600];
+        default_floating_size_px = {
+          width = 800;
+          height = 600;
+        };
         default_position = {
           x = 32;
           y = 32;
@@ -70,7 +76,10 @@
       {
         match.app_id = "^dev.lemmy.swash$";
         default_floating = true;
-        default_size = [1000 900];
+        default_floating_size_px = {
+          width = 1000;
+          height = 900;
+        };
       }
       {
         match.title = "^(Picture-in-Picture|Picture in picture)$";

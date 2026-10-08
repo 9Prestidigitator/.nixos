@@ -10,7 +10,7 @@
       layout = {
         gap = 8;
         mode = "scrolling";
-        width_presets = [0.333 0.5 0.667];
+        extent_presets = [0.333 0.5 0.667];
         struts = {
           left = 0;
           right = 0;
@@ -18,7 +18,7 @@
           bottom = 0;
         };
         scrolling = {
-          default_width_fraction = 0.5; # remove to let clients choose their initial width
+          default_extent_fraction = 0.5; # remove to let clients choose their initial width
           center_underfull_strip = true; # center the strip whenever it is narrower than the viewport
           center_focused = "never"; # always center the focused column
         };
