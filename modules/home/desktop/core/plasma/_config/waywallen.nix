@@ -10,7 +10,7 @@
       inherit pname version;
       src = pkgs.fetchurl {
         url = "https://github.com/waywallen/waywallen/releases/download/v${version}/waywallen-${version}-x86_64.AppImage";
-        hash = "sha256-eMaUjkoUEt3pj/egM+hoKkRh5nrB6oNo2UEsml8Sl04=";
+        hash = "sha256-P1KWhxhGYFNUiYcRs8ARN/dUsFg5vWJNaacxYfuch8U=";
       };
     };
     extraPkgs = pkgs: with pkgs; [lz4];
@@ -77,9 +77,7 @@ in {
       Restart = "on-failure";
       RestartSec = 2;
     };
-    Install = {
-      WantedBy = ["graphical-session.target"];
-    };
+    Install.WantedBy = ["graphical-session.target"];
   };
 
   persist.directories = [
