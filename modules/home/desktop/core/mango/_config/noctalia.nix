@@ -20,7 +20,7 @@
       "fold,spawn,noctalia msg session lock"
     ];
 
-    keymode = {
+    key_mode = {
       noctalia.bindc = [
         "NONE,b,spawn,noctalia msg bluetooth-toggle"
         "NONE,b,setkeymode,default"

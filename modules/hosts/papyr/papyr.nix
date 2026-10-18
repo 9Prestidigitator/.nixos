@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      umbriel
+      mango
 
       chromium
       music-production

@@ -23,19 +23,19 @@ in {
       shadows_position_x = 0;
       shadows_position_y = 0;
 
-      gappih = 4;
-      gappiv = 4;
-      gappoh = 4;
-      gappov = 4;
-      borderpx = 2;
+      gap_inner_horizontal = 4;
+      gap_inner_vertical = 4;
+      gap_outer_horizontal = 4;
+      gap_outer_vertical = 4;
+      border_px = 2;
       border_radius = 8;
       no_border_when_single = 1;
       no_radius_when_single = 1;
-      smartgaps = 1;
+      smart_gaps = 1;
 
       focus_on_activate = 1;
-      sloppyfocus = 0;
-      warpcursor = 1;
+      sloppy_focus = 0;
+      warp_cursor = 1;
       new_is_master = 0;
       axis_bind_apply_timeout = 100;
       drag_tile_to_tile = 1;
@@ -48,11 +48,11 @@ in {
       trackpad_natural_scrolling = 1;
       mouse_accel_speed = -0.3;
 
-      devicerule = [
+      device_rule = [
         "name:SteelSeries SteelSeries Aerox 3 Keyboard,accel_profile:0"
       ];
 
-      tagrule = [
+      tag_rule = [
         "id:*,layout_name:scroller"
 
         # "id:1,layout_name:monocle"
@@ -75,8 +75,8 @@ in {
       scroller_default_proportion = 1;
       scroller_proportion_preset = "0.5,0.8,1.0";
       scroller_structs = 0;
-      default_mfact = 0.55;
-      default_nmaster = 1;
+      default_master_factor = 0.55;
+      default_master_count = 1;
       center_master_overspread = 1;
 
       animations = 1;
@@ -96,16 +96,16 @@ in {
       scratchpad_cross_monitor = 1;
     }
     // lib.optionalAttrs (stylixColors != null) {
-      rootcolor = color stylixColors.base00 "ff";
-      bordercolor = color stylixColors.base03 "00";
-      dropcolor = color stylixColors.base0B "55";
-      splitcolor = color stylixColors.base08 "ff";
-      focuscolor = color stylixColors.base0D "ff";
-      maximizescreencolor = color stylixColors.base0B "ff";
-      urgentcolor = color stylixColors.base08 "ff";
-      scratchpadcolor = color stylixColors.base0E "ff";
-      globalcolor = color stylixColors.base0C "ff";
-      overlaycolor = color stylixColors.base0D "ff";
-      shadowscolor = color stylixColors.base00 "a0";
+      root_color = color stylixColors.base00 "ff";
+      border_color = color stylixColors.base03 "00";
+      drop_color = color stylixColors.base0B "55";
+      split_color = color stylixColors.base08 "ff";
+      focus_color = color stylixColors.base0D "ff";
+      maximized_screen_color = color stylixColors.base0B "ff";
+      urgent_color = color stylixColors.base08 "ff";
+      scratchpad_color = color stylixColors.base0E "ff";
+      global_color = color stylixColors.base0C "ff";
+      overlay_color = color stylixColors.base0D "ff";
+      shadows_color = color stylixColors.base00 "a0";
     };
 }

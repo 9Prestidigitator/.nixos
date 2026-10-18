@@ -10,12 +10,12 @@
       self.userModules.max.homeModule
 
       noctalia
-      umbriel
+      mango
 
       fish
       neovim
       direnv
-      fastfetch
+      pokefetch
 
       ghostty
       nautilus

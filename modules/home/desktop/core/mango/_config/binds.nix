@@ -29,8 +29,8 @@ in {
 
         "SUPER,z,toggle_scratchpad"
 
-        "SUPER,b,setoption,borderpx,0"
-        "SUPER+SHIFT,b,setoption,borderpx,2"
+        "SUPER,b,setoption,border_px,0"
+        "SUPER+SHIFT,b,setoption,border_px,2"
 
         "SUPER,x,centerwin"
 
@@ -81,9 +81,9 @@ in {
         "SUPER,r,setkeymode,resize"
         "SUPER,a,setkeymode,layout"
 
-        "SUPER+CTRL,1,toggleview,1"
-        "SUPER+CTRL,2,toggleview,2"
-        "SUPER+CTRL,3,toggleview,3"
+        "SUPER+SHIFT,1,toggleview,1"
+        "SUPER+SHIFT,2,toggleview,2"
+        "SUPER+SHIFT,3,toggleview,3"
 
         "NONE,XF86MonBrightnessUp,spawn,brightnessctl s +5%"
         "SHIFT,XF86MonBrightnessUp,spawn,brightnessctl s 100%"
@@ -101,7 +101,7 @@ in {
       ]
       ++ tagBinds;
 
-    keymode = {
+    key_mode = {
       move.bindc = [
         "NONE,h,exchange_client,left"
         "NONE,j,exchange_client,down"
