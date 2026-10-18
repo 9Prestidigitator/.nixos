@@ -5,7 +5,7 @@
 }: let
   waywallen = pkgs.appimageTools.wrapAppImage rec {
     pname = "waywallen";
-    version = "0.4.3";
+    version = "0.4.4";
     src = pkgs.appimageTools.extract {
       inherit pname version;
       src = pkgs.fetchurl {
