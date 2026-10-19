@@ -1,6 +1,17 @@
 {inputs, ...}: {
-  flake.homeModules.steam = {
+  flake.homeModules.steam = {pkgs, ...}: {
     imports = [inputs.steam-config-nix.homeModules.default];
+
+    home.packages = [
+      (pkgs.writeShellApplication {
+        name = "civ5-vox-populi";
+        runtimeInputs = [pkgs.python3 pkgs.gdown pkgs.curl];
+        text = ''
+          exec python3 ${./vox-populi-installer.py} "$@"
+        '';
+      })
+    ];
+
     programs.steam.config = {
       enable = true;
       # closeSteam = true;
@@ -34,6 +45,12 @@
         "730" = {
           name = "counter-strike-2";
           rawLaunchOptions = "%command% -sdlaudiodriver pulse";
+        };
+
+        "8930" = {
+          name = "civilization-5";
+          compatTool = "GE-Proton";
+          rawLaunchOptions = "PROTON_ENABLE_WAYLAND=1 %command%";
         };
       };
     };

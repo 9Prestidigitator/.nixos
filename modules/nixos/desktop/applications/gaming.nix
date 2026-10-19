@@ -4,7 +4,7 @@
 
     programs.steam = {
       enable = true;
-      package = pkgs.millennium-steam;
+      # package = pkgs.millennium-steam;
       gamescopeSession.enable = true;
       protontricks.enable = false; # BROKEN
       localNetworkGameTransfers.openFirewall = true;
