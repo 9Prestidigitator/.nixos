@@ -28,7 +28,7 @@
         {
           publicKey = "v0fbXMD0qSknF/lxTGf0iY0xs1ffm1Fm6igknJQKi10=";
           presharedKeyFile = "${config.sops.secrets."wg0/peer-preshared-key".path}";
-          endpoint = "108.18.94.91:51820";
+          endpoint = "108.18.94.111:51820";
           allowedIPs = ["0.0.0.0/0"];
           persistentKeepalive = 25;
         }
