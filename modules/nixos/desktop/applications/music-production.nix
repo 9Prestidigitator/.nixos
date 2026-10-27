@@ -25,7 +25,6 @@
       neuralnote
       pianoteq-trial
       auburn-sounds-free
-      chow-tape-model
       # melissa
       spice-oss
       pulse-visualizer
@@ -36,6 +35,7 @@
       dexed
 
       carla
+      inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.chow-tape-model
       lsp-plugins
       x42-avldrums
       x42-plugins
@@ -55,7 +55,7 @@
       vital
 
       # Utilities
-      musescore
+      # musescore
       paulxstretch
       papu
       easyeffects

@@ -4,6 +4,7 @@
       signal-desktop
       signal-cli
       element-desktop
+      slack
     ];
 
     services.flatpak.packages = ["app.fluxer.Fluxer"];

@@ -44,8 +44,8 @@
             title = "\\(default\\).*";
           }
         ];
-        default-window-height = {fixed = 100;};
-        default-column-width = {proportion = 0.3333;};
+        default-window-height.fixed = 100;
+        default-column-width.proportion = 0.3333;
       }
 
       {
@@ -267,6 +267,7 @@
             xray = false;
           };
         };
+        default-column-width.proportion = 0.3333;
       }
     ];
 
