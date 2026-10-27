@@ -18,6 +18,27 @@
           maximumUndoMemory = 512;
           saveHistoryWithProjectFiles = true;
         };
+
+        keyboardMultitouch.multitouch = {
+          swipe = {
+            enable = true;
+            suppressInertia = false;
+            reverse = false;
+            gearing = 0.5;
+          };
+          zoom = {
+            enable = true;
+            suppressInertia = false;
+            reverse = false;
+            gearing = 0.4;
+          };
+
+          reverseVerticalScroll = false;
+          reverseHorizontalScroll = true;
+
+          ignoreNewGestureAfterGestureMilliseconds = 100;
+          ignoreScrollAfterGestureMilliseconds = 100;
+        };
       };
 
       project = {
@@ -149,5 +170,7 @@
       };
     };
     windows.transport.centerTransportControls = true;
+
+    ini.files."reaper-themeconfig.ini"."Reapertips Theme".__coloradjust = "1.00000000 -31 -15 0 256 192";
   };
 }
