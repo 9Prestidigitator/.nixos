@@ -28,7 +28,7 @@
           };
           zoom = {
             enable = true;
-            suppressInertia = false;
+            suppressInertia = true;
             reverse = false;
             gearing = 0.4;
           };
