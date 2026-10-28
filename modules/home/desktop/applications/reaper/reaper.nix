@@ -6,6 +6,7 @@
   }: let
     reaper-config = "reaper-flake";
   in {
+    _module.args.reaperFlake = inputs.reaper-flake;
     imports = [
       inputs.reaper-flake.homeModules.reaper
       (inputs.import-tree ./_config)

@@ -1,5 +1,6 @@
 {
   inputs,
+  reaperFlake,
   reaperGeneral,
   reaperAppearance,
   reaperMouse,
@@ -17,7 +18,7 @@
         };
 
         advancedUiSystemTweaks = {
-          customSplashScreenImage = "${inputs.reaper-flake}/docs/assets/logo.png";
+          customSplashScreenImage = "${reaperFlake}/docs/assets/logo.png";
           roundedMacosButtons = true;
           useLargerListViewMarginsOnBigSur = true;
           mainWindowFullscreenButtonUsesReaperNativeFullscreen = false;

@@ -126,6 +126,13 @@
           }
           {
             modifierFlags = 255;
+            keyCode = 1016;
+            command = 40432;
+            section = sections.midiEditor;
+            comment = "Midi Editor : Mousewheel : OVERRIDE DEFAULT : View: Scroll vertically (MIDI CC relative/mousewheel)";
+          }
+          {
+            modifierFlags = 255;
             keyCode = 200;
             command = "zoom_in_horizontally_for_multitouch";
             section = sections.midiEditor;
