@@ -54,6 +54,10 @@
             app-id = "kitty";
             title = "tmux";
           }
+          {
+            app-id = "com.mitchellh.ghostty";
+            title = "tmux";
+          }
         ];
         open-maximized = true;
       }
@@ -222,14 +226,10 @@
       }
 
       {
-        matches = [{app-id = "kitty";}];
-        background-effect = {
-          blur = true;
-          xray = false;
-        };
-      }
-      {
-        matches = [{app-id = "com.mitchellh.ghostty";}];
+        matches = [
+          {app-id = "kitty";}
+          {app-id = "com.mitchellh.ghostty";}
+        ];
         background-effect = {
           blur = true;
           xray = false;
