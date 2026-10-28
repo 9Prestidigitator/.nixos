@@ -483,11 +483,11 @@
         "pulse-visualizer": "pulse-visualizer"
       },
       "locked": {
-        "lastModified": 1793065006,
-        "narHash": "sha256-H8CPzLQqNj9Lz/J4wLV655xC23GDdv2XN/416iB7rxs=",
+        "lastModified": 1793157638,
+        "narHash": "sha256-YYUObFxgx/dWAqjzGyzVpquZXqSCnHwu31L+cGKjRig=",
         "owner": "9Prestidigitator",
         "repo": "maxpkgs",
-        "rev": "02a115bbd36e1f46da37339ea47ddec81125e16d",
+        "rev": "7e5dc0426d8187d0dbc174032db4adf5957b169d",
         "type": "github"
       },
       "original": {
@@ -507,11 +507,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793153259,
-        "narHash": "sha256-JM30KKI6WyzHtohrnmd9WzxAncC5Ei7Sog9DjKb9JJI=",
+        "lastModified": 1793156662,
+        "narHash": "sha256-BAkmNnn07RHYClN2oRw4SDjDb9xhvN4tpBHruQwyWcY=",
         "owner": "9prestidigitator",
         "repo": "nvim",
-        "rev": "2b80b39b847e3f53093ee5ba772bbf3945f748e9",
+        "rev": "15a0a58cb478063951fa998cfa2bcf13fd9308fe",
         "type": "github"
       },
       "original": {
