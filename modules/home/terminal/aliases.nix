@@ -19,6 +19,9 @@
 
         nhre = "nh os switch ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
         nhbo = "nh os boot ${config.home.homeDirectory}/.nixos -H ${osConfig.networking.hostName}";
+        dre = "nh darwin switch -H ${osConfig.networking.hostName}";
+        hms = "nh home switch -b backup";
+
         nixre = "sudo nixos-rebuild switch ${config.home.homeDirectory}/.nixos#${osConfig.networking.hostName}";
         nixup = "nix flake update";
 

@@ -1,4 +1,5 @@
 {
+  inputs,
   reaperGeneral,
   reaperAppearance,
   reaperMouse,
@@ -12,6 +13,16 @@
           openProjectOnStartup = reaperGeneral.openProjectOnStartup.prompt;
           createNewProjectTabWhenOpeningMedia = true;
           skipAnimation = false;
+          showSplashScreenOnStartup = true;
+        };
+
+        advancedUiSystemTweaks = {
+          customSplashScreenImage = "${inputs.reaper-flake}/docs/assets/logo.png";
+          roundedMacosButtons = true;
+          useLargerListViewMarginsOnBigSur = true;
+          mainWindowFullscreenButtonUsesReaperNativeFullscreen = false;
+          allowRetinaDrawing = true;
+          allowMacosDarkMode = true;
         };
 
         undo = {
@@ -30,7 +41,7 @@
             enable = true;
             suppressInertia = true;
             reverse = false;
-            gearing = 0.4;
+            gearing = 0.5;
           };
 
           reverseVerticalScroll = false;

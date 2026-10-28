@@ -124,6 +124,27 @@
             section = sections.main;
             comment = "Main : Mousewheel : OVERRIDE DEFAULT : View: Scroll vertically (MIDI CC relative/mousewheel)";
           }
+          {
+            modifierFlags = 255;
+            keyCode = 200;
+            command = "zoom_in_horizontally_for_multitouch";
+            section = sections.midiEditor;
+            comment = "Midi Editor: Multizoom : Custom: Zoom in Horizontally 3x";
+          }
+          {
+            modifierFlags = 255;
+            keyCode = 2041;
+            command = 40431;
+            section = sections.midiEditor;
+            comment = "MIDI Editor : Ctrl+Mousewheel : OVERRIDE DEFAULT : View: Zoom horizontally (MIDI relative/mousewheel)";
+          }
+          {
+            modifierFlags = 255;
+            keyCode = 2042;
+            command = 40430;
+            section = sections.midiEditor;
+            comment = "MIDI Editor : Alt+Mousewheel : OVERRIDE DEFAULT : View: Zoom vertically (MIDI relative/mousewheel)";
+          }
         ];
 
       customActions = [
@@ -137,6 +158,12 @@
           name = "Activate piano view";
           commandId = "custom_piano_view";
           actions = [40449 40042 40452];
+          section = reaperActions.sections.midiEditor;
+        }
+        {
+          name = "Zoom in Horizontally 3x";
+          commandId = "zoom_in_horizontally_for_multitouch";
+          actions = [40431 40431 40431];
           section = reaperActions.sections.midiEditor;
         }
       ];
