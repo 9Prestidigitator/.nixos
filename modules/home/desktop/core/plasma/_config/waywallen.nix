@@ -45,10 +45,10 @@
 
   open-wallpaper-engine = pkgs.stdenv.mkDerivation rec {
     pname = "waywallen-open-wallpaper-engine";
-    version = "0.3.1";
+    version = "0.3.2";
     src = pkgs.fetchurl {
       url = "https://github.com/waywallen/open-wallpaper-engine/releases/download/v${version}/org.waywallen.open-wallpaper-engine-${version}-linux-x86_64.zip";
-      hash = "sha256-vW18mowshRWKalH3wkFalW/0PGbKZ7yL7VbFji5h39g=";
+      hash = "sha256-KCyX/GeFdCATXCX6ypXq5A6mpQFprcJnGwCGIu8SatA=";
     };
     dontUnpack = true;
     installPhase = ''
