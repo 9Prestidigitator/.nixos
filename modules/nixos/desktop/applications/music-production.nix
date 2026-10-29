@@ -42,7 +42,6 @@
       x42-gmsynth
       wolf-shaper
       drumgizmo
-      ripplerx
       drumkv1
       guitarix
       gxplugins-lv2
@@ -55,9 +54,8 @@
       vital
 
       # Utilities
-      # musescore
+      musescore
       paulxstretch
-      papu
       easyeffects
       qjackctl
       qpwgraph

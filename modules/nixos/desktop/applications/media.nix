@@ -19,7 +19,7 @@
       mpv
       imv
       makemkv
-      # handbrake
+      handbrake
       ffmpeg
       rmpc
       cava
