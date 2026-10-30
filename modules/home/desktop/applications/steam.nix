@@ -46,6 +46,10 @@
           name = "counter-strike-2";
           rawLaunchOptions = "%command% -sdlaudiodriver pulse";
         };
+        "440" = {
+          name = "team-fortress-2";
+          rawLaunchOptions = "SDL_VIDEODRIVER=wayland %command%";
+        };
 
         "8930" = {
           name = "civilization-5";
