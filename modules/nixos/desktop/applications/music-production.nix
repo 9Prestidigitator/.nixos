@@ -33,6 +33,7 @@
       ultimate-vocal-remover-gui
       serum2
       dexed
+      guitar-pro8
 
       carla
       inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.chow-tape-model
