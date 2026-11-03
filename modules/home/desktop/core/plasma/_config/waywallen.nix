@@ -24,10 +24,10 @@
 
   waywallen-display = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "waywallen-display";
-    version = "0.4.3";
+    version = "0.4.4";
     src = pkgs.fetchurl {
       url = "https://github.com/waywallen/waywallen-display/releases/download/v${version}/waywallen-kde-${version}-x86_64-embed.zip";
-      hash = "sha256-3Vu5k04sD7Dq0UlgVxzT+4S2bb3jJmzvgeSrfqjlHts=";
+      hash = "sha256-0NF/c2rufatamD9CA50l1IMCgJO1j6h4bcxAi2O4qaE=";
     };
     nativeBuildInputs = [pkgs.unzip pkgs.autoPatchelfHook];
     buildInputs = [pkgs.kdePackages.qtbase pkgs.kdePackages.qtdeclarative];
