@@ -26,7 +26,7 @@
           inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.part-theme
           inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reark-theme
           inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reaclassical-theme
-          inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.xraym-analog-theme
+          # inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.xraym-analog-theme
         ];
       };
 
