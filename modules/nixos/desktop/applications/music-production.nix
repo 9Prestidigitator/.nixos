@@ -31,7 +31,7 @@
       minimeters
       ildaeil
       ultimate-vocal-remover-gui
-      serum2
+      serum2-bin
       dexed
       guitar-pro8
 
