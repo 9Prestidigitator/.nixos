@@ -50,6 +50,10 @@
           name = "team-fortress-2";
           rawLaunchOptions = "SDL_VIDEODRIVER=wayland %command%";
         };
+        "427520" = {
+          name = "factorio";
+          rawLaunchOptions = "SDL_VIDEODRIVER=wayland %command%";
+        };
 
         "8930" = {
           name = "civilization-5";
