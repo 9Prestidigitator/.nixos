@@ -9,7 +9,7 @@
 
       noctalia-greeter
       noctalia
-      niri
+      umbriel
 
       chromium
       music-production

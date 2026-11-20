@@ -17,7 +17,7 @@
     # bindr = ["NONE,Super_L,spawn,noctalia msg panel-toggle control-center"];
 
     switchbind = [
-      "fold,spawn,noctalia msg session lock"
+      "lid_on,spawn,noctalia msg session lock"
     ];
 
     key_mode = {

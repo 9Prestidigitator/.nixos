@@ -49,7 +49,7 @@
           follows_focus = false; # warp to windows selected by focus navigation
           hide_timeout_ms = 0; # 0-3600000, 0 disables hiding
         };
-        focus.follows_mouse = false;
+        focus.follows_mouse = "off";
       };
       appearance = {
         prefer_no_csd = true;
@@ -102,7 +102,7 @@
         bottom_right = {
           enabled = false;
           delay_ms = 500;
-          action = "spawn:notify-send 'Bottom right'";
+          action = "spawn notify-send 'Bottom right'";
         };
       };
       animation = {
@@ -143,9 +143,6 @@
           curve = "easeout";
           dim = 0.5; # 0.0-1.0
           blur = false;
-          scale = 0.0; # 0 preserves the window geometry
-          maximize = false;
-          fullscreen = false;
         };
         border = {
           enabled = false;

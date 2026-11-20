@@ -1020,16 +1020,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1795044764,
-        "narHash": "sha256-uuib1HmsCw7sJKOgGWAD56VLpTufg/iQYYRmf7YCjxI=",
+        "lastModified": 1795134824,
+        "narHash": "sha256-FZTKrfe4MOJaJNYcrzZee+DlU6+STHkbGr9DlD/J0mg=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "90403170ed657e1654e6bf88fa7678c0bf3adff4",
+        "rev": "a81e34e7f4fdada43ac7c9fe911e224eb6ee5f0a",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
-        "ref": "pull/4183/merge",
         "repo": "noctalia",
         "type": "github"
       }
@@ -1207,11 +1206,11 @@
         "wdl": "wdl"
       },
       "locked": {
-        "lastModified": 1795046028,
-        "narHash": "sha256-A3nSx2LdnqoH1oY4D01W5nStEcViy7mHCn3f2H50Xkw=",
+        "lastModified": 1795111422,
+        "narHash": "sha256-qCFSBr2mhgIpC+kF9IZOtbZqI6U5UYCvtwqNwASH5Rk=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "270ae5bba98ca6eae2e601e3b7c11741eb2f2aeb",
+        "rev": "77f7f202b2bd4c7a277fd62ec6b92201bf79828c",
         "type": "github"
       },
       "original": {
@@ -1727,11 +1726,11 @@
     "wdl": {
       "flake": false,
       "locked": {
-        "lastModified": 1795032078,
-        "narHash": "sha256-dE7Z9ReEqxUai+2jzrlq0/lzoeYMqEkxnrcMa8xUBys=",
+        "lastModified": 1795103459,
+        "narHash": "sha256-W6du4joC+VsaCA4oNNl2QVqJJ445jR4+eyUgArWlS3s=",
         "owner": "justinfrankel",
         "repo": "WDL",
-        "rev": "61cdf1d91c719dee4e2934becd95285198f62d81",
+        "rev": "171bd4ccb6db39bd650aaa4b389b7d453ee41ddc",
         "type": "github"
       },
       "original": {

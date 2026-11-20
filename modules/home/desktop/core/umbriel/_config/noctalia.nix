@@ -6,7 +6,7 @@
   ...
 }: let
   msg = cmd: "noctalia msg ${cmd}";
-  spawn = cmd: "spawn:${cmd}";
+  spawn = cmd: "spawn ${cmd}";
 in {
   config = lib.mkIf (options ? programs.noctalia.enable && config.programs.noctalia.enable) {
     programs.umbriel.settings = {

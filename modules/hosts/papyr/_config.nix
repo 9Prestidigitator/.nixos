@@ -10,7 +10,7 @@
       self.userModules.max.homeModule
 
       noctalia
-      niri
+      umbriel
 
       fish
       neovim

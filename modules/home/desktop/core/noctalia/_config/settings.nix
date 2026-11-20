@@ -12,6 +12,7 @@ in {
   programs.noctalia.settings = {
     shell = {
       launch_apps_as_systemd_services = true;
+      settings_window_translucent = true;
 
       screen_time_enabled = true;
       polkit_agent = true;
@@ -42,7 +43,7 @@ in {
         {type = "notification";}
         {type = "clipboard";}
         {type = "noctalia/screen_recorder:toggle";}
-        {type = "power_profile";}
+        {type = "8bury/lid-guard:lid-guard-toggle";}
       ];
     };
 

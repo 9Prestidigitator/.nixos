@@ -29,6 +29,7 @@
       tree
       calc
       wget
+
       ghostty.terminfo
       kitty.terminfo
 
@@ -40,6 +41,7 @@
       gptfdisk
       usbutils
       pciutils
+      ncdu
 
       brotli
       ntfs3g

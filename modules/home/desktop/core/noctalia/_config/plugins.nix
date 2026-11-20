@@ -19,6 +19,7 @@
         }
       ];
       enabled = [
+        "8bury/lid-guard"
         "alexander/game-launcher"
         "alexander/screen-toolkit"
         "avivbintangaringga/nix-monitor"

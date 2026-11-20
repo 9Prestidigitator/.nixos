@@ -15,8 +15,8 @@
     i3Enabled = osConfig ? programs.i3.enable && osConfig.programs.i3.enable;
 
     mangoImage = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/mangowm/mango/main/assets/mango-transparency-256.png";
-      hash = "sha256-7/WgDEk2qQHIVSWtH/4E52Pl4D7tZ8WfZnzGquewI2o=";
+      url = "https://raw.githubusercontent.com/mangowm/mango/bd14c51f3fdddc22747fb69555b858ccd31a9944/assets/mango.svg";
+      hash = "sha256-aT5uDK6u58U6O+3WOZJXRBkZNiz1/hkm/WENTK6huJY=";
     };
     labwcImage = pkgs.fetchurl {
       url = "https://avatars.githubusercontent.com/u/93831657?s=60&v=4";
