@@ -1206,11 +1206,11 @@
         "wdl": "wdl"
       },
       "locked": {
-        "lastModified": 1795111422,
-        "narHash": "sha256-qCFSBr2mhgIpC+kF9IZOtbZqI6U5UYCvtwqNwASH5Rk=",
+        "lastModified": 1795136756,
+        "narHash": "sha256-X4KUNa4zeEDipg+K/YdZ71y0OGDldH0sy63Q/MNMd5M=",
         "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "77f7f202b2bd4c7a277fd62ec6b92201bf79828c",
+        "rev": "e4fb3b28c70318c720d42aee5837c8afbe05ba29",
         "type": "github"
       },
       "original": {
@@ -1726,11 +1726,11 @@
     "wdl": {
       "flake": false,
       "locked": {
-        "lastModified": 1795103459,
-        "narHash": "sha256-W6du4joC+VsaCA4oNNl2QVqJJ445jR4+eyUgArWlS3s=",
+        "lastModified": 1795120025,
+        "narHash": "sha256-2MvoqBQGAOUtqoBjgsrI8uWWtfn6KBpTec0dJ/v1mak=",
         "owner": "justinfrankel",
         "repo": "WDL",
-        "rev": "171bd4ccb6db39bd650aaa4b389b7d453ee41ddc",
+        "rev": "79d44dcefdeca2c8d624e6278ca14e9ba1c671f4",
         "type": "github"
       },
       "original": {
