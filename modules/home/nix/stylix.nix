@@ -6,6 +6,7 @@
   }: {
     stylix = {
       targets = {
+        wayprompt.enable = false;
         spicetify.enable = false;
         neovim.enable = false;
         # Might explore more interesting kde ricing later
