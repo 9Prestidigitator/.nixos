@@ -22,7 +22,6 @@
             enableEmojiBypass = true;
             enableStickerBypass = true;
           };
-          fixYoutubeEmbeds.enable = true;
           gifPaste.enable = true;
           noMosaic.enable = true;
           notificationVolume.enable = true;
@@ -33,7 +32,6 @@
           spotifyCrack.enable = true;
           showHiddenChannels.enable = true;
           showHiddenThings.enable = true;
-          youtubeAdblock.enable = true;
           whoReacted.enable = true;
         };
       };
