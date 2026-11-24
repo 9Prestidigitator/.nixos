@@ -9,6 +9,8 @@
 
       plasma
 
+      plasma-path-fix
+
       chromium
       music-production
       design
