@@ -36,6 +36,8 @@
       wl-clipboard
     ];
 
+    nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
+
     persist = {
       directories = ["/var/lib/AccountsService"];
       userDirs = [

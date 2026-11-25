@@ -12,15 +12,8 @@
       nix-index-database.comma.enable = true;
     };
 
-    nixpkgs = {
-      config.allowUnfree = true;
-      overlays = [
-        inputs.audio-nix.overlays.default
-        inputs.niri-flake.overlays.niri
-        inputs.maxpkgs.overlays.default
-        inputs.millennium.overlays.default
-      ];
-    };
+    nixpkgs.config.allowUnfree = true;
+
     nix = {
       gc = {
         automatic = lib.mkDefault true;

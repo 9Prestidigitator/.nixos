@@ -29,6 +29,8 @@
 
     programs.java.enable = true;
 
+    nixpkgs.overlays = [inputs.millennium.overlays.default];
+
     persist.userDirs = [
       ".config/heroic"
       ".config/dolphin-emu"

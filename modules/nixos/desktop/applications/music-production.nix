@@ -68,6 +68,11 @@
       glib-networking
     ];
 
+    nixpkgs.overlays = [
+      inputs.audio-nix.overlays.default
+      inputs.maxpkgs.overlays.default
+    ];
+
     persist = {
       userDirs = [
         ".vst"
